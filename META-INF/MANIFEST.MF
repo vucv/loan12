@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+MIDlet-Vendor: Zing4u
+MIDlet-Version: 1.0.0
+MIDlet-Delete-Confirm: Rat nhieu tro choi hap dan tai http://Zing4u.vn Cam on ban da su dung dich vu cua chung 
+ toi!
+MIDlet-1: Loan 12 Su Quan,/icon.png,com.mic.smsgame.suquan.SQMidlet
+MicroEdition-Configuration: CLDC-1.0
+MIDlet-Name: Loan 12 Su Quan
+MicroEdition-Profile: MIDP-2.0
