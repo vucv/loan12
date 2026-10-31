@@ -589,3 +589,18 @@ namespace UnityEngine
     public sealed class Coroutine : YieldInstruction { }
     public static class ScreenCapture { public static void CaptureScreenshot(string filename) { } }
 }
+
+namespace UnityEngine.Device
+{
+    public static class Application
+    {
+        public static bool isMobilePlatform { get { return false; } }
+    }
+
+    public static class Screen
+    {
+        public static UnityEngine.Rect safeArea { get { return default(UnityEngine.Rect); } }
+        public static int sleepTimeout { get; set; }
+        public static UnityEngine.ScreenOrientation orientation { get; set; }
+    }
+}

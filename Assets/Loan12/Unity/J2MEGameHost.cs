@@ -153,10 +153,10 @@ namespace Loan12.UnityPort
             CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
 
             Application.targetFrameRate = 60;
-            if (Application.isMobilePlatform)
+            if (UnityEngine.Device.Application.isMobilePlatform)
             {
-                Screen.sleepTimeout = SleepTimeout.NeverSleep; // a turn-based game: no dimming while thinking
-                Screen.orientation = ScreenOrientation.Portrait;
+                UnityEngine.Device.Screen.sleepTimeout = SleepTimeout.NeverSleep; // a turn-based game: no dimming while thinking
+                UnityEngine.Device.Screen.orientation = ScreenOrientation.Portrait;
             }
             keypadHidden = PlayerPrefs.GetInt(KeypadHiddenPref, 0) == 1;
             EnsureCamera();
@@ -418,7 +418,7 @@ namespace Loan12.UnityPort
 
         void ComputeLayout()
         {
-            Rect safe = Screen.safeArea;
+            Rect safe = UnityEngine.Device.Screen.safeArea; // UnityEngine.Device: simulated by the Device Simulator
             // Screen.safeArea is bottom-up; GUI coordinates are top-down
             Rect area = new Rect(safe.x, Screen.height - safe.yMax, safe.width, safe.height);
             if (area.width <= 0 || area.height <= 0)
@@ -426,7 +426,7 @@ namespace Loan12.UnityPort
                 area = new Rect(0, 0, Screen.width, Screen.height);
             }
 
-            padAllowed = keypad == KeypadMode.Always || (keypad == KeypadMode.Auto && Application.isMobilePlatform);
+            padAllowed = keypad == KeypadMode.Always || (keypad == KeypadMode.Auto && UnityEngine.Device.Application.isMobilePlatform);
             padVisible = padAllowed && !keypadHidden;
             pad.Clear();
             toggleRect = new Rect(0, 0, 0, 0);
@@ -740,7 +740,7 @@ namespace Loan12.UnityPort
 
         bool UseSystemKeyboard
         {
-            get { return Application.isMobilePlatform && TouchScreenKeyboard.isSupported; }
+            get { return UnityEngine.Device.Application.isMobilePlatform && TouchScreenKeyboard.isSupported; }
         }
 
         /// <summary>Phones: the TextBox is edited with the system keyboard (opened when the TextBox appears).</summary>
