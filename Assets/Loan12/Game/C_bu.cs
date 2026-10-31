@@ -1539,13 +1539,9 @@ namespace Loan12
             return this.f_s.f_d;
         }
 
-        /** soft keys of the battle bar: left (skills) and right (pause); the centre ("bag") is the # key */
+        /** soft keys of the battle bar: left (skills), centre (bag) and right (pause) */
         public string portBarLabel(int paramInt)
         {
-            if (paramInt == 1)
-            {
-                return null;
-            }
             return this.f_t.portLabel(paramInt);
         }
 

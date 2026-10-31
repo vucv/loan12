@@ -354,8 +354,10 @@ rep('game/bv.java', """    public abstract void m();
         }
         if (localar == null) {
             j2me.Host.setSoftKeys(null, null, null);
+            j2me.Host.viewport = null;
         } else {
             j2me.Host.setSoftKeys(localar.portSoftLabel(0), localar.portSoftLabel(1), localar.portSoftLabel(2));
+            j2me.Host.viewport = localar.portViewport();
         }
     }
 }""")
@@ -404,6 +406,11 @@ rep('game/ar.java', """    public final void a_(int paramInt1, int paramInt2) {
 
     /** PORT-TOUCH: pointer dragged to (x, y), absolute screen coordinates. */
     public void portDragTo(int paramInt1, int paramInt2) {
+    }
+
+    /** PORT-TOUCH: the part of the screen worth zooming on (x, y, w, h) on tall phones; null = whole screen. */
+    public int[] portViewport() {
+        return null;
     }
 
     /** PORT-TOUCH: label of soft key 0 = left, 1 = centre, 2 = right; null when there is none. */
@@ -578,11 +585,8 @@ rep('game/bu.java', """    public di q() {""", """    // PORT-TOUCH: drags / rel
         return this.s.d;
     }
 
-    /** soft keys of the battle bar: left (skills) and right (pause); the centre ("bag") is the # key */
+    /** soft keys of the battle bar: left (skills), centre (bag) and right (pause) */
     public String portBarLabel(int paramInt) {
-        if (paramInt == 1) {
-            return null;
-        }
         return this.t.portLabel(paramInt);
     }
 
@@ -619,6 +623,14 @@ rep('com/mic/smsgame/suquan/ab.java', """    public void a(int paramInt1, int pa
             return this.e.portBarLabel(paramInt);
         }
         return null;
+    }
+
+    /** PORT-TOUCH: the battle zooms on the board and the two portraits (the frame and the soft-key row are cut;
+     *  the host draws the soft keys as big buttons below instead). */
+    private static final int[] PORT_VIEWPORT = {28, 0, 184, 302};
+
+    public int[] portViewport() {
+        return this.e != null ? PORT_VIEWPORT : null;
     }""")
 
 # 5. map: tap a place to walk there along the open roads (the arrows around the hero still work)

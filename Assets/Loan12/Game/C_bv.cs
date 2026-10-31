@@ -510,10 +510,12 @@ namespace Loan12
             if (localar == null)
             {
                 Host.setSoftKeys(null, null, null);
+                Host.viewport = null;
             }
             else
             {
                 Host.setSoftKeys(localar.portSoftLabel(0), localar.portSoftLabel(1), localar.portSoftLabel(2));
+                Host.viewport = localar.portViewport();
             }
         }
 

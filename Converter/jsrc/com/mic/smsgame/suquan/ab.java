@@ -103,6 +103,14 @@ public class ab
         return null;
     }
 
+    /** PORT-TOUCH: the battle zooms on the board and the two portraits (the frame and the soft-key row are cut;
+     *  the host draws the soft keys as big buttons below instead). */
+    private static final int[] PORT_VIEWPORT = {28, 0, 184, 302};
+
+    public int[] portViewport() {
+        return this.e != null ? PORT_VIEWPORT : null;
+    }
+
     public void a() {
         this.e.c();
         this.d.d();

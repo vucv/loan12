@@ -381,6 +381,12 @@ namespace Loan12
         {
         }
 
+        /** PORT-TOUCH: the part of the screen worth zooming on (x, y, w, h) on tall phones; null = whole screen. */
+        public virtual int[] portViewport()
+        {
+            return null;
+        }
+
         /** PORT-TOUCH: label of soft key 0 = left, 1 = centre, 2 = right; null when there is none. */
         public virtual string portSoftLabel(int paramInt)
         {

@@ -83,6 +83,9 @@ public final class Host {
     /** Labels of the game's soft keys (left, centre, right; null = none), for the host's touch buttons. */
     public static String[] softKeyLabels = new String[3];
 
+    /** Part of the screen the game wants zoomed on tall phones: {x, y, w, h}, or null for the whole screen. */
+    public static int[] viewport;
+
     public static void setSoftKeys(String left, String centre, String right) {
         softKeyLabels[0] = left;
         softKeyLabels[1] = centre;
