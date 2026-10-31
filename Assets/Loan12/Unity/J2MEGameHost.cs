@@ -120,6 +120,7 @@ namespace Loan12.UnityPort
 
             Application.targetFrameRate = 60;
             EnsureCamera();
+            EnsureAudioListener();
 
             lcd = new Texture2D(LcdWidth, LcdHeight, TextureFormat.BGRA32, false);
             lcd.filterMode = filtering;
@@ -239,6 +240,17 @@ namespace Loan12.UnityPort
 #else
             Application.Quit();
 #endif
+        }
+
+        /// <summary>Unity plays no sound without an AudioListener in the scene.</summary>
+        void EnsureAudioListener()
+        {
+#pragma warning disable 0618 // FindObjectOfType: kept for Unity 2021/2022 compatibility
+            if (FindObjectOfType<AudioListener>() == null)
+#pragma warning restore 0618
+            {
+                gameObject.AddComponent<AudioListener>();
+            }
         }
 
         static void EnsureCamera()

@@ -22,6 +22,7 @@ namespace UnityEngine
         public static void Destroy(Object obj, float t) { }
         public static void DestroyImmediate(Object obj) { }
         public static void DontDestroyOnLoad(Object target) { }
+        public static T FindObjectOfType<T>() where T : Object { return null; }
         public static implicit operator bool(Object exists) { return exists != null; }
         public static bool operator ==(Object x, Object y) { return ReferenceEquals(x, y); }
         public static bool operator !=(Object x, Object y) { return !ReferenceEquals(x, y); }
@@ -456,4 +457,8 @@ namespace UnityEditor.SceneManagement
     }
 
     public class SceneManager2 { }
+}
+namespace UnityEngine
+{
+    public sealed class AudioListener : Behaviour { }
 }

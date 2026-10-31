@@ -94,6 +94,7 @@ namespace Loan12.UnityPort.EditorTools
             cam.backgroundColor = Color.black;
             cam.cullingMask = 0;
             cam.orthographic = true;
+            camGo.AddComponent<AudioListener>();
             SceneManager.MoveGameObjectToScene(camGo, scene);
 
             GameObject host = new GameObject("Loan12 J2ME Host");
