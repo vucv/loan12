@@ -581,6 +581,15 @@ namespace Loan12
             }
         }
 
+        public override void pointerDragged(int paramInt1, int paramInt2)
+        {
+            // PORT-TOUCH
+            if (this.f_e != null)
+            {
+                this.f_e.portDrag(paramInt1 - C_cx.f_j, paramInt2 - C_cx.f_k);
+            }
+        }
+
         public override void showNotify()
         {
             this.f_j = false;

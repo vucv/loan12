@@ -66,6 +66,7 @@ public abstract class bv
     }
 
     public final void a() {
+        portPublishSoftKeys(); // PORT-TOUCH
         if (this.q > 0) {
             this.q -= 1;
             this.r = (ay.a() % 2);
@@ -379,6 +380,32 @@ public abstract class bv
     public abstract void l();
 
     public abstract void m();
+
+    /** PORT-TOUCH: pointer drag (screen coordinates), consumed by the active screen's update. */
+    public final void portDrag(int paramInt1, int paramInt2) {
+        if (this.a) {
+            return;
+        }
+        cx.s = paramInt1;
+        cx.t = paramInt2;
+    }
+
+    /** PORT-TOUCH: tells the host the soft keys of the active dialog / screen (shown on big touch buttons). */
+    private void portPublishSoftKeys() {
+        ar localar = null;
+        if ((!this.l) || (this.i == null)) {
+            if (this.d != null) {
+                localar = this.d;
+            } else {
+                localar = this.b;
+            }
+        }
+        if (localar == null) {
+            j2me.Host.setSoftKeys(null, null, null);
+        } else {
+            j2me.Host.setSoftKeys(localar.portSoftLabel(0), localar.portSoftLabel(1), localar.portSoftLabel(2));
+        }
+    }
 }
 
 

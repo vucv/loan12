@@ -1229,6 +1229,31 @@ public class bu
         this.t.a(parama);
     }
 
+    // PORT-TOUCH: drags / releases go to the human player while the board waits for input
+    public void portDrag(int paramInt1, int paramInt2) {
+        if ((this.v == 8) && (this.s.a() == 0) && ((this.u[0] instanceof ac))) {
+            ((ac) this.u[0]).portDrag(paramInt1, paramInt2);
+        }
+    }
+
+    public void portRelease(int paramInt1, int paramInt2) {
+        if ((this.v == 8) && (this.s.a() == 0) && ((this.u[0] instanceof ac))) {
+            ((ac) this.u[0]).portRelease(paramInt1, paramInt2);
+        }
+    }
+
+    public boolean portTraining() {
+        return this.s.d;
+    }
+
+    /** soft keys of the battle bar: left (skills) and right (pause); the centre ("bag") is the # key */
+    public String portBarLabel(int paramInt) {
+        if (paramInt == 1) {
+            return null;
+        }
+        return this.t.portLabel(paramInt);
+    }
+
     public di q() {
         return this.B;
     }

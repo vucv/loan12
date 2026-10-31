@@ -1517,6 +1517,38 @@ namespace Loan12
             this.f_t.a(parama);
         }
 
+        // PORT-TOUCH: drags / releases go to the human player while the board waits for input
+        public void portDrag(int paramInt1, int paramInt2)
+        {
+            if ((this.f_v == 8) && (this.f_s.a() == 0) && (((this.f_u[0] is C_ac))))
+            {
+                (((C_ac)(this.f_u[0]))).portDrag(paramInt1, paramInt2);
+            }
+        }
+
+        public void portRelease(int paramInt1, int paramInt2)
+        {
+            if ((this.f_v == 8) && (this.f_s.a() == 0) && (((this.f_u[0] is C_ac))))
+            {
+                (((C_ac)(this.f_u[0]))).portRelease(paramInt1, paramInt2);
+            }
+        }
+
+        public bool portTraining()
+        {
+            return this.f_s.f_d;
+        }
+
+        /** soft keys of the battle bar: left (skills) and right (pause); the centre ("bag") is the # key */
+        public string portBarLabel(int paramInt)
+        {
+            if (paramInt == 1)
+            {
+                return null;
+            }
+            return this.f_t.portLabel(paramInt);
+        }
+
         public C_di q()
         {
             return this.f_B;

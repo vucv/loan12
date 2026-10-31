@@ -41,6 +41,10 @@ public class i
         this.v[paramInt] = paramString;
     }
 
+    public String portLabel(int paramInt) { // PORT-TOUCH
+        return this.v[paramInt];
+    }
+
     public void a() {
         this.w = 0;
     }

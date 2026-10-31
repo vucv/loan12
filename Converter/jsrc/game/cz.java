@@ -461,6 +461,12 @@ public class cz
         }
     }
 
+    protected void pointerDragged(int paramInt1, int paramInt2) { // PORT-TOUCH
+        if (this.e != null) {
+            this.e.portDrag(paramInt1 - cx.j, paramInt2 - cx.k);
+        }
+    }
+
     protected void showNotify() {
         this.j = false;
         setFullScreenMode(true);

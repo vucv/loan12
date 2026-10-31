@@ -35,6 +35,8 @@ public class ac
 
     public void a(int paramInt1, int paramInt2) {
         int j;
+        this.portSwipe = false;
+        this.portUnselect = false;
         if (paramInt2 >= cx.g - 15) {
             int i = cx.f / 3;
             j = i + i;
@@ -54,23 +56,92 @@ public class ac
             int m = this.b.k();
             int n = this.b.l();
             if ((k == m) && (j == n)) {
-                this.b.i();
-            } else if (this.b.j()) {
-                int i1 = k - m;
-                int i2 = j - n;
-                if (i1 == 1) {
+                if (this.b.j()) {
+                    this.portUnselect = true; // decided on release: a swipe keeps the selection
+                } else {
+                    this.b.i();
+                }
+            } else if (this.b.portTraining()) {
+                // tutorial: original rules for the other gems (it checks every step)
+                if (this.b.j()) {
+                    int i1 = k - m;
+                    int i2 = j - n;
+                    if (i1 == 1) {
+                        this.b.n();
+                    } else if (i1 == -1) {
+                        this.b.m();
+                    } else if (i2 == 1) {
+                        this.b.p();
+                    } else if (i2 == -1) {
+                        this.b.o();
+                    }
+                    return;
+                } else {
+                    this.b.c(k, j);
+                }
+            } else if ((this.b.j()) && (Math.abs(k - m) + Math.abs(j - n) == 1)) {
+                if (k - m == 1) {
                     this.b.n();
-                } else if (i1 == -1) {
+                } else if (k - m == -1) {
                     this.b.m();
-                } else if (i2 == 1) {
+                } else if (j - n == 1) {
                     this.b.p();
-                } else if (i2 == -1) {
+                } else {
                     this.b.o();
                 }
+                return;
             } else {
                 this.b.c(k, j);
+                if ((this.b.k() == k) && (this.b.l() == j) && (!this.b.j())) {
+                    this.b.i();
+                }
             }
+            this.portSwipe = (this.b.j()) && (this.b.k() == k) && (this.b.l() == j);
+            this.portX = paramInt1;
+            this.portY = paramInt2;
         }
+    }
+
+    // PORT-TOUCH: swipe state of the current press
+    private boolean portSwipe;
+    private boolean portUnselect;
+    private int portX;
+    private int portY;
+
+    /** PORT-TOUCH: a drag of 8+ pixels from the selected gem swaps it with its neighbour that way. */
+    public void portDrag(int paramInt1, int paramInt2) {
+        if ((!this.portSwipe) || (!this.b.j())) {
+            return;
+        }
+        int i = paramInt1 - this.portX;
+        int j = paramInt2 - this.portY;
+        int k = Math.abs(i);
+        int m = Math.abs(j);
+        if ((k < 8) && (m < 8)) {
+            return;
+        }
+        this.portSwipe = false;
+        this.portUnselect = false;
+        if (k > m) {
+            if (i > 0) {
+                this.b.p();
+            } else {
+                this.b.o();
+            }
+        } else if (j > 0) {
+            this.b.n();
+        } else {
+            this.b.m();
+        }
+    }
+
+    /** PORT-TOUCH: releasing a tap on the already selected gem deselects it. */
+    public void portRelease(int paramInt1, int paramInt2) {
+        if ((this.portUnselect) && (this.b.j())) {
+            this.b.i();
+        }
+        this.portUnselect = false;
+        this.portSwipe = false;
     }
 
     public void a() {

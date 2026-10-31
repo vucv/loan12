@@ -86,6 +86,34 @@ namespace Loan12
             this.f_e.a(paramInt1, paramInt2);
         }
 
+        public override void portDragTo(int paramInt1, int paramInt2)
+        {
+            // PORT-TOUCH
+            if (this.f_e != null)
+            {
+                this.f_e.portDrag(paramInt1, paramInt2);
+            }
+        }
+
+        public override void g(int paramInt1, int paramInt2)
+        {
+            // PORT-TOUCH: pointer released
+            if (this.f_e != null)
+            {
+                this.f_e.portRelease(paramInt1, paramInt2);
+            }
+        }
+
+        public override string portSoftLabel(int paramInt)
+        {
+            // PORT-TOUCH: the battle draws its own soft-key bar
+            if (this.f_e != null)
+            {
+                return this.f_e.portBarLabel(paramInt);
+            }
+            return null;
+        }
+
         public override void a()
         {
             this.f_e.c();

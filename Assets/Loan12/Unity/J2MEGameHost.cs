@@ -1,10 +1,11 @@
 // Runs the converted MIDlet inside Unity.
 //
 // Every frame: input -> J2ME.Host.tick() (game logic, timers, painting into the 240x320 LCD buffer) ->
-// upload the LCD to a texture -> draw it (IMGUI) with an optional on-screen phone keypad.
+// upload the LCD to a texture -> draw it (IMGUI) with an on-screen phone keypad for touch devices.
 // MIDP high-level screens (TextBox for the hero name / phone number, the debug log Form) are shown
-// with IMGUI controls. Input uses IMGUI events, so it works with both the old Input Manager and the
-// new Input System, and touches arrive as pointer events (the game supports a touch screen).
+// with IMGUI controls and, on phones, the system keyboard. Input uses IMGUI events, so it works with
+// both the old Input Manager and the new Input System; touches arrive as pointer events (the game
+// handles taps and swipes itself).
 using System.Collections.Generic;
 using System.Globalization;
 using Unity.Collections;
@@ -26,13 +27,14 @@ namespace Loan12.UnityPort
     {
         public const int LcdWidth = 240;
         public const int LcdHeight = 320;
+        const string KeypadHiddenPref = "Loan12.KeypadHidden";
 
         /// <summary>Set to false (before the first scene loads) to stop the automatic host creation.</summary>
         public static bool AutoCreate = true;
 
         public static J2MEGameHost Instance { get; private set; }
 
-        [Tooltip("On-screen phone keypad: soft keys, D-pad, OK, * and #. Auto = touch devices only.")]
+        [Tooltip("On-screen phone keypad: soft keys with the game's labels, D-pad, OK, * and #. Auto = touch devices only.")]
         public KeypadMode keypad = KeypadMode.Auto;
 
         [Tooltip("Scale the 240x320 screen by whole multiples only (sharper pixels, larger borders).")]
@@ -42,6 +44,9 @@ namespace Loan12.UnityPort
         public FilterMode filtering = FilterMode.Point;
 
         [Range(0f, 1f)] public float volume = 1f;
+
+        [Tooltip("Short vibration when an on-screen key is pressed (Android).")]
+        public bool haptics = true;
 
         static bool startedBefore; // survives only when "Reload Domain" is disabled in the editor
 
@@ -54,33 +59,49 @@ namespace Loan12.UnityPort
         readonly Dictionary<KeyCode, int> heldKeys = new Dictionary<KeyCode, int>();
         bool pointerOnLcd;
         int padHeldCode;
+        bool keypadHidden;
 
         // layout (GUI coordinates, origin top-left)
         Rect lcdRect;
+        Rect toggleRect;
         readonly List<PadButton> pad = new List<PadButton>();
         bool padVisible;
+        bool padAllowed;
 
         // styles (rebuilt when the screen size changes)
         int styledFor = -1;
-        GUIStyle padStyle, padDownStyle, panelStyle, titleStyle, fieldStyle, buttonStyle, lineStyle;
+        GUIStyle keyStyle, keyDownStyle, softStyle, softDownStyle, softOffStyle, toggleStyle;
+        GUIStyle panelStyle, titleStyle, fieldStyle, buttonStyle, lineStyle;
+        readonly List<Texture2D> generated = new List<Texture2D>();
 
         // high-level screens
         J2ME.TextBox editing;
         string textBuffer = "";
         bool focusField;
         Vector2 formScroll;
+        TouchScreenKeyboard systemKeyboard;
+        bool openSystemKeyboard;
+
+        enum PadKind
+        {
+            Key,
+            SoftLeft,
+            SoftRight
+        }
 
         struct PadButton
         {
             public Rect rect;
             public string label;
             public int code;
+            public PadKind kind;
 
-            public PadButton(Rect rect, string label, int code)
+            public PadButton(Rect rect, string label, int code, PadKind kind)
             {
                 this.rect = rect;
                 this.label = label;
                 this.code = code;
+                this.kind = kind;
             }
         }
 
@@ -93,6 +114,18 @@ namespace Loan12.UnityPort
         public Texture2D LcdTexture
         {
             get { return lcd; }
+        }
+
+        /// <summary>Hides / shows the on-screen keypad (remembered on this device).</summary>
+        public bool KeypadHidden
+        {
+            get { return keypadHidden; }
+            set
+            {
+                keypadHidden = value;
+                PlayerPrefs.SetInt(KeypadHiddenPref, value ? 1 : 0);
+                PlayerPrefs.Save();
+            }
         }
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
@@ -119,6 +152,12 @@ namespace Loan12.UnityPort
             CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
 
             Application.targetFrameRate = 60;
+            if (Application.isMobilePlatform)
+            {
+                Screen.sleepTimeout = SleepTimeout.NeverSleep; // a turn-based game: no dimming while thinking
+                Screen.orientation = ScreenOrientation.Portrait;
+            }
+            keypadHidden = PlayerPrefs.GetInt(KeypadHiddenPref, 0) == 1;
             EnsureCamera();
             EnsureAudioListener();
 
@@ -164,6 +203,7 @@ namespace Loan12.UnityPort
             }
 
             backend.UpdateAudio();
+            UpdateSystemKeyboard();
             J2ME.Host.tick();
 
             if (J2ME.Host.screenDirty && J2ME.Host.screen != null)
@@ -223,6 +263,13 @@ namespace Loan12.UnityPort
             if (lcd != null)
             {
                 Destroy(lcd);
+            }
+            foreach (Texture2D t in generated)
+            {
+                if (t != null)
+                {
+                    Destroy(t);
+                }
             }
         }
 
@@ -293,12 +340,9 @@ namespace Loan12.UnityPort
             if (e.type == EventType.Repaint)
             {
                 GUI.DrawTextureWithTexCoords(lcdRect, lcd, new Rect(0f, 1f, 1f, -1f), false);
-                if (padVisible && !highLevel)
+                if (!highLevel)
                 {
-                    foreach (PadButton b in pad)
-                    {
-                        GUI.Box(b.rect, b.label, b.code == padHeldCode ? padDownStyle : padStyle);
-                    }
+                    DrawKeypad();
                 }
             }
 
@@ -309,6 +353,7 @@ namespace Loan12.UnityPort
             else if (editing != null)
             {
                 editing = null;
+                CloseSystemKeyboard();
             }
         }
 
@@ -324,20 +369,28 @@ namespace Loan12.UnityPort
                 area = new Rect(0, 0, Screen.width, Screen.height);
             }
 
-            padVisible = keypad == KeypadMode.Always || (keypad == KeypadMode.Auto && Application.isMobilePlatform);
+            padAllowed = keypad == KeypadMode.Always || (keypad == KeypadMode.Auto && Application.isMobilePlatform);
+            padVisible = padAllowed && !keypadHidden;
             pad.Clear();
+            toggleRect = new Rect(0, 0, 0, 0);
             bool portrait = area.height >= area.width;
+            float unit = Mathf.Min(area.width, area.height);
+            float toggleH = padAllowed ? Mathf.Max(28f, unit * 0.075f) : 0f;
 
             Rect lcdArea = area;
             if (padVisible && portrait)
             {
-                float padH = Mathf.Min(area.height * 0.34f, area.width * 0.62f);
+                float padH = Mathf.Min(area.height * 0.38f, area.width * 0.78f) + toggleH;
                 lcdArea = new Rect(area.x, area.y, area.width, area.height - padH);
             }
             else if (padVisible)
             {
-                float side = Mathf.Min(area.width * 0.25f, area.height * 0.75f);
+                float side = Mathf.Min(area.width * 0.25f, area.height * 0.8f);
                 lcdArea = new Rect(area.x + side, area.y, area.width - 2 * side, area.height);
+            }
+            else if (padAllowed)
+            {
+                lcdArea = new Rect(area.x, area.y, area.width, area.height - toggleH);
             }
 
             float scale = Mathf.Min(lcdArea.width / LcdWidth, lcdArea.height / LcdHeight);
@@ -347,52 +400,102 @@ namespace Loan12.UnityPort
             }
             float w = LcdWidth * scale;
             float h = LcdHeight * scale;
-            lcdRect = new Rect(Mathf.Round(lcdArea.x + (lcdArea.width - w) / 2f), Mathf.Round(lcdArea.y + (lcdArea.height - h) / 2f), w, h);
+            // portrait: keep the screen at the top so the thumbs reach the keys below it
+            float top = padVisible && portrait ? lcdArea.y + Mathf.Min((lcdArea.height - h) / 2f, unit * 0.04f) : lcdArea.y + (lcdArea.height - h) / 2f;
+            lcdRect = new Rect(Mathf.Round(lcdArea.x + (lcdArea.width - w) / 2f), Mathf.Round(top), w, h);
 
+            if (!padAllowed)
+            {
+                return;
+            }
+            float tw = Mathf.Max(toggleH * 4.5f, 120f);
             if (!padVisible)
             {
+                toggleRect = new Rect(area.xMax - tw - toggleH * 0.3f, area.yMax - toggleH, tw, toggleH * 0.9f);
                 return;
             }
             if (portrait)
             {
-                Rect padArea = new Rect(area.x, lcdArea.yMax, area.width, area.yMax - lcdArea.yMax);
-                float cw = padArea.width / 5f;
+                float padTop = lcdRect.yMax + unit * 0.02f;
+                Rect padArea = new Rect(area.x + unit * 0.03f, padTop, area.width - unit * 0.06f, area.yMax - toggleH - padTop);
+                float cw = padArea.width / 3f;
                 float ch = padArea.height / 3f;
-                AddPad(padArea, cw, ch, 0, 0, "Trái", -6);
-                AddPad(padArea, cw, ch, 4, 0, "Phải", -7);
-                AddPad(padArea, cw, ch, 2, 0, "▲", -1);
-                AddPad(padArea, cw, ch, 1, 1, "◄", -3);
-                AddPad(padArea, cw, ch, 2, 1, "OK", -5);
-                AddPad(padArea, cw, ch, 3, 1, "►", -4);
-                AddPad(padArea, cw, ch, 2, 2, "▼", -2);
-                AddPad(padArea, cw, ch, 0, 2, "*", 42);
-                AddPad(padArea, cw, ch, 4, 2, "#", 35);
+                AddPad(padArea, cw, ch, 0, 0, PadKind.SoftLeft, null, J2ME.Canvas.KEYCODE_SOFT_LEFT);
+                AddPad(padArea, cw, ch, 1, 0, PadKind.Key, "▲", J2ME.Canvas.KEYCODE_UP);
+                AddPad(padArea, cw, ch, 2, 0, PadKind.SoftRight, null, J2ME.Canvas.KEYCODE_SOFT_RIGHT);
+                AddPad(padArea, cw, ch, 0, 1, PadKind.Key, "◄", J2ME.Canvas.KEYCODE_LEFT);
+                AddPad(padArea, cw, ch, 1, 1, PadKind.Key, "OK", J2ME.Canvas.KEYCODE_FIRE);
+                AddPad(padArea, cw, ch, 2, 1, PadKind.Key, "►", J2ME.Canvas.KEYCODE_RIGHT);
+                AddPad(padArea, cw, ch, 0, 2, PadKind.Key, "*", J2ME.Canvas.KEY_STAR);
+                AddPad(padArea, cw, ch, 1, 2, PadKind.Key, "▼", J2ME.Canvas.KEYCODE_DOWN);
+                AddPad(padArea, cw, ch, 2, 2, PadKind.Key, "#", J2ME.Canvas.KEY_POUND);
+                toggleRect = new Rect(area.x + (area.width - tw) / 2f, area.yMax - toggleH, tw, toggleH * 0.9f);
             }
             else
             {
-                Rect left = new Rect(area.x, area.y, lcdArea.x - area.x, area.height);
-                Rect right = new Rect(lcdArea.xMax, area.y, area.xMax - lcdArea.xMax, area.height);
+                Rect left = new Rect(area.x, area.y, lcdArea.x - area.x, area.height - toggleH);
+                Rect right = new Rect(lcdArea.xMax, area.y, area.xMax - lcdArea.xMax, area.height - toggleH);
                 float cw = left.width / 3f;
-                float ch = Mathf.Min(left.height / 4f, cw);
+                float ch = Mathf.Min(left.height / 3.5f, cw);
                 Rect l = new Rect(left.x, left.y + (left.height - ch * 3) / 2f, left.width, ch * 3);
-                AddPad(l, cw, ch, 0, 0, "Trái", -6);
-                AddPad(l, cw, ch, 1, 0, "▲", -1);
-                AddPad(l, cw, ch, 0, 1, "◄", -3);
-                AddPad(l, cw, ch, 1, 1, "OK", -5);
-                AddPad(l, cw, ch, 2, 1, "►", -4);
-                AddPad(l, cw, ch, 1, 2, "▼", -2);
-                AddPad(l, cw, ch, 0, 2, "*", 42);
+                AddPad(l, cw, ch, 1, 0, PadKind.Key, "▲", J2ME.Canvas.KEYCODE_UP);
+                AddPad(l, cw, ch, 0, 1, PadKind.Key, "◄", J2ME.Canvas.KEYCODE_LEFT);
+                AddPad(l, cw, ch, 1, 1, PadKind.Key, "OK", J2ME.Canvas.KEYCODE_FIRE);
+                AddPad(l, cw, ch, 2, 1, PadKind.Key, "►", J2ME.Canvas.KEYCODE_RIGHT);
+                AddPad(l, cw, ch, 1, 2, PadKind.Key, "▼", J2ME.Canvas.KEYCODE_DOWN);
                 Rect r = new Rect(right.x, l.y, right.width, ch * 3);
-                AddPad(r, cw, ch, 2, 0, "Phải", -7);
-                AddPad(r, cw, ch, 1, 1, "OK", -5);
-                AddPad(r, cw, ch, 2, 2, "#", 35);
+                float rw = right.width / 2f;
+                AddPad(r, rw, ch, 0, 0, PadKind.SoftLeft, null, J2ME.Canvas.KEYCODE_SOFT_LEFT);
+                AddPad(r, rw, ch, 1, 0, PadKind.SoftRight, null, J2ME.Canvas.KEYCODE_SOFT_RIGHT);
+                AddPad(r, rw, ch, 0, 2, PadKind.Key, "*", J2ME.Canvas.KEY_STAR);
+                AddPad(r, rw, ch, 1, 2, PadKind.Key, "#", J2ME.Canvas.KEY_POUND);
+                toggleRect = new Rect(area.xMax - tw - toggleH * 0.3f, area.yMax - toggleH, tw, toggleH * 0.9f);
             }
         }
 
-        void AddPad(Rect area, float cw, float ch, int col, int row, string label, int code)
+        void AddPad(Rect area, float cw, float ch, int col, int row, PadKind kind, string label, int code)
         {
-            float m = Mathf.Min(cw, ch) * 0.08f;
-            pad.Add(new PadButton(new Rect(area.x + col * cw + m, area.y + row * ch + m, cw - 2 * m, ch - 2 * m), label, code));
+            float m = Mathf.Min(cw, ch) * 0.07f;
+            pad.Add(new PadButton(new Rect(area.x + col * cw + m, area.y + row * ch + m, cw - 2 * m, ch - 2 * m), label, code, kind));
+        }
+
+        void DrawKeypad()
+        {
+            if (padVisible)
+            {
+                foreach (PadButton b in pad)
+                {
+                    bool down = b.code == padHeldCode;
+                    if (b.kind == PadKind.Key)
+                    {
+                        GUI.Box(b.rect, b.label, down ? keyDownStyle : keyStyle);
+                        continue;
+                    }
+                    string label = SoftLabel(b.kind == PadKind.SoftLeft ? 0 : 2);
+                    GUI.Box(b.rect, label ?? "", label == null ? softOffStyle : (down ? softDownStyle : softStyle));
+                }
+            }
+            if (padAllowed && toggleRect.width > 0)
+            {
+                GUI.Box(toggleRect, keypadHidden ? "▲ Hiện bàn phím" : "▼ Ẩn bàn phím", toggleStyle);
+            }
+        }
+
+        /// <summary>The game's current soft-key label (null when the slot is unused).</summary>
+        static string SoftLabel(int slot)
+        {
+            string[] labels = J2ME.Host.softKeyLabels;
+            if (labels == null || slot >= labels.Length)
+            {
+                return null;
+            }
+            string s = labels[slot];
+            if (s == null)
+            {
+                return null;
+            }
+            s = s.Trim();
+            return s.Length == 0 ? null : s;
         }
 
         int PadCodeAt(Vector2 p)
@@ -455,11 +558,19 @@ namespace Loan12.UnityPort
                     {
                         break;
                     }
+                    if (padAllowed && toggleRect.Contains(e.mousePosition))
+                    {
+                        KeypadHidden = !keypadHidden;
+                        Haptics.Tap(haptics);
+                        e.Use();
+                        break;
+                    }
                     int code = PadCodeAt(e.mousePosition);
                     if (code != 0)
                     {
                         padHeldCode = code;
                         J2ME.Host.keyPressed(code);
+                        Haptics.Tap(haptics);
                         e.Use();
                     }
                     else if (lcdRect.Contains(e.mousePosition))
@@ -509,7 +620,10 @@ namespace Loan12.UnityPort
                 J2ME.Host.keyReleased(padHeldCode);
                 padHeldCode = 0;
             }
-            pointerOnLcd = false;
+            if (pointerOnLcd)
+            {
+                pointerOnLcd = false;
+            }
         }
 
         /// <summary>
@@ -567,6 +681,73 @@ namespace Loan12.UnityPort
 
         // ---- MIDP high-level screens (TextBox / Form / Alert) --------------------------------
 
+        bool UseSystemKeyboard
+        {
+            get { return Application.isMobilePlatform && TouchScreenKeyboard.isSupported; }
+        }
+
+        /// <summary>Phones: the TextBox is edited with the system keyboard (opened when the TextBox appears).</summary>
+        void UpdateSystemKeyboard()
+        {
+            J2ME.TextBox tb = editing;
+            if (tb == null || !UseSystemKeyboard)
+            {
+                return;
+            }
+            if (openSystemKeyboard)
+            {
+                openSystemKeyboard = false;
+                int kind = tb.getConstraints() & 0xFFFF;
+                TouchScreenKeyboardType type = kind == 3 ? TouchScreenKeyboardType.PhonePad
+                    : (kind == 2 || kind == 5) ? TouchScreenKeyboardType.NumberPad : TouchScreenKeyboardType.Default;
+                systemKeyboard = TouchScreenKeyboard.Open(textBuffer, type, false, false, false, false, tb.getTitle() ?? "", tb.getMaxSize());
+            }
+            if (systemKeyboard == null)
+            {
+                return;
+            }
+            string typed = FilterText(systemKeyboard.text ?? "", tb.getConstraints());
+            if (typed.Length > tb.getMaxSize())
+            {
+                typed = typed.Substring(0, tb.getMaxSize());
+            }
+            if (typed != textBuffer)
+            {
+                try
+                {
+                    tb.setString(typed);
+                    textBuffer = typed;
+                }
+                catch (System.Exception ex)
+                {
+                    Debug.LogWarning("[J2ME] TextBox rejected input: " + ex.Message);
+                }
+            }
+            if (systemKeyboard.status == TouchScreenKeyboard.Status.Done)
+            {
+                systemKeyboard = null;
+                J2ME.Command ok = FindCommand(tb, false);
+                if (ok != null)
+                {
+                    J2ME.Host.queueCommand(tb, ok);
+                }
+            }
+            else if (systemKeyboard.status != TouchScreenKeyboard.Status.Visible)
+            {
+                systemKeyboard = null; // cancelled / lost focus: the panel's buttons stay available
+            }
+        }
+
+        void CloseSystemKeyboard()
+        {
+            if (systemKeyboard != null)
+            {
+                systemKeyboard.active = false;
+                systemKeyboard = null;
+            }
+            openSystemKeyboard = false;
+        }
+
         void DrawHighLevelScreen(J2ME.Displayable d, Event e)
         {
             Rect panel = lcdRect;
@@ -583,29 +764,43 @@ namespace Loan12.UnityPort
             {
                 if (editing != tb)
                 {
+                    CloseSystemKeyboard();
                     editing = tb;
                     textBuffer = tb.getString() ?? "";
                     focusField = true;
+                    openSystemKeyboard = UseSystemKeyboard;
                 }
-                GUI.SetNextControlName("J2ME.TextBox");
-                string typed = GUI.TextField(new Rect(panel.x + u * 0.5f, top, panel.width - u, u * 1.6f), textBuffer, tb.getMaxSize(), fieldStyle);
-                if (typed != textBuffer)
+                Rect field = new Rect(panel.x + u * 0.5f, top, panel.width - u, u * 1.6f);
+                if (UseSystemKeyboard)
                 {
-                    typed = FilterText(typed, tb.getConstraints());
-                    try
+                    // the system keyboard edits the text; tapping the field opens it again
+                    if (GUI.Button(field, textBuffer.Length > 0 ? textBuffer : "…", fieldStyle))
                     {
-                        tb.setString(typed);
-                        textBuffer = typed;
-                    }
-                    catch (System.Exception ex)
-                    {
-                        Debug.LogWarning("[J2ME] TextBox rejected input: " + ex.Message);
+                        openSystemKeyboard = true;
                     }
                 }
-                if (focusField && e.type == EventType.Repaint)
+                else
                 {
-                    GUI.FocusControl("J2ME.TextBox");
-                    focusField = false;
+                    GUI.SetNextControlName("J2ME.TextBox");
+                    string typed = GUI.TextField(field, textBuffer, tb.getMaxSize(), fieldStyle);
+                    if (typed != textBuffer)
+                    {
+                        typed = FilterText(typed, tb.getConstraints());
+                        try
+                        {
+                            tb.setString(typed);
+                            textBuffer = typed;
+                        }
+                        catch (System.Exception ex)
+                        {
+                            Debug.LogWarning("[J2ME] TextBox rejected input: " + ex.Message);
+                        }
+                    }
+                    if (focusField && e.type == EventType.Repaint)
+                    {
+                        GUI.FocusControl("J2ME.TextBox");
+                        focusField = false;
+                    }
                 }
             }
             else if (form != null)
@@ -633,7 +828,9 @@ namespace Loan12.UnityPort
                     Rect r = new Rect(panel.x + u * 0.5f + i * bw + u * 0.1f, panel.yMax - u * 1.9f, bw - u * 0.2f, u * 1.5f);
                     if (GUI.Button(r, c.getLabel(), buttonStyle))
                     {
+                        CloseSystemKeyboard();
                         J2ME.Host.queueCommand(d, c);
+                        Haptics.Tap(haptics);
                     }
                 }
             }
@@ -644,6 +841,7 @@ namespace Loan12.UnityPort
                 J2ME.Command c = FindCommand(d, e.keyCode == KeyCode.Escape);
                 if (c != null)
                 {
+                    CloseSystemKeyboard();
                     J2ME.Host.queueCommand(d, c);
                     e.Use();
                 }
@@ -702,24 +900,35 @@ namespace Loan12.UnityPort
             return sb.ToString();
         }
 
+        // ---- styles --------------------------------------------------------------------------
+
         void EnsureStyles()
         {
             int key = Screen.width * 10000 + Screen.height;
-            if (styledFor == key && padStyle != null)
+            if (styledFor == key && keyStyle != null)
             {
                 return;
             }
             styledFor = key;
             int baseSize = Mathf.Max(12, Mathf.RoundToInt(Mathf.Min(Screen.width, Screen.height) / 26f));
+            int border = Mathf.Max(8, Mathf.RoundToInt(Mathf.Min(Screen.width, Screen.height) / 60f));
 
-            padStyle = new GUIStyle(GUI.skin.box);
-            padStyle.fontSize = baseSize;
-            padStyle.alignment = TextAnchor.MiddleCenter;
-            padStyle.normal.textColor = new Color(0.9f, 0.9f, 0.9f, 1f);
+            if (generated.Count == 0)
+            {
+                generated.Add(Rounded(new Color32(46, 40, 52, 235), new Color32(120, 104, 84, 255)));   // 0 key
+                generated.Add(Rounded(new Color32(96, 82, 64, 245), new Color32(232, 196, 120, 255)));  // 1 key down
+                generated.Add(Rounded(new Color32(104, 34, 30, 240), new Color32(214, 160, 82, 255)));  // 2 soft key
+                generated.Add(Rounded(new Color32(168, 66, 48, 250), new Color32(255, 214, 140, 255))); // 3 soft key down
+                generated.Add(Rounded(new Color32(40, 36, 44, 150), new Color32(80, 72, 64, 160)));     // 4 unused soft key
+                generated.Add(Rounded(new Color32(30, 28, 34, 200), new Color32(90, 80, 70, 200)));     // 5 toggle
+            }
 
-            padDownStyle = new GUIStyle(padStyle);
-            padDownStyle.normal.background = GUI.skin.button.active.background;
-            padDownStyle.normal.textColor = Color.white;
+            keyStyle = KeyStyle(generated[0], baseSize * 3 / 2, new Color(0.95f, 0.92f, 0.86f), border);
+            keyDownStyle = KeyStyle(generated[1], baseSize * 3 / 2, Color.white, border);
+            softStyle = KeyStyle(generated[2], baseSize, new Color(1f, 0.92f, 0.75f), border);
+            softDownStyle = KeyStyle(generated[3], baseSize, Color.white, border);
+            softOffStyle = KeyStyle(generated[4], baseSize, new Color(0.6f, 0.58f, 0.55f), border);
+            toggleStyle = KeyStyle(generated[5], Mathf.Max(10, baseSize * 2 / 3), new Color(0.8f, 0.78f, 0.74f), border);
 
             panelStyle = new GUIStyle(GUI.skin.box);
 
@@ -741,5 +950,82 @@ namespace Loan12.UnityPort
             lineStyle.wordWrap = false;
             lineStyle.normal.textColor = Color.white;
         }
+
+        static GUIStyle KeyStyle(Texture2D background, int fontSize, Color text, int border)
+        {
+            GUIStyle s = new GUIStyle();
+            s.normal.background = background;
+            s.normal.textColor = text;
+            s.border = new RectOffset(border, border, border, border);
+            s.alignment = TextAnchor.MiddleCenter;
+            s.fontSize = fontSize;
+            s.fontStyle = FontStyle.Bold;
+            s.wordWrap = true;
+            return s;
+        }
+
+        /// <summary>A small rounded-rectangle texture (anti-aliased, 2 px outline) used as a 9-slice button.</summary>
+        static Texture2D Rounded(Color32 fill, Color32 outline)
+        {
+            const int size = 48;
+            const float radius = 14f;
+            Texture2D t = new Texture2D(size, size, TextureFormat.RGBA32, false);
+            t.filterMode = FilterMode.Bilinear;
+            t.wrapMode = TextureWrapMode.Clamp;
+            Color32[] px = new Color32[size * size];
+            for (int y = 0; y < size; y++)
+            {
+                for (int x = 0; x < size; x++)
+                {
+                    float cx = Mathf.Max(radius - (x + 0.5f), (x + 0.5f) - (size - radius), 0f);
+                    float cy = Mathf.Max(radius - (y + 0.5f), (y + 0.5f) - (size - radius), 0f);
+                    float dist = radius - Mathf.Sqrt(cx * cx + cy * cy); // distance inside the edge
+                    float alpha = Mathf.Clamp01(dist + 0.5f);
+                    Color32 c = dist < 2.5f ? outline : fill;
+                    px[y * size + x] = new Color32(c.r, c.g, c.b, (byte) (c.a * alpha));
+                }
+            }
+            t.SetPixels32(px);
+            t.Apply(false, true);
+            return t;
+        }
+    }
+
+    /// <summary>Short haptic tick for on-screen keys (Android; respects the system haptics setting).</summary>
+    static class Haptics
+    {
+#if UNITY_ANDROID && !UNITY_EDITOR
+        static AndroidJavaObject view;
+        static bool unavailable;
+
+        public static void Tap(bool enabled)
+        {
+            if (!enabled || unavailable)
+            {
+                return;
+            }
+            try
+            {
+                if (view == null)
+                {
+                    using (AndroidJavaClass player = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
+                    {
+                        AndroidJavaObject activity = player.GetStatic<AndroidJavaObject>("currentActivity");
+                        AndroidJavaObject window = activity.Call<AndroidJavaObject>("getWindow");
+                        view = window.Call<AndroidJavaObject>("getDecorView");
+                    }
+                }
+                view.Call<bool>("performHapticFeedback", 1); // HapticFeedbackConstants.VIRTUAL_KEY
+            }
+            catch (System.Exception)
+            {
+                unavailable = true;
+            }
+        }
+#else
+        public static void Tap(bool enabled)
+        {
+        }
+#endif
     }
 }

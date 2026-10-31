@@ -22,6 +22,12 @@ namespace Loan12
             this.f_d = C_bz.f_c.a(paramString);
         }
 
+        public string portLabel()
+        {
+            // PORT-TOUCH
+            return this.f_f;
+        }
+
         public override void a(Graphics paramGraphics)
         {
             if ((this.f_a > 0))

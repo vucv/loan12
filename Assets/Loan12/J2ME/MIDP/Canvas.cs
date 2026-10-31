@@ -185,7 +185,7 @@ namespace J2ME
         {
         }
 
-        public void pointerDragged(int x, int y)
+        public virtual void pointerDragged(int x, int y)
         {
         }
 

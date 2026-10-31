@@ -177,17 +177,17 @@ public abstract class ar {
                 d(i, j);
                 cx.o = cx.p = -1;
             }
-            i = cx.q;
-            j = cx.q;
-            if ((i > -1) && (j > -1)) {
-                e(i, j);
-                cx.q = cx.r = -1;
-            }
-            i = cx.s;
+            i = cx.s; // PORT-TOUCH: drags before the release
             j = cx.t;
             if ((i > -1) && (j > -1)) {
                 a_(i, j);
                 cx.s = cx.t = -1;
+            }
+            i = cx.q;
+            j = cx.r; // PORT-FIX (original bug): was cx.q
+            if ((i > -1) && (j > -1)) {
+                e(i, j);
+                cx.q = cx.r = -1;
             }
         }
     }
@@ -273,6 +273,20 @@ public abstract class ar {
         d(paramInt1 - this.n);
         this.m = paramInt2;
         this.n = paramInt1;
+        portDragTo(paramInt1, paramInt2); // PORT-TOUCH
+    }
+
+    /** PORT-TOUCH: pointer dragged to (x, y), absolute screen coordinates. */
+    public void portDragTo(int paramInt1, int paramInt2) {
+    }
+
+    /** PORT-TOUCH: label of soft key 0 = left, 1 = centre, 2 = right; null when there is none. */
+    public String portSoftLabel(int paramInt) {
+        de localde = this.a[paramInt];
+        if (localde instanceof da) {
+            return ((da) localde).portLabel();
+        }
+        return null;
     }
 
     public void a(int paramInt) {

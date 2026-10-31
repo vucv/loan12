@@ -435,6 +435,94 @@ public class aa
         return true;
     }
 
+    // PORT-TOUCH: walking to a tapped place, one road (= one arrow key) at a time
+    private int[] portPath = new int[64];
+    private int portPathLen;
+    private int portPathPos;
+
+    public void a(int paramInt1, int paramInt2) {
+        this.portPathLen = 0;
+        if (this.f != 0) {
+            return;
+        }
+        int i = -1;
+        int j = 484;
+        int k;
+        for (k = 0; k < this.z.length; k++) {
+            if (this.z[k].d) {
+                int m = this.g + this.z[k].b - paramInt1;
+                int n = this.a_ + this.z[k].c - paramInt2;
+                if (m * m + n * n < j) {
+                    j = m * m + n * n;
+                    i = k;
+                }
+            }
+        }
+        if ((i < 0) || (i == this.B)) {
+            return;
+        }
+        int i1 = this.z.length;
+        int[] arrayOfInt1 = new int[i1];
+        int[] arrayOfInt2 = new int[i1];
+        int[] arrayOfInt3 = new int[i1];
+        for (k = 0; k < i1; k++) {
+            arrayOfInt1[k] = -2;
+        }
+        int i2 = 0;
+        int i3 = 0;
+        arrayOfInt3[i3++] = this.B;
+        arrayOfInt1[this.B] = -1;
+        while ((i2 < i3) && (arrayOfInt1[i] == -2)) {
+            int i4 = arrayOfInt3[i2++];
+            for (int i5 = 0; i5 < 4; i5++) {
+                int i6 = bq.c[i4][i5];
+                if ((i6 >= 0) && (i6 < this.A.length) && (this.A[i6].c)) {
+                    int i7 = this.A[i6].a == i4 ? this.A[i6].b : this.A[i6].a;
+                    if ((i7 >= 0) && (i7 < i1) && (arrayOfInt1[i7] == -2)) {
+                        arrayOfInt1[i7] = i4;
+                        arrayOfInt2[i7] = i5;
+                        arrayOfInt3[i3++] = i7;
+                    }
+                }
+            }
+        }
+        if (arrayOfInt1[i] == -2) {
+            return;
+        }
+        int i8 = 0;
+        for (k = i; arrayOfInt1[k] != -1; k = arrayOfInt1[k]) {
+            i8++;
+        }
+        if (i8 > this.portPath.length) {
+            return;
+        }
+        int i9 = i8;
+        for (k = i; arrayOfInt1[k] != -1; k = arrayOfInt1[k]) {
+            this.portPath[--i9] = arrayOfInt2[k];
+        }
+        this.portPathLen = i8;
+        this.portPathPos = 0;
+        portWalk();
+    }
+
+    private void portWalk() {
+        if (this.portPathPos >= this.portPathLen) {
+            return;
+        }
+        if ((this.f != 0) && (this.f != 1)) {
+            this.portPathLen = 0; // something happened on the way (event, encounter): stop
+            return;
+        }
+        if ((this.f != 0) || (cz.d().e.d != null)) {
+            return; // still on the road, or a dialog is open
+        }
+        int i = this.portPath[this.portPathPos++];
+        a(i == 0 ? 12 : (i == 1 ? 13 : (i == 2 ? 14 : 15)));
+        if (this.f != 1) {
+            this.portPathLen = 0;
+        }
+    }
+
     public void a(int paramInt) {
         if (this.f == 1) {
             return;
@@ -827,6 +915,7 @@ public class aa
 
     public void a() {
         Object localObject;
+        portWalk(); // PORT-TOUCH
         if (this.ak) {
             this.ak = false;
             this.an = bg.t();

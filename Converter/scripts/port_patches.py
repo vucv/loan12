@@ -307,6 +307,428 @@ rep('com/mg/smsgame/main/MGMIDlet.java', '''        f().platformRequest(paramStr
 rep('com/mic/smsgame/suquan/q.java', 'if ((paramInt2 >= i) && (paramInt2 <= i + 76)) {',
     'if ((paramInt2 >= i) && (paramInt2 < i + 76)) { // PORT-FIX (original bug): was <= (row 2 does not exist)')
 
+# =============================================================================================
+# PORT-TOUCH: finger-friendly controls for modern touch screens. The game already supported
+# touch (Nokia stylus phones); these changes make it comfortable with fingers.
+# ---------------------------------------------------------------------------------------------
+# 1. drags reach the screens: cz.pointerDragged -> bv.portDrag -> cx.s/cx.t -> ar.a_ (the game had
+#    the plumbing for drags - scrolling text lists - but never received pointerDragged)
+rep('game/cz.java', """    protected void pointerReleased(int paramInt1, int paramInt2) {
+        if (this.e != null) {
+            this.e.c(paramInt1 - cx.j, paramInt2 - cx.k);
+        }
+    }
+""", """    protected void pointerReleased(int paramInt1, int paramInt2) {
+        if (this.e != null) {
+            this.e.c(paramInt1 - cx.j, paramInt2 - cx.k);
+        }
+    }
+
+    protected void pointerDragged(int paramInt1, int paramInt2) { // PORT-TOUCH
+        if (this.e != null) {
+            this.e.portDrag(paramInt1 - cx.j, paramInt2 - cx.k);
+        }
+    }
+""")
+rep('game/bv.java', """    public abstract void m();
+}""", """    public abstract void m();
+
+    /** PORT-TOUCH: pointer drag (screen coordinates), consumed by the active screen's update. */
+    public final void portDrag(int paramInt1, int paramInt2) {
+        if (this.a) {
+            return;
+        }
+        cx.s = paramInt1;
+        cx.t = paramInt2;
+    }
+
+    /** PORT-TOUCH: tells the host the soft keys of the active dialog / screen (shown on big touch buttons). */
+    private void portPublishSoftKeys() {
+        ar localar = null;
+        if ((!this.l) || (this.i == null)) {
+            if (this.d != null) {
+                localar = this.d;
+            } else {
+                localar = this.b;
+            }
+        }
+        if (localar == null) {
+            j2me.Host.setSoftKeys(null, null, null);
+        } else {
+            j2me.Host.setSoftKeys(localar.portSoftLabel(0), localar.portSoftLabel(1), localar.portSoftLabel(2));
+        }
+    }
+}""")
+rep('game/bv.java', """    public final void a() {
+        if (this.q > 0) {""", """    public final void a() {
+        portPublishSoftKeys(); // PORT-TOUCH
+        if (this.q > 0) {""")
+
+# 2. base screen: press, then drag, then release (a quick swipe can arrive within one game tick);
+#    release y was read from the x variable (original bug, harmless until releases are used)
+rep('game/ar.java', """            i = cx.q;
+            j = cx.q;
+            if ((i > -1) && (j > -1)) {
+                e(i, j);
+                cx.q = cx.r = -1;
+            }
+            i = cx.s;
+            j = cx.t;
+            if ((i > -1) && (j > -1)) {
+                a_(i, j);
+                cx.s = cx.t = -1;
+            }""", """            i = cx.s; // PORT-TOUCH: drags before the release
+            j = cx.t;
+            if ((i > -1) && (j > -1)) {
+                a_(i, j);
+                cx.s = cx.t = -1;
+            }
+            i = cx.q;
+            j = cx.r; // PORT-FIX (original bug): was cx.q
+            if ((i > -1) && (j > -1)) {
+                e(i, j);
+                cx.q = cx.r = -1;
+            }""")
+rep('game/ar.java', """    public final void a_(int paramInt1, int paramInt2) {
+        c(paramInt2 - this.m);
+        d(paramInt1 - this.n);
+        this.m = paramInt2;
+        this.n = paramInt1;
+    }""", """    public final void a_(int paramInt1, int paramInt2) {
+        c(paramInt2 - this.m);
+        d(paramInt1 - this.n);
+        this.m = paramInt2;
+        this.n = paramInt1;
+        portDragTo(paramInt1, paramInt2); // PORT-TOUCH
+    }
+
+    /** PORT-TOUCH: pointer dragged to (x, y), absolute screen coordinates. */
+    public void portDragTo(int paramInt1, int paramInt2) {
+    }
+
+    /** PORT-TOUCH: label of soft key 0 = left, 1 = centre, 2 = right; null when there is none. */
+    public String portSoftLabel(int paramInt) {
+        de localde = this.a[paramInt];
+        if (localde instanceof da) {
+            return ((da) localde).portLabel();
+        }
+        return null;
+    }""")
+rep('game/da.java', """    public void a(Graphics paramGraphics) {""", """    public String portLabel() { // PORT-TOUCH
+        return this.f;
+    }
+
+    public void a(Graphics paramGraphics) {""")
+
+# 3. soft keys: the whole third of the soft-key bar is the button (was only the label, 13 px high)
+rep('game/de.java', """    protected int e;
+""", """    protected int e;
+    private int portSlot = -1; // PORT-TOUCH: 0 left, 1 centre, 2 right
+""")
+rep('game/de.java', """    public void a(int paramInt1, int paramInt2, int paramInt3) {
+        this.b = paramInt1;""", """    public void a(int paramInt1, int paramInt2, int paramInt3) {
+        this.portSlot = paramInt3 == 20 ? 0 : (paramInt3 == 17 ? 1 : (paramInt3 == 24 ? 2 : -1)); // PORT-TOUCH
+        this.b = paramInt1;""")
+rep('game/de.java', """    public final boolean a(int paramInt1, int paramInt2) {
+        return (paramInt2 > this.c) && (paramInt1 >= this.b) && (paramInt1 < this.b + this.d);
+    }""", """    public final boolean a(int paramInt1, int paramInt2) {
+        if ((this.portSlot >= 0) && (this.c >= cx.g - 20)) {
+            // PORT-TOUCH: soft-key bar button = its third of the whole bar
+            int i = cx.f / 3;
+            if (paramInt2 <= this.c - 4) {
+                return false;
+            }
+            if (this.portSlot == 0) {
+                return paramInt1 < i;
+            }
+            if (this.portSlot == 2) {
+                return paramInt1 >= cx.f - i;
+            }
+            return (paramInt1 >= i) && (paramInt1 < cx.f - i);
+        }
+        return (paramInt2 > this.c) && (paramInt1 >= this.b) && (paramInt1 < this.b + this.d);
+    }""")
+
+# 4. battle board: one tap selects a gem (was: first tap only moved the cursor), a tap on a neighbour
+#    or a swipe swaps, a tap on the selected gem deselects. The tutorial keeps its original rules.
+replace_method('game/ac.java', 'public void a(int paramInt1, int paramInt2) {', """public void a(int paramInt1, int paramInt2) {
+        int j;
+        this.portSwipe = false;
+        this.portUnselect = false;
+        if (paramInt2 >= cx.g - 15) {
+            int i = cx.f / 3;
+            j = i + i;
+            if (paramInt1 > j) {
+                this.b.g();
+            } else if (paramInt1 > i) {
+                this.b.s();
+            } else {
+                this.b.r();
+            }
+            return;
+        }
+        dl localdl = this.b.h();
+        if (localdl.b(paramInt1, paramInt2)) {
+            j = (paramInt1 - localdl.a) / 21 + 2;
+            int k = (paramInt2 - localdl.b) / 21 + 2;
+            int m = this.b.k();
+            int n = this.b.l();
+            if ((k == m) && (j == n)) {
+                if (this.b.j()) {
+                    this.portUnselect = true; // decided on release: a swipe keeps the selection
+                } else {
+                    this.b.i();
+                }
+            } else if (this.b.portTraining()) {
+                // tutorial: original rules for the other gems (it checks every step)
+                if (this.b.j()) {
+                    int i1 = k - m;
+                    int i2 = j - n;
+                    if (i1 == 1) {
+                        this.b.n();
+                    } else if (i1 == -1) {
+                        this.b.m();
+                    } else if (i2 == 1) {
+                        this.b.p();
+                    } else if (i2 == -1) {
+                        this.b.o();
+                    }
+                    return;
+                } else {
+                    this.b.c(k, j);
+                }
+            } else if ((this.b.j()) && (Math.abs(k - m) + Math.abs(j - n) == 1)) {
+                if (k - m == 1) {
+                    this.b.n();
+                } else if (k - m == -1) {
+                    this.b.m();
+                } else if (j - n == 1) {
+                    this.b.p();
+                } else {
+                    this.b.o();
+                }
+                return;
+            } else {
+                this.b.c(k, j);
+                if ((this.b.k() == k) && (this.b.l() == j) && (!this.b.j())) {
+                    this.b.i();
+                }
+            }
+            this.portSwipe = (this.b.j()) && (this.b.k() == k) && (this.b.l() == j);
+            this.portX = paramInt1;
+            this.portY = paramInt2;
+        }
+    }
+
+    // PORT-TOUCH: swipe state of the current press
+    private boolean portSwipe;
+    private boolean portUnselect;
+    private int portX;
+    private int portY;
+
+    /** PORT-TOUCH: a drag of 8+ pixels from the selected gem swaps it with its neighbour that way. */
+    public void portDrag(int paramInt1, int paramInt2) {
+        if ((!this.portSwipe) || (!this.b.j())) {
+            return;
+        }
+        int i = paramInt1 - this.portX;
+        int j = paramInt2 - this.portY;
+        int k = Math.abs(i);
+        int m = Math.abs(j);
+        if ((k < 8) && (m < 8)) {
+            return;
+        }
+        this.portSwipe = false;
+        this.portUnselect = false;
+        if (k > m) {
+            if (i > 0) {
+                this.b.p();
+            } else {
+                this.b.o();
+            }
+        } else if (j > 0) {
+            this.b.n();
+        } else {
+            this.b.m();
+        }
+    }
+
+    /** PORT-TOUCH: releasing a tap on the already selected gem deselects it. */
+    public void portRelease(int paramInt1, int paramInt2) {
+        if ((this.portUnselect) && (this.b.j())) {
+            this.b.i();
+        }
+        this.portUnselect = false;
+        this.portSwipe = false;
+    }""")
+rep('game/bu.java', """    public di q() {""", """    // PORT-TOUCH: drags / releases go to the human player while the board waits for input
+    public void portDrag(int paramInt1, int paramInt2) {
+        if ((this.v == 8) && (this.s.a() == 0) && ((this.u[0] instanceof ac))) {
+            ((ac) this.u[0]).portDrag(paramInt1, paramInt2);
+        }
+    }
+
+    public void portRelease(int paramInt1, int paramInt2) {
+        if ((this.v == 8) && (this.s.a() == 0) && ((this.u[0] instanceof ac))) {
+            ((ac) this.u[0]).portRelease(paramInt1, paramInt2);
+        }
+    }
+
+    public boolean portTraining() {
+        return this.s.d;
+    }
+
+    /** soft keys of the battle bar: left (skills) and right (pause); the centre ("bag") is the # key */
+    public String portBarLabel(int paramInt) {
+        if (paramInt == 1) {
+            return null;
+        }
+        return this.t.portLabel(paramInt);
+    }
+
+    public di q() {""")
+rep('game/i.java', """    public void a(String paramString, int paramInt) {
+        this.v[paramInt] = paramString;
+    }""", """    public void a(String paramString, int paramInt) {
+        this.v[paramInt] = paramString;
+    }
+
+    public String portLabel(int paramInt) { // PORT-TOUCH
+        return this.v[paramInt];
+    }""")
+rep('com/mic/smsgame/suquan/ab.java', """    public void a(int paramInt1, int paramInt2) {
+        this.e.a(paramInt1, paramInt2);
+    }""", """    public void a(int paramInt1, int paramInt2) {
+        this.e.a(paramInt1, paramInt2);
+    }
+
+    public void portDragTo(int paramInt1, int paramInt2) { // PORT-TOUCH
+        if (this.e != null) {
+            this.e.portDrag(paramInt1, paramInt2);
+        }
+    }
+
+    public void g(int paramInt1, int paramInt2) { // PORT-TOUCH: pointer released
+        if (this.e != null) {
+            this.e.portRelease(paramInt1, paramInt2);
+        }
+    }
+
+    public String portSoftLabel(int paramInt) { // PORT-TOUCH: the battle draws its own soft-key bar
+        if (this.e != null) {
+            return this.e.portBarLabel(paramInt);
+        }
+        return null;
+    }""")
+
+# 5. map: tap a place to walk there along the open roads (the arrows around the hero still work)
+rep('com/mic/smsgame/suquan/aa.java', """    public void a(int paramInt) {
+        if (this.f == 1) {
+            return;
+        }""", """    // PORT-TOUCH: walking to a tapped place, one road (= one arrow key) at a time
+    private int[] portPath = new int[64];
+    private int portPathLen;
+    private int portPathPos;
+
+    public void a(int paramInt1, int paramInt2) {
+        this.portPathLen = 0;
+        if (this.f != 0) {
+            return;
+        }
+        int i = -1;
+        int j = 484;
+        int k;
+        for (k = 0; k < this.z.length; k++) {
+            if (this.z[k].d) {
+                int m = this.g + this.z[k].b - paramInt1;
+                int n = this.a_ + this.z[k].c - paramInt2;
+                if (m * m + n * n < j) {
+                    j = m * m + n * n;
+                    i = k;
+                }
+            }
+        }
+        if ((i < 0) || (i == this.B)) {
+            return;
+        }
+        int i1 = this.z.length;
+        int[] arrayOfInt1 = new int[i1];
+        int[] arrayOfInt2 = new int[i1];
+        int[] arrayOfInt3 = new int[i1];
+        for (k = 0; k < i1; k++) {
+            arrayOfInt1[k] = -2;
+        }
+        int i2 = 0;
+        int i3 = 0;
+        arrayOfInt3[i3++] = this.B;
+        arrayOfInt1[this.B] = -1;
+        while ((i2 < i3) && (arrayOfInt1[i] == -2)) {
+            int i4 = arrayOfInt3[i2++];
+            for (int i5 = 0; i5 < 4; i5++) {
+                int i6 = bq.c[i4][i5];
+                if ((i6 >= 0) && (i6 < this.A.length) && (this.A[i6].c)) {
+                    int i7 = this.A[i6].a == i4 ? this.A[i6].b : this.A[i6].a;
+                    if ((i7 >= 0) && (i7 < i1) && (arrayOfInt1[i7] == -2)) {
+                        arrayOfInt1[i7] = i4;
+                        arrayOfInt2[i7] = i5;
+                        arrayOfInt3[i3++] = i7;
+                    }
+                }
+            }
+        }
+        if (arrayOfInt1[i] == -2) {
+            return;
+        }
+        int i8 = 0;
+        for (k = i; arrayOfInt1[k] != -1; k = arrayOfInt1[k]) {
+            i8++;
+        }
+        if (i8 > this.portPath.length) {
+            return;
+        }
+        int i9 = i8;
+        for (k = i; arrayOfInt1[k] != -1; k = arrayOfInt1[k]) {
+            this.portPath[--i9] = arrayOfInt2[k];
+        }
+        this.portPathLen = i8;
+        this.portPathPos = 0;
+        portWalk();
+    }
+
+    private void portWalk() {
+        if (this.portPathPos >= this.portPathLen) {
+            return;
+        }
+        if ((this.f != 0) && (this.f != 1)) {
+            this.portPathLen = 0; // something happened on the way (event, encounter): stop
+            return;
+        }
+        if ((this.f != 0) || (cz.d().e.d != null)) {
+            return; // still on the road, or a dialog is open
+        }
+        int i = this.portPath[this.portPathPos++];
+        a(i == 0 ? 12 : (i == 1 ? 13 : (i == 2 ? 14 : 15)));
+        if (this.f != 1) {
+            this.portPathLen = 0;
+        }
+    }
+
+    public void a(int paramInt) {
+        if (this.f == 1) {
+            return;
+        }""")
+rep('com/mic/smsgame/suquan/aa.java', """    public void a() {
+        Object localObject;
+        if (this.ak) {""", """    public void a() {
+        Object localObject;
+        portWalk(); // PORT-TOUCH
+        if (this.ak) {""")
+
+# 6. tutorial texts mention touch as well as keys
+rep('game/w.java', '"Hãy bấm phím (5) hoặc phím OK để chọn thanh kiếm0*#"', '"Hãy chạm vào thanh kiếm (hoặc bấm phím 5) để chọn0*#"')
+rep('game/w.java', '"Bấm phím (8) hoặc phím xuống để di chuyển xuống"', '"Vuốt xuống hoặc chạm ô bên dưới (phím 8) để đổi chỗ"')
+rep('game/w.java', '"Tướng quân đã được thưởng 1 vật phẩm, hãy bấm phím # để chọn và sử dụng vật phẩm."', "\"Tướng quân đã được thưởng 1 vật phẩm, hãy chạm 'Túi' (hoặc bấm phím #) để chọn và sử dụng vật phẩm.\"")
+
 # ---------------------------------------------------------------------------------------------
 # time and system properties come from the host backend (Unity: real clock; test harness: virtual
 # clock, which makes test runs reproducible - Random is seeded from the clock)

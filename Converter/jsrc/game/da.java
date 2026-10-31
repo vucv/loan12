@@ -12,6 +12,10 @@ public class da
         this.d = bz.c.a(paramString);
     }
 
+    public String portLabel() { // PORT-TOUCH
+        return this.f;
+    }
+
     public void a(Graphics paramGraphics) {
         if (this.a > 0) {
             bz.c.a(paramGraphics, this.f, this.b, this.c + 1, 0);

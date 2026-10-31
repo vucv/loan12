@@ -7,6 +7,13 @@ namespace Loan12
 {
     public class C_ac : C_ch
     {
+        // decided on release: a swipe keeps the selection
+        // tutorial: original rules for the other gems (it checks every step)
+        // PORT-TOUCH: swipe state of the current press
+        private bool f_portSwipe;
+        private bool f_portUnselect;
+        private int f_portX;
+        private int f_portY;
 
         public C_ac(C_bu parambu, int paramInt) : base(parambu, paramInt)
         {
@@ -46,6 +53,8 @@ namespace Loan12
         public override void a(int paramInt1, int paramInt2)
         {
             int j = 0;
+            this.f_portSwipe = false;
+            this.f_portUnselect = false;
             if ((paramInt2 >= C_cx.f_g - 15))
             {
                 int i = C_cx.f_f / 3;
@@ -73,34 +82,128 @@ namespace Loan12
                 int n = this.f_b.l();
                 if ((k == m) && (j == n))
                 {
-                    this.f_b.i();
+                    if (this.f_b.j())
+                    {
+                        this.f_portUnselect = true;
+                        // decided on release: a swipe keeps the selection
+                    }
+                    else
+                    {
+                        this.f_b.i();
+                    }
                 }
-                else if (this.f_b.j())
+                else if (this.f_b.portTraining())
                 {
-                    int i1 = k - m;
-                    int i2 = j - n;
-                    if (i1 == 1)
+                    // tutorial: original rules for the other gems (it checks every step)
+                    if (this.f_b.j())
+                    {
+                        int i1 = k - m;
+                        int i2 = j - n;
+                        if (i1 == 1)
+                        {
+                            this.f_b.n();
+                        }
+                        else if (i1 == -1)
+                        {
+                            this.f_b.m();
+                        }
+                        else if (i2 == 1)
+                        {
+                            this.f_b.p();
+                        }
+                        else if (i2 == -1)
+                        {
+                            this.f_b.o();
+                        }
+                        return;
+                    }
+                    else
+                    {
+                        this.f_b.c(k, j);
+                    }
+                }
+                else if ((this.f_b.j()) && (J2ME.JMath.abs(k - m) + J2ME.JMath.abs(j - n) == 1))
+                {
+                    if (k - m == 1)
                     {
                         this.f_b.n();
                     }
-                    else if (i1 == -1)
+                    else if (k - m == -1)
                     {
                         this.f_b.m();
                     }
-                    else if (i2 == 1)
+                    else if (j - n == 1)
                     {
                         this.f_b.p();
                     }
-                    else if (i2 == -1)
+                    else
                     {
                         this.f_b.o();
                     }
+                    return;
                 }
                 else
                 {
                     this.f_b.c(k, j);
+                    if ((this.f_b.k() == k) && (this.f_b.l() == j) && (!this.f_b.j()))
+                    {
+                        this.f_b.i();
+                    }
+                }
+                this.f_portSwipe = (this.f_b.j()) && (this.f_b.k() == k) && (this.f_b.l() == j);
+                this.f_portX = paramInt1;
+                this.f_portY = paramInt2;
+            }
+        }
+
+        // PORT-TOUCH: swipe state of the current press
+        /** PORT-TOUCH: a drag of 8+ pixels from the selected gem swaps it with its neighbour that way. */
+        public void portDrag(int paramInt1, int paramInt2)
+        {
+            if ((!this.f_portSwipe) || (!this.f_b.j()))
+            {
+                return;
+            }
+            int i = paramInt1 - this.f_portX;
+            int j = paramInt2 - this.f_portY;
+            int k = J2ME.JMath.abs(i);
+            int m = J2ME.JMath.abs(j);
+            if (((k < 8)) && ((m < 8)))
+            {
+                return;
+            }
+            this.f_portSwipe = false;
+            this.f_portUnselect = false;
+            if ((k > m))
+            {
+                if ((i > 0))
+                {
+                    this.f_b.p();
+                }
+                else
+                {
+                    this.f_b.o();
                 }
             }
+            else if ((j > 0))
+            {
+                this.f_b.n();
+            }
+            else
+            {
+                this.f_b.m();
+            }
+        }
+
+        /** PORT-TOUCH: releasing a tap on the already selected gem deselects it. */
+        public void portRelease(int paramInt1, int paramInt2)
+        {
+            if ((this.f_portUnselect) && (this.f_b.j()))
+            {
+                this.f_b.i();
+            }
+            this.f_portUnselect = false;
+            this.f_portSwipe = false;
         }
 
         public override void a()

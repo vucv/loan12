@@ -84,6 +84,25 @@ public class ab
         this.e.a(paramInt1, paramInt2);
     }
 
+    public void portDragTo(int paramInt1, int paramInt2) { // PORT-TOUCH
+        if (this.e != null) {
+            this.e.portDrag(paramInt1, paramInt2);
+        }
+    }
+
+    public void g(int paramInt1, int paramInt2) { // PORT-TOUCH: pointer released
+        if (this.e != null) {
+            this.e.portRelease(paramInt1, paramInt2);
+        }
+    }
+
+    public String portSoftLabel(int paramInt) { // PORT-TOUCH: the battle draws its own soft-key bar
+        if (this.e != null) {
+            return this.e.portBarLabel(paramInt);
+        }
+        return null;
+    }
+
     public void a() {
         this.e.c();
         this.d.d();

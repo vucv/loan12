@@ -115,6 +115,8 @@ namespace UnityEngine
         public static float Clamp(float value, float min, float max) { return value; }
         public static int Clamp(int value, int min, int max) { return value; }
         public static float Clamp01(float value) { return value; }
+        public static float Sqrt(float f) { return f; }
+        public static float Max(params float[] values) { return 0; }
         public static int FloorToInt(float f) { return 0; }
         public static int RoundToInt(float f) { return 0; }
         public static float Floor(float f) { return f; }
@@ -153,6 +155,7 @@ namespace UnityEngine
         public static float dpi { get { return 0; } }
         public static Rect safeArea { get { return default(Rect); } }
         public static ScreenOrientation orientation { get; set; }
+        public static int sleepTimeout { get; set; }
     }
 
     public static class Resources
@@ -209,6 +212,7 @@ namespace UnityEngine
         public Unity.Collections.NativeArray<T> GetRawTextureData<T>() where T : struct { return default(Unity.Collections.NativeArray<T>); }
         public void Apply(bool updateMipmaps, bool makeNoLongerReadable) { }
         public void Apply() { }
+        public void SetPixels32(Color32[] colors) { }
     }
 
     public enum TextAnchor { UpperLeft = 0, UpperCenter = 1, UpperRight = 2, MiddleLeft = 3, MiddleCenter = 4, MiddleRight = 5, LowerLeft = 6, LowerCenter = 7, LowerRight = 8 }
@@ -233,6 +237,7 @@ namespace UnityEngine
         public GUIStyleState active { get { return null; } set { } }
         public GUIStyleState hover { get { return null; } set { } }
         public RectOffset padding { get { return null; } set { } }
+        public RectOffset border { get { return null; } set { } }
     }
 
     public sealed class GUISkin : ScriptableObject
@@ -301,6 +306,8 @@ namespace UnityEngine
         public static string GetString(string key) { return ""; }
         public static string GetString(string key, string defaultValue) { return defaultValue; }
         public static void SetString(string key, string value) { }
+        public static int GetInt(string key, int defaultValue) { return defaultValue; }
+        public static void SetInt(string key, int value) { }
         public static void DeleteKey(string key) { }
         public static void Save() { }
     }
@@ -528,5 +535,46 @@ namespace UnityEditor.Build.Reporting
     public sealed class BuildReport : UnityEngine.Object
     {
         public BuildSummary summary { get { return default(BuildSummary); } }
+    }
+}
+
+namespace UnityEngine
+{
+    public struct Color32
+    {
+        public byte r, g, b, a;
+        public Color32(byte r, byte g, byte b, byte a) { this.r = r; this.g = g; this.b = b; this.a = a; }
+    }
+
+    public sealed class SleepTimeout
+    {
+        public const int NeverSleep = -1;
+        public const int SystemSetting = -2;
+    }
+
+    public enum TouchScreenKeyboardType { Default = 0, ASCIICapable = 1, NumbersAndPunctuation = 2, URL = 3, NumberPad = 4, PhonePad = 5, NamePhonePad = 6, EmailAddress = 7 }
+
+    public class TouchScreenKeyboard
+    {
+        public enum Status { Visible = 0, Done = 1, Canceled = 2, LostFocus = 3 }
+        public static bool isSupported { get { return false; } }
+        public static TouchScreenKeyboard Open(string text, TouchScreenKeyboardType keyboardType = TouchScreenKeyboardType.Default, bool autocorrection = true, bool multiline = false, bool secure = false, bool alert = false, string textPlaceholder = "", int characterLimit = 0) { return null; }
+        public string text { get; set; }
+        public bool active { get; set; }
+        public Status status { get { return Status.Visible; } }
+    }
+
+    public class AndroidJavaObject : System.IDisposable
+    {
+        public AndroidJavaObject(string className, params object[] args) { }
+        public void Dispose() { }
+        public ReturnType Call<ReturnType>(string methodName, params object[] args) { return default(ReturnType); }
+        public void Call(string methodName, params object[] args) { }
+        public FieldType GetStatic<FieldType>(string fieldName) { return default(FieldType); }
+    }
+
+    public class AndroidJavaClass : AndroidJavaObject
+    {
+        public AndroidJavaClass(string className) : base(className) { }
     }
 }

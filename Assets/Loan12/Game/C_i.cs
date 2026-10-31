@@ -44,6 +44,12 @@ namespace Loan12
             this.f_v[paramInt] = paramString;
         }
 
+        public string portLabel(int paramInt)
+        {
+            // PORT-TOUCH
+            return this.f_v[paramInt];
+        }
+
         public void a()
         {
             this.f_w = 0;

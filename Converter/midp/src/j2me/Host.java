@@ -80,6 +80,15 @@ public final class Host {
         return backend.currentTimeMillis();
     }
 
+    /** Labels of the game's soft keys (left, centre, right; null = none), for the host's touch buttons. */
+    public static String[] softKeyLabels = new String[3];
+
+    public static void setSoftKeys(String left, String centre, String right) {
+        softKeyLabels[0] = left;
+        softKeyLabels[1] = centre;
+        softKeyLabels[2] = right;
+    }
+
     /** System.getProperty for the game: answered by the backend (null when unknown). */
     public static String property(String key) {
         return backend != null ? backend.getProperty(key) : null;

@@ -86,6 +86,8 @@ namespace Loan12
 
         public void a()
         {
+            this.portPublishSoftKeys();
+            // PORT-TOUCH
             if ((this.f_q > 0))
             {
                 this.f_q -= 1;
@@ -478,6 +480,42 @@ namespace Loan12
         public abstract void l();
 
         public abstract void m();
+
+        /** PORT-TOUCH: pointer drag (screen coordinates), consumed by the active screen's update. */
+        public void portDrag(int paramInt1, int paramInt2)
+        {
+            if (this.f_a)
+            {
+                return;
+            }
+            C_cx.f_s = paramInt1;
+            C_cx.f_t = paramInt2;
+        }
+
+        /** PORT-TOUCH: tells the host the soft keys of the active dialog / screen (shown on big touch buttons). */
+        private void portPublishSoftKeys()
+        {
+            C_ar localar = null;
+            if ((!this.f_l) || (this.f_i == null))
+            {
+                if (this.f_d != null)
+                {
+                    localar = this.f_d;
+                }
+                else
+                {
+                    localar = this.f_b;
+                }
+            }
+            if (localar == null)
+            {
+                Host.setSoftKeys(null, null, null);
+            }
+            else
+            {
+                Host.setSoftKeys(localar.portSoftLabel(0), localar.portSoftLabel(1), localar.portSoftLabel(2));
+            }
+        }
 
         public abstract void b(int paramInt1, int paramInt2); // from interface b
     }

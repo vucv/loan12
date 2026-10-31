@@ -252,6 +252,25 @@ namespace HarnessCs
                         Advance(200);
                         break;
                     }
+                    case "drag":
+                    {
+                        // drag x1 y1 x2 y2: press, move in 5 steps, release (a finger swipe)
+                        string[] d = arg.Split(new[] {' ', '\t'}, StringSplitOptions.RemoveEmptyEntries);
+                        int x1 = int.Parse(d[0]), y1 = int.Parse(d[1]), x2 = int.Parse(d[2]), y2 = int.Parse(d[3]);
+                        Host.pointerPressed(x1, y1);
+                        Advance(40);
+                        for (int st = 1; st <= 5; st++)
+                        {
+                            Host.pointerDragged(x1 + (x2 - x1) * st / 5, y1 + (y2 - y1) * st / 5);
+                            Advance(20);
+                        }
+                        Host.pointerReleased(x2, y2);
+                        Advance(200);
+                        break;
+                    }
+                    case "softkeys":
+                        Console.WriteLine("softkeys: " + (Host.softKeyLabels[0] ?? "null") + " | " + (Host.softKeyLabels[1] ?? "null") + " | " + (Host.softKeyLabels[2] ?? "null"));
+                        break;
                     case "shot":
                         Shot(arg);
                         break;
@@ -331,7 +350,8 @@ namespace HarnessCs
             long seed = long.Parse(q[0]);
             int steps = int.Parse(q[1]);
             int shotEvery = int.Parse(q[2]);
-            bool win = q.Length > 3 && q[3] == "win";
+            bool win = q.Length > 3 && (q[3] == "win" || q[3] == "touchwin");
+            touchBot = q.Length > 3 && q[3] == "touchwin";
             J2ME.Random r = new J2ME.Random(seed);
             monkeyMode = true;
             for (int k = 0; k < steps; k++)
@@ -407,6 +427,7 @@ namespace HarnessCs
 
         static int weakened;
         static int botMoves;
+        static bool touchBot;
 
         /// <summary>Test bot: on the player's turn (board waiting for input) play a valid move, preferring sword matches.</summary>
         static bool BotMove()
@@ -455,7 +476,38 @@ namespace HarnessCs
                 }
             }
             Loan12.SQ_a mv = (Loan12.SQ_a) moves.b(pick);
-            board.a(mv.f_a, mv.f_b, mv.f_c, mv.f_d);
+            if (touchBot)
+            {
+                // play the move with the finger: alternately a swipe, or a tap on the gem and a tap on its neighbour
+                Loan12.C_dl r = board.h();
+                int x1 = r.f_a + (mv.f_b - 2) * 21 + 10, y1 = r.f_b + (mv.f_a - 2) * 21 + 10;
+                int x2 = r.f_a + (mv.f_d - 2) * 21 + 10, y2 = r.f_b + (mv.f_c - 2) * 21 + 10;
+                if (botMoves % 2 == 0)
+                {
+                    Host.pointerPressed(x1, y1);
+                    Advance(40);
+                    for (int s4 = 1; s4 <= 4; s4++)
+                    {
+                        Host.pointerDragged(x1 + (x2 - x1) * s4 / 4, y1 + (y2 - y1) * s4 / 4);
+                        Advance(20);
+                    }
+                    Host.pointerReleased(x2, y2);
+                }
+                else
+                {
+                    Host.pointerPressed(x1, y1);
+                    Advance(60);
+                    Host.pointerReleased(x1, y1);
+                    Advance(120);
+                    Host.pointerPressed(x2, y2);
+                    Advance(60);
+                    Host.pointerReleased(x2, y2);
+                }
+            }
+            else
+            {
+                board.a(mv.f_a, mv.f_b, mv.f_c, mv.f_d);
+            }
             botMoves++;
             return true;
         }

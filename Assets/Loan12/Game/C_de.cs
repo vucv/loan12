@@ -12,7 +12,14 @@ namespace Loan12
         public int f_c;
         public int f_d;
         public int f_e;
+        private int f_portSlot;
 
+        private void __init_C_de()
+        {
+            this.f_portSlot = -1;
+        }
+
+        // PORT-TOUCH: 0 left, 1 centre, 2 right
         public int a()
         {
             return this.f_e;
@@ -20,11 +27,14 @@ namespace Loan12
 
         public C_de(int paramInt)
         {
+            this.__init_C_de();
             this.f_e = paramInt;
         }
 
         public void a(int paramInt1, int paramInt2, int paramInt3)
         {
+            this.f_portSlot = (paramInt3 == 20 ? 0 : ((paramInt3 == 17 ? 1 : ((paramInt3 == 24 ? 2 : -1)))));
+            // PORT-TOUCH
             this.f_b = paramInt1;
             switch ((paramInt3))
             {
@@ -40,6 +50,24 @@ namespace Loan12
 
         public bool a(int paramInt1, int paramInt2)
         {
+            if (((this.f_portSlot >= 0)) && ((this.f_c >= C_cx.f_g - 20)))
+            {
+                // PORT-TOUCH: soft-key bar button = its third of the whole bar
+                int i = C_cx.f_f / 3;
+                if ((paramInt2 <= this.f_c - 4))
+                {
+                    return false;
+                }
+                if (this.f_portSlot == 0)
+                {
+                    return (paramInt1 < i);
+                }
+                if (this.f_portSlot == 2)
+                {
+                    return (paramInt1 >= C_cx.f_f - i);
+                }
+                return ((paramInt1 >= i)) && ((paramInt1 < C_cx.f_f - i));
+            }
             return ((paramInt2 > this.f_c)) && ((paramInt1 >= this.f_b)) && ((paramInt1 < this.f_b + this.f_d));
         }
 

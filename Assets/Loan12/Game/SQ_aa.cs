@@ -62,6 +62,19 @@ namespace Loan12
         private C_bk f_ar;
         public static bool f_d;
         public static bool f_e;
+        // PORT-FIX: overload (was bound to the static accessor)
+        // PORT-FIX: hoisted (decompiler scope bug)
+        //Main node
+        // PORT-FIX: was `aq[0] = aq[1] = true` garbled by JD-Core
+        // PORT-FIX: hoisted (decompiler scope bug)
+        // PORT-FIX: hoisted (decompiler scope bug)
+        // PORT-FIX: hoisted (decompiler scope bug)
+        //Paint
+        // PORT-FIX: hoisted (decompiler scope bug)
+        // PORT-TOUCH: walking to a tapped place, one road (= one arrow key) at a time
+        private int[] f_portPath;
+        private int f_portPathLen;
+        private int f_portPathPos;
 
         static SQ_aa()
         {
@@ -74,6 +87,7 @@ namespace Loan12
             this.f_f = -1;
             this.f_B = 0;
             this.f_ah = true;
+            this.f_portPath = new int[64];
         }
 
         public SQ_aa()
@@ -474,6 +488,112 @@ namespace Loan12
             this.f_g -= i;
             this.f_a_ -= j;
             return true;
+        }
+
+        // PORT-TOUCH: walking to a tapped place, one road (= one arrow key) at a time
+        public override void a(int paramInt1, int paramInt2)
+        {
+            this.f_portPathLen = 0;
+            if (this.f_f != 0)
+            {
+                return;
+            }
+            int i = -1;
+            int j = 484;
+            int k = 0;
+            for (k = 0; (k < this.f_z.Length); k++)
+            {
+                if (this.f_z[k].f_d)
+                {
+                    int m = this.f_g + this.f_z[k].f_b - paramInt1;
+                    int n = this.f_a_ + this.f_z[k].f_c - paramInt2;
+                    if ((m * m + n * n < j))
+                    {
+                        j = m * m + n * n;
+                        i = k;
+                    }
+                }
+            }
+            if (((i < 0)) || (i == this.f_B))
+            {
+                return;
+            }
+            int i1 = this.f_z.Length;
+            int[] arrayOfInt1 = new int[i1];
+            int[] arrayOfInt2 = new int[i1];
+            int[] arrayOfInt3 = new int[i1];
+            for (k = 0; (k < i1); k++)
+            {
+                arrayOfInt1[k] = -2;
+            }
+            int i2 = 0;
+            int i3 = 0;
+            arrayOfInt3[i3++] = this.f_B;
+            arrayOfInt1[this.f_B] = -1;
+            while (((i2 < i3)) && (arrayOfInt1[i] == -2))
+            {
+                int i4 = arrayOfInt3[i2++];
+                for (int i5 = 0; (i5 < 4); i5++)
+                {
+                    int i6 = C_bq.f_c[i4][i5];
+                    if (((i6 >= 0)) && ((i6 < this.f_A.Length)) && (this.f_A[i6].f_c))
+                    {
+                        int i7 = (this.f_A[i6].f_a == i4 ? this.f_A[i6].f_b : this.f_A[i6].f_a);
+                        if (((i7 >= 0)) && ((i7 < i1)) && (arrayOfInt1[i7] == -2))
+                        {
+                            arrayOfInt1[i7] = i4;
+                            arrayOfInt2[i7] = i5;
+                            arrayOfInt3[i3++] = i7;
+                        }
+                    }
+                }
+            }
+            if (arrayOfInt1[i] == -2)
+            {
+                return;
+            }
+            int i8 = 0;
+            for (k = i; arrayOfInt1[k] != -1; k = arrayOfInt1[k])
+            {
+                i8++;
+            }
+            if ((i8 > this.f_portPath.Length))
+            {
+                return;
+            }
+            int i9 = i8;
+            for (k = i; arrayOfInt1[k] != -1; k = arrayOfInt1[k])
+            {
+                this.f_portPath[--i9] = arrayOfInt2[k];
+            }
+            this.f_portPathLen = i8;
+            this.f_portPathPos = 0;
+            this.portWalk();
+        }
+
+        private void portWalk()
+        {
+            if ((this.f_portPathPos >= this.f_portPathLen))
+            {
+                return;
+            }
+            if ((this.f_f != 0) && (this.f_f != 1))
+            {
+                this.f_portPathLen = 0;
+                // something happened on the way (event, encounter): stop
+                return;
+            }
+            if ((this.f_f != 0) || (C_cz.d().f_e.f_d != null))
+            {
+                return;
+                // still on the road, or a dialog is open
+            }
+            int i = this.f_portPath[this.f_portPathPos++];
+            this.a((i == 0 ? 12 : ((i == 1 ? 13 : ((i == 2 ? 14 : 15))))));
+            if (this.f_f != 1)
+            {
+                this.f_portPathLen = 0;
+            }
         }
 
         public override void a(int paramInt)
@@ -972,6 +1092,8 @@ namespace Loan12
         public override void a()
         {
             object localObject = null;
+            this.portWalk();
+            // PORT-TOUCH
             if (this.f_ak)
             {
                 this.f_ak = false;

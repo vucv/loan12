@@ -244,19 +244,21 @@ namespace Loan12
                     this.d(i, j);
                     C_cx.f_o = C_cx.f_p = -1;
                 }
-                i = C_cx.f_q;
-                j = C_cx.f_q;
-                if (((i > -1)) && ((j > -1)))
-                {
-                    this.e(i, j);
-                    C_cx.f_q = C_cx.f_r = -1;
-                }
                 i = C_cx.f_s;
+                // PORT-TOUCH: drags before the release
                 j = C_cx.f_t;
                 if (((i > -1)) && ((j > -1)))
                 {
                     this.a_(i, j);
                     C_cx.f_s = C_cx.f_t = -1;
+                }
+                i = C_cx.f_q;
+                j = C_cx.f_r;
+                // PORT-FIX (original bug): was cx.q
+                if (((i > -1)) && ((j > -1)))
+                {
+                    this.e(i, j);
+                    C_cx.f_q = C_cx.f_r = -1;
                 }
             }
         }
@@ -370,6 +372,24 @@ namespace Loan12
             this.d(paramInt1 - this.f_n);
             this.f_m = paramInt2;
             this.f_n = paramInt1;
+            this.portDragTo(paramInt1, paramInt2);
+            // PORT-TOUCH
+        }
+
+        /** PORT-TOUCH: pointer dragged to (x, y), absolute screen coordinates. */
+        public virtual void portDragTo(int paramInt1, int paramInt2)
+        {
+        }
+
+        /** PORT-TOUCH: label of soft key 0 = left, 1 = centre, 2 = right; null when there is none. */
+        public virtual string portSoftLabel(int paramInt)
+        {
+            C_de localde = this.f_a[paramInt];
+            if ((localde is C_da))
+            {
+                return (((C_da)(localde))).portLabel();
+            }
+            return null;
         }
 
         public virtual void a(int paramInt)
@@ -384,7 +404,7 @@ namespace Loan12
         {
         }
 
-        public void g(int paramInt1, int paramInt2)
+        public virtual void g(int paramInt1, int paramInt2)
         {
         }
 

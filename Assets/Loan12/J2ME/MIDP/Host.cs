@@ -37,6 +37,8 @@ namespace J2ME
         private static int evCount;
         private static long frameTime;
         private static bool inTick;
+        /** Labels of the game's soft keys (left, centre, right; null = none), for the host's touch buttons. */
+        public static string[] softKeyLabels;
         /** System.getProperty for the game: answered by the backend (null when unknown). */
         /** Graphics for the LCD with clip reset (used for Canvas.paint and GameCanvas.flushGraphics). */
         // ---- MIDlet lifecycle -----------------------------------------------------------------
@@ -70,6 +72,7 @@ namespace J2ME
             Host.evType = new int[64];
             Host.evA = new int[64];
             Host.evB = new int[64];
+            Host.softKeyLabels = new string[3];
             Host.cmdTarget = new Displayable[8];
             Host.cmdCommand = new Command[8];
         }
@@ -101,6 +104,14 @@ namespace J2ME
         public static long now()
         {
             return Host.backend.currentTimeMillis();
+        }
+
+        /** Labels of the game's soft keys (left, centre, right; null = none), for the host's touch buttons. */
+        public static void setSoftKeys(string left, string centre, string right)
+        {
+            Host.softKeyLabels[0] = left;
+            Host.softKeyLabels[1] = centre;
+            Host.softKeyLabels[2] = right;
         }
 
         /** System.getProperty for the game: answered by the backend (null when unknown). */

@@ -51,6 +51,107 @@ public class Run {
                     advance(200);
                     break;
                 }
+                case "drag": {
+                    // drag x1 y1 x2 y2: press, move in 5 steps, release (a finger swipe)
+                    String[] d = arg.split("\\s+");
+                    int x1 = Integer.parseInt(d[0]), y1 = Integer.parseInt(d[1]);
+                    int x2 = Integer.parseInt(d[2]), y2 = Integer.parseInt(d[3]);
+                    Host.pointerPressed(x1, y1);
+                    advance(40);
+                    for (int st = 1; st <= 5; st++) {
+                        Host.pointerDragged(x1 + (x2 - x1) * st / 5, y1 + (y2 - y1) * st / 5);
+                        advance(20);
+                    }
+                    Host.pointerReleased(x2, y2);
+                    advance(200);
+                    break;
+                }
+                case "board": {
+                    // debug: battle board rectangle and cursor
+                    try {
+                        Object canvas = game.cz.a;
+                        Object screens = fld(game.cz.class, "e").get(canvas);
+                        Object cur = fld(game.bv.class, "b").get(screens);
+                        if (cur instanceof com.mic.smsgame.suquan.ab) {
+                            game.bu bu = (game.bu) fld(com.mic.smsgame.suquan.ab.class, "e").get(cur);
+                            game.dl r = bu.h();
+                            System.out.println("board: x=" + fld(game.dl.class, "a").get(r) + " y=" + fld(game.dl.class, "b").get(r)
+                                    + " w=" + fld(game.dl.class, "c").get(r) + " h=" + fld(game.dl.class, "d").get(r)
+                                    + " cursor=" + bu.k() + "," + bu.l() + " selected=" + bu.j() + " state=" + fld(game.bu.class, "v").get(bu));
+                        } else System.out.println("board: not in battle (" + cur + ")");
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
+                    }
+                    break;
+                }
+                case "maptap": {
+                    // debug: on the map, tap the visible town farthest (in roads) from the hero, then report
+                    try {
+                        Object canvas = game.cz.a;
+                        Object screens = fld(game.cz.class, "e").get(canvas);
+                        Object cur = fld(game.bv.class, "b").get(screens);
+                        if (!(cur instanceof com.mic.smsgame.suquan.aa)) {
+                            System.out.println("maptap: not on the map (" + cur + ")");
+                            break;
+                        }
+                        Class<?> ac = com.mic.smsgame.suquan.aa.class;
+                        game.bo[] z = (game.bo[]) fld(ac, "z").get(cur);
+                        int gx = fld(game.ar.class, "g").getInt(cur), gy = fld(game.ar.class, "a_").getInt(cur);
+                        int from = fld(ac, "B").getInt(cur);
+                        // farthest town (in roads) reachable over open roads and visible on screen
+                        game.bl[] A = (game.bl[]) fld(ac, "A").get(cur);
+                        int[] dist = new int[z.length];
+                        java.util.Arrays.fill(dist, -1);
+                        int[] queue = new int[z.length];
+                        int qh = 0, qt = 0;
+                        queue[qt++] = from;
+                        dist[from] = 0;
+                        while (qh < qt) {
+                            int u = queue[qh++];
+                            for (int dir = 0; dir < 4; dir++) {
+                                int e = game.bq.c[u][dir];
+                                if (e < 0 || e >= A.length || !A[e].c) continue;
+                                int v = A[e].a == u ? A[e].b : A[e].a;
+                                if (v >= 0 && v < z.length && dist[v] < 0) { dist[v] = dist[u] + 1; queue[qt++] = v; }
+                            }
+                        }
+                        int best = -1, bestD = 0;
+                        for (int i = 0; i < z.length; i++) {
+                            int sx = gx + z[i].b, sy = gy + z[i].c;
+                            if (!z[i].d || dist[i] <= 0 || sx < 10 || sx > 230 || sy < 20 || sy > 290) continue;
+                            if (dist[i] > bestD) { bestD = dist[i]; best = i; }
+                        }
+                        System.out.println("maptap: reachable towns " + java.util.Arrays.toString(dist));
+                        if (best < 0) { System.out.println("maptap: no visible town"); break; }
+                        int tx = gx + z[best].b, ty = gy + z[best].c;
+                        System.out.println("maptap: hero at town " + from + ", tapping town " + best + " at " + tx + "," + ty);
+                        Host.pointerPressed(tx, ty);
+                        advance(60);
+                        Host.pointerReleased(tx, ty);
+                        advance(200);
+                        System.out.println("maptap: path length " + fld(ac, "portPathLen").getInt(cur) + ", state " + fld(ac, "f").getInt(cur)
+                                + ", pending press " + game.cx.o + "," + game.cx.p + " busy=" + fld(game.bv.class, "a").get(screens)
+                                + " dialog=" + fld(game.bv.class, "d").get(screens));
+
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
+                    }
+                    break;
+                }
+                case "maphero": {
+                    try {
+                        Object cur = fld(game.bv.class, "b").get(fld(game.cz.class, "e").get(game.cz.a));
+                        if (cur instanceof com.mic.smsgame.suquan.aa)
+                            System.out.println("maphero: town " + fld(com.mic.smsgame.suquan.aa.class, "B").getInt(cur) + ", state " + fld(com.mic.smsgame.suquan.aa.class, "f").getInt(cur));
+                        else System.out.println("maphero: not on the map (" + cur + ")");
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
+                    }
+                    break;
+                }
+                case "softkeys":
+                    System.out.println("softkeys: " + Host.softKeyLabels[0] + " | " + Host.softKeyLabels[1] + " | " + Host.softKeyLabels[2]);
+                    break;
                 case "shot":
                     shot(arg);
                     break;
@@ -109,7 +210,8 @@ public class Run {
         long seed = Long.parseLong(q[0]);
         int steps = Integer.parseInt(q[1]);
         int shotEvery = Integer.parseInt(q[2]);
-        boolean win = q.length > 3 && q[3].equals("win");
+        boolean win = q.length > 3 && (q[3].equals("win") || q[3].equals("touchwin"));
+        touchBot = q.length > 3 && q[3].equals("touchwin");
         java.util.Random r = new java.util.Random(seed);
         monkeyMode = true;
         for (int k = 0; k < steps; k++) {
@@ -167,6 +269,7 @@ public class Run {
 
     static int weakened;
     static int botMoves;
+    static boolean touchBot;
 
     /** test bot: on the player's turn (board waiting for input) play a valid move, preferring sword matches. */
     static boolean botMove() {
@@ -196,7 +299,31 @@ public class Run {
                 }
             }
             com.mic.smsgame.suquan.a m = (com.mic.smsgame.suquan.a) moves.b(pick);
-            board.a(m.a, m.b, m.c, m.d);
+            if (touchBot) {
+                // play the move with the finger: alternately a swipe, or a tap on the gem and a tap on its neighbour
+                game.dl r = board.h();
+                int x1 = r.a + (m.b - 2) * 21 + 10, y1 = r.b + (m.a - 2) * 21 + 10;
+                int x2 = r.a + (m.d - 2) * 21 + 10, y2 = r.b + (m.c - 2) * 21 + 10;
+                if (botMoves % 2 == 0) {
+                    Host.pointerPressed(x1, y1);
+                    advance(40);
+                    for (int s4 = 1; s4 <= 4; s4++) {
+                        Host.pointerDragged(x1 + (x2 - x1) * s4 / 4, y1 + (y2 - y1) * s4 / 4);
+                        advance(20);
+                    }
+                    Host.pointerReleased(x2, y2);
+                } else {
+                    Host.pointerPressed(x1, y1);
+                    advance(60);
+                    Host.pointerReleased(x1, y1);
+                    advance(120);
+                    Host.pointerPressed(x2, y2);
+                    advance(60);
+                    Host.pointerReleased(x2, y2);
+                }
+            } else {
+                board.a(m.a, m.b, m.c, m.d);
+            }
             botMoves++;
             return true;
         } catch (Exception e) {
