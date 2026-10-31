@@ -1,5 +1,14 @@
 # Kế hoạch kiếm tiền: quảng cáo thưởng và mua vật phẩm
 
+> **Tài liệu trong thư mục `plan/`:**
+>
+> | Tài liệu | Nội dung |
+> |---|---|
+> | [Kế hoạch kiếm tiền](README.md) | Trang này |
+> | [Thiết kế lại giao diện cho điện thoại cảm ứng](thiet-ke-giao-dien.md) | Toàn màn hình dọc, 8 màn nháp, screen flow |
+>
+> Các màn nháp kiếm tiền dưới đây vẽ trên bố cục cũ (khung 3:4). Bố cục mới xem ở tài liệu thiết kế giao diện.
+
 > **Trạng thái:** ý tưởng và bản nháp, **chưa code**.
 >
 > - Ảnh trong [`mockups/`](mockups/) là giao diện nháp. Chúng được vẽ bằng chính hình, khung và phông chữ của game; ảnh nền là màn hình thật của bản port.
