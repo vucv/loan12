@@ -269,7 +269,7 @@ namespace HarnessCs
                         break;
                     }
                     case "softkeys":
-                        Console.WriteLine("softkeys: " + (Host.softKeyLabels[0] ?? "null") + " | " + (Host.softKeyLabels[1] ?? "null") + " | " + (Host.softKeyLabels[2] ?? "null") + (Host.viewport == null ? "" : " viewport=" + Host.viewport[0] + "," + Host.viewport[1] + "," + Host.viewport[2] + "," + Host.viewport[3]));
+                        Console.WriteLine("softkeys: " + (Host.softKeyLabels[0] ?? "null") + " | " + (Host.softKeyLabels[1] ?? "null") + " | " + (Host.softKeyLabels[2] ?? "null"));
                         break;
                     case "shot":
                         Shot(arg);

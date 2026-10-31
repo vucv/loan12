@@ -280,11 +280,6 @@ public abstract class ar {
     public void portDragTo(int paramInt1, int paramInt2) {
     }
 
-    /** PORT-TOUCH: the part of the screen worth zooming on (x, y, w, h) on tall phones; null = whole screen. */
-    public int[] portViewport() {
-        return null;
-    }
-
     /** PORT-TOUCH: label of soft key 0 = left, 1 = centre, 2 = right; null when there is none. */
     public String portSoftLabel(int paramInt) {
         de localde = this.a[paramInt];

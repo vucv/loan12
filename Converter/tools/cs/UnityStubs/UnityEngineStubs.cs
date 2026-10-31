@@ -86,15 +86,6 @@ namespace UnityEngine
     {
         public float x, y;
         public Vector2(float x, float y) { this.x = x; this.y = y; }
-        public static bool operator ==(Vector2 a, Vector2 b) { return a.x == b.x && a.y == b.y; }
-        public static bool operator !=(Vector2 a, Vector2 b) { return !(a == b); }
-        public override bool Equals(object o) { return false; }
-        public override int GetHashCode() { return 0; }
-    }
-
-    public static class Time
-    {
-        public static float unscaledDeltaTime;
     }
 
     public struct Rect
@@ -120,9 +111,6 @@ namespace UnityEngine
 
     public static class Mathf
     {
-        public static float Abs(float a) { return a; }
-        public static float Lerp(float a, float b, float t) { return a; }
-        public static float Exp(float a) { return a; }
         public static float Min(float a, float b) { return a; }
         public static int Min(int a, int b) { return a; }
         public static float Max(float a, float b) { return a; }
@@ -600,19 +588,4 @@ namespace UnityEngine
     public sealed class WaitForSeconds : YieldInstruction { public WaitForSeconds(float seconds) { } }
     public sealed class Coroutine : YieldInstruction { }
     public static class ScreenCapture { public static void CaptureScreenshot(string filename) { } }
-}
-
-namespace UnityEngine.Device
-{
-    public static class Application
-    {
-        public static bool isMobilePlatform { get { return false; } }
-    }
-
-    public static class Screen
-    {
-        public static UnityEngine.Rect safeArea { get { return default(UnityEngine.Rect); } }
-        public static int sleepTimeout { get; set; }
-        public static UnityEngine.ScreenOrientation orientation { get; set; }
-    }
 }

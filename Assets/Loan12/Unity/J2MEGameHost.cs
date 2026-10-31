@@ -1,7 +1,7 @@
 // Runs the converted MIDlet inside Unity.
 //
 // Every frame: input -> J2ME.Host.tick() (game logic, timers, painting into the 240x320 LCD buffer) ->
-// upload the LCD to a texture -> draw it (IMGUI) full screen, played by touch (an optional on-screen keypad remains).
+// upload the LCD to a texture -> draw it (IMGUI) with an on-screen phone keypad for touch devices.
 // MIDP high-level screens (TextBox for the hero name / phone number, the debug log Form) are shown
 // with IMGUI controls and, on phones, the system keyboard. Input uses IMGUI events, so it works with
 // both the old Input Manager and the new Input System; touches arrive as pointer events (the game
@@ -35,13 +35,8 @@ namespace Loan12.UnityPort
 
         public static J2MEGameHost Instance { get; private set; }
 
-        [Tooltip("On-screen phone keypad (soft keys, D-pad, OK, * and #). Not needed on touch screens: the game is played " +
-                 "by tapping and swiping. Auto = touch devices only.")]
-        public KeypadMode onScreenKeypad = KeypadMode.Never; // renamed from "keypad" (default was Auto) so old scenes get the new default
-
-        [Tooltip("Battle: zoom on the board (the decorative frame is cut) and show the soft keys as big buttons below it, " +
-                 "when the screen is tall enough for that to make the board bigger.")]
-        public bool zoomBattle = true;
+        [Tooltip("On-screen phone keypad: soft keys with the game's labels, D-pad, OK, * and #. Auto = touch devices only.")]
+        public KeypadMode keypad = KeypadMode.Auto;
 
         [Tooltip("Scale the 240x320 screen by whole multiples only (sharper pixels, larger borders).")]
         public bool integerScaling;
@@ -68,16 +63,7 @@ namespace Loan12.UnityPort
         bool keypadHidden;
 
         // layout (GUI coordinates, origin top-left)
-        Rect lcdRect;                                           // where the shown part of the LCD is drawn (animated)
-        Rect lcdSrc = new Rect(0, 0, LcdWidth, LcdHeight);      // shown part of the LCD, in LCD pixels (animated)
-        Rect lcdRectTarget, lcdSrcTarget;
-        bool layoutSnap = true;
-        Vector2 layoutScreen;
-        readonly Rect[] barRects = new Rect[3];                 // soft keys drawn below the zoomed battle
-        bool barVisible;
-        int barHeld = -1;
-        static readonly int[] BarTapX = {20, 120, 220};          // where the game's soft-key labels are (LCD pixels)
-        const int BarTapY = 312;
+        Rect lcdRect;
         Rect toggleRect;
         readonly List<PadButton> pad = new List<PadButton>();
         bool padVisible;
@@ -85,7 +71,7 @@ namespace Loan12.UnityPort
 
         // styles (rebuilt when the screen size changes)
         int styledFor = -1;
-        GUIStyle keyStyle, keyDownStyle, softStyle, softDownStyle, softOffStyle, toggleStyle, barStyle;
+        GUIStyle keyStyle, keyDownStyle, softStyle, softDownStyle, softOffStyle, toggleStyle;
         GUIStyle panelStyle, titleStyle, fieldStyle, buttonStyle, lineStyle;
         readonly List<Texture2D> generated = new List<Texture2D>();
 
@@ -167,10 +153,10 @@ namespace Loan12.UnityPort
             CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
 
             Application.targetFrameRate = 60;
-            if (UnityEngine.Device.Application.isMobilePlatform)
+            if (Application.isMobilePlatform)
             {
-                UnityEngine.Device.Screen.sleepTimeout = SleepTimeout.NeverSleep; // a turn-based game: no dimming while thinking
-                UnityEngine.Device.Screen.orientation = ScreenOrientation.Portrait;
+                Screen.sleepTimeout = SleepTimeout.NeverSleep; // a turn-based game: no dimming while thinking
+                Screen.orientation = ScreenOrientation.Portrait;
             }
             keypadHidden = PlayerPrefs.GetInt(KeypadHiddenPref, 0) == 1;
             EnsureCamera();
@@ -229,6 +215,7 @@ namespace Loan12.UnityPort
         IEnumerator ScreenshotTour(string folder)
         {
             System.IO.Directory.CreateDirectory(folder);
+            keypad = KeypadMode.Always;
             Application.runInBackground = true;
             yield return new WaitForSeconds(7.5f);
             ScreenCapture.CaptureScreenshot(System.IO.Path.Combine(folder, "01_sound.png"));
@@ -240,6 +227,10 @@ namespace Loan12.UnityPort
             yield return TourKey(J2ME.Canvas.KEYCODE_SOFT_RIGHT);
             yield return new WaitForSeconds(3f);
             ScreenCapture.CaptureScreenshot(System.IO.Path.Combine(folder, "03_heroes.png"));
+            KeypadHidden = true;
+            yield return new WaitForSeconds(0.5f);
+            ScreenCapture.CaptureScreenshot(System.IO.Path.Combine(folder, "04_keypad_hidden.png"));
+            KeypadHidden = false;
             yield return new WaitForSeconds(1f);
             Application.Quit();
         }
@@ -270,7 +261,6 @@ namespace Loan12.UnityPort
 
             backend.UpdateAudio();
             UpdateSystemKeyboard();
-            AnimateLayout();
             J2ME.Host.tick();
 
             if (J2ME.Host.screenDirty && J2ME.Host.screen != null)
@@ -406,12 +396,10 @@ namespace Loan12.UnityPort
 
             if (e.type == EventType.Repaint)
             {
-                GUI.DrawTextureWithTexCoords(lcdRect, lcd, new Rect(lcdSrc.x / LcdWidth, 1f - lcdSrc.y / LcdHeight,
-                    lcdSrc.width / LcdWidth, -lcdSrc.height / LcdHeight), false);
+                GUI.DrawTextureWithTexCoords(lcdRect, lcd, new Rect(0f, 1f, 1f, -1f), false);
                 if (!highLevel)
                 {
                     DrawKeypad();
-                    DrawSoftBar();
                 }
             }
 
@@ -430,7 +418,7 @@ namespace Loan12.UnityPort
 
         void ComputeLayout()
         {
-            Rect safe = UnityEngine.Device.Screen.safeArea; // UnityEngine.Device: simulated by the Device Simulator
+            Rect safe = Screen.safeArea;
             // Screen.safeArea is bottom-up; GUI coordinates are top-down
             Rect area = new Rect(safe.x, Screen.height - safe.yMax, safe.width, safe.height);
             if (area.width <= 0 || area.height <= 0)
@@ -438,7 +426,7 @@ namespace Loan12.UnityPort
                 area = new Rect(0, 0, Screen.width, Screen.height);
             }
 
-            padAllowed = onScreenKeypad == KeypadMode.Always || (onScreenKeypad == KeypadMode.Auto && UnityEngine.Device.Application.isMobilePlatform);
+            padAllowed = keypad == KeypadMode.Always || (keypad == KeypadMode.Auto && Application.isMobilePlatform);
             padVisible = padAllowed && !keypadHidden;
             pad.Clear();
             toggleRect = new Rect(0, 0, 0, 0);
@@ -471,42 +459,7 @@ namespace Loan12.UnityPort
             float h = LcdHeight * scale;
             // portrait: keep the screen at the top so the thumbs reach the keys below it
             float top = padVisible && portrait ? lcdArea.y + Mathf.Min((lcdArea.height - h) / 2f, unit * 0.04f) : lcdArea.y + (lcdArea.height - h) / 2f;
-            lcdRectTarget = new Rect(Mathf.Round(lcdArea.x + (lcdArea.width - w) / 2f), Mathf.Round(top), w, h);
-            lcdSrcTarget = new Rect(0, 0, LcdWidth, LcdHeight);
-            barVisible = false;
-
-            // battle on a tall screen: zoom on the board, soft keys as big buttons under it
-            int[] vp = zoomBattle && running && !padVisible ? J2ME.Host.viewport : null;
-            if (vp != null && vp.Length == 4 && vp[2] > 0 && vp[3] > 0)
-            {
-                float barH = Mathf.Clamp(unit * 0.15f, 44f, 150f);
-                float gap = unit * 0.025f;
-                float zs = Mathf.Min(lcdArea.width / vp[2], (lcdArea.height - barH - gap) / vp[3]);
-                if (zs > scale * 1.05f)
-                {
-                    float zw = vp[2] * zs;
-                    float zh = vp[3] * zs;
-                    float ztop = lcdArea.y + (lcdArea.height - (zh + gap + barH)) / 2f;
-                    lcdRectTarget = new Rect(Mathf.Round(lcdArea.x + (lcdArea.width - zw) / 2f), Mathf.Round(ztop), zw, zh);
-                    lcdSrcTarget = new Rect(vp[0], vp[1], vp[2], vp[3]);
-                    barVisible = true;
-                    float margin = unit * 0.03f;
-                    float bw = (area.width - margin * 4) / 3f;
-                    float by = lcdRectTarget.yMax + gap;
-                    for (int i = 0; i < 3; i++)
-                    {
-                        barRects[i] = new Rect(area.x + margin + i * (bw + margin), by, bw, barH);
-                    }
-                }
-            }
-            Vector2 screenNow = new Vector2(Screen.width, Screen.height);
-            if (layoutSnap || screenNow != layoutScreen)
-            {
-                layoutSnap = false;
-                layoutScreen = screenNow;
-                lcdRect = lcdRectTarget;
-                lcdSrc = lcdSrcTarget;
-            }
+            lcdRect = new Rect(Mathf.Round(lcdArea.x + (lcdArea.width - w) / 2f), Mathf.Round(top), w, h);
 
             if (!padAllowed)
             {
@@ -555,56 +508,6 @@ namespace Loan12.UnityPort
                 AddPad(r, rw, ch, 1, 2, PadKind.Key, "#", J2ME.Canvas.KEY_POUND);
                 toggleRect = new Rect(area.xMax - tw - toggleH * 0.3f, area.yMax - toggleH, tw, toggleH * 0.9f);
             }
-        }
-
-        /// <summary>Glides the shown part of the LCD to its target (zooming in / out of the battle).</summary>
-        void AnimateLayout()
-        {
-            if (lcdRectTarget.width <= 0)
-            {
-                return;
-            }
-            float t = 1f - Mathf.Exp(-Time.unscaledDeltaTime * 14f);
-            lcdRect = LerpRect(lcdRect, lcdRectTarget, t);
-            lcdSrc = LerpRect(lcdSrc, lcdSrcTarget, t);
-        }
-
-        static Rect LerpRect(Rect a, Rect b, float t)
-        {
-            if (Mathf.Abs(a.x - b.x) + Mathf.Abs(a.y - b.y) + Mathf.Abs(a.width - b.width) + Mathf.Abs(a.height - b.height) < 0.5f)
-            {
-                return b;
-            }
-            return new Rect(Mathf.Lerp(a.x, b.x, t), Mathf.Lerp(a.y, b.y, t), Mathf.Lerp(a.width, b.width, t), Mathf.Lerp(a.height, b.height, t));
-        }
-
-        void DrawSoftBar()
-        {
-            if (!barVisible)
-            {
-                return;
-            }
-            for (int i = 0; i < 3; i++)
-            {
-                string label = SoftLabel(i);
-                GUI.Box(barRects[i], label ?? "", label == null ? softOffStyle : (barHeld == i ? softDownStyle : barStyle));
-            }
-        }
-
-        int SoftBarAt(Vector2 p)
-        {
-            if (!barVisible)
-            {
-                return -1;
-            }
-            for (int i = 0; i < 3; i++)
-            {
-                if (barRects[i].Contains(p) && SoftLabel(i) != null)
-                {
-                    return i;
-                }
-            }
-            return -1;
         }
 
         void AddPad(Rect area, float cw, float ch, int col, int row, PadKind kind, string label, int code)
@@ -670,8 +573,8 @@ namespace Loan12.UnityPort
 
         void ToLcd(Vector2 p, out int x, out int y)
         {
-            x = Mathf.Clamp(Mathf.FloorToInt(lcdSrc.x + (p.x - lcdRect.x) / lcdRect.width * lcdSrc.width), 0, LcdWidth - 1);
-            y = Mathf.Clamp(Mathf.FloorToInt(lcdSrc.y + (p.y - lcdRect.y) / lcdRect.height * lcdSrc.height), 0, LcdHeight - 1);
+            x = Mathf.Clamp(Mathf.FloorToInt((p.x - lcdRect.x) / lcdRect.width * LcdWidth), 0, LcdWidth - 1);
+            y = Mathf.Clamp(Mathf.FloorToInt((p.y - lcdRect.y) / lcdRect.height * LcdHeight), 0, LcdHeight - 1);
         }
 
         // ---- input ---------------------------------------------------------------------------
@@ -719,16 +622,6 @@ namespace Loan12.UnityPort
                         e.Use();
                         break;
                     }
-                    int bar = SoftBarAt(e.mousePosition);
-                    if (bar >= 0)
-                    {
-                        // a tap on the game's own soft-key label, which the zoom cut off
-                        barHeld = bar;
-                        J2ME.Host.pointerPressed(BarTapX[bar], BarTapY);
-                        Haptics.Tap(haptics);
-                        e.Use();
-                        break;
-                    }
                     int code = PadCodeAt(e.mousePosition);
                     if (code != 0)
                     {
@@ -755,13 +648,7 @@ namespace Loan12.UnityPort
                     }
                     break;
                 case EventType.MouseUp:
-                    if (barHeld >= 0)
-                    {
-                        J2ME.Host.pointerReleased(BarTapX[barHeld], BarTapY);
-                        barHeld = -1;
-                        e.Use();
-                    }
-                    else if (padHeldCode != 0)
+                    if (padHeldCode != 0)
                     {
                         J2ME.Host.keyReleased(padHeldCode);
                         padHeldCode = 0;
@@ -793,11 +680,6 @@ namespace Loan12.UnityPort
             if (pointerOnLcd)
             {
                 pointerOnLcd = false;
-            }
-            if (barHeld >= 0)
-            {
-                J2ME.Host.pointerReleased(BarTapX[barHeld], BarTapY);
-                barHeld = -1;
             }
         }
 
@@ -858,7 +740,7 @@ namespace Loan12.UnityPort
 
         bool UseSystemKeyboard
         {
-            get { return UnityEngine.Device.Application.isMobilePlatform && TouchScreenKeyboard.isSupported; }
+            get { return Application.isMobilePlatform && TouchScreenKeyboard.isSupported; }
         }
 
         /// <summary>Phones: the TextBox is edited with the system keyboard (opened when the TextBox appears).</summary>
@@ -1103,9 +985,6 @@ namespace Loan12.UnityPort
             softStyle = KeyStyle(generated[2], baseSize, new Color(1f, 0.92f, 0.75f), border);
             softDownStyle = KeyStyle(generated[3], baseSize, Color.white, border);
             softOffStyle = KeyStyle(generated[4], baseSize, new Color(0.6f, 0.58f, 0.55f), border);
-            barStyle = KeyStyle(generated[2], baseSize * 5 / 4, new Color(1f, 0.92f, 0.75f), border);
-            softDownStyle.fontSize = Mathf.Max(softDownStyle.fontSize, baseSize * 5 / 4);
-            softOffStyle.fontSize = Mathf.Max(softOffStyle.fontSize, baseSize * 5 / 4);
             toggleStyle = KeyStyle(generated[5], Mathf.Max(10, baseSize * 2 / 3), new Color(0.8f, 0.78f, 0.74f), border);
 
             panelStyle = new GUIStyle(GUI.skin.box);

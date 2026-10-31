@@ -1246,8 +1246,11 @@ public class bu
         return this.s.d;
     }
 
-    /** soft keys of the battle bar: left (skills), centre (bag) and right (pause) */
+    /** soft keys of the battle bar: left (skills) and right (pause); the centre ("bag") is the # key */
     public String portBarLabel(int paramInt) {
+        if (paramInt == 1) {
+            return null;
+        }
         return this.t.portLabel(paramInt);
     }
 

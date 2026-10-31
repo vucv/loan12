@@ -150,7 +150,7 @@ public class Run {
                     break;
                 }
                 case "softkeys":
-                    System.out.println("softkeys: " + Host.softKeyLabels[0] + " | " + Host.softKeyLabels[1] + " | " + Host.softKeyLabels[2] + (Host.viewport == null ? "" : " viewport=" + Host.viewport[0] + "," + Host.viewport[1] + "," + Host.viewport[2] + "," + Host.viewport[3]));
+                    System.out.println("softkeys: " + Host.softKeyLabels[0] + " | " + Host.softKeyLabels[1] + " | " + Host.softKeyLabels[2]);
                     break;
                 case "shot":
                     shot(arg);

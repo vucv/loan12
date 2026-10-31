@@ -10,19 +10,6 @@ namespace Loan12
         public C_cq f_c;
         public C_i f_d;
         public C_bu f_e;
-        /* PORT */
-        /* PORT */
-        // PORT-TOUCH
-        // PORT-TOUCH: pointer released
-        // PORT-TOUCH: the battle draws its own soft-key bar
-        /** PORT-TOUCH: the battle zooms on the board and the two portraits (the frame and the soft-key row are cut;
-         *  the host draws the soft keys as big buttons below instead). */
-        private static int[] f_PORT_VIEWPORT;
-
-        static SQ_ab()
-        {
-            SQ_ab.f_PORT_VIEWPORT = new int[] { 28, 0, 184, 286 };
-        }
 
         public SQ_ab()
         {
@@ -125,13 +112,6 @@ namespace Loan12
                 return this.f_e.portBarLabel(paramInt);
             }
             return null;
-        }
-
-        /** PORT-TOUCH: the battle zooms on the board and the two portraits (the frame and the soft-key row are cut;
-         *  the host draws the soft keys as big buttons below instead). */
-        public override int[] portViewport()
-        {
-            return (this.f_e != null ? SQ_ab.f_PORT_VIEWPORT : ((int[])null));
         }
 
         public override void a()

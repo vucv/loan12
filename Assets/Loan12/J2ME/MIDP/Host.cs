@@ -39,8 +39,6 @@ namespace J2ME
         private static bool inTick;
         /** Labels of the game's soft keys (left, centre, right; null = none), for the host's touch buttons. */
         public static string[] softKeyLabels;
-        /** Part of the screen the game wants zoomed on tall phones: {x, y, w, h}, or null for the whole screen. */
-        public static int[] viewport;
         /** System.getProperty for the game: answered by the backend (null when unknown). */
         /** Graphics for the LCD with clip reset (used for Canvas.paint and GameCanvas.flushGraphics). */
         // ---- MIDlet lifecycle -----------------------------------------------------------------
@@ -109,7 +107,6 @@ namespace J2ME
         }
 
         /** Labels of the game's soft keys (left, centre, right; null = none), for the host's touch buttons. */
-        /** Part of the screen the game wants zoomed on tall phones: {x, y, w, h}, or null for the whole screen. */
         public static void setSoftKeys(string left, string centre, string right)
         {
             Host.softKeyLabels[0] = left;

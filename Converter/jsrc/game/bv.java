@@ -402,10 +402,8 @@ public abstract class bv
         }
         if (localar == null) {
             j2me.Host.setSoftKeys(null, null, null);
-            j2me.Host.viewport = null;
         } else {
             j2me.Host.setSoftKeys(localar.portSoftLabel(0), localar.portSoftLabel(1), localar.portSoftLabel(2));
-            j2me.Host.viewport = localar.portViewport();
         }
     }
 }
