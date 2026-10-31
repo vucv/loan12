@@ -62,6 +62,27 @@ namespace Loan12.UnityPort.EditorTools
             }
         }
 
+        /// <summary>macOS player (Builds/Mac/Loan12.app), e.g. to run "-loan12-shots &lt;folder&gt;" screenshot tours.</summary>
+        public static void BuildMac()
+        {
+            if (!File.Exists(Loan12ProjectSetup.ScenePath))
+            {
+                Loan12ProjectSetup.CreateScene(false);
+            }
+            BuildPlayerOptions options = new BuildPlayerOptions();
+            options.scenes = new[] {Loan12ProjectSetup.ScenePath};
+            options.locationPathName = ArgValue("-app") ?? "Builds/Mac/Loan12.app";
+            options.target = BuildTarget.StandaloneOSX;
+            options.targetGroup = BuildTargetGroup.Standalone;
+            options.options = BuildOptions.None;
+            BuildReport report = BuildPipeline.BuildPlayer(options);
+            Debug.Log("Loan12: macOS build " + report.summary.result);
+            if (Application.isBatchMode)
+            {
+                EditorApplication.Exit(report.summary.result == BuildResult.Succeeded ? 0 : 1);
+            }
+        }
+
         static string ArgValue(string name)
         {
             string[] args = Environment.GetCommandLineArgs();

@@ -6,6 +6,7 @@
 // with IMGUI controls and, on phones, the system keyboard. Input uses IMGUI events, so it works with
 // both the old Input Manager and the new Input System; touches arrive as pointer events (the game
 // handles taps and swipes itself).
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using Unity.Collections;
@@ -185,6 +186,62 @@ namespace Loan12.UnityPort
             J2ME.Host.init(backend, LcdWidth, LcdHeight);
             J2ME.Host.start(new SQMidlet());
             running = true;
+
+            string shots = CommandLineValue("-loan12-shots");
+            if (shots != null)
+            {
+                StartCoroutine(ScreenshotTour(shots));
+            }
+        }
+
+        static string CommandLineValue(string name)
+        {
+            string[] args = System.Environment.GetCommandLineArgs();
+            for (int i = 0; i < args.Length - 1; i++)
+            {
+                if (args[i] == name)
+                {
+                    return args[i + 1];
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Developer aid ("-loan12-shots <folder>" on the command line): plays the first screens with key
+        /// presses, saves screenshots of the touch layout (keypad forced on) and quits. Lets the phone UI be
+        /// checked from a desktop build. Never active otherwise.
+        /// </summary>
+        IEnumerator ScreenshotTour(string folder)
+        {
+            System.IO.Directory.CreateDirectory(folder);
+            keypad = KeypadMode.Always;
+            Application.runInBackground = true;
+            yield return new WaitForSeconds(7.5f);
+            ScreenCapture.CaptureScreenshot(System.IO.Path.Combine(folder, "01_sound.png"));
+            yield return TourKey(J2ME.Canvas.KEYCODE_FIRE);
+            yield return new WaitForSeconds(5f);
+            ScreenCapture.CaptureScreenshot(System.IO.Path.Combine(folder, "02_menu.png"));
+            yield return TourKey(J2ME.Canvas.KEYCODE_FIRE);
+            yield return new WaitForSeconds(3f);
+            yield return TourKey(J2ME.Canvas.KEYCODE_SOFT_RIGHT);
+            yield return new WaitForSeconds(3f);
+            ScreenCapture.CaptureScreenshot(System.IO.Path.Combine(folder, "03_heroes.png"));
+            KeypadHidden = true;
+            yield return new WaitForSeconds(0.5f);
+            ScreenCapture.CaptureScreenshot(System.IO.Path.Combine(folder, "04_keypad_hidden.png"));
+            KeypadHidden = false;
+            yield return new WaitForSeconds(1f);
+            Application.Quit();
+        }
+
+        IEnumerator TourKey(int code)
+        {
+            padHeldCode = code;
+            J2ME.Host.keyPressed(code);
+            yield return new WaitForSeconds(0.15f);
+            J2ME.Host.keyReleased(code);
+            padHeldCode = 0;
         }
 
         void Update()

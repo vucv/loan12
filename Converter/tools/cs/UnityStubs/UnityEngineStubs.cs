@@ -45,7 +45,10 @@ namespace UnityEngine
         public bool enabled { get; set; }
     }
 
-    public class MonoBehaviour : Behaviour { }
+    public class MonoBehaviour : Behaviour
+    {
+        public Coroutine StartCoroutine(System.Collections.IEnumerator routine) { return null; }
+    }
 
     public class ScriptableObject : Object { }
 
@@ -577,4 +580,12 @@ namespace UnityEngine
     {
         public AndroidJavaClass(string className) : base(className) { }
     }
+}
+
+namespace UnityEngine
+{
+    public class YieldInstruction { }
+    public sealed class WaitForSeconds : YieldInstruction { public WaitForSeconds(float seconds) { } }
+    public sealed class Coroutine : YieldInstruction { }
+    public static class ScreenCapture { public static void CaptureScreenshot(string filename) { } }
 }
