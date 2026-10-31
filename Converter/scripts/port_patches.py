@@ -730,6 +730,299 @@ rep('game/w.java', '"Bấm phím (8) hoặc phím xuống để di chuyển xu�
 rep('game/w.java', '"Tướng quân đã được thưởng 1 vật phẩm, hãy bấm phím # để chọn và sử dụng vật phẩm."', "\"Tướng quân đã được thưởng 1 vật phẩm, hãy chạm 'Túi' (hoặc bấm phím #) để chọn và sử dụng vật phẩm.\"")
 
 # ---------------------------------------------------------------------------------------------
+# PORT-UI: touch redesign (plan/thiet-ke-giao-dien.md, option B). The Unity host draws the battle
+# itself (bars, skills, items around the board); the game keeps the rules, the AI, the animations of
+# the board and every other screen. PortUi exposes read-only state and queues the touch actions,
+# which the game runs at the start of its next frame (same thread, same order as a key press).
+# ---------------------------------------------------------------------------------------------
+open(ROOT + 'game/PortUi.java', 'w', encoding='utf-8').write('''package game;
+
+import javax.microedition.lcdui.Image;
+
+/** PORT-UI: state of the battle for the Unity touch interface, and its queued actions. */
+public final class PortUi {
+    public static final int SKILL = 1;
+    public static final int ITEM = 2;
+    public static final int PAUSE = 3;
+    private static int reqKind;
+    private static int reqArg;
+
+    private PortUi() {
+    }
+
+    /** the battle object while the battle screen is the current screen, else null */
+    public static bu battle() {
+        cz c = cz.a;
+        if ((c == null) || (c.e == null)) {
+            return null;
+        }
+        if (c.e.b instanceof com.mic.smsgame.suquan.ab) {
+            return ((com.mic.smsgame.suquan.ab) c.e.b).portBattle();
+        }
+        return null;
+    }
+
+    /** the plain battle is on screen: no dialog on top, no screen transition, not the tutorial */
+    public static boolean battleView() {
+        bu b = battle();
+        if ((b == null) || (b.portState() == null)) {
+            return false;
+        }
+        bv v = cz.a.e;
+        if (v.d != null) {
+            return false;
+        }
+        if (v.l && (v.i != null)) {
+            return false;
+        }
+        return !b.portTraining();
+    }
+
+    static bn fighter(int side) {
+        bu b = battle();
+        if ((b == null) || (b.portState() == null)) {
+            return null;
+        }
+        return b.portState().b(side);
+    }
+
+    /** side 0 = player, 1 = enemy */
+    public static String name(int side) {
+        bn f = fighter(side);
+        return f == null ? "" : u.a(f.b());
+    }
+
+    /** index of the 30x30 portrait in /avatar (10 per row) */
+    public static int portrait(int side) {
+        bn f = fighter(side);
+        return f == null ? 0 : f.b();
+    }
+
+    public static int level(int side) {
+        c f = side == 0 ? dd.e : dd.f;
+        return f == null ? 0 : f.e;
+    }
+
+    public static int hp(int side) {
+        bn f = fighter(side);
+        return f == null ? 0 : f.r();
+    }
+
+    public static int maxHp(int side) {
+        bn f = fighter(side);
+        return f == null ? 1 : Math.max(1, f.s());
+    }
+
+    public static int mana(int side) {
+        bn f = fighter(side);
+        return f == null ? 0 : f.o();
+    }
+
+    public static int maxMana(int side) {
+        bn f = fighter(side);
+        return f == null ? 1 : Math.max(1, f.n());
+    }
+
+    /** turns left of an active item effect (type 0 sword, 3 shield ...) on a fighter */
+    public static int effect(int side, int type) {
+        bn f = fighter(side);
+        if ((f == null) || (type < 0) || (type >= f.a.length)) {
+            return 0;
+        }
+        return f.a[type].b;
+    }
+
+    /** 0 = the player, 1 = the enemy */
+    public static int turn() {
+        bu b = battle();
+        return b == null ? -1 : b.portState().a();
+    }
+
+    /** the board waits for the player's move */
+    public static boolean waiting() {
+        bu b = battle();
+        return (b != null) && b.portWaiting();
+    }
+
+    public static int skillCount() {
+        bn f = fighter(0);
+        return f == null ? 0 : f.d().length;
+    }
+
+    public static String skillName(int k) {
+        bn f = fighter(0);
+        return f == null ? "" : com.mic.smsgame.suquan.h.a[f.d()[k]];
+    }
+
+    /** mana the k-th skill costs (the game: max mana * (k + 1) / 3) */
+    public static int skillCost(int k) {
+        bn f = fighter(0);
+        return f == null ? 0 : f.n() * (k + 1) / 3;
+    }
+
+    /** number of skills the player can afford now (the first ones) */
+    public static int skillsUsable() {
+        bn f = fighter(0);
+        if ((f == null) || (f.d().length < 1)) {
+            return 0;
+        }
+        return f.o() * 3 / f.n();
+    }
+
+    public static Image skillIcon(int k) {
+        Image[] icons = bs.a().i;
+        return (icons == null) || (k >= icons.length) ? null : icons[k];
+    }
+
+    /** how many of an item (shop index 0..5) the player can still use in this battle */
+    public static int itemCount(int type) {
+        bu b = battle();
+        if ((b == null) || (type == 2)) {
+            return 0;
+        }
+        if ((type == 1) && b.portGinsengUsed()) {
+            return 0;
+        }
+        dx[] arr = b.portState().a;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i].a == type) {
+                return arr[i].b;
+            }
+        }
+        return 0;
+    }
+
+    /** an item was already used in this turn (one per turn) */
+    public static boolean itemUsed() {
+        bu b = battle();
+        return (b != null) && b.portItemUsed();
+    }
+
+    /** the board on the 240x320 screen: x, y, w, h */
+    public static int board(int i) {
+        bu b = battle();
+        dl r = b == null ? null : b.h();
+        if (r == null) {
+            return i < 2 ? 36 + (i == 1 ? 18 : 0) : 168;
+        }
+        switch (i) {
+            case 0:
+                return r.a;
+            case 1:
+                return r.b;
+            case 2:
+                return r.c > 0 ? r.c : 168;
+            default:
+                return r.d > 0 ? r.d : 168;
+        }
+    }
+
+    public static Image image(String name) {
+        return az.b(name);
+    }
+
+    /** queue an action (SKILL k, ITEM type, PAUSE) for the next frame of the game */
+    public static void request(int kind, int arg) {
+        reqKind = kind;
+        reqArg = arg;
+    }
+
+    /** runs the queued action; called by the screen manager at the start of a frame */
+    public static void process() {
+        if (reqKind == 0) {
+            return;
+        }
+        int kind = reqKind;
+        int arg = reqArg;
+        reqKind = 0;
+        bu b = battle();
+        if ((b == null) || !battleView()) {
+            return;
+        }
+        switch (kind) {
+            case SKILL:
+                b.portUseSkill(arg);
+                break;
+            case ITEM:
+                b.portUseItem(arg);
+                break;
+            case PAUSE:
+                b.g();
+                break;
+        }
+    }
+}
+''')
+rep('game/bu.java', """    public String portBarLabel(int paramInt) {""", """    // PORT-UI: state and actions for the Unity touch interface (see PortUi)
+    public cq portState() {
+        return this.s;
+    }
+
+    /** the board waits for the human player's move */
+    public boolean portWaiting() {
+        return (this.s != null) && (this.v == 8) && (this.s.a() == 0) && (this.u != null) && (this.u[0] instanceof ac);
+    }
+
+    public boolean portItemUsed() {
+        return this.K;
+    }
+
+    public boolean portGinsengUsed() {
+        return this.L;
+    }
+
+    /** the k-th skill, with the checks of the skill window (r() + "Dùng") */
+    public void portUseSkill(int k) {
+        if (!portWaiting()) {
+            return;
+        }
+        if ((this.s.d) && (this.t.g.g() != 3)) {
+            return;
+        }
+        if ((k < 0) || (k >= d())) {
+            return;
+        }
+        a("skill", k);
+    }
+
+    /** an item, with the checks of the item window (s() + "Dùng") */
+    public void portUseItem(int type) {
+        if ((!portWaiting()) || (type == 2)) {
+            return;
+        }
+        int i = this.s.c();
+        if ((i == 1) && (this.t.g.g() != 5)) {
+            return;
+        }
+        if (this.K) {
+            return;
+        }
+        if (this.L) {
+            this.s.a[1].b = 0;
+        }
+        dx[] arr = this.s.a;
+        for (int j = 0; j < arr.length; j++) {
+            if ((arr[j].a == type) && (arr[j].b > 0)) {
+                arr[j].a();
+                bg.g(type);
+                a("item", type);
+                return;
+            }
+        }
+    }
+
+    public String portBarLabel(int paramInt) {""")
+rep('com/mic/smsgame/suquan/ab.java', """    public String portSoftLabel(int paramInt) { // PORT-TOUCH: the battle draws its own soft-key bar""", """    public game.bu portBattle() { // PORT-UI
+        return this.e;
+    }
+
+    public String portSoftLabel(int paramInt) { // PORT-TOUCH: the battle draws its own soft-key bar""")
+rep('game/bv.java', """        portPublishSoftKeys(); // PORT-TOUCH
+""", """        portPublishSoftKeys(); // PORT-TOUCH
+        PortUi.process(); // PORT-UI
+""")
+
+# ---------------------------------------------------------------------------------------------
 # time and system properties come from the host backend (Unity: real clock; test harness: virtual
 # clock, which makes test runs reproducible - Random is seeded from the clock)
 for dirpath, _, files in os.walk(ROOT):

@@ -1540,6 +1540,79 @@ namespace Loan12
         }
 
         /** soft keys of the battle bar: left (skills) and right (pause); the centre ("bag") is the # key */
+        // PORT-UI: state and actions for the Unity touch interface (see PortUi)
+        public C_cq portState()
+        {
+            return this.f_s;
+        }
+
+        /** the board waits for the human player's move */
+        public bool portWaiting()
+        {
+            return (this.f_s != null) && (this.f_v == 8) && (this.f_s.a() == 0) && (this.f_u != null) && ((this.f_u[0] is C_ac));
+        }
+
+        public bool portItemUsed()
+        {
+            return this.f_K;
+        }
+
+        public bool portGinsengUsed()
+        {
+            return this.f_L;
+        }
+
+        /** the k-th skill, with the checks of the skill window (r() + "Dùng") */
+        public void portUseSkill(int k)
+        {
+            if (!this.portWaiting())
+            {
+                return;
+            }
+            if ((this.f_s.f_d) && (this.f_t.f_g.g() != 3))
+            {
+                return;
+            }
+            if (((k < 0)) || ((k >= this.d())))
+            {
+                return;
+            }
+            this.a("skill", k);
+        }
+
+        /** an item, with the checks of the item window (s() + "Dùng") */
+        public void portUseItem(int type)
+        {
+            if ((!this.portWaiting()) || (type == 2))
+            {
+                return;
+            }
+            int i = this.f_s.c();
+            if ((i == 1) && (this.f_t.f_g.g() != 5))
+            {
+                return;
+            }
+            if (this.f_K)
+            {
+                return;
+            }
+            if (this.f_L)
+            {
+                this.f_s.f_a[1].f_b = 0;
+            }
+            C_dx[] arr = this.f_s.f_a;
+            for (int j = 0; (j < arr.Length); j++)
+            {
+                if ((arr[j].f_a == type) && ((arr[j].f_b > 0)))
+                {
+                    arr[j].a();
+                    C_bg.g(type);
+                    this.a("item", type);
+                    return;
+                }
+            }
+        }
+
         public string portBarLabel(int paramInt)
         {
             if (paramInt == 1)

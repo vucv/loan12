@@ -255,6 +255,7 @@ public class Run {
                 advance(500 + r.nextInt(2000));
             }
             if (shotEvery > 0 && k % shotEvery == 0) shot("m" + seed + "_" + String.format("%05d", k));
+            if (System.getProperty("ui") != null && k % 10 == 0) ui("m" + k);
         }
         monkeyMode = false;
         System.out.println("monkey: exits ignored " + exitsIgnored + ", enemies weakened " + weakened + ", bot moves " + botMoves);
@@ -373,6 +374,38 @@ public class Run {
             if (b.exited) {
                 System.out.println("EXIT requested");
                 return;
+            }
+        }
+    }
+
+    /** PORT-UI: what the touch interface would show (and, with -Dui=act, try its actions). */
+    static void ui(String tag) {
+        if (!game.PortUi.battleView()) return;
+        StringBuilder sb = new StringBuilder("ui " + tag + ": ");
+        for (int side = 0; side < 2; side++) {
+            sb.append(game.PortUi.name(side)).append(" lv").append(game.PortUi.level(side))
+              .append(" hp ").append(game.PortUi.hp(side)).append('/').append(game.PortUi.maxHp(side))
+              .append(" mana ").append(game.PortUi.mana(side)).append('/').append(game.PortUi.maxMana(side))
+              .append(" pic ").append(game.PortUi.portrait(side)).append(" | ");
+        }
+        sb.append("turn ").append(game.PortUi.turn()).append(game.PortUi.waiting() ? " waiting" : "")
+          .append(" skills ").append(game.PortUi.skillsUsable()).append('/').append(game.PortUi.skillCount());
+        for (int k = 0; k < game.PortUi.skillCount(); k++) sb.append(' ').append(game.PortUi.skillName(k)).append(':').append(game.PortUi.skillCost(k));
+        sb.append(" items");
+        for (int t = 0; t < 6; t++) sb.append(' ').append(game.PortUi.itemCount(t));
+        sb.append(" board ").append(game.PortUi.board(0)).append(',').append(game.PortUi.board(1)).append(',').append(game.PortUi.board(2)).append(',').append(game.PortUi.board(3));
+        System.out.println(sb);
+        if ("act".equals(System.getProperty("ui")) && game.PortUi.waiting()) {
+            // test feed: full mana and 3 potions so the actions can run
+            game.cq st = game.PortUi.battle().portState();
+            st.b(0).e(36);
+            for (game.dx d : st.a) if (d.a == 4 && d.b == 0) d.b = 3;
+            if (game.PortUi.skillsUsable() > 0) {
+                game.PortUi.request(game.PortUi.SKILL, game.PortUi.skillsUsable() - 1);
+                System.out.println("ui action: skill " + (game.PortUi.skillsUsable() - 1));
+            } else if (game.PortUi.itemCount(4) > 0 && !game.PortUi.itemUsed()) {
+                game.PortUi.request(game.PortUi.ITEM, 4);
+                System.out.println("ui action: item 4");
             }
         }
     }

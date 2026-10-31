@@ -1247,6 +1247,64 @@ public class bu
     }
 
     /** soft keys of the battle bar: left (skills) and right (pause); the centre ("bag") is the # key */
+    // PORT-UI: state and actions for the Unity touch interface (see PortUi)
+    public cq portState() {
+        return this.s;
+    }
+
+    /** the board waits for the human player's move */
+    public boolean portWaiting() {
+        return (this.s != null) && (this.v == 8) && (this.s.a() == 0) && (this.u != null) && (this.u[0] instanceof ac);
+    }
+
+    public boolean portItemUsed() {
+        return this.K;
+    }
+
+    public boolean portGinsengUsed() {
+        return this.L;
+    }
+
+    /** the k-th skill, with the checks of the skill window (r() + "Dùng") */
+    public void portUseSkill(int k) {
+        if (!portWaiting()) {
+            return;
+        }
+        if ((this.s.d) && (this.t.g.g() != 3)) {
+            return;
+        }
+        if ((k < 0) || (k >= d())) {
+            return;
+        }
+        a("skill", k);
+    }
+
+    /** an item, with the checks of the item window (s() + "Dùng") */
+    public void portUseItem(int type) {
+        if ((!portWaiting()) || (type == 2)) {
+            return;
+        }
+        int i = this.s.c();
+        if ((i == 1) && (this.t.g.g() != 5)) {
+            return;
+        }
+        if (this.K) {
+            return;
+        }
+        if (this.L) {
+            this.s.a[1].b = 0;
+        }
+        dx[] arr = this.s.a;
+        for (int j = 0; j < arr.length; j++) {
+            if ((arr[j].a == type) && (arr[j].b > 0)) {
+                arr[j].a();
+                bg.g(type);
+                a("item", type);
+                return;
+            }
+        }
+    }
+
     public String portBarLabel(int paramInt) {
         if (paramInt == 1) {
             return null;

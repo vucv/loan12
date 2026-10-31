@@ -1,7 +1,8 @@
 // Runs the converted MIDlet inside Unity.
 //
 // Every frame: input -> J2ME.Host.tick() (game logic, timers, painting into the 240x320 LCD buffer) ->
-// upload the LCD to a texture -> draw it (IMGUI) with an on-screen phone keypad for touch devices.
+// upload the LCD to a texture -> draw it (IMGUI). The battle uses the touch interface (TouchBattleView); an
+// optional on-screen phone keypad remains for other devices.
 // MIDP high-level screens (TextBox for the hero name / phone number, the debug log Form) are shown
 // with IMGUI controls and, on phones, the system keyboard. Input uses IMGUI events, so it works with
 // both the old Input Manager and the new Input System; touches arrive as pointer events (the game
@@ -35,8 +36,11 @@ namespace Loan12.UnityPort
 
         public static J2MEGameHost Instance { get; private set; }
 
-        [Tooltip("On-screen phone keypad: soft keys with the game's labels, D-pad, OK, * and #. Auto = touch devices only.")]
-        public KeypadMode keypad = KeypadMode.Auto;
+        [Tooltip("On-screen phone keypad (soft keys, D-pad, OK, * and #). Not needed with the touch interface. Auto = touch devices only.")]
+        public KeypadMode onScreenKeypad = KeypadMode.Never; // renamed from "keypad" (default was Auto) so old scenes get the new default
+
+        [Tooltip("Touch interface (plan/thiet-ke-giao-dien.md): Unity draws the battle screen around the game's board.")]
+        public bool touchInterface = true;
 
         [Tooltip("Scale the 240x320 screen by whole multiples only (sharper pixels, larger borders).")]
         public bool integerScaling;
@@ -61,6 +65,10 @@ namespace Loan12.UnityPort
         bool pointerOnLcd;
         int padHeldCode;
         bool keypadHidden;
+
+        // touch interface (option B of the redesign plan)
+        readonly TouchBattleView battleView = new TouchBattleView();
+        bool touchBattleShown;
 
         // layout (GUI coordinates, origin top-left)
         Rect lcdRect;
@@ -215,7 +223,7 @@ namespace Loan12.UnityPort
         IEnumerator ScreenshotTour(string folder)
         {
             System.IO.Directory.CreateDirectory(folder);
-            keypad = KeypadMode.Always;
+            onScreenKeypad = KeypadMode.Always;
             Application.runInBackground = true;
             yield return new WaitForSeconds(7.5f);
             ScreenCapture.CaptureScreenshot(System.IO.Path.Combine(folder, "01_sound.png"));
@@ -389,6 +397,31 @@ namespace Loan12.UnityPort
             bool highLevel = shown != null && !(shown is J2ME.Canvas);
             Event e = Event.current;
 
+            // touch interface: Unity draws the battle around the game's board
+            bool touchBattle = running && !highLevel && touchInterface && battleView.Active();
+            if (touchBattle != touchBattleShown)
+            {
+                // hand-over: nothing stays pressed in the view that is going away
+                if (touchBattle)
+                {
+                    ReleaseAllInput();
+                }
+                else
+                {
+                    battleView.Reset();
+                }
+                touchBattleShown = touchBattle;
+            }
+            if (touchBattle)
+            {
+                if (e.type == EventType.KeyDown || e.type == EventType.KeyUp)
+                {
+                    HandleCanvasInput(e); // keyboard / Android back still reach the game
+                }
+                battleView.OnGUI(e, lcd, haptics);
+                return;
+            }
+
             if (running && !highLevel)
             {
                 HandleCanvasInput(e);
@@ -426,7 +459,7 @@ namespace Loan12.UnityPort
                 area = new Rect(0, 0, Screen.width, Screen.height);
             }
 
-            padAllowed = keypad == KeypadMode.Always || (keypad == KeypadMode.Auto && Application.isMobilePlatform);
+            padAllowed = onScreenKeypad == KeypadMode.Always || (onScreenKeypad == KeypadMode.Auto && Application.isMobilePlatform);
             padVisible = padAllowed && !keypadHidden;
             pad.Clear();
             toggleRect = new Rect(0, 0, 0, 0);

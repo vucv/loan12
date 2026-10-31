@@ -104,6 +104,12 @@ namespace Loan12
             }
         }
 
+        public C_bu portBattle()
+        {
+            // PORT-UI
+            return this.f_e;
+        }
+
         public override string portSoftLabel(int paramInt)
         {
             // PORT-TOUCH: the battle draws its own soft-key bar

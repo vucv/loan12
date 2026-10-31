@@ -96,6 +96,10 @@ public class ab
         }
     }
 
+    public game.bu portBattle() { // PORT-UI
+        return this.e;
+    }
+
     public String portSoftLabel(int paramInt) { // PORT-TOUCH: the battle draws its own soft-key bar
         if (this.e != null) {
             return this.e.portBarLabel(paramInt);
