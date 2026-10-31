@@ -1,0 +1,20 @@
+{
+    "name": "Loan12.Editor",
+    "rootNamespace": "",
+    "references": [
+        "Loan12.J2ME",
+        "Loan12.Game",
+        "Loan12.Unity"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

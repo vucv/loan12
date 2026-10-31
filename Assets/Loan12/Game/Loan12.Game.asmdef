@@ -1,0 +1,16 @@
+{
+    "name": "Loan12.Game",
+    "rootNamespace": "",
+    "references": [
+        "Loan12.J2ME"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

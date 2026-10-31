@@ -1,0 +1,17 @@
+{
+    "name": "Loan12.Unity",
+    "rootNamespace": "",
+    "references": [
+        "Loan12.J2ME",
+        "Loan12.Game"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
