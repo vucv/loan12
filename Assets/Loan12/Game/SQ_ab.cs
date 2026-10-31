@@ -21,7 +21,7 @@ namespace Loan12
 
         static SQ_ab()
         {
-            SQ_ab.f_PORT_VIEWPORT = new int[] { 28, 0, 184, 302 };
+            SQ_ab.f_PORT_VIEWPORT = new int[] { 28, 0, 184, 286 };
         }
 
         public SQ_ab()

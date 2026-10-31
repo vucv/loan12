@@ -627,7 +627,7 @@ rep('com/mic/smsgame/suquan/ab.java', """    public void a(int paramInt1, int pa
 
     /** PORT-TOUCH: the battle zooms on the board and the two portraits (the frame and the soft-key row are cut;
      *  the host draws the soft keys as big buttons below instead). */
-    private static final int[] PORT_VIEWPORT = {28, 0, 184, 302};
+    private static final int[] PORT_VIEWPORT = {28, 0, 184, 286};
 
     public int[] portViewport() {
         return this.e != null ? PORT_VIEWPORT : null;
