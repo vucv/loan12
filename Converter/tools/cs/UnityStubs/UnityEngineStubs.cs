@@ -133,6 +133,7 @@ namespace UnityEngine
 
     public static class Application
     {
+        public static bool isBatchMode { get { return false; } }
         public static int targetFrameRate { get; set; }
         public static bool isMobilePlatform { get { return false; } }
         public static bool runInBackground { get; set; }
@@ -375,6 +376,7 @@ namespace UnityEditor
 
     public sealed class EditorApplication
     {
+        public static void Exit(int returnValue) { }
         public delegate void CallbackFunction();
         public static CallbackFunction delayCall;
         public static bool isPlaying { get; set; }
@@ -384,6 +386,7 @@ namespace UnityEditor
 
     public class EditorUtility
     {
+        public static void RevealInFinder(string path) { }
         public static bool DisplayDialog(string title, string message, string ok, string cancel) { return false; }
     }
 
@@ -416,6 +419,13 @@ namespace UnityEditor
         public static int defaultScreenHeight { get; set; }
         public static bool resizableWindow { get; set; }
         public static FullScreenMode fullScreenMode { get; set; }
+        public static void SetApplicationIdentifier(UnityEditor.Build.NamedBuildTarget buildTarget, string identifier) { }
+        public static void SetScriptingBackend(UnityEditor.Build.NamedBuildTarget buildTarget, ScriptingImplementation backend) { }
+
+        public static class Android
+        {
+            public static AndroidArchitecture targetArchitectures { get; set; }
+        }
     }
 
     public class AssetImporter : Object { }
@@ -461,4 +471,62 @@ namespace UnityEditor.SceneManagement
 namespace UnityEngine
 {
     public sealed class AudioListener : Behaviour { }
+}
+
+namespace UnityEditor
+{
+    public enum BuildTarget { StandaloneOSX = 2, Android = 13, iOS = 9 }
+    public enum BuildTargetGroup { Standalone = 1, Android = 7, iOS = 4 }
+    [Flags] public enum BuildOptions { None = 0 }
+    public enum ScriptingImplementation { Mono2x = 0, IL2CPP = 1 }
+    [Flags] public enum AndroidArchitecture { None = 0, ARMv7 = 1, ARM64 = 2, X86_64 = 8, All = -1 }
+
+    public struct BuildPlayerOptions
+    {
+        public string[] scenes { get; set; }
+        public string locationPathName { get; set; }
+        public BuildTargetGroup targetGroup { get; set; }
+        public BuildTarget target { get; set; }
+        public BuildOptions options { get; set; }
+    }
+
+    public class BuildPipeline
+    {
+        public static UnityEditor.Build.Reporting.BuildReport BuildPlayer(BuildPlayerOptions buildPlayerOptions) { return null; }
+    }
+
+    public class EditorUserBuildSettings
+    {
+        public static bool buildAppBundle { get; set; }
+    }
+
+    public partial class EditorUtilityExtra { }
+
+    public sealed partial class PlayerSettingsAndroid { }
+}
+
+namespace UnityEditor.Build
+{
+    public struct NamedBuildTarget
+    {
+        public static readonly NamedBuildTarget Android;
+    }
+}
+
+namespace UnityEditor.Build.Reporting
+{
+    public enum BuildResult { Unknown = 0, Succeeded = 1, Failed = 2, Cancelled = 3 }
+
+    public struct BuildSummary
+    {
+        public BuildResult result { get { return BuildResult.Unknown; } }
+        public ulong totalSize { get { return 0; } }
+        public int totalErrors { get { return 0; } }
+        public System.TimeSpan totalTime { get { return System.TimeSpan.Zero; } }
+    }
+
+    public sealed class BuildReport : UnityEngine.Object
+    {
+        public BuildSummary summary { get { return default(BuildSummary); } }
+    }
 }

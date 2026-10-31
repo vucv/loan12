@@ -64,7 +64,7 @@ namespace Loan12.UnityPort.EditorTools
             CreateScene(true);
         }
 
-        static void CreateScene(bool overwrite)
+        internal static void CreateScene(bool overwrite)
         {
             if (File.Exists(ScenePath) && !overwrite)
             {
@@ -111,7 +111,7 @@ namespace Loan12.UnityPort.EditorTools
             Debug.Log("Loan12: created " + ScenePath);
         }
 
-        static void EnsureSceneInBuildSettings()
+        internal static void EnsureSceneInBuildSettings()
         {
             if (!File.Exists(ScenePath))
             {
