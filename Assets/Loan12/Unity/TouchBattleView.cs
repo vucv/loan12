@@ -445,12 +445,12 @@ namespace Loan12.UnityPort
 
         static Vector2 HpAt(int side)
         {
-            return new Vector2(side == 0 ? 61 : 118, StripTop + 6);
+            return new Vector2(side == 0 ? 61 : 118, StripTop + 16);
         }
 
         static Vector2 ManaAt(int side)
         {
-            return new Vector2(side == 0 ? 61 : 118, StripTop + 26);
+            return new Vector2(side == 0 ? 61 : 118, StripTop + 34);
         }
 
         void TrackEvents()
@@ -920,7 +920,7 @@ namespace Loan12.UnityPort
                 float age = Time.unscaledTime - f.t0;
                 Color c = f.color;
                 c.a = age < 0.9f ? 1f : Mathf.Clamp01(1f - (age - 0.9f) / 0.5f);
-                Vector2 at = f.at + new Vector2(0, -6 - 10 * Mathf.Min(1f, age / 1.2f));
+                Vector2 at = f.at + new Vector2(0, -2 - 8 * Mathf.Min(1f, age / 1.2f));
                 string t = f.Text;
                 TouchUi.Label(TouchUi.R(at.x - 40, at.y - 6, 80, 12), t, t.Length <= 4 ? 10 : 7, TextAnchor.MiddleCenter, c, true);
             }
@@ -954,7 +954,7 @@ namespace Loan12.UnityPort
                 }
             }
             Rect text = new Rect(b.x + 5 * k, b.y + 3 * k, b.width - 10 * k, b.height - 6 * k);
-            TouchUi.Label(text, bubbleText, 7.5f, TextAnchor.MiddleCenter, new Color(0.1f, 0.04f, 0.1f, alpha), true, true);
+            TouchUi.Label(text, bubbleText, 7.5f, TextAnchor.MiddleCenter, new Color(0.1f, 0.04f, 0.1f, alpha), true, true, false);
         }
 
         void DrawPopup()

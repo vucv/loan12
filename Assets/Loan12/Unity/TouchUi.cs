@@ -366,15 +366,16 @@ namespace Loan12.UnityPort
         /// Text in the touch screens' pixel font (UiFont), tinted with color. The anchor places the letters
         /// in r by the capitals of the first line and the baseline of the last (accents stick out above,
         /// descenders below); wrap breaks the text at r's width. The font has a single size, so size and
-        /// strong only document the intent of the caller.
+        /// strong only document the intent of the caller. Dark text on a light background goes without the
+        /// outline.
         /// </summary>
-        public static void Label(Rect r, string s, float size, TextAnchor anchor, Color color, bool strong = false, bool wrap = false)
+        public static void Label(Rect r, string s, float size, TextAnchor anchor, Color color, bool strong = false, bool wrap = false, bool outline = true)
         {
             if (string.IsNullOrEmpty(s))
             {
                 return;
             }
-            UiFont.Block b = UiFont.Get(s, wrap ? Mathf.Max(8, Mathf.FloorToInt(r.width / K + 0.01f)) : 0);
+            UiFont.Block b = UiFont.Get(s, wrap ? Mathf.Max(8, Mathf.FloorToInt(r.width / K + 0.01f)) : 0, outline);
             int a = (int) anchor, col = a % 3, row = a / 3;
             float ink = b.width * K, block = UiFont.BlockHeight(b.lines) * K;
             float left = col == 0 ? r.x : (col == 1 ? r.center.x - ink / 2f : r.xMax - ink);

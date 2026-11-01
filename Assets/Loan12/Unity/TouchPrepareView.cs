@@ -375,11 +375,11 @@ namespace Loan12.UnityPort
             int ph = C_PortUi.vsHp(0), eh = C_PortUi.vsHp(1);
             if (ea > pa || C_PortUi.vsLevel(1) > C_PortUi.vsLevel(0))
             {
-                return "Gợi ý: " + enemy + " ra đòn mạnh, nên mang Quỷ Diện Giáp để đỡ đòn.";
+                return "Gợi ý: " + enemy + " đánh mạnh, nên mang Quỷ Diện Giáp.";
             }
             if (eh > ph)
             {
-                return "Gợi ý: " + enemy + " nhiều máu, Long Thần Kiếm giúp đánh nhanh hơn.";
+                return "Gợi ý: " + enemy + " nhiều máu, nên mang Long Thần Kiếm.";
             }
             return "Gợi ý: mang Bình Thuốc để hồi máu khi cần.";
         }

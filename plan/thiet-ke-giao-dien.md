@@ -3,7 +3,7 @@
 > **Trạng thái:** thiết kế nháp, **chưa code**.
 >
 > - Ảnh trong [`ui/`](ui/) vẽ bằng chính hình nhân vật, bàn cờ, bản đồ, khung và phông chữ pixel của game.
-> - Chữ nhỏ dùng phông HD (Inter) đúng như đề xuất bên dưới.
+> - Chữ nhỏ trong ảnh nháp dùng phông HD (Inter). Bản cài đặt (nhánh `ui-touch`) đã đổi sang phông pixel Galmuri9 làm đậm, xem mục "Phông chữ" bên dưới.
 
 ![Tổng quan 8 màn hình thiết kế mới](ui/00_tong-quan.png)
 
@@ -250,7 +250,14 @@ Game gốc tự vẽ mọi thứ lên khung 240x320, và phần lớn code vẽ 
 2. Các màn ít dùng (Hướng dẫn, Sưu tập, Thông tin…) tạm giữ màn cũ, hiển thị vừa chiều ngang như bản hiện tại.
 3. Lần lượt thay hết các màn còn lại.
 
-**Phông chữ HD:** cần phông có đủ dấu tiếng Việt và giấy phép dùng tự do, ví dụ Be Vietnam Pro, Inter hoặc Noto Sans (đều theo giấy phép SIL OFL).
+**Phông chữ (đã chọn):**
+- Tiêu đề, nút, con số lớn: **phông pixel của chính game** (vàng hoặc trắng, có viền tối). Phông này chỉ có chữ in hoa.
+- Chữ nhỏ (mô tả, nhãn, bong bóng thoại): **Galmuri9 làm đậm**.
+  - Galmuri9 của Lee Minseo, giấy phép SIL OFL 1.1, đủ dấu tiếng Việt, có chữ thường.
+  - Được "nướng" sẵn thành ảnh pixel 1-bit, nét dọc dày 2 điểm ảnh như chữ của game.
+  - Vẽ cùng tỉ lệ với hình của game, có viền tối 1 điểm ảnh.
+- Đã so sánh với Inter, Galmuri11, Galmuri7, Fairfax Bold, VT323 và Tiny5 trên cùng một đoạn chữ, rộng bằng popup: [ảnh so sánh](ui/font-so-sanh.png).
+- Các phông pixel khác trên Google Fonts (Pixelify Sans, Press Start 2P, Silkscreen, Jersey…) thiếu dấu tiếng Việt.
 
 **Kiểm tra trên nhiều máy:** Device Simulator của Unity (16:9, 19.5:9, 20:9, máy tính bảng) và ít nhất một máy Android thật.
 

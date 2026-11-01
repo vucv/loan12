@@ -144,11 +144,11 @@ namespace Loan12.UnityPort
             return lines;
         }
 
-        /// <summary>The texture of a text; wrapWidth 0 keeps it on one line.</summary>
-        public static Block Get(string s, int wrapWidth)
+        /// <summary>The texture of a text; wrapWidth 0 keeps it on one line. outline: the dark edge (not for dark text on light).</summary>
+        public static Block Get(string s, int wrapWidth, bool outline = true)
         {
             Load();
-            string key = wrapWidth + "|" + s;
+            string key = (outline ? "o" : "p") + wrapWidth + "|" + s;
             Block blk;
             if (cache.TryGetValue(key, out blk) && blk.tex != null)
             {
@@ -214,7 +214,7 @@ namespace Loan12.UnityPort
                     {
                         c = Ink;
                     }
-                    else
+                    else if (outline)
                     {
                         for (int dy = -1; dy <= 1 && c.a == 0; dy++)
                         {
