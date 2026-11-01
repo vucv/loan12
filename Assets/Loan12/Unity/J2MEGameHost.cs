@@ -429,6 +429,18 @@ namespace Loan12.UnityPort
             }
             if (view != null)
             {
+#if UNITY_EDITOR
+                // editor-only test shortcut: F9 leaves the opponent of the current battle with 1 HP
+                if (e.type == EventType.KeyDown && e.keyCode == KeyCode.F9)
+                {
+                    C_bn foe = C_PortUi.fighter(1);
+                    if (foe != null)
+                    {
+                        foe.m(1);
+                    }
+                    e.Use();
+                }
+#endif
                 if (e.type == EventType.KeyDown || e.type == EventType.KeyUp)
                 {
                     HandleCanvasInput(e); // keyboard / Android back still reach the game

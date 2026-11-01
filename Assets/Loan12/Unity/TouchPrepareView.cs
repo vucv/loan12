@@ -240,7 +240,8 @@ namespace Loan12.UnityPort
         {
             float k = TouchUi.K;
             TouchUi.Fill(new Rect(0, 0, Screen.width, Screen.height), TouchUi.Background);
-            TouchUi.PixelText("CHUẨN BỊ XUẤT TRẬN", 1, TouchUi.R(90, 0, 0, 0).x, TouchUi.R(0, 5, 0, 0).y, 1);
+            // centred in the room the back button leaves
+            TouchUi.PixelText("CHUẨN BỊ XUẤT TRẬN", 1, TouchUi.R(C_PortUi.canRetreat() ? 102 : 90, 0, 0, 0).x, TouchUi.R(0, 5, 0, 0).y, 1);
             if (C_PortUi.canRetreat())
             {
                 Rect b = BackRect();

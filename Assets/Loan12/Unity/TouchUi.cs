@@ -246,15 +246,15 @@ namespace Loan12.UnityPort
         /// <summary>The big dark-red framed button of the game (m/ff) with a gold title.</summary>
         public static void RedButton(Rect r, string text, bool enabled, bool down)
         {
+            Color old = GUI.color;
+            if (!enabled)
+            {
+                GUI.color = new Color(0.5f, 0.46f, 0.5f, 1f); // the whole button greyed out
+            }
             Nine(Img("/m/ff"), 12, r);
             if (down)
             {
                 Fill(new Rect(r.x + 4 * K, r.y + 4 * K, r.width - 8 * K, r.height - 8 * K), new Color(1f, 0.85f, 0.4f, 0.25f));
-            }
-            Color old = GUI.color;
-            if (!enabled)
-            {
-                GUI.color = new Color(0.55f, 0.5f, 0.55f, 1f);
             }
             PixelText(text, 1, r.center.x, r.center.y, 1, true);
             GUI.color = old;
