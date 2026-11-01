@@ -762,26 +762,31 @@ namespace Loan12.UnityPort
                 }
                 if (t > 0.4f)
                 {
-                    Texture2D star = TouchUi.Img("/star");
-                    for (int i = 0; i < 10; i++)
+                    for (int i = 0; i < 12; i++)
                     {
                         float a = i * 2.39996f; // golden angle: spread around the banner
-                        float rx = Mathf.Cos(a) * (60 + 14 * (i % 3)), ry = Mathf.Sin(a) * (36 + 10 * (i % 2));
+                        float rx = Mathf.Cos(a) * (58 + 16 * (i % 3)), ry = Mathf.Sin(a) * (34 + 12 * (i % 2));
                         float tw = Mathf.Sin(t * 6f + i * 1.7f);
-                        if (tw < 0f)
+                        if (tw > 0f)
                         {
-                            continue;
+                            Sparkle(new Vector2(c.x + rx * k, c.y + ry * k), 1 + Mathf.RoundToInt(2 * tw), new Color(1f, 0.86f, 0.35f, tw));
                         }
-                        float ss = (6 + 6 * tw) * k;
-                        GUI.color = old * new Color(1f, 0.85f, 0.35f, tw);
-                        TouchUi.Sprite(star, new Rect(c.x + rx * k - ss / 2f, c.y + ry * k - ss / 2f, ss, ss), new Rect(11 * (i % 3), 0, 11, 11));
                     }
-                    GUI.color = old;
                 }
             }
             GUI.color = old * new Color(1f, 1f, 1f, Mathf.Clamp01(t / 0.12f));
             TouchUi.Sprite(img, dst, new Rect(frame * fw, 0, fw, fh));
             GUI.color = old;
+        }
+
+        /// <summary>A pixel twinkle: a cross of arm pixels with a white centre.</summary>
+        static void Sparkle(Vector2 at, int arm, Color c)
+        {
+            float k = TouchUi.K;
+            float x = Mathf.Round(at.x / k) * k, y = Mathf.Round(at.y / k) * k;
+            TouchUi.Fill(new Rect(x - arm * k, y, (2 * arm + 1) * k, k), c);
+            TouchUi.Fill(new Rect(x, y - arm * k, k, (2 * arm + 1) * k), c);
+            TouchUi.Fill(new Rect(x, y, k, k), new Color(1f, 1f, 1f, c.a));
         }
 
         static float EaseOutBack(float x)

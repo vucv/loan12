@@ -50,12 +50,12 @@ namespace Loan12.UnityPort
         // lost with a second chance: two buttons side by side; otherwise one wide button
         static Rect MainRect()
         {
-            return Lost() && C_PortUi.lossRetry() ? TouchUi.R(92, 314, 74, 32) : TouchUi.R(20, 314, 140, 32);
+            return Lost() && C_PortUi.lossRetry() ? TouchUi.R(80, 314, 90, 32) : TouchUi.R(20, 314, 140, 32);
         }
 
         static Rect BackRect()
         {
-            return TouchUi.R(14, 314, 74, 32);
+            return TouchUi.R(10, 314, 66, 32);
         }
 
         public void OnGUI(Event e, Texture2D lcd, bool haptics)

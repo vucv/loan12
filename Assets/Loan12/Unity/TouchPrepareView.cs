@@ -57,15 +57,15 @@ namespace Loan12.UnityPort
             return TouchUi.R(CellX(i), 248, 36, 14);
         }
 
-        // XUẤT TRẬN alone, or RÚT LUI + XUẤT TRẬN side by side (14 px margins)
+        // XUẤT TRẬN alone, or RÚT LUI + XUẤT TRẬN side by side (8 px margins, room around the words)
         static Rect FightRect()
         {
-            return C_PortUi.canRetreat() ? TouchUi.R(78, 318, 88, 30) : TouchUi.R(20, 318, 140, 30);
+            return C_PortUi.canRetreat() ? TouchUi.R(76, 318, 96, 30) : TouchUi.R(20, 318, 140, 30);
         }
 
         static Rect BackRect()
         {
-            return TouchUi.R(14, 318, 60, 30);
+            return TouchUi.R(8, 318, 64, 30);
         }
 
         static Rect ConfirmRect()

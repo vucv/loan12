@@ -465,13 +465,13 @@ namespace Loan12.UnityPort
             if (view != null)
             {
 #if UNITY_EDITOR
-                // editor-only test shortcut: F9 leaves the opponent of the current battle with 1 HP
-                if (e.type == EventType.KeyDown && e.keyCode == KeyCode.F9)
+                // editor-only test shortcuts: F9 leaves the opponent of the current battle with 1 HP, F10 the player
+                if (e.type == EventType.KeyDown && (e.keyCode == KeyCode.F9 || e.keyCode == KeyCode.F10))
                 {
-                    C_bn foe = C_PortUi.fighter(1);
-                    if (foe != null)
+                    C_bn fighter = C_PortUi.fighter(e.keyCode == KeyCode.F9 ? 1 : 0);
+                    if (fighter != null)
                     {
-                        foe.m(1);
+                        fighter.m(1);
                     }
                     e.Use();
                 }

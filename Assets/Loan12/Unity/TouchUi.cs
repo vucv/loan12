@@ -208,7 +208,7 @@ namespace Loan12.UnityPort
         /// Background of the touch screens: the meander tiles behind the game's battle board, darkened,
         /// with darker top and bottom edges.
         /// </summary>
-        public static void Wallpaper(float brightness = 0.5f)
+        public static void Wallpaper(float brightness = 0.72f)
         {
             if (tile == null)
             {
@@ -222,9 +222,9 @@ namespace Loan12.UnityPort
             GUI.color = old * new Color(brightness, brightness * 0.94f, brightness * 0.98f, 1f);
             GUI.DrawTextureWithTexCoords(all, tile, new Rect(0, 1 - all.height / ts, all.width / ts, all.height / ts), false);
             GUI.color = old;
-            float edge = Mathf.Min(Screen.height * 0.18f, 60 * K);
-            Shade(new Rect(0, 0, Screen.width, edge), new Color(0.03f, 0.01f, 0.02f, 0.85f), true);
-            Shade(new Rect(0, Screen.height - edge, Screen.width, edge), new Color(0.03f, 0.01f, 0.02f, 0.85f), false);
+            float edge = Mathf.Min(Screen.height * 0.16f, 50 * K);
+            Shade(new Rect(0, 0, Screen.width, edge), new Color(0.03f, 0.01f, 0.02f, 0.75f), true);
+            Shade(new Rect(0, Screen.height - edge, Screen.width, edge), new Color(0.03f, 0.01f, 0.02f, 0.75f), false);
         }
 
         /// <summary>A colour fading out across the rectangle: strongest at the top (or at the bottom).</summary>
