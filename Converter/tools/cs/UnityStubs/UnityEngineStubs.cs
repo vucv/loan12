@@ -9,6 +9,7 @@ namespace Unity.Collections
         public int Length { get { return 0; } }
         public T this[int index] { get { return default(T); } set { } }
         public void CopyFrom(T[] array) { }
+        public static void Copy(T[] src, int srcIndex, NativeArray<T> dst, int dstIndex, int length) { }
         public T[] ToArray() { return null; }
     }
 }
@@ -80,6 +81,8 @@ namespace UnityEngine
         public Color(float r, float g, float b) { this.r = r; this.g = g; this.b = b; a = 1f; }
         public static Color black { get { return new Color(0, 0, 0, 1); } }
         public static Color white { get { return new Color(1, 1, 1, 1); } }
+        public static Color operator *(Color x, Color y) { return new Color(x.r * y.r, x.g * y.g, x.b * y.b, x.a * y.a); }
+        public static Color operator *(Color x, float d) { return new Color(x.r * d, x.g * d, x.b * d, x.a * d); }
     }
 
     public struct Vector2
@@ -126,6 +129,10 @@ namespace UnityEngine
     public static class Mathf
     {
         public static float Abs(float a) { return a; }
+        public static float Sin(float f) { return f; }
+        public static float Cos(float f) { return f; }
+        public static float Ceil(float f) { return f; }
+        public static float LerpUnclamped(float a, float b, float t) { return a; }
         public static float Lerp(float a, float b, float t) { return a; }
         public static float Exp(float a) { return a; }
         public static float Min(float a, float b) { return a; }

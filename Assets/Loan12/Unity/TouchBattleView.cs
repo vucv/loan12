@@ -2,12 +2,14 @@
 //
 //   whose turn + pause / the board (cut from the game's screen) / a line describing what happened /
 //   the game's own fighter strip (player left, enemy right; health, time, energy bars as before) /
-//   skills / the items taken into battle.
+//   skills / the items taken into battle; over the meander background of the game's battle screen.
 // Effects: numbers rising from the bars (damage, healing, energy), a line of text, item effect badges
-// on the portraits and speech bubbles (hurt, low health, skills, start of the battle). One tap on a
-// skill or an item opens a popup (description, USE, CLOSE; a tap anywhere else closes it).
-// The game keeps the rules, the AI and the animations on the board; dialogs, the tutorial and screen
-// transitions are shown by the classic full-screen view (the host switches automatically).
+// on the portraits and speech bubbles (hurt, low health, skills, start and end of the battle). One tap
+// on a skill or an item opens a popup (description, USE, CLOSE; a tap anywhere else closes it).
+// At the end the board freezes and THẮNG / THUA plays over it until the result screen is ready.
+// The game keeps the rules, the AI and the animations on the board. The board and the fighter strip are
+// copied from the game's screen while nothing covers them, so a dialog of the game never shows through
+// (the pause and the result are Unity screens drawn over this one).
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,9 +19,9 @@ namespace Loan12.UnityPort
     {
         const int GridH = 346;
 
-        // the game's fighter strip on its 240x320 screen (both portraits and their bars)
-        const int StripX = 30, StripY = 228, StripW = 180, StripH = 48;
-        const float StripTop = 212; // where it goes on the grid
+        // the game's fighter strip on its 240x320 screen: both portraits and their bars (x 33..206)
+        const int StripX = 33, StripY = 228, StripW = 174, StripH = 50;
+        const float StripTop = 212; // where it goes on the grid (x 3..176, centred)
 
         static readonly string[] Elements = {"Hỏa", "Lôi", "Thủy"};
 
@@ -36,6 +38,8 @@ namespace Loan12.UnityPort
         static readonly string[] StartLines = {"Kẻ nào dám đến đây? Nạp mạng!", "Ngươi chạy đâu cho thoát!", "Để xem ngươi được mấy chiêu!"};
         static readonly string[] HealLines = {"Khỏe lại rồi!", "Vẫn còn sức chiến đấu!"};
         static readonly string[] BlockLines = {"Hừ! Chẳng nhằm nhò gì.", "Đòn này chưa đủ đâu!"};
+        static readonly string[] WinLines = {"Ha ha! Biết lợi hại của ta chưa!", "Thắng rồi!", "Kẻ nào dám cản đường ta nữa?"};
+        static readonly string[] GloatLines = {"Ngươi còn non lắm!", "Về luyện thêm đi!", "Ha ha! Chỉ có vậy thôi sao?"};
 
         // input
         bool boardHeld;
@@ -74,6 +78,13 @@ namespace Loan12.UnityPort
         string bubbleText;
         float bubbleTime;
 
+        // the board and the fighter strip as last seen without anything on top (BGRA rows, top first)
+        Texture2D boardSnap, stripSnap;
+
+        // end of the battle: 0 playing, 1 won, 2 lost
+        int outcome;
+        float endStart;
+
         public bool Active()
         {
             try
@@ -99,16 +110,12 @@ namespace Loan12.UnityPort
 
         public void OnGUI(Event e, Texture2D lcd, bool haptics)
         {
-            TouchUi.Begin(GridH);
-            bx = C_PortUi.board(0);
-            by = C_PortUi.board(1);
-            bw = C_PortUi.board(2);
-            bh = C_PortUi.board(3);
-            boardRect = TouchUi.R(90 - bw / 2f, 24, bw, bh);
+            Layout();
             if (Time.frameCount != lastFrame)
             {
                 lastFrame = Time.frameCount;
                 TrackEvents();
+                Snapshot();
             }
             HandleInput(e, haptics);
             if (e.type == EventType.Repaint)
@@ -117,21 +124,89 @@ namespace Loan12.UnityPort
             }
         }
 
+        void Layout()
+        {
+            TouchUi.Begin(GridH);
+            bx = C_PortUi.board(0);
+            by = C_PortUi.board(1);
+            bw = C_PortUi.board(2);
+            bh = C_PortUi.board(3);
+            Rect r = TouchUi.R(90 - bw / 2f, 24, bw, bh);
+            boardRect = new Rect(Mathf.Round(r.x), Mathf.Round(r.y), r.width, r.height);
+        }
+
+        /// <summary>
+        /// The battle as it stands, without effects or popups: the background of the pause and result
+        /// screens. Leaves the grid set up for the battle's layout.
+        /// </summary>
+        public void DrawBackdrop(Texture2D lcd)
+        {
+            Layout();
+            DrawScene(lcd);
+        }
+
+        // ---------------------------------------------------------------------------------- snapshots
+
+        /// <summary>Copies the board and the fighter strip while the game's screen shows only the battle.</summary>
+        void Snapshot()
+        {
+            int[] screen = J2ME.Host.screen;
+            if (screen == null || outcome != 0 || C_PortUi.dialog() != null || C_PortUi.transition())
+            {
+                return; // keep the last clean picture (a dialog, or THẮNG / THUA, is drawn over it)
+            }
+            Copy(screen, ref boardSnap, bx, by, bw, bh);
+            Copy(screen, ref stripSnap, StripX, StripY, StripW, StripH);
+        }
+
+        static void Copy(int[] screen, ref Texture2D snap, int x, int y, int w, int h)
+        {
+            const int W = J2MEGameHost.LcdWidth;
+            if (snap == null || snap.width != w || snap.height != h)
+            {
+                if (snap != null)
+                {
+                    Object.Destroy(snap);
+                }
+                snap = new Texture2D(w, h, TextureFormat.BGRA32, false);
+                snap.filterMode = FilterMode.Point;
+                snap.wrapMode = TextureWrapMode.Clamp;
+            }
+            Unity.Collections.NativeArray<int> dst = snap.GetRawTextureData<int>();
+            for (int row = 0; row < h; row++)
+            {
+                Unity.Collections.NativeArray<int>.Copy(screen, (y + row) * W + x, dst, row * w, w);
+            }
+            snap.Apply(false, false);
+        }
+
+        /// <summary>A snapshot (rows stored top first, like the game's screen) into a screen rectangle.</summary>
+        static void DrawSnap(Texture2D snap, Rect dst)
+        {
+            GUI.DrawTextureWithTexCoords(dst, snap, new Rect(0f, 1f, 1f, -1f), false);
+        }
+
         // ---------------------------------------------------------------------------------- rects
 
         static Rect PauseRect()
         {
-            return TouchUi.R(157, 0, 20, 20);
+            return TouchUi.R(158, 0, 20, 20);
         }
 
+        static Rect PillRect()
+        {
+            return TouchUi.R(40, 1, 100, 18);
+        }
+
+        // three equal buttons across the screen, 2 px from each edge
         static Rect SkillRect(int i)
         {
-            return TouchUi.R(4 + i * 59, 264, 55, 40);
+            return TouchUi.R(2 + i * 60, 269, 56, 36);
         }
 
         static Rect ItemRect(int i)
         {
-            return TouchUi.R(4 + i * 59, 308, 55, 34);
+            return TouchUi.R(2 + i * 60, 309, 56, 34);
         }
 
         Rect PopupRect()
@@ -139,18 +214,19 @@ namespace Loan12.UnityPort
             return popupKind == 1 ? TouchUi.R(6, 76, 168, 180) : TouchUi.R(6, 118, 168, 182);
         }
 
+        // the two popup buttons: same size, side by side, centred
         Rect PopupUse()
         {
             Rect p = PopupRect();
             Vector2 v = TouchUi.V(new Vector2(p.x, p.yMax));
-            return TouchUi.R(84, v.y - 34, 84, 26);
+            return TouchUi.R(94, v.y - 34, 72, 26);
         }
 
         Rect PopupClose()
         {
             Rect p = PopupRect();
             Vector2 v = TouchUi.V(new Vector2(p.x, p.yMax));
-            return TouchUi.R(14, v.y - 32, 64, 22);
+            return TouchUi.R(14, v.y - 34, 72, 26);
         }
 
         // ---------------------------------------------------------------------------------- state
@@ -176,6 +252,15 @@ namespace Loan12.UnityPort
         {
             Vector2 p = e.mousePosition;
             int[] slots = Loadout.Get();
+            if (outcome != 0)
+            {
+                // the battle is over: nothing to press while THẮNG / THUA plays
+                if (e.type == EventType.MouseDown || e.type == EventType.MouseUp || e.type == EventType.MouseDrag)
+                {
+                    e.Use();
+                }
+                return;
+            }
             switch (e.type)
             {
                 case EventType.MouseDown:
@@ -350,6 +435,7 @@ namespace Loan12.UnityPort
                 floaters.Clear();
                 ticker = "";
                 popupKind = 0;
+                outcome = 0;
                 Say(1, Pick(StartLines));
                 return;
             }
@@ -427,6 +513,25 @@ namespace Loan12.UnityPort
                 }
                 prevItems[t] = c;
             }
+            int now = C_PortUi.outcome();
+            if (now != outcome)
+            {
+                outcome = now;
+                endStart = Time.unscaledTime;
+                if (outcome != 0)
+                {
+                    popupKind = 0;
+                    downKind = 0;
+                    if (boardHeld)
+                    {
+                        J2ME.Host.pointerReleased(bx + bw / 2, by + bh / 2);
+                        boardHeld = false;
+                    }
+                    bubbleSide = -1; // the last word
+                    Say(outcome == 1 ? 0 : 1, Pick(outcome == 1 ? WinLines : GloatLines));
+                    Tick(outcome == 1 ? C_PortUi.name(0) + " đã chiến thắng!" : C_PortUi.name(0) + " đã thua trận");
+                }
+            }
             floaters.RemoveAll(f => Time.unscaledTime - f.t0 > 1.4f);
             if (bubbleSide >= 0 && Time.unscaledTime - bubbleTime > 2.2f)
             {
@@ -484,32 +589,61 @@ namespace Loan12.UnityPort
 
         void Draw(Texture2D lcd)
         {
+            DrawScene(lcd);
+            DrawFloaters();
+            if (outcome != 0)
+            {
+                DrawEnd();
+            }
+            DrawBubble();
+            if (popupKind != 0)
+            {
+                DrawPopup();
+            }
+        }
+
+        /// <summary>Background, turn, board, the line of text, the fighters, skills and items.</summary>
+        void DrawScene(Texture2D lcd)
+        {
             float k = TouchUi.K;
             TouchUi.Fill(new Rect(0, 0, Screen.width, Screen.height), TouchUi.Background);
+            TouchUi.Wallpaper();
 
             // whose turn + pause
-            bool mine = C_PortUi.waiting();
+            bool mine = C_PortUi.waiting() && outcome == 0;
             int turn = C_PortUi.turn();
-            Rect pill = TouchUi.R(44, 2, 92, 15);
+            Rect pill = PillRect();
             TouchUi.Fill(pill, TouchUi.Outline);
-            TouchUi.Fill(new Rect(pill.x + k, pill.y + k, pill.width - 2 * k, pill.height - 2 * k),
-                mine ? TouchUi.Hex(0x2F8A22) : (turn == 1 ? TouchUi.Hex(0xA3201B) : TouchUi.Hex(0x4E4A50)));
-            TouchUi.Label(pill, mine ? "LƯỢT CỦA BẠN" : (turn == 1 ? "LƯỢT ĐỐI THỦ" : "..."), 7.5f, TextAnchor.MiddleCenter, Color.white, true);
+            Color pc0 = outcome == 1 ? TouchUi.Hex(0xB97A14) : (outcome == 2 ? TouchUi.Hex(0x4E4A50)
+                : (mine ? TouchUi.Hex(0x2F8A22) : (turn == 1 ? TouchUi.Hex(0xA3201B) : TouchUi.Hex(0x4E4A50))));
+            TouchUi.Fill(new Rect(pill.x + k, pill.y + k, pill.width - 2 * k, pill.height - 2 * k), pc0);
+            TouchUi.Fill(new Rect(pill.x + 2 * k, pill.y + k, pill.width - 4 * k, k), new Color(1f, 1f, 1f, 0.25f));
+            string turnText = outcome == 1 ? "CHIẾN THẮNG" : (outcome == 2 ? "THẤT BẠI" : (mine ? "LƯỢT CỦA BẠN" : (turn == 1 ? "LƯỢT ĐỐI THỦ" : "...")));
+            TouchUi.Label(pill, turnText, 7.5f, TextAnchor.MiddleCenter, Color.white, true);
             Rect pr = PauseRect();
-            TouchUi.Button(pr, C_PortUi.waiting() ? Btn.Dark : Btn.Grey, downKind == 3);
-            Color pc = C_PortUi.waiting() ? TouchUi.Hex(0xF0E8D8) : TouchUi.Hex(0x6A6070);
+            bool canPause = mine;
+            TouchUi.Button(pr, canPause ? Btn.Dark : Btn.Grey, downKind == 3);
+            Color pc = canPause ? TouchUi.Hex(0xF0E8D8) : TouchUi.Hex(0x6A6070);
             TouchUi.Fill(new Rect(pr.x + 6 * k, pr.y + 5 * k, 3 * k, 10 * k), pc);
             TouchUi.Fill(new Rect(pr.x + 11 * k, pr.y + 5 * k, 3 * k, 10 * k), pc);
 
-            // the board, cut from the game's screen
-            Rect frame = new Rect(boardRect.x - 2 * k, boardRect.y - 2 * k, boardRect.width + 4 * k, boardRect.height + 4 * k);
-            TouchUi.Fill(frame, TouchUi.Outline);
-            TouchUi.Fill(new Rect(frame.x + k, frame.y + k, frame.width - 2 * k, frame.height - 2 * k), TouchUi.GoldLine);
-            DrawLcd(lcd, boardRect, bx, by, bw, bh);
+            // the board, cut from the game's screen, in a frame like the game's (dark, gold, dark)
+            Rect f = new Rect(boardRect.x - 3 * k, boardRect.y - 3 * k, boardRect.width + 6 * k, boardRect.height + 6 * k);
+            TouchUi.Fill(f, TouchUi.Outline);
+            TouchUi.Fill(new Rect(f.x + k, f.y + k, f.width - 2 * k, f.height - 2 * k), TouchUi.Hex(0xF5B735));
+            TouchUi.Fill(new Rect(f.x + 2 * k, f.y + 2 * k, f.width - 4 * k, f.height - 4 * k), TouchUi.Outline);
+            if (boardSnap != null)
+            {
+                DrawSnap(boardSnap, boardRect);
+            }
+            else
+            {
+                DrawLcd(lcd, boardRect, bx, by, bw, bh);
+            }
 
             // what happened
-            Rect line = TouchUi.R(2, 198, 176, 13);
-            TouchUi.Fill(line, TouchUi.Hex(0x140812));
+            Rect line = TouchUi.R(0, 197, 180, 13);
+            TouchUi.Fill(line, new Color(0.05f, 0.02f, 0.05f, 0.72f));
             if (ticker.Length > 0)
             {
                 float age = Time.unscaledTime - tickerTime;
@@ -518,8 +652,21 @@ namespace Loan12.UnityPort
                 TouchUi.Label(line, ticker, 6.5f, TextAnchor.MiddleCenter, tc);
             }
 
-            // the game's fighter strip: portraits and bars exactly as in the original
-            DrawLcd(lcd, TouchUi.R(0, StripTop, StripW, StripH), StripX, StripY, StripW, StripH);
+            // the game's fighter strip: portraits and bars exactly as in the original, on its brown panel
+            TouchUi.Fill(TouchUi.R(0, StripTop - 1, 180, 1), TouchUi.Outline);
+            TouchUi.Fill(TouchUi.R(0, StripTop, 180, StripH), TouchUi.Hex(0x8B5A49));
+            TouchUi.Fill(TouchUi.R(0, StripTop + StripH, 180, 1), TouchUi.Outline);
+            TouchUi.Fill(TouchUi.R(0, StripTop + StripH + 1, 180, 2), TouchUi.Hex(0xF5B735));
+            TouchUi.Fill(TouchUi.R(0, StripTop + StripH + 3, 180, 1), TouchUi.Outline);
+            Rect strip = TouchUi.R(90 - StripW / 2f, StripTop, StripW, StripH);
+            if (stripSnap != null)
+            {
+                DrawSnap(stripSnap, strip);
+            }
+            else
+            {
+                DrawLcd(lcd, strip, StripX, StripY, StripW, StripH);
+            }
             DrawEffectBadges();
 
             // skills
@@ -527,7 +674,7 @@ namespace Loan12.UnityPort
             for (int i = 0; i < 3; i++)
             {
                 Rect r = SkillRect(i);
-                bool usable = SkillEnabled(i);
+                bool usable = SkillEnabled(i) && outcome == 0;
                 bool open = popupKind == 1 && popupArg == i;
                 TouchUi.Button(r, i < n && SkillAffordable(i) ? Btn.Dark : Btn.Grey, downKind == 1 && downArg == i);
                 if (open)
@@ -542,12 +689,12 @@ namespace Loan12.UnityPort
                 if (icon != null)
                 {
                     Color old = GUI.color;
-                    GUI.color = usable ? Color.white : new Color(0.5f, 0.47f, 0.52f, 1f);
-                    TouchUi.Sprite(SkillTexture(i, icon), new Rect(r.x + 3 * k, r.y + 5 * k, 30 * k, 30 * k));
+                    GUI.color = old * (usable ? Color.white : new Color(0.5f, 0.47f, 0.52f, 1f));
+                    TouchUi.Sprite(SkillTexture(i, icon), new Rect(r.x + 3 * k, r.y + 3 * k, 30 * k, 30 * k));
                     GUI.color = old;
                 }
-                TouchUi.Fill(new Rect(r.x + 37 * k, r.y + 8 * k, 5 * k, 5 * k), TouchUi.Hex(0x3C7CE8));
-                TouchUi.Label(new Rect(r.x + 30 * k, r.y + 16 * k, 22 * k, 14 * k), C_PortUi.skillCost(i).ToString(), 8.5f, TextAnchor.MiddleRight,
+                TouchUi.Fill(new Rect(r.x + 44 * k, r.y + 6 * k, 5 * k, 5 * k), TouchUi.Hex(0x3C7CE8));
+                TouchUi.Label(new Rect(r.x + 34 * k, r.y + 15 * k, 18 * k, 14 * k), C_PortUi.skillCost(i).ToString(), 8.5f, TextAnchor.MiddleCenter,
                     usable ? TouchUi.TextGold : TouchUi.Hex(0x9A90A0), true);
             }
 
@@ -568,17 +715,101 @@ namespace Loan12.UnityPort
                     TouchUi.Label(r, "—", 9, TextAnchor.MiddleCenter, TouchUi.Hex(0x8A8090));
                     continue;
                 }
-                TouchUi.Item(type, new Rect(r.x + 4 * k, r.y + 3 * k, 28 * k, 28 * k), count > 0 ? (ItemEnabled(type) ? 1f : 0.75f) : 0.35f);
-                TouchUi.Label(new Rect(r.x + 30 * k, r.y + 12 * k, 22 * k, 14 * k), "x" + count, 8.5f, TextAnchor.MiddleRight,
+                TouchUi.Item(type, new Rect(r.x + 3 * k, r.y + 3 * k, 28 * k, 28 * k), count > 0 ? (ItemEnabled(type) ? 1f : 0.75f) : 0.35f);
+                TouchUi.Label(new Rect(r.x + 32 * k, r.y + 10 * k, 22 * k, 14 * k), "x" + count, 8.5f, TextAnchor.MiddleCenter,
                     count > 0 ? Color.white : TouchUi.Hex(0x8A8090), true);
             }
+        }
 
-            DrawFloaters();
-            DrawBubble();
-            if (popupKind != 0)
+        /// <summary>THẮNG / THUA over the frozen board (the game's own banner, bigger and animated).</summary>
+        void DrawEnd()
+        {
+            float k = TouchUi.K;
+            float t = Time.unscaledTime - endStart;
+            bool won = outcome == 1;
+            TouchUi.Fill(boardRect, won ? new Color(0.06f, 0.02f, 0.02f, Mathf.Min(0.6f, t * 2f)) : new Color(0.02f, 0.02f, 0.05f, Mathf.Min(0.72f, t * 2f)));
+
+            Texture2D img = TouchUi.Img(won ? "/strwin" : "/strlose");
+            int fw = img.width / 3, fh = img.height;
+            Vector2 c = boardRect.center;
+            float p = Mathf.Clamp01(t / 0.45f);
+            float scale, dy = 0;
+            if (won)
             {
-                DrawPopup();
+                scale = Mathf.LerpUnclamped(2.4f, 1f, EaseOutBack(p)) * (1f + 0.025f * Mathf.Sin(t * 5f));
             }
+            else
+            {
+                scale = 1.1f;
+                dy = -(1f - EaseOutBounce(p)) * 90f; // falls in from above
+            }
+            float w = fw * scale * k, h = fh * scale * k;
+            Rect dst = new Rect(c.x - w / 2f, c.y - h / 2f + dy * k, w, h);
+            int frame = t < 0.18f ? 0 : 1 + (int) ((t - 0.18f) / 0.16f) % 2;
+
+            Color old = GUI.color;
+            if (won)
+            {
+                // a burst of light when the banner lands, then gold sparkles around it
+                float bt = (t - 0.3f) / 0.5f;
+                if (bt > 0f && bt < 1f)
+                {
+                    Texture2D burst = TouchUi.Img("/m/e2");
+                    float bs = (1.4f + 1.6f * bt) * k;
+                    GUI.color = old * new Color(1f, 0.9f, 0.55f, 1f - bt);
+                    TouchUi.Sprite(burst, new Rect(c.x - burst.width * bs / 2f, c.y - burst.height * bs / 2f, burst.width * bs, burst.height * bs));
+                    GUI.color = old;
+                }
+                if (t > 0.4f)
+                {
+                    Texture2D star = TouchUi.Img("/star");
+                    for (int i = 0; i < 10; i++)
+                    {
+                        float a = i * 2.39996f; // golden angle: spread around the banner
+                        float rx = Mathf.Cos(a) * (60 + 14 * (i % 3)), ry = Mathf.Sin(a) * (36 + 10 * (i % 2));
+                        float tw = Mathf.Sin(t * 6f + i * 1.7f);
+                        if (tw < 0f)
+                        {
+                            continue;
+                        }
+                        float ss = (6 + 6 * tw) * k;
+                        GUI.color = old * new Color(1f, 0.85f, 0.35f, tw);
+                        TouchUi.Sprite(star, new Rect(c.x + rx * k - ss / 2f, c.y + ry * k - ss / 2f, ss, ss), new Rect(11 * (i % 3), 0, 11, 11));
+                    }
+                    GUI.color = old;
+                }
+            }
+            GUI.color = old * new Color(1f, 1f, 1f, Mathf.Clamp01(t / 0.12f));
+            TouchUi.Sprite(img, dst, new Rect(frame * fw, 0, fw, fh));
+            GUI.color = old;
+        }
+
+        static float EaseOutBack(float x)
+        {
+            const float c1 = 1.70158f, c3 = c1 + 1f;
+            float u = x - 1f;
+            return 1f + c3 * u * u * u + c1 * u * u;
+        }
+
+        static float EaseOutBounce(float x)
+        {
+            const float n1 = 7.5625f, d1 = 2.75f;
+            if (x < 1f / d1)
+            {
+                return n1 * x * x;
+            }
+            if (x < 2f / d1)
+            {
+                x -= 1.5f / d1;
+                return n1 * x * x + 0.75f;
+            }
+            if (x < 2.5f / d1)
+            {
+                x -= 2.25f / d1;
+                return n1 * x * x + 0.9375f;
+            }
+            x -= 2.625f / d1;
+            return n1 * x * x + 0.984375f;
         }
 
         static void Outline(Rect r, Color c)
@@ -763,8 +994,7 @@ namespace Loan12.UnityPort
                 Vector2 nv = TouchUi.V(new Vector2(0, use.y));
                 TouchUi.Label(TouchUi.R(14, nv.y - 13, 152, 10), note, 7, TextAnchor.UpperLeft, TouchUi.Hex(0xFF9A80));
             }
-            TouchUi.Button(close, Btn.Grey, downKind == 5);
-            TouchUi.PixelText("ĐÓNG", 2, close.center.x, close.center.y, 1, true);
+            TouchUi.TextButton(close, "ĐÓNG", Btn.Grey, downKind == 5);
             TouchUi.RedButton(use, "DÙNG", usable, downKind == 4 && usable);
             TouchUi.Pointer(anchorButton.center.x, p.yMax);
             Vector2 hint = TouchUi.V(new Vector2(0, p.y));

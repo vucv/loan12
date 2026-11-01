@@ -1,10 +1,10 @@
 // Runs the converted MIDlet inside Unity.
 //
 // Every frame: input -> J2ME.Host.tick() (game logic, timers, painting into the 240x320 LCD buffer) ->
-// upload the LCD to a texture -> draw it (IMGUI). The touch interface replaces three screens with Unity
+// upload the LCD to a texture -> draw it (IMGUI). The touch interface replaces these screens with Unity
 // views drawn around the game's own picture: getting ready (TouchPrepareView), the battle
-// (TouchBattleView) and the result (TouchResultView). An optional on-screen phone keypad remains for
-// other devices.
+// (TouchBattleView), its pause (TouchPauseView) and the result (TouchResultView). An optional on-screen
+// phone keypad remains for other devices.
 // MIDP high-level screens (TextBox for the hero name / phone number, the debug log Form) are shown
 // with IMGUI controls and, on phones, the system keyboard. Input uses IMGUI events, so it works with
 // both the old Input Manager and the new Input System; touches arrive as pointer events (the game
@@ -69,9 +69,40 @@ namespace Loan12.UnityPort
         bool keypadHidden;
 
         // touch interface (option B of the redesign plan)
-        // first active wins: a result panel lies over the finished battle, the VS panel over the map
-        readonly ITouchView[] touchViews = {new TouchResultView(), new TouchPrepareView(), new TouchBattleView()};
+        // first active wins: the result and the pause lie over the battle, the VS panel over the map
+        ITouchView[] touchViews;
         ITouchView touchShown;
+
+        // sound and vibration switches of the touch interface (kept between sessions)
+        const string SoundPref = "Loan12.Sound", HapticsPref = "Loan12.Haptics";
+        bool muted;
+
+        public bool SoundOn
+        {
+            get { return !muted; }
+            set
+            {
+                muted = !value;
+                PlayerPrefs.SetInt(SoundPref, value ? 1 : 0);
+                PlayerPrefs.Save();
+            }
+        }
+
+        public bool HapticsOn
+        {
+            get { return haptics; }
+            set
+            {
+                haptics = value;
+                PlayerPrefs.SetInt(HapticsPref, value ? 1 : 0);
+                PlayerPrefs.Save();
+            }
+        }
+
+        float EffectiveVolume
+        {
+            get { return muted ? 0f : volume; }
+        }
 
         // layout (GUI coordinates, origin top-left)
         Rect lcdRect;
@@ -170,6 +201,10 @@ namespace Loan12.UnityPort
                 Screen.orientation = ScreenOrientation.Portrait;
             }
             keypadHidden = PlayerPrefs.GetInt(KeypadHiddenPref, 0) == 1;
+            muted = PlayerPrefs.GetInt(SoundPref, 1) == 0;
+            haptics = PlayerPrefs.GetInt(HapticsPref, haptics ? 1 : 0) == 1;
+            TouchBattleView battle = new TouchBattleView();
+            touchViews = new ITouchView[] {new TouchResultView(battle), new TouchPauseView(battle), new TouchPrepareView(), battle};
             EnsureCamera();
             EnsureAudioListener();
 
@@ -179,7 +214,7 @@ namespace Loan12.UnityPort
             lcd.name = "J2ME LCD";
 
             backend = new UnityBackend(gameObject);
-            backend.SetMasterVolume(volume);
+            backend.SetMasterVolume(EffectiveVolume);
         }
 
         void Start()
@@ -265,9 +300,9 @@ namespace Loan12.UnityPort
             {
                 lcd.filterMode = filtering;
             }
-            if (!Mathf.Approximately(backend.masterVolume, volume))
+            if (!Mathf.Approximately(backend.masterVolume, EffectiveVolume))
             {
-                backend.SetMasterVolume(volume);
+                backend.SetMasterVolume(EffectiveVolume);
             }
 
             backend.UpdateAudio();
@@ -402,7 +437,7 @@ namespace Loan12.UnityPort
 
             // touch interface: Unity draws these screens around the game's own picture
             ITouchView view = null;
-            if (running && !highLevel && touchInterface)
+            if (running && !highLevel && touchInterface && touchViews != null)
             {
                 foreach (ITouchView v in touchViews)
                 {

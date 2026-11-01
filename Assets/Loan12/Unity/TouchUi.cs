@@ -165,11 +165,87 @@ namespace Loan12.UnityPort
             return new Color32((byte) (rgb >> 16), (byte) (rgb >> 8), (byte) rgb, 255);
         }
 
+        /// <summary>A plain rectangle (tinted by GUI.color too, so a whole view can fade).</summary>
         public static void Fill(Rect r, Color c)
         {
             Color old = GUI.color;
-            GUI.color = c;
+            GUI.color = old * c;
             GUI.DrawTexture(r, Texture2D.whiteTexture);
+            GUI.color = old;
+        }
+
+        // ------------------------------------------------------------------ backgrounds
+
+        static Texture2D tile, ramp;
+
+        /// <summary>A rectangle of a game image as its own texture (point filtered), e.g. a tile to repeat.</summary>
+        public static Texture2D Region(string name, int x, int y, int w, int h, TextureWrapMode wrap)
+        {
+            J2ME.Image img = C_PortUi.image(name);
+            Texture2D t = new Texture2D(w, h, TextureFormat.RGBA32, false);
+            t.filterMode = FilterMode.Point;
+            t.wrapMode = wrap;
+            if (img != null)
+            {
+                int[] argb = new int[w * h];
+                img.getRGB(argb, 0, w, x, y, w, h);
+                Color32[] px = new Color32[w * h];
+                for (int row = 0; row < h; row++)
+                {
+                    for (int col = 0; col < w; col++)
+                    {
+                        int v = argb[row * w + col];
+                        px[(h - 1 - row) * w + col] = new Color32((byte) (v >> 16), (byte) (v >> 8), (byte) v, 255);
+                    }
+                }
+                t.SetPixels32(px);
+            }
+            t.Apply(false, true);
+            return t;
+        }
+
+        /// <summary>
+        /// Background of the touch screens: the meander tiles behind the game's battle board, darkened,
+        /// with darker top and bottom edges.
+        /// </summary>
+        public static void Wallpaper(float brightness = 0.5f)
+        {
+            if (tile == null)
+            {
+                tile = Region("/bkboard", 35, 53, 21, 21, TextureWrapMode.Repeat);
+            }
+            float ts = 21 * K;
+            // tiles start at the layout's left edge, so the pattern sits the same way on every screen
+            float ox = origin.x - Mathf.Ceil(origin.x / ts) * ts, oy = origin.y - Mathf.Ceil(origin.y / ts) * ts;
+            Rect all = new Rect(ox, oy, Screen.width - ox, Screen.height - oy);
+            Color old = GUI.color;
+            GUI.color = old * new Color(brightness, brightness * 0.94f, brightness * 0.98f, 1f);
+            GUI.DrawTextureWithTexCoords(all, tile, new Rect(0, 1 - all.height / ts, all.width / ts, all.height / ts), false);
+            GUI.color = old;
+            float edge = Mathf.Min(Screen.height * 0.18f, 60 * K);
+            Shade(new Rect(0, 0, Screen.width, edge), new Color(0.03f, 0.01f, 0.02f, 0.85f), true);
+            Shade(new Rect(0, Screen.height - edge, Screen.width, edge), new Color(0.03f, 0.01f, 0.02f, 0.85f), false);
+        }
+
+        /// <summary>A colour fading out across the rectangle: strongest at the top (or at the bottom).</summary>
+        public static void Shade(Rect r, Color c, bool strongAtTop)
+        {
+            if (ramp == null)
+            {
+                ramp = new Texture2D(1, 32, TextureFormat.RGBA32, false);
+                ramp.wrapMode = TextureWrapMode.Clamp;
+                ramp.filterMode = FilterMode.Bilinear;
+                Color32[] px = new Color32[32];
+                for (int i = 0; i < 32; i++)
+                {
+                    px[i] = new Color32(255, 255, 255, (byte) (255 * i / 31));
+                }
+                ramp.SetPixels32(px);
+                ramp.Apply(false, true);
+            }
+            Color old = GUI.color;
+            GUI.color = old * c;
+            GUI.DrawTextureWithTexCoords(r, ramp, strongAtTop ? new Rect(0, 0, 1, 1) : new Rect(0, 1, 1, -1), true);
             GUI.color = old;
         }
 
@@ -256,11 +332,38 @@ namespace Loan12.UnityPort
             {
                 Fill(new Rect(r.x + 4 * K, r.y + 4 * K, r.width - 8 * K, r.height - 8 * K), new Color(1f, 0.85f, 0.4f, 0.25f));
             }
-            PixelText(text, 1, r.center.x, r.center.y, 1, true);
+            PixelText(text, 1, r.center.x, r.center.y + (down ? K : 0), 1, true);
             GUI.color = old;
         }
 
-        /// <summary>Text in the game's bitmap font, positioned by its top (or centre) at the current scale.</summary>
+        /// <summary>A pixel button with its label in the game's white font, centred.</summary>
+        public static void TextButton(Rect r, string text, Btn style, bool down, bool enabled = true)
+        {
+            Button(r, enabled ? style : Btn.Grey, down && enabled);
+            Color old = GUI.color;
+            if (!enabled)
+            {
+                GUI.color = old * new Color(0.72f, 0.7f, 0.75f, 1f);
+            }
+            PixelText(text, 2, r.center.x, r.center.y + (down && enabled ? K : 0), 1, true);
+            GUI.color = old;
+        }
+
+        // The game's bitmap fonts draw a text 1 px in from the left of its image; capitals fill rows
+        // 3..11 of the 18-row image (accents above, dots below). Texts are centred on the letters, not
+        // on the image, or they sit a little high and to the left.
+        const float InkLeft = 1f, CapTop = 3f, CapBottom = 12f;
+
+        /// <summary>Width of a text in the game's bitmap font, in grid pixels.</summary>
+        public static float PixelWidth(string s, int font)
+        {
+            return string.IsNullOrEmpty(s) ? 0 : Text(s, font).width - 3;
+        }
+
+        /// <summary>
+        /// Text in the game's bitmap font. anchor 0 left, 1 centre, 2 right (of the letters); y is the top
+        /// of the text image, or with centreY the middle of the capital letters.
+        /// </summary>
         public static void PixelText(string s, int font, float x, float y, int anchor, bool centreY = false)
         {
             if (string.IsNullOrEmpty(s))
@@ -268,9 +371,9 @@ namespace Loan12.UnityPort
                 return;
             }
             Texture2D t = Text(s, font);
-            float w = t.width * K, h = t.height * K;
-            float left = anchor == 1 ? x - w / 2f : (anchor == 2 ? x - w : x);
-            float top = centreY ? y - h / 2f : y;
+            float w = t.width * K, h = t.height * K, ink = (t.width - 3) * K;
+            float left = anchor == 1 ? x - InkLeft * K - ink / 2f : (anchor == 2 ? x - InkLeft * K - ink : x - InkLeft * K);
+            float top = centreY ? y - (CapTop + CapBottom) / 2f * K : y;
             GUI.DrawTexture(new Rect(Mathf.Round(left), Mathf.Round(top), w, h), t);
         }
 

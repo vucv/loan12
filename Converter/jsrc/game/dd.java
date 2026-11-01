@@ -410,9 +410,12 @@ public class dd {
         return new cr(paramBoolean);
     }
 
+    public static int portLossExp; // PORT-UI: experience taken by the last defeat
+
     public static final ae g() {
         int i1 = b();
         int i2 = a(e, f, i1);
+        portLossExp = i2; // PORT-UI
         String str = "Bạn bị mất 1 mạng chơi.";
         if (a < 0) {
             if (i2 > 0) {

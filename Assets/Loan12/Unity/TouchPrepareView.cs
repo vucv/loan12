@@ -4,6 +4,7 @@
 //   the two fighters / who moves first / the 3 items to take into battle (a 4th slot is reserved for
 //   VIP) / the bag with quick purchase (gold) / a hint about the enemy / XUẤT TRẬN.
 // "Xuất trận" and "Rút lui" press the VS box's own soft keys, so the game's checks (lives, ...) apply.
+// Rows of slots and buttons are centred on the screen (equal margins on both sides).
 using UnityEngine;
 
 namespace Loan12.UnityPort
@@ -35,29 +36,36 @@ namespace Loan12.UnityPort
             confirmType = -1;
         }
 
+        // four 36-px cells 6 px apart: x 9..171, centred on 90
+        static float CellX(int i)
+        {
+            return 9 + i * 42;
+        }
+
         static Rect SlotRect(int i)
         {
-            return TouchUi.R(10 + i * 42, 152, 36, 36);
+            return TouchUi.R(CellX(i), 152, 36, 36);
         }
 
         static Rect BagRect(int i)
         {
-            return TouchUi.R(10 + i * 42, 210, 36, 36);
+            return TouchUi.R(CellX(i), 210, 36, 36);
         }
 
         static Rect BuyRect(int i)
         {
-            return TouchUi.R(10 + i * 42, 248, 36, 14);
+            return TouchUi.R(CellX(i), 248, 36, 14);
         }
 
+        // XUẤT TRẬN alone, or RÚT LUI + XUẤT TRẬN side by side (14 px margins)
         static Rect FightRect()
         {
-            return TouchUi.R(20, 318, 140, 30);
+            return C_PortUi.canRetreat() ? TouchUi.R(78, 318, 88, 30) : TouchUi.R(20, 318, 140, 30);
         }
 
         static Rect BackRect()
         {
-            return TouchUi.R(3, 0, 20, 20);
+            return TouchUi.R(14, 318, 60, 30);
         }
 
         static Rect ConfirmRect()
@@ -65,14 +73,14 @@ namespace Loan12.UnityPort
             return TouchUi.R(10, 110, 160, 152);
         }
 
-        static Rect ConfirmBuy()
-        {
-            return TouchUi.R(96, 228, 66, 24);
-        }
-
         static Rect ConfirmClose()
         {
-            return TouchUi.R(18, 229, 66, 22);
+            return TouchUi.R(18, 230, 68, 24);
+        }
+
+        static Rect ConfirmBuy()
+        {
+            return TouchUi.R(94, 230, 68, 24);
         }
 
         public void OnGUI(Event e, Texture2D lcd, bool haptics)
@@ -240,19 +248,8 @@ namespace Loan12.UnityPort
         {
             float k = TouchUi.K;
             TouchUi.Fill(new Rect(0, 0, Screen.width, Screen.height), TouchUi.Background);
-            // centred in the room the back button leaves
-            TouchUi.PixelText("CHUẨN BỊ XUẤT TRẬN", 1, TouchUi.R(C_PortUi.canRetreat() ? 102 : 90, 0, 0, 0).x, TouchUi.R(0, 5, 0, 0).y, 1);
-            if (C_PortUi.canRetreat())
-            {
-                Rect b = BackRect();
-                TouchUi.Button(b, Btn.Dark, downKind == 2);
-                Color c = TouchUi.Hex(0xF0E8D8);
-                for (int i = 0; i < 6; i++)
-                {
-                    TouchUi.Fill(new Rect(b.x + (4 + i) * k, b.y + (10 - i) * k, k, (1 + 2 * i) * k), c);
-                }
-                TouchUi.Fill(new Rect(b.x + 10 * k, b.y + 8 * k, 6 * k, 5 * k), c);
-            }
+            TouchUi.Wallpaper();
+            TouchUi.PixelText("CHUẨN BỊ XUẤT TRẬN", 1, TouchUi.R(90, 0, 0, 0).x, TouchUi.R(0, 11, 0, 0).y, 1, true);
 
             // the two fighters
             TouchUi.Nine(TouchUi.Img("/m/ff"), 12, TouchUi.R(4, 22, 172, 100));
@@ -271,18 +268,18 @@ namespace Loan12.UnityPort
 
             // the items to take
             TouchUi.Panel(TouchUi.R(4, 136, 172, 176));
-            TouchUi.PixelText("MANG VÀO TRẬN", 1, TouchUi.R(90, 0, 0, 0).x, TouchUi.R(0, 140, 0, 0).y, 1);
+            TouchUi.PixelText("MANG VÀO TRẬN", 1, TouchUi.R(90, 0, 0, 0).x, TouchUi.R(0, 145, 0, 0).y, 1, true);
             Texture2D focus = TouchUi.Img("/focusitem");
             int[] slots = Loadout.Get();
             for (int i = 0; i < 4; i++)
             {
-                Rect r = i < 3 ? SlotRect(i) : TouchUi.R(10 + 3 * 42, 152, 36, 36);
+                Rect r = i < 3 ? SlotRect(i) : TouchUi.R(CellX(3), 152, 36, 36);
                 if (i == 3)
                 {
                     TouchUi.Fill(r, TouchUi.Hex(0x140812));
                     Texture2D lk = TouchUi.Img("/m/lock");
-                    TouchUi.Sprite(lk, TouchUi.R(10 + 3 * 42 + 10, 156, 16, 16));
-                    TouchUi.PixelText("VIP", 2, r.center.x, TouchUi.R(0, 173, 0, 0).y, 1);
+                    TouchUi.Sprite(lk, TouchUi.R(CellX(3) + 10, 156, 16, 16));
+                    TouchUi.PixelText("VIP", 2, r.center.x, TouchUi.R(0, 180, 0, 0).y, 1, true);
                     continue;
                 }
                 if (slots[i] < 0)
@@ -297,10 +294,10 @@ namespace Loan12.UnityPort
             }
 
             // the bag with quick purchase
-            TouchUi.PixelText("TÚI ĐỒ", 2, TouchUi.R(10, 0, 0, 0).x, TouchUi.R(0, 194, 0, 0).y, 0);
+            TouchUi.PixelText("TÚI ĐỒ", 2, TouchUi.R(CellX(0), 0, 0, 0).x, TouchUi.R(0, 200, 0, 0).y, 0, true);
             Texture2D gold = TouchUi.Img("/gold");
-            TouchUi.Label(TouchUi.R(90, 194, 70, 12), TouchUi.Money(C_PortUi.gold()), 8, TextAnchor.MiddleRight, TouchUi.TextGold, true);
-            TouchUi.Sprite(gold, TouchUi.R(160, 189, 18, 18));
+            TouchUi.Label(TouchUi.R(84, 194, 70, 12), TouchUi.Money(C_PortUi.gold()), 8, TextAnchor.MiddleRight, TouchUi.TextGold, true);
+            TouchUi.Sprite(gold, TouchUi.R(155, 191, 16, 16));
             for (int i = 0; i < 4; i++)
             {
                 int type = Loadout.Usable[i];
@@ -342,6 +339,10 @@ namespace Loan12.UnityPort
                 TouchUi.Label(TouchUi.R(6, 300, 168, 13), toast, 7, TextAnchor.MiddleCenter, c, true);
             }
 
+            if (C_PortUi.canRetreat())
+            {
+                TouchUi.TextButton(BackRect(), "RÚT LUI", Btn.Grey, downKind == 2);
+            }
             TouchUi.RedButton(FightRect(), "XUẤT TRẬN", true, downKind == 1);
 
             if (confirmType >= 0)
@@ -387,10 +388,8 @@ namespace Loan12.UnityPort
             TouchUi.Label(TouchUi.R(52, 134, 112, 28), "Mua " + pack + " cái giá " + TouchUi.Money(price) + " vàng?", 7.5f, TextAnchor.MiddleLeft, Color.white, true, true);
             TouchUi.Label(TouchUi.R(18, 166, 146, 42), C_PortUi.itemDesc(type), 7, TextAnchor.UpperLeft, TouchUi.TextSoft, false, true);
             bool afford = C_PortUi.gold() >= price;
-            TouchUi.Button(ConfirmClose(), Btn.Grey, downKind == 7);
-            TouchUi.PixelText("ĐÓNG", 2, ConfirmClose().center.x, ConfirmClose().center.y, 1, true);
-            TouchUi.Button(ConfirmBuy(), afford ? Btn.Gold : Btn.Grey, downKind == 6);
-            TouchUi.PixelText("MUA", 2, ConfirmBuy().center.x, ConfirmBuy().center.y, 1, true);
+            TouchUi.TextButton(ConfirmClose(), "ĐÓNG", Btn.Grey, downKind == 7);
+            TouchUi.TextButton(ConfirmBuy(), "MUA", Btn.Gold, downKind == 6, afford);
             TouchUi.Label(TouchUi.R(10, 212, 160, 10), afford ? "Bạn đang có " + TouchUi.Money(C_PortUi.gold()) + " vàng" : "Không đủ vàng", 7,
                 TextAnchor.MiddleCenter, afford ? TouchUi.TextGold : TouchUi.Hex(0xFF9A80));
         }

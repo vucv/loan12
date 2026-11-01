@@ -32,6 +32,18 @@ public class Run {
                 case "wait":
                     advance(Integer.parseInt(arg));
                     break;
+                case "measure": {
+                    // PORT-UI: size and ink box of texts in the game's bitmap fonts: measure <font> <text>
+                    String[] q = arg.split("\\s+", 2);
+                    javax.microedition.lcdui.Image img = game.PortUi.text(q[1], Integer.parseInt(q[0]));
+                    int w = img.getWidth(), h = img.getHeight();
+                    int[] px = new int[w * h];
+                    img.getRGB(px, 0, w, 0, 0, w, h);
+                    int x0 = w, x1 = -1, y0 = h, y1 = -1;
+                    for (int y = 0; y < h; y++) for (int x = 0; x < w; x++) if ((px[y * w + x] & 0xFFFFFF) != 0xFF00FF) { x0 = Math.min(x0, x); x1 = Math.max(x1, x); y0 = Math.min(y0, y); y1 = Math.max(y1, y); }
+                    System.out.println("measure " + q[0] + " '" + q[1] + "' tex " + w + "x" + h + " ink x" + x0 + ".." + x1 + " y" + y0 + ".." + y1);
+                    break;
+                }
                 case "key": {
                     for (String k : arg.split("\\s+")) {
                         int code = Integer.parseInt(k);
@@ -231,6 +243,16 @@ public class Run {
                 advance(100);
                 continue;
             }
+            if (System.getProperty("lose") != null && game.PortUi.resultView() && game.PortUi.resultMode() == 3 && lossActs < 2) {
+                System.out.println("losetest: lost, exp -" + game.PortUi.lossExp() + " retry=" + game.PortUi.lossRetry() + " arena=" + game.PortUi.arena() + " name=" + game.PortUi.vsName(0));
+                game.PortUi.request(lossActs == 0 && game.PortUi.lossRetry() ? game.PortUi.END_RETRY : game.PortUi.END_BACK, 0);
+                lossActs++;
+                advance(1500);
+                System.out.println("losetest: after " + (lossActs == 1 ? "first" : "second") + " action battle=" + (game.PortUi.battle() != null) + " out=" + game.PortUi.outcome() + " views=" + views());
+            }
+            if (System.getProperty("pausetest") != null && !pauseTested && game.PortUi.battleView() && game.PortUi.waiting()) {
+                pauseTest();
+            }
             if (win) {
                 weakenEnemy();
                 if (botMove()) {
@@ -266,6 +288,42 @@ public class Run {
         java.lang.reflect.Field f = c.getDeclaredField(name);
         f.setAccessible(true);
         return f;
+    }
+
+    static boolean pauseTested;
+    static int lossActs;
+
+    /** PORT-UI: pause -> resume, interruption -> resume, then pause -> save and quit */
+    static void pauseTest() {
+        pauseTested = true;
+        game.PortUi.request(game.PortUi.PAUSE, 0);
+        advance(200);
+        System.out.println("pausetest: after PAUSE kind=" + game.PortUi.pauseKind() + " views=" + views());
+        advance(800);
+        game.PortUi.request(game.PortUi.PAUSE_RESUME, 0);
+        advance(100);
+        System.out.println("pausetest: after RESUME kind=" + game.PortUi.pauseKind() + " views=" + views());
+        advance(800);
+        System.out.println("pausetest: later kind=" + game.PortUi.pauseKind() + " views=" + views() + " waiting=" + game.PortUi.waiting());
+        Host.pause();
+        advance(100);
+        Host.resume();
+        advance(800);
+        System.out.println("pausetest: after background kind=" + game.PortUi.pauseKind() + " views=" + views());
+        game.PortUi.request(game.PortUi.PAUSE_RESUME, 0);
+        advance(900);
+        System.out.println("pausetest: after RESUME kind=" + game.PortUi.pauseKind() + " views=" + views() + " waiting=" + game.PortUi.waiting());
+        if (System.getProperty("pausequit") != null) {
+            game.PortUi.request(game.PortUi.PAUSE, 0);
+            advance(900);
+            game.PortUi.request(game.PortUi.PAUSE_QUIT, 0);
+            advance(1500);
+            System.out.println("pausetest: after QUIT battle=" + (game.PortUi.battle() != null) + " views=" + views());
+        }
+    }
+
+    static String views() {
+        return (game.PortUi.resultView() ? "R" : "") + (game.PortUi.pauseView() ? "Z" : "") + (game.PortUi.prepareView() ? "P" : "") + (game.PortUi.battleView() ? "B" : "");
     }
 
     static int weakened;
@@ -345,7 +403,9 @@ public class Run {
             game.bn[] fighters = (game.bn[]) fld(game.cq.class, "f").get(board);
             java.lang.reflect.Field hp = fld(game.bn.class, "c");
             for (game.bn f : fighters) {
-                if (f != null && f.b() >= 6 && hp.getInt(f) > 1) {
+                boolean enemy = f != null && f.b() >= 6;
+                if (System.getProperty("lose") != null) enemy = f != null && f.b() < 6; // PORT-UI test: lose instead
+                if (f != null && enemy && hp.getInt(f) > 1) {
                     hp.setInt(f, 1);
                     weakened++;
                 }
@@ -365,6 +425,7 @@ public class Run {
                 System.out.println("t=" + (b.now - 1_400_000_000_000L) + " shown: " + name);
                 lastShown = name;
             }
+            if (System.getProperty("trace") != null) trace();
             if (monkeyMode && (b.exited || Host.exitRequested)) {
                 // keep exploring: the game asked to quit, pretend it did not happen
                 b.exited = false;
@@ -375,6 +436,31 @@ public class Run {
                 System.out.println("EXIT requested");
                 return;
             }
+        }
+    }
+
+    static String lastTrace = "";
+
+    /** -Dtrace: one line whenever the screen / dialog / battle state seen by the touch interface changes */
+    static void trace() {
+        try {
+            game.cz c = game.cz.a;
+            if (c == null || c.e == null) return;
+            Object scr = fld(game.bv.class, "b").get(c.e), dlg = fld(game.bv.class, "d").get(c.e);
+            String sig = "scr=" + (scr == null ? "-" : scr.getClass().getSimpleName()) + " dlg=" + (dlg == null ? "-" : dlg.getClass().getSimpleName())
+                + " tr=" + game.PortUi.transition() + " l=" + fld(game.bv.class, "l").get(c.e) + " i=" + (fld(game.bv.class, "i").get(c.e) == null ? "-" : fld(game.bv.class, "i").get(c.e).getClass().getSimpleName());
+            game.bu bt = game.PortUi.battle();
+            if (bt != null) {
+                int vv = fld(game.bu.class, "v").getInt(bt);
+                sig += " v=" + (vv == 8 || vv == 11 || vv == 3 || vv == 0 || vv == 6 || vv == 10 || vv == 7 || vv == 2 || vv == 4 || vv == 5 ? "play" : "" + vv) + " st=" + (bt.portState() != null) + " end=" + (fld(game.bu.class, "v").getInt(bt) == 12 && fld(game.bu.class, "C").getInt(bt) > 0 ? "anim" : "-");
+            }
+            sig += " out=" + game.PortUi.outcome() + " views=" + views();
+            if (!sig.equals(lastTrace)) {
+                System.out.println("trace t=" + (b.now - 1_400_000_000_000L) + " " + sig);
+                lastTrace = sig;
+            }
+        } catch (Exception e) {
+            System.out.println("trace error " + e);
         }
     }
 

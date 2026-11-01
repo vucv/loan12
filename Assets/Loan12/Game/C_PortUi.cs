@@ -18,6 +18,16 @@ namespace Loan12
         // soft key of the dialog on top
         public const int f_RESULT_SKIP = 6;
         // result panel: stop waiting
+        public const int f_PAUSE_RESUME = 7;
+        // pause: back to the battle
+        public const int f_PAUSE_QUIT = 8;
+        // pause: save the battle and go to the menu (the game's "Có")
+        public const int f_END_RETRY = 9;
+        // lost battle: fight again
+        public const int f_END_BACK = 10;
+        // lost battle: back to the map
+        /** the "Bấm tiếp tục để chơi tiếp" dialog the game opens when it comes back from the background */
+        public static C_ae f_resumeDialog;
         private static int f_reqKind;
         private static int f_reqArg;
         /** damage of each skill = attack * E / F (as the game's skill window computes it) */
@@ -67,32 +77,93 @@ namespace Loan12
             return null;
         }
 
-        /** 6: the plain battle is on screen: no dialog on top, no screen transition, not the tutorial */
+        /**
+         * 6: the battle is on screen (not the tutorial) with no dialog on top. Also while a dialog closes,
+         * and while the result dialog opens after the end of the fight (the touch view keeps playing its
+         * end animation instead of the classic dialog animation).
+         */
         public static bool battleView()
         {
             C_bu b = C_PortUi.battle();
-            if ((b == null) || (b.portState() == null) || (C_PortUi.dialog() != null) || C_PortUi.transition())
+            if ((b == null) || (b.portState() == null) || b.portTraining())
             {
                 return false;
             }
-            return !b.portTraining();
+            C_ae d = C_PortUi.dialog();
+            if (d == null)
+            {
+                return true;
+            }
+            return C_PortUi.transition() && (b.portOutcome() != 0) && (d == b.f_portEndDialog);
         }
 
-        /** 5: the map shows the VS box of a coming battle, ready for "Đánh" / "Rút lui" */
+        /** 0 playing (or no battle), 1 won, 2 lost: from the end of the fight until its result closes */
+        public static int outcome()
+        {
+            C_bu b = C_PortUi.battle();
+            return ((b == null) || b.portTraining() ? 0 : b.portOutcome());
+        }
+
+        /** the pause of a battle: 0 none, 1 the game's "dừng game" dialog, 2 back from the background */
+        public static int pauseKind()
+        {
+            C_bu b = C_PortUi.battle();
+            C_ae d = C_PortUi.dialog();
+            if ((b == null) || (d == null) || b.portTraining())
+            {
+                return 0;
+            }
+            if (d == b.f_portPauseDialog)
+            {
+                return 1;
+            }
+            return (d == C_PortUi.f_resumeDialog ? 2 : 0);
+        }
+
+        public static bool pauseView()
+        {
+            return C_PortUi.pauseKind() != 0;
+        }
+
+        /** 5: the map shows the VS box of a coming battle, ready for "Đánh" / "Rút lui" (also while a dialog closes) */
         public static bool prepareView()
         {
             C_ar s = C_PortUi.screen();
-            if (!((s is SQ_aa)) || (C_PortUi.dialog() != null) || C_PortUi.transition())
+            if (!((s is SQ_aa)) || (C_PortUi.dialog() != null))
             {
                 return false;
             }
             return (((SQ_aa)(s))).portVsReady();
         }
 
-        /** 7: the result panel of a won battle / a quest reward is open */
+        /**
+         * 7: the result of a battle (won: the reward panel; lost: the game's "mất 1 mạng" dialog) or a quest
+         * reward. After a battle it shows once the dialog has opened (the battle view covers the opening).
+         */
         public static bool resultView()
         {
-            return ((C_PortUi.dialog() is C_cr)) && !C_PortUi.transition();
+            C_ae d = C_PortUi.dialog();
+            C_bu b = C_PortUi.battle();
+            bool ours = ((d is C_cr)) || ((b != null) && (d != null) && (d == b.f_portEndDialog));
+            return ours && ((b == null) || !C_PortUi.transition());
+        }
+
+        /** experience taken by the last defeat (shown when it is not an arena fight) */
+        public static int lossExp()
+        {
+            return ((C_dd.f_a >= 0) ? 0 : C_dd.f_portLossExp);
+        }
+
+        /** the lost battle can be fought again ("Có" of the game's dialog) */
+        public static bool lossRetry()
+        {
+            C_bu b = C_PortUi.battle();
+            return (b != null) && b.f_portEndRetry;
+        }
+
+        public static bool arena()
+        {
+            return (C_dd.f_a >= 0);
         }
 
         // ---- 5: preparing a battle ----------------------------------------------------------------
@@ -405,10 +476,11 @@ namespace Loan12
         }
 
         /** 0 battle won, 1 quest reward, 2 arena */
+        /** 0 battle won, 1 quest reward, 2 arena, 3 battle lost */
         public static int resultMode()
         {
             C_cr r = C_PortUi.result();
-            return (r == null ? 0 : r.portMode());
+            return (r == null ? 3 : r.portMode());
         }
 
         public static string resultName()
@@ -537,26 +609,62 @@ namespace Loan12
             C_PortUi.f_reqKind = 0;
             switch ((kind))
             {
+                case 7:
+                case 8:
+                    {
+                        int k = C_PortUi.pauseKind();
+                        if (k == 1)
+                        {
+                            C_PortUi.dialog().portPress((kind == C_PortUi.f_PAUSE_RESUME ? 2 : 0));
+                            // "Không" / "Có"
+                        }
+                        else if ((k == 2) && (kind == C_PortUi.f_PAUSE_RESUME))
+                        {
+                            C_PortUi.dialog().portPress(1);
+                            // "Tiếp tục"
+                        }
+                        break;
+                    }
+                case 9:
+                case 10:
+                    {
+                        C_bu b = C_PortUi.battle();
+                        if ((b == null) || (C_PortUi.dialog() == null) || (C_PortUi.dialog() != b.f_portEndDialog) || (b.portOutcome() != 2))
+                        {
+                            break;
+                        }
+                        if (b.f_portEndRetry)
+                        {
+                            C_PortUi.dialog().portPress((kind == C_PortUi.f_END_RETRY ? 0 : 2));
+                            // "Có" / "Không"
+                        }
+                        else if (kind == C_PortUi.f_END_BACK)
+                        {
+                            C_PortUi.dialog().portPress(1);
+                            // "Trở về"
+                        }
+                        break;
+                    }
                 case 1:
                 case 2:
                 case 3:
                     {
-                        C_bu b = C_PortUi.battle();
-                        if ((b == null) || !C_PortUi.battleView())
+                        C_bu b_1 = C_PortUi.battle();
+                        if ((b_1 == null) || !C_PortUi.battleView())
                         {
                             return;
                         }
                         if (kind == C_PortUi.f_SKILL)
                         {
-                            b.portUseSkill(arg);
+                            b_1.portUseSkill(arg);
                         }
                         else if (kind == C_PortUi.f_ITEM)
                         {
-                            b.portUseItem(arg);
+                            b_1.portUseItem(arg);
                         }
                         else
                         {
-                            b.g();
+                            b_1.g();
                         }
                         break;
                     }

@@ -752,6 +752,12 @@ public final class PortUi {
     public static final int SCREEN_KEY = 4;  // soft key of the current screen, arg: 0 left, 1 centre, 2 right
     public static final int DIALOG_KEY = 5;  // soft key of the dialog on top
     public static final int RESULT_SKIP = 6; // result panel: stop waiting
+    public static final int PAUSE_RESUME = 7; // pause: back to the battle
+    public static final int PAUSE_QUIT = 8;   // pause: save the battle and go to the menu (the game's "Có")
+    public static final int END_RETRY = 9;    // lost battle: fight again
+    public static final int END_BACK = 10;    // lost battle: back to the map
+    /** the "Bấm tiếp tục để chơi tiếp" dialog the game opens when it comes back from the background */
+    static ae resumeDialog;
     private static int reqKind;
     private static int reqArg;
 
@@ -776,7 +782,7 @@ public final class PortUi {
         return (c == null) || (c.e == null) ? null : c.e.d;
     }
 
-    static boolean transition() {
+    public static boolean transition() {
         bv v = cz.a.e;
         return v.l && (v.i != null);
     }
@@ -790,27 +796,79 @@ public final class PortUi {
         return null;
     }
 
-    /** 6: the plain battle is on screen: no dialog on top, no screen transition, not the tutorial */
+    /**
+     * 6: the battle is on screen (not the tutorial) with no dialog on top. Also while a dialog closes,
+     * and while the result dialog opens after the end of the fight (the touch view keeps playing its
+     * end animation instead of the classic dialog animation).
+     */
     public static boolean battleView() {
         bu b = battle();
-        if ((b == null) || (b.portState() == null) || (dialog() != null) || transition()) {
+        if ((b == null) || (b.portState() == null) || b.portTraining()) {
             return false;
         }
-        return !b.portTraining();
+        ae d = dialog();
+        if (d == null) {
+            return true;
+        }
+        return transition() && (b.portOutcome() != 0) && (d == b.portEndDialog);
     }
 
-    /** 5: the map shows the VS box of a coming battle, ready for "Đánh" / "Rút lui" */
+    /** 0 playing (or no battle), 1 won, 2 lost: from the end of the fight until its result closes */
+    public static int outcome() {
+        bu b = battle();
+        return (b == null) || b.portTraining() ? 0 : b.portOutcome();
+    }
+
+    /** the pause of a battle: 0 none, 1 the game's "dừng game" dialog, 2 back from the background */
+    public static int pauseKind() {
+        bu b = battle();
+        ae d = dialog();
+        if ((b == null) || (d == null) || b.portTraining()) {
+            return 0;
+        }
+        if (d == b.portPauseDialog) {
+            return 1;
+        }
+        return d == resumeDialog ? 2 : 0;
+    }
+
+    public static boolean pauseView() {
+        return pauseKind() != 0;
+    }
+
+    /** 5: the map shows the VS box of a coming battle, ready for "Đánh" / "Rút lui" (also while a dialog closes) */
     public static boolean prepareView() {
         ar s = screen();
-        if (!(s instanceof com.mic.smsgame.suquan.aa) || (dialog() != null) || transition()) {
+        if (!(s instanceof com.mic.smsgame.suquan.aa) || (dialog() != null)) {
             return false;
         }
         return ((com.mic.smsgame.suquan.aa) s).portVsReady();
     }
 
-    /** 7: the result panel of a won battle / a quest reward is open */
+    /**
+     * 7: the result of a battle (won: the reward panel; lost: the game's "mất 1 mạng" dialog) or a quest
+     * reward. After a battle it shows once the dialog has opened (the battle view covers the opening).
+     */
     public static boolean resultView() {
-        return (dialog() instanceof cr) && !transition();
+        ae d = dialog();
+        bu b = battle();
+        boolean ours = (d instanceof cr) || ((b != null) && (d != null) && (d == b.portEndDialog));
+        return ours && ((b == null) || !transition());
+    }
+
+    /** experience taken by the last defeat (shown when it is not an arena fight) */
+    public static int lossExp() {
+        return dd.a >= 0 ? 0 : dd.portLossExp;
+    }
+
+    /** the lost battle can be fought again ("Có" of the game's dialog) */
+    public static boolean lossRetry() {
+        bu b = battle();
+        return (b != null) && b.portEndRetry;
+    }
+
+    public static boolean arena() {
+        return dd.a >= 0;
     }
 
     // ---- 5: preparing a battle ----------------------------------------------------------------
@@ -1074,9 +1132,10 @@ public final class PortUi {
     }
 
     /** 0 battle won, 1 quest reward, 2 arena */
+    /** 0 battle won, 1 quest reward, 2 arena, 3 battle lost */
     public static int resultMode() {
         cr r = result();
-        return r == null ? 0 : r.portMode();
+        return r == null ? 3 : r.portMode();
     }
 
     public static String resultName() {
@@ -1186,6 +1245,29 @@ public final class PortUi {
         int arg = reqArg;
         reqKind = 0;
         switch (kind) {
+            case PAUSE_RESUME:
+            case PAUSE_QUIT: {
+                int k = pauseKind();
+                if (k == 1) {
+                    dialog().portPress(kind == PAUSE_RESUME ? 2 : 0); // "Không" / "Có"
+                } else if ((k == 2) && (kind == PAUSE_RESUME)) {
+                    dialog().portPress(1); // "Tiếp tục"
+                }
+                break;
+            }
+            case END_RETRY:
+            case END_BACK: {
+                bu b = battle();
+                if ((b == null) || (dialog() == null) || (dialog() != b.portEndDialog) || (b.portOutcome() != 2)) {
+                    break;
+                }
+                if (b.portEndRetry) {
+                    dialog().portPress(kind == END_RETRY ? 0 : 2); // "Có" / "Không"
+                } else if (kind == END_BACK) {
+                    dialog().portPress(1); // "Trở về"
+                }
+                break;
+            }
             case SKILL:
             case ITEM:
             case PAUSE: {
@@ -1228,8 +1310,20 @@ public final class PortUi {
 }
 ''')
 rep('game/bu.java', """    public String portBarLabel(int paramInt) {""", """    // PORT-UI: state and actions for the Unity touch interface (see PortUi)
+    public ae portPauseDialog; // the "dừng game" dialog of this battle
+    public ae portEndDialog;   // the result (won) or "mất 1 mạng" (lost) dialog
+    public boolean portEndRetry; // the lost battle can be fought again
+
     public cq portState() {
         return this.s;
+    }
+
+    /** 0 playing, 1 won, 2 lost (from the end of the fight: animation, then the result dialog) */
+    public int portOutcome() {
+        if ((this.v != 9) && (this.v != 12)) {
+            return 0;
+        }
+        return this.E ? 1 : 2;
     }
 
     /** the board waits for the human player's move */
@@ -1396,6 +1490,43 @@ rep('game/cr.java', """        this.P = new dk("lvu");
             this.L = 1;
         }
     }""")
+
+# PORT-UI: remember the dialogs the touch interface replaces
+rep('game/bu.java', """        localae = cz.a("Thông tin", "Bạn muốn dừng game lại?", "Có", -1, "Không", -2, 1);
+""", """        localae = cz.a("Thông tin", "Bạn muốn dừng game lại?", "Có", -1, "Không", -2, 1);
+        this.portPauseDialog = localae; // PORT-UI
+""")
+rep('game/bu.java', """                    localae.c(new da("Đóng", -5));
+                    localae.a(this);
+""", """                    localae.c(new da("Đóng", -5));
+                    localae.a(this);
+                    this.portEndDialog = localae; // PORT-UI
+""")
+rep('game/bu.java', """                        localae.b(new da("Không", -4));
+                    }
+                    localae.a(this);
+""", """                        localae.b(new da("Không", -4));
+                    }
+                    localae.a(this);
+                    this.portEndDialog = localae; // PORT-UI
+                    this.portEndRetry = (dd.a < 0) && bg.l();
+""")
+rep('game/dd.java', """    public static final ae g() {
+        int i1 = b();
+        int i2 = a(e, f, i1);
+""", """    public static int portLossExp; // PORT-UI: experience taken by the last defeat
+
+    public static final ae g() {
+        int i1 = b();
+        int i2 = a(e, f, i1);
+        portLossExp = i2; // PORT-UI
+""")
+rep('game/cz.java', """            localdu.a(this);
+            a(localdu, false);
+""", """            localdu.a(this);
+            PortUi.resumeDialog = localdu; // PORT-UI
+            a(localdu, false);
+""")
 
 # ---------------------------------------------------------------------------------------------
 # time and system properties come from the host backend (Unity: real clock; test harness: virtual

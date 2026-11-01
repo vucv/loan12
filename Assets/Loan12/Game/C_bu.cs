@@ -45,6 +45,58 @@ namespace Loan12
         private int[] f_M;
         // PORT-FIX: "0 - 1" was "0, -1" (8 directions like N)
         private int[] f_N;
+        // PORT-FIX: hoisted (decompiler scope bug)
+        // PORT-FIX: hoisted (decompiler scope bug)
+        //(type,x)
+        //Must call each frame
+        //Start point
+        //delay here
+        // PORT-UI
+        // PORT-UI
+        //Resume score
+        //Must read here
+        //switch (paramInt) int c()
+        // PORT-FIX: hoisted (decompiler scope bug)
+        // PORT-FIX: hoisted (decompiler scope bug)
+        //Swap
+        // Detroy at here
+        //detroy at here
+        // /36
+        //Start
+        //Luot danh 0|1
+        //get Info 1
+        // get Info 2
+        //9 skill
+        //fire1
+        //fire2
+        //fire3
+        //lightning1
+        //lightning2
+        //lightning3
+        //ice1
+        //ice2
+        //ice3
+        //Detroy and random new
+        // PORT-FIX: hoisted (decompiler scope bug)
+        // PORT-FIX: hoisted (decompiler scope bug)
+        //in board
+        //!=9 => in board
+        //Random new here
+        // PORT-FIX: hoisted (decompiler scope bug)
+        // PORT-UI
+        //check score apter move a.e[1,2,3,4]: 12 for position 1, 34 for position 2
+        // PORT-FIX: hoisted (decompiler scope bug)
+        //Training
+        //Match
+        //After check, call swap
+        // PORT-TOUCH: drags / releases go to the human player while the board waits for input
+        /** soft keys of the battle bar: left (skills) and right (pause); the centre ("bag") is the # key */
+        // PORT-UI: state and actions for the Unity touch interface (see PortUi)
+        public C_ae f_portPauseDialog;
+        // the "dừng game" dialog of this battle
+        public C_ae f_portEndDialog;
+        // the result (won) or "mất 1 mạng" (lost) dialog
+        public bool f_portEndRetry;
 
         private void __init_C_bu()
         {
@@ -333,6 +385,8 @@ namespace Loan12
                         localae = C_dd.a(false);
                         ((C_ar)localae).c(((C_de)(new C_da("Đóng", -5))));
                         ((C_ar)localae).a(((MG_b)(this)));
+                        this.f_portEndDialog = localae;
+                        // PORT-UI
                         C_cz.d().a(localae, true);
                     }
                     else
@@ -348,6 +402,9 @@ namespace Loan12
                             ((C_ar)localae).b(((C_de)(new C_da("Không", -4))));
                         }
                         ((C_ar)localae).a(((MG_b)(this)));
+                        this.f_portEndDialog = localae;
+                        // PORT-UI
+                        this.f_portEndRetry = ((C_dd.f_a < 0)) && C_bg.l();
                         C_cz.d().a(localae, true);
                     }
                     break;
@@ -1357,6 +1414,8 @@ namespace Loan12
                 return;
             }
             localae = C_cz.a("Thông tin", "Bạn muốn dừng game lại?", "Có", -1, "Không", -2, 1);
+            this.f_portPauseDialog = localae;
+            // PORT-UI
             ((C_ar)localae).a(((MG_b)(this)));
             this.f_t.a(false);
             C_cz.d().a(localae, true);
@@ -1541,9 +1600,22 @@ namespace Loan12
 
         /** soft keys of the battle bar: left (skills) and right (pause); the centre ("bag") is the # key */
         // PORT-UI: state and actions for the Unity touch interface (see PortUi)
+        // the "dừng game" dialog of this battle
+        // the result (won) or "mất 1 mạng" (lost) dialog
+        // the lost battle can be fought again
         public C_cq portState()
         {
             return this.f_s;
+        }
+
+        /** 0 playing, 1 won, 2 lost (from the end of the fight: animation, then the result dialog) */
+        public int portOutcome()
+        {
+            if ((this.f_v != 9) && (this.f_v != 12))
+            {
+                return 0;
+            }
+            return (this.f_E ? 1 : 2);
         }
 
         /** the board waits for the human player's move */

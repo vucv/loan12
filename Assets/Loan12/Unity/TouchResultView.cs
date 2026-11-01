@@ -1,8 +1,10 @@
-// Screen 7 of the touch redesign (plan/thiet-ke-giao-dien.md): the result of a won battle (or a quest
-// reward / an arena fight), shown instead of the game's "Kết quả" panel.
-//   THẮNG / the hero, level and experience (counting up while the rewards are added, "Lên cấp" when it
-//   happens) / the rewards / gold owned / TIẾP TỤC.
-// TIẾP TỤC presses the panel's own "Đóng"; before the panel accepts it, a tap only skips its short wait.
+// Screen 7 of the touch redesign (plan/thiet-ke-giao-dien.md): the result.
+//   Won battle / quest reward / arena: THẮNG, the hero, level and experience (counting up while the
+//   rewards are added, "Lên cấp" when it happens), the rewards, gold owned, TIẾP TỤC (the panel's "Đóng";
+//   before the panel accepts it, a tap only skips its short wait).
+//   Lost battle: THUA, the hero, what was lost (1 life, experience), ĐÁNH LẠI / TRỞ VỀ (the game's
+//   "Có" / "Không" or "Trở về").
+// After a battle it slides in over the dimmed, frozen battle, right after the THẮNG / THUA animation.
 using UnityEngine;
 
 namespace Loan12.UnityPort
@@ -11,9 +13,15 @@ namespace Loan12.UnityPort
     {
         const int GridH = 352;
 
-        int downKind; // 1 continue, 2 elsewhere
+        readonly TouchBattleView battle;
+        int downKind; // 1 continue / retry, 2 elsewhere, 3 back (lost)
         int startLevel = -1;
-        object shownFor;
+        float shownAt = -1f;
+
+        public TouchResultView(TouchBattleView battle)
+        {
+            this.battle = battle;
+        }
 
         public bool Active()
         {
@@ -30,36 +38,62 @@ namespace Loan12.UnityPort
         public void Reset()
         {
             downKind = 0;
-            shownFor = null;
+            shownAt = -1f;
             startLevel = -1;
         }
 
-        static Rect ContinueRect()
+        static bool Lost()
         {
-            return TouchUi.R(20, 314, 140, 32);
+            return C_PortUi.resultMode() == 3;
+        }
+
+        // lost with a second chance: two buttons side by side; otherwise one wide button
+        static Rect MainRect()
+        {
+            return Lost() && C_PortUi.lossRetry() ? TouchUi.R(92, 314, 74, 32) : TouchUi.R(20, 314, 140, 32);
+        }
+
+        static Rect BackRect()
+        {
+            return TouchUi.R(14, 314, 74, 32);
         }
 
         public void OnGUI(Event e, Texture2D lcd, bool haptics)
         {
-            TouchUi.Begin(GridH);
-            if (shownFor == null)
+            if (shownAt < 0f)
             {
-                shownFor = this;
-                startLevel = C_PortUi.resultLevel();
+                shownAt = Time.unscaledTime;
+                startLevel = Lost() ? C_PortUi.vsLevel(0) : C_PortUi.resultLevel();
             }
+            TouchUi.Begin(GridH);
             Vector2 p = e.mousePosition;
+            bool lost = Lost(), retry = lost && C_PortUi.lossRetry();
             if (e.type == EventType.MouseDown && e.button == 0)
             {
-                downKind = ContinueRect().Contains(p) ? 1 : 2;
-                Haptics.Tap(haptics && downKind == 1);
+                downKind = MainRect().Contains(p) ? 1 : (retry && BackRect().Contains(p) ? 3 : 2);
+                Haptics.Tap(haptics && downKind != 2);
                 e.Use();
             }
             else if (e.type == EventType.MouseUp)
             {
-                if (downKind == 1 && ContinueRect().Contains(p) && C_PortUi.resultReady())
+                if (Time.unscaledTime - shownAt < 0.3f)
+                {
+                    // still sliding in
+                }
+                else if (lost)
+                {
+                    if (downKind == 1 && MainRect().Contains(p))
+                    {
+                        C_PortUi.request(retry ? C_PortUi.f_END_RETRY : C_PortUi.f_END_BACK, 0);
+                    }
+                    else if (downKind == 3 && BackRect().Contains(p))
+                    {
+                        C_PortUi.request(C_PortUi.f_END_BACK, 0);
+                    }
+                }
+                else if (downKind == 1 && MainRect().Contains(p) && C_PortUi.resultReady())
                 {
                     C_PortUi.request(C_PortUi.f_DIALOG_KEY, 1); // the panel's "Đóng"
-                    shownFor = null;
                 }
                 else if (downKind != 0 && !C_PortUi.resultReady())
                 {
@@ -68,16 +102,58 @@ namespace Loan12.UnityPort
                 downKind = 0;
                 e.Use();
             }
+            else if (e.type == EventType.MouseDrag)
+            {
+                e.Use();
+            }
             if (e.type == EventType.Repaint)
             {
-                Draw();
+                bool afterBattle = battle != null && C_PortUi.battle() != null;
+                if (afterBattle)
+                {
+                    battle.DrawBackdrop(lcd);
+                    TouchUi.Begin(GridH);
+                }
+                else
+                {
+                    TouchUi.Fill(new Rect(0, 0, Screen.width, Screen.height), TouchUi.Background);
+                    TouchUi.Wallpaper();
+                }
+                Draw(afterBattle);
             }
         }
 
-        void Draw()
+        void Draw(bool afterBattle)
         {
             float k = TouchUi.K;
-            TouchUi.Fill(new Rect(0, 0, Screen.width, Screen.height), TouchUi.Background);
+            float t = Mathf.Clamp01((Time.unscaledTime - shownAt) / 0.3f);
+            float ease = 1f - (1f - t) * (1f - t);
+            TouchUi.Dim((afterBattle ? 0.8f : 0.45f) * ease);
+            Color old = GUI.color;
+            GUI.color = old * new Color(1f, 1f, 1f, ease);
+            float slide = (1f - ease) * 18f;
+            if (Lost())
+            {
+                DrawLost(slide);
+            }
+            else
+            {
+                DrawWon(slide);
+            }
+            GUI.color = old;
+        }
+
+        void Hero(float y, int portrait, string name, int level)
+        {
+            TouchUi.Portrait(portrait, TouchUi.R(14, y, 34, 34));
+            TouchUi.PixelText(name.ToUpperInvariant(), 2, TouchUi.R(54, 0, 0, 0).x, TouchUi.R(0, y + 8, 0, 0).y, 0, true);
+            bool up = startLevel >= 0 && level > startLevel;
+            TouchUi.Label(TouchUi.R(100, y + 2, 66, 12), up ? "Lên cấp " + level + "!" : "Cấp " + level, 7.5f, TextAnchor.MiddleRight,
+                up ? TouchUi.TextGreen : TouchUi.Hex(0xFFE6A0), true);
+        }
+
+        void DrawWon(float slide)
+        {
             int mode = C_PortUi.resultMode();
 
             // title
@@ -85,28 +161,26 @@ namespace Loan12.UnityPort
             {
                 Texture2D win = TouchUi.Img("/strwin");
                 int fw = win.width / 3;
-                TouchUi.Sprite(win, TouchUi.R(90 - fw / 2f, 4, fw, win.height), new Rect(fw, 0, fw, win.height));
+                float pulse = 1f + 0.02f * Mathf.Sin(Time.unscaledTime * 4f);
+                float w = fw * pulse, h = win.height * pulse;
+                TouchUi.Sprite(win, TouchUi.R(90 - w / 2f, 38 - h / 2f + slide, w, h), new Rect(fw * (1 + (int) (Time.unscaledTime / 0.2f) % 2), 0, fw, win.height));
             }
             else
             {
-                TouchUi.PixelText(mode == 1 ? "PHẦN THƯỞNG NHIỆM VỤ" : "LUYỆN TẬP", 1, TouchUi.R(90, 0, 0, 0).x, TouchUi.R(0, 30, 0, 0).y, 1);
+                TouchUi.PixelText(mode == 1 ? "PHẦN THƯỞNG NHIỆM VỤ" : "LUYỆN TẬP", 1, TouchUi.R(90, 0, 0, 0).x, TouchUi.R(0, 40 + slide, 0, 0).y, 1, true);
             }
 
             // the hero
-            TouchUi.Panel(TouchUi.R(6, 76, 168, 228));
-            TouchUi.Portrait(C_PortUi.resultPortrait(), TouchUi.R(14, 88, 34, 34));
-            TouchUi.PixelText(C_PortUi.resultName().ToUpperInvariant(), 2, TouchUi.R(54, 0, 0, 0).x, TouchUi.R(0, 88, 0, 0).y, 0);
-            int level = C_PortUi.resultLevel();
-            bool up = startLevel >= 0 && level > startLevel;
-            TouchUi.Label(TouchUi.R(100, 88, 68, 12), up ? "Lên cấp " + level + "!" : "Cấp " + level, 7.5f, TextAnchor.MiddleRight,
-                up ? TouchUi.TextGreen : TouchUi.Hex(0xFFE6A0), true);
+            float y0 = 76 + slide;
+            TouchUi.Panel(TouchUi.R(6, y0, 168, 228));
+            Hero(y0 + 10, C_PortUi.resultPortrait(), C_PortUi.resultName(), C_PortUi.resultLevel());
             int exp = C_PortUi.resultExp(), lo = C_PortUi.resultExpLo(), hi = C_PortUi.resultExpHi();
             float frac = hi > lo ? Mathf.Clamp01((float) (exp - lo) / (hi - lo)) : 1f;
-            Bar(TouchUi.R(54, 104, 114, 7), frac, TouchUi.Hex(0xB050E0), TouchUi.Hex(0x200828));
-            TouchUi.Label(TouchUi.R(54, 113, 114, 10), "Kinh nghiệm " + exp + "/" + hi, 6.5f, TextAnchor.UpperLeft, TouchUi.TextSoft);
+            Bar(TouchUi.R(54, y0 + 26, 112, 7), frac, TouchUi.Hex(0xB050E0), TouchUi.Hex(0x200828));
+            TouchUi.Label(TouchUi.R(54, y0 + 35, 112, 10), "Kinh nghiệm " + exp + "/" + hi, 6.5f, TextAnchor.UpperLeft, TouchUi.TextSoft);
 
             // rewards
-            float y = 134;
+            float y = y0 + 56;
             if (mode == 0)
             {
                 Row(ref y, "/gold", "Vàng nhặt được", "+" + C_PortUi.resultGoldGain());
@@ -123,18 +197,50 @@ namespace Loan12.UnityPort
                 Row(ref y, "/book", "Kinh nghiệm luyện tập", "+" + C_PortUi.resultExpGain());
             }
 
-            // totals
-            Rect tot = TouchUi.R(14, 262, 152, 24);
-            TouchUi.Fill(tot, TouchUi.Hex(0x2A1426));
-            TouchUi.Sprite(TouchUi.Img("/gold"), TouchUi.R(18, 263, 22, 22));
-            TouchUi.Label(TouchUi.R(44, 262, 70, 24), "Vàng hiện có", 7, TextAnchor.MiddleLeft, TouchUi.TextSoft);
-            TouchUi.Label(TouchUi.R(100, 262, 62, 24), TouchUi.Money(C_PortUi.resultGold()), 8.5f, TextAnchor.MiddleRight, TouchUi.TextGold, true);
+            // gold owned
+            Total(y0 + 186, "/gold", "Vàng hiện có", TouchUi.Money(C_PortUi.resultGold()), TouchUi.TextGold);
 
             bool ready = C_PortUi.resultReady();
-            TouchUi.RedButton(ContinueRect(), "TIẾP TỤC", ready, downKind == 1 && ready);
+            TouchUi.RedButton(MainRect(), "TIẾP TỤC", ready, downKind == 1 && ready);
             if (!ready)
             {
-                TouchUi.Label(TouchUi.R(0, 300, 180, 10), "Chạm để bỏ qua", 6.5f, TextAnchor.MiddleCenter, TouchUi.Hex(0xB8A8B8));
+                TouchUi.Label(TouchUi.R(0, 304, 180, 10), "Chạm để bỏ qua", 6.5f, TextAnchor.MiddleCenter, TouchUi.Hex(0xB8A8B8));
+            }
+        }
+
+        void DrawLost(float slide)
+        {
+            Texture2D lose = TouchUi.Img("/strlose");
+            int fw = lose.width / 3;
+            TouchUi.Sprite(lose, TouchUi.R(90 - fw / 2f, 38 - lose.height / 2f + slide, fw, lose.height), new Rect(fw, 0, fw, lose.height));
+
+            float y0 = 76 + slide;
+            TouchUi.Panel(TouchUi.R(6, y0, 168, 228));
+            Hero(y0 + 10, C_PortUi.vsPortrait(0), C_PortUi.vsName(0), C_PortUi.vsLevel(0));
+            TouchUi.Label(TouchUi.R(54, y0 + 24, 112, 12), "thua " + C_PortUi.vsName(1), 7, TextAnchor.MiddleLeft, TouchUi.TextSoft);
+
+            float y = y0 + 56;
+            Row(ref y, "/heart", "Mạng chơi", "-1");
+            int exp = C_PortUi.lossExp();
+            if (exp > 0)
+            {
+                Row(ref y, "/book", "Kinh nghiệm bị phạt", "-" + exp);
+            }
+            TouchUi.Label(TouchUi.R(16, y + 2, 148, 30), "Gợi ý: mua Bình Thuốc hoặc Quỷ Diện Giáp ở màn chuẩn bị trước khi đánh lại.", 7,
+                TextAnchor.UpperLeft, TouchUi.TextGold, false, true);
+
+            bool retry = C_PortUi.lossRetry();
+            if (retry)
+            {
+                TouchUi.Label(TouchUi.R(0, y0 + 190, 180, 12), "Bạn có muốn đánh lại không?", 7.5f, TextAnchor.MiddleCenter, Color.white, true);
+                Rect back = BackRect();
+                TouchUi.Button(back, Btn.Grey, downKind == 3);
+                TouchUi.PixelText("TRỞ VỀ", 2, back.center.x, back.center.y + (downKind == 3 ? TouchUi.K : 0), 1, true);
+                TouchUi.RedButton(MainRect(), "ĐÁNH LẠI", true, downKind == 1);
+            }
+            else
+            {
+                TouchUi.RedButton(MainRect(), "TRỞ VỀ", true, downKind == 1);
             }
         }
 
@@ -146,8 +252,16 @@ namespace Loan12.UnityPort
             Texture2D t = TouchUi.Img(icon);
             TouchUi.Sprite(t, TouchUi.R(16, y + 1, 22, 22), new Rect(0, 0, Mathf.Min(22, t.width), Mathf.Min(22, t.height)));
             TouchUi.Label(TouchUi.R(42, y, 90, 24), label, 7, TextAnchor.MiddleLeft, Color.white, false, true);
-            TouchUi.PixelText(value, 1, r.xMax - 4 * k, r.center.y, 2, true);
+            TouchUi.PixelText(value, 1, r.xMax - 6 * k, r.center.y, 2, true);
             y += 28;
+        }
+
+        static void Total(float y, string icon, string label, string value, Color c)
+        {
+            TouchUi.Fill(TouchUi.R(14, y, 152, 24), TouchUi.Hex(0x2A1426));
+            TouchUi.Sprite(TouchUi.Img(icon), TouchUi.R(16, y + 1, 22, 22));
+            TouchUi.Label(TouchUi.R(42, y, 70, 24), label, 7, TextAnchor.MiddleLeft, TouchUi.TextSoft);
+            TouchUi.Label(TouchUi.R(100, y, 60, 24), value, 8.5f, TextAnchor.MiddleRight, c, true);
         }
 
         static void Bar(Rect r, float frac, Color fill, Color back)

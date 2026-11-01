@@ -268,6 +268,7 @@ public class bu
                     localae = dd.a(false);
                     localae.c(new da("Đóng", -5));
                     localae.a(this);
+                    this.portEndDialog = localae; // PORT-UI
                     cz.d().a(localae, true);
                 } else {
                     localae = dd.g();
@@ -278,6 +279,8 @@ public class bu
                         localae.b(new da("Không", -4));
                     }
                     localae.a(this);
+                    this.portEndDialog = localae; // PORT-UI
+                    this.portEndRetry = (dd.a < 0) && bg.l();
                     cz.d().a(localae, true);
                 }
                 break;
@@ -1097,6 +1100,7 @@ public class bu
             return;
         }
         localae = cz.a("Thông tin", "Bạn muốn dừng game lại?", "Có", -1, "Không", -2, 1);
+        this.portPauseDialog = localae; // PORT-UI
         localae.a(this);
         this.t.a(false);
         cz.d().a(localae, true);
@@ -1248,8 +1252,20 @@ public class bu
 
     /** soft keys of the battle bar: left (skills) and right (pause); the centre ("bag") is the # key */
     // PORT-UI: state and actions for the Unity touch interface (see PortUi)
+    public ae portPauseDialog; // the "dừng game" dialog of this battle
+    public ae portEndDialog;   // the result (won) or "mất 1 mạng" (lost) dialog
+    public boolean portEndRetry; // the lost battle can be fought again
+
     public cq portState() {
         return this.s;
+    }
+
+    /** 0 playing, 1 won, 2 lost (from the end of the fight: animation, then the result dialog) */
+    public int portOutcome() {
+        if ((this.v != 9) && (this.v != 12)) {
+            return 0;
+        }
+        return this.E ? 1 : 2;
     }
 
     /** the board waits for the human player's move */
