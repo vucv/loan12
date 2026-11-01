@@ -893,6 +893,16 @@ public class aa
         }
     }
 
+    /** PORT-UI: the VS box is shown and its intro is over ("Đánh" is available) */
+    public boolean portVsReady() {
+        return (this.f == 3) && (this.Z == null) && (this.N != null);
+    }
+
+    /** PORT-UI: "Rút lui" is offered */
+    public boolean portCanRetreat() {
+        return this.D >= 0;
+    }
+
     public void b() {
         ad localad = new ad(dd.e, this.W, this.X);
         localad.a(this);

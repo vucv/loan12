@@ -1,8 +1,10 @@
 // Runs the converted MIDlet inside Unity.
 //
 // Every frame: input -> J2ME.Host.tick() (game logic, timers, painting into the 240x320 LCD buffer) ->
-// upload the LCD to a texture -> draw it (IMGUI). The battle uses the touch interface (TouchBattleView); an
-// optional on-screen phone keypad remains for other devices.
+// upload the LCD to a texture -> draw it (IMGUI). The touch interface replaces three screens with Unity
+// views drawn around the game's own picture: getting ready (TouchPrepareView), the battle
+// (TouchBattleView) and the result (TouchResultView). An optional on-screen phone keypad remains for
+// other devices.
 // MIDP high-level screens (TextBox for the hero name / phone number, the debug log Form) are shown
 // with IMGUI controls and, on phones, the system keyboard. Input uses IMGUI events, so it works with
 // both the old Input Manager and the new Input System; touches arrive as pointer events (the game
@@ -67,8 +69,9 @@ namespace Loan12.UnityPort
         bool keypadHidden;
 
         // touch interface (option B of the redesign plan)
-        readonly TouchBattleView battleView = new TouchBattleView();
-        bool touchBattleShown;
+        // first active wins: a result panel lies over the finished battle, the VS panel over the map
+        readonly ITouchView[] touchViews = {new TouchResultView(), new TouchPrepareView(), new TouchBattleView()};
+        ITouchView touchShown;
 
         // layout (GUI coordinates, origin top-left)
         Rect lcdRect;
@@ -397,28 +400,40 @@ namespace Loan12.UnityPort
             bool highLevel = shown != null && !(shown is J2ME.Canvas);
             Event e = Event.current;
 
-            // touch interface: Unity draws the battle around the game's board
-            bool touchBattle = running && !highLevel && touchInterface && battleView.Active();
-            if (touchBattle != touchBattleShown)
+            // touch interface: Unity draws these screens around the game's own picture
+            ITouchView view = null;
+            if (running && !highLevel && touchInterface)
+            {
+                foreach (ITouchView v in touchViews)
+                {
+                    if (v.Active())
+                    {
+                        view = v;
+                        break;
+                    }
+                }
+            }
+            if (view != touchShown)
             {
                 // hand-over: nothing stays pressed in the view that is going away
-                if (touchBattle)
+                if (touchShown != null)
                 {
-                    ReleaseAllInput();
+                    touchShown.Reset();
                 }
-                else
+                ReleaseAllInput();
+                if (view != null)
                 {
-                    battleView.Reset();
+                    view.Reset();
                 }
-                touchBattleShown = touchBattle;
+                touchShown = view;
             }
-            if (touchBattle)
+            if (view != null)
             {
                 if (e.type == EventType.KeyDown || e.type == EventType.KeyUp)
                 {
                     HandleCanvasInput(e); // keyboard / Android back still reach the game
                 }
-                battleView.OnGUI(e, lcd, haptics);
+                view.OnGUI(e, lcd, haptics);
                 return;
             }
 

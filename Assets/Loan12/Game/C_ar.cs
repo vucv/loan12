@@ -381,6 +381,18 @@ namespace Loan12
         {
         }
 
+        /** PORT-UI: presses soft key 0 = left, 1 = centre, 2 = right, exactly like its key would. */
+        public bool portPress(int slot)
+        {
+            if ((this.f_s == null) || ((slot < 0)) || ((slot > 2)) || (this.f_a[slot] == null) || (this.f_b[slot] != 0))
+            {
+                return false;
+            }
+            this.f_a[slot].b();
+            this.f_b[slot] = 3;
+            return true;
+        }
+
         /** PORT-TOUCH: label of soft key 0 = left, 1 = centre, 2 = right; null when there is none. */
         public virtual string portSoftLabel(int paramInt)
         {

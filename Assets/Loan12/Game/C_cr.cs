@@ -32,6 +32,13 @@ namespace Loan12
         private bool f_N;
         private SQ_b f_O;
         private C_dk f_P;
+        // PORT-UI: the rewards before they are counted into the totals
+        // PORT-UI: what the Unity result screen shows
+        private int f_portG0;
+        private int f_portH0;
+        private int f_portK0;
+        private int f_portJ0;
+        private int f_portI0;
 
         private void __init_C_cr()
         {
@@ -91,6 +98,91 @@ namespace Loan12
             this.f_O.a_(false);
             this.f_L = 50;
             this.f_P = new C_dk("lvu");
+            this.f_portG0 = this.f_G;
+            // PORT-UI: the rewards before they are counted into the totals
+            this.f_portH0 = this.f_H;
+            this.f_portK0 = this.f_K;
+            this.f_portJ0 = this.f_J;
+            this.f_portI0 = this.f_I;
+        }
+
+        // PORT-UI: what the Unity result screen shows
+        public int portMode()
+        {
+            return ((C_dd.f_a >= 0) ? 2 : ((this.f_N ? 1 : 0)));
+        }
+
+        public int portPortrait()
+        {
+            return this.f_v.f_a;
+        }
+
+        public int portLevel()
+        {
+            return this.f_v.f_e;
+        }
+
+        public int portExp()
+        {
+            return this.f_w;
+        }
+
+        public int portExpLo()
+        {
+            return this.f_F;
+        }
+
+        public int portExpHi()
+        {
+            return this.f_E;
+        }
+
+        public int portHp()
+        {
+            return this.f_v.f_c;
+        }
+
+        public int portMaxHp()
+        {
+            return this.f_v.f_b;
+        }
+
+        public int portAttack()
+        {
+            return this.f_v.f_d;
+        }
+
+        public int portGold()
+        {
+            return this.f_x;
+        }
+
+        public int portGoldGain()
+        {
+            return (this.f_N ? this.f_portH0 : this.f_portG0);
+        }
+
+        public int portExpGain()
+        {
+            return (this.f_N ? this.f_portJ0 : this.f_portK0);
+        }
+
+        public int portWinBonus()
+        {
+            return (this.f_N ? 0 : this.f_portI0);
+        }
+
+        public bool portReady()
+        {
+            return (this.f_L <= 0);
+        }
+
+        public void portSkip()
+        {
+            if ((this.f_L > 0))
+            {
+                this.f_L = 1;
+            }
         }
 
         public C_cr() : this(false)

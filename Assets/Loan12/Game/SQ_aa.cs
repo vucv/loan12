@@ -1066,6 +1066,18 @@ namespace Loan12
             }
         }
 
+        /** PORT-UI: the VS box is shown and its intro is over ("Đánh" is available) */
+        public bool portVsReady()
+        {
+            return (this.f_f == 3) && (this.f_Z == null) && (this.f_N != null);
+        }
+
+        /** PORT-UI: "Rút lui" is offered */
+        public bool portCanRetreat()
+        {
+            return (this.f_D >= 0);
+        }
+
         public void b()
         {
             C_ad localad = new C_ad(C_dd.f_e, this.f_W, this.f_X);

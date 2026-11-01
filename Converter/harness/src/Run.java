@@ -380,6 +380,24 @@ public class Run {
 
     /** PORT-UI: what the touch interface would show (and, with -Dui=act, try its actions). */
     static void ui(String tag) {
+        if (game.PortUi.prepareView()) {
+            System.out.println("ui " + tag + ": prepare " + game.PortUi.vsName(0) + " lv" + game.PortUi.vsLevel(0) + " hp" + game.PortUi.vsHp(0) + "/" + game.PortUi.vsMaxHp(0)
+                + " atk" + game.PortUi.vsAttack(0) + " vs " + game.PortUi.vsName(1) + " lv" + game.PortUi.vsLevel(1) + " pic" + game.PortUi.vsPortrait(1)
+                + " first=" + (game.PortUi.playerFirst() ? "player" : "enemy") + " retreat=" + game.PortUi.canRetreat() + " gold=" + game.PortUi.gold()
+                + " owned " + game.PortUi.owned(0) + "," + game.PortUi.owned(1) + "," + game.PortUi.owned(3) + "," + game.PortUi.owned(4) + "," + game.PortUi.owned(5)
+                + " text " + game.PortUi.text("XUẤT TRẬN", 1).getWidth() + "x" + game.PortUi.text("XUẤT TRẬN", 1).getHeight());
+            if ("act".equals(System.getProperty("ui"))) {
+                if (game.PortUi.gold() < 250) game.bg.a(2, 1000, 6);
+                boolean bought = game.PortUi.buy(4);
+                game.PortUi.request(game.PortUi.SCREEN_KEY, 0);
+                System.out.println("ui action: buy potion " + bought + " -> owned " + game.PortUi.owned(4) + " gold " + game.PortUi.gold());
+            }
+        }
+        if (game.PortUi.resultView()) {
+            System.out.println("ui " + tag + ": result mode " + game.PortUi.resultMode() + " " + game.PortUi.resultName() + " lv" + game.PortUi.resultLevel()
+                + " exp " + game.PortUi.resultExp() + " [" + game.PortUi.resultExpLo() + ".." + game.PortUi.resultExpHi() + "] gold " + game.PortUi.resultGold()
+                + " +gold " + game.PortUi.resultGoldGain() + " +exp " + game.PortUi.resultExpGain() + " +win " + game.PortUi.resultWinBonus() + " ready " + game.PortUi.resultReady());
+        }
         if (!game.PortUi.battleView()) return;
         StringBuilder sb = new StringBuilder("ui " + tag + ": ");
         for (int side = 0; side < 2; side++) {
@@ -393,6 +411,7 @@ public class Run {
         for (int k = 0; k < game.PortUi.skillCount(); k++) sb.append(' ').append(game.PortUi.skillName(k)).append(':').append(game.PortUi.skillCost(k));
         sb.append(" items");
         for (int t = 0; t < 6; t++) sb.append(' ').append(game.PortUi.itemCount(t));
+        if (game.PortUi.skillCount() > 0) sb.append(" desc0=").append(game.PortUi.skillDesc(0));
         sb.append(" board ").append(game.PortUi.board(0)).append(',').append(game.PortUi.board(1)).append(',').append(game.PortUi.board(2)).append(',').append(game.PortUi.board(3));
         System.out.println(sb);
         if ("act".equals(System.getProperty("ui")) && game.PortUi.waiting()) {

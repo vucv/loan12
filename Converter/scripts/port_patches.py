@@ -737,46 +737,165 @@ rep('game/w.java', '"Tướng quân đã được thưởng 1 vật phẩm, hãy
 # ---------------------------------------------------------------------------------------------
 open(ROOT + 'game/PortUi.java', 'w', encoding='utf-8').write('''package game;
 
+import javax.microedition.lcdui.Graphics;
 import javax.microedition.lcdui.Image;
 
-/** PORT-UI: state of the battle for the Unity touch interface, and its queued actions. */
+/**
+ * PORT-UI: what the Unity touch interface needs from the game, and its queued actions.
+ * Screens drawn by Unity: 5 preparing a battle (the VS box on the map), 6 the battle, 7 the result.
+ * Actions are queued and run by the screen manager at the start of the game's next frame.
+ */
 public final class PortUi {
-    public static final int SKILL = 1;
-    public static final int ITEM = 2;
+    public static final int SKILL = 1;       // arg: skill slot 0..2
+    public static final int ITEM = 2;        // arg: item type (shop index)
     public static final int PAUSE = 3;
+    public static final int SCREEN_KEY = 4;  // soft key of the current screen, arg: 0 left, 1 centre, 2 right
+    public static final int DIALOG_KEY = 5;  // soft key of the dialog on top
+    public static final int RESULT_SKIP = 6; // result panel: stop waiting
     private static int reqKind;
     private static int reqArg;
+
+    /** damage of each skill = attack * E / F (as the game's skill window computes it) */
+    static final int[] SK_E = {1, 3, 5, 4, 0, 2, 4, 0, 3};
+    static final int[] SK_F = {1, 2, 2, 5, 1, 1, 5, 5, 2};
+    /** gold prices of the shop items; Long Thần Kiếm and Nhân Sâm were sold by SMS only (plan: 1500) */
+    static final int[] PRICE = {1500, 1500, -1, 1000, 250, 500};
 
     private PortUi() {
     }
 
+    // ---- screens ------------------------------------------------------------------------------
+
+    static ar screen() {
+        cz c = cz.a;
+        return (c == null) || (c.e == null) ? null : c.e.b;
+    }
+
+    static ae dialog() {
+        cz c = cz.a;
+        return (c == null) || (c.e == null) ? null : c.e.d;
+    }
+
+    static boolean transition() {
+        bv v = cz.a.e;
+        return v.l && (v.i != null);
+    }
+
     /** the battle object while the battle screen is the current screen, else null */
     public static bu battle() {
-        cz c = cz.a;
-        if ((c == null) || (c.e == null)) {
-            return null;
-        }
-        if (c.e.b instanceof com.mic.smsgame.suquan.ab) {
-            return ((com.mic.smsgame.suquan.ab) c.e.b).portBattle();
+        ar s = screen();
+        if (s instanceof com.mic.smsgame.suquan.ab) {
+            return ((com.mic.smsgame.suquan.ab) s).portBattle();
         }
         return null;
     }
 
-    /** the plain battle is on screen: no dialog on top, no screen transition, not the tutorial */
+    /** 6: the plain battle is on screen: no dialog on top, no screen transition, not the tutorial */
     public static boolean battleView() {
         bu b = battle();
-        if ((b == null) || (b.portState() == null)) {
-            return false;
-        }
-        bv v = cz.a.e;
-        if (v.d != null) {
-            return false;
-        }
-        if (v.l && (v.i != null)) {
+        if ((b == null) || (b.portState() == null) || (dialog() != null) || transition()) {
             return false;
         }
         return !b.portTraining();
     }
+
+    /** 5: the map shows the VS box of a coming battle, ready for "Đánh" / "Rút lui" */
+    public static boolean prepareView() {
+        ar s = screen();
+        if (!(s instanceof com.mic.smsgame.suquan.aa) || (dialog() != null) || transition()) {
+            return false;
+        }
+        return ((com.mic.smsgame.suquan.aa) s).portVsReady();
+    }
+
+    /** 7: the result panel of a won battle / a quest reward is open */
+    public static boolean resultView() {
+        return (dialog() instanceof cr) && !transition();
+    }
+
+    // ---- 5: preparing a battle ----------------------------------------------------------------
+
+    static c side(int side) {
+        return side == 0 ? dd.e : dd.f;
+    }
+
+    public static boolean canRetreat() {
+        ar s = screen();
+        return (s instanceof com.mic.smsgame.suquan.aa) && ((com.mic.smsgame.suquan.aa) s).portCanRetreat();
+    }
+
+    public static String vsName(int side) {
+        c f = side(side);
+        return f == null ? "" : u.a(f.a);
+    }
+
+    public static int vsPortrait(int side) {
+        c f = side(side);
+        return f == null ? 0 : f.a;
+    }
+
+    public static int vsLevel(int side) {
+        c f = side(side);
+        return f == null ? 0 : f.e;
+    }
+
+    public static int vsHp(int side) {
+        c f = side(side);
+        return f == null ? 0 : f.c;
+    }
+
+    public static int vsMaxHp(int side) {
+        c f = side(side);
+        return f == null ? 1 : Math.max(1, f.b);
+    }
+
+    public static int vsAttack(int side) {
+        c f = side(side);
+        return f == null ? 0 : f.d;
+    }
+
+    /** who moves first (decided when the VS box opens; Ngọc Ấn makes it the player) */
+    public static boolean playerFirst() {
+        return dd.h;
+    }
+
+    public static int owned(int type) {
+        return bg.f(type);
+    }
+
+    public static int gold() {
+        return bg.f(2);
+    }
+
+    public static int price(int type) {
+        return PRICE[type];
+    }
+
+    public static int packSize(int type) {
+        return com.mic.smsgame.suquan.q.c[type];
+    }
+
+    /** buys one pack with gold, as the shop does; false when there is not enough gold */
+    public static boolean buy(int type) {
+        int p = PRICE[type];
+        if ((p <= 0) || (bg.f(2) < p)) {
+            return false;
+        }
+        bg.b(2, p);
+        bg.a(type, packSize(type), 6);
+        return true;
+    }
+
+    public static String itemName(int type) {
+        String s = com.mic.smsgame.suquan.h.c[type];
+        return s.endsWith(".") ? s.substring(0, s.length() - 1) : s;
+    }
+
+    public static String itemDesc(int type) {
+        return com.mic.smsgame.suquan.h.d[type];
+    }
+
+    // ---- 6: the battle ------------------------------------------------------------------------
 
     static bn fighter(int side) {
         bu b = battle();
@@ -799,7 +918,7 @@ public final class PortUi {
     }
 
     public static int level(int side) {
-        c f = side == 0 ? dd.e : dd.f;
+        c f = side(side);
         return f == null ? 0 : f.e;
     }
 
@@ -849,9 +968,39 @@ public final class PortUi {
         return f == null ? 0 : f.d().length;
     }
 
+    public static int skillCount(int side) {
+        bn f = fighter(side);
+        return f == null ? 0 : f.d().length;
+    }
+
+    /** skill id 0..8 (0-2 fire, 3-5 lightning, 6-8 water) */
+    public static int skillId(int side, int k) {
+        bn f = fighter(side);
+        return (f == null) || (k >= f.d().length) ? 0 : f.d()[k];
+    }
+
     public static String skillName(int k) {
+        return skillName(0, k);
+    }
+
+    public static String skillName(int side, int k) {
+        bn f = fighter(side);
+        return (f == null) || (k >= f.d().length) ? "" : com.mic.smsgame.suquan.h.a[f.d()[k]];
+    }
+
+    /** the game's description of the player's k-th skill with its damage filled in */
+    public static String skillDesc(int k) {
         bn f = fighter(0);
-        return f == null ? "" : com.mic.smsgame.suquan.h.a[f.d()[k]];
+        if ((f == null) || (k >= f.d().length)) {
+            return "";
+        }
+        int id = f.d()[k];
+        String str = com.mic.smsgame.suquan.h.b[id];
+        int j = str.indexOf("=");
+        if (j >= 0) {
+            str = str.substring(0, j) + (f.m() * SK_E[id] / SK_F[id]) + str.substring(j + 1);
+        }
+        return str;
     }
 
     /** mana the k-th skill costs (the game: max mana * (k + 1) / 3) */
@@ -917,11 +1066,112 @@ public final class PortUi {
         }
     }
 
+    // ---- 7: result ----------------------------------------------------------------------------
+
+    static cr result() {
+        ae d = dialog();
+        return d instanceof cr ? (cr) d : null;
+    }
+
+    /** 0 battle won, 1 quest reward, 2 arena */
+    public static int resultMode() {
+        cr r = result();
+        return r == null ? 0 : r.portMode();
+    }
+
+    public static String resultName() {
+        cr r = result();
+        return r == null ? "" : u.a(r.portPortrait());
+    }
+
+    public static int resultPortrait() {
+        cr r = result();
+        return r == null ? 0 : r.portPortrait();
+    }
+
+    public static int resultLevel() {
+        cr r = result();
+        return r == null ? 0 : r.portLevel();
+    }
+
+    /** experience now (counts up while the rewards are added) and the bounds of the current level */
+    public static int resultExp() {
+        cr r = result();
+        return r == null ? 0 : r.portExp();
+    }
+
+    public static int resultExpLo() {
+        cr r = result();
+        return r == null ? 0 : r.portExpLo();
+    }
+
+    public static int resultExpHi() {
+        cr r = result();
+        return r == null ? 1 : r.portExpHi();
+    }
+
+    public static int resultHp() {
+        cr r = result();
+        return r == null ? 0 : r.portHp();
+    }
+
+    public static int resultMaxHp() {
+        cr r = result();
+        return r == null ? 1 : Math.max(1, r.portMaxHp());
+    }
+
+    public static int resultAttack() {
+        cr r = result();
+        return r == null ? 0 : r.portAttack();
+    }
+
+    /** gold owned now (counts up while the rewards are added) */
+    public static int resultGold() {
+        cr r = result();
+        return r == null ? 0 : r.portGold();
+    }
+
+    public static int resultGoldGain() {
+        cr r = result();
+        return r == null ? 0 : r.portGoldGain();
+    }
+
+    public static int resultExpGain() {
+        cr r = result();
+        return r == null ? 0 : r.portExpGain();
+    }
+
+    public static int resultWinBonus() {
+        cr r = result();
+        return r == null ? 0 : r.portWinBonus();
+    }
+
+    /** the panel accepts "Đóng" (its short wait is over) */
+    public static boolean resultReady() {
+        cr r = result();
+        return (r != null) && r.portReady();
+    }
+
+    // ---- shared -------------------------------------------------------------------------------
+
     public static Image image(String name) {
         return az.b(name);
     }
 
-    /** queue an action (SKILL k, ITEM type, PAUSE) for the next frame of the game */
+    /** text in one of the game's bitmap fonts (1 = gold, 2 = white), on magenta (= transparent) */
+    public static Image text(String s, int font) {
+        dh f = font == 1 ? bz.c : bz.d;
+        int w = Math.max(1, f.a(s) + 2);
+        int h = f.a() + 4;
+        Image img = Image.createImage(w, h);
+        Graphics g = img.getGraphics();
+        g.setColor(0xFF00FF);
+        g.fillRect(0, 0, w, h);
+        f.a(g, s, 1, 1, 0);
+        return img;
+    }
+
+    /** queue an action for the next frame of the game */
     public static void request(int kind, int arg) {
         reqKind = kind;
         reqArg = arg;
@@ -935,20 +1185,44 @@ public final class PortUi {
         int kind = reqKind;
         int arg = reqArg;
         reqKind = 0;
-        bu b = battle();
-        if ((b == null) || !battleView()) {
-            return;
-        }
         switch (kind) {
             case SKILL:
-                b.portUseSkill(arg);
-                break;
             case ITEM:
-                b.portUseItem(arg);
+            case PAUSE: {
+                bu b = battle();
+                if ((b == null) || !battleView()) {
+                    return;
+                }
+                if (kind == SKILL) {
+                    b.portUseSkill(arg);
+                } else if (kind == ITEM) {
+                    b.portUseItem(arg);
+                } else {
+                    b.g();
+                }
                 break;
-            case PAUSE:
-                b.g();
+            }
+            case SCREEN_KEY: {
+                ar s = screen();
+                if ((s != null) && (dialog() == null)) {
+                    s.portPress(arg);
+                }
                 break;
+            }
+            case DIALOG_KEY: {
+                ae d = dialog();
+                if (d != null) {
+                    d.portPress(arg);
+                }
+                break;
+            }
+            case RESULT_SKIP: {
+                cr r = result();
+                if (r != null) {
+                    r.portSkip();
+                }
+                break;
+            }
         }
     }
 }
@@ -1021,6 +1295,107 @@ rep('game/bv.java', """        portPublishSoftKeys(); // PORT-TOUCH
 """, """        portPublishSoftKeys(); // PORT-TOUCH
         PortUi.process(); // PORT-UI
 """)
+rep('game/ar.java', """    /** PORT-TOUCH: label of soft key 0 = left, 1 = centre, 2 = right; null when there is none. */""", """    /** PORT-UI: presses soft key 0 = left, 1 = centre, 2 = right, exactly like its key would. */
+    public boolean portPress(int slot) {
+        if ((this.s == null) || (slot < 0) || (slot > 2) || (this.a[slot] == null) || (this.b[slot] != 0)) {
+            return false;
+        }
+        this.a[slot].b();
+        this.b[slot] = 3;
+        return true;
+    }
+
+    /** PORT-TOUCH: label of soft key 0 = left, 1 = centre, 2 = right; null when there is none. */""")
+rep('com/mic/smsgame/suquan/aa.java', """    public void b() {
+        ad localad = new ad(dd.e, this.W, this.X);""", """    /** PORT-UI: the VS box is shown and its intro is over ("Đánh" is available) */
+    public boolean portVsReady() {
+        return (this.f == 3) && (this.Z == null) && (this.N != null);
+    }
+
+    /** PORT-UI: "Rút lui" is offered */
+    public boolean portCanRetreat() {
+        return this.D >= 0;
+    }
+
+    public void b() {
+        ad localad = new ad(dd.e, this.W, this.X);""")
+rep('game/cr.java', """        this.P = new dk("lvu");
+    }""", """        this.P = new dk("lvu");
+        this.portG0 = this.G; // PORT-UI: the rewards before they are counted into the totals
+        this.portH0 = this.H;
+        this.portK0 = this.K;
+        this.portJ0 = this.J;
+        this.portI0 = this.I;
+    }
+
+    // PORT-UI: what the Unity result screen shows
+    private int portG0;
+    private int portH0;
+    private int portK0;
+    private int portJ0;
+    private int portI0;
+
+    public int portMode() {
+        return dd.a >= 0 ? 2 : (this.N ? 1 : 0);
+    }
+
+    public int portPortrait() {
+        return this.v.a;
+    }
+
+    public int portLevel() {
+        return this.v.e;
+    }
+
+    public int portExp() {
+        return this.w;
+    }
+
+    public int portExpLo() {
+        return this.F;
+    }
+
+    public int portExpHi() {
+        return this.E;
+    }
+
+    public int portHp() {
+        return this.v.c;
+    }
+
+    public int portMaxHp() {
+        return this.v.b;
+    }
+
+    public int portAttack() {
+        return this.v.d;
+    }
+
+    public int portGold() {
+        return this.x;
+    }
+
+    public int portGoldGain() {
+        return this.N ? this.portH0 : this.portG0;
+    }
+
+    public int portExpGain() {
+        return this.N ? this.portJ0 : this.portK0;
+    }
+
+    public int portWinBonus() {
+        return this.N ? 0 : this.portI0;
+    }
+
+    public boolean portReady() {
+        return this.L <= 0;
+    }
+
+    public void portSkip() {
+        if (this.L > 0) {
+            this.L = 1;
+        }
+    }""")
 
 # ---------------------------------------------------------------------------------------------
 # time and system properties come from the host backend (Unity: real clock; test harness: virtual

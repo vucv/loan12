@@ -87,6 +87,9 @@ namespace UnityEngine
         public float x, y;
         public Vector2(float x, float y) { this.x = x; this.y = y; }
         public static bool operator ==(Vector2 a, Vector2 b) { return a.x == b.x && a.y == b.y; }
+        public static Vector2 operator +(Vector2 a, Vector2 b) { return new Vector2(a.x + b.x, a.y + b.y); }
+        public static Vector2 operator -(Vector2 a, Vector2 b) { return new Vector2(a.x - b.x, a.y - b.y); }
+        public static Vector2 operator *(Vector2 a, float d) { return new Vector2(a.x * d, a.y * d); }
         public static bool operator !=(Vector2 a, Vector2 b) { return !(a == b); }
         public override bool Equals(object o) { return false; }
         public override int GetHashCode() { return 0; }
@@ -95,6 +98,8 @@ namespace UnityEngine
     public static class Time
     {
         public static float unscaledDeltaTime;
+        public static float unscaledTime;
+        public static int frameCount;
     }
 
     public struct Rect
@@ -253,6 +258,7 @@ namespace UnityEngine
         public FontStyle fontStyle { get; set; }
         public TextAnchor alignment { get; set; }
         public bool wordWrap { get; set; }
+        public RectOffset margin { get; set; }
         public GUIStyleState normal { get { return null; } set { } }
         public GUIStyleState active { get { return null; } set { } }
         public GUIStyleState hover { get { return null; } set { } }
