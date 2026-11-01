@@ -338,7 +338,8 @@ namespace Loan12.UnityPort
             }
 
             // a hint about the enemy
-            TouchUi.Label(TouchUi.R(12, 290, 156, 45), Hint(), 7, TextAnchor.UpperLeft, TouchUi.TextGold, false, true);
+            // centred and narrower than the panel, so the lines keep clear of its corner ornaments
+            TouchUi.Label(TouchUi.R(22, 289, 136, 45), Hint(), 7, TextAnchor.UpperCenter, TouchUi.TextGold, false, true);
 
             // toast
             float age = Time.unscaledTime - toastTime;
