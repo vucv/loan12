@@ -96,18 +96,71 @@ Số trong vòng tròn vàng trên ảnh ứng với các ghi chú bên dưới 
 
 **Trước:** hộp đối đầu nhỏ đè lên bản đồ, phím mềm "Đánh / Rút lui".
 
-### 6. Trận đấu
+### 6. Trận đấu (đã sửa theo góp ý)
+
+Thay đổi so với bản trước:
+- tướng địch ở **bên phải**;
+- thanh máu, thời gian và năng lượng **giữ đúng như game gốc**;
+- có **chữ mô tả hiệu ứng**;
+- chạm 1 lần vào chiêu hoặc vật phẩm thì hiện **popup**;
+- nhân vật **nói bằng bong bóng chat**.
+
 <img src="ui/06_tran-dau.png" width="300" alt="Trận đấu">
 
-1. **Đối thủ ở trên cùng:** máu, năng lượng, nút tạm dừng.
-2. **Bàn cờ rộng khoảng 93% chiều ngang.** Chạm hoặc vuốt để đổi ô (đã có trong bản port).
-3. **Người chơi** nằm ngay dưới bàn cờ; dòng "Lượt của bạn" báo đến lượt.
-4. **Hàng tuyệt chiêu:** biểu tượng kèm số năng lượng cần. Chiêu chưa đủ năng lượng thì mờ đi.
-5. **Hàng vật phẩm** đã chọn trước trận, chạm một lần là dùng.
+1. **Dòng trên cùng:** báo lượt ("Lượt của bạn" màu xanh / "Lượt đối thủ" màu đỏ) và nút tạm dừng.
+2. **Dòng hiệu ứng** ngay dưới bàn cờ, mô tả việc vừa xảy ra. Ví dụ:
+   - "Xếp 4 kiếm: Quỷ Cốc mất 18 máu, thêm 1 lượt!";
+   - "Quỷ Diện Giáp chặn 3/4".
+3. **Hai khung tướng giữ nguyên bản gốc:** người chơi bên trái, tướng địch bên phải, mỗi bên có 3 thanh như game cũ:
+   - đỏ: máu;
+   - xanh lá: thời gian (lương thực, cạn là thua);
+   - 3 ô: năng lượng.
+
+   **Số bay lên** ngay tại thanh tương ứng: "-18" màu đỏ khi bị đánh, "+3 năng lượng" màu xanh dương, "+11 máu" màu xanh lá khi hồi máu.
+4. **Bong bóng chat** của nhân vật (xem quy tắc bên dưới).
+5. **Hàng tuyệt chiêu:** biểu tượng và số năng lượng cần. Chiêu chưa đủ năng lượng thì mờ.
+6. **Hàng vật phẩm:** biểu tượng và số lượng còn lại.
+
+<img src="ui/06b_tran-dau-popup-chieu.png" width="300" alt="Popup tuyệt chiêu">
+
+**6b. Chạm 1 lần vào chiêu** thì hiện popup ngay trên nút đó, có mũi nhọn chỉ vào nút.
+1. Tên, biểu tượng lớn, hệ, năng lượng cần và năng lượng đang có.
+2. Mô tả lấy từ game, có điền sẵn sát thương thật (ví dụ "lực sát thương bằng 7").
+3. Nút **DÙNG** và **ĐÓNG**. Nếu chưa đủ năng lượng thì "Dùng" mờ đi, kèm dòng "Cần thêm … năng lượng".
+4. **Chạm ra ngoài** popup để đóng.
+
+<img src="ui/06c_tran-dau-popup-vat-pham.png" width="300" alt="Popup vật phẩm">
+
+**6c. Chạm 1 lần vào vật phẩm**, hoạt động giống popup chiêu.
+1. Tên, hình, số còn lại, giới hạn ("Mỗi lượt dùng 1 vật phẩm"). Mô tả có số cụ thể, ví dụ "+11 máu".
+2. Nút **DÙNG** và **ĐÓNG**.
+3. Chạm ra ngoài để đóng.
+
+<img src="ui/06d_tran-dau-luot-dich.png" width="300" alt="Lượt đối thủ">
+
+**6d. Lượt đối thủ**
+1. Dòng hiệu ứng mô tả đòn của địch và vật phẩm đã chặn đòn.
+2. **Biểu tượng hiệu ứng đang có** trên chân dung, kèm số lượt còn lại. Ví dụ: khiên Quỷ Diện Giáp còn 2 lượt.
+3. Tướng của người chơi nói một câu thể hiện cảm xúc.
+
+**Quy tắc bong bóng chat:**
+
+| Khi nào | Ai nói | Ví dụ |
+|---|---|---|
+| Đầu trận | Tướng địch, rồi người chơi | Lấy câu thoại theo nhiệm vụ có sẵn trong game, ví dụ "Nguyễn Siêu, chạy đâu cho thoát. Nạp mạng !!" |
+| Bị đánh mạnh (mất từ 15% máu trở lên một lần) | Bên bị đánh | "Á! Ngươi khá lắm..." |
+| Chặn được đòn, hồi máu, dùng tuyệt chiêu | Bên vừa làm | "Hừ! Chẳng nhằm nhò gì." / "Nếm thử Quả Cầu Lửa!" |
+| Máu dưới 20% | Bên sắp thua | "Không lẽ ta thua ở đây sao..." |
+| Thắng / thua | Cả hai | Câu kết lấy từ thoại nhiệm vụ của game, nếu có |
+
+- Mỗi bong bóng hiện khoảng 2 giây, chạm vào thì tắt ngay. Mỗi lúc chỉ hiện một bong bóng.
+- Bong bóng **không che** nút bấm và **không chặn** thao tác trên bàn cờ.
+- Câu thoại cảm xúc là phần viết thêm. Cần một bảng câu cho từng loại tướng (hảo hán, sơn tặc, yêu quái…).
 
 **Trước:**
 - bàn cờ chỉ chiếm khoảng 70% chiều ngang, phần còn lại là khung trang trí;
-- tuyệt chiêu và túi đồ phải mở qua phím mềm và menu.
+- tuyệt chiêu và túi đồ phải mở qua phím mềm và một hộp chọn riêng;
+- không có chữ mô tả hiệu ứng.
 
 ### 7. Kết quả trận
 <img src="ui/07_ket-qua.png" width="300" alt="Kết quả trận">
@@ -155,6 +208,8 @@ flowchart TD
     LIVES --> PREP
     PREP -->|Xuất trận| BATTLE[6. Trận đấu]
     PREP -->|Quay lại| MAP
+    BATTLE -->|chạm 1 lần vào chiêu / vật phẩm| POP[Popup mô tả<br/>Dùng / Đóng / chạm ra ngoài]
+    POP -->|Dùng / Đóng| BATTLE
     BATTLE -->|nút tạm dừng| PAUSE[Tạm dừng<br/>tiếp tục / âm thanh / thoát]
     PAUSE -->|Tiếp tục| BATTLE
     PAUSE -->|Thoát trận| MAP
