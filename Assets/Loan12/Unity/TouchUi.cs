@@ -2,7 +2,8 @@
 //
 // Everything is laid out on a virtual grid 180 original pixels wide, scaled by a whole number so the
 // game's pixel art stays sharp. Sprites, frames and the bitmap fonts come from the game itself
-// (Loan12.C_PortUi.image / text); small text uses an HD font (Inter, SIL OFL) for readable Vietnamese.
+// (Loan12.C_PortUi.image / text); small text, which needs lower-case letters, uses UiFont (a bold pixel
+// font with every Vietnamese letter, drawn at the same scale and outlined like the game's fonts).
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -38,8 +39,6 @@ namespace Loan12.UnityPort
 
         static readonly Dictionary<string, Texture2D> images = new Dictionary<string, Texture2D>();
         static readonly Dictionary<string, Texture2D> texts = new Dictionary<string, Texture2D>();
-        static Font bold, semi;
-        static GUIStyle label;
 
         public static readonly Color Purple = Hex(0x773B75);
         public static readonly Color PurpleDark = Hex(0x4A2049);
@@ -142,20 +141,6 @@ namespace Loan12.UnityPort
             t.SetPixels32(px);
             t.Apply(false, true);
             return t;
-        }
-
-        static void EnsureLabel()
-        {
-            if (label != null)
-            {
-                return;
-            }
-            bold = Resources.Load<Font>("Loan12Fonts/Inter-Bold");
-            semi = Resources.Load<Font>("Loan12Fonts/Inter-SemiBold");
-            label = new GUIStyle(GUI.skin.label);
-            label.clipping = TextClipping.Overflow;
-            label.padding = new RectOffset(0, 0, 0, 0);
-            label.margin = new RectOffset(0, 0, 0, 0);
         }
 
         // ------------------------------------------------------------------ primitives
@@ -377,28 +362,40 @@ namespace Loan12.UnityPort
             GUI.DrawTexture(new Rect(Mathf.Round(left), Mathf.Round(top), w, h), t);
         }
 
-        /// <summary>HD text with a 1-pixel shadow. size in original pixels.</summary>
+        /// <summary>
+        /// Text in the touch screens' pixel font (UiFont), tinted with color. The anchor places the letters
+        /// in r by the capitals of the first line and the baseline of the last (accents stick out above,
+        /// descenders below); wrap breaks the text at r's width. The font has a single size, so size and
+        /// strong only document the intent of the caller.
+        /// </summary>
         public static void Label(Rect r, string s, float size, TextAnchor anchor, Color color, bool strong = false, bool wrap = false)
         {
-            EnsureLabel();
-            Font f = strong ? bold : semi;
-            if (f != null)
+            if (string.IsNullOrEmpty(s))
             {
-                label.font = f;
-                label.fontStyle = FontStyle.Normal;
+                return;
             }
-            else
-            {
-                label.fontStyle = strong ? FontStyle.Bold : FontStyle.Normal;
-            }
-            label.fontSize = Mathf.Max(9, Mathf.RoundToInt(size * K));
-            label.alignment = anchor;
-            label.wordWrap = wrap;
-            float sh = Mathf.Max(1f, Mathf.Round(K * 0.6f));
-            label.normal.textColor = new Color(0.08f, 0.03f, 0.07f, color.a);
-            GUI.Label(new Rect(r.x + sh, r.y + sh, r.width, r.height), s, label);
-            label.normal.textColor = color;
-            GUI.Label(r, s, label);
+            UiFont.Block b = UiFont.Get(s, wrap ? Mathf.Max(8, Mathf.FloorToInt(r.width / K + 0.01f)) : 0);
+            int a = (int) anchor, col = a % 3, row = a / 3;
+            float ink = b.width * K, block = UiFont.BlockHeight(b.lines) * K;
+            float left = col == 0 ? r.x : (col == 1 ? r.center.x - ink / 2f : r.xMax - ink);
+            float capTop = row == 0 ? r.y + 3 * K : (row == 1 ? r.center.y - block / 2f : r.yMax - block - 3 * K);
+            Rect dst = new Rect(Mathf.Round(left - UiFont.Pad * K), Mathf.Round(capTop - b.firstCapTop * K), b.tex.width * K, b.tex.height * K);
+            Color old = GUI.color;
+            GUI.color = old * color;
+            GUI.DrawTexture(dst, b.tex);
+            GUI.color = old;
+        }
+
+        /// <summary>Lines a text takes when wrapped at width grid pixels.</summary>
+        public static int Lines(string s, float width)
+        {
+            return string.IsNullOrEmpty(s) ? 0 : UiFont.Wrap(s, Mathf.FloorToInt(width + 0.01f)).Count;
+        }
+
+        /// <summary>Width of a one-line text in grid pixels.</summary>
+        public static float TextWidth(string s)
+        {
+            return string.IsNullOrEmpty(s) ? 0 : UiFont.Width(s);
         }
 
         /// <summary>30x30 portrait from /avatar inside a dark frame (frame rect = portrait + 2 px).</summary>

@@ -21,7 +21,7 @@ namespace Loan12.UnityPort
 
         // the game's fighter strip on its 240x320 screen: both portraits and their bars (x 33..206)
         const int StripX = 33, StripY = 228, StripW = 174, StripH = 50;
-        const float StripTop = 212; // where it goes on the grid (x 3..176, centred)
+        const float StripTop = 216; // where it goes on the grid (x 3..176, centred)
 
         static readonly string[] Elements = {"Hỏa", "Lôi", "Thủy"};
 
@@ -201,17 +201,24 @@ namespace Loan12.UnityPort
         // three equal buttons across the screen, 2 px from each edge
         static Rect SkillRect(int i)
         {
-            return TouchUi.R(2 + i * 60, 269, 56, 36);
+            return TouchUi.R(2 + i * 60, 272, 56, 36);
         }
 
         static Rect ItemRect(int i)
         {
-            return TouchUi.R(2 + i * 60, 309, 56, 34);
+            return TouchUi.R(2 + i * 60, 311, 56, 34);
         }
+
+        // The popup grows with its description: header (name, picture, details) 96, the description,
+        // a note when the button cannot be used, the buttons. It sits right above its button.
+        const float PopupDescW = 152;
 
         Rect PopupRect()
         {
-            return popupKind == 1 ? TouchUi.R(6, 76, 168, 180) : TouchUi.R(6, 118, 168, 182);
+            int lines = TouchUi.Lines(PopupDesc(), PopupDescW);
+            float h = 96 + lines * UiFont.LineHeight + 6 + (PopupNote().Length > 0 ? 15 : 0) + 38;
+            float bottom = popupKind == 1 ? 264 : 303;
+            return TouchUi.R(6, bottom - h, 168, h);
         }
 
         // the two popup buttons: same size, side by side, centred
@@ -227,6 +234,39 @@ namespace Loan12.UnityPort
             Rect p = PopupRect();
             Vector2 v = TouchUi.V(new Vector2(p.x, p.yMax));
             return TouchUi.R(14, v.y - 34, 72, 26);
+        }
+
+        string PopupDesc()
+        {
+            if (popupKind == 1)
+            {
+                return C_PortUi.skillDesc(popupArg);
+            }
+            int type = Loadout.Get()[popupArg];
+            string desc = type >= 0 ? C_PortUi.itemDesc(type) : "";
+            if (type == 4)
+            {
+                desc += " (+" + Mathf.Max(1, C_PortUi.maxHp(0) / 10) + " máu)";
+            }
+            return desc;
+        }
+
+        string PopupNote()
+        {
+            if (!C_PortUi.waiting())
+            {
+                return "Chờ đến lượt của bạn";
+            }
+            if (popupKind == 1)
+            {
+                return SkillAffordable(popupArg) ? "" : "Cần thêm " + Mathf.Max(0, C_PortUi.skillCost(popupArg) - C_PortUi.mana(0)) + " năng lượng";
+            }
+            int type = Loadout.Get()[popupArg];
+            if (type < 0 || C_PortUi.itemCount(type) <= 0)
+            {
+                return "Đã hết, mua thêm ở màn chuẩn bị";
+            }
+            return C_PortUi.itemUsed() ? "Lượt này đã dùng 1 vật phẩm" : "";
         }
 
         // ---------------------------------------------------------------------------------- state
@@ -494,11 +534,11 @@ namespace Loan12.UnityPort
                 int shield = C_PortUi.effect(s, 3), sword = C_PortUi.effect(s, 0);
                 if (shield > 0 && prevShield[s] == 0)
                 {
-                    Tick("Quỷ Diện Giáp: chặn 3/4 sát thương");
+                    Tick("Quỷ Diện Giáp chặn 3/4 đòn");
                 }
                 if (sword > 0 && prevSword[s] == 0)
                 {
-                    Tick("Long Thần Kiếm: sức tấn công x2");
+                    Tick("Long Thần Kiếm: đánh x2");
                 }
                 prevShield[s] = shield;
                 prevSword[s] = sword;
@@ -557,7 +597,8 @@ namespace Loan12.UnityPort
 
         void Tick(string msg)
         {
-            if (Time.unscaledTime - tickerTime < 0.6f && ticker.Length > 0 && ticker.Length + msg.Length < 70 && !ticker.Contains(msg))
+            // several things at once share the line while they fit on it
+            if (Time.unscaledTime - tickerTime < 0.6f && ticker.Length > 0 && !ticker.Contains(msg) && UiFont.Width(ticker + ", " + msg) <= 176)
             {
                 ticker += ", " + msg;
             }
@@ -642,7 +683,7 @@ namespace Loan12.UnityPort
             }
 
             // what happened
-            Rect line = TouchUi.R(0, 197, 180, 13);
+            Rect line = TouchUi.R(0, 198, 180, 16);
             TouchUi.Fill(line, new Color(0.05f, 0.02f, 0.05f, 0.72f));
             if (ticker.Length > 0)
             {
@@ -866,7 +907,7 @@ namespace Loan12.UnityPort
                     Rect b = TouchUi.R(x, StripTop + 2, 14, 14);
                     TouchUi.Fill(b, TouchUi.Outline);
                     TouchUi.Sprite(TouchUi.Img("/itemshops"), new Rect(b.x + k, b.y + k, 12 * k, 12 * k), new Rect(type * 28 + 4, 4, 20, 20));
-                    TouchUi.Label(new Rect(b.x + 6 * k, b.y + 7 * k, 9 * k, 8 * k), turns.ToString(), 6, TextAnchor.MiddleRight, Color.white, true);
+                    TouchUi.Label(new Rect(b.xMax - 2 * k, b.yMax - 2 * k, 0, 0), turns.ToString(), 6, TextAnchor.MiddleCenter, Color.white, true);
                     x += s == 0 ? -15 : 15;
                 }
             }
@@ -894,7 +935,7 @@ namespace Loan12.UnityPort
             float k = TouchUi.K;
             float age = Time.unscaledTime - bubbleTime;
             float alpha = age < 1.8f ? 1f : Mathf.Clamp01(1f - (age - 1.8f) / 0.4f);
-            Rect b = bubbleSide == 0 ? TouchUi.R(2, 168, 120, 30) : TouchUi.R(58, 168, 120, 30);
+            Rect b = bubbleSide == 0 ? TouchUi.R(2, 160, 140, 36) : TouchUi.R(38, 160, 140, 36);
             float tail = bubbleSide == 0 ? 19 : 161;
             Color line = new Color(0.01f, 0.01f, 0.01f, alpha), fill = new Color(1f, 1f, 1f, alpha);
             TouchUi.Fill(new Rect(b.x + k, b.y, b.width - 2 * k, b.height), line);
@@ -912,7 +953,7 @@ namespace Loan12.UnityPort
                     TouchUi.Fill(TouchUi.R(tail - w / 2f, tv.y - 1 + i, w, 1), fill);
                 }
             }
-            Rect text = new Rect(b.x + 5 * k, b.y + 2 * k, b.width - 10 * k, b.height - 4 * k);
+            Rect text = new Rect(b.x + 5 * k, b.y + 3 * k, b.width - 10 * k, b.height - 6 * k);
             TouchUi.Label(text, bubbleText, 7.5f, TextAnchor.MiddleCenter, new Color(0.1f, 0.04f, 0.1f, alpha), true, true);
         }
 
@@ -922,88 +963,56 @@ namespace Loan12.UnityPort
             TouchUi.Dim(0.55f);
             Rect p = PopupRect();
             TouchUi.Panel(p);
-            Vector2 top = TouchUi.V(new Vector2(p.x, p.y));
-            float py = top.y;
+            float py = TouchUi.V(new Vector2(p.x, p.y)).y;
             int[] slots = Loadout.Get();
             bool usable = PopupUsable();
-            string note;
             Rect anchorButton;
+            // a row of details right of the picture (capitals at py + 28, + 41, ...)
+            System.Func<int, Rect> detail = i => TouchUi.R(82, py + 25 + i * UiFont.LineHeight, 88, UiFont.LineHeight);
             if (popupKind == 1)
             {
                 int i = popupArg;
                 anchorButton = SkillRect(i);
-                TouchUi.PixelText(C_PortUi.skillName(i).ToUpperInvariant(), 1, TouchUi.R(90, 0, 0, 0).x, TouchUi.R(0, py + 8, 0, 0).y, 1);
+                TouchUi.PixelText(C_PortUi.skillName(i).ToUpperInvariant(), 1, TouchUi.R(90, 0, 0, 0).x, TouchUi.R(0, py + 15, 0, 0).y, 1, true);
                 J2ME.Image icon = C_PortUi.skillIcon(i);
-                Rect ic = TouchUi.R(13, py + 25, 64, 64);
+                Rect ic = TouchUi.R(13, py + 26, 64, 64);
                 TouchUi.Fill(ic, TouchUi.Outline);
                 if (icon != null)
                 {
                     TouchUi.Sprite(SkillTexture(i, icon), new Rect(ic.x + 2 * k, ic.y + 2 * k, 60 * k, 60 * k));
                 }
                 int id = C_PortUi.skillId(0, i);
-                TouchUi.Label(TouchUi.R(82, py + 27, 90, 10), "Tuyệt chiêu " + (i + 1), 7, TextAnchor.UpperLeft, TouchUi.TextSoft);
-                TouchUi.Label(TouchUi.R(82, py + 39, 90, 10), "Hệ " + Elements[Mathf.Clamp(id / 3, 0, 2)], 7, TextAnchor.UpperLeft, TouchUi.TextSoft);
-                TouchUi.Fill(TouchUi.R(82, py + 56, 5, 5), TouchUi.Hex(0x3C7CE8));
-                TouchUi.Label(TouchUi.R(90, py + 53, 84, 10), "Cần " + C_PortUi.skillCost(i) + " năng lượng", 7, TextAnchor.UpperLeft, TouchUi.Hex(0x9FD0FF));
-                TouchUi.Label(TouchUi.R(90, py + 65, 84, 10), "Đang có " + C_PortUi.mana(0), 7, TextAnchor.UpperLeft, TouchUi.Hex(0x9FD0FF));
-                TouchUi.Label(TouchUi.R(14, py + 96, 152, 46), C_PortUi.skillDesc(i), 7.5f, TextAnchor.UpperLeft, Color.white, false, true);
-                if (!C_PortUi.waiting())
-                {
-                    note = "Chờ đến lượt của bạn";
-                }
-                else if (!SkillAffordable(i))
-                {
-                    note = "Cần thêm " + Mathf.Max(0, C_PortUi.skillCost(i) - C_PortUi.mana(0)) + " năng lượng";
-                }
-                else
-                {
-                    note = "";
-                }
+                TouchUi.Label(detail(0), "Tuyệt chiêu " + (i + 1), 7, TextAnchor.UpperLeft, TouchUi.TextSoft);
+                TouchUi.Label(detail(1), "Hệ " + Elements[Mathf.Clamp(id / 3, 0, 2)], 7, TextAnchor.UpperLeft, TouchUi.TextSoft);
+                Rect cost = detail(2);
+                TouchUi.Fill(new Rect(cost.x, cost.y + 5 * k, 6 * k, 6 * k), TouchUi.Outline);
+                TouchUi.Fill(new Rect(cost.x + k, cost.y + 6 * k, 4 * k, 4 * k), TouchUi.Hex(0x3C7CE8));
+                TouchUi.Label(new Rect(cost.x + 9 * k, cost.y, cost.width - 9 * k, cost.height), "Cần " + C_PortUi.skillCost(i), 7, TextAnchor.UpperLeft, TouchUi.Hex(0x9FD0FF));
+                TouchUi.Label(detail(3), "Đang có " + C_PortUi.mana(0), 7, TextAnchor.UpperLeft, TouchUi.Hex(0x9FD0FF));
             }
             else
             {
                 int type = slots[popupArg];
                 anchorButton = ItemRect(popupArg);
-                TouchUi.PixelText(C_PortUi.itemName(type).ToUpperInvariant(), 1, TouchUi.R(90, 0, 0, 0).x, TouchUi.R(0, py + 8, 0, 0).y, 1);
-                Rect ic = TouchUi.R(13, py + 25, 60, 60);
-                TouchUi.Item(type, ic);
-                int count = C_PortUi.itemCount(type);
-                TouchUi.Label(TouchUi.R(82, py + 30, 90, 10), "Còn " + count, 7.5f, TextAnchor.UpperLeft, TouchUi.TextGreen, true);
-                TouchUi.Label(TouchUi.R(82, py + 44, 90, 22), "Mỗi lượt dùng 1 vật phẩm", 7, TextAnchor.UpperLeft, TouchUi.TextSoft, false, true);
-                string desc = C_PortUi.itemDesc(type);
-                if (type == 4)
-                {
-                    desc += " (+" + Mathf.Max(1, C_PortUi.maxHp(0) / 10) + " máu)";
-                }
-                TouchUi.Label(TouchUi.R(14, py + 94, 152, 50), desc, 7.5f, TextAnchor.UpperLeft, Color.white, false, true);
-                if (!C_PortUi.waiting())
-                {
-                    note = "Chờ đến lượt của bạn";
-                }
-                else if (count <= 0)
-                {
-                    note = "Đã hết, mua thêm ở màn chuẩn bị";
-                }
-                else if (C_PortUi.itemUsed())
-                {
-                    note = "Lượt này đã dùng 1 vật phẩm";
-                }
-                else
-                {
-                    note = "";
-                }
+                TouchUi.PixelText(C_PortUi.itemName(type).ToUpperInvariant(), 1, TouchUi.R(90, 0, 0, 0).x, TouchUi.R(0, py + 15, 0, 0).y, 1, true);
+                TouchUi.Item(type, TouchUi.R(15, py + 28, 56, 56));
+                TouchUi.Label(detail(0), "Còn " + C_PortUi.itemCount(type), 7.5f, TextAnchor.UpperLeft, TouchUi.TextGreen, true);
+                Rect lim = detail(1);
+                lim.height *= 2;
+                TouchUi.Label(lim, "Mỗi lượt dùng 1 vật phẩm", 7, TextAnchor.UpperLeft, TouchUi.TextSoft, false, true);
             }
-            Rect close = PopupClose(), use = PopupUse();
+            string desc = PopupDesc(), note = PopupNote();
+            int lines = TouchUi.Lines(desc, PopupDescW);
+            TouchUi.Label(TouchUi.R(14, py + 96, PopupDescW, lines * UiFont.LineHeight), desc, 7.5f, TextAnchor.UpperLeft, Color.white, false, true);
             if (note.Length > 0)
             {
-                Vector2 nv = TouchUi.V(new Vector2(0, use.y));
-                TouchUi.Label(TouchUi.R(14, nv.y - 13, 152, 10), note, 7, TextAnchor.UpperLeft, TouchUi.Hex(0xFF9A80));
+                TouchUi.Label(TouchUi.R(14, py + 96 + lines * UiFont.LineHeight + 4, PopupDescW, UiFont.LineHeight), note, 7, TextAnchor.UpperLeft, TouchUi.Hex(0xFF9A80));
             }
+            Rect close = PopupClose(), use = PopupUse();
             TouchUi.TextButton(close, "ĐÓNG", Btn.Grey, downKind == 5);
             TouchUi.RedButton(use, "DÙNG", usable, downKind == 4 && usable);
             TouchUi.Pointer(anchorButton.center.x, p.yMax);
-            Vector2 hint = TouchUi.V(new Vector2(0, p.y));
-            TouchUi.Label(TouchUi.R(0, hint.y - 14, 180, 10), "Chạm ra ngoài để đóng", 7, TextAnchor.MiddleCenter, TouchUi.Hex(0xD8D0E0));
+            TouchUi.Label(TouchUi.R(0, py - 17, 180, 14), "Chạm ra ngoài để đóng", 7, TextAnchor.MiddleCenter, TouchUi.Hex(0xD8D0E0));
         }
     }
 }

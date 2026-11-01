@@ -148,7 +148,7 @@ namespace Loan12.UnityPort
             TouchUi.Portrait(portrait, TouchUi.R(14, y, 34, 34));
             TouchUi.PixelText(name.ToUpperInvariant(), 2, TouchUi.R(54, 0, 0, 0).x, TouchUi.R(0, y + 8, 0, 0).y, 0, true);
             bool up = startLevel >= 0 && level > startLevel;
-            TouchUi.Label(TouchUi.R(100, y + 2, 66, 12), up ? "Lên cấp " + level + "!" : "Cấp " + level, 7.5f, TextAnchor.MiddleRight,
+            TouchUi.Label(TouchUi.R(96, y + 1, 70, 14), up ? "Lên cấp " + level + "!" : "Cấp " + level, 7.5f, TextAnchor.MiddleRight,
                 up ? TouchUi.TextGreen : TouchUi.Hex(0xFFE6A0), true);
         }
 
@@ -176,15 +176,20 @@ namespace Loan12.UnityPort
             Hero(y0 + 10, C_PortUi.resultPortrait(), C_PortUi.resultName(), C_PortUi.resultLevel());
             int exp = C_PortUi.resultExp(), lo = C_PortUi.resultExpLo(), hi = C_PortUi.resultExpHi();
             float frac = hi > lo ? Mathf.Clamp01((float) (exp - lo) / (hi - lo)) : 1f;
-            Bar(TouchUi.R(54, y0 + 26, 112, 7), frac, TouchUi.Hex(0xB050E0), TouchUi.Hex(0x200828));
-            TouchUi.Label(TouchUi.R(54, y0 + 35, 112, 10), "Kinh nghiệm " + exp + "/" + hi, 6.5f, TextAnchor.UpperLeft, TouchUi.TextSoft);
+            Bar(TouchUi.R(54, y0 + 24, 112, 7), frac, TouchUi.Hex(0xB050E0), TouchUi.Hex(0x200828));
+            string expText = "Kinh nghiệm " + exp + "/" + hi;
+            if (TouchUi.TextWidth(expText) > 112)
+            {
+                expText = exp + "/" + hi;
+            }
+            TouchUi.Label(TouchUi.R(54, y0 + 32, 112, 13), expText, 6.5f, TextAnchor.UpperLeft, TouchUi.TextSoft);
 
             // rewards
             float y = y0 + 56;
             if (mode == 0)
             {
                 Row(ref y, "/gold", "Vàng nhặt được", "+" + C_PortUi.resultGoldGain());
-                Row(ref y, "/book", "Kinh nghiệm thu thập", "+" + C_PortUi.resultExpGain());
+                Row(ref y, "/book", "Kinh nghiệm", "+" + C_PortUi.resultExpGain());
                 Row(ref y, "/book", "Thưởng thắng trận", "+" + C_PortUi.resultWinBonus());
             }
             else if (mode == 1)
@@ -204,7 +209,7 @@ namespace Loan12.UnityPort
             TouchUi.RedButton(MainRect(), "TIẾP TỤC", ready, downKind == 1 && ready);
             if (!ready)
             {
-                TouchUi.Label(TouchUi.R(0, 304, 180, 10), "Chạm để bỏ qua", 6.5f, TextAnchor.MiddleCenter, TouchUi.Hex(0xB8A8B8));
+                TouchUi.Label(TouchUi.R(0, y0 + 166, 180, 14), "Chạm để bỏ qua", 6.5f, TextAnchor.MiddleCenter, TouchUi.Hex(0xB8A8B8));
             }
         }
 
@@ -217,7 +222,7 @@ namespace Loan12.UnityPort
             float y0 = 76 + slide;
             TouchUi.Panel(TouchUi.R(6, y0, 168, 228));
             Hero(y0 + 10, C_PortUi.vsPortrait(0), C_PortUi.vsName(0), C_PortUi.vsLevel(0));
-            TouchUi.Label(TouchUi.R(54, y0 + 24, 112, 12), "thua " + C_PortUi.vsName(1), 7, TextAnchor.MiddleLeft, TouchUi.TextSoft);
+            TouchUi.Label(TouchUi.R(54, y0 + 22, 112, 14), "thua " + C_PortUi.vsName(1), 7, TextAnchor.MiddleLeft, TouchUi.TextSoft);
 
             float y = y0 + 56;
             Row(ref y, "/heart", "Mạng chơi", "-1");
@@ -226,13 +231,13 @@ namespace Loan12.UnityPort
             {
                 Row(ref y, "/book", "Kinh nghiệm bị phạt", "-" + exp);
             }
-            TouchUi.Label(TouchUi.R(16, y + 2, 148, 30), "Gợi ý: mua Bình Thuốc hoặc Quỷ Diện Giáp ở màn chuẩn bị trước khi đánh lại.", 7,
+            TouchUi.Label(TouchUi.R(16, y, 148, 56), "Gợi ý: mua Bình Thuốc hoặc Quỷ Diện Giáp ở màn chuẩn bị trước khi đánh lại.", 7,
                 TextAnchor.UpperLeft, TouchUi.TextGold, false, true);
 
             bool retry = C_PortUi.lossRetry();
             if (retry)
             {
-                TouchUi.Label(TouchUi.R(0, y0 + 190, 180, 12), "Bạn có muốn đánh lại không?", 7.5f, TextAnchor.MiddleCenter, Color.white, true);
+                TouchUi.Label(TouchUi.R(0, y0 + 202, 180, 14), "Đánh lại trận này?", 7.5f, TextAnchor.MiddleCenter, Color.white, true);
                 Rect back = BackRect();
                 TouchUi.Button(back, Btn.Grey, downKind == 3);
                 TouchUi.PixelText("TRỞ VỀ", 2, back.center.x, back.center.y + (downKind == 3 ? TouchUi.K : 0), 1, true);
@@ -247,13 +252,18 @@ namespace Loan12.UnityPort
         static void Row(ref float y, string icon, string label, string value)
         {
             float k = TouchUi.K;
-            Rect r = TouchUi.R(14, y, 152, 24);
+            // a two-line label makes the row taller
+            float vw = TouchUi.PixelWidth(value, 1);
+            float lw = 152 - 30 - vw - 12;
+            int lines = Mathf.Max(1, TouchUi.Lines(label, lw));
+            float h = lines > 1 ? 34 : 24;
+            Rect r = TouchUi.R(14, y, 152, h);
             TouchUi.Fill(r, TouchUi.PurpleDark);
             Texture2D t = TouchUi.Img(icon);
-            TouchUi.Sprite(t, TouchUi.R(16, y + 1, 22, 22), new Rect(0, 0, Mathf.Min(22, t.width), Mathf.Min(22, t.height)));
-            TouchUi.Label(TouchUi.R(42, y, 90, 24), label, 7, TextAnchor.MiddleLeft, Color.white, false, true);
+            TouchUi.Sprite(t, TouchUi.R(16, y + (h - 22) / 2f, 22, 22), new Rect(0, 0, Mathf.Min(22, t.width), Mathf.Min(22, t.height)));
+            TouchUi.Label(TouchUi.R(42, y, lw, h), label, 7, TextAnchor.MiddleLeft, Color.white, false, true);
             TouchUi.PixelText(value, 1, r.xMax - 6 * k, r.center.y, 2, true);
-            y += 28;
+            y += h + 4;
         }
 
         static void Total(float y, string icon, string label, string value, Color c)

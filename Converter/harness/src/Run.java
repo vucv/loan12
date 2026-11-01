@@ -32,6 +32,19 @@ public class Run {
                 case "wait":
                     advance(Integer.parseInt(arg));
                     break;
+                case "textpng": {
+                    // PORT-UI: a text in the game's bitmap font as a PNG: textpng <font> <name> <text>
+                    String[] q = arg.split("\\s+", 3);
+                    javax.microedition.lcdui.Image img = game.PortUi.text(q[2], Integer.parseInt(q[0]));
+                    int w = img.getWidth(), h = img.getHeight();
+                    int[] px = new int[w * h];
+                    img.getRGB(px, 0, w, 0, 0, w, h);
+                    BufferedImage bi = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
+                    for (int i = 0; i < px.length; i++) if ((px[i] & 0xFFFFFF) == 0xFF00FF) px[i] = 0; else px[i] |= 0xFF000000;
+                    bi.setRGB(0, 0, w, h, px, 0, w);
+                    ImageIO.write(bi, "png", new File(outDir, q[1] + ".png"));
+                    break;
+                }
                 case "measure": {
                     // PORT-UI: size and ink box of texts in the game's bitmap fonts: measure <font> <text>
                     String[] q = arg.split("\\s+", 2);

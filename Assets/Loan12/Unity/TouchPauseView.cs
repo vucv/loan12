@@ -46,7 +46,7 @@ namespace Loan12.UnityPort
 
         static Rect PanelRect()
         {
-            return CanQuit() ? TouchUi.R(14, 62, 152, 214) : TouchUi.R(14, 80, 152, 168);
+            return CanQuit() ? TouchUi.R(14, 50, 152, 236) : TouchUi.R(14, 82, 152, 172);
         }
 
         static float Top()
@@ -56,22 +56,22 @@ namespace Loan12.UnityPort
 
         static Rect ResumeRect()
         {
-            return TouchUi.R(26, Top() + 52, 128, 30);
+            return TouchUi.R(26, Top() + 60, 128, 30);
         }
 
         static Rect SoundRect()
         {
-            return TouchUi.R(26, Top() + 90, 128, 24);
+            return TouchUi.R(26, Top() + 98, 128, 24);
         }
 
         static Rect VibrateRect()
         {
-            return TouchUi.R(26, Top() + 120, 128, 24);
+            return TouchUi.R(26, Top() + 128, 128, 24);
         }
 
         static Rect QuitRect()
         {
-            return TouchUi.R(26, Top() + 160, 128, 24);
+            return TouchUi.R(26, Top() + 168, 128, 24);
         }
 
         int Hit(Vector2 p)
@@ -171,7 +171,7 @@ namespace Loan12.UnityPort
             TouchUi.Panel(panel);
             TouchUi.PixelText("TẠM DỪNG", 1, TouchUi.R(90, 0, 0, 0).x, TouchUi.R(0, top + 18, 0, 0).y, 1, true);
             string sub = CanQuit() ? "Trận đấu đang tạm dừng" : "Bạn vừa rời trò chơi, trận đấu đã tạm dừng";
-            TouchUi.Label(TouchUi.R(20, top + 30, 140, 18), sub, 7, TextAnchor.MiddleCenter, TouchUi.TextSoft, false, true);
+            TouchUi.Label(TouchUi.R(16, top + 30, 148, 26), sub, 7, TextAnchor.MiddleCenter, TouchUi.TextSoft, false, true);
 
             TouchUi.RedButton(ResumeRect(), "TIẾP TỤC", true, downKind == 1);
             bool sound = host == null || host.SoundOn, vibrate = host == null || host.HapticsOn;
@@ -180,9 +180,9 @@ namespace Loan12.UnityPort
             if (CanQuit())
             {
                 Rect q = QuitRect();
-                TouchUi.Fill(TouchUi.R(26, top + 152, 128, 1), TouchUi.Hex(0x9A6A98));
+                TouchUi.Fill(TouchUi.R(26, top + 160, 128, 1), TouchUi.Hex(0x9A6A98));
                 TouchUi.TextButton(q, "LƯU VÀ THOÁT", Btn.Red, downKind == 4);
-                TouchUi.Label(TouchUi.R(18, top + 188, 144, 20), "Trận đấu được lưu lại, chọn Chơi tiếp ở menu để đánh tiếp", 6.5f,
+                TouchUi.Label(TouchUi.R(18, top + 194, 144, 30), "Chọn Chơi tiếp ở menu để đánh tiếp trận này", 6.5f,
                     TextAnchor.UpperCenter, TouchUi.Hex(0xD8C8DC), false, true);
             }
             GUI.color = old;
