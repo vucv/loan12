@@ -49,6 +49,8 @@ Số trong vòng tròn vàng trên ảnh ứng với các ghi chú bên dưới 
 ### 1. Menu chính
 <img src="ui/01_menu.png" width="300" alt="Menu chính">
 
+> Nút "Chơi mới" được thay bằng tính năng nhiều nhân vật (tối đa 3 ô): xem [thiết kế nhiều nhân vật](thiet-ke-nhieu-nhan-vat.md).
+
 1. Thanh trên: mạng, vàng, nút Cài đặt.
 2. **"Chơi tiếp" là nút lớn nhất**, "Chơi mới" ngay dưới.
 3. Bốn lối tắt: Cửa hàng, Sưu tập, Hướng dẫn, Cài đặt.
@@ -263,6 +265,7 @@ Game gốc tự vẽ mọi thứ lên khung 240x320, và phần lớn code vẽ 
 
 ## Liên quan
 
+- [Thiết kế nhiều nhân vật](thiet-ke-nhieu-nhan-vat.md): Menu chính với 3 ô nhân vật, tạo thêm nhân vật bằng quảng cáo, vàng và vật phẩm dùng chung.
 - Các màn nháp trong [`mockups/`](mockups/) của [kế hoạch kiếm tiền](README.md) được vẽ trên bố cục cũ (khung 3:4). Ý tưởng giữ nguyên, sẽ đặt vào bố cục mới:
   - nút xem quảng cáo;
   - hết mạng;
