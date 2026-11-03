@@ -130,13 +130,13 @@ Chạy một lần khi chưa có `l12.slots.v1`:
 
 Thay cho cặp nút "Chơi tiếp / Chơi mới" ở [Menu chính](thiet-ke-giao-dien.md#1-menu-chính).
 
-1. **Nút "CHƠI TIẾP"** (đỏ khung vàng, rộng 160 u, cao 37 u, cách lề 10 u):
+1. **Nút ⚙** trên thanh trên: mở [màn Cài đặt](thiet-ke-cai-dat.md#2-màn-cài-đặt). Menu không còn hàng lối tắt Cửa hàng, Sưu tập, Hướng dẫn, Cài đặt ([chi tiết](thiet-ke-cai-dat.md#1-menu-chính-bỏ-hàng-lối-tắt)).
+2. **Nút "CHƠI TIẾP"** (đỏ khung vàng, rộng 160 u, cao 37 u, cách lề 10 u, cách đáy vùng an toàn 75 u):
    - chân dung tướng của `activeSlot` 30×30 phóng x3 (22.5 u), viền vàng, cách mép trái 6 u;
    - dòng 1 phông pixel: "CHƠI TIẾP";
    - dòng 2 phông HD 6.5 u: `{tên viết hoa đầu} · Hệ {Hỏa|Lôi|Thủy} · Cấp {level}`. Tên dài quá 14 ký tự thì cắt và thêm "…".
    - Chạm: `bg.useSlot(activeSlot)` rồi đi như mục 3.2.
-2. **Nút "NHÂN VẬT"** (khung cùng kiểu, nền tím (70,36,92), rộng 125 u, cao 25 u, căn giữa, cách nút trên 7 u). Bên phải có ô số `{số ô có nhân vật}/3`. Chạm: mở màn 4.2.
-3. Lối tắt (Cửa hàng, Sưu tập, Hướng dẫn, Cài đặt) giữ nguyên.
+3. **Nút "NHÂN VẬT"** (khung cùng kiểu, nền tím (70,36,92), rộng 125 u, cao 25 u, căn giữa, cách nút trên 10 u). Bên phải có ô số `{số ô có nhân vật}/3`. Chạm: mở màn 4.2.
 
 Thanh trên: mạng và vàng đều là **chung** cho mọi nhân vật.
 

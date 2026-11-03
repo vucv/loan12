@@ -34,7 +34,7 @@ Phụ lục A, B, C ở cuối tài liệu liệt kê đủ 46 nhiệm vụ, 8 s
 
 | Vùng | Nội dung |
 |---|---|
-| Thanh trên (luôn hiện) | Mạng `n/5` và đồng hồ hồi mạng · vàng và nút **+** (mở Cửa hàng, tab Vàng) · nút ⚙ (mở hộp Tạm dừng) |
+| Thanh trên (luôn hiện) | Mạng `n/5` và đồng hồ hồi mạng · vàng và nút **+** (mở Cửa hàng, tab Vàng) · nút ⚙ (mở trang Cài đặt) |
 | Giữa | Nội dung của thẻ đang chọn |
 | Thanh điều hướng (cao 37 u) | 4 ô bằng nhau: Bản đồ · Túi đồ · Cửa hàng · Nhiệm vụ. Ô đang chọn nền tím (110,52,112), vạch vàng trên đầu, chữ vàng. |
 
@@ -42,7 +42,7 @@ Quy tắc:
 
 1. Cả 4 thẻ đều là **lớp vẽ đè lên màn bản đồ của game** (`aa` vẫn là màn hiện tại). Đổi thẻ không tạo màn mới trong game, không ghi save.
 2. Mỗi thẻ **giữ trạng thái** khi rời đi: vị trí cuộn, tab con, thẻ đang mở rộng. Ra Menu rồi vào lại thì về mặc định.
-3. **Nút Back Android:** đang có hộp hoặc khung thì đóng nó; đang ở thẻ khác thì về thẻ Bản đồ; đang ở Bản đồ thì mở hộp Tạm dừng.
+3. **Nút Back Android:** đang có hộp hoặc khung thì đóng nó; đang ở thẻ khác thì về thẻ Bản đồ; đang ở Bản đồ thì mở trang Cài đặt.
 4. **Đang đi trên đường mà đổi thẻ:** thẻ mới mở ngay; nhân vật đi hết đoạn đường đang đi rồi dừng (xoá phần đường còn lại, `portPathLen = 0`). Nếu giữa đoạn đó gặp quái chặn đường thì tự về thẻ Bản đồ và hiện hộp đối đầu.
 5. **Không đổi thẻ được** khi game đang mở hội thoại, hộp đối đầu, màn kết quả hay hộp thông báo. Lúc đó thanh điều hướng mờ 50%.
 6. **Chấm đỏ:**
@@ -53,7 +53,7 @@ Quy tắc:
    - **Hộp giữa màn** cho mọi chi tiết (vật phẩm, mua, nhiệm vụ, xác nhận): rộng 162 u (cách mép 9 u), **canh giữa theo chiều dọc** của vùng giữa thanh trên và thanh điều hướng, nền phía sau tối 65%, nút ✕ 11×11 u ở góc phải trên. Hộp cao hơn vùng giữa thì cuộn bên trong hộp.
    - **Khung sát đáy** chỉ dùng cho khung thông tin nút trên bản đồ (mục 3.3), để không che bản đồ.
    - Cả hai: chạm ra ngoài hoặc Back thì đóng; mở/đóng mờ dần 0.15 giây.
-8. **Hộp Tạm dừng** (nút ⚙): Tiếp tục · Âm thanh bật/tắt · Hướng dẫn bản đồ · Về menu. "Về menu" ghi save bản đồ (`aa.w()`) rồi thoát, thay cho hộp "Bạn có muốn trở về menu hay không?" của game.
+8. **Nút ⚙** mở trang [Cài đặt bản bản đồ](thiet-ke-cai-dat.md#22-mở-trên-bản-đồ) (game tạm dừng; có Tiếp tục, Đổi nhân vật, Về menu chính), thay cho hộp "Bạn có muốn trở về menu hay không?" của game.
 
 ## 3. Thẻ Bản đồ
 
@@ -118,7 +118,7 @@ Nội dung theo thứ tự ưu tiên của nút:
 - **Gặp quái chặn đường** (bộ đếm `ae` về 0): dừng đường đi, hiện hộp đối đầu như hiện nay. Sau trận (thắng hoặc rút lui), **không** tự đi tiếp; khung thông tin của điểm đích mở lại với nút ĐI TỚI.
 - Chạm một nút khác khi đang đi: đổi đích, đi tiếp từ cuối đoạn hiện tại.
 
-### 3.5 Hướng dẫn bản đồ (lần đầu và trong hộp Tạm dừng)
+### 3.5 Hướng dẫn bản đồ (lần đầu và trong Cài đặt)
 
 Thay hộp chữ cũ ("bấm các phím 2, 4, 6, 8") bằng 3 bước chỉ tay, mỗi bước một câu, chạm để qua:
 

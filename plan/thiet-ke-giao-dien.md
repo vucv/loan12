@@ -50,6 +50,7 @@ Số trong vòng tròn vàng trên ảnh ứng với các ghi chú bên dưới 
 <img src="ui/01_menu.png" width="300" alt="Menu chính">
 
 > Nút "Chơi mới" được thay bằng tính năng nhiều nhân vật (tối đa 3 ô): xem [thiết kế nhiều nhân vật](thiet-ke-nhieu-nhan-vat.md).
+> Hàng lối tắt (ghi chú 3) đã bỏ; Cài đặt mở bằng nút ⚙: xem [Menu chính gọn lại và màn Cài đặt](thiet-ke-cai-dat.md).
 
 1. Thanh trên: mạng, vàng, nút Cài đặt.
 2. **"Chơi tiếp" là nút lớn nhất**, "Chơi mới" ngay dưới.
@@ -267,6 +268,7 @@ Game gốc tự vẽ mọi thứ lên khung 240x320, và phần lớn code vẽ 
 
 ## Liên quan
 
+- [Menu chính gọn lại và màn Cài đặt](thiet-ke-cai-dat.md): bỏ lối tắt ở Menu, trang Cài đặt từ Menu và từ bản đồ, Luật chơi, Thông tin.
 - [Giao diện bản đồ](thiet-ke-ban-do.md): chi tiết 4 thẻ Bản đồ, Túi đồ, Cửa hàng, Nhiệm vụ, kèm danh sách 46 nhiệm vụ.
 - [Thiết kế nhiều nhân vật](thiet-ke-nhieu-nhan-vat.md): Menu chính với 3 ô nhân vật, tạo thêm nhân vật bằng quảng cáo, vàng và vật phẩm dùng chung.
 - Các màn nháp trong [`mockups/`](mockups/) của [kế hoạch kiếm tiền](README.md) được vẽ trên bố cục cũ (khung 3:4). Ý tưởng giữ nguyên, sẽ đặt vào bố cục mới:
