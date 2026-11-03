@@ -102,6 +102,7 @@ namespace Loan12
         public bool f_portForfeit;
         // PORT-UI: the player gave the battle up (pause box "Thoát trận")
         private int f_portEndWait;
+        /** PORT-UI: the touch interface's drop (rates above): items 3, 4, 5 a little more often than 0 and 1 */
         public int[] f_portWon;
         // PORT-UI: items won in this battle (5 in a row), by type    // PORT-UI: ticks state 9 waited for the board's effects
         public C_ae f_portEndDialog;
@@ -872,9 +873,9 @@ namespace Loan12
                         if (i2 == 0)
                         {
                             i6 = ((localcc2.f_d > localcc2.f_c) ? localcc2.f_d : localcc2.f_c);
-                            if ((i6 >= 5))
+                            if ((i6 >= ((C_PortScreens.f_touch ? 4 : 5))))
                             {
-                                int i7 = this.g(i6);
+                                int i7 = (C_PortScreens.f_touch ? this.portDrop(i6) : this.g(i6));
                                 if ((i7 >= 0))
                                 {
                                     this.f_t.d(i7, localcc2.f_a + localcc2.f_c / 2, localcc2.f_b + localcc2.f_d / 2);
@@ -1655,6 +1656,25 @@ namespace Loan12
         // PORT-UI: state and actions for the Unity touch interface (see PortUi)
         // the "dừng game" dialog of this battle
         // PORT-UI: the player gave the battle up (pause box "Thoát trận")
+        /** PORT-UI: the touch interface's drop (rates above): items 3, 4, 5 a little more often than 0 and 1 */
+        private int portDrop(int len)
+        {
+            if (this.f_s.f_d)
+            {
+                return this.g(len);
+            }
+            if ((C_ay.a(100) >= (((len >= 5) ? 100 : 34))))
+            {
+                return -1;
+            }
+            int r = C_ay.a(100);
+            int i = ((r < 15) ? 0 : (((r < 30) ? 1 : (((r < 55) ? 3 : (((r < 75) ? 4 : 5)))))));
+            this.f_s.f_a[i].f_b += 1;
+            C_bg.a(i, 1, 6);
+            this.f_portWon[i] += 1;
+            return i;
+        }
+
         // PORT-UI: items won in this battle (5 in a row), by type    // PORT-UI: ticks state 9 waited for the board's effects
         // the result (won) or "mất 1 mạng" (lost) dialog
         // the lost battle can be fought again

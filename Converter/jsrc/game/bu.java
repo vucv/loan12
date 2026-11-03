@@ -666,8 +666,8 @@ public class bu
                     }
                     if (i2 == 0) {
                         i6 = localcc2.d > localcc2.c ? localcc2.d : localcc2.c;
-                        if (i6 >= 5) {
-                            int i7 = g(i6);
+                        if (i6 >= (game.PortScreens.touch ? 4 : 5)) {
+                            int i7 = game.PortScreens.touch ? portDrop(i6) : g(i6);
                             if (i7 >= 0) {
                                 this.t.d(i7, localcc2.a + localcc2.c / 2, localcc2.b + localcc2.d / 2);
                             }
@@ -1287,6 +1287,22 @@ public class bu
     public ae portPauseDialog; // the "dừng game" dialog of this battle
     public boolean portForfeit; // PORT-UI: the player gave the battle up (pause box "Thoát trận")
     private int portEndWait;
+
+    /** PORT-UI: the touch interface's drop (rates above): items 3, 4, 5 a little more often than 0 and 1 */
+    private int portDrop(int len) {
+        if (this.s.d) {
+            return g(len);
+        }
+        if (ay.a(100) >= (len >= 5 ? 100 : 34)) {
+            return -1;
+        }
+        int r = ay.a(100);
+        int i = r < 15 ? 0 : (r < 30 ? 1 : (r < 55 ? 3 : (r < 75 ? 4 : 5)));
+        this.s.a[i].b += 1;
+        bg.a(i, 1, 6);
+        this.portWon[i] += 1;
+        return i;
+    }
     public int[] portWon = new int[6]; // PORT-UI: items won in this battle (5 in a row), by type    // PORT-UI: ticks state 9 waited for the board's effects
     public ae portEndDialog;   // the result (won) or "mất 1 mạng" (lost) dialog
     public boolean portEndRetry; // the lost battle can be fought again

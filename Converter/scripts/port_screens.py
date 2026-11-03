@@ -497,6 +497,29 @@ rep('game/bu.java', """            if (i >= 0) {
 rep('game/bu.java', """    private int portEndWait;""", """    private int portEndWait;
     public int[] portWon = new int[6]; // PORT-UI: items won in this battle (5 in a row), by type""")
 
+# - item drops (touch): more often than the game's (40% on a line of 5): a line of 4 drops one item
+#   in 3, a line of 5 or more always does; the item flies out of the board (t.d) as in the game
+rep('game/bu.java', """                        if (i6 >= 5) {
+                            int i7 = g(i6);""", """                        if (i6 >= (game.PortScreens.touch ? 4 : 5)) {
+                            int i7 = game.PortScreens.touch ? portDrop(i6) : g(i6);""")
+rep('game/bu.java', """    private int portEndWait;""", """    private int portEndWait;
+
+    /** PORT-UI: the touch interface's drop (rates above): items 3, 4, 5 a little more often than 0 and 1 */
+    private int portDrop(int len) {
+        if (this.s.d) {
+            return g(len);
+        }
+        if (ay.a(100) >= (len >= 5 ? 100 : 34)) {
+            return -1;
+        }
+        int r = ay.a(100);
+        int i = r < 15 ? 0 : (r < 30 ? 1 : (r < 55 ? 3 : (r < 75 ? 4 : 5)));
+        this.s.a[i].b += 1;
+        bg.a(i, 1, 6);
+        this.portWon[i] += 1;
+        return i;
+    }""")
+
 # ---------------------------------------------------------------------------------------------
 # start-up: no logo splash (MicroGame, partner) and no 1.2 s cover before the menu in the touch port
 rep('game/cn.java', """        if (this.portDone) {
