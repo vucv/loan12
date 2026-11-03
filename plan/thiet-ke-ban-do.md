@@ -42,14 +42,18 @@ Quy tắc:
 
 1. Cả 4 thẻ đều là **lớp vẽ đè lên màn bản đồ của game** (`aa` vẫn là màn hiện tại). Đổi thẻ không tạo màn mới trong game, không ghi save.
 2. Mỗi thẻ **giữ trạng thái** khi rời đi: vị trí cuộn, tab con, thẻ đang mở rộng. Ra Menu rồi vào lại thì về mặc định.
-3. **Nút Back Android:** đang có khung trượt thì đóng khung; đang ở thẻ khác thì về thẻ Bản đồ; đang ở Bản đồ thì mở hộp Tạm dừng.
+3. **Nút Back Android:** đang có hộp hoặc khung thì đóng nó; đang ở thẻ khác thì về thẻ Bản đồ; đang ở Bản đồ thì mở hộp Tạm dừng.
 4. **Đang đi trên đường mà đổi thẻ:** thẻ mới mở ngay; nhân vật đi hết đoạn đường đang đi rồi dừng (xoá phần đường còn lại, `portPathLen = 0`). Nếu giữa đoạn đó gặp quái chặn đường thì tự về thẻ Bản đồ và hiện hộp đối đầu.
 5. **Không đổi thẻ được** khi game đang mở hội thoại, hộp đối đầu, màn kết quả hay hộp thông báo. Lúc đó thanh điều hướng mờ 50%.
 6. **Chấm đỏ:**
    - Nhiệm vụ: hiện **số mục mới** chưa xem = nhiệm vụ chính mới (khi `T` tăng) + sự kiện mới mở + quân canh mới mở. Mở thẻ Nhiệm vụ thì xoá về 0.
    - Túi đồ: chấm không số khi có **hộp bảo vật chưa mở**.
    - Cửa hàng: chấm không số khi rương vàng miễn phí đã sẵn sàng (theo [kế hoạch kiếm tiền](README.md#3-các-điểm-đặt-quảng-cáo-thưởng)).
-7. **Hộp Tạm dừng** (nút ⚙): Tiếp tục · Âm thanh bật/tắt · Hướng dẫn bản đồ · Về menu. "Về menu" ghi save bản đồ (`aa.w()`) rồi thoát, thay cho hộp "Bạn có muốn trở về menu hay không?" của game.
+7. **Hai kiểu hộp:**
+   - **Hộp giữa màn** cho mọi chi tiết (vật phẩm, mua, nhiệm vụ, xác nhận): rộng 162 u (cách mép 9 u), **canh giữa theo chiều dọc** của vùng giữa thanh trên và thanh điều hướng, nền phía sau tối 65%, nút ✕ 11×11 u ở góc phải trên. Hộp cao hơn vùng giữa thì cuộn bên trong hộp.
+   - **Khung sát đáy** chỉ dùng cho khung thông tin nút trên bản đồ (mục 3.3), để không che bản đồ.
+   - Cả hai: chạm ra ngoài hoặc Back thì đóng; mở/đóng mờ dần 0.15 giây.
+8. **Hộp Tạm dừng** (nút ⚙): Tiếp tục · Âm thanh bật/tắt · Hướng dẫn bản đồ · Về menu. "Về menu" ghi save bản đồ (`aa.w()`) rồi thoát, thay cho hộp "Bạn có muốn trở về menu hay không?" của game.
 
 ## 3. Thẻ Bản đồ
 
@@ -148,6 +152,8 @@ Thay cho phím mềm "T.Tin" của bản gốc. Cuộn dọc nếu không đủ 
 
 <img src="ui/ban-do/16b_tui-do-chi-tiet.png" width="300" alt="Chi tiết vật phẩm">
 
+Hộp giữa màn (mục 2.7), cao 160 u.
+
 1. Hình 40 u, tên, "Đang có: {n}", giới hạn dùng (bảng dưới).
 2. Mô tả `h.d[t]`, và **một dòng tính sẵn cho tướng hiện tại** (bảng dưới, chữ xanh lá).
 3. Nút vàng **"MUA THÊM {gói} · {giá}"**: mua ngay 1 gói (như mục 5.2, không hỏi lại). Thiếu vàng thì nút xám "Thiếu {x} vàng" và chạm vào mở Cửa hàng tab Vàng.
@@ -170,13 +176,15 @@ Thay cho màn Cửa hàng cũ (`q`, lưới 6 ô và hộp "Có / Không"). Vàn
 1. **3 tab**: Vật phẩm · Vàng · Ưu đãi. Tab Vàng và Ưu đãi theo [kế hoạch kiếm tiền](README.md#76-cửa-hàng-tab-vàng) (gói vàng, rương miễn phí, gói khởi đầu, VIP). Chấm đỏ trên tab khi có thứ miễn phí.
 2. **Thẻ vật phẩm** 84×84 u, 2 cột: hình 35 u, "Có {n}" góc phải trên, tên, "{gói} cái", nút giá.
    - Nút giá vàng (200,150,40) khi đủ tiền; xám khi thiếu.
-   - Chạm **bất kỳ chỗ nào** trên thẻ: mở khung Mua (mục 5.1).
+   - Chạm **bất kỳ chỗ nào** trên thẻ: mở hộp Mua (mục 5.1).
 3. Giá hiện tại (`PortUi.PRICE`, gói `q.c`): Long Thần Kiếm 1.500, Nhân Sâm 1.500, Quỷ Diện Giáp 1.000, Bình Thuốc 250, Ngọc Ấn 500, mỗi gói 3 cái. Giá có thể chỉnh từ xa (Remote Config), nên UI luôn đọc từ `PortUi.price(t)`.
 4. Ô cuối **"Thiếu vàng?"** (xanh lá): chạm → tab Vàng.
 
-### 5.1 Khung Mua
+### 5.1 Hộp Mua
 
 <img src="ui/ban-do/17b_mua-vat-pham.png" width="300" alt="Mua vật phẩm">
+
+Hộp giữa màn (mục 2.7), cao 175 u.
 
 1. **Chọn số gói** bằng nút − / + (24×24 u). Mặc định 1, tối thiểu 1, tối đa = số gói mua được bằng vàng hiện có (ít nhất 1 để vẫn xem được giá) và không quá 10. Giữ nút + để tăng liên tục (mỗi 0.15 giây). Dòng dưới: "= {gói × 3} {tên}", "Còn lại sau khi mua: {vàng − tổng}".
 2. Nút vàng **"MUA · {tổng}"**. Thiếu vàng: nút xanh lá "+ VÀNG (thiếu {x})" → tab Vàng.
@@ -185,28 +193,140 @@ Thay cho màn Cửa hàng cũ (`q`, lưới 6 ô và hộp "Có / Không"). Vàn
 ### 5.2 Khi bấm mua
 
 1. Gọi `PortUi.buy(t, số gói)` (mục 8). Hàm kiểm tra đủ vàng cho **cả lượt mua** trước khi trừ; thiếu thì không mua gói nào.
-2. Thành công: số vàng trên thanh trên chạy giảm trong 0.4 giây; "Có {n}" nhảy số; hình vật phẩm bay vào ô Túi đồ trên thanh điều hướng; rung nhẹ. Khung Mua đóng.
+2. Thành công: số vàng trên thanh trên chạy giảm trong 0.4 giây; "Có {n}" nhảy số; hình vật phẩm bay vào ô Túi đồ trên thanh điều hướng; rung nhẹ. Hộp Mua đóng.
 3. Không còn hộp "Đã mua vật phẩm thành công" của game.
+
+### 5.3 Tab Vàng
+
+<img src="ui/ban-do/17c_cua-hang-vang.png" width="300" alt="Cửa hàng tab Vàng">
+
+1. **Rương miễn phí** (thẻ xanh lá 172×52 u): rương `/r/g` x6, "RƯƠNG MIỄN PHÍ", "+200 vàng · còn {n}/5 lượt hôm nay", "Mỗi lần mở cách nhau ít nhất 1 giờ".
+2. Nút xanh **▶ MỞ**: xem quảng cáo thưởng (`Host.showRewarded("gold_chest", …)`), xem hết thì +200 vàng vào ví chung, chạy số trên thanh trên.
+   - Đang chờ 1 giờ: nút xám "Mở lại sau {mm:ss}" (đếm ngược từng giây).
+   - Hết 5 lượt: nút xám "Hết lượt hôm nay", dòng 2 "Lượt mới lúc 0:00".
+   - VIP: nút vàng **MỞ NGAY**, không xem quảng cáo (vẫn 5 lượt, vẫn cách 1 giờ). Dòng nhỏ bên phải "hoặc VIP: mở ngay" chỉ hiện khi chưa VIP; chạm vào thì sang tab Ưu đãi.
+   - "Ngày" tính theo giờ máy; giờ máy lùi so với lần mở trước thì không cho mở (giống luật hồi mạng).
+3. **Gói vàng**: lưới 2×2, thẻ 84×85 u. Số thỏi vàng vẽ tăng dần theo gói (1–4 hình `/gold` x3), số vàng phông pixel, chữ "vàng", nút đỏ giá tiền thật.
+   - Nhãn góc trái trên: "+12%" (xanh), "PHỔ BIẾN" (đỏ cam), "LỜI NHẤT" (tím). Gói "Phổ biến" có viền vàng.
+4. Nút giá đỏ (176,28,28): chữ là **giá Google Play đã định dạng theo quốc gia** (`Host.price(mã)`), không ghi cứng. Chạm → `Host.purchase(mã, …)` (mục 5.5).
+5. Dòng cuối: "Vàng dùng chung cho mọi nhân vật · giá theo Google Play".
+
+| Mã sản phẩm | Vàng | Giá tham khảo (VN) | Nhãn |
+|---|---|---|---|
+| `gold_5k` | 5.000 | 22.000 ₫ | — |
+| `gold_12k5` | 12.500 | 49.000 ₫ | +12% |
+| `gold_26k` | 26.000 | 99.000 ₫ | PHỔ BIẾN |
+| `gold_55k` | 55.000 | 199.000 ₫ | LỜI NHẤT |
+
+### 5.4 Tab Ưu đãi
+
+<img src="ui/ban-do/17d_cua-hang-uu-dai.png" width="300" alt="Cửa hàng tab Ưu đãi">
+
+1. **Gói khởi đầu** (`starter_pack`, khung đỏ sẫm (110,36,40), cao 117 u), nhãn "CHỈ 1 LẦN".
+2. 4 ô nội dung: 3.000 vàng · Long Thần Kiếm x3 · Nhân Sâm x3 · đầy mạng. Dòng "Trị giá 6.000 vàng và đầy mạng" (3.000 + 1.500 + 1.500 theo giá Cửa hàng).
+3. Nút đỏ giá. Mua xong: nút xanh **ĐÃ MUA** (không bấm được), thẻ chuyển xuống dưới VIP. Đầy mạng = đặt mạng về tối đa (5, VIP 6), không quá tối đa.
+4. **VIP trọn đời** (`vip`, khung nâu vàng (70,50,20)): hình Ngọc Ấn, "Mua 1 lần, dùng mãi, cho mọi nhân vật".
+5. 4 quyền lợi có dấu ✓:
+   - nhận thưởng quảng cáo ngay, không phải xem (vẫn giữ giới hạn lượt);
+   - ô vật phẩm thứ 4 khi chuẩn bị xuất trận;
+   - tối đa 6 mạng (thường 5);
+   - tạo nhân vật mới không cần xem quảng cáo (theo [nhiều nhân vật](thiet-ke-nhieu-nhan-vat.md), luật L7).
+   - Đã có VIP: nút vàng **ĐÃ KÍCH HOẠT**.
+6. **Khôi phục giao dịch** (chữ xanh gạch chân): gọi khôi phục của Unity IAP; xong thì thông báo "Đã khôi phục: VIP, Gói khởi đầu" hoặc "Không có giao dịch nào để khôi phục".
+- Chấm đỏ trên tab Ưu đãi: khi gói khởi đầu **chưa mua** và người chơi **chưa mở tab này lần nào** kể từ khi gói xuất hiện.
+- Gói khởi đầu tự bật **1 lần** (hộp giữa màn có cùng nội dung) sau trận hướng dẫn hoặc lần đầu hết mạng; sau đó chỉ còn ở tab này.
+
+### 5.5 Mua bằng tiền thật
+
+<img src="ui/ban-do/17e_trang-thai-mua.png" width="400" alt="Trạng thái nút mua">
+
+1. Chạm nút giá → nút chuyển **"Đang xử lý…"**, khoá mọi nút mua trong Cửa hàng → mở màn thanh toán của Google Play.
+2. **Thành công:** cộng vàng / vật phẩm / mạng / VIP **sau khi** Google Play xác nhận, ghi PlayerPrefs ngay, rồi mới báo hoàn tất giao dịch (consume cho gói vàng, acknowledge cho gói 1 lần và VIP). Hiện hộp giữa màn "Đã nhận {nội dung}" và hiệu ứng vàng bay về thanh trên.
+3. **Người chơi huỷ:** nút về như cũ, không thông báo.
+4. **Lỗi:** nút về như cũ, thông báo ngắn "Chưa mua được. Thử lại sau." Không trừ, không cộng gì.
+5. **Đang chờ** (thanh toán trả sau của Google Play): nút "Chờ thanh toán"; khi Google Play báo xong (kể cả lần mở game sau) thì cộng như bước 2.
+6. **Chưa có giá** (không mạng, chưa tải xong danh sách sản phẩm): nút xám "— ₫", không bấm được.
+- Mọi phần thưởng mua bằng tiền thật đi vào **ví chung** và trạng thái chung (VIP, gói khởi đầu), không theo nhân vật.
 
 ## 6. Thẻ Nhiệm vụ
 
-<img src="ui/ban-do/18_nhiem-vu.png" width="300" alt="Thẻ Nhiệm vụ">
+Thẻ có 3 tab con, đúng 3 loại việc mà code của game có: **Chính tuyến** (46 nhiệm vụ đi lần lượt, `dd.l`, tiến độ `aa.T`), **Sự kiện** (8 việc phụ, `dd.n`) và **Quân canh** (14 trạm lính, `dd.p`). Mỗi tab con ghi "{đã xong}/{tổng đang thấy}". Mở thẻ lần đầu là tab Chính tuyến.
 
-1. **Tiến độ**: thanh `/m/lv` rộng 133 u, "{T}/46 đã xong".
-2. **Nhiệm vụ chính** (thẻ đỏ sẫm (98,40,60), cao 96 u):
-   - dòng nhỏ "❗ NHIỆM VỤ CHÍNH · {T+1}";
-   - chân dung đối thủ (trận đánh) hoặc người nói đầu tiên trong `ea.b[T]` (hội thoại); tiêu đề lớn (phụ lục A);
-   - dòng phụ: trận đánh "Đánh bại {đối thủ} · cấp {n} · cách {k} đường"; hội thoại "Gặp {người nói} tại {nơi} · cách {k} đường";
-   - các nhãn thưởng: "+{KN} KN" (tím), "+{vàng} vàng" (vàng), "+1 hộp bảo vật" (xanh ngọc). Không có thưởng thì bỏ nhãn.
-3. **ĐI TỚI**: về thẻ Bản đồ, camera trượt tới nút, rồi bắt đầu đi luôn (như bấm ĐI TỚI trong khung thông tin). Đang đứng ở đó thì là **BẮT ĐẦU**.
-4. **Hội thoại**: xem lại đoạn thoại mở đầu `ea.b[T]` bằng màn [Hội thoại cốt truyện](thiet-ke-giao-dien.md#4-hội-thoại-cốt-truyện), chỉ để đọc, không đổi tiến độ.
-5. **Sự kiện**: danh sách sự kiện ở **nút đã mở** mà chưa làm (`z[n].f ≥ 0`). Mỗi dòng 166×24 u: dấu cam, chân dung x2, "{đối thủ} · {nơi}", "cấp {n} · {thưởng}", "Đi tới ›". Sắp xếp theo số chặng đường, gần trước. Chạm cả dòng = Đi tới.
-6. **Quân canh**: như Sự kiện, cho các nút đã mở còn lính canh (`S[n] ≥ 0`). Điểm không tên ghi "trạm gác gần {thành gần nhất}". Lính cấp theo người chơi ghi "cấp {cấp của bạn}".
-7. **Đã hoàn thành ({T})**: thu gọn mặc định; mở ra là danh sách nhiệm vụ 1…T (mới nhất trên cùng), mỗi dòng có dấu ✓, tiêu đề, nơi và nút "Hội thoại" để đọc lại (`ea.b`, rồi `ea.c`).
+### 6.1 Trạng thái lấy từ code
 
-- Mục nào rỗng thì ẩn cả tiêu đề mục.
-- **Mục mới** (từ lần mở thẻ trước) có nhãn "MỚI" màu đỏ ở đầu dòng trong lần mở này.
-- Đã xong cả 46: thẻ nhiệm vụ chính thành "Đã thống nhất giang sơn!" kèm nút "Xem lại kết thúc".
+| Loại | Đã xong | Đang làm / còn làm được | Chưa mở |
+|---|---|---|---|
+| Nhiệm vụ chính `q` | `q < T` | `q == T` (chỉ 1) | `q > T` |
+| Sự kiện `e` ở nút `n = dd.n[e][1]` | `z[n].d` và `z[n].f == −1` | `z[n].d` và `z[n].f == e` | `!z[n].d` |
+| Quân canh ở nút `n` | `z[n].d` và `S[n] == −1` | `z[n].d` và `S[n] ≥ 0` | `!z[n].d` |
+| Mức Đấu trường `i` | — | `aq[i] == true` | `aq[i] == false` |
+
+### 6.2 Chương
+
+46 nhiệm vụ chia thành 9 chương theo mạch truyện (tên chương là **chuỗi mới**, bảng `PortUi.QUEST_CHAPTER`):
+
+| Chương | Tên | Nhiệm vụ |
+|---|---|---|
+| 1 | Khởi binh ở Hoa Lư | 1–6 |
+| 2 | Bình Kiều | 7–9 |
+| 3 | Cứu Đằng Châu, diệt Tế Giang | 10–16 |
+| 4 | Đỗ Động Giang | 17–21 |
+| 5 | Tây Phù Liệt | 22–25 |
+| 6 | Siêu Loại và Tiên Du | 26–30 |
+| 7 | Cổ Loa và Tam Đái | 31–36 |
+| 8 | Kỳ Bố và Hồi Hồ | 37–42 |
+| 9 | Thống nhất giang sơn | 43–46 |
+
+### 6.3 Tab Chính tuyến
+
+<img src="ui/ban-do/18_nhiem-vu.png" width="300" alt="Nhiệm vụ: Chính tuyến">
+
+1. **3 tab con**, mỗi tab 56×16 u: "CHÍNH TUYẾN {T}/46", "SỰ KIỆN {xong}/{đã mở}", "QUÂN CANH {xong}/{đã mở}". Tab nào có mục mới thì có chấm đỏ.
+2. **Thanh tiến độ** (`/m/lv`, 133 u): `T / 46`, bên phải "Chương {c}/9".
+3. **Dòng chương đã xong**: dấu ✓ xanh, "Chương {c} · {tên}", "{n}/{n}", mũi tên mở rộng. Mặc định **thu gọn**.
+4. **Dòng chương đang làm**: vòng đỏ có số chương, nền sáng hơn, "{xong}/{tổng}". Mặc định **mở rộng**.
+5. **Dòng nhiệm vụ đã xong** (cao 21 u): ✓, "{số}. {tiêu đề}" (phụ lục A), dòng phụ "{Hội thoại|Đánh} · {nơi}" (+ " · {đối thủ}" nếu đánh), biểu tượng sách bên phải. Chạm cả dòng → hộp chi tiết (mục 6.4).
+6. **Thẻ nhiệm vụ đang làm** (cao 63 u, viền đỏ cam (255,120,100) 1.25 u): dấu đỏ, "{số}. ĐANG LÀM"; chân dung đối thủ hoặc người nói đầu tiên của `ea.b[T]`; tiêu đề phông pixel; dòng phụ "Đánh bại {đối thủ} · cấp {n} · {nơi}" hoặc "Gặp {người nói} · {nơi}"; nhãn thưởng "+{KN} KN" (tím), "+{vàng} vàng" (vàng), "+1 hộp bảo vật" (xanh ngọc), nhãn nào bằng 0 thì bỏ. Chạm thẻ (ngoài nút) → hộp chi tiết.
+7. **ĐI TỚI** (đỏ, góc phải trên của thẻ): về thẻ Bản đồ, camera trượt tới nút, bắt đầu đi luôn. Đang đứng ở đó thì là **BẮT ĐẦU**.
+8. **Nhiệm vụ chưa mở**: chỉ hiện **2 nhiệm vụ kế tiếp** trong chương đang làm, dạng khoá: "{số}. ???", "Mở khi xong nhiệm vụ {số − 1}". Còn nữa thì thêm dòng chữ nhỏ "+ {k} nhiệm vụ nữa trong chương". Chương sau: chỉ dòng chương khoá "Chương {c} · ???", "0/{tổng}", không mở rộng được.
+
+- Mở thẻ: tự cuộn sao cho thẻ đang làm nằm ở khoảng 1/3 trên của vùng danh sách.
+- Mở/thu một chương: chạm dòng chương, trượt 0.2 giây. Trạng thái mở/thu giữ tới khi ra Menu.
+- Xong cả 46: thẻ đang làm thay bằng thẻ vàng "Đã thống nhất giang sơn!" và nút "Xem lại kết thúc" (cốt truyện kết `h.i`).
+- Nhiệm vụ mới (từ lần mở thẻ trước) có nhãn đỏ "MỚI" trên thẻ đang làm trong lần mở này.
+
+### 6.4 Hộp chi tiết nhiệm vụ
+
+<img src="ui/ban-do/18c_chi-tiet-nhiem-vu.png" width="300" alt="Chi tiết nhiệm vụ">
+
+Hộp giữa màn (mục 2.7), cao 190 u.
+
+1. Dòng nhỏ "Chương {c} · nhiệm vụ {số}"; chân dung x4; tiêu đề phông pixel (xuống dòng nếu dài); trạng thái: ✓ "Đã hoàn thành" (xanh) hoặc ❗ "Đang làm" (đỏ).
+2. Bảng thông tin, mỗi dòng 13 u, nhãn trái / giá trị phải:
+   - Loại: Hội thoại / Đánh / Trận hướng dẫn;
+   - Nơi: tên thành, hoặc "trạm gác gần {thành}";
+   - Đối thủ: "{tên} · cấp {n}" (chỉ trận đánh);
+   - "Đã nhận" (đã xong) hoặc "Thưởng" (đang làm): KN, vàng, hộp bảo vật;
+   - Mở thêm: các thành mở ra khi xong (`dd.m[q]`, chỉ tên thành; với nhiệm vụ đang làm ghi "???" để không lộ trước).
+3. **Đọc lại hội thoại** (tím): mở màn Hội thoại cốt truyện ở chế độ chỉ đọc. Đã xong: phát `ea.b[q]` rồi `ea.c[q]`. Đang làm: chỉ `ea.b[q]`. Nhiệm vụ đang làm có thêm nút đỏ **ĐI TỚI** ở trên nút này.
+- "Đóng", ✕, chạm ra ngoài, Back: đóng.
+
+### 6.5 Tab Sự kiện
+
+<img src="ui/ban-do/18b_nhiem-vu-su-kien.png" width="300" alt="Nhiệm vụ: Sự kiện">
+
+1. **Sự kiện còn làm được** (viền cam): dấu cam, chân dung x2, "{đối thủ} · {nơi}", "cấp {n} · {thưởng}" ("gặp gỡ" nếu là hội thoại), "Đi tới ›". Xếp theo số đoạn đường từ chỗ đứng, gần trước. Chạm cả dòng = Đi tới.
+2. **Đã xong** (mờ): ✓, chân dung, "Đã nhận {thưởng}".
+3. **Chưa mở**: khoá, "???", "Ở vùng chưa mở trên bản đồ". Đủ 8 dòng luôn hiện, để người chơi biết còn bao nhiêu việc phụ.
+4. **Đấu trường · Tam Điệp** "{mở}/5 mức": 5 ô 32×24 u. Mở: nền xanh, "Mức {i}", "mở sẵn" / điều kiện đã đạt. Chưa mở: xám, ghi điều kiện: mức 3 "thắng Lê Hoàn", mức 4 "thắng Nguyễn Ninh", mức 5 "đạt cấp 30". Chạm ô đã mở → về Bản đồ, đi tới Tam Điệp. Cả mục ẩn khi chưa xong nhiệm vụ 5 (Tam Điệp chưa mở).
+
+### 6.6 Tab Quân canh
+
+Cùng kiểu dòng với tab Sự kiện, dấu vàng:
+
+- Còn: "{tên lính} · {nơi}" (điểm không tên: "trạm gác gần {thành gần nhất}"), "cấp {n}" (lính cấp theo người chơi ghi "cấp {cấp của bạn}"), "Đi tới ›".
+- Đã dẹp: ✓ mờ, "Đã dẹp".
+- Chưa mở: chỉ ghi một dòng tổng "Còn {k} trạm gác ở vùng chưa mở" (không liệt kê từng dòng khoá như Sự kiện, vì quân canh không có thưởng riêng).
 
 ## 7. Lưu dữ liệu mới
 
@@ -216,6 +336,8 @@ Theo nhân vật (đặt trong store của ô, ví dụ bản ghi mới 16b #120
 |---|---|
 | `seenT` | `T` lúc mở thẻ Nhiệm vụ lần cuối |
 | `seenEvents`, `seenGuards` | Danh sách nút sự kiện / quân canh đã thấy |
+| `starterSeen` | Đã mở tab Ưu đãi từ khi gói khởi đầu xuất hiện (chung, không theo nhân vật) |
+| `chestCount`, `chestDay`, `chestLast` | Rương miễn phí: số lượt hôm nay, ngày, lần mở cuối (chung) |
 | `mapTutorialDone` | Đã xem hướng dẫn bản đồ 3 bước |
 
 Không lưu trạng thái cuộn, tab con hay vị trí camera.
@@ -239,6 +361,9 @@ Unity chỉ đọc qua các hàm này và gửi hành động qua `PortUi.reques
 | `guardList()`, `guardEnemy(n)`, `guardLevel(n)` | Quân canh còn lại ở nút đã mở |
 | `heroExp()`, `heroExpFor(level)`, `heroBonusHp()`, `heroBonusAttack()` | 16b #103, `dd.u`, `dd.e.g`, `dd.e.h` |
 | `relicOwned(i)`, `relicBoxes()` | Bảo vật đã có, số hộp chưa mở |
+| `eventState(e)`, `guardState(n)` | 0 chưa mở, 1 còn làm được, 2 đã xong (mục 6.1) |
+| `arenaLevelOpen(i)` | `aa.aq[i]` |
+| `QUEST_TITLE[q]`, `QUEST_CHAPTER[c]`, `questChapter(q)` | Chuỗi mới (phụ lục A, mục 6.2) |
 
 **Hành động** (thêm vào hằng số đầu `PortUi`):
 
@@ -250,7 +375,9 @@ Unity chỉ đọc qua các hàm này và gửi hành động qua `PortUi.reques
 | `MAP_MENU` | — | Ghi save bản đồ rồi về Menu |
 | `SHOP_BUY` | `t * 100 + số gói` | Mua; trả kết quả qua `PortUi.lastBuyOk()` |
 
-Tiêu đề 46 nhiệm vụ (phụ lục A) là **chuỗi mới**, đặt trong bảng `PortUi.QUEST_TITLE[46]`.
+Tiêu đề 46 nhiệm vụ (phụ lục A) và tên 9 chương là **chuỗi mới**, đặt trong `PortUi`.
+
+Tab Vàng và Ưu đãi **không đi qua game**: Unity gọi thẳng `Host.showRewarded`, `Host.purchase`, `Host.price`, `Host.isVip` theo [kế hoạch kiếm tiền](README.md#9-hướng-triển-khai-kỹ-thuật-để-dành-khi-bắt-đầu-code), rồi cộng vàng / vật phẩm qua `bg.a(i, n, 6)` trên ví chung.
 
 ## 9. Kiểm thử chấp nhận
 
@@ -265,7 +392,13 @@ Tiêu đề 46 nhiệm vụ (phụ lục A) là **chuỗi mới**, đặt trong 
 9. Nhiệm vụ: danh sách Sự kiện, Quân canh khớp các dấu cam, vàng trên bản đồ; làm xong một sự kiện thì mất khỏi cả hai nơi.
 10. Chấm đỏ Nhiệm vụ: xong một nhiệm vụ chính mở thêm 2 thành có sự kiện → chấm "3" (1 nhiệm vụ mới + 2 sự kiện); mở thẻ → mất chấm, các dòng mới có nhãn "MỚI".
 11. Back Android theo đúng quy tắc mục 2.3 ở mọi thẻ.
-12. Máy 16:9 (cao 320 u): Túi đồ cuộn được; khung thông tin bản đồ vẫn không che nhân vật (camera đẩy nhân vật lên trên khung).
+12. Hộp chi tiết vật phẩm, hộp Mua và hộp chi tiết nhiệm vụ luôn nằm giữa vùng giữa (cách đều thanh trên và thanh điều hướng) trên máy 16:9, 19.5:9 và 20:9.
+13. Tab Vàng: mở rương → xem hết quảng cáo → +200 vàng; ngay sau đó nút thành "Mở lại sau 59:59"; mở đủ 5 lần thì "Hết lượt hôm nay".
+14. Mua gói vàng: tắt mạng giữa lúc thanh toán → mở lại game có mạng → vàng được cộng đúng 1 lần.
+15. Gói khởi đầu mua xong không mua lại được; cài lại game rồi "Khôi phục giao dịch" → VIP về lại, gói khởi đầu hiện "ĐÃ MUA" (vàng đã cộng trước đó không cộng lại).
+16. Tab Chính tuyến ở nhiệm vụ 13: chương 1, 2 thu gọn có ✓; chương 3 mở với 10–12 đã xong, 13 đang làm, 14–15 khoá; chương 4 trở đi khoá.
+17. Tab Sự kiện: số dòng còn / xong / khoá khớp bảng 6.1 với save đang có; Đấu trường hiện đúng mức đã mở.
+18. Máy 16:9 (cao 320 u): Túi đồ cuộn được; khung thông tin bản đồ vẫn không che nhân vật (camera đẩy nhân vật lên trên khung).
 
 ## 10. Cần quyết định
 
@@ -275,6 +408,9 @@ Tiêu đề 46 nhiệm vụ (phụ lục A) là **chuỗi mới**, đặt trong 
 | B2 | Đổi thẻ khi đang đi: dừng hay đi tiếp ngầm? | Dừng ở cuối đoạn đang đi. |
 | B3 | Tiêu đề nhiệm vụ: dùng 46 tiêu đề viết tay (phụ lục A) hay tự sinh "Đánh bại X / Gặp X"? | Viết tay; dòng phụ vẫn tự sinh. |
 | B4 | Mua tối đa bao nhiêu gói một lần? | 10. |
+| B5 | Nhiệm vụ chưa mở: ẩn tiêu đề ("???") hay hiện trước? | Ẩn, chỉ hiện 2 nhiệm vụ kế tiếp dạng khoá. |
+| B6 | Tên 9 chương (mục 6.2) | Như bảng, chờ duyệt. |
+| B7 | Rương miễn phí khi lỗi quảng cáo | Không cho mở, giống mọi điểm quảng cáo khác. |
 
 ---
 
