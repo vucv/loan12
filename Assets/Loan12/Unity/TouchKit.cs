@@ -509,19 +509,21 @@ namespace Loan12.UnityPort
             }
         }
 
-        /// <summary>Red dot (badge), with a number when n &gt; 0.</summary>
+        /// <summary>
+        /// "Something new" mark: the game's small red exclamation mark (/m/mt1), bouncing and pulsing.
+        /// n is kept for the callers (counts) but only the mark is drawn.
+        /// </summary>
         public static void Badge(float cx, float cy, int n)
         {
             float k = TouchUi.K;
-            float w = n > 9 ? 11 : 8;
-            Rect r = new Rect(cx - w / 2 * k, cy - 4 * k, w * k, 8 * k);
-            TouchUi.Fill(new Rect(r.x - k, r.y, r.width + 2 * k, r.height), TouchUi.Outline);
-            TouchUi.Fill(new Rect(r.x, r.y - k, r.width, r.height + 2 * k), TouchUi.Outline);
-            TouchUi.Fill(r, TouchUi.Hex(0xE02424));
-            if (n > 0)
-            {
-                TouchUi.Label(new Rect(r.x, r.y, r.width, r.height), n.ToString(), 5, TextAnchor.MiddleCenter, Color.white, true, false, false);
-            }
+            float t = Time.unscaledTime;
+            float bob = Mathf.Round(Mathf.Abs(Mathf.Sin(t * 4f)) * -2.5f) * k; // little hops
+            float pulse = 1f + 0.12f * Mathf.Max(0, Mathf.Sin(t * 8f));
+            float w = 4.5f * pulse * k, h = 15f * pulse * k;
+            Rect r = new Rect(Mathf.Round(cx - w / 2), Mathf.Round(cy - h / 2 + bob), w, h);
+            // soft glow behind it
+            TouchUi.Fill(new Rect(r.x - k, r.y + k, r.width + 2 * k, r.height - 2 * k), new Color(1f, 0.2f, 0.1f, 0.25f + 0.15f * Mathf.Sin(t * 8f)));
+            TouchUi.Sprite(TouchUi.Img("/m/mt1"), r, new Rect(0, 0, 7, 24));
         }
 
         /// <summary>Spinner (waiting for an ad, a purchase ...).</summary>
