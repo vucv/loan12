@@ -72,6 +72,8 @@ Số trong vòng tròn vàng trên ảnh ứng với các ghi chú bên dưới 
 ### 3. Bản đồ
 <img src="ui/03_ban-do.png" width="300" alt="Bản đồ">
 
+> Mô tả chi tiết 4 thẻ Bản đồ, Túi đồ, Cửa hàng, Nhiệm vụ: xem [giao diện bản đồ](thiet-ke-ban-do.md).
+
 1. **Bản đồ phủ kín màn hình.** Bản đồ gốc (380x380) lớn hơn màn, nên kéo ngón tay để cuộn.
 2. **Chạm vào thành để chọn.** Đường đi hiện bằng chấm vàng, tướng tự đi theo đường. Bản port đã có sẵn tính năng chạm-để-đi; thiết kế này chỉ thay phần hiển thị.
 3. **Khung thông tin thành:** đối thủ, nhiệm vụ, nút "Đi tới" và "Đánh".
@@ -265,6 +267,7 @@ Game gốc tự vẽ mọi thứ lên khung 240x320, và phần lớn code vẽ 
 
 ## Liên quan
 
+- [Giao diện bản đồ](thiet-ke-ban-do.md): chi tiết 4 thẻ Bản đồ, Túi đồ, Cửa hàng, Nhiệm vụ, kèm danh sách 46 nhiệm vụ.
 - [Thiết kế nhiều nhân vật](thiet-ke-nhieu-nhan-vat.md): Menu chính với 3 ô nhân vật, tạo thêm nhân vật bằng quảng cáo, vàng và vật phẩm dùng chung.
 - Các màn nháp trong [`mockups/`](mockups/) của [kế hoạch kiếm tiền](README.md) được vẽ trên bố cục cũ (khung 3:4). Ý tưởng giữ nguyên, sẽ đặt vào bố cục mới:
   - nút xem quảng cáo;
