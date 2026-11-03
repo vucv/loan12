@@ -177,14 +177,15 @@ namespace Loan12.UnityPort
         {
             float k = TouchUi.K;
             int gold = C_PortScreens.gold();
-            for (int i = 0; i < 6; i++)
+            int cells = MapUi.BagItems.Length + 1;
+            for (int i = 0; i < cells; i++)
             {
                 Rect r = TouchUi.R(4 + (i % 2) * 88, y + (i / 2) * 88, 84, 84);
                 if (Kit.Tap(20 + i, r))
                 {
-                    if (i < 5)
+                    if (i < MapUi.BagItems.Length)
                     {
-                        buying = MapUi.Items[i];
+                        buying = MapUi.BagItems[i];
                         packs = 1;
                     }
                     else
@@ -196,33 +197,33 @@ namespace Loan12.UnityPort
                 {
                     continue;
                 }
-                if (i == 5)
+                if (i == MapUi.BagItems.Length)
                 {
-                    TouchUi.Button(r, Btn.Green, Kit.Down(25));
+                    TouchUi.Button(r, Btn.Green, Kit.Down(20 + i));
                     TouchUi.Sprite(TouchUi.Img("/gold"), new Rect(r.center.x - 15 * k, r.y + 14 * k, 30 * k, 30 * k));
                     TouchUi.Label(new Rect(r.x, r.y + 50 * k, r.width, 10 * k), "Thiếu vàng?", 7, TextAnchor.UpperCenter, Color.white, true);
                     TouchUi.Label(new Rect(r.x, r.y + 62 * k, r.width, 9 * k), "Rương miễn phí, gói vàng", 5.5f, TextAnchor.UpperCenter, Color.white);
                     continue;
                 }
-                int t = MapUi.Items[i], price = C_PortUi.price(t);
+                int t = MapUi.BagItems[i], price = MapUi.Price(t);
                 TouchUi.Panel(r);
                 if (Kit.Down(20 + i))
                 {
                     TouchUi.Fill(r, new Color(1, 1, 1, 0.08f));
                 }
-                TouchUi.Item(t, new Rect(r.center.x - 17.5f * k, r.y + 8 * k, 35 * k, 35 * k));
+                MapUi.Icon(t, new Rect(r.center.x - 17.5f * k, r.y + 8 * k, 35 * k, 35 * k));
                 Rect tag = new Rect(r.xMax - 26 * k, r.y + 5 * k, 22 * k, 9 * k);
                 TouchUi.Fill(tag, TouchUi.Hex(0x1A0C16));
-                TouchUi.Label(tag, "Có " + C_PortUi.owned(t), 5.5f, TextAnchor.MiddleCenter, Color.white, true, false, false);
-                TouchUi.Label(new Rect(r.x, r.y + 45 * k, r.width, 9 * k), C_PortUi.itemName(t), 6.25f, TextAnchor.UpperCenter, Color.white, true);
-                TouchUi.Label(new Rect(r.x, r.y + 54 * k, r.width, 9 * k), C_PortUi.packSize(t) + " cái", 5.5f, TextAnchor.UpperCenter, Kit.Muted);
+                TouchUi.Label(tag, "Có " + MapUi.Owned(t), 5.5f, TextAnchor.MiddleCenter, Color.white, true, false, false);
+                TouchUi.Label(new Rect(r.x, r.y + 45 * k, r.width, 9 * k), MapUi.Name(t), 6.25f, TextAnchor.UpperCenter, Color.white, true);
+                TouchUi.Label(new Rect(r.x, r.y + 54 * k, r.width, 9 * k), MapUi.Pack(t) + " cái", 5.5f, TextAnchor.UpperCenter, Kit.Muted);
                 Rect pb = new Rect(r.x + 10 * k, r.yMax - 19 * k, r.width - 20 * k, 14 * k);
                 bool enough = gold >= price;
                 TouchUi.Button(pb, enough ? Btn.Gold : Btn.Grey, false);
                 TouchUi.Sprite(TouchUi.Img("/gold"), new Rect(pb.x + 3 * k, pb.y + 2 * k, 10 * k, 10 * k));
                 TouchUi.Label(new Rect(pb.x + 12 * k, pb.y, pb.width - 14 * k, pb.height), TouchUi.Money(price), 6.5f, TextAnchor.MiddleCenter, Color.white, true);
             }
-            y += 3 * 88 + 4;
+            y += ((cells + 1) / 2) * 88 + 4;
             if (Kit.Paint)
             {
                 TouchUi.Label(TouchUi.R(4, y, 172, 9), "Vàng và vật phẩm dùng chung cho mọi nhân vật", 5.5f, TextAnchor.UpperCenter, Kit.Muted);
@@ -233,7 +234,7 @@ namespace Loan12.UnityPort
         void BuyBox(float top, float bottom)
         {
             float k = TouchUi.K;
-            int t = buying, price = C_PortUi.price(t), pack = C_PortUi.packSize(t), gold = C_PortScreens.gold();
+            int t = buying, price = MapUi.Price(t), pack = MapUi.Pack(t), gold = C_PortScreens.gold();
             int max = Mathf.Clamp(price > 0 ? gold / price : 0, 1, 10);
             packs = Mathf.Clamp(packs, 1, max);
             int total = price * packs;
@@ -278,10 +279,10 @@ namespace Loan12.UnityPort
             {
                 if (enough)
                 {
-                    if (C_PortMap.buy(t, packs))
+                    if (MapUi.Buy(t, packs))
                     {
                         Haptics.Tap(Kit.Haptic);
-                        Kit.Toast("Đã mua " + packs * pack + " " + C_PortUi.itemName(t) + " (-" + TouchUi.Money(total) + " vàng)");
+                        Kit.Toast("Đã mua " + packs * pack + " " + MapUi.Name(t) + " (-" + TouchUi.Money(total) + " vàng)");
                         buying = -1;
                     }
                 }
@@ -302,13 +303,13 @@ namespace Loan12.UnityPort
             if (Kit.Paint)
             {
                 TouchUi.PixelText("MUA", 1, r.center.x, TouchUi.R(0, y + 12, 0, 0).y, 1, true);
-                TouchUi.Item(t, TouchUi.R(17, y + 22, 30, 30));
-                TouchUi.Label(TouchUi.R(52, y + 24, 104, 9), C_PortUi.itemName(t), 7, TextAnchor.UpperLeft, Color.white, true);
-                TouchUi.Label(TouchUi.R(52, y + 35, 104, 9), TouchUi.Money(price) + " vàng / gói " + pack + " cái · có " + C_PortUi.owned(t), 5.75f, TextAnchor.UpperLeft, Kit.Muted);
+                MapUi.Icon(t, TouchUi.R(17, y + 22, 30, 30));
+                TouchUi.Label(TouchUi.R(52, y + 24, 104, 9), MapUi.Name(t), 7, TextAnchor.UpperLeft, Color.white, true);
+                TouchUi.Label(TouchUi.R(52, y + 35, 104, 9), TouchUi.Money(price) + " vàng / gói " + pack + " cái · có " + MapUi.Owned(t), 5.75f, TextAnchor.UpperLeft, Kit.Muted);
                 TouchUi.TextButton(minus, "-", Btn.Dark, Kit.Down(41), packs > 1);
                 TouchUi.TextButton(plus, "+", Btn.Dark, Kit.Down(42), packs < max);
                 TouchUi.PixelText(packs + " GÓI", 1, r.center.x, TouchUi.R(0, y + 72, 0, 0).y, 1, true);
-                TouchUi.Label(TouchUi.R(17, y + 88, 146, 9), "= " + packs * pack + " " + C_PortUi.itemName(t), 6.25f, TextAnchor.UpperCenter, Kit.Cream, true);
+                TouchUi.Label(TouchUi.R(17, y + 88, 146, 9), "= " + packs * pack + " " + MapUi.Name(t), 6.25f, TextAnchor.UpperCenter, Kit.Cream, true);
                 TouchUi.Label(TouchUi.R(17, y + 99, 146, 9), enough ? "Còn lại sau khi mua: " + TouchUi.Money(gold - total) + " vàng" : "Bạn có " + TouchUi.Money(gold) + " vàng",
                     5.75f, TextAnchor.UpperCenter, enough ? Kit.Muted : Kit.Red);
                 if (enough)

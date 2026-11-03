@@ -494,4 +494,95 @@ rep('game/bu.java', """            if (i >= 0) {
 rep('game/bu.java', """    private int portEndWait;""", """    private int portEndWait;
     public int[] portWon = new int[6]; // PORT-UI: items won in this battle (5 in a row), by type""")
 
+# ---------------------------------------------------------------------------------------------
+# start-up: no logo splash (MicroGame, partner) and no 1.2 s cover before the menu in the touch port
+rep('game/cn.java', """        if (this.portDone) {
+            return;
+        }""", """        if (this.portDone) {
+            return;
+        }
+        if (PortScreens.touch) {
+            this.o = false; // PORT-UI: no logos
+            this.q = 1;
+        }""")
+rep('com/mic/smsgame/suquan/l.java', """        if (this.d == 30) {""", """        if ((this.d == 30) || ((this.d == 2) && game.PortScreens.touch)) { // PORT-UI: no wait""")
+
+# tutorial battle: the touch battle view shows the coach's messages itself
+rep('game/w.java', """    public void a(Graphics paramGraphics, int paramInt1, int paramInt2) {
+        if (!this.u) {
+            return;
+        }""", """    /** PORT-UI: the message shown (without its gem marker), or null */
+    public String portText() {
+        if (!this.u || (this.l < 0) || (this.l >= this.a.length) || (this.g >= this.a[this.l].length)) {
+            return null;
+        }
+        String str = this.a[this.l][this.g];
+        if (str.endsWith("*#")) {
+            str = str.substring(0, str.length() - 3);
+        }
+        return str;
+    }
+
+    /** PORT-UI: gem drawn after the message (index into bs.d), -1 none */
+    public int portGem() {
+        if (!this.u || (this.l < 0) || (this.l >= this.a.length) || (this.g >= this.a[this.l].length)) {
+            return -1;
+        }
+        String str = this.a[this.l][this.g];
+        return str.endsWith("*#") ? Integer.parseInt(str.substring(str.length() - 3, str.length() - 2)) : -1;
+    }
+
+    public void a(Graphics paramGraphics, int paramInt1, int paramInt2) {
+        if (!this.u || PortScreens.touch) { // PORT-UI: drawn by the touch view
+            return;
+        }""")
+rep('game/bu.java', """    public boolean portTraining() {
+        return this.s.d;
+    }""", """    public boolean portTraining() {
+        return this.s.d;
+    }
+
+    /** PORT-UI: the coach's message of the tutorial, or null */
+    public String portCoach() {
+        return (this.s.d) && (this.t.g != null) ? this.t.g.portText() : null;
+    }
+
+    public int portCoachGem() {
+        return (this.s.d) && (this.t.g != null) ? this.t.g.portGem() : -1;
+    }
+
+    /** PORT-UI: the tutorial waits for a tap to go on (any key did that) */
+    public boolean portCoachWaits() {
+        return this.v == 14;
+    }
+
+    public void portCoachNext() {
+        if (this.v == 14) {
+            this.t.g.f();
+        }
+    }""")
+
+rep('game/PortUi.java', """        bu b = battle();
+        if ((b == null) || (b.portState() == null) || b.portTraining()) {
+            return false;
+        }
+        ae d = dialog();
+        if (d == null) {
+            return true;
+        }""", """        bu b = battle();
+        if ((b == null) || (b.portState() == null)) { // PORT-UI: the tutorial battle too
+            return false;
+        }
+        ae d = dialog();
+        if (d == null) {
+            return true;
+        }""")
+
+# out of lives: no SMS purchase; the touch interface offers a rewarded ad / the refill item instead
+rep('com/mic/smsgame/suquan/aa.java', """                if (!bg.l()) {
+                    localae1 = cz.a""", """                if (!bg.l() && game.PortScreens.touch) { // PORT-UI
+                    game.PortMap.noLives = true;
+                } else if (!bg.l()) {
+                    localae1 = cz.a""")
+
 print('port_screens: ok')

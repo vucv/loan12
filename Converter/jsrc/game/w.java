@@ -112,8 +112,29 @@ public class w
         }
     }
 
+    /** PORT-UI: the message shown (without its gem marker), or null */
+    public String portText() {
+        if (!this.u || (this.l < 0) || (this.l >= this.a.length) || (this.g >= this.a[this.l].length)) {
+            return null;
+        }
+        String str = this.a[this.l][this.g];
+        if (str.endsWith("*#")) {
+            str = str.substring(0, str.length() - 3);
+        }
+        return str;
+    }
+
+    /** PORT-UI: gem drawn after the message (index into bs.d), -1 none */
+    public int portGem() {
+        if (!this.u || (this.l < 0) || (this.l >= this.a.length) || (this.g >= this.a[this.l].length)) {
+            return -1;
+        }
+        String str = this.a[this.l][this.g];
+        return str.endsWith("*#") ? Integer.parseInt(str.substring(str.length() - 3, str.length() - 2)) : -1;
+    }
+
     public void a(Graphics paramGraphics, int paramInt1, int paramInt2) {
-        if (!this.u) {
+        if (!this.u || PortScreens.touch) { // PORT-UI: drawn by the touch view
             return;
         }
         int n = this.q - this.s;

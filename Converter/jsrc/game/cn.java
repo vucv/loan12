@@ -51,6 +51,10 @@ public class cn
         if (this.portDone) {
             return;
         }
+        if (PortScreens.touch) {
+            this.o = false; // PORT-UI: no logos
+            this.q = 1;
+        }
         if (!cx.F && ((this.o) || (!MGMIDlet.f().d))) {
             d();
             if (this.q == 0) {

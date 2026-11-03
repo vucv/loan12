@@ -29,8 +29,9 @@ namespace Loan12
         public override void a()
         {
             this.f_d += 1;
-            if (this.f_d == 30)
+            if ((this.f_d == 30) || ((this.f_d == 2) && C_PortScreens.f_touch))
             {
+                // PORT-UI: no wait
                 C_cz.a().f_f = C_cz.a().d(C_ay.a(C_cz.a().j()));
                 C_cz.d().a(((C_aj)(new SQ_ac())), true);
             }

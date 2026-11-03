@@ -1,9 +1,9 @@
 // Screen 1 of the touch redesign: the main menu (plan/thiet-ke-cai-dat.md 1, thiet-ke-nhieu-nhan-vat.md 4.1-4.2).
 //
-//   top bar: shared lives, shared gold with + (shop), ⚙ (settings)
-//   cover picture of the game
+//   the game's menu background with its title animation (falls in, shakes, bounces)
 //   CHƠI TIẾP (portrait, name · element · level of the character in play) + NHÂN VẬT n/3
 //   or, before the first character: CHƠI MỚI and "Tạo nhân vật đầu tiên · miễn phí"
+//   CÀI ĐẶT, THOÁT GAME
 //
 // Sub pages opened from the menu (settings, characters, shop ...) are drawn by this view too: the game
 // stays on its menu screen underneath. Back closes a sub page; on the menu it asks before quitting.
@@ -97,41 +97,45 @@ namespace Loan12.UnityPort
 
         // ---------------------------------------------------------------------------------- menu
 
-        Rect ContinueRect()
+        // buttons from the bottom up: THOÁT GAME, CÀI ĐẶT, NHÂN VẬT (when there are characters), the main one
+        float Bottom
         {
-            return TouchUi.R(10, Kit.H - 75 - 37, 160, 37);
+            get { return Kit.H - 18; }
+        }
+
+        Rect ExitRect()
+        {
+            return TouchUi.R(37.5f, Bottom - 22, 105, 22);
+        }
+
+        Rect SettingsRect()
+        {
+            return TouchUi.R(37.5f, Bottom - 22 - 7 - 22, 105, 22);
         }
 
         Rect SlotsRect()
         {
-            return TouchUi.R(27.5f, Kit.H - 75 + 10, 125, 25);
+            return TouchUi.R(27.5f, Bottom - 51 - 8 - 25, 125, 25);
+        }
+
+        Rect ContinueRect(bool slots)
+        {
+            float top = slots ? Bottom - 84 - 9 - 37 : Bottom - 51 - 10 - 37;
+            return TouchUi.R(10, top, 160, 37);
         }
 
         void DrawMenu()
         {
             bool busy = SafeBusy();
             SlotData d = Slots.Data;
+            bool any = d.activeSlot >= 0;
             if (Kit.Paint)
             {
-                TouchUi.Fill(new Rect(0, 0, Screen.width, Screen.height), TouchUi.Hex(0x0E0303));
-                DrawCover();
-            }
-            int bar = Kit.TopBar(4);
-            if (bar == 1)
-            {
-                Kit.Toast("Mạng chơi dùng chung cho mọi nhân vật");
-            }
-            else if (bar == 2)
-            {
-                OpenShop(1);
-            }
-            else if (bar == 3)
-            {
-                Open(new TouchSettingsPage(TouchSettingsPage.Where.Menu));
+                DrawBackground();
             }
 
-            Rect main = ContinueRect();
-            if (d.activeSlot >= 0)
+            Rect main = ContinueRect(any);
+            if (any)
             {
                 SlotInfo s = d.slots[d.activeSlot];
                 if (Kit.Tap(1, main) && !busy)
@@ -157,31 +161,78 @@ namespace Loan12.UnityPort
             }
             else
             {
-                Rect nr = TouchUi.R(10, Kit.H - 75 - 35, 160, 35);
-                if (Kit.Tap(3, nr) && !busy)
+                if (Kit.Tap(3, main) && !busy)
                 {
                     NewCharacter();
                 }
                 if (Kit.Paint)
                 {
-                    TouchUi.RedButton(nr, "CHƠI MỚI", !busy, Kit.Down(3));
                     string line = Slots.CanCreate ? (d.everCreated == 0 ? "Tạo nhân vật đầu tiên · miễn phí" : "Tạo nhân vật mới")
                         : "Xem 1 quảng cáo để tạo nhân vật";
-                    TouchUi.Label(TouchUi.R(10, Kit.H - 75 + 6, 160, 10), line, 6.5f, TextAnchor.MiddleCenter, Kit.Cream);
+                    Kit.MainButton(main, "CHƠI MỚI", line, !busy, Kit.Down(3));
                 }
+            }
+
+            if (Kit.Tap(4, SettingsRect()) && !busy)
+            {
+                Open(new TouchSettingsPage(TouchSettingsPage.Where.Menu));
+            }
+            if (Kit.Tap(5, ExitRect()) && !busy)
+            {
+                askExit = true;
+            }
+            if (Kit.Paint)
+            {
+                Rect sr = SettingsRect(), er = ExitRect();
+                Kit.FramedButton(sr, TouchUi.Hex(0x2A1426), Kit.Down(4));
+                TouchUi.PixelText("CÀI ĐẶT", 1, sr.center.x, sr.center.y + (Kit.Down(4) ? TouchUi.K : 0), 1, true);
+                Kit.FramedButton(er, TouchUi.Hex(0x2A1426), Kit.Down(5));
+                TouchUi.PixelText("THOÁT GAME", 1, er.center.x, er.center.y + (Kit.Down(5) ? TouchUi.K : 0), 1, true);
             }
         }
 
-        void DrawCover()
+        /// <summary>
+        /// The game's menu background (/bkmenu) over the whole screen, and its title animation: the title
+        /// falls in from the top, the screen shakes as it lands, then it bounces a little (suquan.c).
+        /// </summary>
+        void DrawBackground()
         {
-            Texture2D cover = TouchUi.Img("/bksplashscreen");
-            float top = 30, room = Kit.H - 75 - 37 - 8 - top;
-            float h = Mathf.Min(240, room), w = h * 0.75f;
-            Rect r = TouchUi.R(90 - w / 2, top, w, h);
-            TouchUi.Sprite(cover, r);
-            float fade = 27 * TouchUi.K;
-            TouchUi.Shade(new Rect(r.x, r.yMax - fade, r.width, fade + TouchUi.K), TouchUi.Hex(0x0E0303), false);
-            TouchUi.Shade(new Rect(r.x, r.y, r.width, 8 * TouchUi.K), TouchUi.Hex(0x0E0303), true);
+            TouchUi.Fill(new Rect(0, 0, Screen.width, Screen.height), TouchUi.Hex(0x0E0303));
+            Texture2D bg = TouchUi.Img("/bkmenu");
+            float sc = Mathf.Max(Screen.width / 240f, Screen.height / 320f);
+            float t = Time.unscaledTime - shownAt;
+            const float fall = 0.5f;
+            // shake for 0.4 s after the landing (the game: cz.a(10), 10 ticks)
+            Vector2 shake = Vector2.zero;
+            if (t > fall && t < fall + 0.4f)
+            {
+                float a = TouchUi.K * 2;
+                shake = new Vector2(Mathf.Round(Random.Range(-a, a)), Mathf.Round(Random.Range(-a, a)));
+            }
+            Rect r = new Rect((Screen.width - 240 * sc) / 2 + shake.x, (Screen.height - 320 * sc) / 2 + shake.y, 240 * sc, 320 * sc);
+            GUI.DrawTexture(r, bg);
+            // a darker band behind the buttons
+            float bandTop = ContinueRect(Slots.Data.activeSlot >= 0).y - 10 * TouchUi.K;
+            Color dark = new Color(0.05f, 0.01f, 0.01f, 0.8f);
+            TouchUi.Shade(new Rect(0, bandTop - 30 * TouchUi.K, Screen.width, 30 * TouchUi.K), dark, false);
+            TouchUi.Fill(new Rect(0, bandTop, Screen.width, Screen.height - bandTop), dark);
+
+            Texture2D title = TouchUi.Img("/title");
+            float tw = title.width * sc * 1.25f, th = title.height * sc * 1.25f;
+            float landY = r.y + 110 * sc; // bottom of the title, like the game
+            float y;
+            if (t < fall)
+            {
+                float p = t / fall;
+                y = Mathf.Lerp(-th, landY, p * p);
+            }
+            else
+            {
+                int[] bounce = {-2, -6, 0, -3, 0, -2, 0, -1};
+                int i = (int) ((t - fall) / 0.04f);
+                y = landY + (i < bounce.Length ? bounce[i] * sc : 0);
+            }
+            GUI.DrawTexture(new Rect(Mathf.Round(r.center.x - tw / 2), Mathf.Round(y - th), tw, th), title);
         }
 
         static void DrawContinue(Rect r, SlotInfo s, bool down, bool busy)
@@ -286,8 +337,8 @@ namespace Loan12.UnityPort
     }
 
     /// <summary>
-    /// Start-up: the game's splash and its sound question are skipped (the volume is in the settings);
-    /// shows the cover picture while the game loads.
+    /// Start-up: the game's logos, its sound question and its cover wait are skipped (the volume is in the
+    /// settings); shows the cover picture while the game loads.
     /// </summary>
     public sealed class TouchBootView : ITouchView, IOwnsKeys
     {
@@ -297,6 +348,11 @@ namespace Loan12.UnityPort
         {
             try
             {
+                // the game's logo canvas (no game screen yet), the sound question, the cover before the menu
+                if (C_PortUi.screen() == null)
+                {
+                    return true;
+                }
                 int k = C_PortScreens.screenKind();
                 return (k == 1 || k == 8) && !C_PortScreens.hasDialog();
             }

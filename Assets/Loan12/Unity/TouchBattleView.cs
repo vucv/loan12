@@ -97,6 +97,28 @@ namespace Loan12.UnityPort
             }
         }
 
+        /// <summary>
+        /// The 3 item buttons: the items chosen before the battle; in the tutorial (no preparing screen)
+        /// the items the battle holds, so its "use an item" step can be done.
+        /// </summary>
+        static int[] Slots()
+        {
+            if (!C_PortScreens.training())
+            {
+                return Loadout.Get();
+            }
+            int[] r = {-1, -1, -1};
+            int n = 0;
+            foreach (int t in new[] {1, 0, 3, 4})
+            {
+                if (n < 3 && C_PortUi.itemCount(t) > 0)
+                {
+                    r[n++] = t;
+                }
+            }
+            return r;
+        }
+
         public void Reset()
         {
             if (boardHeld)
@@ -242,7 +264,7 @@ namespace Loan12.UnityPort
             {
                 return C_PortUi.skillDesc(popupArg);
             }
-            int type = Loadout.Get()[popupArg];
+            int type = Slots()[popupArg];
             string desc = type >= 0 ? C_PortUi.itemDesc(type) : "";
             if (type == 4)
             {
@@ -261,7 +283,7 @@ namespace Loan12.UnityPort
             {
                 return SkillAffordable(popupArg) ? "" : "Cần thêm " + Mathf.Max(0, C_PortUi.skillCost(popupArg) - C_PortUi.mana(0)) + " năng lượng";
             }
-            int type = Loadout.Get()[popupArg];
+            int type = Slots()[popupArg];
             if (type < 0 || C_PortUi.itemCount(type) <= 0)
             {
                 return "Đã hết, mua thêm ở màn chuẩn bị";
@@ -291,11 +313,25 @@ namespace Loan12.UnityPort
         void HandleInput(Event e, bool haptics)
         {
             Vector2 p = e.mousePosition;
-            int[] slots = Loadout.Get();
+            int[] slots = Slots();
             if (outcome != 0)
             {
                 // the battle is over: nothing to press while THẮNG / THUA plays
                 if (e.type == EventType.MouseDown || e.type == EventType.MouseUp || e.type == EventType.MouseDrag)
+                {
+                    e.Use();
+                }
+                return;
+            }
+            if (C_PortScreens.training() && C_PortScreens.coachWaits() && popupKind == 0)
+            {
+                if (e.type == EventType.MouseDown && e.button == 0)
+                {
+                    C_PortScreens.request(C_PortScreens.f_COACH_NEXT, 0);
+                    Haptics.Tap(haptics);
+                    e.Use();
+                }
+                else if (e.type == EventType.MouseUp || e.type == EventType.MouseDrag)
                 {
                     e.Use();
                 }
@@ -431,7 +467,7 @@ namespace Loan12.UnityPort
             {
                 return SkillEnabled(popupArg);
             }
-            int[] slots = Loadout.Get();
+            int[] slots = Slots();
             return ItemEnabled(slots[popupArg]);
         }
 
@@ -637,9 +673,46 @@ namespace Loan12.UnityPort
                 DrawEnd();
             }
             DrawBubble();
+            DrawCoach();
             if (popupKind != 0)
             {
                 DrawPopup();
+            }
+        }
+
+        /// <summary>Tutorial battle: the coach's message (the game's bubble), over the lower part of the screen.</summary>
+        void DrawCoach()
+        {
+            string text = C_PortScreens.training() ? C_PortScreens.coach() : null;
+            if (string.IsNullOrEmpty(text))
+            {
+                return;
+            }
+            float k = TouchUi.K;
+            bool waits = C_PortScreens.coachWaits();
+            int lines = Mathf.Max(2, TouchUi.Lines(text, 116, 6.75f));
+            float h = lines * TouchUi.LineHeight(6.75f) + (waits ? 22 : 14);
+            float y = GridH - h - 6;
+            Rect box = TouchUi.R(6, y, 168, h);
+            TouchUi.Fill(new Rect(box.x - 2 * k, box.y - 2 * k, box.width + 4 * k, box.height + 4 * k), new Color(0, 0, 0, 0.35f));
+            TouchUi.Panel(box);
+            TouchUi.Portrait(8, TouchUi.R(12, y + 7, 30, 30)); // Lưu Cơ, the coach of the first quest
+            TouchUi.Label(TouchUi.R(12, y + 38, 30, 9), "Lưu Cơ", 5.5f, TextAnchor.UpperCenter, Kit.Gold, true);
+            TouchUi.Label(TouchUi.R(48, y + 7, 120, lines * TouchUi.LineHeight(6.75f) + 4), text, 6.75f, TextAnchor.UpperLeft, Color.white, false, true);
+            int gem = C_PortScreens.coachGem();
+            if (gem >= 0)
+            {
+                string[] gems = {"/sword", "/rice", "/heart", "/yinyang", "/gold", "/book", "/swordred"}; // bs.d
+                if (gem < gems.Length)
+                {
+                    float bob = Mathf.Round(Mathf.Sin(Time.unscaledTime * 6) * 1.5f);
+                    TouchUi.Sprite(TouchUi.Img(gems[gem]), TouchUi.R(150, y - 18 + bob, 20, 20));
+                }
+            }
+            if (waits)
+            {
+                float a = 0.55f + 0.45f * Mathf.Sin(Time.unscaledTime * 5);
+                TouchUi.Label(TouchUi.R(48, y + h - 13, 120, 9), "Chạm để tiếp tục", 6, TextAnchor.UpperRight, new Color(1, 0.9f, 0.6f, a), true);
             }
         }
 
@@ -740,7 +813,7 @@ namespace Loan12.UnityPort
             }
 
             // items taken into battle
-            int[] slots = Loadout.Get();
+            int[] slots = Slots();
             for (int i = 0; i < 3; i++)
             {
                 Rect r = ItemRect(i);
@@ -964,7 +1037,7 @@ namespace Loan12.UnityPort
             Rect p = PopupRect();
             TouchUi.Panel(p);
             float py = TouchUi.V(new Vector2(p.x, p.y)).y;
-            int[] slots = Loadout.Get();
+            int[] slots = Slots();
             bool usable = PopupUsable();
             Rect anchorButton;
             // a row of details right of the picture (capitals at py + 28, + 41, ...)

@@ -85,8 +85,9 @@ namespace Loan12
         public static bool battleView()
         {
             C_bu b = C_PortUi.battle();
-            if ((b == null) || (b.portState() == null) || b.portTraining())
+            if ((b == null) || (b.portState() == null))
             {
+                // PORT-UI: the tutorial battle too
                 return false;
             }
             C_ae d = C_PortUi.dialog();
