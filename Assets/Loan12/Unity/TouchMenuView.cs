@@ -1,7 +1,7 @@
 // Screen 1 of the touch redesign: the main menu (plan/thiet-ke-cai-dat.md 1, thiet-ke-nhieu-nhan-vat.md 4.1-4.2).
 //
-//   the game's menu background with its title animation (falls in, shakes, bounces)
-//   CHƠI TIẾP (portrait, name · element · level of the character in play) + NHÂN VẬT n/3
+//   the cover (/bksplashscreen) above the buttons, animated: fades in, breathes, a glint, rising embers
+//   one column of buttons, same width and gap: CHƠI TIẾP (portrait, name · element · level of the character in play) + NHÂN VẬT n/3
 //   or, before the first character: CHƠI MỚI and "Tạo nhân vật đầu tiên · miễn phí"
 //   CÀI ĐẶT, THOÁT GAME
 //
@@ -97,31 +97,34 @@ namespace Loan12.UnityPort
 
         // ---------------------------------------------------------------------------------- menu
 
-        // buttons from the bottom up: THOÁT GAME, CÀI ĐẶT, NHÂN VẬT (when there are characters), the main one
+        // one column, same width, same gap: the main one (37 high), NHÂN VẬT (when there are characters),
+        // CÀI ĐẶT, THOÁT GAME, from the bottom up
+        const float BtnX = 15, BtnW = 150, BtnH = 24, MainH = 37, Gap = 8;
+
         float Bottom
         {
-            get { return Kit.H - 18; }
+            get { return Kit.H - 16; }
         }
 
         Rect ExitRect()
         {
-            return TouchUi.R(37.5f, Bottom - 22, 105, 22);
+            return TouchUi.R(BtnX, Bottom - BtnH, BtnW, BtnH);
         }
 
         Rect SettingsRect()
         {
-            return TouchUi.R(37.5f, Bottom - 22 - 7 - 22, 105, 22);
+            return TouchUi.R(BtnX, Bottom - 2 * BtnH - Gap, BtnW, BtnH);
         }
 
         Rect SlotsRect()
         {
-            return TouchUi.R(27.5f, Bottom - 51 - 8 - 25, 125, 25);
+            return TouchUi.R(BtnX, Bottom - 3 * BtnH - 2 * Gap, BtnW, BtnH);
         }
 
         Rect ContinueRect(bool slots)
         {
-            float top = slots ? Bottom - 84 - 9 - 37 : Bottom - 51 - 10 - 37;
-            return TouchUi.R(10, top, 160, 37);
+            int below = slots ? 3 : 2;
+            return TouchUi.R(BtnX, Bottom - below * (BtnH + Gap) - MainH, BtnW, MainH);
         }
 
         void DrawMenu()
@@ -152,8 +155,8 @@ namespace Loan12.UnityPort
                     Rect sr = SlotsRect();
                     Kit.FramedButton(sr, TouchUi.Hex(0x46245C), Kit.Down(2));
                     float k = TouchUi.K, dy = Kit.Down(2) ? k : 0;
-                    TouchUi.PixelText("NHÂN VẬT", 1, sr.x + 52 * k, sr.center.y + dy, 1, true);
-                    Rect pill = new Rect(sr.xMax - 38 * k, sr.y + 6 * k + dy, 26 * k, 13 * k);
+                    TouchUi.PixelText("NHÂN VẬT", 1, sr.center.x, sr.center.y + dy, 1, true);
+                    Rect pill = new Rect(sr.xMax - 32 * k, sr.y + 5.5f * k + dy, 26 * k, 13 * k);
                     TouchUi.Fill(pill, TouchUi.GoldLine);
                     TouchUi.Fill(new Rect(pill.x + k, pill.y + k, pill.width - 2 * k, pill.height - 2 * k), TouchUi.Hex(0x2A1236));
                     TouchUi.Label(pill, Slots.Used + "/3", 7, TextAnchor.MiddleCenter, Kit.Cream, true);
@@ -192,47 +195,59 @@ namespace Loan12.UnityPort
         }
 
         /// <summary>
-        /// The game's menu background (/bkmenu) over the whole screen, and its title animation: the title
-        /// falls in from the top, the screen shakes as it lands, then it bounces a little (suquan.c).
+        /// The cover (/bksplashscreen) above the buttons, as before, now animated: it fades and settles in,
+        /// then breathes slowly (a light zoom and drift), a glint crosses it now and then, and embers rise
+        /// from the bottom.
         /// </summary>
         void DrawBackground()
         {
+            float k = TouchUi.K;
             TouchUi.Fill(new Rect(0, 0, Screen.width, Screen.height), TouchUi.Hex(0x0E0303));
-            Texture2D bg = TouchUi.Img("/bkmenu");
-            float sc = Mathf.Max(Screen.width / 240f, Screen.height / 320f);
             float t = Time.unscaledTime - shownAt;
-            const float fall = 0.5f;
-            // shake for 0.4 s after the landing (the game: cz.a(10), 10 ticks)
-            Vector2 shake = Vector2.zero;
-            if (t > fall && t < fall + 0.4f)
-            {
-                float a = TouchUi.K * 2;
-                shake = new Vector2(Mathf.Round(Random.Range(-a, a)), Mathf.Round(Random.Range(-a, a)));
-            }
-            Rect r = new Rect((Screen.width - 240 * sc) / 2 + shake.x, (Screen.height - 320 * sc) / 2 + shake.y, 240 * sc, 320 * sc);
-            GUI.DrawTexture(r, bg);
-            // a darker band behind the buttons
-            float bandTop = ContinueRect(Slots.Data.activeSlot >= 0).y - 10 * TouchUi.K;
-            Color dark = new Color(0.05f, 0.01f, 0.01f, 0.8f);
-            TouchUi.Shade(new Rect(0, bandTop - 30 * TouchUi.K, Screen.width, 30 * TouchUi.K), dark, false);
-            TouchUi.Fill(new Rect(0, bandTop, Screen.width, Screen.height - bandTop), dark);
+            Texture2D cover = TouchUi.Img("/bksplashscreen");
+            float top = 22, room = TouchUi.V(ContinueRect(Slots.Data.activeSlot >= 0).position).y - 10 - top;
+            float h = Mathf.Min(250, room), w = h * 0.75f;
+            Rect frame = TouchUi.R(90 - w / 2, top, w, h);
 
-            Texture2D title = TouchUi.Img("/title");
-            float tw = title.width * sc * 1.25f, th = title.height * sc * 1.25f;
-            float landY = r.y + 110 * sc; // bottom of the title, like the game
-            float y;
-            if (t < fall)
+            float intro = Mathf.Clamp01(t / 0.8f), ease = 1 - (1 - intro) * (1 - intro);
+            float zoom = 1.08f - 0.06f * ease + 0.025f * Mathf.Sin(t * 0.7f);
+            Vector2 drift = new Vector2(Mathf.Sin(t * 0.33f), Mathf.Cos(t * 0.27f)) * 2.5f * k;
+            Rect r = new Rect(frame.center.x - frame.width * zoom / 2 + drift.x, frame.center.y - frame.height * zoom / 2 + drift.y + (1 - ease) * 10 * k,
+                frame.width * zoom, frame.height * zoom);
+            GUI.BeginGroup(frame);
+            Color old = GUI.color;
+            GUI.color = new Color(old.r, old.g, old.b, ease);
+            GUI.DrawTexture(new Rect(r.x - frame.x, r.y - frame.y, r.width, r.height), cover);
+            // a glint every 5 s
+            float g = (t % 5f) / 1.1f;
+            if (g < 1f)
             {
-                float p = t / fall;
-                y = Mathf.Lerp(-th, landY, p * p);
+                float gx = Mathf.Lerp(-0.3f, 1.3f, g) * frame.width;
+                for (int i = 0; i < 6; i++)
+                {
+                    GUI.color = new Color(1f, 0.92f, 0.7f, 0.05f * ease * (6 - Mathf.Abs(i - 2.5f) * 2) / 6);
+                    GUI.DrawTexture(new Rect(gx + i * 4 * k, 0, 4 * k, frame.height), Texture2D.whiteTexture);
+                }
             }
-            else
+            GUI.color = old;
+            GUI.EndGroup();
+            float fade = 30 * k;
+            TouchUi.Shade(new Rect(frame.x, frame.yMax - fade, frame.width, fade + k), TouchUi.Hex(0x0E0303), false);
+            TouchUi.Shade(new Rect(frame.x, frame.y, frame.width, 10 * k), TouchUi.Hex(0x0E0303), true);
+
+            // embers: fixed seeds, each rises and fades over its own period
+            for (int i = 0; i < 18; i++)
             {
-                int[] bounce = {-2, -6, 0, -3, 0, -2, 0, -1};
-                int i = (int) ((t - fall) / 0.04f);
-                y = landY + (i < bounce.Length ? bounce[i] * sc : 0);
+                float seed = i * 0.6180339f % 1f, period = 3.5f + seed * 3f;
+                float p = ((t + seed * period * 3.1f) % period) / period;
+                float x = 8 + ((i * 37) % 164) + Mathf.Sin(t * (0.8f + seed) + i) * 6;
+                float y = Kit.H * (0.95f - p * 0.85f);
+                float a = Mathf.Sin(p * Mathf.PI) * 0.75f * ease;
+                float size = (1 + (i % 3) * 0.5f) * k;
+                GUI.color = new Color(1f, 0.55f + 0.3f * seed, 0.15f, a);
+                GUI.DrawTexture(new Rect(TouchUi.R(x, 0, 0, 0).x, TouchUi.R(0, y, 0, 0).y, size * 1.5f, size * 1.5f), Texture2D.whiteTexture);
             }
-            GUI.DrawTexture(new Rect(Mathf.Round(r.center.x - tw / 2), Mathf.Round(y - th), tw, th), title);
+            GUI.color = old;
         }
 
         static void DrawContinue(Rect r, SlotInfo s, bool down, bool busy)
