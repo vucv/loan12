@@ -575,6 +575,34 @@ namespace Loan12
         }
 
         // PORT-UI: state and actions for the Unity map view (see game.PortMap)
+        public C_ca portTalk()
+        {
+            return (this.f_f == 2 ? this.f_O : ((C_ca)null));
+        }
+
+        public C_co portArenaBox()
+        {
+            return (this.f_f == 9 ? this.f_P : ((C_co)null));
+        }
+
+        /** next utterance of the dialogue ("Tiếp"), or what follows it after the last one */
+        public void portTalkNext()
+        {
+            if ((this.f_f == 2) && (this.f_O != null) && !this.f_O.portNext())
+            {
+                this.y();
+            }
+        }
+
+        /** "Bỏ qua" of the dialogue */
+        public void portTalkSkip()
+        {
+            if ((this.f_f == 2) && (this.f_O != null))
+            {
+                this.y();
+            }
+        }
+
         public int portState()
         {
             return this.f_f;

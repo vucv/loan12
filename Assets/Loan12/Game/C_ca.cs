@@ -72,6 +72,34 @@ namespace Loan12
             this.a(this.f_a[0], this.f_b[0], true);
         }
 
+        // PORT-UI: the utterance shown, for the Unity dialogue view (PortMap.talk*)
+        public int portSpeaker()
+        {
+            return ((this.f_c < this.f_a.Length) ? this.f_a[this.f_c] : -1);
+        }
+
+        public string portText()
+        {
+            return ((this.f_c < this.f_b.Length) ? C_ao.a(this.f_b[this.f_c], "{p}", this.f_h) : "");
+        }
+
+        public int portIndex()
+        {
+            return this.f_c;
+        }
+
+        public int portCount()
+        {
+            return this.f_a.Length;
+        }
+
+        /** PORT-UI: the next utterance at once (Unity shows each one whole); false after the last */
+        public bool portNext()
+        {
+            this.f_f = this.f_e.Length;
+            return this.a();
+        }
+
         public bool a()
         {
             this.f_f += 6;

@@ -314,4 +314,81 @@ rep('game/bu.java', """                int i = this.s.a();
                 bn localbn = this.s.b(i);
                 if ((!this.s.d) && (localbn.p() <= 0)) {""")
 
+# ---------------------------------------------------------------------------------------------
+# map dialogues (quests, events, after a battle) and the arena are drawn by Unity too
+rep('game/ca.java', """    public boolean a() {
+        this.f += 6;""", """    // PORT-UI: the utterance shown, for the Unity dialogue view (PortMap.talk*)
+    public int portSpeaker() {
+        return this.c < this.a.length ? this.a[this.c] : -1;
+    }
+
+    public String portText() {
+        return this.c < this.b.length ? ao.a(this.b[this.c], "{p}", this.h) : "";
+    }
+
+    public int portIndex() {
+        return this.c;
+    }
+
+    public int portCount() {
+        return this.a.length;
+    }
+
+    /** PORT-UI: the next utterance at once (Unity shows each one whole); false after the last */
+    public boolean portNext() {
+        this.f = this.e.length;
+        return a();
+    }
+
+    public boolean a() {
+        this.f += 6;""")
+rep('game/co.java', """    public boolean a() {
+        return this.j >= 0;
+    }""", """    public boolean a() {
+        return this.j >= 0;
+    }
+
+    /** PORT-UI: level chosen (-1: none can be paid) */
+    public int portLevel() {
+        return this.j;
+    }
+
+    /** PORT-UI: level i is open and its ticket can be paid */
+    public boolean portCan(int i) {
+        return (i >= 0) && (i < this.h.length) && this.h[i];
+    }
+
+    /** PORT-UI: choose level i (like the arrow keys) */
+    public void portSelect(int i) {
+        if (portCan(i)) {
+            this.j = i;
+            b(i);
+        }
+    }""")
+rep('com/mic/smsgame/suquan/aa.java', """    // PORT-UI: state and actions for the Unity map view (see game.PortMap)
+    public int portState() {""", """    // PORT-UI: state and actions for the Unity map view (see game.PortMap)
+    public game.ca portTalk() {
+        return this.f == 2 ? this.O : null;
+    }
+
+    public game.co portArenaBox() {
+        return this.f == 9 ? this.P : null;
+    }
+
+    /** next utterance of the dialogue ("Tiếp"), or what follows it after the last one */
+    public void portTalkNext() {
+        if ((this.f == 2) && (this.O != null) && !this.O.portNext()) {
+            y();
+        }
+    }
+
+    /** "Bỏ qua" of the dialogue */
+    public void portTalkSkip() {
+        if ((this.f == 2) && (this.O != null)) {
+            y();
+        }
+    }
+
+    public int portState() {""")
+
 print('port_screens: ok')

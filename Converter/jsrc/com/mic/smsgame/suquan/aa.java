@@ -509,6 +509,28 @@ public class aa
     private boolean portRetarget;
 
     // PORT-UI: state and actions for the Unity map view (see game.PortMap)
+    public game.ca portTalk() {
+        return this.f == 2 ? this.O : null;
+    }
+
+    public game.co portArenaBox() {
+        return this.f == 9 ? this.P : null;
+    }
+
+    /** next utterance of the dialogue ("Tiếp"), or what follows it after the last one */
+    public void portTalkNext() {
+        if ((this.f == 2) && (this.O != null) && !this.O.portNext()) {
+            y();
+        }
+    }
+
+    /** "Bỏ qua" of the dialogue */
+    public void portTalkSkip() {
+        if ((this.f == 2) && (this.O != null)) {
+            y();
+        }
+    }
+
     public int portState() {
         return this.f;
     }

@@ -11,6 +11,10 @@ public final class PortMap {
     public static final int START = 3;    // run the "just arrived" step again at the node the hero is on
     public static final int MENU = 4;     // save the map and go to the menu
     public static final int TUTORIAL_OFF = 5;
+    public static final int TALK_NEXT = 6;   // dialogue on the map: next utterance
+    public static final int TALK_SKIP = 7;   // dialogue on the map: "Bỏ qua"
+    public static final int ARENA_FIGHT = 8; // arena: "Đánh" with the chosen level
+    public static final int ARENA_LEAVE = 9; // arena: "Rút lui"
 
     private static int reqKind;
     private static int reqArg;
@@ -389,6 +393,107 @@ public final class PortMap {
         return ao.a(t[i][1], "{p}", dd.c());
     }
 
+    // ---- the dialogue on the map (quest, event, after a battle) --------------------------------------
+
+    /** a dialogue is shown on the map (no popup over it) */
+    public static boolean talking() {
+        com.mic.smsgame.suquan.aa m = map();
+        return (m != null) && (PortUi.dialog() == null) && (m.portTalk() != null);
+    }
+
+    /** portrait of the speaker (0 in the table is the player's hero), -1 a voice off */
+    public static int talkNowSpeaker() {
+        com.mic.smsgame.suquan.aa m = map();
+        ca t = m == null ? null : m.portTalk();
+        return t == null ? -1 : t.portSpeaker();
+    }
+
+    public static String talkNowText() {
+        com.mic.smsgame.suquan.aa m = map();
+        ca t = m == null ? null : m.portTalk();
+        return t == null ? "" : t.portText();
+    }
+
+    public static int talkNowIndex() {
+        com.mic.smsgame.suquan.aa m = map();
+        ca t = m == null ? null : m.portTalk();
+        return t == null ? 0 : t.portIndex();
+    }
+
+    public static int talkNowCount() {
+        com.mic.smsgame.suquan.aa m = map();
+        ca t = m == null ? null : m.portTalk();
+        return t == null ? 0 : t.portCount();
+    }
+
+    // ---- the arena (Tam Điệp) ---------------------------------------------------------------------
+
+    public static boolean arena() {
+        com.mic.smsgame.suquan.aa m = map();
+        return (m != null) && (PortUi.dialog() == null) && (m.portArenaBox() != null);
+    }
+
+    static co arenaBox() {
+        com.mic.smsgame.suquan.aa m = map();
+        return m == null ? null : m.portArenaBox();
+    }
+
+    public static int arenaLevels() {
+        return dd.k().length;
+    }
+
+    /** level chosen, -1 when no open level can be paid */
+    public static int arenaChosen() {
+        co a = arenaBox();
+        return a == null ? -1 : a.portLevel();
+    }
+
+    /** open and its ticket can be paid */
+    public static boolean arenaCan(int i) {
+        co a = arenaBox();
+        return (a != null) && a.portCan(i);
+    }
+
+    public static void arenaSelect(int i) {
+        co a = arenaBox();
+        if (a != null) {
+            a.portSelect(i);
+        }
+    }
+
+    public static int arenaCost(int i) {
+        return dd.A(i);
+    }
+
+    public static int arenaEnemy(int i) {
+        c x = dd.e(i, heroLevel());
+        return x == null ? -1 : x.a;
+    }
+
+    public static int arenaEnemyLevel(int i) {
+        c x = dd.e(i, heroLevel());
+        return x == null ? 0 : x.e;
+    }
+
+    public static int arenaEnemyHp(int i) {
+        c x = dd.e(i, heroLevel());
+        return x == null ? 0 : x.c;
+    }
+
+    public static int arenaEnemyAttack(int i) {
+        c x = dd.e(i, heroLevel());
+        return x == null ? 0 : x.d;
+    }
+
+    /** experience a win gives at the hero's level, and its share of a level (%) */
+    public static int arenaExp(int i) {
+        return dd.f(i, heroLevel());
+    }
+
+    public static int arenaPercent(int i) {
+        return dd.B(i);
+    }
+
     // ---- shop ---------------------------------------------------------------------------------
 
     private static boolean lastBuyOk;
@@ -440,6 +545,22 @@ public final class PortMap {
                 break;
             case MENU:
                 m.b(0, 1); // the game's "back to the menu" (saves the map)
+                break;
+            case TALK_NEXT:
+                m.portTalkNext();
+                break;
+            case TALK_SKIP:
+                m.portTalkSkip();
+                break;
+            case ARENA_FIGHT:
+                if ((m.portArenaBox() != null) && m.portArenaBox().a()) {
+                    m.b(0, 2); // "Đánh" (asks to buy lives when there are none, like the game)
+                }
+                break;
+            case ARENA_LEAVE:
+                if (m.portArenaBox() != null) {
+                    m.b(0, 4); // "Rút lui"
+                }
                 break;
         }
     }

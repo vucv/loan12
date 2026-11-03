@@ -55,6 +55,29 @@ public class ca
         a(this.a[0], this.b[0], true);
     }
 
+    // PORT-UI: the utterance shown, for the Unity dialogue view (PortMap.talk*)
+    public int portSpeaker() {
+        return this.c < this.a.length ? this.a[this.c] : -1;
+    }
+
+    public String portText() {
+        return this.c < this.b.length ? ao.a(this.b[this.c], "{p}", this.h) : "";
+    }
+
+    public int portIndex() {
+        return this.c;
+    }
+
+    public int portCount() {
+        return this.a.length;
+    }
+
+    /** PORT-UI: the next utterance at once (Unity shows each one whole); false after the last */
+    public boolean portNext() {
+        this.f = this.e.length;
+        return a();
+    }
+
     public boolean a() {
         this.f += 6;
         if (this.f >= this.e.length) {
