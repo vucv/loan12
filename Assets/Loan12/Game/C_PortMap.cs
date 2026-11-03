@@ -68,6 +68,10 @@ namespace Loan12
         // ---- results ----------------------------------------------------------------------------------
         /** items of a type won in the battle on screen (5 in a row) */
         /** the battle on screen was a main quest's and brings a relic box */
+        /**
+         * A quest's box: 2 random items (the last box of the game: one of each), straight into the shared
+         * bag; a note on the map says which.
+         */
         // ---- shop ---------------------------------------------------------------------------------
         private static bool f_lastBuyOk;
 
@@ -657,6 +661,41 @@ namespace Loan12
         public static bool battleRelic()
         {
             return ((C_PortMap.f_battleQuest >= 0)) && (C_PortUi.battle() != null) && (C_dd.f(C_PortMap.f_battleQuest) || C_dd.g(C_PortMap.f_battleQuest));
+        }
+
+        /**
+         * A quest's box: 2 random items (the last box of the game: one of each), straight into the shared
+         * bag; a note on the map says which.
+         */
+        public static void openBox(bool last)
+        {
+            int[] types = new int[] { 0, 1, 3, 4, 5 };
+            int[] got = new int[6];
+            if (last)
+            {
+                for (int i = 0; (i < types.Length); i++)
+                {
+                    got[types[i]] += 1;
+                }
+            }
+            else
+            {
+                for (int i_1 = 0; (i_1 < 2); i_1++)
+                {
+                    got[types[C_ay.a(types.Length)]] += 1;
+                }
+            }
+            string s = "";
+            for (int i_2 = 0; (i_2 < types.Length); i_2++)
+            {
+                int t = types[i_2];
+                if ((got[t] > 0))
+                {
+                    C_bg.a(t, got[t], 6);
+                    s = s + (((s.length() > 0) ? ", " : "")) + C_PortUi.itemName(t) + " x" + got[t];
+                }
+            }
+            C_PortMap.f_note = "Mở hộp vật phẩm: " + s;
         }
 
         // ---- shop ---------------------------------------------------------------------------------

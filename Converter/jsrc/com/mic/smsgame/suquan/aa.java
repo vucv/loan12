@@ -1095,9 +1095,10 @@ public class aa
         portWalk(); // PORT-TOUCH
         if (this.ak) {
             this.ak = false;
-            this.an = bg.t();
-            if ((this.an >= 0) && game.PortScreens.touch) { // PORT-UI: kept, shown on the result screen
-                this.an = -1;
+            // PORT-UI: the quest's box holds items (relics needed an SMS to open); a note tells which
+            this.an = game.PortScreens.touch ? -1 : bg.t();
+            if (game.PortScreens.touch) {
+                game.PortMap.openBox(this.am);
             }
             if (this.an >= 0) {
                 localObject = "Bạn đã nhận được 1 vật phẩm. Bạn có muốn mở vật phẩm ngay không? (Tham khảo giá tại http://free.ola.vn.)";

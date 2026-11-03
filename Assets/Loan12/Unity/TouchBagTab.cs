@@ -3,7 +3,7 @@
 //   hero card: portrait, name, element · level, experience bar, HP and attack (base + events)
 //   the 3 skills (tap: description with the real damage)
 //   the 5 items (shared bag; tap: detail box with a line worked out for this hero, buy one more pack)
-//   the 4 relics of this character
+//   the relics of this character (old saves only: quest boxes now hold items)
 using UnityEngine;
 
 namespace Loan12.UnityPort
@@ -282,7 +282,7 @@ namespace Loan12.UnityPort
             }
             y += ((cells + 2) / 3) * 50 + 8;
 
-            // relics of this character
+            // relics of this character: only from an old save now (quest boxes hold items)
             int owned = 0;
             for (int i = 0; i < 4; i++)
             {
@@ -291,9 +291,12 @@ namespace Loan12.UnityPort
                     owned++;
                 }
             }
-            MapUi.Heading(y, "BẢO VẬT", owned + "/4");
-            y += 12;
-            for (int i = 0; i < 4; i++)
+            if (owned > 0)
+            {
+                MapUi.Heading(y, "BẢO VẬT", owned + "/4");
+                y += 12;
+            }
+            for (int i = 0; i < 4 && owned > 0; i++)
             {
                 if (!Kit.Paint)
                 {
@@ -316,7 +319,7 @@ namespace Loan12.UnityPort
                 }
                 TouchUi.Label(new Rect(r.x + k, r.y + 29 * k, r.width - 2 * k, 16 * k), C_PortMap.relicName(i), 5.25f, TextAnchor.UpperCenter, have ? Kit.Cream : Kit.Muted, false, true);
             }
-            y += 46 + 10;
+            y += owned > 0 ? 46 + 10 : 0;
             contentH = y + scroll - top;
             Kit.Unblock();
 

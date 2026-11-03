@@ -454,8 +454,8 @@ rep('game/bu.java', """    public int portOutcome() {
 # rewards: the touch interface shows them on its result screens instead of the game's text boxes
 # - "Chúc mừng ... hoàn thành nhiệm vụ / sự kiện": goes straight on ("Đồng ý"); a quest opens its
 #   reward panel (cr, drawn by the touch result view), an event leaves a note for the map to show
-# - "Bạn đã nhận được 1 vật phẩm (hộp bảo vật) ... mở ngay?": the box is kept, no question (opening
-#   it needed an SMS); the battle result shows "+1 hộp bảo vật"
+# - "Bạn đã nhận được 1 vật phẩm (hộp bảo vật) ... mở ngay?": no question; the box now holds items
+#   (PortMap.openBox; relics needed an SMS to open) and the battle result shows "+1 hộp vật phẩm"
 # - "Bạn đã mở thêm được 1 mức luyện tập": a note on the map
 # - items won in a battle (5 in a row) are counted for its result screen
 rep('com/mic/smsgame/suquan/aa.java', """                if (!((String) localObject).equals("")) {
@@ -466,10 +466,13 @@ rep('com/mic/smsgame/suquan/aa.java', """                if (!((String) localObj
                     b(0, 9);
                 } else if (!((String) localObject).equals("")) {
                     ae localae2 = cz.a("Chúc mừng", (String) localObject, "Đồng ý", 9, 1);""")
-rep('com/mic/smsgame/suquan/aa.java', """            this.an = bg.t();
-            if (this.an >= 0) {""", """            this.an = bg.t();
-            if ((this.an >= 0) && game.PortScreens.touch) { // PORT-UI: kept, shown on the result screen
-                this.an = -1;
+rep('com/mic/smsgame/suquan/aa.java', """            this.ak = false;
+            this.an = bg.t();
+            if (this.an >= 0) {""", """            this.ak = false;
+            // PORT-UI: the quest's box holds items (relics needed an SMS to open); a note tells which
+            this.an = game.PortScreens.touch ? -1 : bg.t();
+            if (game.PortScreens.touch) {
+                game.PortMap.openBox(this.am);
             }
             if (this.an >= 0) {""")
 rep('com/mic/smsgame/suquan/aa.java', """    private void z() {

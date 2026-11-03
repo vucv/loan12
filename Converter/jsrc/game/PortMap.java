@@ -516,6 +516,33 @@ public final class PortMap {
         return (battleQuest >= 0) && (PortUi.battle() != null) && (dd.f(battleQuest) || dd.g(battleQuest));
     }
 
+    /**
+     * A quest's box: 2 random items (the last box of the game: one of each), straight into the shared
+     * bag; a note on the map says which.
+     */
+    public static void openBox(boolean last) {
+        int[] types = {0, 1, 3, 4, 5};
+        int[] got = new int[6];
+        if (last) {
+            for (int i = 0; i < types.length; i++) {
+                got[types[i]] += 1;
+            }
+        } else {
+            for (int i = 0; i < 2; i++) {
+                got[types[ay.a(types.length)]] += 1;
+            }
+        }
+        String s = "";
+        for (int i = 0; i < types.length; i++) {
+            int t = types[i];
+            if (got[t] > 0) {
+                bg.a(t, got[t], 6);
+                s = s + (s.length() > 0 ? ", " : "") + PortUi.itemName(t) + " x" + got[t];
+            }
+        }
+        note = "Mở hộp vật phẩm: " + s;
+    }
+
     // ---- shop ---------------------------------------------------------------------------------
 
     private static boolean lastBuyOk;

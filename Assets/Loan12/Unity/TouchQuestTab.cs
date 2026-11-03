@@ -366,7 +366,7 @@ namespace Loan12.UnityPort
             float x = tx;
             x = Tag(x, y + 44, C_PortMap.questExp(q) > 0 ? "+" + C_PortMap.questExp(q) + " KN" : null, TouchUi.Hex(0x7A3A9A));
             x = Tag(x, y + 44, C_PortMap.questGold(q) > 0 ? "+" + C_PortMap.questGold(q) + " vàng" : null, TouchUi.Hex(0x9A6A10));
-            Tag(x, y + 44, C_PortMap.questRelic(q) > 0 ? "+1 hộp bảo vật" : null, TouchUi.Hex(0x10807A));
+            Tag(x, y + 44, C_PortMap.questRelic(q) > 0 ? "+1 hộp vật phẩm" : null, TouchUi.Hex(0x10807A));
             return y + 67;
         }
 
@@ -455,7 +455,7 @@ namespace Loan12.UnityPort
                 }
                 if (C_PortMap.questRelic(q) > 0)
                 {
-                    reward += (reward.Length > 0 ? " · " : "") + "hộp bảo vật";
+                    reward += (reward.Length > 0 ? " · " : "") + "hộp vật phẩm";
                 }
                 ry = InfoRow(ry, done ? "Đã nhận" : "Thưởng", reward.Length > 0 ? reward : "—");
                 int[] opens = C_PortMap.questOpens(q);

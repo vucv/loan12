@@ -223,7 +223,7 @@ namespace Loan12.UnityPort
                 }
                 if (C_PortMap.battleRelic())
                 {
-                    Row(ref y, "/r/g", "Hộp bảo vật (nhiệm vụ)", "+1");
+                    Row(ref y, "/r/g", "Hộp vật phẩm (2 vật phẩm)", "+1");
                 }
             }
             else if (mode == 1)
@@ -232,7 +232,7 @@ namespace Loan12.UnityPort
                 Row(ref y, "/book", "Kinh nghiệm thưởng", "+" + C_PortUi.resultExpGain());
                 if (quest >= 0 && C_PortMap.questRelic(quest) > 0)
                 {
-                    Row(ref y, "/r/g", C_PortMap.questRelic(quest) == 2 ? "Hộp bảo vật cuối" : "Hộp bảo vật", "+1");
+                    Row(ref y, "/r/g", C_PortMap.questRelic(quest) == 2 ? "Hộp vật phẩm cuối" : "Hộp vật phẩm", "+1");
                 }
                 string opens = Opens(quest);
                 if (opens.Length > 0)

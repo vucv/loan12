@@ -1321,11 +1321,11 @@ namespace Loan12
             if (this.f_ak)
             {
                 this.f_ak = false;
-                this.f_an = C_bg.t();
-                if (((this.f_an >= 0)) && C_PortScreens.f_touch)
+                // PORT-UI: the quest's box holds items (relics needed an SMS to open); a note tells which
+                this.f_an = (C_PortScreens.f_touch ? -1 : C_bg.t());
+                if (C_PortScreens.f_touch)
                 {
-                    // PORT-UI: kept, shown on the result screen
-                    this.f_an = -1;
+                    C_PortMap.openBox(this.f_am);
                 }
                 if ((this.f_an >= 0))
                 {
