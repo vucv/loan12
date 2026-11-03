@@ -268,6 +268,35 @@ namespace Loan12.UnityPort
             GUI.color = old;
         }
 
+        /// <summary>Green "watch an ad" button: a play triangle, then the label (the small font has no ▶).</summary>
+        public static void AdButton(Rect r, string label, bool down, bool enabled = true)
+        {
+            float k = TouchUi.K;
+            TouchUi.Button(r, enabled ? Btn.Green : Btn.Grey, down && enabled);
+            float dy = down && enabled ? k : 0;
+            float w = TouchUi.TextWidth(label) + 9;
+            float x = r.center.x - w * k / 2;
+            Play(x, r.center.y + dy, Color.white);
+            Color old = GUI.color;
+            if (!enabled)
+            {
+                GUI.color = old * new Color(0.75f, 0.72f, 0.78f, 1f);
+            }
+            TouchUi.Label(new Rect(x + 8 * k, r.y + dy, w * k, r.height), label, 7, TextAnchor.MiddleLeft, Color.white, true);
+            GUI.color = old;
+        }
+
+        /// <summary>Small right-pointing triangle (play), 5 wide, centred on cy.</summary>
+        public static void Play(float x, float cy, Color c)
+        {
+            float k = TouchUi.K;
+            for (int i = 0; i < 5; i++)
+            {
+                float h = (9 - 2 * i) * k;
+                TouchUi.Fill(new Rect(x + i * k, cy - h / 2, k, h), c);
+            }
+        }
+
         /// <summary>Back arrow button of a sub page (18x18).</summary>
         public static void BackArrow(Rect r, bool down)
         {
