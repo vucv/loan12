@@ -41,6 +41,9 @@ namespace Loan12
         // ---- the hero's sheet (bag tab) -------------------------------------------------------------
         /** experience needed to reach level L */
         /** relic i (0..3) collected */
+        // ---- dialogues (read again from the quests tab) -----------------------------------------------
+        /** lines of the quest's dialogue: set 0 before it, 1 after the victory */
+        /** portrait of the speaker of line i (the player: own hero), -1 for a voice off */
         // ---- shop ---------------------------------------------------------------------------------
         private static bool f_lastBuyOk;
 
@@ -457,6 +460,42 @@ namespace Loan12
         public static string relicName(int i)
         {
             return SQ_h.f_g[i];
+        }
+
+        // ---- dialogues (read again from the quests tab) -----------------------------------------------
+        public static string[][] talk(int set, int q)
+        {
+            string[][][] t = (set == 0 ? C_ea.f_b : C_ea.f_c);
+            return (((q >= 0)) && ((q < t.Length)) ? t[q] : ((string[][])null));
+        }
+
+        /** lines of the quest's dialogue: set 0 before it, 1 after the victory */
+        public static int talkCount(int set, int q)
+        {
+            string[][] t = C_PortMap.talk(set, q);
+            return (t == null ? 0 : t.Length);
+        }
+
+        /** portrait of the speaker of line i (the player: own hero), -1 for a voice off */
+        public static int talkSpeaker(int set, int q, int i)
+        {
+            string[][] t = C_PortMap.talk(set, q);
+            if ((t == null) || ((i >= t.Length)) || (t[i] == null) || (t[i][0] == null))
+            {
+                return -1;
+            }
+            int v = J2ME.Integer.parseInt(t[i][0]);
+            return ((v < 6) ? C_PortMap.hero() : v);
+        }
+
+        public static string talkText(int set, int q, int i)
+        {
+            string[][] t = C_PortMap.talk(set, q);
+            if ((t == null) || ((i >= t.Length)) || (t[i] == null) || ((t[i].Length < 2)) || (t[i][1] == null))
+            {
+                return "";
+            }
+            return C_ao.a(t[i][1], "{p}", C_dd.c());
         }
 
         // ---- shop ---------------------------------------------------------------------------------

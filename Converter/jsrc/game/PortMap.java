@@ -358,6 +358,37 @@ public final class PortMap {
         return com.mic.smsgame.suquan.h.g[i];
     }
 
+    // ---- dialogues (read again from the quests tab) -----------------------------------------------
+
+    static String[][] talk(int set, int q) {
+        String[][][] t = set == 0 ? ea.b : ea.c;
+        return (q >= 0) && (q < t.length) ? t[q] : null;
+    }
+
+    /** lines of the quest's dialogue: set 0 before it, 1 after the victory */
+    public static int talkCount(int set, int q) {
+        String[][] t = talk(set, q);
+        return t == null ? 0 : t.length;
+    }
+
+    /** portrait of the speaker of line i (the player: own hero), -1 for a voice off */
+    public static int talkSpeaker(int set, int q, int i) {
+        String[][] t = talk(set, q);
+        if ((t == null) || (i >= t.length) || (t[i] == null) || (t[i][0] == null)) {
+            return -1;
+        }
+        int v = Integer.parseInt(t[i][0]);
+        return v < 6 ? hero() : v;
+    }
+
+    public static String talkText(int set, int q, int i) {
+        String[][] t = talk(set, q);
+        if ((t == null) || (i >= t.length) || (t[i] == null) || (t[i].length < 2) || (t[i][1] == null)) {
+            return "";
+        }
+        return ao.a(t[i][1], "{p}", dd.c());
+    }
+
     // ---- shop ---------------------------------------------------------------------------------
 
     private static boolean lastBuyOk;
