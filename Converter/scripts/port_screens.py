@@ -297,4 +297,21 @@ rep('com/mic/smsgame/suquan/aa.java', """                if (e) {
                     }
                 }""")
 
+# ---------------------------------------------------------------------------------------------
+# battle: "THOÁT TRẬN" on the touch pause box gives the battle up - the game's own defeat (state 9 with
+# the player beaten), taken at the next "waiting for a move" step so no move or AI step is cut short
+rep('game/bu.java', """    public ae portPauseDialog; // the "dừng game" dialog of this battle""", """    public ae portPauseDialog; // the "dừng game" dialog of this battle
+    public boolean portForfeit; // PORT-UI: the player gave the battle up (pause box "Thoát trận")""")
+rep('game/bu.java', """                int i = this.s.a();
+                bn localbn = this.s.b(i);
+                if ((!this.s.d) && (localbn.p() <= 0)) {""", """                if (this.portForfeit && !this.s.d) { // PORT-UI: given up, a defeat
+                    this.portForfeit = false;
+                    this.E = false;
+                    f(9);
+                    return;
+                }
+                int i = this.s.a();
+                bn localbn = this.s.b(i);
+                if ((!this.s.d) && (localbn.p() <= 0)) {""")
+
 print('port_screens: ok')
