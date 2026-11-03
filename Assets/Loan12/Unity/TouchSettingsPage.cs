@@ -73,6 +73,9 @@ namespace Loan12.UnityPort
             }
 
             float y = Top + 4 - scroll;
+            // rows scroll under the title bar (and the map's bottom bar): their taps stay between them
+            Rect area = TouchUi.R(0, Top, 180, Bottom - Top);
+            Kit.Clip(new Rect(0, area.y, Screen.width, area.height));
             // 1. sound
             y = GroupTitle("ÂM THANH", y);
             int rows = 3;
@@ -267,6 +270,7 @@ namespace Loan12.UnityPort
                 y += 16;
             }
             contentH = y + scroll - Top;
+            Kit.Unclip();
 
             // bars over the scrolled content
             if (Kit.Paint)

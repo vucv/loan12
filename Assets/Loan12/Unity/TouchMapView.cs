@@ -5,7 +5,8 @@
 //   the map at a whole-number scale, dragged with one finger, following the hero; locked cities,
 //   open roads (gold dots), the way about to be walked (white), quest / event / guard marks, the
 //   selection ring, the hero; an arrow at the edge towards the main quest when it is off screen
-//   info panel of the tapped node (ĐI TỚI / BẮT ĐẦU / VÀO), "Đang đi tới …" strip while walking
+//   a tap on a place walks there at once (on the hero's own place: its dialogue / battle); the
+//   "Đang đi tới … · Dừng" strip while walking
 //   tab bar: Bản đồ · Túi đồ · Cửa hàng · Nhiệm vụ (the other tabs are pages drawn by their classes)
 // Back: closes the panel / goes back to the map tab / opens the settings (map version).
 using System.Collections;
@@ -139,9 +140,18 @@ namespace Loan12.UnityPort
             }
             else
             {
+                // the tab's list scrolls under the bars: its taps stay between them
+                Rect area = TouchUi.R(0, ViewTop, 180, ViewBottom - ViewTop);
+                Kit.Clip(new Rect(0, area.y, Screen.width, area.height));
                 tabs[tab].OnGUI(this, ViewTop, ViewBottom);
+                Kit.Unclip();
             }
 
+            if (Kit.Paint)
+            {
+                // solid behind the resource bar (and the notch area above it)
+                TouchUi.Fill(new Rect(0, 0, Screen.width, TouchUi.R(0, ViewTop, 0, 0).y), TouchUi.Hex(0x0A121E));
+            }
             int bar = Kit.TopBar(4);
             if (bar == 1)
             {
@@ -228,7 +238,7 @@ namespace Loan12.UnityPort
         public void ShowNode(int n, bool go)
         {
             tab = TabMap;
-            selected = n;
+            selected = go ? -1 : n;
             CenterOn(C_PortMap.nodeX(n), C_PortMap.nodeY(n), false);
             lastTouch = Time.unscaledTime;
             if (go)
@@ -313,10 +323,6 @@ namespace Loan12.UnityPort
 
         // ------------------------------------------------------------------------- map tab
 
-        Rect PanelRect()
-        {
-            return TouchUi.R(4, ViewBottom - 84, 172, 82);
-        }
 
         Rect StripRect()
         {
@@ -328,7 +334,7 @@ namespace Loan12.UnityPort
             Rect view = ViewRect();
             Event e = Kit.E;
             bool walking = C_PortMap.walking();
-            Rect panel = selected >= 0 && !walking ? PanelRect() : (walking ? StripRect() : new Rect(0, 0, 0, 0));
+            Rect panel = walking ? StripRect() : new Rect(0, 0, 0, 0);
             Rect tracker = TouchUi.R(4, 26, 172, 15);
 
             // drag the map / tap a node
@@ -374,7 +380,7 @@ namespace Loan12.UnityPort
             {
                 if (Kit.Tap(100, tracker))
                 {
-                    ShowNode(C_PortMap.questNode(q), false);
+                    ShowNode(C_PortMap.questNode(q), true);
                 }
                 if (Kit.Paint)
                 {
@@ -383,14 +389,10 @@ namespace Loan12.UnityPort
                 }
             }
 
-            // panel / walking strip
+            // walking strip ("Đang đi tới … · Dừng"); a tap on a place walks there at once
             if (walking)
             {
                 Strip();
-            }
-            else if (selected >= 0)
-            {
-                InfoPanel(selected);
             }
         }
 
@@ -425,12 +427,28 @@ namespace Loan12.UnityPort
             }
             if (hit >= 0)
             {
-                if (C_PortMap.walking())
+                // a tap walks straight there (no info panel to confirm first)
+                selected = -1;
+                string place = QuestData.Place(hit);
+                if (hit == C_PortMap.playerNode() && !C_PortMap.walking())
                 {
-                    Go(hit); // a new destination, from the end of the current road
+                    if (C_PortMap.nodeContent(hit) != 0)
+                    {
+                        Go(hit); // standing there: what the game does on arrival (dialogue, battle, arena)
+                    }
+                    else
+                    {
+                        Kit.Toast("Bạn đang ở " + place);
+                    }
                 }
-                selected = hit;
-                lastTouch = Time.unscaledTime;
+                else if (C_PortMap.roadsTo(hit) < 0)
+                {
+                    Kit.Toast("Chưa có đường tới " + place);
+                }
+                else
+                {
+                    Go(hit); // also a new destination while walking, from the end of the current road
+                }
             }
             else if (locked >= 0)
             {
@@ -635,166 +653,8 @@ namespace Loan12.UnityPort
             }
         }
 
-        void InfoPanel(int n)
-        {
-            float k = TouchUi.K;
-            Rect r = PanelRect();
-            float top = TouchUi.V(r.position).y;
-            Rect close = TouchUi.R(162, top + 4, 11, 11);
-            int here = C_PortMap.playerNode();
-            int content = C_PortMap.nodeContent(n);
-            int roads = C_PortMap.roadsTo(n);
-            bool at = n == here;
-            string action = at ? (content == 4 ? "VÀO" : "BẮT ĐẦU") : "ĐI TỚI";
-            bool can = at ? content != 0 : roads > 0;
-            Rect go = TouchUi.R(12, top + 50, 156, 26);
-            if (Kit.Tap(120, close))
-            {
-                selected = -1;
-                return;
-            }
-            if (Kit.Tap(121, go) && can)
-            {
-                Go(n);
-                if (at)
-                {
-                    selected = -1;
-                }
-            }
-            if (!Kit.Paint)
-            {
-                return;
-            }
-            TouchUi.Panel(r);
-            TouchUi.Fill(close, TouchUi.Outline);
-            TouchUi.Fill(new Rect(close.x + k, close.y + k, close.width - 2 * k, close.height - 2 * k), TouchUi.Hex(0x3A1838));
-            for (int i = 2; i < 9; i++)
-            {
-                TouchUi.Fill(new Rect(close.x + i * k, close.y + i * k, k, k), Kit.Cream);
-                TouchUi.Fill(new Rect(close.xMax - (i + 1) * k, close.y + i * k, k, k), Kit.Cream);
-            }
 
-            string name = QuestData.Place(n);
-            string line2 = "", line3 = "";
-            Color mark = Color.clear;
-            int face = -1;
-            int q = C_PortMap.questIndex();
-            string way = roads > 0 ? "Đường: " + roads + " chặng" : (roads < 0 ? "Chưa có đường tới" : "");
-            switch (content)
-            {
-                case 1:
-                {
-                    mark = TouchUi.Hex(0xE02424);
-                    line2 = "Nhiệm vụ: " + QuestData.Title(q);
-                    int enemy = C_PortMap.questEnemy(q);
-                    string reward = Reward(C_PortMap.questExp(q), C_PortMap.questGold(q), C_PortMap.questRelic(q));
-                    if (C_PortMap.questType(q) != 0 && enemy >= 0)
-                    {
-                        line3 = QuestData.Who(enemy) + " · cấp " + C_PortMap.questEnemyLevel(q) + (reward.Length > 0 ? " · " + reward : "");
-                        face = enemy;
-                    }
-                    else
-                    {
-                        line3 = reward.Length > 0 ? reward : (way.Length > 0 ? way : "Hội thoại");
-                        face = C_PortMap.questSpeaker(q);
-                    }
-                    break;
-                }
-                case 2:
-                {
-                    mark = TouchUi.Hex(0xFF8C1A);
-                    int ev = C_PortMap.nodeEvent(n);
-                    int enemy = C_PortMap.eventEnemy(ev);
-                    line2 = enemy >= 0 && C_PortMap.eventType(ev) != 0
-                        ? "Sự kiện: " + QuestData.Who(enemy) + " · cấp " + C_PortMap.eventEnemyLevel(ev)
-                        : "Sự kiện: gặp gỡ";
-                    line3 = EventReward(ev);
-                    if (way.Length > 0)
-                    {
-                        line3 += (line3.Length > 0 ? " · " : "") + way;
-                    }
-                    face = enemy;
-                    break;
-                }
-                case 3:
-                {
-                    mark = TouchUi.Hex(0xFFD400);
-                    int enemy = C_PortMap.guardEnemy(n);
-                    line2 = "Quân canh: " + QuestData.Who(enemy) + " · cấp " + C_PortMap.guardLevel(n);
-                    line3 = "Thắng để dẹp trạm gác" + (way.Length > 0 ? " · " + way : "");
-                    face = enemy;
-                    break;
-                }
-                case 4:
-                {
-                    int open = 0;
-                    for (int i = 0; i < 5; i++)
-                    {
-                        if (C_PortMap.arenaOpen(i))
-                        {
-                            open++;
-                        }
-                    }
-                    line2 = "Đấu trường · " + open + "/5 mức đã mở";
-                    line3 = "Luyện kinh nghiệm, mất vé vào" + (way.Length > 0 ? " · " + way : "");
-                    break;
-                }
-                default:
-                    line2 = at ? "Bạn đang ở đây" : "Không có nhiệm vụ";
-                    line3 = way;
-                    break;
-            }
-            float tx = 14;
-            if (face >= 0)
-            {
-                TouchUi.Portrait(face, TouchUi.R(12, top + 8, 34, 34));
-                tx = 52;
-            }
-            TouchUi.PixelText(name.ToUpperInvariant(), 1, TouchUi.R(tx, 0, 0, 0).x, TouchUi.R(0, top + 14, 0, 0).y, 0, true);
-            float lx = tx;
-            if (mark != Color.clear)
-            {
-                TouchUi.Fill(TouchUi.R(tx, top + 25, 2, 6), mark);
-                TouchUi.Fill(TouchUi.R(tx, top + 32, 2, 2), mark);
-                lx += 5;
-            }
-            TouchUi.Label(TouchUi.R(lx, top + 24, 162 - lx, 9), Kit.Cut(line2, 36), 6.5f, TextAnchor.UpperLeft, Color.white, true);
-            TouchUi.Label(TouchUi.R(tx, top + 35, 162 - tx, 9), Kit.Cut(line3, 44), 5.75f, TextAnchor.UpperLeft, TouchUi.Hex(0xFFE39A));
-            TouchUi.RedButton(go, action, can, Kit.Down(121));
-        }
 
-        static string Reward(int exp, int gold, int relic)
-        {
-            string s = "";
-            if (exp > 0)
-            {
-                s += exp + " KN";
-            }
-            if (gold > 0)
-            {
-                s += (s.Length > 0 ? " · " : "") + gold + " vàng";
-            }
-            if (relic > 0)
-            {
-                s += (s.Length > 0 ? " · " : "") + "hộp bảo vật";
-            }
-            return s.Length > 0 ? "Thưởng: " + s : "";
-        }
-
-        static string EventReward(int ev)
-        {
-            int a = C_PortMap.eventAttack(ev), h = C_PortMap.eventHp(ev);
-            string s = "";
-            if (a > 0)
-            {
-                s += "+" + a + " tấn công";
-            }
-            if (h > 0)
-            {
-                s += (s.Length > 0 ? ", " : "") + "+" + h + " máu";
-            }
-            return s.Length > 0 ? "Thưởng: " + s : "";
-        }
 
         // ------------------------------------------------------------------------- tab bar
 
@@ -899,8 +759,7 @@ namespace Loan12.UnityPort
 
         static readonly string[] TutorialText =
         {
-            "Dấu đỏ là nhiệm vụ chính. Chạm vào thành để xem.",
-            "Bấm ĐI TỚI, tướng sẽ tự đi theo đường.",
+            "Dấu đỏ là nhiệm vụ chính. Chạm vào một nơi, tướng sẽ tự đi tới theo đường.",
             "Dấu cam là sự kiện phụ, dấu vàng là quân canh. Xem hết ở thẻ Nhiệm vụ."
         };
 
@@ -909,20 +768,11 @@ namespace Loan12.UnityPort
             float k = TouchUi.K;
             int q = C_PortMap.questIndex();
             int node = q < C_PortMap.questCount() ? C_PortMap.questNode(q) : C_PortMap.playerNode();
-            if (tutorial == 1 && selected != node)
-            {
-                selected = node;
-            }
             Rect focus;
             if (tutorial == 0)
             {
                 Vector2 p = ToScreen(C_PortMap.nodeX(node), C_PortMap.nodeY(node));
                 focus = new Rect(p.x - 16 * k, p.y - 16 * k, 32 * k, 32 * k);
-            }
-            else if (tutorial == 1)
-            {
-                float top = TouchUi.V(PanelRect().position).y;
-                focus = TouchUi.R(12, top + 50, 156, 26);
             }
             else
             {
@@ -932,7 +782,7 @@ namespace Loan12.UnityPort
             if (Kit.Tap(300, new Rect(0, 0, Screen.width, Screen.height)) || Kit.Back())
             {
                 tutorial++;
-                if (tutorial > 2)
+                if (tutorial > 1)
                 {
                     tutorial = -1;
                     selected = -1;
@@ -961,7 +811,7 @@ namespace Loan12.UnityPort
                 Rect box = TouchUi.R(14, by, 152, h);
                 TouchUi.Panel(box);
                 TouchUi.Label(TouchUi.R(20, by + 6, 140, lines * UiFont.LineHeight), text, 6.5f, TextAnchor.UpperCenter, Color.white, true, true);
-                TouchUi.Label(TouchUi.R(20, by + h - 12, 140, 9), (tutorial + 1) + "/3 · chạm để tiếp", 5.5f, TextAnchor.UpperCenter, Kit.Muted);
+                TouchUi.Label(TouchUi.R(20, by + h - 12, 140, 9), (tutorial + 1) + "/2 · chạm để tiếp", 5.5f, TextAnchor.UpperCenter, Kit.Muted);
             }
             Kit.Unblock();
         }

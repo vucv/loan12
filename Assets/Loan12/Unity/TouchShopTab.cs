@@ -538,7 +538,10 @@ namespace Loan12.UnityPort
             {
                 TouchUi.Fill(new Rect(0, 0, Screen.width, Screen.height), TouchUi.Hex(0x0A121E));
             }
+            Rect area = TouchUi.R(0, 26, 180, Kit.H - 26);
+            Kit.Clip(new Rect(0, area.y, Screen.width, area.height));
             shop.OnGUI(null, 26, Kit.H);
+            Kit.Unclip();
             bool close = false;
             if (Kit.Paint)
             {

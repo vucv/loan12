@@ -21,6 +21,8 @@ namespace Loan12.UnityPort
         static bool moved;
         static bool blocked;
         static Rect allowed;
+        static bool clipped;
+        static Rect clip;
         static Vector2 lastDrag;
 
         public static bool Paint
@@ -35,6 +37,7 @@ namespace Loan12.UnityPort
         {
             E = e;
             blocked = false;
+            clipped = false;
             Rect safe = UnityEngine.Device.Screen.safeArea;
             Rect area = new Rect(safe.x, Screen.height - safe.yMax, safe.width, safe.height);
             if (area.width <= 0 || area.height <= 0)
@@ -91,9 +94,24 @@ namespace Loan12.UnityPort
             blocked = false;
         }
 
+        /// <summary>
+        /// Until Unclip, taps count only inside r: the content of a scrolled area that slides under the bars
+        /// above and below it must not take their taps.
+        /// </summary>
+        public static void Clip(Rect r)
+        {
+            clipped = true;
+            clip = r;
+        }
+
+        public static void Unclip()
+        {
+            clipped = false;
+        }
+
         static bool Allowed(Vector2 p)
         {
-            return !blocked || allowed.Contains(p);
+            return (!blocked || allowed.Contains(p)) && (!clipped || clip.Contains(p));
         }
 
         /// <summary>A tap released inside r (the press started inside r, and the finger did not scroll).</summary>
