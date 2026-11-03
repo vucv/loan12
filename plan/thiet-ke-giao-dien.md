@@ -300,10 +300,9 @@ Game gốc tự vẽ mọi thứ lên khung 240x320, và phần lớn code vẽ 
 
 **Phông chữ (đã chọn):**
 - Tiêu đề, nút, con số lớn: **phông pixel của chính game** (vàng hoặc trắng, có viền tối). Phông này chỉ có chữ in hoa.
-- Chữ nhỏ (mô tả, nhãn, bong bóng thoại): **Galmuri9 làm đậm**.
-  - Galmuri9 của Lee Minseo, giấy phép SIL OFL 1.1, đủ dấu tiếng Việt, có chữ thường.
-  - Được "nướng" sẵn thành ảnh pixel 1-bit, nét dọc dày 2 điểm ảnh như chữ của game.
-  - Vẽ cùng tỉ lệ với hình của game, có viền tối 1 điểm ảnh.
+- Chữ nhỏ (mô tả, nhãn, bong bóng thoại, dòng hiệu ứng): **Inter** (chữ HD như ảnh nháp), Medium cho chữ thường, Bold cho chữ đậm; cỡ chữ theo `u` ghi trong tài liệu (ví dụ 6.5 u), bóng tối nhẹ phía dưới cho chữ sáng.
+  - Inter của Rasmus Andersson, giấy phép SIL OFL 1.1, đủ dấu tiếng Việt (`Resources/Loan12Fonts/Inter-*.ttf`).
+  - Trước đó dùng Galmuri9 làm đậm (font pixel); đã đổi sang Inter theo yêu cầu.
 - Đã so sánh với Inter, Galmuri11, Galmuri7, Fairfax Bold, VT323 và Tiny5 trên cùng một đoạn chữ, rộng bằng popup: [ảnh so sánh](ui/font-so-sanh.png).
 - Các phông pixel khác trên Google Fonts (Pixelify Sans, Press Start 2P, Silkscreen, Jersey…) thiếu dấu tiếng Việt.
 

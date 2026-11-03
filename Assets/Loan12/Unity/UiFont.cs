@@ -1,4 +1,5 @@
-// The small-text font of the touch screens: Galmuri9 by Lee Minseo (SIL Open Font License 1.1, see
+// Earlier small-text font of the touch screens (now Inter, see TouchUi.Label; only LineHeight is still
+// used and gives Inter's): Galmuri9 by Lee Minseo (SIL Open Font License 1.1, see
 // Resources/Loan12Fonts/Galmuri-OFL.md), baked by Converter/scripts/make_ui_font.py into 1-bit bitmaps
 // at its own pixel size and made bold like the game's letters. Texts are drawn at the same whole-number
 // scale as the game's pixel art, white with a 1-pixel dark outline like the game's fonts, and tinted
@@ -37,11 +38,9 @@ namespace Loan12.UnityPort
         /// <summary>Distance between two lines, in pixels.</summary>
         public static int LineHeight
         {
-            get
-            {
-                Load();
-                return lineHeight;
-            }
+            // the touch screens draw small text in Inter now (TouchUi.Label): its line height at the
+            // default size, rounded up so wrapped blocks keep their room
+            get { return Mathf.CeilToInt(TouchUi.LineHeight()); }
         }
 
         public static int CapHeight

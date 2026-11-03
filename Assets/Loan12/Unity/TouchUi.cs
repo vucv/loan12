@@ -2,8 +2,8 @@
 //
 // Everything is laid out on a virtual grid 180 original pixels wide, scaled by a whole number so the
 // game's pixel art stays sharp. Sprites, frames and the bitmap fonts come from the game itself
-// (Loan12.C_PortUi.image / text); small text, which needs lower-case letters, uses UiFont (a bold pixel
-// font with every Vietnamese letter, drawn at the same scale and outlined like the game's fonts).
+// (Loan12.C_PortUi.image / text); small text, which needs lower-case letters, uses Inter (an HD font with
+// every Vietnamese letter, see Label).
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -374,41 +374,92 @@ namespace Loan12.UnityPort
             GUI.DrawTexture(new Rect(Mathf.Round(left), Mathf.Round(top), w, h), t);
         }
 
+        // Small text (descriptions, labels, speech bubbles): Inter, an HD font with every Vietnamese
+        // letter (SIL OFL 1.1, Resources/Loan12Fonts), Medium for normal text and Bold for strong text.
+        // Sizes are in grid pixels like the plan's "HD 6.5 u". Titles, buttons and big numbers keep the
+        // game's own bitmap font (PixelText).
+        public const float TextSize = 6.5f;
+        const float LineRatio = 1.21f;   // Inter: (ascender + descender) / em, no line gap
+
+        static Font interMedium, interBold;
+        static GUIStyle hd;
+        static readonly GUIContent hdText = new GUIContent();
+
+        static GUIStyle Hd(float size, bool strong, TextAnchor anchor, bool wrap)
+        {
+            if (hd == null || interMedium == null)
+            {
+                interMedium = Resources.Load<Font>("Loan12Fonts/Inter-Medium");
+                interBold = Resources.Load<Font>("Loan12Fonts/Inter-Bold");
+                hd = new GUIStyle();
+                hd.richText = false;
+                hd.clipping = TextClipping.Overflow;
+                hd.padding = new RectOffset(0, 0, 0, 0);
+                hd.margin = new RectOffset(0, 0, 0, 0);
+            }
+            hd.font = strong && interBold != null ? interBold : interMedium;
+            hd.fontStyle = FontStyle.Normal;
+            hd.fontSize = Mathf.Max(6, Mathf.RoundToInt(size * K));
+            hd.alignment = anchor;
+            hd.wordWrap = wrap;
+            return hd;
+        }
+
+        /// <summary>Distance between two lines of small text, in grid pixels.</summary>
+        public static float LineHeight(float size = TextSize)
+        {
+            return size * LineRatio;
+        }
+
         /// <summary>
-        /// Text in the touch screens' pixel font (UiFont), tinted with color. The anchor places the letters
-        /// in r by the capitals of the first line and the baseline of the last (accents stick out above,
-        /// descenders below); wrap breaks the text at r's width. The font has a single size, so size and
-        /// strong only document the intent of the caller. Dark text on a light background goes without the
-        /// outline.
+        /// Small text (Inter), tinted with color, placed in r by its anchor; wrap breaks it at r's width.
+        /// Light text gets a soft dark shadow, like the outline of the game's letters; dark text on a light
+        /// background goes without (outline = false).
         /// </summary>
         public static void Label(Rect r, string s, float size, TextAnchor anchor, Color color, bool strong = false, bool wrap = false, bool outline = true)
         {
-            if (string.IsNullOrEmpty(s))
+            if (string.IsNullOrEmpty(s) || Event.current == null || Event.current.type != EventType.Repaint)
             {
                 return;
             }
-            UiFont.Block b = UiFont.Get(s, wrap ? Mathf.Max(8, Mathf.FloorToInt(r.width / K + 0.01f)) : 0, outline);
-            int a = (int) anchor, col = a % 3, row = a / 3;
-            float ink = b.width * K, block = UiFont.BlockHeight(b.lines) * K;
-            float left = col == 0 ? r.x : (col == 1 ? r.center.x - ink / 2f : r.xMax - ink);
-            float capTop = row == 0 ? r.y + 3 * K : (row == 1 ? r.center.y - block / 2f : r.yMax - block - 3 * K);
-            Rect dst = new Rect(Mathf.Round(left - UiFont.Pad * K), Mathf.Round(capTop - b.firstCapTop * K), b.tex.width * K, b.tex.height * K);
+            GUIStyle st = Hd(size, strong, anchor, wrap);
+            Rect dst = new Rect(r.x, Mathf.Round(r.y), r.width, r.height);
+            hdText.text = s;
             Color old = GUI.color;
-            GUI.color = old * color;
-            GUI.DrawTexture(dst, b.tex);
+            if (outline)
+            {
+                float o = Mathf.Max(1f, Mathf.Round(K * 0.5f));
+                st.normal.textColor = new Color(0.08f, 0.02f, 0.07f, 0.85f * color.a);
+                st.Draw(new Rect(dst.x + o, dst.y + o, dst.width, dst.height), hdText, false, false, false, false);
+            }
+            st.normal.textColor = color;
+            st.Draw(dst, hdText, false, false, false, false);
             GUI.color = old;
         }
 
-        /// <summary>Lines a text takes when wrapped at width grid pixels.</summary>
-        public static int Lines(string s, float width)
+        /// <summary>Lines a text of the default size takes when wrapped at width grid pixels.</summary>
+        public static int Lines(string s, float width, float size = TextSize)
         {
-            return string.IsNullOrEmpty(s) ? 0 : UiFont.Wrap(s, Mathf.FloorToInt(width + 0.01f)).Count;
+            if (string.IsNullOrEmpty(s))
+            {
+                return 0;
+            }
+            GUIStyle st = Hd(size, false, TextAnchor.UpperLeft, true);
+            hdText.text = s;
+            float h = st.CalcHeight(hdText, width * K);
+            return Mathf.Max(1, Mathf.RoundToInt(h / (st.fontSize * LineRatio)));
         }
 
-        /// <summary>Width of a one-line text in grid pixels.</summary>
-        public static float TextWidth(string s)
+        /// <summary>Width of a one-line text in grid pixels (default size, bold: tags and buttons).</summary>
+        public static float TextWidth(string s, float size = 6f, bool strong = true)
         {
-            return string.IsNullOrEmpty(s) ? 0 : UiFont.Width(s);
+            if (string.IsNullOrEmpty(s))
+            {
+                return 0;
+            }
+            GUIStyle st = Hd(size, strong, TextAnchor.UpperLeft, false);
+            hdText.text = s;
+            return st.CalcSize(hdText).x / K;
         }
 
         /// <summary>30x30 portrait from /avatar inside a dark frame (frame rect = portrait + 2 px).</summary>

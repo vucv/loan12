@@ -598,7 +598,7 @@ namespace Loan12.UnityPort
         void Tick(string msg)
         {
             // several things at once share the line while they fit on it
-            if (Time.unscaledTime - tickerTime < 0.6f && ticker.Length > 0 && !ticker.Contains(msg) && UiFont.Width(ticker + ", " + msg) <= 176)
+            if (Time.unscaledTime - tickerTime < 0.6f && ticker.Length > 0 && !ticker.Contains(msg) && TouchUi.TextWidth(ticker + ", " + msg, 6.5f, false) <= 176)
             {
                 ticker += ", " + msg;
             }
