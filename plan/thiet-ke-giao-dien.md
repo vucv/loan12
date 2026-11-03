@@ -1,6 +1,6 @@
 # Thiết kế lại giao diện cho điện thoại cảm ứng (toàn màn hình)
 
-> **Trạng thái:** thiết kế, phần lớn **chưa code**. Trên nhánh `ui-touch`, Unity đã vẽ 3 màn: Chuẩn bị xuất trận (hộp đối đầu), Trận đấu và Kết quả (qua `PortUi`).
+> **Trạng thái:** đã code trên nhánh `ui-touch` các màn 1–3 và 5–12 (Menu, Nhân vật, Chọn tướng, Bản đồ, Túi đồ, Cửa hàng, Nhiệm vụ, Chuẩn bị, Trận đấu, Kết quả, Cài đặt), qua `PortUi`, `PortScreens`, `PortMap`. Còn màn cũ: Hội thoại cốt truyện (4), Nhập tên (bàn phím hệ thống), Đấu trường. Quảng cáo thưởng đang giả lập; mua bằng tiền thật chưa nối Google Play.
 >
 > - Đây là **tài liệu tổng**: nguyên tắc chung, danh sách màn, luồng màn hình. Chi tiết từng phần nằm ở các tài liệu con (mục "Tài liệu chi tiết").
 > - Ảnh vẽ bằng chính hình nhân vật, bàn cờ, bản đồ, khung và phông chữ pixel của game. Chữ nhỏ trong ảnh nháp dùng phông HD (Inter); bản cài đặt dùng Galmuri9 làm đậm (mục "Phông chữ").
@@ -294,8 +294,8 @@ Game gốc tự vẽ mọi thứ lên khung 240x320, và phần lớn code vẽ 
 | Bước | Màn | Trạng thái |
 |---|---|---|
 | 1 | Chuẩn bị xuất trận, Trận đấu, Kết quả | Đã có trên `ui-touch` |
-| 2 | Bản đồ và thanh điều hướng, Túi đồ, Cửa hàng, Nhiệm vụ | Thiết kế xong ([bản đồ](thiet-ke-ban-do.md)), cần thêm hàm `PortUi` ở mục 8 của tài liệu đó |
-| 3 | Menu, Nhân vật, Chọn tướng, Nhập tên, Cài đặt | Thiết kế xong ([nhiều nhân vật](thiet-ke-nhieu-nhan-vat.md), [Cài đặt](thiet-ke-cai-dat.md)) |
+| 2 | Bản đồ và thanh điều hướng, Túi đồ, Cửa hàng, Nhiệm vụ | Đã có trên `ui-touch` (cầu nối `PortMap`) |
+| 3 | Menu, Nhân vật, Chọn tướng, Cài đặt | Đã có trên `ui-touch` (cầu nối `PortScreens`, lưu theo ô); Nhập tên vẫn là hộp chữ của game |
 | 4 | Hội thoại cốt truyện, Luật chơi, Thông tin, Sưu tập | Màn ít dùng; tạm giữ màn cũ vừa chiều ngang cho tới khi làm |
 
 **Phông chữ (đã chọn):**
