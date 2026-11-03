@@ -679,7 +679,7 @@ namespace Loan12.UnityPort
             for (int i = 0; i < 4; i++)
             {
                 Rect r = TouchUi.R(i * 45, y, 45, NavH);
-                if (Kit.Tap(200 + i, r) && tutorial < 0)
+                if (Kit.Tap(9100 + i, r) && tutorial < 0) // ids apart from the tabs' own (quest rows use 200+)
                 {
                     if (i == tab && i != TabMap)
                     {
