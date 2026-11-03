@@ -249,7 +249,7 @@ namespace Loan12.UnityPort
         /// <summary>The shop as a page of its own (from the + next to the gold). tab 0 items, 1 gold, 2 offers</summary>
         public void OpenShop(int tab)
         {
-            Kit.Toast("Cửa hàng: chạm thẻ Cửa hàng trong game");
+            Open(new ShopPage(tab));
         }
 
         void ExitBox()
