@@ -2,7 +2,8 @@
 
 | File | Nhánh | Commit | Nội dung |
 |---|---|---|---|
-| `android/Loan12-ui-touch-df91f04.apk` | `ui-touch` | `df91f04` | Hội thoại canh giữa gợi ý, 'Cách chiến đấu', vật phẩm rơi nhiều hơn trong trận (mới nhất) |
+| `android/Loan12-ui-touch-ba6640d.apk` | `ui-touch` | `ba6640d` | Đa ngôn ngữ giao diện (Việt, Anh, Nhật, Hàn), luật chơi cập nhật vật phẩm rơi (mới nhất) |
+| `android/Loan12-ui-touch-df91f04.apk` | `ui-touch` | `df91f04` | Hội thoại canh giữa gợi ý, 'Cách chiến đấu', vật phẩm rơi nhiều hơn trong trận |
 | `android/Loan12-ui-touch-0838df7.apk` | `ui-touch` | `0838df7` | Giới thiệu tướng thành popup (chạm thẻ nhân vật), canh giữa màn hình |
 | `android/Loan12-ui-touch-6f4ca28.apk` | `ui-touch` | `6f4ca28` | Giới thiệu tướng trong túi đồ, +1 mạng mỗi 30 phút (đếm ngược), tắt rung là hết rung |
 | `android/Loan12-ui-touch-5e47ee1.apk` | `ui-touch` | `5e47ee1` | Sửa bấm menu dưới khi nhiều nhiệm vụ, menu chính ảnh bìa động + nút cách đều, hộp nhiệm vụ ra vật phẩm |
