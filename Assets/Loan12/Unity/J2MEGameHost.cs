@@ -336,6 +336,7 @@ namespace Loan12.UnityPort
             }
 
             backend.UpdateAudio();
+            LifeTimer.Tick(); // +1 life every 30 minutes
             UpdateSystemKeyboard();
             J2ME.Host.tick();
 

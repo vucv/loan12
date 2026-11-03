@@ -400,7 +400,17 @@ namespace Loan12.UnityPort
                 float k = TouchUi.K;
                 Box(lives, TouchUi.Hex(0x22101E));
                 TouchUi.Sprite(TouchUi.Img("/m/ih"), TouchUi.R(9, y + 2, 14, 14));
-                TouchUi.PixelText(n + "/" + max, 2, lives.x + 22 * k, lives.center.y, 0, true);
+                int left = n < max ? LifeTimer.Left : -1;
+                if (left >= 0)
+                {
+                    // not full: the count, and the time to the next life (+1 every 30 minutes)
+                    TouchUi.PixelText(n + "/" + max, 1, lives.x + 22 * k, lives.center.y, 0, true);
+                    TouchUi.Label(new Rect(lives.x + 38 * k, lives.y, 24 * k, lives.height), LifeTimer.Clock(left), 5.5f, TextAnchor.MiddleRight, Kit.Cream, true);
+                }
+                else
+                {
+                    TouchUi.PixelText(n + "/" + max, 2, lives.x + 22 * k, lives.center.y, 0, true);
+                }
                 Box(goldBox, TouchUi.Hex(0x22101E));
                 TouchUi.Sprite(TouchUi.Img("/gold"), TouchUi.R(76, y + 1, 16, 16));
                 TouchUi.PixelText(TouchUi.Money(gold), 1, goldBox.x + 21 * k, goldBox.center.y, 0, true);

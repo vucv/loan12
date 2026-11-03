@@ -7,6 +7,90 @@ using UnityEngine;
 
 namespace Loan12.UnityPort
 {
+    /// <summary>
+    /// +1 life every 30 minutes while below the maximum, counted on the clock (so it keeps going while the
+    /// game is closed). The time of the next life is kept in PlayerPrefs; full lives stop the timer.
+    /// </summary>
+    public static class LifeTimer
+    {
+        public const int Period = 30 * 60;
+        const string Pref = "l12.lives.next";
+        static float checkedAt = -10f;
+
+        static long Now
+        {
+            get { return System.DateTimeOffset.UtcNow.ToUnixTimeSeconds(); }
+        }
+
+        static long Next
+        {
+            get { return long.Parse(PlayerPrefs.GetString(Pref, "0")); }
+            set
+            {
+                PlayerPrefs.SetString(Pref, value.ToString());
+                PlayerPrefs.Save();
+            }
+        }
+
+        /// <summary>Gives the lives that are due (called every frame, works once a second).</summary>
+        public static void Tick()
+        {
+            if (Time.unscaledTime - checkedAt < 1f)
+            {
+                return;
+            }
+            checkedAt = Time.unscaledTime;
+            try
+            {
+                int lives = C_PortScreens.lives(), max = C_PortScreens.maxLives();
+                long next = Next, now = Now;
+                if (lives >= max)
+                {
+                    if (next != 0)
+                    {
+                        Next = 0;
+                    }
+                    return;
+                }
+                if (next == 0 || next - now > Period)
+                {
+                    Next = now + Period;
+                    return;
+                }
+                int add = 0;
+                while (next <= now && lives + add < max)
+                {
+                    add++;
+                    next += Period;
+                }
+                if (add > 0)
+                {
+                    C_PortScreens.addLives(add);
+                    Next = lives + add >= max ? 0 : next;
+                }
+            }
+            catch (System.Exception)
+            {
+                // the game's stores are not ready yet (boot)
+            }
+        }
+
+        /// <summary>Seconds until the next life; -1 when lives are full.</summary>
+        public static int Left
+        {
+            get
+            {
+                long next = Next;
+                return next == 0 ? -1 : (int) System.Math.Max(0, next - Now);
+            }
+        }
+
+        public static string Clock(int seconds)
+        {
+            return (seconds / 60).ToString("00") + ":" + (seconds % 60).ToString("00");
+        }
+    }
+
     public static class Refill
     {
         /// <summary>Item type used for it next to the game's 0..5 (MapUi).</summary>
@@ -190,6 +274,10 @@ namespace Loan12.UnityPort
                 }
                 string line = none ? "Bạn đã hết mạng chơi. Mỗi trận cần 1 mạng (thắng thì được trả lại)."
                     : (full ? "Mạng chơi đang đầy (" + lives + "/" + max + ")." : "Bạn còn " + lives + "/" + max + " mạng. Mỗi trận cần 1 mạng.");
+                if (!full && LifeTimer.Left >= 0)
+                {
+                    line += " +1 mạng sau " + LifeTimer.Clock(LifeTimer.Left) + ".";
+                }
                 TouchUi.Label(TouchUi.R(18, y + 46, 144, 24), line, 6.25f, TextAnchor.UpperCenter, Kit.Cream, false, true);
                 if (error != null)
                 {
