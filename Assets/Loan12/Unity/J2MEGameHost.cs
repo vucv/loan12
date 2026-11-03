@@ -220,7 +220,7 @@ namespace Loan12.UnityPort
             touchViews = new ITouchView[]
             {
                 new TouchResultView(battle), new TouchPauseView(battle), new TouchPrepareView(), battle,
-                new TouchBootView(), new TouchMenuView(), new TouchHeroView()
+                new TouchBootView(), new TouchMenuView(), new TouchHeroView(), new TouchMapView()
             };
             EnsureCamera();
             EnsureAudioListener();
@@ -254,6 +254,7 @@ namespace Loan12.UnityPort
                 PlayerPrefs.DeleteAll();
                 muted = true;
             }
+            C_PortScreens.f_touch = touchInterface; // the touch views replace the map's key tutorial ...
             J2ME.Host.init(backend, LcdWidth, LcdHeight);
             J2ME.Host.start(new SQMidlet());
             running = true;
