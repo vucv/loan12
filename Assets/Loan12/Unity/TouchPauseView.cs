@@ -1,8 +1,8 @@
 // The pause of a battle in the touch interface, drawn over the battle (plan: "Tạm dừng: tiếp tục /
 // âm thanh / thoát"). It replaces two dialogs of the game:
-//   - "Bạn muốn dừng game lại? Có / Không" (the pause button): TIẾP TỤC = "Không"; LƯU VÀ THOÁT = "Có",
-//     which saves the battle and goes to the menu ("Chơi tiếp" resumes it); THOÁT TRẬN gives the battle
-//     up after a confirmation: the game's own defeat (life of the battle lost, result screen, map);
+//   - "Bạn muốn dừng game lại? Có / Không" (the pause button): TIẾP TỤC = "Không"; THOÁT TRẬN gives
+//     the battle up after a confirmation: the game's own defeat (life of the battle lost, result
+//     screen, map). The game's "Có" (save the battle and go to the menu) is not offered any more;
 //   - "Bấm tiếp tục để chơi tiếp" (the game paused itself when the app went to the background).
 // Sound and vibration are switched here too (settings of the Unity host, kept between sessions).
 using UnityEngine;
@@ -14,7 +14,7 @@ namespace Loan12.UnityPort
         const int GridH = 346;
 
         readonly TouchBattleView battle;
-        int downKind; // 1 resume, 2 sound, 3 vibration, 4 save and quit, 5 give up, 6 confirm, 7 cancel
+        int downKind; // 1 resume, 2 sound, 3 vibration, 5 give up, 6 confirm, 7 cancel
         bool confirm;
         float shownAt = -1f;
 
@@ -49,7 +49,7 @@ namespace Loan12.UnityPort
 
         static Rect PanelRect()
         {
-            return CanQuit() ? TouchUi.R(14, 34, 152, 256) : TouchUi.R(14, 82, 152, 172);
+            return CanQuit() ? TouchUi.R(14, 66, 152, 214) : TouchUi.R(14, 82, 152, 172);
         }
 
         static float Top()
@@ -72,14 +72,9 @@ namespace Loan12.UnityPort
             return TouchUi.R(26, Top() + 128, 128, 24);
         }
 
-        static Rect QuitRect()
-        {
-            return TouchUi.R(26, Top() + 168, 128, 24);
-        }
-
         static Rect ForfeitRect()
         {
-            return TouchUi.R(26, Top() + 206, 128, 24);
+            return TouchUi.R(26, Top() + 168, 128, 24);
         }
 
         static Rect ConfirmRect()
@@ -115,11 +110,7 @@ namespace Loan12.UnityPort
             {
                 return 3;
             }
-            if (CanQuit() && ForfeitRect().Contains(p))
-            {
-                return 5;
-            }
-            return CanQuit() && QuitRect().Contains(p) ? 4 : 0;
+            return CanQuit() && ForfeitRect().Contains(p) ? 5 : 0;
         }
 
         public void OnGUI(Event e, Texture2D lcd, bool haptics)
@@ -161,9 +152,6 @@ namespace Loan12.UnityPort
                                 host.HapticsOn = !host.HapticsOn;
                                 Haptics.Tap(host.HapticsOn);
                             }
-                            break;
-                        case 4:
-                            C_PortUi.request(C_PortUi.f_PAUSE_QUIT, 0);
                             break;
                         case 5:
                             confirm = true;
@@ -220,13 +208,9 @@ namespace Loan12.UnityPort
             Toggle(VibrateRect(), "RUNG", vibrate, downKind == 3);
             if (CanQuit())
             {
-                Rect q = QuitRect();
                 TouchUi.Fill(TouchUi.R(26, top + 160, 128, 1), TouchUi.Hex(0x9A6A98));
-                TouchUi.TextButton(q, "LƯU VÀ THOÁT", Btn.Dark, downKind == 4);
-                TouchUi.Label(TouchUi.R(18, top + 193, 144, 9), "Lưu trận, về menu · Chơi tiếp để đánh tiếp", 5.75f,
-                    TextAnchor.UpperCenter, TouchUi.Hex(0xD8C8DC), false, true);
                 TouchUi.TextButton(ForfeitRect(), "THOÁT TRẬN", Btn.Red, downKind == 5);
-                TouchUi.Label(TouchUi.R(18, top + 233, 144, 9), "Bỏ trận, về bản đồ · tính là thua", 5.75f,
+                TouchUi.Label(TouchUi.R(18, top + 195, 144, 9), "Bỏ trận, về bản đồ · tính là thua", 5.75f,
                     TextAnchor.UpperCenter, TouchUi.Hex(0xD8C8DC), false, true);
             }
             GUI.color = old;

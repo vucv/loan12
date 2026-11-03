@@ -251,6 +251,11 @@ public class bu
         }
         switch (this.v) {
             case 9:
+                if (this.t.portBusy() && (this.portEndWait < 75)) { // PORT-UI: let the board settle
+                    this.portEndWait += 1;
+                    return;
+                }
+                this.portEndWait = 0;
                 f(12);
                 this.C = this.t.b(this.E);
                 if (this.E) {
@@ -1260,6 +1265,7 @@ public class bu
     // PORT-UI: state and actions for the Unity touch interface (see PortUi)
     public ae portPauseDialog; // the "dừng game" dialog of this battle
     public boolean portForfeit; // PORT-UI: the player gave the battle up (pause box "Thoát trận")
+    private int portEndWait;    // PORT-UI: ticks state 9 waited for the board's effects
     public ae portEndDialog;   // the result (won) or "mất 1 mạng" (lost) dialog
     public boolean portEndRetry; // the lost battle can be fought again
 
@@ -1269,8 +1275,8 @@ public class bu
 
     /** 0 playing, 1 won, 2 lost (from the end of the fight: animation, then the result dialog) */
     public int portOutcome() {
-        if ((this.v != 9) && (this.v != 12)) {
-            return 0;
+        if (this.v != 12) {
+            return 0; // PORT-UI: not while state 9 lets the board's explosions and attacks finish
         }
         return this.E ? 1 : 2;
     }

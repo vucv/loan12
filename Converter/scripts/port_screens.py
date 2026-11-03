@@ -391,4 +391,63 @@ rep('com/mic/smsgame/suquan/aa.java', """    // PORT-UI: state and actions for t
 
     public int portState() {""")
 
+# ---------------------------------------------------------------------------------------------
+# battle end: the game stopped at once when HP reached 0 (state 9, then the result after 20 ticks)
+# while gems were still exploding and attacks flying; the touch view froze the board there. Now state
+# 9 waits (at most 3 s more) until those effects are over, and the battle reports its outcome from
+# then on, so the touch view's THẮNG / THUA starts on a settled board.
+rep('game/i.java', """    public int o() {
+        return this.A.a();
+    }""", """    public int o() {
+        return this.A.a();
+    }
+
+    /** PORT-UI: gems, combo texts, attacks flying to a fighter or a skill effect are still playing
+     *  (shields and freezes that last several turns, types 4 and 8, do not count) */
+    public boolean portBusy() {
+        int j = 0;
+        for (j = 0; j < this.s.b(); j++) {
+            if (((s) this.s.b(j)).m()) {
+                return true;
+            }
+        }
+        for (j = 0; j < this.l.b(); j++) {
+            if (((b) this.l.b(j)).a()) {
+                return true;
+            }
+        }
+        for (j = 0; j < this.o.b(); j++) {
+            if (((p) this.o.b(j)).m()) {
+                return true;
+            }
+        }
+        for (j = 0; j < this.p.b(); j++) {
+            ab e = (ab) this.p.b(j);
+            if (e.m() && (e.b() != 4) && (e.b() != 8)) {
+                return true;
+            }
+        }
+        return false;
+    }""")
+rep('game/bu.java', """        switch (this.v) {
+            case 9:
+                f(12);""", """        switch (this.v) {
+            case 9:
+                if (this.t.portBusy() && (this.portEndWait < 75)) { // PORT-UI: let the board settle
+                    this.portEndWait += 1;
+                    return;
+                }
+                this.portEndWait = 0;
+                f(12);""")
+rep('game/bu.java', """    public boolean portForfeit; // PORT-UI: the player gave the battle up (pause box "Thoát trận")""",
+    """    public boolean portForfeit; // PORT-UI: the player gave the battle up (pause box "Thoát trận")
+    private int portEndWait;    // PORT-UI: ticks state 9 waited for the board's effects""")
+rep('game/bu.java', """    public int portOutcome() {
+        if ((this.v != 9) && (this.v != 12)) {
+            return 0;
+        }""", """    public int portOutcome() {
+        if (this.v != 12) {
+            return 0; // PORT-UI: not while state 9 lets the board's explosions and attacks finish
+        }""")
+
 print('port_screens: ok')

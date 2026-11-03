@@ -51,6 +51,7 @@ namespace Loan12
         //Must call each frame
         //Start point
         //delay here
+        // PORT-UI: let the board settle
         // PORT-UI
         // PORT-UI
         // PORT-UI: given up, a defeat
@@ -97,6 +98,8 @@ namespace Loan12
         // the "dừng game" dialog of this battle
         public bool f_portForfeit;
         // PORT-UI: the player gave the battle up (pause box "Thoát trận")
+        private int f_portEndWait;
+        // PORT-UI: ticks state 9 waited for the board's effects
         public C_ae f_portEndDialog;
         // the result (won) or "mất 1 mạng" (lost) dialog
         public bool f_portEndRetry;
@@ -367,6 +370,13 @@ namespace Loan12
             switch ((this.f_v))
             {
                 case 9:
+                    if (this.f_t.portBusy() && ((this.f_portEndWait < 75)))
+                    {
+                        // PORT-UI: let the board settle
+                        this.f_portEndWait += 1;
+                        return;
+                    }
+                    this.f_portEndWait = 0;
                     this.f(12);
                     this.f_C = this.f_t.b(this.f_E);
                     if (this.f_E)
@@ -1613,6 +1623,7 @@ namespace Loan12
         // PORT-UI: state and actions for the Unity touch interface (see PortUi)
         // the "dừng game" dialog of this battle
         // PORT-UI: the player gave the battle up (pause box "Thoát trận")
+        // PORT-UI: ticks state 9 waited for the board's effects
         // the result (won) or "mất 1 mạng" (lost) dialog
         // the lost battle can be fought again
         public C_cq portState()
@@ -1623,9 +1634,10 @@ namespace Loan12
         /** 0 playing, 1 won, 2 lost (from the end of the fight: animation, then the result dialog) */
         public int portOutcome()
         {
-            if ((this.f_v != 9) && (this.f_v != 12))
+            if (this.f_v != 12)
             {
                 return 0;
+                // PORT-UI: not while state 9 lets the board's explosions and attacks finish
             }
             return (this.f_E ? 1 : 2);
         }
