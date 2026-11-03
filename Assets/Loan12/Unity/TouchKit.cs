@@ -186,22 +186,24 @@ namespace Loan12.UnityPort
 
         static string toast;
         static float toastAt = -10f;
+        static float toastFor = 2.2f;
 
-        public static void Toast(string s)
+        public static void Toast(string s, float seconds = 2.2f)
         {
             toast = s;
             toastAt = Time.unscaledTime;
+            toastFor = seconds;
         }
 
         public static void DrawToast(float y)
         {
             float t = Time.unscaledTime - toastAt;
-            if (!Paint || t > 2.2f || string.IsNullOrEmpty(toast))
+            if (!Paint || t > toastFor || string.IsNullOrEmpty(toast))
             {
                 return;
             }
             Color old = GUI.color;
-            GUI.color = old * new Color(1, 1, 1, Mathf.Clamp01((2.2f - t) / 0.3f));
+            GUI.color = old * new Color(1, 1, 1, Mathf.Clamp01((toastFor - t) / 0.3f));
             float w = Mathf.Min(170, TouchUi.TextWidth(toast) + 16);
             int lines = TouchUi.Lines(toast, w - 10);
             float h = lines * UiFont.LineHeight + 10;

@@ -155,6 +155,7 @@ namespace Loan12.UnityPort
         void DrawWon(float slide)
         {
             int mode = C_PortUi.resultMode();
+            int quest = mode == 1 ? C_PortMap.questIndex() : -1;
 
             // title
             if (mode == 0)
@@ -165,9 +166,19 @@ namespace Loan12.UnityPort
                 float w = fw * pulse, h = win.height * pulse;
                 TouchUi.Sprite(win, TouchUi.R(90 - w / 2f, 38 - h / 2f + slide, w, h), new Rect(fw * (1 + (int) (Time.unscaledTime / 0.2f) % 2), 0, fw, win.height));
             }
+            else if (mode == 1)
+            {
+                TouchUi.PixelText("HOÀN THÀNH NHIỆM VỤ", 1, TouchUi.R(90, 0, 0, 0).x, TouchUi.R(0, 32 + slide, 0, 0).y, 1, true);
+                if (quest >= 0 && quest < C_PortMap.questCount())
+                {
+                    TouchUi.Label(TouchUi.R(8, 44 + slide, 164, 12), (quest + 1) + ". " + QuestData.Title(quest), 7, TextAnchor.UpperCenter, TouchUi.TextGold, true);
+                    TouchUi.Label(TouchUi.R(8, 56 + slide, 164, 10), "Chương " + (QuestData.Chapter(quest) + 1) + " · " + QuestData.Chapters[QuestData.Chapter(quest)],
+                        6, TextAnchor.UpperCenter, TouchUi.TextSoft);
+                }
+            }
             else
             {
-                TouchUi.PixelText(mode == 1 ? "PHẦN THƯỞNG NHIỆM VỤ" : "LUYỆN TẬP", 1, TouchUi.R(90, 0, 0, 0).x, TouchUi.R(0, 40 + slide, 0, 0).y, 1, true);
+                TouchUi.PixelText("LUYỆN TẬP", 1, TouchUi.R(90, 0, 0, 0).x, TouchUi.R(0, 40 + slide, 0, 0).y, 1, true);
             }
 
             // the hero
@@ -177,25 +188,57 @@ namespace Loan12.UnityPort
             int exp = C_PortUi.resultExp(), lo = C_PortUi.resultExpLo(), hi = C_PortUi.resultExpHi();
             float frac = hi > lo ? Mathf.Clamp01((float) (exp - lo) / (hi - lo)) : 1f;
             Bar(TouchUi.R(54, y0 + 24, 112, 7), frac, TouchUi.Hex(0xB050E0), TouchUi.Hex(0x200828));
-            string expText = "Kinh nghiệm " + exp + "/" + hi;
-            if (TouchUi.TextWidth(expText) > 112)
+            string expText = "Kinh nghiệm " + TouchUi.Money(exp) + "/" + TouchUi.Money(hi);
+            if (TouchUi.TextWidth(expText, 6.5f, false) > 112)
             {
-                expText = exp + "/" + hi;
+                expText = TouchUi.Money(exp) + "/" + TouchUi.Money(hi);
             }
-            TouchUi.Label(TouchUi.R(54, y0 + 32, 112, 13), expText, 6.5f, TextAnchor.UpperLeft, TouchUi.TextSoft);
+            TouchUi.Label(TouchUi.R(54, y0 + 33, 112, 11), expText, 6.5f, TextAnchor.UpperLeft, TouchUi.TextSoft);
 
             // rewards
-            float y = y0 + 56;
+            float y = y0 + 50;
             if (mode == 0)
             {
                 Row(ref y, "/gold", "Vàng nhặt được", "+" + C_PortUi.resultGoldGain());
                 Row(ref y, "/book", "Kinh nghiệm", "+" + C_PortUi.resultExpGain());
                 Row(ref y, "/book", "Thưởng thắng trận", "+" + C_PortUi.resultWinBonus());
+                // items won with 5 in a row (already in the bag)
+                string won = "";
+                int first = -1;
+                foreach (int t in MapUi.Items)
+                {
+                    int n = C_PortMap.battleWon(t);
+                    if (n > 0)
+                    {
+                        won += (won.Length > 0 ? ", " : "") + C_PortUi.itemName(t) + " x" + n;
+                        if (first < 0)
+                        {
+                            first = t;
+                        }
+                    }
+                }
+                if (first >= 0)
+                {
+                    ItemRow(ref y, first, "Vật phẩm: " + won);
+                }
+                if (C_PortMap.battleRelic())
+                {
+                    Row(ref y, "/r/g", "Hộp bảo vật (nhiệm vụ)", "+1");
+                }
             }
             else if (mode == 1)
             {
-                Row(ref y, "/gold", "Thưởng nhiệm vụ: vàng", "+" + C_PortUi.resultGoldGain());
-                Row(ref y, "/book", "Thưởng nhiệm vụ: kinh nghiệm", "+" + C_PortUi.resultExpGain());
+                Row(ref y, "/gold", "Vàng thưởng", "+" + C_PortUi.resultGoldGain());
+                Row(ref y, "/book", "Kinh nghiệm thưởng", "+" + C_PortUi.resultExpGain());
+                if (quest >= 0 && C_PortMap.questRelic(quest) > 0)
+                {
+                    Row(ref y, "/r/g", C_PortMap.questRelic(quest) == 2 ? "Hộp bảo vật cuối" : "Hộp bảo vật", "+1");
+                }
+                string opens = Opens(quest);
+                if (opens.Length > 0)
+                {
+                    Row(ref y, "/m/lock", "Mở thêm: " + opens, "");
+                }
             }
             else
             {
@@ -209,8 +252,45 @@ namespace Loan12.UnityPort
             TouchUi.RedButton(MainRect(), "TIẾP TỤC", ready, downKind == 1 && ready);
             if (!ready)
             {
-                TouchUi.Label(TouchUi.R(0, y0 + 166, 180, 14), "Chạm để bỏ qua", 6.5f, TextAnchor.MiddleCenter, TouchUi.Hex(0xB8A8B8));
+                TouchUi.Label(TouchUi.R(0, y0 + 213, 180, 11), "Chạm để bỏ qua", 6, TextAnchor.MiddleCenter, TouchUi.Hex(0xB8A8B8));
             }
+        }
+
+        /// <summary>Cities a quest opens (its dd.m nodes), by name.</summary>
+        static string Opens(int q)
+        {
+            if (q < 0)
+            {
+                return "";
+            }
+            int[] nodes = C_PortMap.questOpens(q);
+            if (nodes == null)
+            {
+                return "";
+            }
+            string s = "";
+            foreach (int n in nodes)
+            {
+                if (C_PortMap.nodeType(n) == 0 && s.IndexOf(C_PortMap.nodeName(n)) < 0)
+                {
+                    s += (s.Length > 0 ? ", " : "") + C_PortMap.nodeName(n);
+                }
+            }
+            return s;
+        }
+
+        static void ItemRow(ref float y, int type, string label)
+        {
+            float h = 22;
+            int lines = TouchUi.Lines(label, 118, 6.5f);
+            if (lines > 1)
+            {
+                h = 30;
+            }
+            TouchUi.Fill(TouchUi.R(14, y, 152, h), TouchUi.PurpleDark);
+            TouchUi.Item(type, TouchUi.R(17, y + (h - 20) / 2f, 20, 20));
+            TouchUi.Label(TouchUi.R(42, y, 120, h), label, 6.5f, TextAnchor.MiddleLeft, Color.white, true, true);
+            y += h + 3;
         }
 
         void DrawLost(float slide)
@@ -255,15 +335,19 @@ namespace Loan12.UnityPort
             // a two-line label makes the row taller
             float vw = TouchUi.PixelWidth(value, 1);
             float lw = 152 - 30 - vw - 12;
-            int lines = Mathf.Max(1, TouchUi.Lines(label, lw));
-            float h = lines > 1 ? 34 : 24;
+            int lines = Mathf.Max(1, TouchUi.Lines(label, lw, 6.5f));
+            float h = lines > 1 ? 30 : 22;
             Rect r = TouchUi.R(14, y, 152, h);
             TouchUi.Fill(r, TouchUi.PurpleDark);
             Texture2D t = TouchUi.Img(icon);
-            TouchUi.Sprite(t, TouchUi.R(16, y + (h - 22) / 2f, 22, 22), new Rect(0, 0, Mathf.Min(22, t.width), Mathf.Min(22, t.height)));
-            TouchUi.Label(TouchUi.R(42, y, lw, h), label, 7, TextAnchor.MiddleLeft, Color.white, false, true);
-            TouchUi.PixelText(value, 1, r.xMax - 6 * k, r.center.y, 2, true);
-            y += h + 4;
+            float ic = Mathf.Min(20, Mathf.Min(t.width, t.height));
+            TouchUi.Sprite(t, TouchUi.R(17 + (20 - ic) / 2f, y + (h - ic) / 2f, ic, ic));
+            TouchUi.Label(TouchUi.R(42, y, lw, h), label, 6.5f, TextAnchor.MiddleLeft, Color.white, false, true);
+            if (value.Length > 0)
+            {
+                TouchUi.PixelText(value, 1, r.xMax - 6 * k, r.center.y, 2, true);
+            }
+            y += h + 3;
         }
 
         static void Total(float y, string icon, string label, string value, Color c)

@@ -19,6 +19,12 @@ public final class PortMap {
     private static int reqKind;
     private static int reqArg;
 
+    /** a message of the game for the touch map to show once (event done, arena level open); then null */
+    public static String note;
+
+    /** main quest of the battle being fought (-1: none, an event, guards or an encounter) */
+    public static int battleQuest = -1;
+
     private PortMap() {
     }
 
@@ -492,6 +498,19 @@ public final class PortMap {
 
     public static int arenaPercent(int i) {
         return dd.B(i);
+    }
+
+    // ---- results ----------------------------------------------------------------------------------
+
+    /** items of a type won in the battle on screen (5 in a row) */
+    public static int battleWon(int type) {
+        bu b = PortUi.battle();
+        return (b == null) || (type < 0) || (type >= b.portWon.length) ? 0 : b.portWon[type];
+    }
+
+    /** the battle on screen was a main quest's and brings a relic box */
+    public static boolean battleRelic() {
+        return (battleQuest >= 0) && (PortUi.battle() != null) && (dd.f(battleQuest) || dd.g(battleQuest));
     }
 
     // ---- shop ---------------------------------------------------------------------------------

@@ -450,4 +450,48 @@ rep('game/bu.java', """    public int portOutcome() {
             return 0; // PORT-UI: not while state 9 lets the board's explosions and attacks finish
         }""")
 
+# ---------------------------------------------------------------------------------------------
+# rewards: the touch interface shows them on its result screens instead of the game's text boxes
+# - "Chúc mừng ... hoàn thành nhiệm vụ / sự kiện": goes straight on ("Đồng ý"); a quest opens its
+#   reward panel (cr, drawn by the touch result view), an event leaves a note for the map to show
+# - "Bạn đã nhận được 1 vật phẩm (hộp bảo vật) ... mở ngay?": the box is kept, no question (opening
+#   it needed an SMS); the battle result shows "+1 hộp bảo vật"
+# - "Bạn đã mở thêm được 1 mức luyện tập": a note on the map
+# - items won in a battle (5 in a row) are counted for its result screen
+rep('com/mic/smsgame/suquan/aa.java', """                if (!((String) localObject).equals("")) {
+                    ae localae2 = cz.a("Chúc mừng", (String) localObject, "Đồng ý", 9, 1);""", """                if (!((String) localObject).equals("") && game.PortScreens.touch) { // PORT-UI
+                    if (dd.m(dd.d)) {
+                        game.PortMap.note = (String) localObject;
+                    }
+                    b(0, 9);
+                } else if (!((String) localObject).equals("")) {
+                    ae localae2 = cz.a("Chúc mừng", (String) localObject, "Đồng ý", 9, 1);""")
+rep('com/mic/smsgame/suquan/aa.java', """            this.an = bg.t();
+            if (this.an >= 0) {""", """            this.an = bg.t();
+            if ((this.an >= 0) && game.PortScreens.touch) { // PORT-UI: kept, shown on the result screen
+                this.an = -1;
+            }
+            if (this.an >= 0) {""")
+rep('com/mic/smsgame/suquan/aa.java', """    private void z() {
+        ae localae""", """    private void z() {
+        if (game.PortScreens.touch) { // PORT-UI: a note on the touch map instead of a dialog
+            game.PortMap.note = "Đã mở thêm 1 mức luyện tập ở Đấu trường. Hãy vào đó thử sức!";
+            return;
+        }
+        ae localae""")
+rep('com/mic/smsgame/suquan/aa.java', """    private void F() {
+        dd.c = this.T;""", """    private void F() {
+        game.PortMap.battleQuest = this.L == 0 ? this.z[this.B].e : -1; // PORT-UI: the quest of this battle
+        dd.c = this.T;""")
+rep('game/bu.java', """            if (i >= 0) {
+                this.s.a[i].b += 1;
+                bg.a(i, 1, 6);
+            }""", """            if (i >= 0) {
+                this.s.a[i].b += 1;
+                bg.a(i, 1, 6);
+                this.portWon[i] += 1; // PORT-UI: shown on the result screen
+            }""")
+rep('game/bu.java', """    private int portEndWait;""", """    private int portEndWait;
+    public int[] portWon = new int[6]; // PORT-UI: items won in this battle (5 in a row), by type""")
+
 print('port_screens: ok')

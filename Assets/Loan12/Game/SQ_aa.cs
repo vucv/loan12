@@ -914,6 +914,12 @@ namespace Loan12
 
         private void z()
         {
+            if (C_PortScreens.f_touch)
+            {
+                // PORT-UI: a note on the touch map instead of a dialog
+                C_PortMap.f_note = "Đã mở thêm 1 mức luyện tập ở Đấu trường. Hãy vào đó thử sức!";
+                return;
+            }
             C_ae localae = C_cz.a("Chúc mừng", "Bạn đã mở thêm được 1 mức luyện tập tại đấu trường. Hãy vào đó thử sức!", "Đồng ý", 5, 1);
             ((C_ar)localae).a(((MG_b)(this)));
             C_cz.d().a(localae, true);
@@ -1292,6 +1298,8 @@ namespace Loan12
 
         private void F()
         {
+            C_PortMap.f_battleQuest = (this.f_L == 0 ? this.f_z[this.f_B].f_e : -1);
+            // PORT-UI: the quest of this battle
             C_dd.f_c = this.f_T;
             if (this.f_P != null)
             {
@@ -1314,6 +1322,11 @@ namespace Loan12
             {
                 this.f_ak = false;
                 this.f_an = C_bg.t();
+                if (((this.f_an >= 0)) && C_PortScreens.f_touch)
+                {
+                    // PORT-UI: kept, shown on the result screen
+                    this.f_an = -1;
+                }
                 if ((this.f_an >= 0))
                 {
                     localObject = "Bạn đã nhận được 1 vật phẩm. Bạn có muốn mở vật phẩm ngay không? (Tham khảo giá tại http://free.ola.vn.)";
@@ -1475,7 +1488,16 @@ namespace Loan12
                             localObject = C_ao.a(((string)(localObject)), "{a}", J2ME.JString.valueOf(j));
                         }
                     }
-                    if (!(((string)(localObject))).equals(""))
+                    if (!(((string)(localObject))).equals("") && C_PortScreens.f_touch)
+                    {
+                        // PORT-UI
+                        if (C_dd.m(C_dd.f_d))
+                        {
+                            C_PortMap.f_note = ((string)(localObject));
+                        }
+                        this.b(0, 9);
+                    }
+                    else if (!(((string)(localObject))).equals(""))
                     {
                         C_ae localae2 = C_cz.a("Chúc mừng", ((string)(localObject)), "Đồng ý", 9, 1);
                         ((C_ar)localae2).a(((MG_b)(this)));

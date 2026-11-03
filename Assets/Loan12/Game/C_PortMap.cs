@@ -26,6 +26,10 @@ namespace Loan12
         // arena: "Rút lui"
         private static int f_reqKind;
         private static int f_reqArg;
+        /** a message of the game for the touch map to show once (event done, arena level open); then null */
+        public static string f_note;
+        /** main quest of the battle being fought (-1: none, an event, guards or an encounter) */
+        public static int f_battleQuest;
         /** the map waits for the player (standing or walking), no dialogue, VS box or popup on it */
         // ---- nodes and roads ----------------------------------------------------------------------
         /** 0 city, 1 point on a road (post, guard station, fork) */
@@ -59,8 +63,16 @@ namespace Loan12
         /** level chosen, -1 when no open level can be paid */
         /** open and its ticket can be paid */
         /** experience a win gives at the hero's level, and its share of a level (%) */
+        // ---- results ----------------------------------------------------------------------------------
+        /** items of a type won in the battle on screen (5 in a row) */
+        /** the battle on screen was a main quest's and brings a relic box */
         // ---- shop ---------------------------------------------------------------------------------
         private static bool f_lastBuyOk;
+
+        static C_PortMap()
+        {
+            C_PortMap.f_battleQuest = -1;
+        }
 
         private C_PortMap()
         {
@@ -629,6 +641,20 @@ namespace Loan12
         public static int arenaPercent(int i)
         {
             return C_dd.B(i);
+        }
+
+        // ---- results ----------------------------------------------------------------------------------
+        /** items of a type won in the battle on screen (5 in a row) */
+        public static int battleWon(int type)
+        {
+            C_bu b = C_PortUi.battle();
+            return ((b == null) || ((type < 0)) || ((type >= b.f_portWon.Length)) ? 0 : b.f_portWon[type]);
+        }
+
+        /** the battle on screen was a main quest's and brings a relic box */
+        public static bool battleRelic()
+        {
+            return ((C_PortMap.f_battleQuest >= 0)) && (C_PortUi.battle() != null) && (C_dd.f(C_PortMap.f_battleQuest) || C_dd.g(C_PortMap.f_battleQuest));
         }
 
         // ---- shop ---------------------------------------------------------------------------------

@@ -63,6 +63,7 @@ namespace Loan12
         //Swap
         // Detroy at here
         //detroy at here
+        // PORT-UI: shown on the result screen
         // /36
         //Start
         //Luot danh 0|1
@@ -99,7 +100,8 @@ namespace Loan12
         public bool f_portForfeit;
         // PORT-UI: the player gave the battle up (pause box "Thoát trận")
         private int f_portEndWait;
-        // PORT-UI: ticks state 9 waited for the board's effects
+        public int[] f_portWon;
+        // PORT-UI: items won in this battle (5 in a row), by type    // PORT-UI: ticks state 9 waited for the board's effects
         public C_ae f_portEndDialog;
         // the result (won) or "mất 1 mạng" (lost) dialog
         public bool f_portEndRetry;
@@ -125,6 +127,7 @@ namespace Loan12
             this.f_L = false;
             this.f_M = new int[] { -1, -1, 0, 1, 1, 1, 0, -1 };
             this.f_N = new int[] { 0, 1, 1, 1, 0, -1, -1, -1 };
+            this.f_portWon = new int[6];
         }
 
         public void a(sbyte[] paramArrayOfByte, int paramInt)
@@ -932,6 +935,8 @@ namespace Loan12
                 {
                     this.f_s.f_a[i].f_b += 1;
                     C_bg.a(i, 1, 6);
+                    this.f_portWon[i] += 1;
+                    // PORT-UI: shown on the result screen
                 }
             }
             return i;
@@ -1623,7 +1628,7 @@ namespace Loan12
         // PORT-UI: state and actions for the Unity touch interface (see PortUi)
         // the "dừng game" dialog of this battle
         // PORT-UI: the player gave the battle up (pause box "Thoát trận")
-        // PORT-UI: ticks state 9 waited for the board's effects
+        // PORT-UI: items won in this battle (5 in a row), by type    // PORT-UI: ticks state 9 waited for the board's effects
         // the result (won) or "mất 1 mạng" (lost) dialog
         // the lost battle can be fought again
         public C_cq portState()

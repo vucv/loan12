@@ -1,8 +1,8 @@
 // Dialogues on the map (quests, events, after a battle) and the arena of Tam Điệp, drawn by Unity
 // instead of the game's 240x320 bubble and box (plan/thiet-ke-giao-dien.md 4, "Hội thoại cốt truyện").
 //
-// Dialogue: the map darkened behind, the speaker's big portrait and name plate, a large text box in the
-// lower half; a tap anywhere goes on to the next line, BỎ QUA (top right) skips the rest. The game keeps
+// Dialogue: the map darkened behind, the speaker's big portrait and name plate over a large text box,
+// the two centred vertically; a tap anywhere goes on to the next line, BỎ QUA (top right) skips the rest. The game keeps
 // the dialogue (suquan.aa state 2) and does what follows it (battle, reward ...).
 //
 // Arena: the 5 levels (ticket in gold, open / locked with its condition / too expensive), the opponent
@@ -84,7 +84,9 @@ namespace Loan12.UnityPort
                 float size = 8f;
                 int lines = Mathf.Max(4, TouchUi.Lines(text, 152, size));
                 float boxH = Mathf.Min(H * 0.5f, lines * TouchUi.LineHeight(size) + 30);
-                float boxY = H - boxH - 8;
+                // portrait + text box as one block, centred vertically
+                float block = (who >= 0 ? 64 : 0) + boxH;
+                float boxY = Mathf.Round((H - block) / 2f) + (who >= 0 ? 64 : 0);
                 float t = Mathf.Clamp01((Time.unscaledTime - shownAt) / 0.15f);
                 if (who >= 0)
                 {

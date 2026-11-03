@@ -129,6 +129,12 @@ namespace Loan12.UnityPort
                 Kit.End();
                 return;
             }
+            // a message of the game (event done, arena level open), once
+            if (C_PortMap.f_note != null)
+            {
+                Kit.Toast(C_PortMap.f_note, 4f);
+                C_PortMap.f_note = null;
+            }
             if (!camReady)
             {
                 CenterOn(C_PortMap.playerX(), C_PortMap.playerY(), true);

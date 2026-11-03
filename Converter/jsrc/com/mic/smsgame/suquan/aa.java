@@ -777,6 +777,10 @@ public class aa
     }
 
     private void z() {
+        if (game.PortScreens.touch) { // PORT-UI: a note on the touch map instead of a dialog
+            game.PortMap.note = "Đã mở thêm 1 mức luyện tập ở Đấu trường. Hãy vào đó thử sức!";
+            return;
+        }
         ae localae = cz.a("Chúc mừng", "Bạn đã mở thêm được 1 mức luyện tập tại đấu trường. Hãy vào đó thử sức!", "Đồng ý", 5, 1);
         localae.a(this);
         cz.d().a(localae, true);
@@ -1073,6 +1077,7 @@ public class aa
     }
 
     private void F() {
+        game.PortMap.battleQuest = this.L == 0 ? this.z[this.B].e : -1; // PORT-UI: the quest of this battle
         dd.c = this.T;
         if (this.P != null) {
             dd.b = dd.e.c;
@@ -1091,6 +1096,9 @@ public class aa
         if (this.ak) {
             this.ak = false;
             this.an = bg.t();
+            if ((this.an >= 0) && game.PortScreens.touch) { // PORT-UI: kept, shown on the result screen
+                this.an = -1;
+            }
             if (this.an >= 0) {
                 localObject = "Bạn đã nhận được 1 vật phẩm. Bạn có muốn mở vật phẩm ngay không? (Tham khảo giá tại http://free.ola.vn.)";
                 if (this.am) {
@@ -1221,7 +1229,12 @@ public class aa
                         localObject = game.ao.a((String) localObject, "{a}", String.valueOf(j));
                     }
                 }
-                if (!((String) localObject).equals("")) {
+                if (!((String) localObject).equals("") && game.PortScreens.touch) { // PORT-UI
+                    if (dd.m(dd.d)) {
+                        game.PortMap.note = (String) localObject;
+                    }
+                    b(0, 9);
+                } else if (!((String) localObject).equals("")) {
                     ae localae2 = cz.a("Chúc mừng", (String) localObject, "Đồng ý", 9, 1);
                     localae2.a(this);
                     cz.d().a(localae2, true);

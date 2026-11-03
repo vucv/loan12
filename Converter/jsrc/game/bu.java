@@ -713,6 +713,7 @@ public class bu
             if (i >= 0) {
                 this.s.a[i].b += 1;
                 bg.a(i, 1, 6);
+                this.portWon[i] += 1; // PORT-UI: shown on the result screen
             }
         }
         return i;
@@ -1265,7 +1266,8 @@ public class bu
     // PORT-UI: state and actions for the Unity touch interface (see PortUi)
     public ae portPauseDialog; // the "dừng game" dialog of this battle
     public boolean portForfeit; // PORT-UI: the player gave the battle up (pause box "Thoát trận")
-    private int portEndWait;    // PORT-UI: ticks state 9 waited for the board's effects
+    private int portEndWait;
+    public int[] portWon = new int[6]; // PORT-UI: items won in this battle (5 in a row), by type    // PORT-UI: ticks state 9 waited for the board's effects
     public ae portEndDialog;   // the result (won) or "mất 1 mạng" (lost) dialog
     public boolean portEndRetry; // the lost battle can be fought again
 
