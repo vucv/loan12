@@ -83,7 +83,7 @@ namespace Loan12.UnityPort
                 string text = C_PortMap.talkNowText();
                 float size = 8f;
                 int lines = Mathf.Max(4, TouchUi.Lines(text, 152, size));
-                float boxH = Mathf.Min(H * 0.5f, lines * TouchUi.LineHeight(size) + 30);
+                float boxH = Mathf.Min(H * 0.5f, lines * TouchUi.LineHeight(size) + 36);
                 // portrait + text box as one block, centred vertically
                 float block = (who >= 0 ? 64 : 0) + boxH;
                 float boxY = Mathf.Round((H - block) / 2f) + (who >= 0 ? 64 : 0);
@@ -103,14 +103,15 @@ namespace Loan12.UnityPort
                 TouchUi.Panel(box);
                 Color old = GUI.color;
                 GUI.color = old * new Color(1, 1, 1, t);
-                TouchUi.Label(TouchUi.R(14, boxY + 8, 152, boxH - 20), text, size, TextAnchor.UpperLeft, Color.white, false, true);
+                TouchUi.Label(TouchUi.R(14, boxY + 8, 152, boxH - 26), text, size, TextAnchor.UpperLeft, Color.white, false, true);
                 GUI.color = old;
-                TouchUi.Label(TouchUi.R(14, boxY + boxH - 14, 146, 10), "Chạm để tiếp tục · " + (index + 1) + "/" + C_PortMap.talkNowCount(),
-                    6, TextAnchor.UpperRight, TouchUi.Hex(0xD8C8DC));
+                // centred under the text: the hint, and the bobbing arrow below it
+                TouchUi.Label(TouchUi.R(14, boxY + boxH - 21, 152, 10), "Chạm để tiếp tục · " + (index + 1) + "/" + C_PortMap.talkNowCount(),
+                    6, TextAnchor.UpperCenter, TouchUi.Hex(0xD8C8DC));
                 float bob = Mathf.Round(Mathf.Sin(Time.unscaledTime * 5) * 1.5f);
                 for (int i = 0; i < 4; i++)
                 {
-                    TouchUi.Fill(TouchUi.R(163 - 3 + i, boxY + boxH - 6 + i + bob, 7 - 2 * i, 1), Kit.Gold);
+                    TouchUi.Fill(TouchUi.R(90 - 3.5f + i, boxY + boxH - 10 + i + bob, 7 - 2 * i, 1), Kit.Gold);
                 }
                 TouchUi.Button(skip, Btn.Dark, Kit.Down(1));
                 TouchUi.PixelText("BỎ QUA", 1, skip.center.x, skip.center.y + (Kit.Down(1) ? k : 0), 1, true);
