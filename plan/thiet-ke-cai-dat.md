@@ -72,7 +72,7 @@ Game **tạm dừng** khi trang mở (không chạy tiếp đường đi, đồn
 
 ### 2.3 Mở trong trận đấu
 
-Nút tạm dừng của trận đấu giữ hộp Tạm dừng riêng như [thiết kế trận đấu](thiet-ke-giao-dien.md#6-trận-đấu-đã-sửa-theo-góp-ý) (tiếp tục, thoát trận). Hộp đó thêm một nút **Cài đặt** mở trang này **chỉ với nhóm Âm thanh**.
+Nút tạm dừng của trận đấu giữ hộp Tạm dừng riêng như [thiết kế trận đấu](thiet-ke-giao-dien.md#10-trận-đấu) (tiếp tục, thoát trận). Hộp đó thêm một nút **Cài đặt** mở trang này **chỉ với nhóm Âm thanh**.
 
 ### 2.4 Luật chơi
 

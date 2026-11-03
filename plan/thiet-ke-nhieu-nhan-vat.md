@@ -195,7 +195,7 @@ Khung trượt từ dưới lên (kiểu hộp thoại chung trong [thiết kế
 
 <img src="ui/nhan-vat/14_tao-nhan-vat-chon-tuong.png" width="300" alt="Tạo nhân vật — chọn tướng">
 
-Dùng lại màn **Nhập tên** và **[Chọn tướng](thiet-ke-giao-dien.md#2-chọn-tướng)** đã có, thêm:
+Dùng lại màn **Nhập tên** và **[Chọn tướng](thiet-ke-giao-dien.md#3-chọn-tướng)** đã có, thêm:
 
 1. Tiêu đề đổi thành **"TẠO NHÂN VẬT"**, bên phải có ô "Ô {n+1}" cho biết đang tạo vào ô nào.
 2. Tướng đã có ở ô khác hiện nhãn **"Ô {x}"** ở góc phải trên chân dung (viền vàng (255,212,0), nền tối). Không mờ đi, vẫn chọn được.

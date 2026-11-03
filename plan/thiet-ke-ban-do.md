@@ -2,7 +2,7 @@
 
 > **Trạng thái:** thiết kế để implement, **chưa code**.
 >
-> - Ảnh nằm trong [`ui/ban-do/`](ui/ban-do/), vẽ bằng hình gốc của game, cùng lưới và màu với [thiết kế giao diện](thiet-ke-giao-dien.md#3-bản-đồ). Tài liệu này thay phần mô tả ngắn ở mục 3 và mục 8 của tài liệu đó.
+> - Ảnh nằm trong [`ui/ban-do/`](ui/ban-do/), vẽ bằng hình gốc của game, cùng lưới và màu với [thiết kế giao diện](thiet-ke-giao-dien.md#5-bản-đồ). Tài liệu tổng chỉ tóm tắt các màn 5–8; chi tiết nằm ở đây.
 > - Ảnh nháp chụp ở **nhiệm vụ chính số 13** ("Cứu viện Đằng Châu"), người chơi đứng ở Đường Lâm. Các con số trên ảnh khớp với dữ liệu game.
 > - Toạ độ ghi theo **điểm ảo** `u` (1 u = 4 px trên ảnh nháp). Mã nguồn nhắc tới là bản Java dịch ngược trên nhánh `ui-touch`.
 > - Mọi dữ liệu ở đây là **của nhân vật đang chơi**, trừ vàng, vật phẩm và mạng là chung (xem [nhiều nhân vật](thiet-ke-nhieu-nhan-vat.md)).
