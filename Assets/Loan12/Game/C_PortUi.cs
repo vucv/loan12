@@ -600,6 +600,8 @@ namespace Loan12
         /** runs the queued action; called by the screen manager at the start of a frame */
         public static void process()
         {
+            C_PortScreens.process();
+            // PORT-UI: menu, slots, map ...
             if (C_PortUi.f_reqKind == 0)
             {
                 return;

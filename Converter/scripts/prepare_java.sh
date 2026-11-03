@@ -37,4 +37,6 @@ python3 -I scripts/fix_manual.py
 
 # 5. port changes (threads -> scheduler, SMS, URLs)
 if [ -f scripts/port_patches.py ]; then python3 -I scripts/port_patches.py; fi
+# 6. touch screens drawn by Unity (bridge classes in port/)
+if [ -f scripts/port_screens.py ]; then python3 -I scripts/port_screens.py; fi
 echo "prepare_java: done"

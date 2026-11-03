@@ -204,7 +204,11 @@ namespace Loan12.UnityPort
             muted = PlayerPrefs.GetInt(SoundPref, 1) == 0;
             haptics = PlayerPrefs.GetInt(HapticsPref, haptics ? 1 : 0) == 1;
             TouchBattleView battle = new TouchBattleView();
-            touchViews = new ITouchView[] {new TouchResultView(battle), new TouchPauseView(battle), new TouchPrepareView(), battle};
+            touchViews = new ITouchView[]
+            {
+                new TouchResultView(battle), new TouchPauseView(battle), new TouchPrepareView(), battle,
+                new TouchBootView(), new TouchMenuView()
+            };
             EnsureCamera();
             EnsureAudioListener();
 
@@ -476,7 +480,7 @@ namespace Loan12.UnityPort
                     e.Use();
                 }
 #endif
-                if (e.type == EventType.KeyDown || e.type == EventType.KeyUp)
+                if ((e.type == EventType.KeyDown || e.type == EventType.KeyUp) && !(view is IOwnsKeys))
                 {
                     HandleCanvasInput(e); // keyboard / Android back still reach the game
                 }
