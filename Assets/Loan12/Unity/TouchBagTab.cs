@@ -79,6 +79,53 @@ namespace Loan12.UnityPort
         /// <summary>Item types of the bag in the order of the plan (no Ngân Lượng: that is gold).</summary>
         public static readonly int[] Items = {0, 1, 3, 4, 5};
 
+        /// <summary>The bag and the shop: the game's items, then Bình Hồi Mạng of the touch port.</summary>
+        public static readonly int[] BagItems = {0, 1, 3, 4, 5, Refill.Type};
+
+        public static string Name(int t)
+        {
+            return t == Refill.Type ? "Bình Hồi Mạng" : C_PortUi.itemName(t);
+        }
+
+        public static string Desc(int t)
+        {
+            return t == Refill.Type
+                ? "Hồi đầy mạng chơi (" + C_PortScreens.maxLives() + " mạng). Dùng ngoài trận, ở túi đồ hoặc khi hết mạng."
+                : C_PortUi.itemDesc(t);
+        }
+
+        public static int Owned(int t)
+        {
+            return t == Refill.Type ? Refill.Count : C_PortUi.owned(t);
+        }
+
+        public static int Price(int t)
+        {
+            return t == Refill.Type ? Refill.Price : C_PortUi.price(t);
+        }
+
+        public static int Pack(int t)
+        {
+            return t == Refill.Type ? 1 : C_PortUi.packSize(t);
+        }
+
+        public static bool Buy(int t, int packs)
+        {
+            return t == Refill.Type ? Refill.Buy(packs) : C_PortMap.buy(t, packs);
+        }
+
+        public static void Icon(int t, Rect r, float dim = 1f)
+        {
+            if (t == Refill.Type)
+            {
+                Refill.Icon(r, dim);
+            }
+            else
+            {
+                TouchUi.Item(t, r, dim);
+            }
+        }
+
         public static string Limit(int t)
         {
             switch (t)
@@ -90,6 +137,8 @@ namespace Loan12.UnityPort
                     return "1 lần mỗi trận";
                 case 4:
                     return "1 lần mỗi lượt";
+                case Refill.Type:
+                    return "Dùng ngoài trận";
                 default:
                     return "Tự dùng khi bắt đầu trận";
             }
@@ -109,6 +158,8 @@ namespace Loan12.UnityPort
                     return "Chặn 3/4 sát thương của lượt địch";
                 case 4:
                     return "Với máu " + b + " của bạn: +" + b / 10 + " máu";
+                case Refill.Type:
+                    return "Mạng chơi: " + C_PortScreens.lives() + "/" + C_PortScreens.maxLives() + " thành " + C_PortScreens.maxLives() + "/" + C_PortScreens.maxLives();
                 default:
                     return "Bạn luôn được đi trước";
             }
@@ -188,14 +239,15 @@ namespace Loan12.UnityPort
             // items
             MapUi.Heading(y, "VẬT PHẨM", "Dùng trong trận");
             y += 12;
-            for (int i = 0; i < 6; i++)
+            int cells = MapUi.BagItems.Length + 1;
+            for (int i = 0; i < cells; i++)
             {
                 Rect r = TouchUi.R(4 + (i % 3) * 58, y + (i / 3) * 50, 54, 46);
                 if (Kit.Tap(20 + i, r))
                 {
-                    if (i < 5)
+                    if (i < MapUi.BagItems.Length)
                     {
-                        detail = MapUi.Items[i];
+                        detail = MapUi.BagItems[i];
                     }
                     else
                     {
@@ -207,28 +259,28 @@ namespace Loan12.UnityPort
                 {
                     continue;
                 }
-                if (i == 5)
+                if (i == MapUi.BagItems.Length)
                 {
-                    TouchUi.Button(r, Btn.Green, Kit.Down(25));
+                    TouchUi.Button(r, Btn.Green, Kit.Down(20 + i));
                     TouchUi.Sprite(TouchUi.Img("/gold"), new Rect(r.center.x - 9 * k, r.y + 5 * k, 18 * k, 18 * k));
                     TouchUi.Label(new Rect(r.x, r.y + 26 * k, r.width, 9 * k), "Cửa hàng", 6, TextAnchor.UpperCenter, Color.white, true);
                     TouchUi.Label(new Rect(r.x, r.y + 35 * k, r.width, 9 * k), "mua thêm", 5.5f, TextAnchor.UpperCenter, Color.white);
                     continue;
                 }
-                int t = MapUi.Items[i], n = C_PortUi.owned(t);
+                int t = MapUi.BagItems[i], n = MapUi.Owned(t);
                 Kit.Box(r, Kit.Down(20 + i) ? TouchUi.Hex(0x5A2A58) : TouchUi.Hex(0x3A1838));
-                TouchUi.Item(t, new Rect(r.center.x - 12 * k, r.y + 3 * k, 24 * k, 24 * k), n > 0 ? 1f : 0.35f);
+                MapUi.Icon(t, new Rect(r.center.x - 12 * k, r.y + 3 * k, 24 * k, 24 * k), n > 0 ? 1f : 0.35f);
                 Rect tag = new Rect(r.xMax - 17 * k, r.y + 2 * k, 15 * k, 9 * k);
                 TouchUi.Fill(tag, n > 0 ? TouchUi.Hex(0x1A0C16) : TouchUi.Hex(0xA3201B));
                 TouchUi.Label(tag, "x" + n, 5.5f, TextAnchor.MiddleCenter, Color.white, true, false, false);
-                TouchUi.Label(new Rect(r.x, r.y + 28 * k, r.width, 9 * k), C_PortUi.itemName(t), 5.5f, TextAnchor.UpperCenter, Kit.Cream, true);
-                string note = n == 0 ? "Hết · chạm để mua" : (t == 5 ? "tự dùng đầu trận" : "");
+                TouchUi.Label(new Rect(r.x, r.y + 28 * k, r.width, 9 * k), MapUi.Name(t), 5.5f, TextAnchor.UpperCenter, Kit.Cream, true);
+                string note = n == 0 ? "Hết · chạm để mua" : (t == 5 ? "tự dùng đầu trận" : (t == Refill.Type ? "hồi đầy mạng" : ""));
                 if (note.Length > 0)
                 {
                     TouchUi.Label(new Rect(r.x, r.y + 37 * k, r.width, 9 * k), note, 5, TextAnchor.UpperCenter, n == 0 ? Kit.Red : Kit.Muted);
                 }
             }
-            y += 100 + 8;
+            y += ((cells + 2) / 3) * 50 + 8;
 
             // relics of this character
             int owned = 0;
@@ -292,25 +344,32 @@ namespace Loan12.UnityPort
 
         void ItemBox(TouchMapView map, float top, float bottom)
         {
-            float k = TouchUi.K;
             int t = detail;
-            string desc = C_PortUi.itemDesc(t);
+            bool refill = t == Refill.Type;
+            string desc = MapUi.Desc(t);
             int lines = TouchUi.Lines(desc, 146);
-            float h = 70 + lines * UiFont.LineHeight + 50;
+            float h = 70 + lines * UiFont.LineHeight + (refill ? 76 : 50);
             bool close;
             Rect r = MapUi.Box(top, bottom, h, out close, 40);
             float y = TouchUi.V(r.position).y;
-            int price = C_PortUi.price(t), pack = C_PortUi.packSize(t), gold = C_PortScreens.gold();
+            int price = MapUi.Price(t), pack = MapUi.Pack(t), gold = C_PortScreens.gold();
             bool enough = price > 0 && gold >= price;
+            Rect use = TouchUi.R(17, y + h - 78, 146, 22);
             Rect buy = TouchUi.R(17, y + h - 52, 146, 22), shut = TouchUi.R(60, y + h - 26, 60, 18);
+            bool canUse = refill && Refill.Count > 0 && Refill.Needed;
+            if (refill && Kit.Tap(43, use) && canUse)
+            {
+                Refill.Use();
+                Kit.Toast("Đã hồi đầy " + C_PortScreens.maxLives() + " mạng");
+            }
             if (Kit.Tap(41, buy))
             {
                 if (enough)
                 {
-                    if (C_PortMap.buy(t, 1))
+                    if (MapUi.Buy(t, 1))
                     {
                         Haptics.Tap(Kit.Haptic);
-                        Kit.Toast("Đã mua " + pack + " " + C_PortUi.itemName(t) + " (-" + TouchUi.Money(price) + " vàng)");
+                        Kit.Toast("Đã mua " + pack + " " + MapUi.Name(t) + " (-" + TouchUi.Money(price) + " vàng)");
                     }
                 }
                 else
@@ -332,12 +391,17 @@ namespace Loan12.UnityPort
             }
             if (Kit.Paint)
             {
-                TouchUi.Item(t, TouchUi.R(17, y + 10, 40, 40));
-                TouchUi.Label(TouchUi.R(62, y + 12, 94, 10), C_PortUi.itemName(t), 7, TextAnchor.UpperLeft, Color.white, true);
-                TouchUi.Label(TouchUi.R(62, y + 24, 94, 9), "Đang có: " + C_PortUi.owned(t), 6.25f, TextAnchor.UpperLeft, Kit.Gold, true);
+                MapUi.Icon(t, TouchUi.R(17, y + 10, 40, 40));
+                TouchUi.Label(TouchUi.R(62, y + 12, 94, 10), MapUi.Name(t), 7, TextAnchor.UpperLeft, Color.white, true);
+                TouchUi.Label(TouchUi.R(62, y + 24, 94, 9), "Đang có: " + MapUi.Owned(t), 6.25f, TextAnchor.UpperLeft, Kit.Gold, true);
                 TouchUi.Label(TouchUi.R(62, y + 34, 94, 9), MapUi.Limit(t), 5.75f, TextAnchor.UpperLeft, Kit.Muted);
                 TouchUi.Label(TouchUi.R(17, y + 56, 146, lines * UiFont.LineHeight), desc, 6, TextAnchor.UpperLeft, Kit.Cream, false, true);
                 TouchUi.Label(TouchUi.R(17, y + 58 + lines * UiFont.LineHeight, 146, 9), MapUi.ForHero(t), 6, TextAnchor.UpperLeft, Kit.Green, true);
+                if (refill)
+                {
+                    string ut = Refill.Count <= 0 ? "Chưa có Bình Hồi Mạng" : (!Refill.Needed ? "Mạng đang đầy" : "DÙNG · hồi đầy mạng");
+                    Kit.FlatButton(use, ut, Btn.Red, Kit.Down(43), canUse);
+                }
                 if (enough)
                 {
                     Kit.FlatButton(buy, "MUA THÊM " + pack + " · " + TouchUi.Money(price) + " vàng", Btn.Gold, Kit.Down(41));

@@ -161,7 +161,7 @@ namespace Loan12.UnityPort
             int bar = Kit.TopBar(4);
             if (bar == 1)
             {
-                Kit.Toast("Mạng chơi: " + C_PortScreens.lives() + "/" + C_PortScreens.maxLives() + " · mất 1 mạng khi thua trận");
+                TouchLivesView.Requested = true; // lives: watch an ad / Bình Hồi Mạng
             }
             else if (bar == 2)
             {
