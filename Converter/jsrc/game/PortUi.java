@@ -66,7 +66,7 @@ public final class PortUi {
      */
     public static boolean battleView() {
         bu b = battle();
-        if ((b == null) || (b.portState() == null) || b.portTraining()) {
+        if ((b == null) || (b.portState() == null)) { // PORT-UI: the tutorial battle too
             return false;
         }
         ae d = dialog();

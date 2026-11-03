@@ -1262,6 +1262,26 @@ public class bu
         return this.s.d;
     }
 
+    /** PORT-UI: the coach's message of the tutorial, or null */
+    public String portCoach() {
+        return (this.s.d) && (this.t.g != null) ? this.t.g.portText() : null;
+    }
+
+    public int portCoachGem() {
+        return (this.s.d) && (this.t.g != null) ? this.t.g.portGem() : -1;
+    }
+
+    /** PORT-UI: the tutorial waits for a tap to go on (any key did that) */
+    public boolean portCoachWaits() {
+        return this.v == 14;
+    }
+
+    public void portCoachNext() {
+        if (this.v == 14) {
+            this.t.g.f();
+        }
+    }
+
     /** soft keys of the battle bar: left (skills) and right (pause); the centre ("bag") is the # key */
     // PORT-UI: state and actions for the Unity touch interface (see PortUi)
     public ae portPauseDialog; // the "dừng game" dialog of this battle

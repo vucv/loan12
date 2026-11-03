@@ -1634,7 +1634,12 @@ namespace Loan12
                     this.f(0);
                     break;
                 case 2:
-                    if (!C_bg.l())
+                    if (!C_bg.l() && C_PortScreens.f_touch)
+                    {
+                        // PORT-UI
+                        C_PortMap.f_noLives = true;
+                    }
+                    else if (!C_bg.l())
                     {
                         localae1 = C_cz.a("Chú ý", "Bạn đã hết mạng chơi. Bạn có muốn mua thêm mạng chơi không?. Tham khảo giá tại http://free.ola.vn.", "Có", 12, "Không", 14, 1);
                         ((C_ar)localae1).a(((MG_b)(this)));

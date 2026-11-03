@@ -1347,7 +1347,9 @@ public class aa
                 f(0);
                 break;
             case 2:
-                if (!bg.l()) {
+                if (!bg.l() && game.PortScreens.touch) { // PORT-UI
+                    game.PortMap.noLives = true;
+                } else if (!bg.l()) {
                     localae1 = cz.a("Chú ý", "Bạn đã hết mạng chơi. Bạn có muốn mua thêm mạng chơi không?. Tham khảo giá tại http://free.ola.vn.", "Có", 12, "Không", 14, 1);
                     localae1.a(this);
                     cz.d().a(localae1, true);

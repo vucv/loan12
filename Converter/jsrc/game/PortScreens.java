@@ -20,6 +20,7 @@ public final class PortScreens {
     public static final int HERO_BACK = 5;     // hero screen: "Trở về"
     public static final int EXIT = 6;          // quit the game
     public static final int SKIP = 7;          // story screen: "Bỏ qua"
+    public static final int COACH_NEXT = 9;    // tutorial battle: go on after the coach's message
     public static final int FORFEIT = 8;       // battle pause: close the pause and give the battle up (a defeat)
 
     public static final int MAX_SLOTS = 3;
@@ -90,6 +91,35 @@ public final class PortScreens {
 
     public static int maxLives() {
         return cx.J;
+    }
+
+    /** lives up to the maximum (the refill item) */
+    public static void refillLives() {
+        int n = cx.J - bg.m();
+        if (n > 0) {
+            bg.c(n);
+        }
+    }
+
+    // tutorial battle
+    public static boolean training() {
+        bu b = PortUi.battle();
+        return (b != null) && b.portTraining();
+    }
+
+    public static String coach() {
+        bu b = PortUi.battle();
+        return b == null ? null : b.portCoach();
+    }
+
+    public static int coachGem() {
+        bu b = PortUi.battle();
+        return b == null ? -1 : b.portCoachGem();
+    }
+
+    public static boolean coachWaits() {
+        bu b = PortUi.battle();
+        return (b != null) && b.portCoachWaits();
     }
 
     public static int gold() {
@@ -418,6 +448,13 @@ public final class PortScreens {
                 if ((b != null) && (PortUi.pauseKind() == 1)) {
                     b.b(0, -2); // the pause's "Không": back to the battle
                     b.portForfeit = true;
+                }
+                break;
+            }
+            case COACH_NEXT: {
+                bu b = PortUi.battle();
+                if (b != null) {
+                    b.portCoachNext();
                 }
                 break;
             }

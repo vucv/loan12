@@ -147,10 +147,37 @@ namespace Loan12
             }
         }
 
+        /** PORT-UI: the message shown (without its gem marker), or null */
+        public string portText()
+        {
+            if (!this.f_u || ((this.f_l < 0)) || ((this.f_l >= this.f_a.Length)) || ((this.f_g >= this.f_a[this.f_l].Length)))
+            {
+                return null;
+            }
+            string str = this.f_a[this.f_l][this.f_g];
+            if (str.endsWith("*#"))
+            {
+                str = str.substring(0, str.length() - 3);
+            }
+            return str;
+        }
+
+        /** PORT-UI: gem drawn after the message (index into bs.d), -1 none */
+        public int portGem()
+        {
+            if (!this.f_u || ((this.f_l < 0)) || ((this.f_l >= this.f_a.Length)) || ((this.f_g >= this.f_a[this.f_l].Length)))
+            {
+                return -1;
+            }
+            string str = this.f_a[this.f_l][this.f_g];
+            return (str.endsWith("*#") ? J2ME.Integer.parseInt(str.substring(str.length() - 3, str.length() - 2)) : -1);
+        }
+
         public override void a(Graphics paramGraphics, int paramInt1, int paramInt2)
         {
-            if (!this.f_u)
+            if (!this.f_u || C_PortScreens.f_touch)
             {
+                // PORT-UI: drawn by the touch view
                 return;
             }
             int n = this.f_q - this.f_s;

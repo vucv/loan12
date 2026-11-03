@@ -25,7 +25,7 @@ public class l
 
     public void a() {
         this.d += 1;
-        if (this.d == 30) {
+        if ((this.d == 30) || ((this.d == 2) && game.PortScreens.touch)) { // PORT-UI: no wait
             cz.a().f = cz.a().d(ay.a(cz.a().j()));
             cz.d().a(new ac(), true);
         }

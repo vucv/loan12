@@ -22,6 +22,9 @@ public final class PortMap {
     /** a message of the game for the touch map to show once (event done, arena level open); then null */
     public static String note;
 
+    /** "Đánh" was pressed without lives: the touch interface offers more (ad, refill item) */
+    public static boolean noLives;
+
     /** main quest of the battle being fought (-1: none, an event, guards or an encounter) */
     public static int battleQuest = -1;
 

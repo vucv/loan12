@@ -21,6 +21,8 @@ namespace Loan12
         // quit the game
         public const int f_SKIP = 7;
         // story screen: "Bỏ qua"
+        public const int f_COACH_NEXT = 9;
+        // tutorial battle: go on after the coach's message
         public const int f_FORFEIT = 8;
         // battle pause: close the pause and give the battle up (a defeat)
         public const int f_MAX_SLOTS = 3;
@@ -102,6 +104,41 @@ namespace Loan12
         public static int maxLives()
         {
             return C_cx.f_J;
+        }
+
+        /** lives up to the maximum (the refill item) */
+        public static void refillLives()
+        {
+            int n = C_cx.f_J - C_bg.m();
+            if ((n > 0))
+            {
+                C_bg.c(n);
+            }
+        }
+
+        // tutorial battle
+        public static bool training()
+        {
+            C_bu b = C_PortUi.battle();
+            return (b != null) && b.portTraining();
+        }
+
+        public static string coach()
+        {
+            C_bu b = C_PortUi.battle();
+            return (b == null ? ((string)null) : b.portCoach());
+        }
+
+        public static int coachGem()
+        {
+            C_bu b = C_PortUi.battle();
+            return (b == null ? -1 : b.portCoachGem());
+        }
+
+        public static bool coachWaits()
+        {
+            C_bu b = C_PortUi.battle();
+            return (b != null) && b.portCoachWaits();
         }
 
         public static int gold()
@@ -504,6 +541,15 @@ namespace Loan12
                             b.b(0, -2);
                             // the pause's "Không": back to the battle
                             b.f_portForfeit = true;
+                        }
+                        break;
+                    }
+                case 9:
+                    {
+                        C_bu b_1 = C_PortUi.battle();
+                        if (b_1 != null)
+                        {
+                            b_1.portCoachNext();
                         }
                         break;
                     }

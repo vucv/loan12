@@ -93,6 +93,8 @@ namespace Loan12
         //Match
         //After check, call swap
         // PORT-TOUCH: drags / releases go to the human player while the board waits for input
+        /** PORT-UI: the coach's message of the tutorial, or null */
+        /** PORT-UI: the tutorial waits for a tap to go on (any key did that) */
         /** soft keys of the battle bar: left (skills) and right (pause); the centre ("bag") is the # key */
         // PORT-UI: state and actions for the Unity touch interface (see PortUi)
         public C_ae f_portPauseDialog;
@@ -1622,6 +1624,31 @@ namespace Loan12
         public bool portTraining()
         {
             return this.f_s.f_d;
+        }
+
+        /** PORT-UI: the coach's message of the tutorial, or null */
+        public string portCoach()
+        {
+            return ((this.f_s.f_d) && (this.f_t.f_g != null) ? this.f_t.f_g.portText() : ((string)null));
+        }
+
+        public int portCoachGem()
+        {
+            return ((this.f_s.f_d) && (this.f_t.f_g != null) ? this.f_t.f_g.portGem() : -1);
+        }
+
+        /** PORT-UI: the tutorial waits for a tap to go on (any key did that) */
+        public bool portCoachWaits()
+        {
+            return this.f_v == 14;
+        }
+
+        public void portCoachNext()
+        {
+            if (this.f_v == 14)
+            {
+                this.f_t.f_g.f();
+            }
         }
 
         /** soft keys of the battle bar: left (skills) and right (pause); the centre ("bag") is the # key */
