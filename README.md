@@ -2,7 +2,8 @@
 
 | File | Nhánh | Commit | Nội dung |
 |---|---|---|---|
-| `android/Loan12-ui-touch-739e551.apk` | `ui-touch` | `739e551` | Màn hoàn thành nhiệm vụ mới, bỏ hộp nhận vật phẩm, hội thoại canh giữa (mới nhất) |
+| `android/Loan12-ui-touch-77f87f7.apk` | `ui-touch` | `77f87f7` | Menu mới, bỏ logo, trận hướng dẫn mới, hết mạng xem QC, Bình Hồi Mạng, dấu chấm than (mới nhất) |
+| `android/Loan12-ui-touch-739e551.apk` | `ui-touch` | `739e551` | Màn hoàn thành nhiệm vụ mới, bỏ hộp nhận vật phẩm, hội thoại canh giữa |
 | `android/Loan12-ui-touch-e1f7fce.apk` | `ui-touch` | `e1f7fce` | Chờ bàn cờ nổ hết mới kết thúc trận; bỏ nút Lưu và thoát |
 | `android/Loan12-ui-touch-b469b90.apk` | `ui-touch` | `b469b90` | Hội thoại trên bản đồ và Đấu trường giao diện mới |
 | `android/Loan12-ui-touch-e6f0393.apk` | `ui-touch` | `e6f0393` | Chạm địa điểm là đi luôn; sửa chạm thanh điều hướng khi cuộn |
