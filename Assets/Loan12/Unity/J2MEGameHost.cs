@@ -74,7 +74,7 @@ namespace Loan12.UnityPort
         ITouchView touchShown;
 
         // sound and vibration switches of the touch interface (kept between sessions)
-        const string SoundPref = "Loan12.Sound", HapticsPref = "Loan12.Haptics";
+        const string SoundPref = "Loan12.Sound", HapticsPref = "Loan12.Haptics", VolumePref = "Loan12.Volume";
         bool muted;
 
         public bool SoundOn
@@ -95,6 +95,18 @@ namespace Loan12.UnityPort
             {
                 haptics = value;
                 PlayerPrefs.SetInt(HapticsPref, value ? 1 : 0);
+                PlayerPrefs.Save();
+            }
+        }
+
+        /// <summary>Master volume 0..100 of the settings screen (kept between sessions).</summary>
+        public int Volume
+        {
+            get { return Mathf.RoundToInt(volume * 100f); }
+            set
+            {
+                volume = Mathf.Clamp01(value / 100f);
+                PlayerPrefs.SetInt(VolumePref, Mathf.RoundToInt(volume * 100f));
                 PlayerPrefs.Save();
             }
         }
@@ -203,6 +215,7 @@ namespace Loan12.UnityPort
             keypadHidden = PlayerPrefs.GetInt(KeypadHiddenPref, 0) == 1;
             muted = PlayerPrefs.GetInt(SoundPref, 1) == 0;
             haptics = PlayerPrefs.GetInt(HapticsPref, haptics ? 1 : 0) == 1;
+            volume = Mathf.Clamp01(PlayerPrefs.GetInt(VolumePref, 80) / 100f);
             TouchBattleView battle = new TouchBattleView();
             touchViews = new ITouchView[]
             {
@@ -233,10 +246,22 @@ namespace Loan12.UnityPort
                                  "in static fields, so enable 'Reload Domain' (Project Settings > Editor > Enter Play Mode Options).");
             }
             startedBefore = true;
+            string tour = CommandLineValue("-loan12-tour");
+            if (tour != null)
+            {
+                // developer aid: a fresh install, then a tour of the touch screens with screenshots
+                UnityBackend.DeleteAllSavedStores();
+                PlayerPrefs.DeleteAll();
+                muted = true;
+            }
             J2ME.Host.init(backend, LcdWidth, LcdHeight);
             J2ME.Host.start(new SQMidlet());
             running = true;
 
+            if (tour != null)
+            {
+                StartCoroutine(TouchTour.Run(tour));
+            }
             string shots = CommandLineValue("-loan12-shots");
             if (shots != null)
             {
