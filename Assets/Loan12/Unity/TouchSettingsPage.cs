@@ -78,7 +78,7 @@ namespace Loan12.UnityPort
             Kit.Clip(new Rect(0, area.y, Screen.width, area.height));
             // 1. sound
             y = GroupTitle("ÂM THANH", y);
-            int rows = 3;
+            int rows = 4;
             Rect g = TouchUi.R(6, y, 168, rows * Row + 2);
             if (Kit.Paint)
             {
@@ -125,6 +125,17 @@ namespace Loan12.UnityPort
             {
                 Kit.Switch(TouchUi.R(146, y + 5, 22, 11), vibrate);
             }
+            y += Row;
+            if (Kit.Paint)
+            {
+                Divider(y);
+            }
+            // language of the interface: each tap the next one (Tiếng Việt, English, 日本語, 한국어)
+            if (RowTap(104, y, "Ngôn ngữ", "Language", true))
+            {
+                Loc.Current = (Lang) (((int) Loc.Current + 1) % Loc.Names.Length);
+            }
+            RightText(y, Loc.Names[(int) Loc.Current]);
             y += Row + 2 + 6;
 
             if (where != Where.Battle)
@@ -425,7 +436,7 @@ namespace Loan12.UnityPort
         static readonly string[] Moves =
         {
             "Xếp ít nhất 3 biểu tượng cùng loại, ngang hoặc dọc.",
-            "Xếp 4 được thêm 1 lượt, xếp 5 được thêm 1 vật phẩm.",
+            "Xếp 4 được thêm 1 lượt và có thể rơi vật phẩm; xếp 5 luôn rơi 1 vật phẩm.",
             "Xếp sai mất lượt và mất máu.",
         };
 

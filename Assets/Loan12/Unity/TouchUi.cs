@@ -354,7 +354,21 @@ namespace Loan12.UnityPort
         /// <summary>Width of a text in the game's bitmap font, in grid pixels.</summary>
         public static float PixelWidth(string s, int font)
         {
+            s = Loc.T(s);
+            if (Loc.NeedsSystemFont(s))
+            {
+                return TextWidth(s, PixelSize, true, false);
+            }
             return string.IsNullOrEmpty(s) ? 0 : Text(s, font).width - 3;
+        }
+
+        // the system font in place of the bitmap font (Japanese, Korean): about the same capital height
+        const float PixelSize = 10.5f;
+
+        /// <summary>Texts and their translations change with the language: drop the drawn texts.</summary>
+        public static void ClearTextCache()
+        {
+            texts.Clear();
         }
 
         /// <summary>
@@ -365,6 +379,15 @@ namespace Loan12.UnityPort
         {
             if (string.IsNullOrEmpty(s))
             {
+                return;
+            }
+            s = Loc.T(s);
+            if (Loc.NeedsSystemFont(s))
+            {
+                float tw = TextWidth(s, PixelSize, true, false) * K, th = LineHeight(PixelSize) * K;
+                float lx = anchor == 1 ? x - tw / 2f : (anchor == 2 ? x - tw : x);
+                float ty = centreY ? y - th / 2f : y + CapTop * K - th * 0.12f;
+                Label(new Rect(lx, ty, tw + 2 * K, th), s, PixelSize, TextAnchor.MiddleLeft, font == 1 ? Hex(0xFFD84A) : Color.white, true, false, true, false);
                 return;
             }
             Texture2D t = Text(s, font);
@@ -391,6 +414,16 @@ namespace Loan12.UnityPort
             {
                 interMedium = Resources.Load<Font>("Loan12Fonts/Inter-Medium");
                 interBold = Resources.Load<Font>("Loan12Fonts/Inter-Bold");
+                // Japanese / Korean letters: from the phone's fonts (Unity also has its own fallback list)
+                string[] cjk = {"Inter", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans JP", "Noto Sans KR", "Droid Sans Fallback", "Hiragino Sans", "Apple SD Gothic Neo"};
+                if (interMedium != null)
+                {
+                    interMedium.fontNames = cjk;
+                }
+                if (interBold != null)
+                {
+                    interBold.fontNames = cjk;
+                }
                 hd = new GUIStyle();
                 hd.richText = false;
                 hd.clipping = TextClipping.Overflow;
@@ -418,9 +451,18 @@ namespace Loan12.UnityPort
         /// </summary>
         public static void Label(Rect r, string s, float size, TextAnchor anchor, Color color, bool strong = false, bool wrap = false, bool outline = true)
         {
+            Label(r, s, size, anchor, color, strong, wrap, outline, true);
+        }
+
+        static void Label(Rect r, string s, float size, TextAnchor anchor, Color color, bool strong, bool wrap, bool outline, bool translate)
+        {
             if (string.IsNullOrEmpty(s) || Event.current == null || Event.current.type != EventType.Repaint)
             {
                 return;
+            }
+            if (translate)
+            {
+                s = Loc.T(s);
             }
             GUIStyle st = Hd(size, strong, anchor, wrap);
             Rect dst = new Rect(r.x, Mathf.Round(r.y), r.width, r.height);
@@ -445,7 +487,7 @@ namespace Loan12.UnityPort
                 return 0;
             }
             GUIStyle st = Hd(size, false, TextAnchor.UpperLeft, true);
-            hdText.text = s;
+            hdText.text = Loc.T(s);
             float h = st.CalcHeight(hdText, width * K);
             return Mathf.Max(1, Mathf.RoundToInt(h / (st.fontSize * LineRatio)));
         }
@@ -453,12 +495,17 @@ namespace Loan12.UnityPort
         /// <summary>Width of a one-line text in grid pixels (default size, bold: tags and buttons).</summary>
         public static float TextWidth(string s, float size = 6f, bool strong = true)
         {
+            return TextWidth(s, size, strong, true);
+        }
+
+        static float TextWidth(string s, float size, bool strong, bool translate)
+        {
             if (string.IsNullOrEmpty(s))
             {
                 return 0;
             }
             GUIStyle st = Hd(size, strong, TextAnchor.UpperLeft, false);
-            hdText.text = s;
+            hdText.text = translate ? Loc.T(s) : s;
             return st.CalcSize(hdText).x / K;
         }
 
