@@ -23,6 +23,9 @@ public final class PortScreens {
 
     public static final int MAX_SLOTS = 3;
 
+    /** the Unity touch interface draws the screens (set by the host; the test harness leaves it off) */
+    public static boolean touch;
+
     /** character slot whose record stores bg.b / bg.c are */
     public static int slot;
     private static int reqKind;
@@ -360,6 +363,7 @@ public final class PortScreens {
 
     /** runs the queued action; called by PortUi.process at the start of a frame */
     static void process() {
+        PortMap.process();
         if (reqKind == 0) {
             return;
         }

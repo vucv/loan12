@@ -75,6 +75,8 @@ namespace Loan12
         private int[] f_portPath;
         private int f_portPathLen;
         private int f_portPathPos;
+        private int f_portGoal;
+        private bool f_portRetarget;
 
         static SQ_aa()
         {
@@ -88,6 +90,7 @@ namespace Loan12
             this.f_B = 0;
             this.f_ah = true;
             this.f_portPath = new int[64];
+            this.f_portGoal = -1;
         }
 
         public SQ_aa()
@@ -571,8 +574,181 @@ namespace Loan12
             this.portWalk();
         }
 
+        // PORT-UI: state and actions for the Unity map view (see game.PortMap)
+        public int portState()
+        {
+            return this.f_f;
+        }
+
+        public bool portNodeOpen(int n)
+        {
+            return ((n >= 0)) && ((n < this.f_z.Length)) && this.f_z[n].f_d;
+        }
+
+        public bool portRoadOpen(int r)
+        {
+            return ((r >= 0)) && ((r < this.f_A.Length)) && this.f_A[r].f_c;
+        }
+
+        public int portNodeQuest(int n)
+        {
+            return this.f_z[n].f_e;
+        }
+
+        public int portNodeEvent(int n)
+        {
+            return this.f_z[n].f_f;
+        }
+
+        public int portGuard(int n)
+        {
+            return this.f_S[n];
+        }
+
+        public int portQuest()
+        {
+            return this.f_T;
+        }
+
+        public bool portArena(int i)
+        {
+            return ((i >= 0)) && ((i < this.f_aq.Length)) && this.f_aq[i];
+        }
+
+        public int portNode()
+        {
+            return this.f_B;
+        }
+
+        public int portX()
+        {
+            return this.f_F;
+        }
+
+        public int portY()
+        {
+            return this.f_G;
+        }
+
+        public bool portWalking()
+        {
+            return (this.f_f == 1) || ((this.f_portPathPos < this.f_portPathLen)) || this.f_portRetarget;
+        }
+
+        public int portTarget()
+        {
+            return (this.portWalking() ? this.f_portGoal : -1);
+        }
+
+        /** stops at the end of the road being walked */
+        public void portStop()
+        {
+            this.f_portPathLen = 0;
+            this.f_portRetarget = false;
+        }
+
+        /** "BẮT ĐẦU": what the game does when the hero arrives at the node he stands on */
+        public void portArrive()
+        {
+            if (this.f_f == 0)
+            {
+                this.f(0);
+            }
+        }
+
+        /** walks to node n along the shortest open way (from the end of the road being walked) */
+        public void portGo(int n)
+        {
+            if (((n < 0)) || ((n >= this.f_z.Length)))
+            {
+                return;
+            }
+            this.f_portGoal = n;
+            if (this.f_f == 0)
+            {
+                this.f_portRetarget = false;
+                this.a(this.f_g + this.f_z[n].f_b, this.f_a_ + this.f_z[n].f_c);
+            }
+            else
+            {
+                this.f_portPathLen = 0;
+                this.f_portRetarget = true;
+            }
+        }
+
+        /** roads of the shortest open way from the hero's node to n (-1: none); its nodes into out */
+        public int portRoute(int n, int[] out_1)
+        {
+            int i1 = this.f_z.Length;
+            if (((n < 0)) || ((n >= i1)))
+            {
+                return -1;
+            }
+            int[] prev = new int[i1];
+            int[] queue = new int[i1];
+            for (int k = 0; (k < i1); k++)
+            {
+                prev[k] = -2;
+            }
+            int head = 0;
+            int tail = 0;
+            queue[tail++] = this.f_B;
+            prev[this.f_B] = -1;
+            while (((head < tail)) && (prev[n] == -2))
+            {
+                int at = queue[head++];
+                for (int d = 0; (d < 4); d++)
+                {
+                    int r = C_bq.f_c[at][d];
+                    if (((r >= 0)) && ((r < this.f_A.Length)) && this.f_A[r].f_c)
+                    {
+                        int to = (this.f_A[r].f_a == at ? this.f_A[r].f_b : this.f_A[r].f_a);
+                        if (((to >= 0)) && ((to < i1)) && (prev[to] == -2))
+                        {
+                            prev[to] = at;
+                            queue[tail++] = to;
+                        }
+                    }
+                }
+            }
+            if (prev[n] == -2)
+            {
+                return -1;
+            }
+            int len = 0;
+            for (int k_1 = n; prev[k_1] != -1; k_1 = prev[k_1])
+            {
+                len++;
+            }
+            if (out_1 != null)
+            {
+                int at_1 = len;
+                for (int k_2 = n; (at_1 >= 0); k_2 = prev[k_2])
+                {
+                    if ((at_1 < out_1.Length))
+                    {
+                        out_1[at_1] = k_2;
+                    }
+                    at_1--;
+                    if (prev[k_2] == -1)
+                    {
+                        break;
+                    }
+                }
+            }
+            return len;
+        }
+
         private void portWalk()
         {
+            if (this.f_portRetarget && (this.f_f == 0) && (C_cz.d().f_e.f_d == null))
+            {
+                this.f_portRetarget = false;
+                if ((this.f_portGoal >= 0))
+                {
+                    this.a(this.f_g + this.f_z[this.f_portGoal].f_b, this.f_a_ + this.f_z[this.f_portGoal].f_c);
+                }
+            }
             if ((this.f_portPathPos >= this.f_portPathLen))
             {
                 return;
@@ -1145,7 +1321,11 @@ namespace Loan12
                     if (SQ_aa.f_e)
                     {
                         SQ_aa.f_e = false;
-                        this.G();
+                        if (!C_PortScreens.f_touch)
+                        {
+                            // PORT-UI: the touch map has its own tutorial
+                            this.G();
+                        }
                     }
                     if ((this.f_ag > 0))
                     {

@@ -22,6 +22,8 @@ namespace Loan12
         public const int f_SKIP = 7;
         // story screen: "Bỏ qua"
         public const int f_MAX_SLOTS = 3;
+        /** the Unity touch interface draws the screens (set by the host; the test harness leaves it off) */
+        public static bool f_touch;
         /** character slot whose record stores bg.b / bg.c are */
         public static int f_slot;
         private static int f_reqKind;
@@ -429,6 +431,7 @@ namespace Loan12
         /** runs the queued action; called by PortUi.process at the start of a frame */
         public static void process()
         {
+            C_PortMap.process();
             if (C_PortScreens.f_reqKind == 0)
             {
                 return;

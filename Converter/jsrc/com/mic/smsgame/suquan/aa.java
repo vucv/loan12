@@ -505,7 +505,147 @@ public class aa
         portWalk();
     }
 
+    private int portGoal = -1;
+    private boolean portRetarget;
+
+    // PORT-UI: state and actions for the Unity map view (see game.PortMap)
+    public int portState() {
+        return this.f;
+    }
+
+    public boolean portNodeOpen(int n) {
+        return (n >= 0) && (n < this.z.length) && this.z[n].d;
+    }
+
+    public boolean portRoadOpen(int r) {
+        return (r >= 0) && (r < this.A.length) && this.A[r].c;
+    }
+
+    public int portNodeQuest(int n) {
+        return this.z[n].e;
+    }
+
+    public int portNodeEvent(int n) {
+        return this.z[n].f;
+    }
+
+    public int portGuard(int n) {
+        return this.S[n];
+    }
+
+    public int portQuest() {
+        return this.T;
+    }
+
+    public boolean portArena(int i) {
+        return (i >= 0) && (i < this.aq.length) && this.aq[i];
+    }
+
+    public int portNode() {
+        return this.B;
+    }
+
+    public int portX() {
+        return this.F;
+    }
+
+    public int portY() {
+        return this.G;
+    }
+
+    public boolean portWalking() {
+        return (this.f == 1) || (this.portPathPos < this.portPathLen) || this.portRetarget;
+    }
+
+    public int portTarget() {
+        return portWalking() ? this.portGoal : -1;
+    }
+
+    /** stops at the end of the road being walked */
+    public void portStop() {
+        this.portPathLen = 0;
+        this.portRetarget = false;
+    }
+
+    /** "BẮT ĐẦU": what the game does when the hero arrives at the node he stands on */
+    public void portArrive() {
+        if (this.f == 0) {
+            f(0);
+        }
+    }
+
+    /** walks to node n along the shortest open way (from the end of the road being walked) */
+    public void portGo(int n) {
+        if ((n < 0) || (n >= this.z.length)) {
+            return;
+        }
+        this.portGoal = n;
+        if (this.f == 0) {
+            this.portRetarget = false;
+            a(this.g + this.z[n].b, this.a_ + this.z[n].c);
+        } else {
+            this.portPathLen = 0;
+            this.portRetarget = true;
+        }
+    }
+
+    /** roads of the shortest open way from the hero's node to n (-1: none); its nodes into out */
+    public int portRoute(int n, int[] out) {
+        int i1 = this.z.length;
+        if ((n < 0) || (n >= i1)) {
+            return -1;
+        }
+        int[] prev = new int[i1];
+        int[] queue = new int[i1];
+        for (int k = 0; k < i1; k++) {
+            prev[k] = -2;
+        }
+        int head = 0;
+        int tail = 0;
+        queue[tail++] = this.B;
+        prev[this.B] = -1;
+        while ((head < tail) && (prev[n] == -2)) {
+            int at = queue[head++];
+            for (int d = 0; d < 4; d++) {
+                int r = bq.c[at][d];
+                if ((r >= 0) && (r < this.A.length) && this.A[r].c) {
+                    int to = this.A[r].a == at ? this.A[r].b : this.A[r].a;
+                    if ((to >= 0) && (to < i1) && (prev[to] == -2)) {
+                        prev[to] = at;
+                        queue[tail++] = to;
+                    }
+                }
+            }
+        }
+        if (prev[n] == -2) {
+            return -1;
+        }
+        int len = 0;
+        for (int k = n; prev[k] != -1; k = prev[k]) {
+            len++;
+        }
+        if (out != null) {
+            int at = len;
+            for (int k = n; at >= 0; k = prev[k]) {
+                if (at < out.length) {
+                    out[at] = k;
+                }
+                at--;
+                if (prev[k] == -1) {
+                    break;
+                }
+            }
+        }
+        return len;
+    }
+
     private void portWalk() {
+        if (this.portRetarget && (this.f == 0) && (cz.d().e.d == null)) {
+            this.portRetarget = false;
+            if (this.portGoal >= 0) {
+                a(this.g + this.z[this.portGoal].b, this.a_ + this.z[this.portGoal].c);
+            }
+        }
         if (this.portPathPos >= this.portPathLen) {
             return;
         }
@@ -957,7 +1097,9 @@ public class aa
             case 0:
                 if (e) {
                     e = false;
-                    G();
+                    if (!game.PortScreens.touch) { // PORT-UI: the touch map has its own tutorial
+                        G();
+                    }
                 }
                 if (this.ag > 0) {
                     this.ag -= 1;
