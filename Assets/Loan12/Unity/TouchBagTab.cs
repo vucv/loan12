@@ -1,7 +1,7 @@
 // Screen 6 of the touch redesign: the bag tab of the map (plan/thiet-ke-ban-do.md 4), in place of the
 // game's "T.Tin" sheet.
 //   hero card: portrait, name, element · level, experience bar, HP and attack (base + events)
-//   about the hero: the game's description, strengths and tips for its element (HeroGuide)
+//   tap the hero card: its introduction in a popup centred on the screen (HeroGuide)
 //   the 3 skills (tap: description with the real damage)
 //   the 5 items (shared bag; tap: detail box with a line worked out for this hero, buy one more pack)
 //   the relics of this character (old saves only: quest boxes now hold items)
@@ -58,29 +58,46 @@ namespace Loan12.UnityPort
 
         const float W = 160, Size = 6f, Bullet = 5.75f;
 
-        /// <summary>Draws the section from y; returns the y below it.</summary>
-        public static float Draw(float y, int hero)
+        /// <summary>
+        /// The popup centred on the screen: portrait, name, element, the game's line, strengths, tips.
+        /// True when it closes.
+        /// </summary>
+        public static bool Box(int hero)
         {
             int el = Mathf.Clamp(C_PortScreens.heroElement(hero), 0, 2);
             string desc = Desc(hero);
             float lh = TouchUi.LineHeight(Size), bh = TouchUi.LineHeight(Bullet);
-            float h = 8 + TouchUi.Lines(desc, W, Size) * lh + 6;
-            h += 11 + Height(Strengths[el], bh) + 5 + 11 + Height(Tips[el], bh) + 6;
-            MapUi.Heading(y, "GIỚI THIỆU", "Hệ " + Kit.ElementName(el));
-            y += 12;
+            int lines = TouchUi.Lines(desc, W - 14, Size);
+            float h = 48 + lines * lh + 8 + 11 + Height(Strengths[el], bh) + 6 + 11 + Height(Tips[el], bh) + 8 + 26;
+            bool close;
+            Rect r = MapUi.Box(0, Kit.H, h, out close, 60);
+            float y = TouchUi.V(r.position).y;
+            h = TouchUi.V(new Vector2(0, r.yMax)).y - y;
+            Rect shut = TouchUi.R(60, y + h - 26, 60, 18);
+            bool done = false;
+            if (Kit.Tap(61, shut) || close || Kit.Back())
+            {
+                done = true;
+                if (Kit.E.type == EventType.KeyDown)
+                {
+                    Kit.E.Use();
+                }
+            }
             if (Kit.Paint)
             {
-                Rect card = TouchUi.R(4, y, 172, h);
-                TouchUi.Panel(card);
-                float cy = y + 8;
-                int lines = TouchUi.Lines(desc, W, Size);
-                TouchUi.Label(TouchUi.R(10, cy, W, lines * lh), desc, Size, TextAnchor.UpperLeft, Kit.Cream, false, true);
-                cy += lines * lh + 6;
+                TouchUi.Portrait(hero, TouchUi.R(17, y + 10, 30, 30));
+                TouchUi.PixelText(Kit.Cut(C_PortMap.heroName(), 12), 2, TouchUi.R(53, 0, 0, 0).x, TouchUi.R(0, y + 13, 0, 0).y, 0);
+                TouchUi.Label(TouchUi.R(53, y + 26, 100, 9), "Hệ " + Kit.ElementName(el) + " · Cấp " + C_PortMap.heroLevel(), 6.25f, TextAnchor.UpperLeft, Kit.Cream, true);
+                float cy = y + 48;
+                TouchUi.Label(TouchUi.R(17, cy, W - 14, lines * lh), desc, Size, TextAnchor.UpperLeft, Kit.Cream, false, true);
+                cy += lines * lh + 8;
                 cy = List(cy, "ƯU ĐIỂM", Kit.Green, Strengths[el], bh);
-                cy += 5;
+                cy += 6;
                 List(cy, "MẸO KHI CHƠI", Kit.Gold, Tips[el], bh);
+                Kit.FlatButton(shut, "Đóng", Btn.Grey, Kit.Down(61));
             }
-            return y + h + 8;
+            Kit.Unblock();
+            return done;
         }
 
         static string Desc(int hero)
@@ -100,7 +117,7 @@ namespace Loan12.UnityPort
             float h = 0;
             foreach (string s in list)
             {
-                h += TouchUi.Lines(s, W - 8, Bullet) * bh + 2;
+                h += TouchUi.Lines(s, W - 22, Bullet) * bh + 2;
             }
             return h;
         }
@@ -108,14 +125,14 @@ namespace Loan12.UnityPort
         static float List(float y, string title, Color c, string[] list, float bh)
         {
             float k = TouchUi.K;
-            TouchUi.Label(TouchUi.R(10, y, W, 9), title, 6, TextAnchor.UpperLeft, c, true);
+            TouchUi.Label(TouchUi.R(17, y, W - 14, 9), title, 6, TextAnchor.UpperLeft, c, true);
             y += 11;
             foreach (string s in list)
             {
-                int n = TouchUi.Lines(s, W - 8, Bullet);
-                Rect dot = TouchUi.R(12, y + bh / 2 - 1, 2.5f, 2.5f);
+                int n = TouchUi.Lines(s, W - 22, Bullet);
+                Rect dot = TouchUi.R(19, y + bh / 2 - 1, 2.5f, 2.5f);
                 TouchUi.Fill(dot, c);
-                TouchUi.Label(TouchUi.R(18, y, W - 8, n * bh), s, Bullet, TextAnchor.UpperLeft, Color.white, false, true);
+                TouchUi.Label(TouchUi.R(25, y, W - 22, n * bh), s, Bullet, TextAnchor.UpperLeft, Color.white, false, true);
                 y += n * bh + 2;
             }
             return y;
@@ -285,13 +302,15 @@ namespace Loan12.UnityPort
         float scroll, contentH;
         int detail = -1;
         int skillDetail = -1;
+        bool guide;
 
         public bool Back()
         {
-            if (detail >= 0 || skillDetail >= 0)
+            if (detail >= 0 || skillDetail >= 0 || guide)
             {
                 detail = -1;
                 skillDetail = -1;
+                guide = false;
                 return true;
             }
             return false;
@@ -300,7 +319,7 @@ namespace Loan12.UnityPort
         public void OnGUI(TouchMapView map, float top, float bottom)
         {
             float k = TouchUi.K;
-            bool popup = detail >= 0 || skillDetail >= 0;
+            bool popup = detail >= 0 || skillDetail >= 0 || guide;
             if (popup)
             {
                 Kit.Modal(new Rect(0, 0, 0, 0));
@@ -313,10 +332,16 @@ namespace Loan12.UnityPort
 
             // hero card
             int hero = C_PortMap.hero(), lv = C_PortMap.heroLevel();
+            // tap the card: the hero's introduction (popup)
+            if (Kit.Tap(5, TouchUi.R(4, y, 172, 96)))
+            {
+                guide = true;
+            }
             if (Kit.Paint)
             {
                 Rect card = TouchUi.R(4, y, 172, 96);
                 TouchUi.Panel(card);
+                TouchUi.Label(TouchUi.R(10, y + 84, 160, 9), "Chạm để xem giới thiệu", 5.25f, TextAnchor.UpperRight, TouchUi.Hex(0x8CC4FF), true);
                 TouchUi.Portrait(hero, TouchUi.R(10, y + 8, 32, 32));
                 TouchUi.PixelText(Kit.Cut(C_PortMap.heroName(), 12), 2, TouchUi.R(48, 0, 0, 0).x, TouchUi.R(0, y + 7, 0, 0).y, 0);
                 TouchUi.Label(TouchUi.R(48, y + 24, 120, 9), "Hệ " + Kit.ElementName(C_PortScreens.heroElement(hero)) + " · Cấp " + lv, 6.75f, TextAnchor.UpperLeft, Kit.Cream, true);
@@ -327,9 +352,6 @@ namespace Loan12.UnityPort
                 Stat(y + 56, 92, "/sword", "Tấn công", C_PortMap.heroAttack(), C_PortMap.heroBonusAttack());
             }
             y += 96 + 8;
-
-            // about the hero: the game's line, strengths, tips (by element)
-            y = HeroGuide.Draw(y, hero);
 
             // skills
             MapUi.Heading(y, "TUYỆT CHIÊU", "Chạm để xem");
@@ -447,6 +469,10 @@ namespace Loan12.UnityPort
             else if (skillDetail >= 0)
             {
                 SkillBox(top, bottom);
+            }
+            else if (guide && HeroGuide.Box(hero))
+            {
+                guide = false;
             }
         }
 
