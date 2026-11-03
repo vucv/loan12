@@ -134,6 +134,12 @@ public class v
     public void b() {
         cz.d().e.a(1, this.w, false);
     }
+
+    /** PORT-UI: "Chọn" with the sound on (the touch interface has its own volume setting) */
+    public void portSkip() {
+        this.f = 100;
+        b(0, this.c);
+    }
 }
 
 

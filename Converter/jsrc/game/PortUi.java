@@ -501,6 +501,7 @@ public final class PortUi {
 
     /** runs the queued action; called by the screen manager at the start of a frame */
     public static void process() {
+        PortScreens.process(); // PORT-UI: menu, slots, map ...
         if (reqKind == 0) {
             return;
         }

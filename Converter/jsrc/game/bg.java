@@ -6,6 +6,13 @@ public class bg {
     public static int a = 10;
     public static dr b = dr.a("16b", 16);
     public static dr c = dr.a("161b", 161);
+    /** PORT-UI: records shared by every character slot (lives, volume ...; gold and items) */
+    public static dr acct = dr.a("acct_16b", 16);
+    public static dr acctC = dr.a("acct_161b", 161);
+
+    static {
+        PortScreens.migrateAccount(); // PORT-UI
+    }
 
     public static int a(byte[] paramArrayOfByte, InputStream paramInputStream, int paramInt) throws java.io.IOException {
         int i = paramInt;
@@ -20,16 +27,16 @@ public class bg {
     }
 
     public static final boolean g() {
-        return dr.a(b, 14);
+        return dr.a(acct, 14);
     }
 
     public static final byte[] h() {
-        return dr.b(b, 14);
+        return dr.b(acct, 14);
     }
 
     public static void b(byte[] paramArrayOfByte) {
-        dr.a(b, 14, paramArrayOfByte, 0, paramArrayOfByte.length);
-        dr.a(b);
+        dr.a(acct, 14, paramArrayOfByte, 0, paramArrayOfByte.length);
+        dr.a(acct);
     }
 
     public static void i() {
@@ -37,19 +44,19 @@ public class bg {
             return;
         }
         cx.G = 0;
-        byte[] arrayOfByte = dr.b(b, 8);
+        byte[] arrayOfByte = dr.b(acct, 8);
         if ((arrayOfByte != null) && (arrayOfByte.length >= 4)) {
             cx.G = ai.a(arrayOfByte);
         }
         cx.G += 1;
         arrayOfByte = ai.a(cx.G);
-        dr.a(b, 8, arrayOfByte, 0, arrayOfByte.length);
-        dr.a(b);
+        dr.a(acct, 8, arrayOfByte, 0, arrayOfByte.length);
+        dr.a(acct);
     }
 
     private static final int b() {
         int i = 1;
-        byte[] arrayOfByte = dr.b(b, 7);
+        byte[] arrayOfByte = dr.b(acct, 7);
         if (arrayOfByte != null) {
             i = ai.a(arrayOfByte);
         } else {
@@ -61,25 +68,25 @@ public class bg {
         if (i > cx.J) {
             i = cx.J;
         }
-        dr.a(b, 7, ai.a(i > 1 ? i - 1 : 1), 0, 4);
-        dr.a(b);
+        dr.a(acct, 7, ai.a(i > 1 ? i - 1 : 1), 0, 4);
+        dr.a(acct);
         return i;
     }
 
     public static boolean j() {
-        return !dr.a(b, 4);
+        return !dr.a(acct, 4);
     }
 
     public static void k() {
         if (j()) {
-            dr.a(b, 4, new byte[]{1}, 0, 1);
+            dr.a(acct, 4, new byte[]{1}, 0, 1);
         }
-        dr.a(b, 5, ai.a(b()), 0, 4);
-        dr.a(b);
+        dr.a(acct, 5, ai.a(b()), 0, 4);
+        dr.a(acct);
     }
 
     public static boolean l() {
-        byte[] arrayOfByte = dr.b(b, 5);
+        byte[] arrayOfByte = dr.b(acct, 5);
         if (arrayOfByte == null) {
             return false;
         }
@@ -88,7 +95,7 @@ public class bg {
     }
 
     public static int m() {
-        byte[] arrayOfByte = dr.b(b, 5);
+        byte[] arrayOfByte = dr.b(acct, 5);
         if (arrayOfByte == null) {
             return 0;
         }
@@ -100,7 +107,7 @@ public class bg {
     }
 
     public static void n() {
-        byte[] arrayOfByte = dr.b(b, 5);
+        byte[] arrayOfByte = dr.b(acct, 5);
         int i = 0;
         if (arrayOfByte != null) {
             i = ai.a(arrayOfByte);
@@ -109,28 +116,28 @@ public class bg {
         if (i < 0) {
             i = 0;
         }
-        dr.a(b, 5, ai.a(i), 0, 4);
-        dr.a(b);
+        dr.a(acct, 5, ai.a(i), 0, 4);
+        dr.a(acct);
     }
 
     public static void c(int paramInt) {
-        byte[] arrayOfByte = dr.b(b, 5);
+        byte[] arrayOfByte = dr.b(acct, 5);
         int i = 0;
         if (arrayOfByte != null) {
             i = ai.a(arrayOfByte);
         }
         i += paramInt;
-        dr.a(b, 5, ai.a(i), 0, 4);
-        dr.a(b);
+        dr.a(acct, 5, ai.a(i), 0, 4);
+        dr.a(acct);
     }
 
     public static byte[] o() {
-        return dr.b(b, 11);
+        return dr.b(acct, 11);
     }
 
     public static void d(int paramInt) {
-        dr.a(b, 11, ai.a(paramInt), 0, 4);
-        dr.a(b);
+        dr.a(acct, 11, ai.a(paramInt), 0, 4);
+        dr.a(acct);
     }
 
     public static void p() {
@@ -138,7 +145,7 @@ public class bg {
             return;
         }
         cx.A = true;
-        byte[] arrayOfByte = dr.b(b, 13);
+        byte[] arrayOfByte = dr.b(acct, 13);
         if (arrayOfByte != null) {
             if (arrayOfByte[0] <= 0) {
                 cx.A = false;
@@ -153,7 +160,7 @@ public class bg {
             return;
         }
         int i = 3;
-        byte[] arrayOfByte = dr.b(b, 13);
+        byte[] arrayOfByte = dr.b(acct, 13);
         if (arrayOfByte != null) {
             i = arrayOfByte[0];
         }
@@ -167,8 +174,8 @@ public class bg {
         } else {
             cx.A = true;
         }
-        dr.a(b, 13, new byte[]{(byte) i}, 0, 1);
-        dr.a(b);
+        dr.a(acct, 13, new byte[]{(byte) i}, 0, 1);
+        dr.a(acct);
     }
 
     public static byte[] q() {
@@ -357,7 +364,7 @@ public class bg {
     public static void a(int paramInt1, int paramInt2, int paramInt3) {
         byte[] arrayOfByte1 = (byte[]) null;
         if (paramInt1 < paramInt3) {
-            arrayOfByte1 = dr.b(c, 9);
+            arrayOfByte1 = dr.b(acctC, 9);
             if (arrayOfByte1 != null) {
                 paramInt2 += ai.a(arrayOfByte1, paramInt1 * 4);
             } else {
@@ -367,13 +374,13 @@ public class bg {
         paramInt2 = paramInt2 < 0 ? 0 : paramInt2;
         byte[] arrayOfByte2 = ai.a(paramInt2);
         System.arraycopy(arrayOfByte2, 0, arrayOfByte1, paramInt1 * 4, 4);
-        dr.a(c, 9, arrayOfByte1, 0, arrayOfByte1.length);
-        dr.a(c);
+        dr.a(acctC, 9, arrayOfByte1, 0, arrayOfByte1.length);
+        dr.a(acctC);
     }
 
     public static int[] v() {
         byte[] arrayOfByte = (byte[]) null;
-        arrayOfByte = dr.b(c, 9);
+        arrayOfByte = dr.b(acctC, 9);
         if (arrayOfByte == null) {
             return null;
         }
@@ -386,7 +393,7 @@ public class bg {
 
     public static int f(int paramInt) {
         byte[] arrayOfByte = (byte[]) null;
-        arrayOfByte = dr.b(c, 9);
+        arrayOfByte = dr.b(acctC, 9);
         if (arrayOfByte == null) {
             return 0;
         }
@@ -395,7 +402,7 @@ public class bg {
 
     public static void b(int paramInt1, int paramInt2) {
         byte[] arrayOfByte1 = (byte[]) null;
-        arrayOfByte1 = dr.b(c, 9);
+        arrayOfByte1 = dr.b(acctC, 9);
         if (arrayOfByte1 == null) {
             return;
         }
@@ -406,8 +413,8 @@ public class bg {
         }
         byte[] arrayOfByte2 = ai.a(i);
         System.arraycopy(arrayOfByte2, 0, arrayOfByte1, paramInt1 * 4, 4);
-        dr.a(c, 9, arrayOfByte1, 0, arrayOfByte1.length);
-        dr.a(c);
+        dr.a(acctC, 9, arrayOfByte1, 0, arrayOfByte1.length);
+        dr.a(acctC);
     }
 
     public static void g(int paramInt) {
@@ -437,9 +444,7 @@ public class bg {
         try {
             dr.c(b, 10);
             dr.c(b, 6);
-            dr.c(b, 5);
             dr.c(b, 16);
-            dr.c(c, 9);
             dr.a(b);
             dr.a(c);
         } catch (Exception localException) {

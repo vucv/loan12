@@ -147,6 +147,19 @@ public class z
         }
     }
 
+    /** PORT-UI: hero highlighted */
+    public int portHero() {
+        return this.f;
+    }
+
+    /** PORT-UI: highlight hero i (like a tap on its portrait) */
+    public void portSelect(int i) {
+        if ((i >= 0) && (i < this.w.length) && (i != this.f)) {
+            this.f = i;
+            this.v = bz.a(this.w[this.f], this.t[0].getWidth() - 15);
+        }
+    }
+
     private void u() {
         this.x.setString("");
         MGMIDlet.f().a.setCurrent(this.x);

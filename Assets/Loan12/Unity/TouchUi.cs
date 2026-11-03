@@ -18,6 +18,11 @@ namespace Loan12.UnityPort
         void Reset();
     }
 
+    /// <summary>A view that handles the keys itself (Android back): they do not reach the game underneath.</summary>
+    public interface IOwnsKeys
+    {
+    }
+
     public enum Btn
     {
         Green,
@@ -75,6 +80,13 @@ namespace Loan12.UnityPort
                 K = Mathf.Floor(K);
             }
             origin = new Vector2(Mathf.Round(area.x + (area.width - GridW * K) / 2f), Mathf.Round(area.y + (area.height - gridH * K) / 2f));
+        }
+
+        /// <summary>Layout with a given scale and top-left corner (Kit.Begin: full-height screens).</summary>
+        public static void BeginAt(float k, Vector2 topLeft)
+        {
+            K = k;
+            origin = topLeft;
         }
 
         public static Rect R(float x, float y, float w, float h)

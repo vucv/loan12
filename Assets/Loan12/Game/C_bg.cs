@@ -10,18 +10,26 @@ namespace Loan12
         public static int f_a;
         public static C_dr f_b;
         public static C_dr f_c;
+        /** PORT-UI: records shared by every character slot (lives, volume ...; gold and items) */
+        public static C_dr f_acct;
+        public static C_dr f_acctC;
 
         static C_bg()
         {
             C_bg.f_a = 10;
             C_bg.f_b = C_dr.a("16b", 16);
             C_bg.f_c = C_dr.a("161b", 161);
+            C_bg.f_acct = C_dr.a("acct_16b", 16);
+            C_bg.f_acctC = C_dr.a("acct_161b", 161);
+            C_PortScreens.migrateAccount();
         }
 
         public C_bg()
         {
         }
 
+        /** PORT-UI: records shared by every character slot (lives, volume ...; gold and items) */
+        // PORT-UI
         public static int a(sbyte[] paramArrayOfByte, J2ME.InputStream paramInputStream, int paramInt)
         {
             int i = paramInt;
@@ -39,18 +47,18 @@ namespace Loan12
 
         public static bool g()
         {
-            return C_dr.a(C_bg.f_b, 14);
+            return C_dr.a(C_bg.f_acct, 14);
         }
 
         public static sbyte[] h()
         {
-            return C_dr.b(C_bg.f_b, 14);
+            return C_dr.b(C_bg.f_acct, 14);
         }
 
         public static void b(sbyte[] paramArrayOfByte)
         {
-            C_dr.a(C_bg.f_b, 14, paramArrayOfByte, 0, paramArrayOfByte.Length);
-            C_dr.a(C_bg.f_b);
+            C_dr.a(C_bg.f_acct, 14, paramArrayOfByte, 0, paramArrayOfByte.Length);
+            C_dr.a(C_bg.f_acct);
         }
 
         public static void i()
@@ -60,21 +68,21 @@ namespace Loan12
                 return;
             }
             C_cx.f_G = 0;
-            sbyte[] arrayOfByte = C_dr.b(C_bg.f_b, 8);
+            sbyte[] arrayOfByte = C_dr.b(C_bg.f_acct, 8);
             if ((arrayOfByte != null) && ((arrayOfByte.Length >= 4)))
             {
                 C_cx.f_G = C_ai.a(arrayOfByte);
             }
             C_cx.f_G += 1;
             arrayOfByte = C_ai.a(C_cx.f_G);
-            C_dr.a(C_bg.f_b, 8, arrayOfByte, 0, arrayOfByte.Length);
-            C_dr.a(C_bg.f_b);
+            C_dr.a(C_bg.f_acct, 8, arrayOfByte, 0, arrayOfByte.Length);
+            C_dr.a(C_bg.f_acct);
         }
 
         private static int b()
         {
             int i = 1;
-            sbyte[] arrayOfByte = C_dr.b(C_bg.f_b, 7);
+            sbyte[] arrayOfByte = C_dr.b(C_bg.f_acct, 7);
             if (arrayOfByte != null)
             {
                 i = C_ai.a(arrayOfByte);
@@ -91,29 +99,29 @@ namespace Loan12
             {
                 i = C_cx.f_J;
             }
-            C_dr.a(C_bg.f_b, 7, C_ai.a(((i > 1) ? i - 1 : 1)), 0, 4);
-            C_dr.a(C_bg.f_b);
+            C_dr.a(C_bg.f_acct, 7, C_ai.a(((i > 1) ? i - 1 : 1)), 0, 4);
+            C_dr.a(C_bg.f_acct);
             return i;
         }
 
         public static bool j()
         {
-            return !C_dr.a(C_bg.f_b, 4);
+            return !C_dr.a(C_bg.f_acct, 4);
         }
 
         public static void k()
         {
             if (C_bg.j())
             {
-                C_dr.a(C_bg.f_b, 4, new sbyte[] { 1 }, 0, 1);
+                C_dr.a(C_bg.f_acct, 4, new sbyte[] { 1 }, 0, 1);
             }
-            C_dr.a(C_bg.f_b, 5, C_ai.a(C_bg.b()), 0, 4);
-            C_dr.a(C_bg.f_b);
+            C_dr.a(C_bg.f_acct, 5, C_ai.a(C_bg.b()), 0, 4);
+            C_dr.a(C_bg.f_acct);
         }
 
         public static bool l()
         {
-            sbyte[] arrayOfByte = C_dr.b(C_bg.f_b, 5);
+            sbyte[] arrayOfByte = C_dr.b(C_bg.f_acct, 5);
             if (arrayOfByte == null)
             {
                 return false;
@@ -124,7 +132,7 @@ namespace Loan12
 
         public static int m()
         {
-            sbyte[] arrayOfByte = C_dr.b(C_bg.f_b, 5);
+            sbyte[] arrayOfByte = C_dr.b(C_bg.f_acct, 5);
             if (arrayOfByte == null)
             {
                 return 0;
@@ -139,7 +147,7 @@ namespace Loan12
 
         public static void n()
         {
-            sbyte[] arrayOfByte = C_dr.b(C_bg.f_b, 5);
+            sbyte[] arrayOfByte = C_dr.b(C_bg.f_acct, 5);
             int i = 0;
             if (arrayOfByte != null)
             {
@@ -150,32 +158,32 @@ namespace Loan12
             {
                 i = 0;
             }
-            C_dr.a(C_bg.f_b, 5, C_ai.a(i), 0, 4);
-            C_dr.a(C_bg.f_b);
+            C_dr.a(C_bg.f_acct, 5, C_ai.a(i), 0, 4);
+            C_dr.a(C_bg.f_acct);
         }
 
         public static void c(int paramInt)
         {
-            sbyte[] arrayOfByte = C_dr.b(C_bg.f_b, 5);
+            sbyte[] arrayOfByte = C_dr.b(C_bg.f_acct, 5);
             int i = 0;
             if (arrayOfByte != null)
             {
                 i = C_ai.a(arrayOfByte);
             }
             i += paramInt;
-            C_dr.a(C_bg.f_b, 5, C_ai.a(i), 0, 4);
-            C_dr.a(C_bg.f_b);
+            C_dr.a(C_bg.f_acct, 5, C_ai.a(i), 0, 4);
+            C_dr.a(C_bg.f_acct);
         }
 
         public static sbyte[] o()
         {
-            return C_dr.b(C_bg.f_b, 11);
+            return C_dr.b(C_bg.f_acct, 11);
         }
 
         public static void d(int paramInt)
         {
-            C_dr.a(C_bg.f_b, 11, C_ai.a(paramInt), 0, 4);
-            C_dr.a(C_bg.f_b);
+            C_dr.a(C_bg.f_acct, 11, C_ai.a(paramInt), 0, 4);
+            C_dr.a(C_bg.f_acct);
         }
 
         public static void p()
@@ -185,7 +193,7 @@ namespace Loan12
                 return;
             }
             C_cx.f_A = true;
-            sbyte[] arrayOfByte = C_dr.b(C_bg.f_b, 13);
+            sbyte[] arrayOfByte = C_dr.b(C_bg.f_acct, 13);
             if (arrayOfByte != null)
             {
                 if ((arrayOfByte[0] <= 0))
@@ -206,7 +214,7 @@ namespace Loan12
                 return;
             }
             int i = 3;
-            sbyte[] arrayOfByte = C_dr.b(C_bg.f_b, 13);
+            sbyte[] arrayOfByte = C_dr.b(C_bg.f_acct, 13);
             if (arrayOfByte != null)
             {
                 i = arrayOfByte[0];
@@ -227,8 +235,8 @@ namespace Loan12
             {
                 C_cx.f_A = true;
             }
-            C_dr.a(C_bg.f_b, 13, new sbyte[] { ((sbyte)(i)) }, 0, 1);
-            C_dr.a(C_bg.f_b);
+            C_dr.a(C_bg.f_acct, 13, new sbyte[] { ((sbyte)(i)) }, 0, 1);
+            C_dr.a(C_bg.f_acct);
         }
 
         public static sbyte[] q()
@@ -478,7 +486,7 @@ namespace Loan12
             sbyte[] arrayOfByte1 = ((sbyte[])(null));
             if ((paramInt1 < paramInt3))
             {
-                arrayOfByte1 = C_dr.b(C_bg.f_c, 9);
+                arrayOfByte1 = C_dr.b(C_bg.f_acctC, 9);
                 if (arrayOfByte1 != null)
                 {
                     paramInt2 += C_ai.a(arrayOfByte1, paramInt1 * 4);
@@ -491,14 +499,14 @@ namespace Loan12
             paramInt2 = ((paramInt2 < 0) ? 0 : paramInt2);
             sbyte[] arrayOfByte2 = C_ai.a(paramInt2);
             J2ME.JSystem.arraycopy(arrayOfByte2, 0, arrayOfByte1, paramInt1 * 4, 4);
-            C_dr.a(C_bg.f_c, 9, arrayOfByte1, 0, arrayOfByte1.Length);
-            C_dr.a(C_bg.f_c);
+            C_dr.a(C_bg.f_acctC, 9, arrayOfByte1, 0, arrayOfByte1.Length);
+            C_dr.a(C_bg.f_acctC);
         }
 
         public static int[] v()
         {
             sbyte[] arrayOfByte = ((sbyte[])(null));
-            arrayOfByte = C_dr.b(C_bg.f_c, 9);
+            arrayOfByte = C_dr.b(C_bg.f_acctC, 9);
             if (arrayOfByte == null)
             {
                 return null;
@@ -514,7 +522,7 @@ namespace Loan12
         public static int f(int paramInt)
         {
             sbyte[] arrayOfByte = ((sbyte[])(null));
-            arrayOfByte = C_dr.b(C_bg.f_c, 9);
+            arrayOfByte = C_dr.b(C_bg.f_acctC, 9);
             if (arrayOfByte == null)
             {
                 return 0;
@@ -525,7 +533,7 @@ namespace Loan12
         public static void b(int paramInt1, int paramInt2)
         {
             sbyte[] arrayOfByte1 = ((sbyte[])(null));
-            arrayOfByte1 = C_dr.b(C_bg.f_c, 9);
+            arrayOfByte1 = C_dr.b(C_bg.f_acctC, 9);
             if (arrayOfByte1 == null)
             {
                 return;
@@ -538,8 +546,8 @@ namespace Loan12
             }
             sbyte[] arrayOfByte2 = C_ai.a(i);
             J2ME.JSystem.arraycopy(arrayOfByte2, 0, arrayOfByte1, paramInt1 * 4, 4);
-            C_dr.a(C_bg.f_c, 9, arrayOfByte1, 0, arrayOfByte1.Length);
-            C_dr.a(C_bg.f_c);
+            C_dr.a(C_bg.f_acctC, 9, arrayOfByte1, 0, arrayOfByte1.Length);
+            C_dr.a(C_bg.f_acctC);
         }
 
         public static void g(int paramInt)
@@ -578,9 +586,7 @@ namespace Loan12
             {
                 C_dr.c(C_bg.f_b, 10);
                 C_dr.c(C_bg.f_b, 6);
-                C_dr.c(C_bg.f_b, 5);
                 C_dr.c(C_bg.f_b, 16);
-                C_dr.c(C_bg.f_c, 9);
                 C_dr.a(C_bg.f_b);
                 C_dr.a(C_bg.f_c);
             }

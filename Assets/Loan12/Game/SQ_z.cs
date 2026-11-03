@@ -147,6 +147,22 @@ namespace Loan12
             }
         }
 
+        /** PORT-UI: hero highlighted */
+        public int portHero()
+        {
+            return this.f_f;
+        }
+
+        /** PORT-UI: highlight hero i (like a tap on its portrait) */
+        public void portSelect(int i)
+        {
+            if (((i >= 0)) && ((i < this.f_w.Length)) && (i != this.f_f))
+            {
+                this.f_f = i;
+                this.f_v = C_bz.a(this.f_w[this.f_f], this.f_t[0].getWidth() - 15);
+            }
+        }
+
         private void u()
         {
             this.f_x.setString("");
