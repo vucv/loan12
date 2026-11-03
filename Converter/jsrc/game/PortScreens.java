@@ -20,6 +20,7 @@ public final class PortScreens {
     public static final int HERO_BACK = 5;     // hero screen: "Trở về"
     public static final int EXIT = 6;          // quit the game
     public static final int SKIP = 7;          // story screen: "Bỏ qua"
+    public static final int FORFEIT = 8;       // battle pause: close the pause and give the battle up (a defeat)
 
     public static final int MAX_SLOTS = 3;
 
@@ -412,6 +413,14 @@ public final class PortScreens {
                     s.portPress(2);
                 }
                 break;
+            case FORFEIT: {
+                bu b = PortUi.battle();
+                if ((b != null) && (PortUi.pauseKind() == 1)) {
+                    b.b(0, -2); // the pause's "Không": back to the battle
+                    b.portForfeit = true;
+                }
+                break;
+            }
             case EXIT:
                 com.mg.smsgame.main.MGMIDlet.f().d();
                 break;

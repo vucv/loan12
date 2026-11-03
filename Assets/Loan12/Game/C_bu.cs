@@ -53,6 +53,7 @@ namespace Loan12
         //delay here
         // PORT-UI
         // PORT-UI
+        // PORT-UI: given up, a defeat
         //Resume score
         //Must read here
         //switch (paramInt) int c()
@@ -94,6 +95,8 @@ namespace Loan12
         // PORT-UI: state and actions for the Unity touch interface (see PortUi)
         public C_ae f_portPauseDialog;
         // the "dừng game" dialog of this battle
+        public bool f_portForfeit;
+        // PORT-UI: the player gave the battle up (pause box "Thoát trận")
         public C_ae f_portEndDialog;
         // the result (won) or "mất 1 mạng" (lost) dialog
         public bool f_portEndRetry;
@@ -458,6 +461,14 @@ namespace Loan12
                 case 8:
                     if ((this.f_t.o() == 1) && (this.y()))
                     {
+                        return;
+                    }
+                    if (this.f_portForfeit && !this.f_s.f_d)
+                    {
+                        // PORT-UI: given up, a defeat
+                        this.f_portForfeit = false;
+                        this.f_E = false;
+                        this.f(9);
                         return;
                     }
                     int i = this.f_s.a();
@@ -1601,6 +1612,7 @@ namespace Loan12
         /** soft keys of the battle bar: left (skills) and right (pause); the centre ("bag") is the # key */
         // PORT-UI: state and actions for the Unity touch interface (see PortUi)
         // the "dừng game" dialog of this battle
+        // PORT-UI: the player gave the battle up (pause box "Thoát trận")
         // the result (won) or "mất 1 mạng" (lost) dialog
         // the lost battle can be fought again
         public C_cq portState()

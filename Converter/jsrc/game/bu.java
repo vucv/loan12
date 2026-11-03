@@ -327,6 +327,12 @@ public class bu
                 if ((this.t.o() == 1) && (y())) {
                     return;
                 }
+                if (this.portForfeit && !this.s.d) { // PORT-UI: given up, a defeat
+                    this.portForfeit = false;
+                    this.E = false;
+                    f(9);
+                    return;
+                }
                 int i = this.s.a();
                 bn localbn = this.s.b(i);
                 if ((!this.s.d) && (localbn.p() <= 0)) {
@@ -1253,6 +1259,7 @@ public class bu
     /** soft keys of the battle bar: left (skills) and right (pause); the centre ("bag") is the # key */
     // PORT-UI: state and actions for the Unity touch interface (see PortUi)
     public ae portPauseDialog; // the "dừng game" dialog of this battle
+    public boolean portForfeit; // PORT-UI: the player gave the battle up (pause box "Thoát trận")
     public ae portEndDialog;   // the result (won) or "mất 1 mạng" (lost) dialog
     public boolean portEndRetry; // the lost battle can be fought again
 

@@ -21,6 +21,8 @@ namespace Loan12
         // quit the game
         public const int f_SKIP = 7;
         // story screen: "Bỏ qua"
+        public const int f_FORFEIT = 8;
+        // battle pause: close the pause and give the battle up (a defeat)
         public const int f_MAX_SLOTS = 3;
         /** the Unity touch interface draws the screens (set by the host; the test harness leaves it off) */
         public static bool f_touch;
@@ -494,6 +496,17 @@ namespace Loan12
                         s.portPress(2);
                     }
                     break;
+                case 8:
+                    {
+                        C_bu b = C_PortUi.battle();
+                        if ((b != null) && (C_PortUi.pauseKind() == 1))
+                        {
+                            b.b(0, -2);
+                            // the pause's "Không": back to the battle
+                            b.f_portForfeit = true;
+                        }
+                        break;
+                    }
                 case 6:
                     MGMIDlet.f().d();
                     break;
