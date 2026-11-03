@@ -1,6 +1,7 @@
 // Screen 6 of the touch redesign: the bag tab of the map (plan/thiet-ke-ban-do.md 4), in place of the
 // game's "T.Tin" sheet.
 //   hero card: portrait, name, element · level, experience bar, HP and attack (base + events)
+//   about the hero: the game's description, strengths and tips for its element (HeroGuide)
 //   the 3 skills (tap: description with the real damage)
 //   the 5 items (shared bag; tap: detail box with a line worked out for this hero, buy one more pack)
 //   the relics of this character (old saves only: quest boxes now hold items)
@@ -8,6 +9,119 @@ using UnityEngine;
 
 namespace Loan12.UnityPort
 {
+    /// <summary>What each hero is good at and how to play it, by element (all heroes share HP and attack).</summary>
+    public static class HeroGuide
+    {
+        static readonly string[][] Strengths =
+        {
+            new[]
+            {
+                "Sát thương diện rộng mạnh nhất: Lửa Địa Ngục phá 2 vùng 4x4",
+                "Phá nhiều ô một lúc, dễ tạo chuỗi nổ liên hoàn",
+                "Hạ gục nhanh, hợp với lối đánh tấn công"
+            },
+            new[]
+            {
+                "Khiên Sét hóa giải mọi đòn tấn công trong 6 lượt",
+                "Chuỗi Sét chỉ cần 1 ô năng lượng, phá ô rải rác",
+                "Cân bằng giữa công và thủ, an toàn khi gặp địch mạnh"
+            },
+            new[]
+            {
+                "Tự hồi máu: Cam Lộ Thủy hồi 20% và hút máu từ trái tim",
+                "Đóng băng địch 2 lượt, làm mất năng lượng của địch",
+                "Bền bỉ nhất, hợp đánh lâu"
+            }
+        };
+
+        static readonly string[][] Tips =
+        {
+            new[]
+            {
+                "Gom đủ 3 ô năng lượng rồi tung Lửa Địa Ngục khi địch còn nhiều máu",
+                "Dùng Quả Cầu Lửa dọn chỗ bàn cờ đang bí nước",
+                "Không tự hồi máu được: mang vật phẩm hồi máu khi đánh trùm"
+            },
+            new[]
+            {
+                "Bật Khiên Sét khi địch sắp đầy năng lượng để chặn tuyệt chiêu",
+                "Trong 6 lượt có khiên, tấn công dồn dập không cần phòng thủ",
+                "Để dành Sấm Sét để kết liễu"
+            },
+            new[]
+            {
+                "Đợi bàn cờ có nhiều trái tim rồi mới dùng Cam Lộ Thủy",
+                "Tung Băng Phong khi địch sắp ra chiêu, rồi tranh thủ 2 lượt bị băng",
+                "Mũi Tên Băng làm địch chậm tích năng lượng"
+            }
+        };
+
+        const float W = 160, Size = 6f, Bullet = 5.75f;
+
+        /// <summary>Draws the section from y; returns the y below it.</summary>
+        public static float Draw(float y, int hero)
+        {
+            int el = Mathf.Clamp(C_PortScreens.heroElement(hero), 0, 2);
+            string desc = Desc(hero);
+            float lh = TouchUi.LineHeight(Size), bh = TouchUi.LineHeight(Bullet);
+            float h = 8 + TouchUi.Lines(desc, W, Size) * lh + 6;
+            h += 11 + Height(Strengths[el], bh) + 5 + 11 + Height(Tips[el], bh) + 6;
+            MapUi.Heading(y, "GIỚI THIỆU", "Hệ " + Kit.ElementName(el));
+            y += 12;
+            if (Kit.Paint)
+            {
+                Rect card = TouchUi.R(4, y, 172, h);
+                TouchUi.Panel(card);
+                float cy = y + 8;
+                int lines = TouchUi.Lines(desc, W, Size);
+                TouchUi.Label(TouchUi.R(10, cy, W, lines * lh), desc, Size, TextAnchor.UpperLeft, Kit.Cream, false, true);
+                cy += lines * lh + 6;
+                cy = List(cy, "ƯU ĐIỂM", Kit.Green, Strengths[el], bh);
+                cy += 5;
+                List(cy, "MẸO KHI CHƠI", Kit.Gold, Tips[el], bh);
+            }
+            return y + h + 8;
+        }
+
+        static string Desc(int hero)
+        {
+            try
+            {
+                return C_PortScreens.heroDesc(hero);
+            }
+            catch (System.Exception)
+            {
+                return "";
+            }
+        }
+
+        static float Height(string[] list, float bh)
+        {
+            float h = 0;
+            foreach (string s in list)
+            {
+                h += TouchUi.Lines(s, W - 8, Bullet) * bh + 2;
+            }
+            return h;
+        }
+
+        static float List(float y, string title, Color c, string[] list, float bh)
+        {
+            float k = TouchUi.K;
+            TouchUi.Label(TouchUi.R(10, y, W, 9), title, 6, TextAnchor.UpperLeft, c, true);
+            y += 11;
+            foreach (string s in list)
+            {
+                int n = TouchUi.Lines(s, W - 8, Bullet);
+                Rect dot = TouchUi.R(12, y + bh / 2 - 1, 2.5f, 2.5f);
+                TouchUi.Fill(dot, c);
+                TouchUi.Label(TouchUi.R(18, y, W - 8, n * bh), s, Bullet, TextAnchor.UpperLeft, Color.white, false, true);
+                y += n * bh + 2;
+            }
+            return y;
+        }
+    }
+
     /// <summary>Pieces shared by the map tabs: centred box, close cross, tab scrolling.</summary>
     public static class MapUi
     {
@@ -213,6 +327,9 @@ namespace Loan12.UnityPort
                 Stat(y + 56, 92, "/sword", "Tấn công", C_PortMap.heroAttack(), C_PortMap.heroBonusAttack());
             }
             y += 96 + 8;
+
+            // about the hero: the game's line, strengths, tips (by element)
+            y = HeroGuide.Draw(y, hero);
 
             // skills
             MapUi.Heading(y, "TUYỆT CHIÊU", "Chạm để xem");
