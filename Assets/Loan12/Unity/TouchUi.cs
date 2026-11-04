@@ -476,6 +476,16 @@ namespace Loan12.UnityPort
             {
                 s = Loc.T(s);
             }
+            // other languages run longer than the Vietnamese the layout was made for: a one-line text too
+            // wide for its place gets smaller (down to 60 %) instead of spilling out
+            if (!wrap && Loc.Current != Lang.Vi && r.width > 4 * K)
+            {
+                float w = TextWidth(s, size, strong, false) * K;
+                if (w > r.width)
+                {
+                    size *= Mathf.Max(0.6f, r.width / w);
+                }
+            }
             GUIStyle st = Hd(size, strong, anchor, wrap);
             Rect dst = new Rect(r.x, Mathf.Round(r.y), r.width, r.height);
             hdText.text = s;
