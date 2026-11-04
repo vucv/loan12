@@ -656,7 +656,7 @@ namespace Loan12.UnityPort
             if (pendingSide >= 0 && now0 >= pendingAt && (bubbleSide < 0 || now0 - bubbleTime > 1.6f))
             {
                 bubbleSide = -1;
-                Say(pendingSide, pendingText, true);
+                Say(pendingSide, pendingText, true, true); // an answer to what was just said
                 pendingSide = -1;
             }
             else if (outcome == 0 && pendingSide < 0 && now0 >= nextTaunt && (bubbleSide < 0 || now0 - bubbleTime > 2.2f))
