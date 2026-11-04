@@ -123,6 +123,11 @@ namespace Loan12
 
         public void c(Graphics paramGraphics)
         {
+            if (C_PortScreens.f_storyHidden && ((this is C_df)))
+            {
+                // PORT-UI
+                return;
+            }
             if (this.b())
             {
                 ((C_ds)this.f_l).a(paramGraphics);
@@ -153,9 +158,8 @@ namespace Loan12
                 this.f_r.a(paramGraphics);
             }
             this.a(paramGraphics);
-            if (paramBoolean && !(C_PortScreens.f_storyHidden && ((this is C_df))))
+            if (paramBoolean)
             {
-                // PORT-UI
                 this.c(paramGraphics);
             }
         }

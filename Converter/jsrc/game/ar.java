@@ -82,6 +82,9 @@ public abstract class ar {
     }
 
     protected final void c(Graphics paramGraphics) {
+        if (game.PortScreens.storyHidden && (this instanceof df)) { // PORT-UI
+            return;
+        }
         if (b()) {
             this.l.a(paramGraphics);
         }
@@ -105,7 +108,7 @@ public abstract class ar {
             this.r.a(paramGraphics);
         }
         a(paramGraphics);
-        if (paramBoolean && !(game.PortScreens.storyHidden && (this instanceof df))) { // PORT-UI
+        if (paramBoolean) {
             c(paramGraphics);
         }
     }
