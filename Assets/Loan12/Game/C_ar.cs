@@ -153,8 +153,9 @@ namespace Loan12
                 this.f_r.a(paramGraphics);
             }
             this.a(paramGraphics);
-            if (paramBoolean)
+            if (paramBoolean && !(C_PortScreens.f_storyHidden && ((this is C_df))))
             {
+                // PORT-UI
                 this.c(paramGraphics);
             }
         }

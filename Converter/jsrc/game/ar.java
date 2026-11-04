@@ -105,7 +105,7 @@ public abstract class ar {
             this.r.a(paramGraphics);
         }
         a(paramGraphics);
-        if (paramBoolean) {
+        if (paramBoolean && !(game.PortScreens.storyHidden && (this instanceof df))) { // PORT-UI
             c(paramGraphics);
         }
     }

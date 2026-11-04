@@ -675,4 +675,13 @@ rep('game/bu.java', """    private int portEndWait;""", """    private int portE
         return true;
     }""")
 
+# the story scroll drawn by the touch interface: the game's soft key (BỎ QUA) is not drawn either
+rep('game/ar.java', """        a(paramGraphics);
+        if (paramBoolean) {
+            c(paramGraphics);
+        }""", """        a(paramGraphics);
+        if (paramBoolean && !(game.PortScreens.storyHidden && (this instanceof df))) { // PORT-UI
+            c(paramGraphics);
+        }""")
+
 print('port_screens: ok')
