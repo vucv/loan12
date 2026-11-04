@@ -2,7 +2,8 @@
 
 | File | Nhánh | Commit | Nội dung |
 |---|---|---|---|
-| `android/Loan12-ui-touch-14a3b81.apk` | `ui-touch` | `14a3b81` | Bản đồ: ổ khóa đặt trên nhà của thành, không che tên địa danh (mới nhất) |
+| `android/Loan12-ui-touch-52967ce.apk` | `ui-touch` | `52967ce` | Trước Chuẩn bị: bản đồ giữ nguyên khi hộp trận mở (không còn nháy hình khác tỉ lệ); nền hội thoại trùng bản đồ (mới nhất) |
+| `android/Loan12-ui-touch-14a3b81.apk` | `ui-touch` | `14a3b81` | Bản đồ: ổ khóa đặt trên nhà của thành, không che tên địa danh |
 | `android/Loan12-ui-touch-004916c.apk` | `ui-touch` | `004916c` | Trận hướng dẫn: Ở LẠI đóng hộp tạm dừng; bản đồ: ổ khóa to gấp đôi, bỏ nền đen |
 | `android/Loan12-ui-touch-98aab6b.apk` | `ui-touch` | `98aab6b` | Mở đầu không nháy hình cũ; nút MENU chữ pixel; tướng trên bản đồ to gấp đôi; tab Bản đồ icon 2 kiếm; "Thông tin nhân vật" ở giữa; sửa tab trên màn nhiệm vụ |
 | `android/Loan12-ui-touch-589214a.apk` | `ui-touch` | `589214a` | Như 11fb4ee, chữ "Thông tin nhân vật" không đè góc khung |
