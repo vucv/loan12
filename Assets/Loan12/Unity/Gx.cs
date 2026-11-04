@@ -16,6 +16,8 @@ namespace Loan12.UnityPort
         static Color tint = Color.white;
         static Vector2 offset;
         static readonly Stack<Vector2> groups = new Stack<Vector2>();
+        static readonly Stack<Rect> clips = new Stack<Rect>();
+        static Rect clip = new Rect(-1e6f, -1e6f, 2e6f, 2e6f); // like a GUI group, offscreen drawing stays inside it
         static Material texMat;
         static TextGenerator gen;
         static readonly List<UIVertex> verts = new List<UIVertex>();
@@ -57,6 +59,8 @@ namespace Loan12.UnityPort
             tint = Color.white;
             offset = Vector2.zero;
             groups.Clear();
+            clips.Clear();
+            clip = new Rect(-1e6f, -1e6f, 2e6f, 2e6f);
         }
 
         public static void BeginGroup(Rect r)
@@ -67,6 +71,11 @@ namespace Loan12.UnityPort
                 return;
             }
             groups.Push(offset);
+            clips.Push(clip);
+            Rect abs = new Rect(r.x + offset.x, r.y + offset.y, r.width, r.height);
+            float x0 = Mathf.Max(abs.x, clip.x), y0 = Mathf.Max(abs.y, clip.y);
+            float x1 = Mathf.Min(abs.xMax, clip.xMax), y1 = Mathf.Min(abs.yMax, clip.yMax);
+            clip = new Rect(x0, y0, Mathf.Max(0, x1 - x0), Mathf.Max(0, y1 - y0));
             offset += r.position;
         }
 
@@ -78,6 +87,7 @@ namespace Loan12.UnityPort
                 return;
             }
             offset = groups.Count > 0 ? groups.Pop() : Vector2.zero;
+            clip = clips.Count > 0 ? clips.Pop() : new Rect(-1e6f, -1e6f, 2e6f, 2e6f);
         }
 
         public static void DrawTexture(Rect r, Texture t)
@@ -116,6 +126,23 @@ namespace Loan12.UnityPort
             float x0 = r.x + offset.x, y0 = r.y + offset.y, x1 = x0 + r.width, y1 = y0 + r.height;
             // uv as in GUI: y up from the bottom of the texture
             float u0 = uv.x, u1 = uv.x + uv.width, vBottom = uv.y, vTop = uv.y + uv.height;
+            // cut to the group's rect, the uv along with it
+            float cx0 = Mathf.Max(x0, clip.x), cy0 = Mathf.Max(y0, clip.y), cx1 = Mathf.Min(x1, clip.xMax), cy1 = Mathf.Min(y1, clip.yMax);
+            if (cx1 <= cx0 || cy1 <= cy0)
+            {
+                return;
+            }
+            float fu0 = (cx0 - x0) / (x1 - x0), fu1 = (cx1 - x0) / (x1 - x0), fv0 = (cy0 - y0) / (y1 - y0), fv1 = (cy1 - y0) / (y1 - y0);
+            float nu0 = Mathf.Lerp(u0, u1, fu0), nu1 = Mathf.Lerp(u0, u1, fu1);
+            float nvTop = Mathf.Lerp(vTop, vBottom, fv0), nvBottom = Mathf.Lerp(vTop, vBottom, fv1);
+            x0 = cx0;
+            y0 = cy0;
+            x1 = cx1;
+            y1 = cy1;
+            u0 = nu0;
+            u1 = nu1;
+            vTop = nvTop;
+            vBottom = nvBottom;
             GL.Begin(GL.QUADS);
             GL.Color(tint);
             GL.TexCoord2(u0, vTop);
@@ -173,6 +200,13 @@ namespace Loan12.UnityPort
             GL.Begin(GL.QUADS);
             for (int i = 0; i + 3 < verts.Count; i += 4)
             {
+                // a letter outside the group's rect is left out (whole letters only)
+                float gy0 = oy - verts[i].position.y, gy2 = oy - verts[i + 2].position.y;
+                float gx0 = ox + verts[i].position.x, gx2 = ox + verts[i + 2].position.x;
+                if (Mathf.Min(gy0, gy2) < clip.y || Mathf.Max(gy0, gy2) > clip.yMax || Mathf.Min(gx0, gx2) < clip.x || Mathf.Max(gx0, gx2) > clip.xMax)
+                {
+                    continue;
+                }
                 for (int j = 0; j < 4; j++)
                 {
                     UIVertex v = verts[i + j];
