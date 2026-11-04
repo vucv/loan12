@@ -471,6 +471,12 @@ namespace Loan12.UnityPort
             while (!Safe(cond) && Time.realtimeSinceStartup < end)
             {
                 yield return null;
+                // an enemy met on the road while walking: the swords on the map, once
+                if (!seen.Contains("Hmap_swords") && Safe(() => C_PortMap.slash() != null))
+                {
+                    yield return new WaitForSeconds(0.15f);
+                    yield return Once("H", "map_swords");
+                }
             }
             if (!Safe(cond))
             {
