@@ -1,0 +1,612 @@
+# strings id
+# ---- common
+Đóng	Tutup
+ĐÓNG	TUTUP
+Có	Ya
+Không	Tidak
+Hủy	Batal
+Xong	Selesai
+Dừng	Berhenti
+Thoát	Keluar
+THOÁT	KELUAR
+Ở lại	Tetap
+Ở LẠI	TETAP
+Để sau	Nanti
+Bỏ qua	Lewati
+BỎ QUA	LEWATI
+TIẾP TỤC	LANJUT
+Chạm để tiếp tục	Ketuk untuk lanjut
+Chạm để bỏ qua	Ketuk untuk lewati
+Chạm để xem	Ketuk untuk lihat
+Chạm ra ngoài để đóng	Ketuk di luar untuk menutup
+chạm để tiếp	ketuk untuk lanjut
+BẬT	NYALA
+TẮT	MATI
+MỚI	BARU
+VIP	VIP
+OK	OK
+Tiếng Việt	Tiếng Việt
+English	English
+Ngôn ngữ	Bahasa
+NGÔN NGỮ	BAHASA
+vàng	emas
+VÀNG	EMAS
+{0} vàng	{0} emas
++{0} vàng	+{0} emas
+{0} máu	{0} HP
++{0} máu	+{0} HP
+-{0} máu	-{0} HP
++{0} năng lượng	+{0} energi
+{0} KN	{0} XP
++{0} KN	+{0} XP
++{0} tấn công	+{0} serangan
+{0} cái	{0} buah
+Có {0}	Punya {0}
+Còn {0}	Sisa {0}
+Cần {0}	Butuh {0}
+Đang có {0}	Punya {0}
+Đang có	Dimiliki
+Chưa có	Belum punya
+Đang có: {0}	Dimiliki: {0}
+Cấp {0}	Lv {0}
+cấp {0}	Lv {0}
+Lên cấp {0}!	Naik level! Lv {0}
+Hệ {0}	{0}
+HỆ {0}	{0}
+Hệ {0} · Cấp {1}	{0} · Lv {1}
+Hỏa	Api
+Lôi	Petir
+Thủy	Air
+HỎA	API
+LÔI	PETIR
+THỦY	AIR
+Máu	HP
+Máu {0} · Tấn công {1}	HP {0} · Serangan {1}
+Tấn công	Serangan
+Kinh nghiệm	Pengalaman
+Ô {0}	Slot {0}
+Mức {0}	Tingkat {0}
+MỨC {0}	TINGKAT {0}
+{0} phút trước	{0} menit lalu
+{0} ngày trước	{0} hari lalu
+vừa xong	baru saja
+hôm nay	hari ini
+hôm qua	kemarin
+???	???
+# ---- items, skills, heroes
+Long Thần Kiếm	Pedang Naga
+Nhân Sâm	Ginseng
+Ngân Lượng	Tael Perak
+Quỷ Diện Giáp	Zirah Topeng Iblis
+Bình Thuốc	Ramuan
+Ngọc Ấn	Segel Giok
+Bình Hồi Mạng	Botol Nyawa
+Long Thần Kiếm x3	Pedang Naga x3
+Nhân Sâm x3	Ginseng x3
+{0} x{1}	{0} x{1}
+Nhân đôi sức mạnh tấn công trong một lượt.	Menggandakan seranganmu selama satu giliran.
+Nhân đôi lượng máu cơ bản của võ tướng. Chỉ sử dụng một lần trong một trận đánh.	Menggandakan HP dasar pahlawan. Sekali per pertarungan.
+Nhận thêm được 1000 vàng.	Memberi 1000 emas tambahan.
+Ngăn cản 3/4 lực tấn công của kẻ thù trong một lượt	Menahan 3/4 serangan musuh selama satu giliran
+Hồi phục ngay lập tức 10% sinh lực. Chỉ sử dụng một lần trong một lượt.	Langsung memulihkan 10% HP. Sekali per giliran.
+Được ưu tiên đi trước nếu sở hữu ngọc ấn. Tự động kích hoạt khi bắt đầu trận đánh.	Memegang Segel Giok membuatmu jalan duluan. Dipakai otomatis saat pertarungan dimulai.
+{0} (+{1} máu)	{0} (+{1} HP)
+Hồi đầy mạng chơi ({0} mạng). Dùng ngoài trận, ở túi đồ hoặc khi hết mạng.	Mengisi ulang nyawamu ({0} nyawa). Pakai di luar pertarungan, dari tas atau saat nyawa habis.
+Dùng trong 1 lượt	Bertahan 1 giliran
+1 lần mỗi trận	Sekali per pertarungan
+1 lần mỗi lượt	Sekali per giliran
+Dùng ngoài trận	Pakai di luar pertarungan
+Tự dùng khi bắt đầu trận	Otomatis dipakai saat mulai
+Tấn công lượt đó: {0} thành {1}	Serangan giliran itu: {0} jadi {1}
+Máu trận đó: {0} thành {1}	HP pertarungan itu: {0} jadi {1}
+Chặn 3/4 sát thương của lượt địch	Menahan 3/4 damage dari giliran musuh
+Với máu {0} của bạn: +{1} máu	Dengan {0} HP-mu: +{1} HP
+Bạn luôn được đi trước	Kamu selalu jalan duluan
+Quả Cầu Lửa	Bola Api
+Mưa Thiên Thạch	Hujan Meteor
+Lửa Địa Ngục	Api Neraka
+Chuỗi Sét	Petir Berantai
+Khiên Sét	Perisai Petir
+Sấm Sét	Sambaran Guntur
+Mũi Tên Băng	Panah Es
+Cam Lộ Thủy	Embun Penyembuh
+Băng Phong	Badai Es
+Gây sát thương kẻ thù, lực sát thương bằng {0}, phá hủy tức thì 1 vùng diện tích 3x3ô trên bàn cờ.	Memberi {0} damage ke musuh dan langsung menghancurkan satu area 3x3 di papan.
+Gây sát thương kẻ thù, lực sát thương bằng {0}, phá hủy tức thì từ 3 đến 5 vùng diện tích 2x2ô trên bàn cờ.	Memberi {0} damage ke musuh dan langsung menghancurkan 3 sampai 5 area 2x2 di papan.
+Gây sát thương kẻ thù, lực sát thương bằng {0}, phá hủy tức thì 2 vùng diện tích 4x4ô trên bàn cờ.	Memberi {0} damage ke musuh dan langsung menghancurkan dua area 4x4 di papan.
+Gây sát thương kẻ thù, lực sát thương bằng {0}, phá hủy tức thì từ 4 đến 8 ô trên bàn cờ.	Memberi {0} damage ke musuh dan langsung menghancurkan 4 sampai 8 petak di papan.
+Hóa giải tất cả các đòn tấn công của kẻ thù. Tác dụng trong 6 lượt.	Meniadakan semua serangan musuh. Bertahan 6 giliran.
+Gây sát thương kẻ thù, lực sát thương bằng {0}, phá hủy tức thì từ 3 đến 6 vùng diện tích 3x3ô trên bàn cờ.	Memberi {0} damage ke musuh dan langsung menghancurkan 3 sampai 6 area 3x3 di papan.
+Gây sát thương kẻ thù, lực sát thương bằng {0}, triệt tiêu một lượng nhỏ năng lượng của kẻ thù.	Memberi {0} damage ke musuh dan menyedot sedikit energinya.
+Phục hồi 20% sinh lực cho bản thân. Phá hủy tất cả trái tim trên bàn cờ và hấp thụ sinh lực của trái tim bị hủy.	Memulihkan 20% HP-mu. Menghancurkan semua hati di papan dan menyerap HP-nya.
+Đóng băng kẻ thù trong 2 lượt, gây sát thương kẻ thù, lực sát thương bằng {0}, triệt tiêu một lượng lớn năng lượng của kẻ thù.	Membekukan musuh selama 2 giliran, memberi {0} damage dan menyedot banyak energinya.
+Một hào kiệt mang trong người sức mạnh hủy diệt của Lửa.	Pahlawan yang membawa kekuatan penghancur Api.
+Đại đệ tử của Lôi Thần, có khả năng điều khiển sấm sét để tấn công kẻ thù hoặc bảo vệ bản thân.	Murid pertama Dewa Petir, yang memerintah petir untuk menyambar musuh atau melindungi diri.
+Mang trong người dòng máu của Thủy Thần, có thể tự hồi phục tổn thương và đóng băng kẻ thù.	Mengalir darah Dewa Air: menyembuhkan luka sendiri dan membekukan musuh.
+Đệ tử của Hỏa Phụng Tiên, sở hữu sức mạnh hủy diệt của Lửa.	Murid Dewi Burung Api Abadi, pemilik kekuatan penghancur Api.
+Nữ hào kiệt xuất chúng, có quyền năng gọi sấm sét để tấn công kẻ thù hoặc tự bảo vệ bản thân.	Pahlawan wanita hebat yang memanggil petir untuk menyambar musuh atau melindungi diri.
+Hậu duệ của Bắc Hải Long Vương, có thể tự trị thương hoặc làm ngưng tụ hơi nước để đóng băng kẻ thù.	Keturunan Raja Naga Laut Utara: menyembuhkan luka sendiri atau memadatkan kabut untuk membekukan musuh.
+# ---- bag
+Sát thương diện rộng mạnh nhất: Lửa Địa Ngục phá 2 vùng 4x4	Damage area terkuat: Api Neraka menyapu dua area 4x4
+Phá nhiều ô một lúc, dễ tạo chuỗi nổ liên hoàn	Membersihkan banyak petak sekaligus, mudah bikin reaksi berantai
+Hạ gục nhanh, hợp với lối đánh tấn công	KO cepat, cocok untuk gaya main agresif
+Khiên Sét hóa giải mọi đòn tấn công trong 6 lượt	Perisai Petir menahan semua serangan selama 6 giliran
+Chuỗi Sét chỉ cần 1 ô năng lượng, phá ô rải rác	Petir Berantai cuma butuh 1 energi dan memecah petak yang tersebar
+Cân bằng giữa công và thủ, an toàn khi gặp địch mạnh	Serangan dan pertahanan seimbang, aman melawan musuh kuat
+Tự hồi máu: Cam Lộ Thủy hồi 20% và hút máu từ trái tim	Penyembuhan diri: Embun Penyembuh memulihkan 20% dan menyedot HP dari hati
+Đóng băng địch 2 lượt, làm mất năng lượng của địch	Membekukan musuh 2 giliran dan menyedot energinya
+Bền bỉ nhất, hợp đánh lâu	Paling tangguh dari semua, cocok untuk pertarungan panjang
+Gom đủ 3 ô năng lượng rồi tung Lửa Địa Ngục khi địch còn nhiều máu	Simpan 3 energi dan pakai Api Neraka saat HP musuh masih banyak
+Dùng Quả Cầu Lửa dọn chỗ bàn cờ đang bí nước	Pakai Bola Api untuk membersihkan bagian papan yang macet
+Không tự hồi máu được: mang vật phẩm hồi máu khi đánh trùm	Tidak bisa sembuh sendiri: bawa item penyembuh melawan bos
+Bật Khiên Sét khi địch sắp đầy năng lượng để chặn tuyệt chiêu	Pasang Perisai Petir saat energi musuh hampir penuh
+Trong 6 lượt có khiên, tấn công dồn dập không cần phòng thủ	Selama perisai aktif, serang tanpa henti
+Để dành Sấm Sét để kết liễu	Simpan Sambaran Guntur untuk pukulan terakhir
+Đợi bàn cờ có nhiều trái tim rồi mới dùng Cam Lộ Thủy	Tunggu banyak hati di papan sebelum memakai Embun Penyembuh
+Tung Băng Phong khi địch sắp ra chiêu, rồi tranh thủ 2 lượt bị băng	Pakai Badai Es tepat sebelum skill musuh, lalu manfaatkan 2 giliran beku
+Mũi Tên Băng làm địch chậm tích năng lượng	Panah Es memperlambat pengisian energi musuh
+ƯU ĐIỂM	KELEBIHAN
+MẸO KHI CHƠI	TIPS
+Thông tin nhân vật	Info pahlawan
+Kinh nghiệm {0} / {1} (lên cấp {2})	XP {0} / {1} (ke Lv {2})
+TUYỆT CHIÊU	SKILL
+{0} ô năng lượng	{0} energi
+VẬT PHẨM	ITEM
+Dùng trong trận	Dipakai dalam pertarungan
+Cửa hàng	Toko
+mua thêm	beli lagi
+Hết · chạm để mua	Kosong · ketuk untuk beli
+chọn khi chuẩn bị trận	pilih sebelum bertarung
+Ngọc Ấn x{0}	Segel Giok x{0}
+hồi đầy mạng	nyawa penuh
+BẢO VẬT	RELIK
+gốc {0} · sự kiện +{1}	dasar {0} · event +{1}
+Đã hồi đầy {0} mạng	Nyawa diisi jadi {0}
+Đã mua {0} {1} (-{2} vàng)	Beli {0} {1} (-{2} emas)
+Chưa có Bình Hồi Mạng	Belum punya Botol Nyawa
+Mạng đang đầy	Nyawa sudah penuh
+DÙNG · hồi đầy mạng	PAKAI · isi nyawa
+MUA THÊM {0} · {1} vàng	BELI {0} LAGI · {1} emas
+Thiếu {0} vàng · nạp thêm	Kurang {0} emas · cari emas
+Hệ {0} · {1} ô năng lượng	{0} · {1} energi
+# ---- battle
+Á! Đau quá...	Argh! Sakit juga...
+Hự! Ngươi khá lắm...	Ugh! Lumayan...
+Không xong rồi!	Gawat nih!
+Á! Ngươi khá lắm...	Ah! Boleh juga...
+Hự... lợi hại!	Ugh... hebat!
+Đáng ghét!	Sialan!
+Không lẽ ta thua ở đây sao...	Masa aku kalah di sini...
+Ta... chưa chịu thua đâu!	Aku... belum menyerah!
+Kẻ nào dám đến đây? Nạp mạng!	Siapa berani datang? Hadapi aku!
+Ngươi chạy đâu cho thoát!	Kau tak bisa lari!
+Để xem ngươi được mấy chiêu!	Tunjukkan kemampuanmu!
+Khỏe lại rồi!	Aku bangkit lagi!
+Vẫn còn sức chiến đấu!	Aku masih bisa bertarung!
+Hừ! Chẳng nhằm nhò gì.	Hmph! Itu bukan apa-apa.
+Đòn này chưa đủ đâu!	Belum cukup!
+Ha ha! Biết lợi hại của ta chưa!	Ha ha! Sekarang kau tahu kekuatanku!
+Thắng rồi!	Menang!
+Kẻ nào dám cản đường ta nữa?	Siapa lagi berani menghalangiku?
+Ngươi còn non lắm!	Kau masih hijau!
+Về luyện thêm đi!	Latihan lagi sana!
+Ha ha! Chỉ có vậy thôi sao?	Ha ha! Cuma segitu?
+Chờ đến lượt của bạn	Tunggu giliranmu
+Cần thêm {0} năng lượng	Butuh {0} energi lagi
+Đã hết, mua thêm ở màn chuẩn bị	Habis, beli lagi sebelum bertarung
+Lượt này đã dùng 1 vật phẩm	Sudah pakai item giliran ini
+{0} mất {1} máu	{0} kehilangan {1} HP
+{0} hồi {1} máu	{0} pulih {1} HP
+{0} dùng {1}	{0} memakai {1}
+Nếm thử {0}!	Rasakan {0}-ku!
+Quỷ Diện Giáp chặn 3/4 đòn	Zirah Topeng Iblis menahan 3/4
+Long Thần Kiếm: đánh x2	Pedang Naga: serangan x2
+{0} đã chiến thắng!	{0} menang!
+{0} đã thua trận	{0} dikalahkan
+Lưu Cơ	Luu Co
+CHIẾN THẮNG	MENANG
+THẤT BẠI	KALAH
+LƯỢT CỦA BẠN	GILIRANMU
+LƯỢT ĐỐI THỦ	GILIRAN MUSUH
+Tuyệt chiêu {0}	Skill {0}
+Mỗi lượt dùng 1 vật phẩm	Satu item per giliran
+DÙNG	PAKAI
+# ---- hero
+TẠO NHÂN VẬT	KARAKTER BARU
+CHỌN TƯỚNG	PILIH PAHLAWAN
+Bạn đã có tướng này ở Ô {0} (vẫn tạo được)	Pahlawan ini sudah ada di slot {0} (tetap bisa dibuat)
+CHỌN TƯỚNG NÀY	PILIH PAHLAWAN INI
+Cấp 1 · tăng theo cấp	Lv 1 · tumbuh seiring level
+HỦY TẠO NHÂN VẬT?	BATALKAN PEMBUATAN?
+Chưa mất lượt tạo, lần sau tạo lại được.	Jatah pembuatanmu tetap ada, bisa buat nanti.
+# ---- ads, lives
+QUẢNG CÁO (THỬ NGHIỆM)	IKLAN (TES)
+Sẽ thay bằng quảng cáo thật	Akan diganti iklan asli
++1 mạng chơi	+1 nyawa
+Cần xem hết quảng cáo để nhận mạng	Tonton iklan sampai habis untuk dapat nyawa
+Chưa có quảng cáo, thử lại sau ít phút	Iklan belum tersedia, coba lagi beberapa menit lagi
+Đã mua và dùng Bình Hồi Mạng: đầy {0} mạng	Beli dan pakai Botol Nyawa: {0} nyawa
+Thiếu {0} vàng để mua Bình Hồi Mạng	Kurang {0} emas untuk Botol Nyawa
+HẾT MẠNG	NYAWA HABIS
+MẠNG CHƠI	NYAWA
+Mạng chơi	Nyawa
+Bạn đã hết mạng chơi. Mỗi trận cần 1 mạng (thắng thì được trả lại).	Nyawamu habis. Tiap pertarungan memakai 1 nyawa (kembali jika menang).
+Mạng chơi đang đầy ({0}/{1}).	Nyawa penuh ({0}/{1}).
+Bạn còn {0}/{1} mạng. Mỗi trận cần 1 mạng.	Kamu punya {0}/{1} nyawa. Tiap pertarungan memakai 1 nyawa.
+{0} +1 mạng sau {1}.	{0} +1 nyawa dalam {1}.
++1 MẠNG (VIP)	+1 NYAWA (VIP)
+XEM QUẢNG CÁO · +1 MẠNG	TONTON IKLAN · +1 NYAWA
+DÙNG BÌNH HỒI MẠNG (có {0})	PAKAI BOTOL NYAWA (punya {0})
+MUA BÌNH HỒI MẠNG · {0} vàng	BELI BOTOL NYAWA · {0} emas
+Bình Hồi Mạng: hồi đầy {0} mạng	Botol Nyawa: mengisi {0} nyawa
+# ---- map
+Bạn đang ở {0}	Kamu ada di {0}
+Chưa có đường tới {0}	Belum ada jalan ke {0}
+Chưa mở. Làm tiếp nhiệm vụ chính để mở vùng này.	Terkunci. Lanjutkan misi utama untuk membuka area ini.
+đánh {0}	lawan {0}
+{0} đường	{0} jalan
+Đang đi tới {0}	Menuju {0}
+Bản đồ	Peta
+Túi đồ	Tas
+Nhiệm vụ	Misi
+Dấu đỏ là nhiệm vụ chính. Chạm vào một nơi, tướng sẽ tự đi tới theo đường.	Tanda merah adalah misi utama. Ketuk sebuah tempat dan pahlawanmu berjalan ke sana lewat jalan.
+Dấu cam là sự kiện phụ, dấu vàng là quân canh. Xem hết ở thẻ Nhiệm vụ.	Tanda oranye adalah event sampingan, tanda kuning adalah penjaga. Lihat semua di tab Misi.
+{0}/2 · chạm để tiếp	{0}/2 · ketuk untuk lanjut
+# ---- menu
+NHÂN VẬT	KARAKTER
+Tạo nhân vật đầu tiên · miễn phí	Buat karakter pertamamu · gratis
+Tạo nhân vật mới	Buat karakter baru
+Xem 1 quảng cáo để tạo nhân vật	Tonton 1 iklan untuk membuat karakter
+CHƠI MỚI	GAME BARU
+CÀI ĐẶT	PENGATURAN
+THOÁT GAME	KELUAR GAME
+CHƠI TIẾP	LANJUTKAN
+Đã đủ 3 nhân vật. Hãy xóa 1 nhân vật để tạo mới.	Kamu punya 3 karakter. Hapus satu untuk membuat yang baru.
+THOÁT GAME?	KELUAR GAME?
+Tiến độ đã được lưu.	Progresmu sudah disimpan.
+# ---- pause
+TẠM DỪNG	JEDA
+Trận đấu đang tạm dừng	Pertarungan dijeda
+Bạn vừa rời trò chơi, trận đấu đã tạm dừng	Kamu keluar dari game, jadi pertarungan dijeda
+ÂM THANH	SUARA
+RUNG	GETAR
+THOÁT TRẬN	TINGGALKAN
+Bỏ trận, về bản đồ · tính là thua	Keluar dan kembali ke peta · dihitung kalah
+THOÁT TRẬN?	TINGGALKAN PERTARUNGAN?
+Trận này sẽ tính là thua: mất 1 mạng chơi, không bị trừ kinh nghiệm.	Ini dihitung kalah: kamu kehilangan 1 nyawa, tanpa penalti XP.
+Trận này sẽ tính là thua: mất 1 mạng chơi và bị phạt kinh nghiệm như khi thua.	Ini dihitung kalah: kamu kehilangan 1 nyawa dan kena penalti XP biasa.
+# ---- prepare
+Chưa có {0}, bấm MUA để mua	Belum punya {0}, ketuk BELI untuk mendapatkannya
+Đã đủ 3 món, chạm vào ô trên để bỏ bớt	Sudah 3 item, ketuk slot di atas untuk melepas satu
+Không đủ vàng	Emas tidak cukup
+CHUẨN BỊ XUẤT TRẬN	PERSIAPAN PERANG
+Bạn được đi trước	Kamu jalan duluan
+{0} được đi trước	{0} jalan duluan
+MANG VÀO TRẬN	BAWA KE PERTARUNGAN
+TÚI ĐỒ	TAS
+RÚT LUI	MUNDUR
+XUẤT TRẬN	SERANG
+Gợi ý: {0} đánh mạnh, nên mang Quỷ Diện Giáp.	Tips: {0} pukulannya keras, bawa Zirah Topeng Iblis.
+Gợi ý: {0} nhiều máu, nên mang Long Thần Kiếm.	Tips: HP {0} banyak, bawa Pedang Naga.
+Gợi ý: mang Bình Thuốc để hồi máu khi cần.	Tips: bawa Ramuan untuk sembuh saat perlu.
+Mua {0} cái giá {1} vàng?	Beli {0} seharga {1} emas?
+Bạn đang có {0} vàng	Kamu punya {0} emas
+MUA	BELI
+# ---- quests
+CHÍNH TUYẾN {0}	UTAMA {0}
+SỰ KIỆN {0}	EVENT {0}
+QUÂN CANH {0}	PENJAGA {0}
+Chương {0}	Bab {0}
+Chương {0} · nhiệm vụ {1}	Bab {0} · misi {1}
+ĐÃ THỐNG NHẤT GIANG SƠN!	NEGERI BERSATU!
+Mở khi xong nhiệm vụ {0}	Terbuka setelah misi {0}
++ {0} nhiệm vụ nữa trong chương	+ {0} misi lagi di bab ini
+Hội thoại	Cerita
+Trận hướng dẫn	Pertarungan tutorial
+Đánh	Pertarungan
+{0}. ĐANG LÀM	{0}. BERLANGSUNG
+BẮT ĐẦU	MULAI
+ĐI TỚI	PERGI
+Đánh bại {0}	Kalahkan {0}
+Gặp {0}	Temui {0}
++1 hộp vật phẩm	+1 kotak item
+hộp vật phẩm	kotak item
+nhiệm vụ {0}	misi {0}
+Đã hoàn thành	Selesai
+! Đang làm	! Berlangsung
+Loại	Jenis
+Nơi	Tempat
+Đối thủ	Lawan
+Đã nhận	Diterima
+Đã nhận {0}	Diterima {0}
+Thưởng	Hadiah
+Thưởng: {0}	Hadiah: {0}
+Mở thêm	Membuka
+Đọc lại hội thoại	Baca lagi ceritanya
+Trước nhiệm vụ	Sebelum misi
+Sau khi thắng	Setelah menang
+Gặp gỡ	Pertemuan
+gặp gỡ	pertemuan
+Đi tới	Pergi
+Đã xong	Selesai
+Ở vùng chưa mở trên bản đồ	Di area peta yang terkunci
+ĐẤU TRƯỜNG · TAM ĐIỆP	ARENA · TAM DIEP
+{0}/5 mức	{0}/5 tingkat
+mở sẵn	terbuka
+thắng Lê Hoàn	kalahkan Le Hoan
+thắng Nguyễn Ninh	kalahkan Nguyen Ninh
+đạt cấp 30	capai Lv 30
+cấp {0} (bằng cấp bạn)	Lv {0} (levelmu)
+Đã dẹp	Tuntas
+Còn {0} trạm gác ở vùng chưa mở	{0} pos jaga lagi di area terkunci
+Nhiệm vụ {0}	Misi {0}
+trạm gác gần {0}	pos jaga dekat {0}
+Trạm gác	Pos jaga
+# ---- result
+HOÀN THÀNH NHIỆM VỤ	MISI SELESAI
+LUYỆN TẬP	LATIHAN
+Vàng nhặt được	Emas terkumpul
+Thưởng thắng trận	Hadiah kemenangan
+Vật phẩm: {0}	Item: {0}
+Hộp vật phẩm (2 vật phẩm)	Kotak item (2 item)
+Vàng thưởng	Hadiah emas
+Kinh nghiệm thưởng	Hadiah XP
+Hộp vật phẩm cuối	Kotak item terakhir
+Hộp vật phẩm	Kotak item
+Mở thêm: {0}	Terbuka: {0}
+Kinh nghiệm luyện tập	XP latihan
+Vàng hiện có	Emas dimiliki
+thua {0}	kalah dari {0}
+Kinh nghiệm bị phạt	Penalti XP
+Gợi ý: mua Bình Thuốc hoặc Quỷ Diện Giáp ở màn chuẩn bị trước khi đánh lại.	Tips: beli Ramuan atau Zirah Topeng Iblis di layar persiapan sebelum mencoba lagi.
+Đánh lại trận này?	Ulangi pertarungan ini?
+TRỞ VỀ	KEMBALI
+ĐÁNH LẠI	ULANGI
+Mở hộp vật phẩm: {0}	Kotak item dibuka: {0}
+Đã mở thêm 1 mức luyện tập ở Đấu trường. Hãy vào đó thử sức!	Tingkat latihan baru terbuka di Arena. Ayo uji kekuatanmu!
+Bỏ qua trận hướng dẫn và về bản đồ? Luật chơi xem lại được trong Cài đặt.	Lewati pertarungan tutorial dan kembali ke peta? Aturannya ada di Pengaturan.
+# ---- settings
+Âm thanh	Suara
+Nhạc và tiếng trong game	Musik dan efek suara
+Âm lượng	Volume
+Rung	Getar
+Khi trúng đòn, mua hàng, giữ để xoá	Saat kena serang, membeli, tahan untuk hapus
+TRÒ CHƠI	GAME
+Luật chơi	Aturan
+Xếp biểu tượng, vật phẩm, cấp độ	Mencocokkan, item, level
+Hướng dẫn bản đồ	Tutorial peta
+Xem lại 3 bước chỉ tay	Ulangi 3 langkah petunjuk
+Mở khi đang ở bản đồ	Tersedia di peta
+Đổi nhân vật	Ganti karakter
+MUA HÀNG VÀ QUẢNG CÁO	PEMBELIAN DAN IKLAN
+Khôi phục giao dịch	Pulihkan pembelian
+Không có giao dịch nào để khôi phục	Tidak ada pembelian untuk dipulihkan
+HỖ TRỢ	DUKUNGAN
+Đánh giá game	Beri nilai game
+Chia sẻ với bạn bè	Bagikan ke teman
+Chính sách quyền riêng tư	Kebijakan privasi
+Thông tin và tác giả	Tentang dan kredit
+Mã người chơi: {0}	ID Pemain: {0}
+Phiên bản {0}	Versi {0}
+Loạn 12 sứ quân	Loan 12 Su Quan
+Loạn 12 Sứ Quân	Loan 12 Su Quan
+2010 MicroGame	2010 MicroGame
+Về menu chính	Kembali ke menu utama
+MENU	MENU
+Thanh kiếm	Pedang
+Tấn công đối phương.	Menyerang lawan.
+Kiếm lửa	Pedang api
+Mạnh hơn kiếm thường, nổ thêm 1 ô xung quanh; xếp chung được với kiếm thường.	Lebih kuat dari pedang dan meledakkan petak di sekitarnya; bisa dicocokkan dengan pedang biasa.
+Âm dương	Yin-yang
+Lấy năng lượng để dùng tuyệt chiêu.	Memberi energi untuk skill.
+Bánh chưng	Kue beras
+Lấy lương thực. Lương thực tiêu hao mỗi lượt của đối phương; hết là thua.	Memberi makanan. Makanan berkurang tiap giliran musuh; kalau habis, kamu kalah.
+Thỏi vàng	Batang emas
+Lấy vàng để mua vật phẩm.	Memberi emas untuk membeli item.
+Cuốn sách	Buku
+Lấy kinh nghiệm để lên cấp.	Memberi XP untuk naik level.
+Trái tim	Hati
+Hồi máu. Hết máu là thua trận.	Memulihkan HP. Kalau HP habis, kamu kalah.
+Xếp ít nhất 3 biểu tượng cùng loại, ngang hoặc dọc.	Jajarkan minimal 3 ikon yang sama, mendatar atau menurun.
+Xếp 4 được thêm 1 lượt và có thể rơi vật phẩm; xếp 5 luôn rơi 1 vật phẩm.	Cocokkan 4 untuk giliran tambahan dan peluang item; cocokkan 5 pasti dapat item.
+Xếp sai mất lượt và mất máu.	Langkah salah menghabiskan giliran dan sedikit HP.
+CÁCH ĐI	CARA BERGERAK
+BIỂU TƯỢNG	IKON
+Cấp càng cao thì tấn công và máu càng lớn.	Makin tinggi levelmu, makin besar serangan dan HP.
+LUẬT CHƠI	ATURAN
+hỗ trợ	dukungan
+Bản chuyển sang Unity	Port Unity
+Màn hình cảm ứng toàn màn hình	Antarmuka sentuh layar penuh
+Ghi chú	Catatan
+Tình tiết, cốt truyện và tên nhân vật phụ của trò chơi dựa vào sự kiện Loạn 12 Sứ Quân trong lịch sử Việt Nam ở thế kỷ X.	Cerita dan nama tokoh sampingan berdasarkan masa Anarki 12 Panglima Perang dalam sejarah Vietnam abad ke-10.
+THÔNG TIN	TENTANG
+Chia sẻ	Bagikan
+Đã chép lời mời vào bộ nhớ tạm	Undangan disalin ke papan klip
+Trang chính sách quyền riêng tư sẽ có trước khi phát hành	Halaman kebijakan privasi akan siap sebelum rilis
+# ---- shop
+PHỔ BIẾN	POPULER
+LỜI NHẤT	PALING HEMAT
++{0} vàng vào ví chung	+{0} emas ke dompet bersama
+ƯU ĐÃI	PENAWARAN
+Thiếu vàng?	Butuh emas?
+Rương miễn phí, gói vàng	Peti gratis, paket emas
+Vàng và vật phẩm dùng chung cho mọi nhân vật	Emas dan item dipakai bersama semua karakter
+{0} vàng / gói {1} cái · có {2}	{0} emas / paket isi {1} · punya {2}
+{0} GÓI	{0} PAKET
+Còn lại sau khi mua: {0} vàng	Setelah beli: {0} emas
+Bạn có {0} vàng	Kamu punya {0} emas
++ VÀNG (thiếu {0})	+ EMAS (kurang {0})
+Cần xem hết quảng cáo để nhận vàng	Tonton iklan sampai habis untuk dapat emas
+RƯƠNG MIỄN PHÍ	PETI GRATIS
+còn {0} lượt hôm nay	Sisa {0} hari ini
+Mỗi lần mở cách nhau ít nhất 1 giờ	Minimal 1 jam antar pembukaan
+Lượt mới lúc 0:00	Pembukaan baru jam 0:00
+Hết lượt	Habis untuk hari ini
+Chờ	Tunggu
+MỞ NGAY	BUKA SEKARANG
+MỞ	BUKA
+Mua bằng tiền thật sẽ mở khi kết nối Google Play	Pembelian uang asli terbuka setelah Google Play terhubung
+Mua bằng tiền thật sẽ mở khi game kết nối Google Play	Pembelian uang asli terbuka setelah game terhubung ke Google Play
+Vàng dùng chung cho mọi nhân vật · giá theo Google Play (chưa kết nối)	Emas dipakai bersama semua karakter · harga dari Google Play (belum terhubung)
+GÓI KHỞI ĐẦU	PAKET PEMULA
+CHỈ 1 LẦN	SEKALI SAJA
+3.000 vàng	3.000 emas
+Đầy mạng	Nyawa penuh
+Trị giá 6.000 vàng và đầy mạng	Senilai 6.000 emas plus nyawa penuh
+ĐÃ MUA	TERBELI
+VIP TRỌN ĐỜI	VIP SEUMUR HIDUP
+Mua 1 lần, dùng mãi, cho mọi nhân vật	Beli sekali, punya selamanya, untuk semua karakter
+Nhận thưởng quảng cáo ngay, không phải xem	Dapat hadiah iklan langsung, tanpa nonton
+Ô vật phẩm thứ 4 khi chuẩn bị xuất trận	Slot item ke-4 sebelum bertarung
+Tối đa 6 mạng (thường 5)	Hingga 6 nyawa (biasanya 5)
+Tạo nhân vật mới không cần xem quảng cáo	Buat karakter tanpa nonton iklan
+ĐÃ KÍCH HOẠT	AKTIF
+CỬA HÀNG	TOKO
+# ---- slots
+Lưu tối đa 3 nhân vật.	Maksimal 3 karakter.
+Lưu tối đa 3 nhân vật, mỗi nhân vật có bản đồ và cấp riêng. Vàng và vật phẩm dùng chung.	Maksimal 3 karakter, masing-masing dengan peta dan level sendiri. Emas dan item dipakai bersama.
+Đã đủ 3 nhân vật.	Kamu punya 3 karakter.
+Muốn tạo nhân vật khác, hãy xóa 1 nhân vật.	Untuk membuat lagi, hapus satu dulu.
+Chạm vào thẻ để chọn · biểu tượng thùng rác để xóa	Ketuk kartu untuk memilih · tong sampah untuk hapus
+CHƠI	MAIN
+Chơi gần nhất: {0}	Terakhir main: {0}
+ĐANG CHƠI	DIMAINKAN
+trống	kosong
+Tạo ngay (VIP)	Buat sekarang (VIP)
+Xem QC để tạo	Tonton iklan untuk membuat
+Đang tải quảng cáo…	Memuat iklan…
+Cần xem hết quảng cáo để nhận lượt tạo	Tonton iklan sampai habis untuk membuka pembuatan
+NHÂN VẬT MỚI	KARAKTER BARU
+Xem 1 quảng cáo ngắn để mở lượt tạo nhân vật thứ {0}.	Tonton 1 iklan singkat untuk membuka karakter #{0}.
+Xem 1 quảng cáo ngắn để mở lượt tạo nhân vật thứ {0}. {1} nhân vật hiện có giữ nguyên.	Tonton 1 iklan singkat untuk membuka karakter #{0}. {1} karakter yang ada tetap aman.
+XEM QUẢNG CÁO	TONTON IKLAN
+VIP: tạo ngay, không cần xem quảng cáo	VIP: buat sekarang, tanpa iklan
+Đã xóa {0}	{0} dihapus
+XÓA NHÂN VẬT?	HAPUS KARAKTER?
+Sẽ mất vĩnh viễn:	Hilang selamanya:
+· Tiến độ bản đồ và nhiệm vụ	· Progres peta dan misi
+· Cấp {0} và kinh nghiệm	· Level {0} dan XP
+· {0} bảo vật đã sưu tập	· {0} relik terkumpul
+Vàng, vật phẩm, mạng chơi và VIP vẫn giữ nguyên.	Emas, item, nyawa dan VIP tetap ada.
+GIỮ 2 GIÂY ĐỂ XÓA	TAHAN 2 DETIK UNTUK HAPUS
+# ---- arena
+ĐẤU TRƯỜNG	ARENA
+Tam Điệp · luyện kinh nghiệm, trả vé bằng vàng	Tam Diep · latihan cari XP, tiket bayar emas
+Thiếu vàng: vé mức {0} là {1} vàng	Emas kurang: tiket tingkat {0} seharga {1} emas
+Mức {0} chưa mở: {1}	Tingkat {0} terkunci: {1}
++{0}% cấp	+{0}% level
+Thiếu vàng	Butuh emas
+Chưa mở	Terkunci
+Đối thủ mức {0}	Lawan tingkat {0}
+Thắng: +{0} kinh nghiệm ({1}% một cấp)	Menang: +{0} XP ({1}% satu level)
+Thua: mất 1 mạng, không trừ kinh nghiệm. Vàng, KN nhặt trong trận không tính.	Kalah: 1 nyawa, tanpa penalti XP. Emas dan XP yang didapat dalam pertarungan tidak dihitung.
+Bạn không đủ vàng cho mức nào đang mở. Mở rương miễn phí hoặc mua vàng ở Cửa hàng.	Emas tidak cukup untuk tingkat mana pun. Buka peti gratis atau beli emas di Toko.
+ĐÁNH	SERANG
+Vé {0} vàng	Tiket {0} emas
+# ---- quest titles (names without accents)
+Học binh pháp với Lưu Cơ	Belajar strategi dengan Luu Co
+Nhận lệnh hộ tống chủ tướng	Terima perintah mengawal tuan
+Hộ tống chủ tướng về Kỳ Bố	Kawal tuan ke Ky Bo
+Bàn việc xưng hiệu	Bahas soal gelar
+Dẹp sơn tặc ở Tam Điệp	Basmi bandit di Tam Diep
+Dự đại lễ xưng Vạn Thắng Vương	Hadiri penobatan Van Thang Vuong
+Kết hòa ước với Phạm Bạch Hổ	Berdamai dengan Pham Bach Ho
+Bàn kế đánh Bình Kiều	Rencanakan serangan ke Binh Kieu
+Đánh chiếm Bình Kiều	Rebut Binh Kieu
+Chọn hướng tiến quân	Pilih rute perjalanan
+Đánh Ngô Nhật Khánh	Lawan Ngo Nhat Khanh
+Nhận tin Lã Đường đánh Đằng Châu	Kabar: La Duong menyerang Dang Chau
+Cứu viện Đằng Châu	Selamatkan Dang Chau
+Bàn kế đánh Tế Giang	Rencanakan serangan ke Te Giang
+Phá quân canh Tế Giang	Tembus penjaga Te Giang
+Diệt Lã Đường ở Tế Giang	Kalahkan La Duong di Te Giang
+Từ biệt Phạm Bạch Hổ	Berpamitan dengan Pham Bach Ho
+Phá đồn Bảo Đà	Rebut benteng Bao Da
+Bắt Đỗ Cảnh Thạc	Tangkap Do Canh Thac
+Củng cố Đỗ Động	Amankan Do Dong
+Giữ thành Đỗ Động	Pertahankan benteng Do Dong
+Bàn kế đánh Tây Phù Liệt	Rencanakan serangan ke Tay Phu Liet
+Hỏi tội Nguyễn Trí Khả	Adili Nguyen Tri Kha
+Diệt Nguyễn Siêu	Kalahkan Nguyen Sieu
+Bàn kế phá liên minh	Rencana memecah persekutuan
+Cứu viện Ô Man	Selamatkan O Man
+Chuẩn bị đánh Siêu Loại	Bersiap menyerang Sieu Loai
+Đánh vào Siêu Loại	Serbu Sieu Loai
+Đuổi bắt Lý Khuê	Buru Ly Khue
+Xuất binh đánh Tiên Du	Bergerak ke Tien Du
+Đánh Nguyễn Thủ Tiệp	Lawan Nguyen Thu Tiep
+Bàn kế đánh Cổ Loa	Rencanakan serangan ke Co Loa
+Phá quân canh Cổ Loa	Tembus penjaga Co Loa
+Đánh Lữ Xử Bình ở Cổ Loa	Lawan Lu Xu Binh di Co Loa
+Bàn kế đánh Tam Đái	Rencanakan serangan ke Tam Dai
+Phá quân canh Tam Đái	Tembus penjaga Tam Dai
+Đánh Nguyễn Khoan ở Tam Đái	Lawan Nguyen Khoan di Tam Dai
+Nhận tin Kỳ Bố bị vây	Kabar: Ky Bo dikepung
+Giải vây Kỳ Bố	Bebaskan Ky Bo dari kepungan
+Bàn kế đánh Hồi Hồ	Rencanakan serangan ke Hoi Ho
+Phá quân canh Hồi Hồ	Tembus penjaga Hoi Ho
+Đánh Kiều Công Hãn	Lawan Kieu Cong Han
+Đánh Kiều Thuận	Lawan Kieu Thuan
+Bàn việc xưng đế	Bahas naik takhta
+Diệt Ấu Rồng ở Hoa Lư	Bunuh Naga Muda di Hoa Lu
+Lễ lên ngôi Đinh Tiên Hoàng	Penobatan Dinh Tien Hoang
+Khởi binh ở Hoa Lư	Bangkit di Hoa Lu
+Bình Kiều	Binh Kieu
+Cứu Đằng Châu, diệt Tế Giang	Selamatkan Dang Chau, rebut Te Giang
+Đỗ Động Giang	Do Dong Giang
+Tây Phù Liệt	Tay Phu Liet
+Siêu Loại và Tiên Du	Sieu Loai dan Tien Du
+Cổ Loa và Tam Đái	Co Loa dan Tam Dai
+Kỳ Bố và Hồi Hồ	Ky Bo dan Hoi Ho
+Thống nhất giang sơn	Satukan negeri
+ĐỒNG Ý	OK
+NHẬN	KLAIM
+HỘP QUÀ	KOTAK HADIAH
+MỞ HỘP	BUKA
+XEM QUẢNG CÁO · X2	TONTON IKLAN · X2
+Bạn nhận được {0} hộp quà	Kamu dapat {0} kotak hadiah
+Bạn nhận được 1 hộp quà	Kamu dapat 1 kotak hadiah
+Mỗi hộp có 1 vật phẩm	Tiap kotak berisi 1 item
+Đã mở {0} hộp quà	Membuka {0} kotak hadiah
+Đã cất vào túi đồ	Masuk ke tasmu
+Hộp quà	Kotak hadiah
+Hộp quà rơi trong trận	Kotak hadiah jatuh
++{0} hộp quà	+{0} kotak hadiah
+{0} hộp quà	{0} kotak hadiah
+Đã mở Đấu trường Tam Điệp: nơi luyện điểm kinh nghiệm.	Arena Tam Diep sudah buka: tempat berlatih untuk dapat pengalaman.
+Mỗi lần vào đấu phải trả vé bằng vàng.	Tiap pertarungan butuh tiket yang dibayar dengan emas.
+Thắng: nhận kinh nghiệm theo cấp hiện tại.	Menang: pengalaman sesuai levelmu.
+Thua: mất 1 mạng, không bị trừ kinh nghiệm.	Kalah: kehilangan 1 nyawa, pengalaman tidak berkurang.
+Vàng và kinh nghiệm nhặt trong trận không được tính; máu không bị ảnh hưởng.	Emas dan pengalaman yang didapat dalam pertarungan tidak dihitung; HP-mu tidak terpengaruh.
+Lúc đầu mở 2 mức, thắng các tướng mạnh để mở thêm 3 mức.	Awalnya 2 tingkat; kalahkan jenderal kuat untuk membuka 3 lagi.
+Vàng, kinh nghiệm hoặc vật phẩm quý	Emas, pengalaman atau item langka
+Đang mở…	Membuka…
+Bạn được đi trước (Ngọc Ấn)	Kamu jalan duluan (Segel Giok)
+Vàng	Emas
+HỒI SINH?	BANGKIT?
+HỒI 30 MÁU	+30 HP
+BỎ CUỘC	MENYERAH
+{0} chỉ còn {1}/{2} máu!	{0} tinggal {1}/{2} HP!
+Xem quảng cáo để hồi 30 máu và đánh tiếp.	Tonton iklan untuk dapat 30 HP dan lanjut bertarung.
+KHỞI ĐẦU	PEMULA
+Ô thứ 3 mở khi mua Gói khởi đầu (Cửa hàng · Ưu đãi)	Slot 3 terbuka dengan Paket Pemula (Toko · Penawaran)
+Ô thứ 4 mở khi mua gói VIP (Cửa hàng · Ưu đãi)	Slot 4 terbuka dengan VIP (Toko · Penawaran)
+Đã đủ {0} món, chạm vào ô trên để bỏ bớt	Sudah {0} item, ketuk slot di atas untuk melepas satu
+Mang 3 vật phẩm vào trận	Bawa 3 item ke pertarungan
+tối đa 4 mạng	hingga 4 nyawa
+Mang 4 vật phẩm vào trận (thường 2)	Bawa 4 item ke pertarungan (biasanya 2)
+Tối đa 5 mạng (thường 3)	Hingga 5 nyawa (biasanya 3)
+Bốc thăm ai đi trước (cùng cấp)	Giliran pertama diundi (level sama)
+TRỞ LẠI	KEMBALI
+49.000 đ · thử	49.000 đ · tes
+199.000 đ · thử	199.000 đ · tes
+Đã mua Gói khởi đầu (giả lập): 3.000 vàng, Long Thần Kiếm x3, Nhân Sâm x3, đầy mạng	Paket Pemula dibeli (simulasi): 3.000 emas, Pedang Naga x3, Ginseng x3, nyawa penuh
+Đã kích hoạt VIP (giả lập)	VIP aktif (simulasi)
+Đã khôi phục: {0}	Dipulihkan: {0}
+Các gói đã mua đều đang có	Semua paket yang dibeli sudah aktif
+Đã gỡ các gói (thử). Bấm Khôi phục giao dịch để lấy lại	Paket dihapus (tes). Ketuk Pulihkan pembelian untuk mendapatkannya lagi
+Thử: gỡ các gói đã mua	Tes: hapus paket yang dibeli
+Đang giả lập mua hàng để thử: chưa trừ tiền thật, sẽ thay bằng Google Play	Pembelian disimulasikan untuk tes: tanpa uang asli, Google Play menyusul
+Đã mua {0} vàng (giả lập, {1})	Membeli {0} emas (simulasi, {1})
+thử	tes
+Vàng dùng chung cho mọi nhân vật · mua giả lập để thử, chưa trừ tiền thật	Emas dipakai bersama semua karakter · pembelian simulasi untuk tes, tanpa uang asli

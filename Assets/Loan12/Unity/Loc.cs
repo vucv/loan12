@@ -1,8 +1,10 @@
-// Languages of the touch interface: Tiếng Việt (the game's own), English, 日本語, 한국어.
+// Languages of the touch interface: Tiếng Việt (the game's own), English, 日本語, 한국어, then Bahasa
+// Indonesia, ไทย, 繁體中文, Português (BR), Español, Deutsch, Русский.
 //
 // The interface keeps its Vietnamese texts in the code; TouchUi translates each text as it draws or
 // measures it (Label, Lines, TextWidth, PixelText, PixelWidth), so no call site changes. The table,
-// Resources/Loan12Lang/strings.txt, has one row per Vietnamese text: vi \t en \t ja \t ko.
+// Resources/Loan12Lang/strings.txt, has one row per Vietnamese text: vi \t en \t ja \t ko; the later
+// languages have a file each, strings_<code>.txt / story_<code>.txt, rows vi \t text.
 //   - exact texts: "Cửa hàng" -> "Shop"
 //   - templates with {0}, {1}...: "Hệ {0} · Cấp {1}" -> "{0} · Lv {1}"; what a {n} stands for is
 //     translated on its own ("Hỏa" -> "Fire"), numbers stay as they are
@@ -25,13 +27,26 @@ namespace Loan12.UnityPort
         Vi = 0,
         En = 1,
         Ja = 2,
-        Ko = 3
+        Ko = 3,
+        Id = 4,
+        Th = 5,
+        Zh = 6,
+        Pt = 7,
+        Es = 8,
+        De = 9,
+        Ru = 10
     }
 
     public static class Loc
     {
         const string Pref = "l12.lang";
-        public static readonly string[] Names = {"Tiếng Việt", "English", "日本語", "한국어"};
+        public static readonly string[] Names =
+            {"Tiếng Việt", "English", "日本語", "한국어", "Bahasa Indonesia", "ไทย", "繁體中文", "Português (BR)", "Español", "Deutsch", "Русский"};
+
+        /// <summary>File codes (strings_&lt;code&gt;.txt, banter_&lt;code&gt;.txt).</summary>
+        public static readonly string[] Codes = {"vi", "en", "ja", "ko", "id", "th", "zh", "pt", "es", "de", "ru"};
+
+        const int Count = 11;
 
         static Lang? lang;
         static Dictionary<string, string[]> exact;
@@ -52,7 +67,7 @@ namespace Loan12.UnityPort
                 if (lang == null)
                 {
                     int saved = PlayerPrefs.GetInt(Pref, -1);
-                    lang = saved >= 0 && saved <= 3 ? (Lang) saved : FromSystem();
+                    lang = saved >= 0 && saved < Count ? (Lang) saved : FromSystem();
                 }
                 return lang.Value;
             }
@@ -76,6 +91,24 @@ namespace Loan12.UnityPort
                     return Lang.Ja;
                 case SystemLanguage.Korean:
                     return Lang.Ko;
+                case SystemLanguage.Indonesian:
+                    return Lang.Id;
+                case SystemLanguage.Thai:
+                    return Lang.Th;
+                case SystemLanguage.ChineseTraditional:
+                case SystemLanguage.ChineseSimplified:
+                case SystemLanguage.Chinese:
+                    return Lang.Zh;
+                case SystemLanguage.Portuguese:
+                    return Lang.Pt;
+                case SystemLanguage.Spanish:
+                    return Lang.Es;
+                case SystemLanguage.German:
+                    return Lang.De;
+                case SystemLanguage.Russian:
+                case SystemLanguage.Ukrainian:
+                case SystemLanguage.Belarusian:
+                    return Lang.Ru;
                 case SystemLanguage.Unknown:
                     return Lang.Vi;
                 default:
@@ -83,10 +116,10 @@ namespace Loan12.UnityPort
             }
         }
 
-        /// <summary>Japanese or Korean: no glyphs in Inter or the game's font.</summary>
+        /// <summary>A script the game's bitmap font has not (Japanese, Korean, Thai, Chinese, Russian).</summary>
         public static bool Cjk
         {
-            get { return Current == Lang.Ja || Current == Lang.Ko; }
+            get { return Current == Lang.Ja || Current == Lang.Ko || Current == Lang.Th || Current == Lang.Zh || Current == Lang.Ru; }
         }
 
         /// <summary>The text in the current language (the Vietnamese text when there is no translation).</summary>
@@ -283,7 +316,12 @@ namespace Loan12.UnityPort
             return b.ToString().Normalize(NormalizationForm.FormC);
         }
 
-        /// <summary>A letter the game's bitmap font cannot draw (Japanese, Korean...).</summary>
+        // the letters of the game's bitmap font (dh): Latin and Vietnamese only
+        const string BitmapLetters = "abcdđefghijklmnopqrstuvwxyzáàảãạăắằẳẵặâấầẩẫậéèẻẽẹêếềểễệíìỉĩịóòỏõọôốồổỗộơớờởỡợúùủũụưứừửữựýỳỷỹỵ"
+                                     + "ABCDĐEFGHIJKLMNOPQRSTUVWXYZÁÀẢÃẠĂẮẰẲẴẶÂẤẦẨẪẬÉÈẺẼẸÊẾỀỂỄỆÍÌỈĨỊÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢÚÙỦŨỤƯỨỪỬỮỰÝỲỶỸỴ";
+
+        /// <summary>A letter the game's bitmap font cannot draw (Japanese, Korean, Thai, Cyrillic, ñ, ß, ü ...):
+        /// the text is drawn with the system font instead.</summary>
         public static bool NeedsSystemFont(string s)
         {
             if (string.IsNullOrEmpty(s))
@@ -292,7 +330,7 @@ namespace Loan12.UnityPort
             }
             foreach (char c in s)
             {
-                if (c >= 0x2E80)
+                if (c >= 0x2E80 || (char.IsLetter(c) && BitmapLetters.IndexOf(c) < 0))
                 {
                     return true;
                 }
@@ -317,8 +355,60 @@ namespace Loan12.UnityPort
                     LoadTable(a.text);
                 }
             }
+            // the later languages: a file per table and language, rows vi \t text
+            Dictionary<string, Template> byKey = new Dictionary<string, Template>();
+            foreach (Template t in templates)
+            {
+                byKey[t.to[0]] = t;
+            }
+            for (int i = 4; i < Count; i++)
+            {
+                foreach (string table in new[] {"strings", "story"})
+                {
+                    TextAsset a = Resources.Load<TextAsset>("Loan12Lang/" + table + "_" + Codes[i]);
+                    if (a != null)
+                    {
+                        LoadColumn(a.text, i, byKey);
+                    }
+                }
+            }
             // longer templates first: "Hệ {0} · Cấp {1}" before "Hệ {0}"
             templates.Sort((x, y) => Literal(y.to[0]).CompareTo(Literal(x.to[0])));
+        }
+
+        static void LoadColumn(string text, int col, Dictionary<string, Template> byKey)
+        {
+            foreach (string raw in text.Split('\n'))
+            {
+                string line = raw.TrimEnd('\r');
+                if (line.Length == 0 || line.StartsWith("#"))
+                {
+                    continue;
+                }
+                int tab = line.IndexOf('\t');
+                if (tab <= 0)
+                {
+                    continue;
+                }
+                string key = line.Substring(0, tab).Replace("\\n", "\n"), val = line.Substring(tab + 1).Replace("\\n", "\n");
+                string[] row;
+                Template t;
+                if (exact.TryGetValue(key, out row))
+                {
+                    row[col] = val;
+                }
+                else if (byKey.TryGetValue(key, out t))
+                {
+                    t.to[col] = val;
+                }
+                else
+                {
+                    row = new string[Count];
+                    row[0] = key;
+                    row[col] = val;
+                    exact[key] = row;
+                }
+            }
         }
 
         static void LoadTable(string text)
@@ -335,8 +425,8 @@ namespace Loan12.UnityPort
                 {
                     continue;
                 }
-                string[] row = new string[4];
-                for (int i = 0; i < 4; i++)
+                string[] row = new string[Count];
+                for (int i = 0; i < Count; i++)
                 {
                     row[i] = i < c.Length ? c[i].Replace("\\n", "\n") : "";
                 }

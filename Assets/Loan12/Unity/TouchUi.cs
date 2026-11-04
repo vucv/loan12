@@ -405,17 +405,23 @@ namespace Loan12.UnityPort
         const float LineRatio = 1.21f;   // Inter: (ascender + descender) / em, no line gap
 
         static Font interMedium, interBold;
+        static Lang fontsFor;
         static GUIStyle hd;
         static readonly GUIContent hdText = new GUIContent();
 
         static GUIStyle Hd(float size, bool strong, TextAnchor anchor, bool wrap)
         {
-            if (hd == null || interMedium == null)
+            if (hd == null || interMedium == null || fontsFor != Loc.Current)
             {
+                fontsFor = Loc.Current;
                 interMedium = Resources.Load<Font>("Loan12Fonts/Inter-Medium");
                 interBold = Resources.Load<Font>("Loan12Fonts/Inter-Bold");
-                // Japanese / Korean letters: from the phone's fonts (Unity also has its own fallback list)
-                string[] cjk = {"Inter", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans JP", "Noto Sans KR", "Droid Sans Fallback", "Hiragino Sans", "Apple SD Gothic Neo"};
+                // letters Inter has not (Japanese, Korean, Chinese, Thai): from the phone's fonts, the current
+                // language's first (Chinese and Japanese share characters drawn differently)
+                string[] cjk = Loc.Current == Lang.Zh
+                    ? new[] {"Inter", "Noto Sans CJK TC", "Noto Sans TC", "PingFang TC", "Noto Sans CJK JP", "Noto Sans CJK KR", "Droid Sans Fallback", "Noto Sans Thai"}
+                    : new[] {"Inter", "Noto Sans CJK JP", "Noto Sans CJK KR", "Noto Sans JP", "Noto Sans KR", "Noto Sans Thai", "Noto Sans Thai UI", "Thonburi",
+                        "Noto Sans CJK TC", "Droid Sans Fallback", "Hiragino Sans", "Apple SD Gothic Neo"};
                 if (interMedium != null)
                 {
                     interMedium.fontNames = cjk;
@@ -449,6 +455,12 @@ namespace Loan12.UnityPort
         /// Light text gets a soft dark shadow, like the outline of the game's letters; dark text on a light
         /// background goes without (outline = false).
         /// </summary>
+        /// <summary>A text already in the current language (not looked up in the tables), like Label.</summary>
+        public static void LabelRaw(Rect r, string s, float size, TextAnchor anchor, Color color, bool strong = false, bool wrap = false, bool outline = true)
+        {
+            Label(r, s, size, anchor, color, strong, wrap, outline, false);
+        }
+
         public static void Label(Rect r, string s, float size, TextAnchor anchor, Color color, bool strong = false, bool wrap = false, bool outline = true)
         {
             Label(r, s, size, anchor, color, strong, wrap, outline, true);

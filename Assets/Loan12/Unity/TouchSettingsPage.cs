@@ -333,20 +333,25 @@ namespace Loan12.UnityPort
 
         public bool langOpen;
 
-        // flags drawn in a few pixels (no images needed): red / gold star, stripes, red sun, red-blue circle
-        static readonly string[] LangSub = {"Vietnamese", "English", "Japanese", "Korean"};
+        // each language: its own name, its English name, a code badge (no country flags: a language is
+        // spoken in many countries)
+        static readonly string[] LangSub =
+            {"Vietnamese", "English", "Japanese", "Korean", "Indonesian", "Thai", "Chinese (Traditional)", "Portuguese", "Spanish", "German", "Russian"};
+
+        static readonly int[] LangColor = {0xDA251D, 0x1F3C88, 0xBC002D, 0x0047A0, 0xCE1126, 0x2D2A4A, 0xB8860B, 0x009C3B, 0xC60B1E, 0x3A3A3A, 0x0039A6};
 
         void LangBox()
         {
             float k = TouchUi.K;
-            const float rowH = 30;
-            float h = 30 + Loc.Names.Length * (rowH + 4) + 6;
+            const float cellH = 28, cellW = 72;
+            int n = Loc.Names.Length, rows = (n + 1) / 2;
+            float h = 30 + rows * (cellH + 4) + 6;
             bool close;
             Rect box = MapUi.Box(0, Kit.H, h, out close, 700);
             float y = TouchUi.V(box.position).y;
-            for (int i = 0; i < Loc.Names.Length; i++)
+            for (int i = 0; i < n; i++)
             {
-                Rect r = TouchUi.R(17, y + 28 + i * (rowH + 4), 146, rowH);
+                Rect r = TouchUi.R(17 + (i % 2) * (cellW + 2), y + 28 + (i / 2) * (cellH + 4), cellW, cellH);
                 bool on = (int) Loc.Current == i;
                 if (Kit.Tap(710 + i, r))
                 {
@@ -364,13 +369,16 @@ namespace Loan12.UnityPort
                     {
                         TouchUi.Fill(new Rect(r.x, r.y, r.width, k), Kit.Gold);
                     }
-                    Flag(i, new Rect(r.x + 7 * k, r.y + 8 * k, 21 * k, 14 * k));
+                    Rect badge = new Rect(r.x + 4 * k, r.y + 8 * k, 15 * k, 12 * k);
+                    TouchUi.Fill(new Rect(badge.x - k, badge.y - k, badge.width + 2 * k, badge.height + 2 * k), TouchUi.Hex(0x120810));
+                    TouchUi.Fill(badge, TouchUi.Hex(LangColor[i]));
+                    TouchUi.Label(badge, Loc.Codes[i].ToUpperInvariant(), 5.5f, TextAnchor.MiddleCenter, Color.white, true, false, false);
                     // the language's own name, then its English name (both left as they are)
-                    TouchUi.Label(new Rect(r.x + 34 * k, r.y + 4 * k, 90 * k, 12 * k), Loc.Names[i], 7.5f, TextAnchor.UpperLeft, Color.white, true);
-                    TouchUi.Label(new Rect(r.x + 34 * k, r.y + 17 * k, 90 * k, 9 * k), LangSub[i], 5.5f, TextAnchor.UpperLeft, Kit.Muted);
+                    TouchUi.Label(new Rect(r.x + 22 * k, r.y + 4 * k, r.width - 24 * k, 12 * k), Loc.Names[i], 6.5f, TextAnchor.UpperLeft, Color.white, true);
+                    TouchUi.Label(new Rect(r.x + 22 * k, r.y + 16 * k, r.width - 24 * k, 9 * k), LangSub[i], 4.75f, TextAnchor.UpperLeft, Kit.Muted);
                     if (on)
                     {
-                        Kit.Check(r.xMax - 14 * k, r.center.y, Kit.Gold);
+                        Kit.Check(r.xMax - 7 * k, r.y + 7 * k, Kit.Gold);
                     }
                 }
             }
@@ -387,60 +395,6 @@ namespace Loan12.UnityPort
                 }
             }
             Kit.Unblock();
-        }
-
-        static void Flag(int i, Rect r)
-        {
-            TouchUi.Fill(new Rect(r.x - 1, r.y - 1, r.width + 2, r.height + 2), TouchUi.Hex(0x120810));
-            switch (i)
-            {
-                case 0: // red, gold star
-                    TouchUi.Fill(r, TouchUi.Hex(0xDA251D));
-                    Star(r.center, r.height * 0.32f, TouchUi.Hex(0xFFDD00));
-                    break;
-                case 1: // blue with a red-white cross
-                    TouchUi.Fill(r, TouchUi.Hex(0x1F3C88));
-                    TouchUi.Fill(new Rect(r.x, r.center.y - r.height * 0.18f, r.width, r.height * 0.36f), Color.white);
-                    TouchUi.Fill(new Rect(r.center.x - r.height * 0.18f, r.y, r.height * 0.36f, r.height), Color.white);
-                    TouchUi.Fill(new Rect(r.x, r.center.y - r.height * 0.09f, r.width, r.height * 0.18f), TouchUi.Hex(0xC8102E));
-                    TouchUi.Fill(new Rect(r.center.x - r.height * 0.09f, r.y, r.height * 0.18f, r.height), TouchUi.Hex(0xC8102E));
-                    break;
-                case 2: // white, red sun
-                    TouchUi.Fill(r, Color.white);
-                    Disc(r.center, r.height * 0.3f, TouchUi.Hex(0xBC002D), TouchUi.Hex(0xBC002D));
-                    break;
-                default: // white, red-blue circle
-                    TouchUi.Fill(r, Color.white);
-                    Disc(r.center, r.height * 0.3f, TouchUi.Hex(0xCD2E3A), TouchUi.Hex(0x0047A0));
-                    break;
-            }
-        }
-
-        /// <summary>A disc of rows; the top half in one color, the bottom half in another.</summary>
-        static void Disc(Vector2 c, float rad, Color upper, Color lower)
-        {
-            float step = Mathf.Max(1, TouchUi.K * 0.5f);
-            for (float dy = -rad; dy < rad; dy += step)
-            {
-                float hw = Mathf.Sqrt(Mathf.Max(0, rad * rad - (dy + step / 2) * (dy + step / 2)));
-                TouchUi.Fill(new Rect(c.x - hw, c.y + dy, hw * 2, step), dy < 0 ? upper : lower);
-            }
-        }
-
-        static void Star(Vector2 c, float rad, Color col)
-        {
-            // a small 5-point star as a disc and five spikes (good enough at this size)
-            Disc(c, rad * 0.45f, col, col);
-            for (int i = 0; i < 5; i++)
-            {
-                float a = -Mathf.PI / 2 + i * Mathf.PI * 2 / 5;
-                for (float t = 0.3f; t < 1f; t += 0.15f)
-                {
-                    float s = rad * 0.28f * (1 - t);
-                    Vector2 p = c + new Vector2(Mathf.Cos(a), Mathf.Sin(a)) * rad * t;
-                    TouchUi.Fill(new Rect(p.x - s, p.y - s, 2 * s, 2 * s), col);
-                }
-            }
         }
 
         // ---------------------------------------------------------------------------------- rows

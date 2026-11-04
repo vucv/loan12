@@ -196,11 +196,11 @@ namespace Loan12.UnityPort
             slots.deleting = -1;
             menu.Open(null);
 
-            // ---- K: the same screens in English, Japanese and Korean
-            string[] langs = {"en", "ja", "ko"};
-            for (int l = 0; l < 3; l++)
+            // ---- K: the same screens in every other language
+            string[] langs = Loc.Codes;
+            for (int l = 1; l < langs.Length; l++)
             {
-                Loc.Current = (Lang) (l + 1);
+                Loc.Current = (Lang) l;
                 yield return Shot("K", langs[l] + "_menu");
                 settings = new TouchSettingsPage(TouchSettingsPage.Where.Menu);
                 menu.Open(settings);
@@ -212,9 +212,9 @@ namespace Loan12.UnityPort
             yield return Until(() => Kind() == 4, 20);
             yield return new WaitForSeconds(2f);
             map = TouchMapView.Instance;
-            for (int l = 0; l < 3; l++)
+            for (int l = 1; l < langs.Length; l++)
             {
-                Loc.Current = (Lang) (l + 1);
+                Loc.Current = (Lang) l;
                 if (map != null)
                 {
                     map.OpenTab(TouchMapView.TabBag);
