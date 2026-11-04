@@ -494,8 +494,9 @@ namespace Loan12.UnityPort
                 if (C_PortMap.nodeType(n) == 0 && !C_PortMap.nodeOpen(n))
                 {
                     Vector2 c = o + new Vector2(C_PortMap.nodeX(n), C_PortMap.nodeY(n)) * s;
-                    // a big lock on the town, no dark disc under it
-                    float ls = 32 * Mathf.Max(1, Mathf.Round(s * 0.75f));
+                    // a big lock on the town, no dark disc under it; at 1.5x the game's lock it stays clear of the
+                    // town names printed in the map picture (its own above it, a close neighbour's below it)
+                    float ls = 24 * Mathf.Max(1, Mathf.Round(s * 0.75f));
                     Gx.DrawTexture(new Rect(c.x - ls / 2, c.y - ls / 2, ls, ls), TouchUi.Img("/m/lock"));
                 }
             }
