@@ -52,14 +52,12 @@ namespace Loan12.UnityPort
             tabs[TabQuest] = new TouchQuestTab();
         }
 
-        /// <summary>The last map view: where map pixel (0, 0) was on the screen (MapBackdrop draws the same).</summary>
-        public static TouchMapView Instance;
+        /// <summary>Where map pixel (0, 0) was on the screen last (MapBackdrop draws the map there too).</summary>
         public static Vector2 Origin;
         public static bool HasOrigin;
 
         public bool Active()
         {
-            Instance = this;
             try
             {
                 return C_PortScreens.screenKind() == 4 && C_PortMap.free();
