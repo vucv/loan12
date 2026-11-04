@@ -531,9 +531,10 @@ namespace Loan12.UnityPort
                 popupKind = 0;
                 outcome = 0;
                 pendingSide = -1;
-                SayB(1, B(1, "start"), Pick(StartLines));
+                SayB(1, B(1, "start"), Pick(StartLines), true);
                 Later(0, B(0, "start"), 1.8f);
-                nextTaunt = Time.unscaledTime + 9f;
+                lostAcc[0] = lostAcc[1] = healAcc[0] = healAcc[1] = 0;
+                nextTaunt = Time.unscaledTime + 35f;
                 return;
             }
             for (int s = 0; s < 2; s++)
@@ -545,18 +546,10 @@ namespace Loan12.UnityPort
                 {
                     Float(s * 10 + 1, "-", -dh, "", TouchUi.Hex(0xFF5A4A), HpAt(s));
                     Tick(who + " mất " + (-dh) + " máu");
-                    if (C_PortUi.effect(s, 3) > 0 && -dh < maxHp / 10)
-                    {
-                        SayB(s, B(s, "block"), Pick(BlockLines));
-                    }
-                    else if (-dh * 100 >= maxHp * 25 && rnd.Next(2) == 0)
-                    {
-                        SayB(1 - s, B(1 - s, "combo"), Pick(GloatLines)); // a big hit: the attacker brags
-                    }
-                    else if (-dh * 100 >= maxHp * 12)
-                    {
-                        SayB(s, B(s, "hurt"), Pick(HurtLines[s]));
-                    }
+                    // the move's damage adds up; what is said comes when it has settled (React)
+                    lostAcc[s] += -dh;
+                    accAt[s] = Time.unscaledTime;
+                    blockedAcc[s] = blockedAcc[s] || C_PortUi.effect(s, 3) > 0;
                 }
                 else if (dh > 0)
                 {
@@ -564,20 +557,23 @@ namespace Loan12.UnityPort
                     Tick(who + " hồi " + dh + " máu");
                     if (prevHp[s] <= 0 && s == 0)
                     {
-                        SayB(0, B(0, "revive"), Pick(HealLines)); // back on his feet (the second chance)
-                        Later(1, B(1, "taunt"), 1.6f);
+                        SayB(0, B(0, "revive"), Pick(HealLines), true); // back on his feet (the second chance)
                     }
-                    else if (dh * 100 >= maxHp * 10)
+                    else
                     {
-                        SayB(s, B(s, "heal"), Pick(HealLines));
+                        healAcc[s] += dh;
+                        accAt[s] = Time.unscaledTime;
                     }
                 }
                 prevHp[s] = hp;
                 if (!lowSaid[s] && hp > 0 && hp * 5 < maxHp)
                 {
                     lowSaid[s] = true;
-                    SayB(s, B(s, "low"), LowLines[s][0]);
-                    Later(1 - s, B(1 - s, "taunt"), 1.7f); // the other one rubs it in
+                    SayB(s, B(s, "low"), LowLines[s][0], true);
+                    if (rnd.Next(2) == 0)
+                    {
+                        Later(1 - s, B(1 - s, "taunt"), 1.8f); // sometimes the other one rubs it in
+                    }
                 }
 
                 int mana = C_PortUi.mana(s), maxMana = C_PortUi.maxMana(s);
@@ -593,7 +589,7 @@ namespace Loan12.UnityPort
                     if (skill.Length > 0)
                     {
                         Tick(who + " dùng " + skill);
-                        SayB(s, B(s, "skill", Loc.T(skill)), "Nếm thử " + skill + "!");
+                        SayB(s, B(s, "skill", Loc.T(skill)), "Nếm thử " + skill + "!", true);
                     }
                 }
                 prevMana[s] = mana;
@@ -642,13 +638,21 @@ namespace Loan12.UnityPort
                     bubbleSide = -1; // the last word: the winner, then the loser
                     pendingSide = -1;
                     int winner = outcome == 1 ? 0 : 1;
-                    SayB(winner, B(winner, "win"), Pick(outcome == 1 ? WinLines : GloatLines));
+                    SayB(winner, B(winner, "win"), Pick(outcome == 1 ? WinLines : GloatLines), true);
                     Later(1 - winner, B(1 - winner, "lose"), 1.9f);
                     Tick(outcome == 1 ? C_PortUi.name(0) + " đã chiến thắng!" : C_PortUi.name(0) + " đã thua trận");
                 }
             }
-            // a reply due, or some teasing when nobody has spoken for a while
+            // what a move did, once its hits and heals have settled
             float now0 = Time.unscaledTime;
+            for (int s = 0; s < 2; s++)
+            {
+                if ((lostAcc[s] > 0 || healAcc[s] > 0) && now0 - accAt[s] > 0.7f)
+                {
+                    React(s);
+                }
+            }
+            // a reply due, or (rarely) some small talk when nobody has spoken for a long while
             if (pendingSide >= 0 && now0 >= pendingAt && (bubbleSide < 0 || now0 - bubbleTime > 1.6f))
             {
                 bubbleSide = -1;
@@ -663,7 +667,7 @@ namespace Loan12.UnityPort
                 {
                     Say(side, said, true);
                 }
-                nextTaunt = now0 + 7f + (float) rnd.NextDouble() * 6f;
+                nextTaunt = now0 + 30f + (float) rnd.NextDouble() * 20f; // small talk only now and then
             }
             floaters.RemoveAll(f => Time.unscaledTime - f.t0 > 1.4f);
             if (bubbleSide >= 0 && Time.unscaledTime - bubbleTime > 2.2f)
@@ -677,29 +681,75 @@ namespace Loan12.UnityPort
             return lines[rnd.Next(lines.Length)];
         }
 
-        void Say(int side, string text, bool raw = false)
+        void Say(int side, string text, bool raw = false, bool key = false)
         {
-            if (string.IsNullOrEmpty(text) || (bubbleSide >= 0 && Time.unscaledTime - bubbleTime < 1.2f))
+            // one bubble at a time; the ordinary ones not too often (key moments: start, skill, low, win)
+            float since = Time.unscaledTime - bubbleTime;
+            if (string.IsNullOrEmpty(text) || (bubbleSide >= 0 && since < 1.2f) || (!key && since < 3.5f))
             {
-                return; // one bubble at a time
+                return;
             }
             bubbleSide = side;
             bubbleText = text;
             bubbleTime = Time.unscaledTime;
             bubbleRaw = raw;
-            nextTaunt = Mathf.Max(nextTaunt, Time.unscaledTime + 6f);
+            nextTaunt = Mathf.Max(nextTaunt, Time.unscaledTime + 25f);
         }
 
         /// <summary>A Banter line (already in the current language), or the old Vietnamese one when there is none.</summary>
-        void SayB(int side, string banter, string fallback)
+        void SayB(int side, string banter, string fallback, bool key = false)
         {
             if (banter != null)
             {
-                Say(side, banter, true);
+                Say(side, banter, true, key);
             }
             else
             {
-                Say(side, fallback);
+                Say(side, fallback, false, key);
+            }
+        }
+
+        // a move's effect on each side, added up until it settles
+        readonly int[] lostAcc = new int[2], healAcc = new int[2];
+        readonly float[] accAt = new float[2];
+        readonly bool[] blockedAcc = new bool[2];
+
+        /// <summary>What a move did to side s, said once: a heavy blow makes the attacker brag (or the victim
+        /// cry out), a shield that took most of it, a fair hit, a big heal; small changes pass in silence.</summary>
+        void React(int s)
+        {
+            int maxHp = Mathf.Max(1, C_PortUi.maxHp(s));
+            int lost = lostAcc[s], healed = healAcc[s];
+            bool blocked = blockedAcc[s];
+            lostAcc[s] = healAcc[s] = 0;
+            blockedAcc[s] = false;
+            if (lost > 0 && C_PortUi.hp(s) <= 0)
+            {
+                return; // the end of the battle speaks
+            }
+            if (lost * 100 >= maxHp * 22)
+            {
+                // a heavy blow: the attacker brags, or the one hit cries out
+                if (rnd.Next(2) == 0)
+                {
+                    SayB(1 - s, B(1 - s, "combo"), Pick(GloatLines));
+                }
+                else
+                {
+                    SayB(s, B(s, "hurt"), Pick(HurtLines[s]));
+                }
+            }
+            else if (blocked && lost > 0 && lost * 100 < maxHp * 10)
+            {
+                SayB(s, B(s, "block"), Pick(BlockLines));
+            }
+            else if (lost * 100 >= maxHp * 12)
+            {
+                SayB(s, B(s, "hurt"), Pick(HurtLines[s]));
+            }
+            else if (healed * 100 >= maxHp * 15)
+            {
+                SayB(s, B(s, "heal"), Pick(HealLines));
             }
         }
 
