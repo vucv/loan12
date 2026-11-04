@@ -374,7 +374,12 @@ namespace Loan12.UnityPort
                     TouchUi.Fill(badge, TouchUi.Hex(LangColor[i]));
                     TouchUi.Label(badge, Loc.Codes[i].ToUpperInvariant(), 5.5f, TextAnchor.MiddleCenter, Color.white, true, false, false);
                     // the language's own name, then its English name (both left as they are)
-                    TouchUi.Label(new Rect(r.x + 22 * k, r.y + 4 * k, r.width - 24 * k, 12 * k), Loc.Names[i], 6.5f, TextAnchor.UpperLeft, Color.white, true);
+                    float ns = 6.5f;
+                    while (ns > 5f && TouchUi.TextWidth(Loc.Names[i], ns, true) > cellW - 26)
+                    {
+                        ns -= 0.25f; // a long name ("Bahasa Indonesia") gets smaller, not cut
+                    }
+                    TouchUi.Label(new Rect(r.x + 22 * k, r.y + 4 * k, r.width - 24 * k, 12 * k), Loc.Names[i], ns, TextAnchor.UpperLeft, Color.white, true);
                     TouchUi.Label(new Rect(r.x + 22 * k, r.y + 16 * k, r.width - 24 * k, 9 * k), LangSub[i], 4.75f, TextAnchor.UpperLeft, Kit.Muted);
                     if (on)
                     {
