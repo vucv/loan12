@@ -1,0 +1,389 @@
+# story: vi	en	ja	ko  (dialogues, intro / ending scroll, tutorial; see Assets/Loan12/Unity/Loc.cs)
+Lính Tế Giang	ทหารเต๊ ยาง
+Lính Bình Kiều	ทหารบิ่ญ เกี่ยว
+Lính Đỗ Động	ทหารโด๋ ด่ง
+Tàn Tướng Đỗ Động	ขุนพลเศษทัพโด๋ ด่ง
+Lính Siêu Loại	ทหารเซียว หลว่าย
+Phản Tướng	ขุนพลกบฏ
+Lính Cổ Loa	ทหารโก๋ ลวา
+Lính Tam Đái	ทหารตาม ด๊าย
+Lính Phong Châu	ทหารฟอง เจิว
+Lính Hồi Hồ	ทหารโห่ย โห่
+Sơn Tặc	โจรภูเขา
+Bọ Quái	แมลงอสูร
+Quỷ Ong	ผึ้งปีศาจ
+Thạch Sùng Tinh	ภูตตุ๊กแก
+Quỷ Lùn	ปีศาจแคระ
+Ma Nhãn	ตาปีศาจ
+Ngọc Thố Tinh	ภูตกระต่ายหยก
+Ma Điểu	นกปีศาจ
+Xà Tinh	ภูตงู
+Hầu Tinh	ภูตลิง
+Ấu Quỷ	ปีศาจน้อย
+Thổ Tinh	ภูตดิน
+Thạch Ma	ปีศาจหิน
+Linh Miêu	แมวผี
+Lão Hầu Tinh	ภูตลิงเฒ่า
+Quái Sư	สิงโตอสูร
+Mộc Ma	ปีศาจต้นไม้
+Đại Mộc Ma	ปีศาจต้นไม้ยักษ์
+Độc Nhãn Trư	หมูป่าตาเดียว
+Quái Cóc	คางคกอสูร
+Sâu Quỷ	หนอนปีศาจ
+Trùng Quỷ	ด้วงปีศาจ
+Lão Trùng Quỷ	ด้วงปีศาจเฒ่า
+Quái Ưng	เหยี่ยวอสูร
+Thằn Lằn Quỷ	กิ้งก่าปีศาจ
+Hạc Yêu	ปีศาจนกกระเรียน
+Độc Ngư	ปลาพิษ
+Quỷ Cóc	คางคกปีศาจ
+Ma Cây	ผีต้นไม้
+Ma Trơi	ไฟผี
+Chồn Tinh	ภูตเพียงพอน
+Nhện Tinh	ภูตแมงมุม
+Ấu Rồng	มังกรน้อย
+Lính	ทหาร
+Lính Tiên Du	ทหารเตียน ซู
+{p} tướng quân! Lưu Cơ được giao nhiệm vụ hướng dẫn tướng quân tất cả những quy tắc của chiến trường. Ngài đã sẵn sàng chưa?	แม่ทัพ {p}! ข้า หลิว เกอ ได้รับมอบหมายให้สอนกฎแห่งสนามรบทั้งหมดแก่ท่าน ท่านพร้อมหรือยัง?
+Lưu quân sư, xin chỉ bảo!	ท่านกุนซือหลิว โปรดชี้แนะข้าด้วย!
+Trần Lãm-Trần Minh Công lâm bệnh. Sớm mai Đinh chủ tướng sẽ về Kỳ Bố, sự an toàn của chủ tướng trông cậy vào tướng quân	ท่านเจิ่น หลาม - เจิ่น มิญ กง ล้มป่วย พรุ่งนี้เช้าแม่ทัพดิ่ญจะกลับกี่ โบ๊ ความปลอดภัยของท่านฝากไว้กับแม่ทัพแล้ว
+Quân sư yên tâm, mạt tướng sẽ hộ tống Chủ tướng đến Kỳ Bố an toàn.	ท่านกุนซือวางใจได้ ข้าจะคุ้มกันแม่ทัพกลับถึงกี่ โบ๊ อย่างปลอดภัย
+Thưa Nhạc phụ, con đã về!	ท่านพ่อตา ข้ากลับมาแล้ว!
+Con về thật đúng lúc, ta có chuyện cần bàn với con đây.	เจ้ากลับมาทันเวลาพอดี ข้ามีเรื่องจะปรึกษา
+Nhưng sức khỏe của Nhạc phụ...	แต่สุขภาพของท่านพ่อตา...
+Không sao, con yên tâm!	ไม่เป็นไร อย่าห่วงเลย!
+Đất nước loạn lạc! Ta già rồi, những Sứ quân khác đã đều xưng hùng xưng bá một phương. Con cũng cần lộ diện để thiên hạ biết.	บ้านเมืองวุ่นวายนัก! ข้าก็แก่แล้ว ขุนศึกทั้งหลายต่างตั้งตนเป็นใหญ่ในแผ่นดินของตน เจ้าเองก็ต้องแสดงตัวให้ใต้หล้าได้รู้จัก
+Thưa Cha! Bộ Lĩnh nguyện suốt đời phò cha, con nào dám mang tội bất trung bất hiếu.	ท่านพ่อ! โบ่ หลิญ ขอสาบานจะรับใช้ท่านไปชั่วชีวิต จะกล้าก่อบาปอกตัญญูและไม่ภักดีได้อย่างไร?
+Nhưng đây là nguyện vọng của ta.	แต่นี่คือความปรารถนาของข้า
+Thưa Cha...!	ท่านพ่อ...!
+Hãy nghe lời ta, định ngày lành mà xưng hiệu. 	ฟังข้า จงเลือกฤกษ์ดีแล้วประกาศพระนามเสีย
+Con trẻ xin nghe lời! Giờ con về Hoa Lư lo mọi việc. Cha hãy giữ sức khỏe!	ข้าน้อมรับ! ข้าจะกลับฮวาลือไปจัดการทุกอย่าง ท่านพ่อโปรดรักษาสุขภาพด้วย!
+Chủ tướng, các sứ quân khác đều chỉ xưng Công, tức khiêm nhường chỉ nhận là bá chủ 1 phương. Không lẽ chủ tướng cũng xưng hiệu là Đinh Công?	ท่านแม่ทัพ ขุนศึกอื่นล้วนเรียกตนเพียงท่านกง ถ่อมตนว่าปกครองแค่แคว้นเดียว ท่านคงไม่ใช้นามท่านกงดิ่ญเหมือนกันกระมัง?
+Không! Ta không muốn làm Sứ, ta có một ước mơ là giang sơn này được quy về một mối, chấm dứt nạn binh đao liên miên cho muôn dân được an lành 	ไม่! ข้าไม่อยากเป็นแค่ขุนศึกคนหนึ่ง ข้าฝันจะรวมแผ่นดินนี้เป็นหนึ่ง ยุติสงครามไม่รู้จบ ให้ราษฎรทั้งปวงอยู่อย่างสงบสุข
+Nếu vậy, chủ tướng nên xưng hiệu Vạn Thắng Vương, đó là tước hiệu của vị Phật có công đức đánh đuổi yêu tà đem an bình cho chúng dân, được Phật Tổ tuyên phong.	ถ้าเช่นนั้น ท่านแม่ทัพควรใช้พระนามวั่นทั้งเวือง - นามของพระพุทธเจ้าผู้ขับไล่ความชั่วร้ายและนำสันติสุขมาสู่ราษฎร ดังที่พระพุทธองค์ทรงประกาศไว้
+Hay lắm! Rất hợp với tâm nguyện của ta. Nhờ Lưu quân sư chuẩn bị tiến hành đại lễ.	ยอดเยี่ยม! ตรงกับใจข้ายิ่งนัก ท่านกุนซือหลิว โปรดเตรียมพิธีใหญ่ด้วย
+Thưa chủ tướng! Lúc này làm lễ xưng Vương e không được nhân hòa.	ท่านแม่ทัพ! หากจัดพิธีสถาปนาตอนนี้อาจไม่ได้ใจราษฎร
+Tại sao? Quân sư, xin hãy nói.	เพราะเหตุใด? ท่านกุนซือโปรดว่ามา
+Loạn sơn tặc Tam Điệp khiến người dân quanh vùng khiếp sợ, sống không yên.	โจรภูเขาแห่งตามเดี๊ยปรังควานราษฎรในแถบนั้นจนไม่อาจอยู่อย่างสงบ
+Chủ tướng nên cho người đến bình loạn trước, sau xưng Vương thì được lòng dân trong vùng hơn.	ท่านแม่ทัพ ส่งคนไปปราบโจรเสียก่อน แล้วจึงตั้งตนเป็นกษัตริย์ จะได้ใจราษฎรทั้งแคว้น
+Quân sư nói phải lắm!	ท่านกุนซือพูดถูก!
+Chủ tướng! Hãy để tôi dẹp loạn sơn tặc.	ท่านแม่ทัพ! ให้ข้าไปปราบโจรเอง
+Tướng quân, ngài phải giúp tôi chuẩn bị cho đại lễ. Việc dẹp sơn tặc xin nhờ {p} tướng quân.	ท่านขุนพลต้องช่วยข้าเตรียมพิธี ข้าจะขอให้แม่ทัพ {p} ไปจัดการพวกโจรแทน
+Nếu quân sư đã có sắp xếp rồi thì ta cũng nên theo. {p} tướng quân hãy thận trọng!	ในเมื่อท่านกุนซือจัดการไว้แล้วก็ตามนั้น แม่ทัพ {p} ระวังตัวด้วย!
+Mạt tướng tuân lệnh!	รับบัญชา!
+Quân Hoa Lư chỉ có bấy nhiêu thôi ư? Chúng xem thường ta quá đấy!.	ฮวาลือส่งมาได้แค่นี้เองหรือ? ดูถูกข้าเกินไปแล้ว!
+Tấn công! Giết hết bọn rác rưởi cho ta.	บุก! กวาดล้างพวกกระจอกนี่ให้สิ้น!
+Tiến lên, tiêu diệt bọn đạo tặc! 	บุกเข้าไป กำจัดพวกโจร!
+Chủ tướng, giờ lành đã đến. Chúng ta mau tiến hành đại lễ cho kịp.	ท่านแม่ทัพ ได้ฤกษ์แล้ว เริ่มพิธีกันเถิด
+Thiên hạ đại nghĩa, Ngô vương chẳng may mất sớm, loạn thần mải tranh giành vương bá, không lo thiên hạ, để đất nước loạn lạc, chiến tranh liên miên, dân chúng lầm than. Nay thuận thiên ý, Bộ Lĩnh họp quân dẹp loạn, quyết thu giang sơn về một mối. Kẻ nào không phục, thì Vạn Thắng Vương này tiêu diệt không tha!	ด้วยมหาธรรมแห่งฟ้า: โงเวืองสิ้นพระชนม์เร็วนัก ขุนนางทรยศแย่งชิงอำนาจโดยไม่แยแสบ้านเมือง จนแผ่นดินวุ่นวาย สงครามไม่สิ้นสุด ราษฎรทุกข์ยาก บัดนี้ โบ่ หลิญ ขอน้อมรับลิขิตฟ้า รวบรวมไพร่พลเพื่อยุติความวุ่นวายและรวมแผ่นดินเป็นหนึ่ง ผู้ใดไม่ยอมสวามิภักดิ์ ข้า วั่นทั้งเวือง จะกำจัดโดยไม่ปรานี!
+Vạn Thắng Vương vạn tuế! Vạn tuế!	วั่นทั้งเวืองทรงพระเจริญ! ทรงพระเจริญ!
+Chư tướng, hãy đứng lên!	เหล่าขุนพล ลุกขึ้นเถิด!
+Trận đầu, ta muốn đánh một trận thật lừng lẫy để các nơi phải khiếp sợ. Lưu Cơ, ta nên đánh ai trước? 	ศึกแรกนี้ข้าต้องการชัยชนะอันยิ่งใหญ่ให้ทุกคนต้องครั่นคร้าม หลิว เกอ เราควรตีใครก่อน?
+Thưa đại vương, 12 sứ quân đáng gờm nhất là Phạm Bạch Hổ. Ông ta vốn làm tướng dưới thời Ngô Vương lại là người có uy đức. Quân sĩ được huấn luyện rất bài bản, quân thủy bộ uy dũng. Đánh Phạm Bạch Hổ nếu thắng thì uy phong rất lớn, nếu thua quân ta sẽ mất nhuệ khí mà các sứ quân khác cũng xem thường.	ฝ่าบาท ผู้ที่น่าเกรงขามที่สุดใน 12 ขุนศึกคือฝ่าม บั่ก โห่ เขาเคยเป็นขุนพลของโงเวือง มีทั้งบารมีและคุณธรรม ทหารฝึกมาอย่างดี ทั้งทัพบกและทัพเรือเกรียงไกร หากชนะฝ่าม บั่ก โห่ ได้จะได้เกียรติยศยิ่งใหญ่ แต่หากแพ้ ทหารเราจะเสียขวัญ และขุนศึกอื่นจะดูแคลนเรา
+Tập trung toàn quân, đánh một trận quyết tử. Thắng được Phạm Bạch Hổ xem như ta có nửa giang sơn. Sợ gì !	รวมทัพทั้งหมดสู้ตายสักศึก ชนะฝ่าม บั่ก โห่ ได้ ครึ่งแผ่นดินก็เป็นของเรา จะกลัวอะไร!
+Không được! Kế đó là “Được ăn cả ngã về không”. Tốt nhất là ta cứ theo binh pháp cơ bản, đánh kẻ yếu hòa kẻ mạnh, xưa nay vẫn thế. Ta nên hòa với Phạm Bạch Hổ.	ไม่ได้! แผนนั้นคือ "ได้หมดหรือเสียหมด" ควรยึดหลักพิชัยสงครามพื้นฐาน: ตีผู้อ่อน คบผู้แกร่ง ดังที่เป็นมาแต่โบราณ เราควรผูกไมตรีกับฝ่าม บั่ก โห่
+Vậy ai sẽ là người đi sang thuyết khách đây?	แล้วใครจะไปเกลี้ยกล่อมเขา?
+Nhiệm vụ thuyết khách, xin để Lưu Cơ!	ภารกิจเกลี้ยกล่อมนี้ ปล่อยให้ข้า หลิว เกอ เถิด!
+Chuyến đi lành ít dữ nhiều, tướng quân {p} hãy đi cùng quân sư. Hai vị hãy cẩn trọng.	หนทางอันตราย แม่ทัพ {p} จงไปกับท่านกุนซือ ทั้งสองระวังตัวด้วย
+Lưu Cơ ở Hoa Lư, xin bái kiến Phạm sứ quân!!	หลิว เกอ แห่งฮวาลือ ขอคารวะท่านฝ่าม!
+Lưu tiên sinh, mời an tọa! 	ท่านหลิว เชิญนั่ง!
+Chẳng hay Lưu quân sư đến xứ Đằng Châu có việc gì?	ท่านกุนซือหลิวมาดั่ง เจิว ด้วยธุระอันใด?
+Chủ tướng tôi có thư này gửi Phạm sứ quân, xin sứ quân xem qua.	นายของข้าฝากสาส์นนี้มาถึงท่านฝ่าม โปรดอ่านดู
+Hãy đưa thư cho ta...........	ส่งสาส์นมา...........
+Thư ta đã đọc, chuyện an hòa nghe cũng thuận lòng. Nhưng còn phải xem ý trời ra sao?	ข้าอ่านสาส์นแล้ว การผูกไมตรีก็น่าสนใจ แต่เรายังต้องดูลิขิตฟ้าด้วย
+Nghe nói tiên sinh tinh thông Kỳ môn độn giáp. Ông hãy xem ý trời giúp tôi.	ได้ยินว่าท่านเชี่ยวชาญการพยากรณ์ โปรดอ่านลิขิตฟ้าให้ข้าด้วย
+Mời sứ quân gieo quẻ!	เชิญท่านเสี่ยงทายเถิด!
+Quẻ của tướng quân là quẻ Thủy Địa Tỷ. Lời quẻ nói rằng “Lục nhị: tỷ chi tử nội, trinh cát”. Xin dịch nghĩa như sau: “ Hai bên thân nhau vì đạo đồng chí hợp, chứ không phải vì kết thân với bề trên để cầu phú quí, như vậy là chính đáng, không thất thân, nên tốt. ”	ฉลากของท่านคือฉลากปี่ "รวมใจ" บทว่า: "หกในตำแหน่งที่สอง: รวมใจจากภายใน มั่นคงย่อมเป็นมงคล" ความหมายคือ: "สองฝ่ายใกล้ชิดกันเพราะมีทางและเป้าหมายเดียวกัน ไม่ใช่ประจบผู้มีอำนาจเพื่อลาภยศ นี่คือความถูกต้องและมีเกียรติ จึงเป็นมงคล"
+Ý trời đã vậy, Bạch Hổ không dám trái thiên ý. 	ในเมื่อฟ้าลิขิตเช่นนี้ บั่ก โห่ ก็ไม่กล้าขัด
+Quân sư hãy mang hòa ước này về Hoa Lư. Từ nay, chúng ta hiếu hòa, không xâm lấn, không gây phiền hà cho nhau, ai giàu nấy hưởng, ai mạnh tự cường, tình hữu hảo láng giềng, trước sau như một. Nếu có kẻ đánh Hoa Lư, Phạm Bạch Hổ sẵn lòng giúp đỡ.	ท่านกุนซือ จงนำสนธิสัญญานี้กลับฮวาลือ นับแต่นี้เราอยู่อย่างสันติ ไม่รุกราน ไม่ก่อเรื่อง ต่างคนต่างเสพสุขในทรัพย์ของตนและสร้างกำลังของตน เป็นเพื่อนบ้านที่ดีตลอดไป หากผู้ใดบุกฮวาลือ ฝ่าม บั่ก โห่ ยินดีช่วยเหลือ
+Lưu Cơ thay mặt Vạn Thắng Vương vô cùng cảm kích Phạm sứ quân!	ในนามของวั่นทั้งเวือง หลิว เกอ ขอขอบพระคุณท่านฝ่ามยิ่งนัก!
+Ta đã hòa với Phạm Bạch Hổ, vậy gần Hoa Lư nhất chỉ còn Ngô Xương Xí ở Bình Kiều.	เราผูกไมตรีกับฝ่าม บั่ก โห่ แล้ว ผู้ที่อยู่ใกล้ฮวาลือจึงเหลือเพียงโง เซือง สี ที่บิ่ญ เกี่ยว
+Con thỏ non trốn chạy về miền rừng núi âm u ấy, đáng kể gì!  	กระต่ายน้อยที่หนีไปซ่อนในเขาทึบ - จะมีค่าสักเท่าไร!
+Nhưng cũng không thể chủ quan, nếu lấy được Bình Kiều thì sẽ an tâm hơn khi tiến quân lên phía bắc.	แต่เราประมาทไม่ได้ ยึดบิ่ญ เกี่ยว ได้ การเดินทัพขึ้นเหนือจะปลอดภัยกว่ามาก
+Xương Xí thân là cháu Ngô Vương, diệt hắn thì thiên hạ sẽ có nhiều lời không hay. Ta nên chiêu hàng hắn, Nguyễn Bặc ở Hoa Lư phòng thủ. Những người còn lại theo ta.	เซือง สี เป็นหลานของโงเวือง หากฆ่าเขาจะเป็นขี้ปากผู้คน เราควรเกลี้ยกล่อมให้ยอมจำนน เงวียน บั๊ก อยู่รักษาฮวาลือ ที่เหลือตามข้ามา
+Tuân lệnh Đại Vương.	รับบัญชา ฝ่าบาท
+Ngô Xương Xí! Bình Kiều đã bị bao vây, khôn ngoan hãy mau ra hàng.	โง เซือง สี! บิ่ญ เกี่ยว ถูกล้อมแล้ว หากฉลาดก็จงยอมจำนนเสีย
+Có thực lực thì đến đây, đừng nhiều lời.	ถ้ามีฝีมือก็มาจับข้าเองสิ ไม่ต้องพูดมาก
+Trước mặt ta có Đỗ Cảnh Thạc và Ngô Nhật Khánh. Quân sư, chúng ta nên đánh ai trước.	ข้างหน้าคือโด๋ แก๋ญ ทัก และโง ญ้าต คั้ญ ท่านกุนซือ เราควรตีใครก่อน?
+Đỗ Cảnh Thạc là lão tướng dày dặn kinh nghiệm, có thành trì chắc chắn và hào sâu bao quanh, nếu đánh trước chắn chắn lực lượng sẽ hao tổn rất nhiều. Ngô Nhật Khánh thì ở rất xa, chỉ có một đường duy nhất đến đó lại gập ghềnh nguy hiểm. Quân ta đến nơi thì cũng rất mệt mỏi, sức đâu mà đánh trận.	โด๋ แก๋ญ ทัก เป็นขุนศึกผ่านศึกโชกโชน ป้อมมั่นคงล้อมด้วยคูลึก หากตีเขาก่อนต้องเสียหายหนักแน่ โง ญ้าต คั้ญ อยู่ไกลมาก มีทางไปเพียงเส้นเดียวที่ทั้งขรุขระและอันตราย ทหารเราจะไปถึงอย่างอ่อนล้า ไม่เหลือแรงสู้
+Gần không đánh được, Xa cũng không được đánh. Vậy ta ở đây làm gì ?!	ตีใกล้ก็ไม่ได้ ตีไกลก็ไม่ได้ แล้วเรามาทำอะไรที่นี่กัน?!
+Haha, tướng quân! Hãy để quân sư nói tiếp xem sao.	ฮ่า ฮ่า ท่านขุนพล! ให้ท่านกุนซือพูดให้จบก่อน
+Tướng quân, hãy bình tĩnh. Đánh ai trước, ta cũng phải bàn tính kỹ càng.	ใจเย็นก่อนท่านขุนพล จะตีใครก่อนก็ต้องวางแผนให้รอบคอบ
+Thưa Đại Vương, trong 2 sứ quân thì Ngô Nhật Khánh là yếu nhất, tuy thông minh nhưng còn rất trẻ, ít trải nghiệm và rất bốc đồng. Đánh Khánh trước là thích hợp nhất mà khả năng hao tổn lực lượng ít hơn so với những người khác. Nhưng ta cũng phải đề phòng Đỗ Cảnh Thạc đánh từ phía sau lại. 	ฝ่าบาท ในสองขุนศึกนี้ โง ญ้าต คั้ญ อ่อนแอที่สุด ฉลาดแต่ยังเยาว์ ขาดประสบการณ์และใจร้อน ตีคั้ญก่อนดีที่สุดและเสียทหารน้อยกว่า แต่ต้องระวังโด๋ แก๋ญ ทัก ลอบตีจากด้านหลัง
+Tôi có ý này. Đem quân giả đánh Cảnh Thạc, đến Ô Man chia quân làm 3 đạo. Đạo thứ nhất do tướng Nguyễn Bặc chỉ huy đóng ở Ô Man, đạo thứ 2 do Đại vương chỉ huy đóng trực diện với đồn Bảo Đà. Đạo thứ 3 sẽ do tướng {p} dẫn đầu, bí mật đi đến Đường Lâm bất ngờ đến đánh Ngô Nhật Khánh chắc chắn hắn sẽ trơ tay không kịp.	ข้ามีแผน แสร้งตีแก๋ญ ทัก แล้วที่โอ มาน แบ่งทัพเป็นสาม ทัพแรกนำโดยขุนพลเงวียน บั๊ก ตั้งค่ายที่โอ มาน ทัพที่สองนำโดยฝ่าบาท ประจันหน้าค่ายบ๋าว ด่า ทัพที่สามนำโดยแม่ทัพ {p} ลอบเดินทัพไปเดื่อง เลิม โจมตีโง ญ้าต คั้ญ แบบไม่ทันตั้งตัว
+Tốt! Mọi người hãy y theo mà hành động.	ดี! ทุกคนทำตามนี้
+Tuân lệnh Đại Vương	รับบัญชา ฝ่าบาท
+Bọn ngươi là quân của ai, muốn chết hay sao mà đám đến đây làm loạn?	พวกเจ้าเป็นทัพของใคร? อยากตายหรือถึงมาก่อเรื่องที่นี่?
+Ta là {p}, tướng tiên phong của Vạn Thắng Vương, hôm nay ta đến lấy đầu ngươi!	ข้าคือ {p} แม่ทัพกองหน้าของวั่นทั้งเวือง วันนี้ข้ามาเอาหัวเจ้า!
+Láo xược! Ta sẽ phân thây ngươi để làm gương cho kẻ khác.	อวดดี! ข้าจะฉีกเจ้าเป็นชิ้น ๆ ให้เป็นเยี่ยงอย่าง
+Lã Đường ở Tế Giang đã cất binh đánh Phạm Bạch Hổ. Ta đã có hòa ước với Bạch Hổ, nên không thể không giúp, hơn nữa nếu Đằng Châu mất thì Kỳ Bố cũng sẽ khó mà yên. Đại Vương và tướng Nguyễn Bặc đang giữ chân Cảnh Thạc không thể đem quân tiếp ứng. Thời gian cấp bách, tướng quân hãy đem quân ứng cứu trước, tôi sẽ theo sau. Trong 5 ngày chúng ta phải đến đó, nếu không thì Đằng Châu khó mà giữ được.	หล่า เดื่อง แห่งเต๊ ยาง ยกทัพตีฝ่าม บั่ก โห่ เรามีสนธิสัญญากับบั่ก โห่ จึงต้องช่วย อีกทั้งหากดั่ง เจิว แตก กี่ โบ๊ ก็ไม่ปลอดภัย ฝ่าบาทกับขุนพลเงวียน บั๊ก กำลังตรึงแก๋ญ ทัก ไว้ ส่งกำลังเสริมไม่ได้ เวลามีน้อย ท่านแม่ทัพนำทัพไปช่วยก่อน ข้าจะตามไป ต้องไปถึงภายใน 5 วัน ไม่เช่นนั้นดั่ง เจิว จะรักษาไว้ยาก
+Lưu quân sư yên tâm, mạt tướng sẽ đi ngay!	ท่านกุนซือหลิววางใจ ข้าจะไปเดี๋ยวนี้!
+Phạm sứ quân! Có tôi đến trợ giúp đây.	ท่านฝ่าม! ข้ามาช่วยแล้ว!
+Hừ, quân giặc có viện binh, không xong rồi!	ฮึ ศัตรูมีกำลังเสริม แย่แล้ว!
+Lão ác tặc, hãy xem đây!	เจ้าเฒ่าชั่ว รับไปซะ!
+Đa tạ tướng quân giúp đỡ.	ขอบคุณยิ่งนักที่ท่านแม่ทัพมาช่วย
+Chúng ta là người một nhà, Phạm sứ quân xin đừng khách sáo.	เราเป็นครอบครัวเดียวกัน ท่านฝ่าม ไม่ต้องเกรงใจ
+Sau trận vừa rồi binh lực của Lã Đường đã suy yếu, nhuệ khí không còn. Hơn nữa quân ta lại đông hơn, hào khí ngất trời. Nhân cơ hội này, tiến quân đánh vào Tế Giang chắc chắn sẽ hạ được.	หลังศึกนั้น กำลังของหล่า เดื่อง อ่อนลงและขวัญแตก ทัพเรามากกว่าและขวัญกำลังใจสูงลิ่ว หากฉวยโอกาสนี้บุกเต๊ ยาง ต้องชนะแน่
+Lưu quân sư nói phải lắm. Mọi người nghỉ ngơi lấy sức, sớm mai xuất quân.	ท่านกุนซือหลิวพูดถูก ทุกคนพักฟื้นกำลัง รุ่งเช้าเราเดินทัพ
+Lưu Cơ xin cáo lui.	หลิว เกอ ขอตัวลา
+{p} xin cáo lui.	{p} ขอตัวลา
+Lã Đường, ta đến lấy đầu ngươi đây!	หล่า เดื่อง ข้ามาเอาหัวเจ้าแล้ว!
+Với sức ngươi ư? Ảo tưởng ! Sáttttt	ด้วยฝีมือแค่นั้นน่ะหรือ? ฝันไปเถอะ! ฆ่าาาา!
+Phạm sứ quân, Tế Giang đã diệt xong. Chúng tôi phải trở về, Lưu Cơ xin bái biệt!	ท่านฝ่าม เต๊ ยาง ถูกยึดแล้ว เราต้องกลับ หลิว เกอ ขอลาก่อน!
+Lưu quân sư, Vạn Thắng Vương là người nhân nghĩa lại có chí lớn bình định thiên hạ, đúng là phước của muôn dân. Nếu Bạch Hổ được giúp một tay thì thật là vinh hạnh lắm lắm!	ท่านกุนซือหลิว วั่นทั้งเวืองเป็นผู้มีเมตตาและยุติธรรม มีปณิธานยิ่งใหญ่จะสงบแผ่นดิน นับเป็นบุญของราษฎรโดยแท้ หากบั่ก โห่ ได้ช่วยแรงสักส่วน จะเป็นเกียรติยิ่งนัก!
+Lưu Cơ sẽ chuyển tâm ý của Phạm sứ quân đến Vạn Thắng Vương. 	หลิว เกอ จะนำความประสงค์ของท่านฝ่ามไปทูลวั่นทั้งเวือง
+Đa tạ quân sư!	ขอบคุณยิ่งนัก ท่านกุนซือ!
+Nhất định sẽ có ngày chúng ta gặp lại. Phạm sứ quân, hẹn ngày tái ngộ!	สักวันเราจะได้พบกันอีก ท่านฝ่าม แล้วพบกันใหม่!
+Lưu quân sư, hãy bảo trọng!	ท่านกุนซือหลิว รักษาตัวด้วย!
+Quân sư, ông đến thật đúng lúc, quân địch phòng thủ rất chặt, ta khó mà đánh vào được.	ท่านกุนซือมาทันเวลาพอดี แนวป้องกันของศัตรูแน่นหนานัก เราแทบบุกไม่เข้า
+Đại vương yên tâm, cơ hội của chúng ta đã đến. Đỗ Cảnh Thạc đang ở đồn Bảo Đà, thành Quèn ở Đỗ Động không người chỉ huy chắc chắn sẽ có sở hở. Đêm mai chủ công, cùng tướng {p} dẫn quân quân vây thành, sau đó đốt lửa thật lớn. Thấy lửa chắc chắn Cảnh Thạc sẽ rút quân từ Bảo Đà về ứng cứu, tình hình ở Bảo Đà lẫn thành Quèn sẽ xảy ra hỗn loạn. Khi đó Đại vương quay đầu tấn công Cảnh Thạc, cùng lúc tướng Nguyễn Bặc và Lê Hoàn tấn công thẳng vào Bảo Đà, ép Cảnh Thạc vào giữa. Bị tấn công bất ngờ địch sẽ hoảng loạn, quân ta ắt sẽ thành công.	ฝ่าบาทวางพระทัยเถิด โอกาสของเรามาถึงแล้ว โด๋ แก๋ญ ทัก อยู่ที่ค่ายบ๋าว ด่า ป้อมแกวนที่โด๋ ด่ง จึงไร้ผู้บัญชาการ ย่อมมีจุดอ่อนแน่ คืนพรุ่งนี้ข้ากับแม่ทัพ {p} จะนำทัพล้อมป้อมแล้วจุดไฟครั้งใหญ่ เมื่อเห็นไฟ แก๋ญ ทัก ต้องถอนทัพจากบ๋าว ด่า มาช่วยแน่ ทั้งบ๋าว ด่า และป้อมแกวนจะโกลาหล จากนั้นฝ่าบาทหันไปตีแก๋ญ ทัก ส่วนขุนพลเงวียน บั๊ก และเล ฮหว่าน ตีบ๋าว ด่า ตรงหน้า บีบแก๋ญ ทัก ไว้ตรงกลาง ศัตรูไม่ทันตั้งตัวย่อมแตกตื่น เราต้องสำเร็จแน่
+Được! Ta sẽ làm theo cách này. Đêm mai sẽ hành động, mọi người hãy chuẩn bị.	ดี! ทำตามนี้ คืนพรุ่งนี้ลงมือ ทุกคนเตรียมตัว
+Thành Quèn bị tấn công, ta phải về cứu ngay, các người hãy ở lại cố thủ.	ป้อมแกวนถูกโจมตี ข้าต้องกลับไปช่วย เจ้าอยู่รักษาที่นี่ไว้
+Cảnh Thạc!! Ngươi đã hết đường chạy, muốn sống hãy mau chịu trói.	แก๋ญ ทัก!! เจ้าไม่มีทางหนีแล้ว อยากรอดก็จงยอมจำนนเสีย
+Hahaha, thật nực cười ! Chỉ một đám trẻ con mà dám cản đường ta ư? Có bản lĩnh thì hãy đến đây.	ฮ่า ฮ่า ฮ่า น่าขันนัก! เด็กเมื่อวานซืนกล้าขวางทางข้า? ถ้าแน่จริงก็เข้ามา
+Đại vương! Đỗ Động Giang đã lấy được, nhưng quân lực ta hao tổn khá nặng. Nếu đánh luôn Tây Phù Liệt thì rất khó, tốt nhất nên án binh bất động để cũng cố lực lượng. Mặt khác Đại vương nên đích thân đến Đằng Châu tiếp nhận binh lực của Phạm Bạch Hổ.	ฝ่าบาท! โด๋ ด่ง ยาง เป็นของเราแล้ว แต่เราสูญเสียกำลังไปมาก หากบุกเตย ฝู เลี่ยต ทันทีจะยากนัก ควรตั้งมั่นสะสมกำลังก่อน อีกทั้งฝ่าบาทควรเสด็จไปดั่ง เจิว ด้วยพระองค์เองเพื่อรับบัญชาทัพของฝ่าม บั่ก โห่
+Ừm, Bạch Hổ đã có ý về đầu quân, ta cũng nên đến gặp trực tiếp ông ta. Có thêm binh lực của Đằng Châu thì việc diệt Nguyễn Siêu cũng không quá khó khăn. 	อืม บั่ก โห่ ปรารถนาจะร่วมกับเรา ข้าก็ควรไปพบเขาด้วยตัวเอง ได้ทัพดั่ง เจิว มา การปราบเงวียน เซียว ก็ไม่ยากนัก
+Đường xa nguy hiểm, người nên để Lê Hoàn tướng quân đi cùng.	หนทางไกลและอันตราย ฝ่าบาทควรพาขุนพลเล ฮหว่าน ไปด้วย
+Việc ở đây quân sư hãy cố sắp xếp.	ท่านกุนซือ ทางนี้ฝากด้วย
+Đại vương hãy yên tâm!	ฝ่าบาทวางพระทัยเถิด!
+Không xong! Quân sư! Quân sư!! Nguyễn Siêu đã vây thành!	แย่แล้ว! ท่านกุนซือ! ท่านกุนซือ!! เงวียน เซียว ล้อมเมืองไว้แล้ว!
+Nguyễn Siêu đã đánh Đỗ Động sớm hơn ta dự tính. Binh lực và lương thảo hiện tại chỉ có thể cố thủ chờ viện binh từ Đằng Châu đến. Nguyễn Bặc hãy trấn thủ ở cửa Tây, cửa bắc mọi sự trông cậy vào {p} tướng quân. Năm ngày nữa quân viện binh sẽ đến, mọi người hãy cố gắng thủ thành.	เงวียน เซียว บุกโด๋ ด่ง เร็วกว่าที่ข้าคาด ด้วยกำลังและเสบียงตอนนี้ เราทำได้แค่ยื้อจนกำลังเสริมจากดั่ง เจิว มาถึง เงวียน บั๊ก รักษาประตูตะวันตก ประตูเหนือข้าฝากแม่ทัพ {p} ทั้งหมด กำลังเสริมจะมาถึงในห้าวัน ทุกคนรักษาเมืองไว้!
+Hôm nay bổn tướng đến đây, ngỡ có thể so kiếm với anh hùng, nào ngờ chỉ thấy lũ chuột chạy nháo nhào trong thành tìm chỗ trốn!	วันนี้ข้ามาหวังจะประลองกับยอดวีรบุรุษ แต่เห็นแต่หนูวิ่งวุ่นรอบเมืองหาที่ซุกหัว!
+Quân sư có biết người dưới kia là ai không?	ท่านกุนซือ รู้ไหมว่าคนข้างล่างนั่นคือใคร?
+Nguyễn Trí Khả, tướng tiên phong của Nguyễn Siêu, dũng mãnh nhưng vô mưu. Tướng quân, hãy ráng nhẫn nhịn.	เงวียน จี๊ ค้า กองหน้าของเงวียน เซียว กล้าแต่ไร้สมอง ท่านขุนพลอดทนไว้
+Lũ chuột nghe đây! Thời gian của bổn tướng quân có hạn, trong hôm nay nếu không ra khỏi hang, ta sẽ san bằng nơi này.	ฟังนะพวกหนู! ข้าไม่มีเวลามาก หากวันนี้ไม่ออกจากรู ข้าจะถล่มที่นี่ให้ราบ
+Thật ngoan cố! Để xem lũ chuột các ngươi trốn được bao lâu?	ดื้อด้านนัก! ไหนดูซิว่าพวกหนูจะซ่อนได้นานแค่ไหน!
+Địch tấn công, mọi người vào vị trí!	ศัตรูบุก! ทุกคนเข้าประจำที่!
+Âm mưu phá thành Đỗ Động thất bại, Nguyễn Siêu đã đắp thành cao hơn để phòng bị. Muốn tiến quân vào Tây Phù Liệt e rất khó, quân sư có cao kiến gì không?	แผนตีโด๋ ด่ง ล้มเหลว เงวียน เซียว จึงเสริมกำแพงให้สูงขึ้น การบุกเตย ฝู เลี่ยต จะยากนัก ท่านกุนซือมีแผนเด็ดบ้างไหม?
+Tướng quân chớ lo! Nguyễn Siêu thận trọng phòng bị, như vậy trận chiến vừa rồi binh lực của hắn hao tổn khá nặng, hắn sẽ phải đích thân đi cầu cứu viện binh của 2 người anh Nguyễn Thủ Tiệp hoặc Nguyễn Khoan.	ไม่ต้องห่วงท่านขุนพล! เงวียน เซียว ตั้งรับอย่างระวัง แปลว่ากำลังของเขาเสียหายหนักในศึกก่อน เขาต้องไปขอกำลังเสริมจากสองพี่น้อง เงวียน ถู่ เตี่ยป หรือเงวียน โควน ด้วยตัวเอง
+Vậy có nghĩa là Tây Phù Liệt như rắn mất đầu ?!	ถ้าเช่นนั้นเตย ฝู เลี่ยต ก็จะเป็นเหมือนงูไร้หัวน่ะสิ?!
+Tướng quân nói rất phải! Đó chính là yếu điểm của Tây Phù Liệt, đêm mai quân ta nổi lửa đồng loạt đốt cửa Đông, cửa Tây, cửa Nam thì chắc binh lính sẽ hoảng loạn.	ถูกต้องท่านขุนพล! นั่นคือจุดอ่อนของเตย ฝู เลี่ยต คืนพรุ่งนี้ทัพเราจะจุดไฟที่ประตูตะวันออก ตะวันตก และใต้พร้อมกัน ทหารของพวกมันต้องแตกตื่นแน่
+Được lắm! Ta sẽ hỏi tội chúng những ngày qua.	ยอดเยี่ยม! ข้าจะให้พวกมันชดใช้ที่ผ่านมาหลายวันนี้
+Trận này, nhất định phải lấy được thành. Mọi người tranh thủ nghỉ ngơi, đêm mai xuất binh.	ศึกนี้เราต้องยึดเมืองให้ได้ ทุกคนพักผ่อน คืนพรุ่งนี้เดินทัพ
+Trí Khả! Ta đến hỏi tội ngươi đây!	จี๊ ค้า! ข้ามาให้เจ้าชดใช้ความผิดแล้ว!
+Chỉ là con chuột nhắt, bổn tướng sẽ hóa kiếp cho ngươi!	แค่หนูตัวเล็ก ๆ ข้าจะส่งเจ้าไปเกิดใหม่!
+Tự tin thì cứ đến đây!!!	ถ้ามั่นใจนักก็เข้ามา!!!
+Nguyễn Siêu, chạy đâu cho thoát. Nạp mạng !!	เงวียน เซียว เจ้าหนีไม่พ้นแล้ว จงยอมมอบชีวิตเสีย!!
+Muốn cản ta ư !? Mộng tưởng quá đấy !	เจ้าคิดจะขวางข้าหรือ!? ฝันไปเถอะ!
+Hay tin Nguyễn Siêu bị diệt. Nguyễn Khoan và Kiều Công Hãn đẵ liên kết, cùng trấn thủ ở vùng Tam Đái. Lý Khuê và Nguyễn Thủ Tiệp thì dựng tuyến phòng thủ ở Siêu Loại, xem ra ta gặp khó khăn lớn rồi.	เมื่อรู้ว่าเงวียน เซียว ถูกปราบ เงวียน โควน กับเกี่ยว กง ห่าน ก็ร่วมมือกันรักษาแถบตาม ด๊าย หลี เคว กับเงวียน ถู่ เตี่ยป สร้างแนวป้องกันที่เซียว หลว่าย ดูท่าเราจะลำบากหนักแล้ว
+Tướng quân đừng quá lo! Mối liên kết giữa Lý Khuê và Nguyễn Thủ Tiệp ngoài mặt nhìn rất chắc chắn, nhưng thực chất lại rất yếu. Hai người này từ lâu đã có mối hiềm khích với nhau, nên cắt đứt mối liên kết này không phải là khó.	อย่ากังวลเกินไปท่านขุนพล! พันธมิตรระหว่างหลี เคว กับเงวียน ถู่ เตี่ยป ภายนอกดูแน่นแฟ้นแต่ภายในเปราะบางนัก สองคนนี้มีความแค้นกันมานาน การทลายพันธมิตรจึงไม่ยาก
+Quân sư đã có cao kiến gì không?	ท่านกุนซือมีแผนเด็ดหรือ?
+Cao kiến thì không, nhưng tôi có mẹo này. Năm ngày nữa 49 ngày mất của Nguyễn Siêu, chắc chắn Nguyễn Thủ Tiệp sẽ trở về Tiên Du. Cho một nhóm người trà trộn vào thành Siêu Loại, nửa đêm đốt cổng bắc. Bên ngoài ta giả làm quân của Thủ Tiệp tung cờ xí, nổi trống trận, đi từ hướng Tiên Du vào phá thành. Với tính đa nghi, Lý Khuê sẽ tưởng Thủ Tiệp còn nuôi thù cũ, lợi dụng đâm lén sau lưng. Nội chiến xảy ra, việc lấy thành Siêu Loại dễ như trở bàn tay.	ไม่ใช่แผนเด็ด แต่ข้ามีกลอุบาย อีกห้าวันจะครบ 49 วันการตายของเงวียน เซียว เงวียน ถู่ เตี่ยป ต้องกลับเตียน ซู แน่ เราส่งคนกลุ่มหนึ่งแฝงเข้าเซียว หลว่าย แล้วเผาประตูเหนือตอนเที่ยงคืน ส่วนข้างนอกเราปลอมเป็นทัพของถู่ เตี่ยป โบกธงของเขา ตีกลองศึก บุกมาจากทางเตียน ซู หลี เคว ผู้ขี้ระแวงจะคิดว่าถู่ เตี่ยป ยังผูกใจเจ็บและแทงข้างหลังเขา เมื่อพวกมันสู้กันเอง การยึดเซียว หลว่าย ก็ง่ายดุจพลิกฝ่ามือ
+Lưu quân sư, việc trà trộn hãy để tôi cùng các anh em trong doanh trại.	ท่านกุนซือหลิว ให้ข้ากับพี่น้องในค่ายเป็นผู้แฝงตัวเข้าไปเถิด
+Việc này rất nguy hiểm...	นี่อันตรายนัก...
+Quân sư hãy yên tâm, tôi có thể lo liệu được.	ท่านกุนซือวางใจ ข้าจัดการได้
+Tướng quân hãy cầm theo bí kíp này, nếu gặp nguy hãy mở ra.	ท่านแม่ทัพ นำม้วนคัมภีร์ลับนี้ไปด้วย หากมีภัยจงเปิดดู
+Giờ mọi người về nghỉ. Sáng mai, chúng ta sẽ về Tế Giang hội ngộ với Vạn Thắng Vương. Lưu cơ có việc phải làm ở Đỗ Động, tôi sẽ đến sau. 	บัดนี้ทุกคนไปพักเถิด พรุ่งนี้เช้าเรากลับเต๊ ยาง เพื่อเข้าเฝ้าวั่นทั้งเวือง หลิว เกอ มีธุระที่โด๋ ด่ง จะตามไปทีหลัง
+Quân sư, xin cáo lui.	ท่านกุนซือ ข้าขอตัว
+{p} tướng quân xin dừng bước, tôi có chuyện cần bàn với tướng quân!	แม่ทัพ {p} โปรดรอก่อน ข้ามีเรื่องจะปรึกษา!
+Xin quân sư cứ nói!	เชิญท่านกุนซือว่ามา!
+Tôi nghe nói, ở vùng Đỗ Động có đám người tự xưng là con cháu Ngô tiên chúa đã khởi binh tiến đánh Hoa Lư, nhưng khi đến Ô Man thì đụng độ với hào trưởng làng ấy là Ngô Phó. Đám người này không diệt sau này sẽ rắc rối, tướng quân hãy cùng tôi đến giúp Ngô Phó một tay. Ngài hãy về chuẩn bị, sớm mai ta sẽ lên đường. 	ข้าได้ยินว่าในแถบโด๋ ด่ง มีกลุ่มหนึ่งอ้างตนเป็นทายาทของท่านโงผู้ล่วงลับ ยกทัพจะตีฮวาลือ แต่ที่โอ มาน ไปปะทะกับผู้ใหญ่บ้านโง โฝ่ หากไม่กำจัดพวกมันจะเป็นภัยภายหลัง ท่านแม่ทัพไปช่วยโง โฝ่ กับข้า ไปเตรียมตัวเถิด รุ่งเช้าเราออกเดินทาง
+Mạt tướng xin cáo lui!	ข้าขอตัว!
+Ngô hào trưởng, quân của Vạn Thắng Vương xin đến giúp một tay!	ผู้ใหญ่โง ทัพของวั่นทั้งเวืองมาช่วยแล้ว!
+Thật tốt quá! Quân địch rất hung hãn, tướng quân hãy cẩn trọng!	ดีเหลือเกิน! ศัตรูดุร้ายนัก ท่านแม่ทัพระวังตัวด้วย!
+Thưa Đại vương, việc ở Tây Phù Liệt tôi đã sắp xếp xong.	ฝ่าบาท กระหม่อมจัดการเรื่องที่เตย ฝู เลี่ยต เสร็จแล้ว
+Quân sư, Nguyễn Thủ Tiệp đã về Tiên Du. Khi nào ta sẽ đánh vào Siêu Loại?	ท่านกุนซือ เงวียน ถู่ เตี่ยป กลับเตียน ซู แล้ว เมื่อไรเราจะตีเซียว หลว่าย?
+Theo thuộc hạ tính thì đêm mai có gió lớn, nội gián của ta sẽ đốt doanh trại địch, khi đó lửa lan rất nhanh. Thấy lửa, địch sẽ náo loạn, lúc đó ta xuất binh đánh vào Siêu Loại	ตามที่ข้าคำนวณ คืนพรุ่งนี้ลมจะแรง สายลับของเราจะเผาค่ายศัตรู ไฟจะลามเร็ว ศัตรูเห็นไฟย่อมแตกตื่น แล้วเราค่อยส่งทัพบุกเซียว หลว่าย
+Được, đêm mai ta sẽ lấy Siêu Loại. Mọi người hãy về chuẩn bị.	ดี คืนพรุ่งนี้เรายึดเซียว หลว่าย ทุกคนไปเตรียมตัว
+Tuân lệnh Đại vương!	รับบัญชา ฝ่าบาท!
+Báo! Báo! Nguyễn Thủ Tiệp đã trở mặt, hắn đang phá cổng bắc.	รายงาน! รายงาน! เงวียน ถู่ เตี่ยป หักหลังเรา กำลังทลายประตูเหนือ
+Grr...grr...Con cáo già! Giết, giết hết bọn chúng cho ta!!	กรร...กรร...เจ้าจิ้งจอกเฒ่า! ฆ่ามัน ฆ่าให้หมด!!
+Báoooo!!! Cổng nam, quân của Đinh Bộ Lĩnh đã đánh vào!	รายงาาาาน!!! ประตูใต้ - ทัพดิ่ญ โบ่ หลิญ บุกเข้ามาแล้ว!
+Nguy rồi !! Mau mau....	จบเห่แล้ว!! เร็ว เร็ว...
+Lý Khuê ở đằng kia! Mau đuổi theo.	หลี เคว อยู่ทางนั้น! ตามไป!
+Mau! Mau chạy vào làng.	เร็ว! หนีเข้าหมู่บ้าน
+Chạy đâu cho thoát!	หนีไม่พ้นหรอก!
+Thất bại ở Siêu Loại, binh lực của Nguyễn Thủ Tiệp đã mất hơn nữa, quân lính gần như mất hết nhuệ khí. Đây là thời cơ thuận lợi cho ta đánh Tiên Du. Đại vương, hãy cho xuất binh.	หลังพ่ายที่เซียว หลว่าย เงวียน ถู่ เตี่ยป เสียทหารเพิ่มอีก ทหารแทบไม่เหลือขวัญ นี่คือเวลาเหมาะที่สุดที่จะตีเตียน ซู ฝ่าบาท โปรดสั่งเดินทัพ
+Nguyễn Bặc, ông dẫn quân đánh vào cánh trái Tiên Du. Lê Hoàn thì đánh vào cánh phải. Ta cùng các tướng khác tấn công trực diện. Mọi người, tiến thẳng Tiên Du!	เงวียน บั๊ก นำทัพตีปีกซ้ายของเตียน ซู เล ฮหว่าน ตีปีกขวา ข้าจะตีตรงหน้ากับขุนพลที่เหลือ ทุกคน มุ่งตรงไปเตียน ซู!
+Thuộc hạ tuân lệnh!	รับบัญชา!
+Báoooo! quân ta đã thất thủ.	รายงาาาาน! แนวรบของเราแตกแล้ว
+Mau, mau theo ta chạy vào núi.	เร็ว ตามข้าหนีเข้าเขา
+Ác tặc, chạy đâu cho thoát!!	เจ้าคนชั่ว หนีไม่พ้นแล้ว!!
+Hừ, không ngờ tên phản tặc Lã Xử Bình gửi thư cầu cứu liên quân Nguyễn Khoan và Kiều Công Hãn, 7 ngày nữa liên quân sẽ đến Cổ Loa.	ฮึ ใครจะคิดว่าหลือ สือ บิ่ญ ผู้ทรยศจะส่งสาส์นขอความช่วยเหลือจากทัพพันธมิตรของเงวียน โควน กับเกี่ยว กง ห่าน อีก 7 วันทัพพันธมิตรจะถึงโก๋ ลวา
+Nếu liên quân hợp sức với Lữ Xử Bình, ta sẽ khó tiến vào Cổ Loa. Quân sư, ông có kế sách gì không?	หากพันธมิตรรวมกำลังกับหลือ สือ บิ่ญ ได้ เราจะเข้าโก๋ ลวา ยากนัก ท่านกุนซือมีแผนไหม?
+Hiện tại quân lực ở Cổ Loa còn yếu. Trong 5 ngày, phải đánh vào Cổ Loa trước khi liên quân đến. Nếu không quân ta không còn cơ hội nào khác.	ตอนนี้กำลังของโก๋ ลวา ยังอ่อน ภายใน 5 วันเราต้องตีโก๋ ลวา ก่อนพันธมิตรมาถึง ไม่เช่นนั้นจะไม่มีโอกาสอีก
+{p}, Nguyễn Bặc, Lê Hoàn đi tiên phong, cấp tốc đến Cổ Loa. Mọi người hãy cố gắng!	{p} เงวียน บั๊ก และเล ฮหว่าน นำทัพหน้า รีบไปโก๋ ลวา ทุกคนสู้สุดกำลัง!
+Địch đã tấn công. Chủ công, hãy ra lệnh!	ศัตรูบุกแล้ว ท่านเจ้าเมือง โปรดสั่งการ!
+Hãy ráng cầm cự chờ liên quân đến. Cung thủ, bắn tên!	ยื้อไว้จนพันธมิตรมาถึง พลธนู ยิง!
+Chủ công, quân ta đã thất thủ...	ท่านเจ้าเมือง แนวรบของเราแตกแล้ว...
+Grrr....Mau, rút về Tam Đái.	กรรร....เร็ว ถอยไปตาม ด๊าย
+Lữ Xử Bình, ngươi hết đường rồi! Sáaatttt	หลือ สือ บิ่ญ เจ้ามาถึงทางตันแล้ว! ฆ่าาาา
+Biết quân ta đã chiếm Cổ Loa, liên quân rút về cố thủ ở Tam Đái. Bây giờ đánh từ Cổ Loa vào Tam Đái rất khó, mọi người có kế sách gì không? 	เมื่อรู้ว่าเรายึดโก๋ ลวา ได้ พันธมิตรถอยไปรักษาตาม ด๊าย ตอนนี้การตีตาม ด๊าย จากโก๋ ลวา ยากนัก ใครมีแผนบ้าง?
+Nếu Tam Đái đánh khó thì ta sẽ đánh Phong Châu trước.	หากตาม ด๊าย ตียาก เราก็ตีฟอง เจิว ก่อน
+Phong Châu?	ฟอง เจิว?
+Kiều Công Hãn đem quân xuống Tam Đái, chắc chắn Phong Châu sẽ sơ hở. Ta cho 2 đạo quân tiến từ 2 hướng Đường Lâm và Cổ Loa đánh vào Tam Đái. Mặt khác cho đạo quân khác đi vòng đường núi đánh Phong Châu, Kiều Công Hãn chắc chắn rút quân về. Lúc đó chỉ còn mình Nguyễn Khoan ở Tam Đái, ta sẽ đánh vào được.	เกี่ยว กง ห่าน นำทัพลงมาตาม ด๊าย ฟอง เจิว จึงต้องว่างแน่ เราส่งสองทัพจากเดื่อง เลิม และโก๋ ลวา ตีตาม ด๊าย ขณะเดียวกันอีกทัพอ้อมทางเขาไปตีฟอง เจิว เกี่ยว กง ห่าน ต้องถอนทัพกลับแน่ เมื่อนั้นตาม ด๊าย จะเหลือแค่เงวียน โควน เราก็บุกเข้าได้
+Nguyễn Bặc, {p} tướng quân hãy đem quân đến Đường Lâm, Lê Hoàn dẫn quân đến Phong Châu, các tướng còn lại hãy theo ta đánh thẳng từ Cổ Loa đến. Mọi người về nghỉ ngơi, sớm mai ta sẽ xuất quân!	เงวียน บั๊ก กับแม่ทัพ {p} นำทัพไปเดื่อง เลิม เล ฮหว่าน นำทัพไปฟอง เจิว ขุนพลที่เหลือตามข้าไปจากโก๋ ลวา ตรง ๆ ทุกคนไปพัก รุ่งเช้าเดินทัพ!
+Báoooo!! Thưa chủ công, Phong Châu bị tấn công!	รายงาาาาน!! ท่านเจ้าเมือง ฟอง เจิว ถูกโจมตี!
+Mau! Về hỗ trợ Phong Châu.	เร็ว! กลับไปช่วยฟอง เจิว
+Báoooo!! Tướng giặc Lê Hoàn đã chiếm Phong Châu!	รายงาาาาน!! ขุนพลศัตรูเล ฮหว่าน ยึดฟอง เจิว แล้ว!
+Grr..grr...Ta đã quá sơ ý! Lui về Hồi Hồ tạm lánh một thời gian.	กรร..กรร...ข้าประมาทเกินไป! ถอยไปโห่ย โห่ ซุ่มรอสักพัก
+Đinh Bộ Lĩnh! Ta thề sẽ lấy lại Phong Châu.	ดิ่ญ โบ่ หลิญ! ข้าสาบานจะยึดฟอง เจิว คืนให้ได้
+Nguyễn Khoan, có gan ra đây so cao thấp với ta!	เงวียน โควน ถ้าแน่จริงก็ออกมาสู้กับข้า!
+Ngông cuồng! Hôm nay ta sẽ lấy đầu bọn bay để trả thù của Nguyễn Siêu và Thủ Tiệp.	ไอ้พวกอวดดี! วันนี้ข้าจะเอาหัวพวกเจ้าแก้แค้นให้เงวียน เซียว และถู่ เตี่ยป
+Đại vương, hạ tướng cũ của Trần lão công đã làm phản, hắn đem quân đánh vào Kỳ Bố. Mọi người trong thành đang cố thủ, lương thực chỉ đủ dùng trong vài ngày, ta phải đem quân đến giải vây ngay!	ฝ่าบาท อดีตขุนนางของท่านเจิ่นผู้ล่วงลับก่อกบฏบุกกี่ โบ๊ ทุกคนในเมืองกำลังยื้อไว้ แต่เสบียงเหลือพอแค่ไม่กี่วัน เราต้องส่งทัพไปทลายวงล้อมทันที!
+{p} tướng quân, khanh hãy đem quân trở về ứng cứu Kỳ Bố. Nhưng người còn lại theo ta đánh vào Phong Châu.	แม่ทัพ {p} นำทัพกลับไปช่วยกี่ โบ๊ ที่เหลือตามข้าไปตีฟอง เจิว
+Phản tặc, có ta đến đây, hãy mau chịu tội!	เจ้าคนทรยศ ข้ามาแล้ว จงชดใช้ความผิด!
+Sức ngươi còn kém lắm, chưa đủ đâu!	เจ้ายังอ่อนเกินไป แค่นี้ยังไม่พอหรอก!
+Chớ ngông cuồng! Hãy xem đây !!!	อย่าอวดดีนัก! รับไปซะ!!!
+Thất bại ở Phong Châu và Tam Đái, Kiều Công Hãn đã rút quân thẳng về Hồi Hồ nương nhờ em hắn là Kiều Thuận. Địa hình ở đó hiểm trở, rất khó tấn công, quân sư có kế sách gì không?	พ่ายที่ฟอง เจิว และตาม ด๊าย เกี่ยว กง ห่าน ถอยไปโห่ย โห่ พึ่งพี่ชายเกี่ยว ถ่วน ภูมิประเทศที่นั่นทุรกันดาร ตียากนัก ท่านกุนซือมีแผนไหม?
+Thưa Đại Vương, thực ra địa hình hiểm trở chính là yếu điểm của Hồi Hồ!	ฝ่าบาท ที่จริงภูมิประเทศทุรกันดารนั่นแหละคือจุดอ่อนของโห่ย โห่!
+Yếu điểm!? Ta chưa hiểu, quân sư hãy nói rõ.	จุดอ่อน!? ข้าไม่เข้าใจ ท่านกุนซือโปรดอธิบาย
+Thành Hồi Hồ xung quanh là vùng đồi núi hiểm trở, ta không nên tấn công, chia quân ra đóng ở  nơi hiểm yếu ngăn chặn nguồn nước. Vây phục ba ngày, tự chúng sẽ mò ra, lúc ấy ta sẽ diệt được.	เมืองโห่ย โห่ ล้อมด้วยเนินเขาสูงชัน เราไม่ควรบุก แต่ควรแบ่งทัพยึดช่องเขาสำคัญและตัดน้ำ ล้อมไว้สามวันพวกมันจะคลานออกมาเอง แล้วเราค่อยกำจัด
+Quân sư nói phải lắm, 12 sứ quân nay chỉ còn anh em họ Kiều, ta cũng không cần phải vội. Chúng ta hãy theo kế của quân sư.	ท่านกุนซือพูดถูก ใน 12 ขุนศึกเหลือแค่พี่น้องเกี่ยว ไม่ต้องรีบร้อน เราจะทำตามแผนท่านกุนซือ
+Tuân lệnh đại vương!	รับบัญชา ฝ่าบาท!
+Huynh trưởng, lương thực trong thành chẳng còn bao nhiêu. Nếu tiếp tục ở trong thành e rằng sẽ không qua khỏi.	พี่ เสบียงในเมืองแทบไม่เหลือแล้ว หากอยู่ข้างในต่อ ข้าเกรงว่าจะไม่รอด
+Với tình thế này, nên tìm cách thoát thân trước.	สถานการณ์เช่นนี้ เราควรหาทางหนีก่อน
+Địch đã bao vây 4 hướng, ta chạy đi đâu bây giờ.	ศัตรูล้อมเราไว้ทั้งสี่ทิศ จะหนีไปทางไหน?
+Ở cửa Bắc, lực lượng của địch yếu nhất. Nếu phá được vòng vây, thì chạy lên phương Bắc xin nhà Tống cứu viện.	ประตูเหนือศัตรูอ่อนที่สุด หากฝ่าออกไปได้ เราหนีขึ้นเหนือไปขอความช่วยเหลือจากราชสำนักซ่ง
+Đệ sẽ chọn ra 1 đám quân tinh nhuệ, đêm nay chúng ta phá vòng vây.	ข้าจะคัดทหารฝีมือดีชุดหนึ่ง คืนนี้เราฝ่าวงล้อมออกไป
+Kiều tặc, chạy đâu cho thoát!	พวกเกี่ยวผู้ทรยศ หนีไม่พ้นแล้ว!
+Thưa đại vương, loạn 12 sứ quân đã dẹp xong, bây giờ đã đến lúc xưng đế.	ฝ่าบาท ยุคจลาจล 12 ขุนศึกสิ้นสุดแล้ว บัดนี้ถึงเวลาที่พระองค์จะขึ้นเป็นจักรพรรดิ
+Ta đang suy nghĩ, không biết chọn nơi nào làm kinh đô. Quân sư có cao kiến gì không?	ข้าคิดอยู่ แต่ไม่รู้จะตั้งเมืองหลวงที่ใด ท่านกุนซือมีความเห็นไหม?
+Người Hoa Lư nên chọn Hoa Lư làm gốc, hơn nữa Hoa Lư là nơi núi non trùng điệp. Núi trong sông, sông trong núi. Căn cứ thủy bộ thuận tiện, sau lưng là rừng, trước mặt là đồng bằng, xa nữa là biển cả. Nơi đây non sông thì tráng lệ, phong thủy hài hòa nên Ấu Rồng thường xuất hiện gây nhiều khó khăn cho bá tánh.	คนฮวาลือควรยึดฮวาลือเป็นรากฐาน อีกทั้งฮวาลือล้อมด้วยภูเขาหลายชั้น ภูเขาในสายน้ำ สายน้ำในภูเขา เป็นฐานที่มั่นดีทั้งทางบกและทางน้ำ ข้างหลังเป็นป่า ข้างหน้าเป็นที่ราบ ไกลออกไปคือทะเล ทิวทัศน์งดงาม ฮวงจุ้ยกลมกลืน ด้วยเหตุนี้มังกรน้อยจึงมักปรากฏที่นั่น สร้างความเดือดร้อนแก่ราษฎร
+Vậy ta diệt Ấu Rồng trước, sau dựng kinh đô. Mọi người về nghỉ ngơi, sớm mai trở về Hoa Lư.	ถ้าเช่นนั้นเราปราบมังกรน้อยก่อน แล้วค่อยสร้างเมืองหลวง ทุกคนไปพัก พรุ่งนี้เช้าเรากลับฮวาลือ
+Tuân lệnh đại vương.	รับบัญชา ฝ่าบาท
+Ta, một người nhỏ bé, nhờ hưng binh mà dẹp loạn, thống nhất đất nước. Nay thuận ý muôn dân, ta xưng hiệu Đinh Tiên Hoàng đế, đặt quốc hiệu là Đại Cồ Việt.	ข้าผู้ต่ำต้อยยกทัพเพื่อยุติความวุ่นวายและรวมแผ่นดินเป็นหนึ่ง บัดนี้ตามประสงค์ของราษฎร ข้าขอใช้พระนามจักรพรรดิดิ่ญ เตียน ฮหว่าง และตั้งชื่อประเทศว่าด่ายโก่เหวียต
+Đinh Tiên Hoàng vạn tuế vạn tuế!	ดิ่ญ เตียน ฮหว่าง ทรงพระเจริญ ทรงพระเจริญ!
+Tướng quân rất thông minh, những gì tôi truyền đạt ngài tiếp nhận khá nhanh.	ท่านแม่ทัพฉลาดนัก เรียนรู้สิ่งที่ข้าสอนได้รวดเร็วทีเดียว
+Chỉ là chút tài mọn, quân sư đã quá khen!	เป็นเพียงความสามารถเล็กน้อย ท่านกุนซือชมเกินไปแล้ว!
+Sơn tặc đã diệt xong. Doanh trại rất thích hợp làm Đấu Trường luyện tập cho quân ta. Các ngươi hãy ở lại canh giữ, còn lại mau theo ta trở về Hoa Lư.	พวกโจรถูกกวาดล้างแล้ว ค่ายนี้เหมาะจะเป็นลานประลองไว้ฝึกทหาร เจ้าอยู่รักษาที่นี่ ที่เหลือตามข้ากลับฮวาลือ
+Giặc quá mạnh, ta thua rồi. Mau mở cửa thành...đầu hàng	ศัตรูแกร่งเกินไป เราแพ้แล้ว เปิดประตู... เรายอมจำนน
+Nhật Khánh, bây giờ ngươi muốn sống hay muốn chết?	ญ้าต คั้ญ เจ้าอยากอยู่หรืออยากตาย?
+Họ Ngô ta đã dựng nên đất nước, chẳng may gặp kẻ gian thần hãm hại mà mất nước. Ta nuôi chí khôi phục cơ nghiệp tiên chúa, nghiệp lớn không thành, muốn chém thì chém, chớ nhiều lời !!!	ตระกูลโงเป็นผู้สร้างแผ่นดินนี้ แต่ขุนนางทรยศทำให้เราล่มสลายจนเสียบ้านเมือง ข้าหมายจะกอบกู้มรดกบรรพบุรุษ ในเมื่อการใหญ่ล้มเหลว จะฟันก็ฟันเถิด ไม่ต้องพูดมาก!!!
+Được, ta sẽ cho ngươi toại nguyện.	ได้ ข้าจะสนองความต้องการของเจ้า
+Tướng quân dừng tay!!!	ท่านแม่ทัพ หยุดก่อน!!!
+Lưu Cơ đến muộn, mong Ngô công tử bỏ qua. Tiên phụ công tử với Vạn Thắng Vương là bạn từ thời tóc còn để chỏm, chiến tranh loạn lạc 2 người đi 2 hướng khác nhau. Hay biết công tử là con cố nhân, nay người muốn gặp công tử ở Hoa Lư. Xin mời công tử lên xe ngựa.	หลิว เกอ มาช้า ขอคุณชายโปรดอภัย บิดาผู้ล่วงลับของท่านกับวั่นทั้งเวืองเป็นสหายกันมาแต่เยาว์วัย แต่สงครามพาให้ต่างคนต่างทาง เมื่อรู้ว่าท่านเป็นบุตรของสหายเก่า พระองค์จึงประสงค์จะพบท่านที่ฮวาลือ เชิญคุณชายขึ้นรถม้าเถิด
+Hmm ... ... ...	อืม ... ... ...
+Rút quân !!!!	ถอย!!!!
+Đừng đuổi theo! Hãy lui vào thành.	อย่าไล่ตาม! ถอยกลับเข้าเมือง
+Lã Đường đã chết!! Kẻ nào đầu hàng sẽ được tha.	หล่า เดื่อง ตายแล้ว!! ผู้ใดยอมจำนนจะได้รับการไว้ชีวิต
+Thắng thua đã rõ. Trói hắn lại.	ผลแพ้ชนะชัดเจนแล้ว มัดตัวมันไว้
+Muốn bắt ta ư? Còn lâu.....Yaaaa........hự....hự... !!	จะจับข้าหรือ? ไม่มีวัน.....ย้ากกก........อึก....อึก... !!
+Hắn đã tự sát, hãy mau lấy thành.	มันปลิดชีพตัวเองแล้ว เร็ว ยึดเมือง
+Viện binh đã đến, mọi người phản công !!!	กำลังเสริมมาแล้ว ทุกคนตีโต้กลับ!!!
+Không xong rồi! Hãy mau rút về tiền đồn chờ lệnh Hữu công Nguyễn Siêu.	แย่แล้ว! ถอยไปที่ด่านแล้วรอคำสั่งจากท่านเงวียน เซียว
+Trí Khả đã bị diệt, hãy mau tìm Nguyễn Siêu!	จี๊ ค้า ตายแล้ว รีบตามหาเงวียน เซียว!
+Nguyễn Siêu đã chạy hướng Đông Phù Liệt sang Tiên Du, tướng quân hãy mau đuổi theo, đừng để hắn qua sông!	เงวียน เซียว หนีผ่านดง ฝู เลี่ยต ไปทางเตียน ซู ท่านแม่ทัพรีบตามไป อย่าให้มันข้ามแม่น้ำได้!
+Thủ cấp của Nguyễn Siêu trong tay ta, muốn sống thì mau buông vũ khí đầu hàng! 	ข้าถือหัวของเงวียน เซียว ไว้แล้ว ใครอยากรอดจงวางอาวุธยอมจำนน!
+Đa tạ tướng quân đã trợ giúp!	ขอบคุณยิ่งนักที่ท่านแม่ทัพมาช่วย!
+Ngô hào trưởng, đừng khách sáo. Đây là nhiệm vụ của tôi. Phản loạn đã diệt xong, nay tôi phải về Tế Giang để giúp Vạn Thắng Vương. Ngô hào trưởng, hẹn ngày tái ngộ!	ผู้ใหญ่โงไม่ต้องขอบคุณ นี่คือหน้าที่ของข้า พวกกบฏถูกปราบแล้ว ข้าต้องกลับเต๊ ยาง ไปช่วยวั่นทั้งเวือง ผู้ใหญ่โง แล้วพบกันใหม่!
+Tướng quân, bảo trọng!	ท่านแม่ทัพ รักษาตัวด้วย!
+Nói !! Muốn sống thì cho ta biết Lý Khuê đang ở đâu !?	พูดมา!! อยากรอดก็บอกมาว่าหลี เคว อยู่ที่ไหน!?
+Lý sứ quân đã chạy về hướng Dương Xá, xin tướng quân tha mạng.	ท่านหลีหนีไปทางเซือง ซ้า ขอท่านแม่ทัพไว้ชีวิตข้าด้วย
+Nhốt tên này lại, chờ ta về xử lý. Những người còn lại mau đuổi theo Lý Khuê!	ขังเจ้านี่ไว้จนกว่าข้าจะกลับ ที่เหลือตามหลี เคว ไป!
+Chém! Đem đầu Lý Khuê về.	ฆ่า! เอาหัวหลี เคว กลับมา!
+Còn kẻ nào chán sống thì hãy bước lên !	ใครเบื่อชีวิตอีก ก้าวออกมา!
+Á.....! Chết ta......	อ๊ากกก.....! ข้าจบแล้ว......
+Nguyễn Khoan đã bỏ mạng. Kẻ nào đầu hàng sẽ được tha chết!	เงวียน โควน ตายแล้ว ผู้ใดยอมจำนนจะได้รับการไว้ชีวิต!
+Phản tặc đã diệt, hãy mau đến Phong Châu.	คนทรยศถูกปราบแล้ว รีบไปฟอง เจิว
+Anh em họ Kiều đã diệt xong, mau báo cho Vạn Thắng Vương.	พี่น้องเกี่ยวถูกปราบแล้ว รีบไปทูลวั่นทั้งเวืองเดี๋ยวนี้
+Không cho chúng chạy! Đuổi theo giết sạch, không chừa một mống.	อย่าให้มันหนีไปได้! ไล่ตามฆ่าให้หมด อย่าให้เหลือสักคน
+Thực lực quá kém, đúng là không biết trời cao.	อ่อนแอเช่นนี้ ช่างไม่รู้ว่าฟ้าสูงแผ่นดินต่ำ
+Chết nè !!!	ตายซะ!!!
+A....a....a......	อ๊ะ....อ๊ะ....อ๊ะ......
+Chống đối ta chỉ có chết, hãy nhìn đó mà làm gương.	ขัดขืนข้ามีแต่ตาย จงจำไว้เป็นบทเรียน
+Áaaaaa ... a.......a.......	อ๊ากกกก ... อ๊ะ.......อ๊ะ.......
+{p} tướng quân đã bại trận. Rút quân!!!	แม่ทัพ {p} พ่ายแพ้แล้ว ถอย!!!
+Tiến lên!! Ai bắt được Đinh Bộ Lĩnh dù sống hay đã chết sẽ được phong quan.	บุก!! ผู้ใดจับดิ่ญ โบ่ หลิญ ได้ ไม่ว่าเป็นหรือตาย จะได้เป็นขุนนาง
+Thành đã thất thủ, mọi người mau rút về Hoa Lư, ta sẽ ở lại cản đường. Mau!! Không được chần chừ. Vạn Thắng Vương, xin thứ lỗi cho thuộc hạ.	เมืองแตกแล้ว ทุกคนถอยกลับฮวาลือ ข้าจะอยู่ขวางทางไว้ ไป!! อย่าลังเล วั่นทั้งเวือง โปรดอภัยให้ผู้รับใช้ของท่านด้วย
+Còn tên nào muốn được hóa kiếp thì bước lên !	ใครอยากไปเกิดใหม่อีก ก้าวออกมา!
+Hừm, làm mất thời gian!	ฮึ เสียเวลาเปล่า!
+{p} tướng quân đã bại trận!! Rút quân.	แม่ทัพ {p} พ่ายแพ้แล้ว!! ถอย
+Tướng giặc đã chết! Đuổi theo giết sạch bọn chúng.	ขุนพลศัตรูตายแล้ว! ไล่ตามฆ่าให้หมด
+Chỉ có bấy nhiêu mà cũng dám cản đường ta sao !?	มีแค่นี้ยังกล้าขวางทางข้าหรือ!?
+Sức chỉ thế mà đòi lấy đầu ta ư !?	ฝีมือแค่นี้จะเอาหัวข้าหรือ!?
+Mau ra khỏi thành!	เร็ว ออกจากเมือง!
+Siêu, Tiệp! Ta đã báo thù cho hai đệ.	เซียว เตี่ยป! ข้าแก้แค้นให้น้องทั้งสองแล้ว
+Muốn cản ta ư? Chưa đủ sức!	คิดจะขวางข้าหรือ? เจ้ายังไม่แกร่งพอ!
+Qua ngọn núi phía trước ta sẽ an toàn. Đinh Bộ Lĩnh hãy chờ đó, nhất định ta sẽ quay về lấy lại tất cả.	พ้นภูเขาข้างหน้าไปก็ปลอดภัยแล้ว ดิ่ญ โบ่ หลิญ คอยดูเถิด ข้าจะกลับมาเอาทุกอย่างคืนแน่
+Giúp chúng tôi với !!!	ช่วยด้วย!!!
+Sơn trang phía trước bị yêu quái tấn công, tướng quân hãy mau đến giúp!	คฤหาสน์บนเขาข้างหน้าถูกปีศาจโจมตี ท่านแม่ทัพรีบไปช่วยเร็ว!
+Các ngươi là ai? Sao dám cản đường !	เจ้าเป็นใคร? กล้าดีอย่างไรมาขวางทางข้า!
+Thưa tướng quân! Tiểu dân xin gặp Vạn Thắng Vương.	ท่านแม่ทัพ! ข้าน้อยผู้เป็นสามัญชนขอเข้าเฝ้าวั่นทั้งเวือง
+Ngươi là ai?  Gặp ta có việc gì ?	เจ้าเป็นใคร? ต้องการอะไรจากข้า?
+Thưa đại vương, tiểu dân họ Lê tên Hoàn, người ở Bảo Thái, từ lâu đã nghe danh đức của đại vương, nên muốn phò giúp.	ฝ่าบาท ข้าน้อยชื่อเล ฮหว่าน มาจากบ๋าว ท้าย ได้ยินกิตติศัพท์ในคุณธรรมของพระองค์มานาน ปรารถนาจะรับใช้พระองค์
+Hãy đến Hoa Lư, chờ ta đánh trận về rồi tính.	ไปฮวาลือแล้วรอจนข้ากลับจากศึก
+Tiểu dân chờ người rất lâu rồi, hãy cho tôi một cơ hội.	ข้าน้อยรอพระองค์มานานแล้ว โปรดให้โอกาสข้าน้อยด้วย
+Vậy ngươi hãy thử đấu với {p} xem sao.	ถ้าเช่นนั้นลองสู้กับ {p} ดูก่อน
+Mô phật! Bần tăng tiếp đón chậm trễ, Lưu tiên sinh hãy lượng thứ.	อมิตาภพุทธ! โปรดอภัยที่อาตมาต้อนรับช้า ท่านหลิว
+Đại sư đừng khách sáo! Hôm nay tôi đến đây có việc cần ngài giúp đỡ. 	ไม่ต้องเกรงใจท่านอาจารย์! วันนี้ข้ามาเพราะต้องการความช่วยเหลือจากท่าน
+Lưu quân sư, nếu giúp được bần tăng sẽ cố hết sức.	ท่านกุนซือหลิว หากอาตมาช่วยได้ จะทำอย่างเต็มที่
+Không dấu gì đại sư, binh lực của Vạn Thắng Vương tuy uy dũng nhưng vẫn còn thiếu người chỉ dẫn. Đại sư, xin hãy giúp một tay.	ข้าไม่ปิดบังท่านอาจารย์: ทัพของวั่นทั้งเวืองเกรียงไกร แต่ยังขาดผู้ชี้ทาง ท่านอาจารย์โปรดช่วยด้วย
+Việc này hơi khó cho bần tăng vì chùa có quy định nếu thỉnh sư xuống núi phải phá được La Hán Trận. Trước nay chưa có ai phá được trận này, Lưu tiên sinh e rằng tôi khó mà giúp ông.	เรื่องนี้ยากอยู่สักหน่อย: กฎของวัดกล่าวว่า ภิกษุที่ถูกเชิญลงเขาต้องทำลายค่ายกลอรหันต์ก่อน ยังไม่เคยมีผู้ใดทำลายได้ อาตมาเกรงว่าคงช่วยท่านหลิวได้ยาก
+Lưu tiên sinh, hãy để tiểu tướng thử phá La Hán Trận	ท่านหลิว ให้ข้าลองทำลายค่ายกลอรหันต์ดู
+Tướng quân, hãy trận trọng.	ท่านแม่ทัพ ระวังตัวด้วย
+Các ngươi là ai, hãy mau tránh đường cho ta.	เจ้าเป็นใคร? หลีกทางไป
+Láo xược, tiếp chiêu!	อวดดี! รับไปซะ!
+Chẳng hay tướng quân ghé đến tệ xá có việc cần gì chỉ bảo?	ท่านแม่ทัพมาเยือนกระท่อมของข้าด้วยธุระใด? ให้ข้าช่วยอะไรได้บ้าง?
+Ta đi lạc đến đây, xin hỏi cao danh quý tánh của tiên sinh.	ข้าหลงทางมาถึงที่นี่ ขอทราบนามอันสูงส่งของท่านได้หรือไม่?
+Tại hạ họ Bùi tên Quang Dũng...	ข้าชื่อบุ่ย กวาง สุ่ง...
+Người là Bùi Quang Dũng !? Nghe danh đã lâu, hôm nay có cơ hội gặp gỡ, xin tiên sinh chỉ giáo.	ท่านคือบุ่ย กวาง สุ่ง!? ข้าได้ยินชื่อท่านมานาน บัดนี้ได้พบแล้ว โปรดชี้แนะข้าด้วย
+Thật không dám. Tướng quân! xin mời.	มิกล้า ท่านแม่ทัพ! เชิญท่านก่อน
+Tướng quân, xin hãy dừng bước.	ท่านแม่ทัพ โปรดรอก่อน
+Công tử là....	คุณชาย ท่านคือ....
+Cự Lạng là cháu nội của Phạm Lệnh Công – Đông giáp tướng quân dưới thời Ngô tiên chúa, chẳng may chiến tranh loạn lạc nên lui về đây chờ minh chủ. Hay tin quân của Vạn Thắng Vương đi qua, chúng tôi dẫn mọi người đến giúp một tay.	ข้า กื๋อ หลั่ง เป็นหลานของท่านฝ่าม เล่ญ กง - ขุนพลเกราะตะวันออกแห่งท่านโงผู้ล่วงลับ น่าเสียดายที่สงครามและความวุ่นวายทำให้เราต้องถอยมาอยู่ที่นี่เพื่อรอผู้ปกครองที่ทรงธรรม เมื่อได้ยินว่าทัพวั่นทั้งเวืองผ่านมา เราจึงพาผู้คนมาช่วย
+Vạn Thắng Vương đang ở ngoài chiến trường, công tử hãy theo tôi.	วั่นทั้งเวืองอยู่ในสนามรบ คุณชายตามข้ามาเถิด
+Chân Lưu đệ! Giang sơn đại loạn rất cần người tài, đệ hãy xuống núi giúp ta một phen.	ท่านพี่เจิน หลิว! แผ่นดินวุ่นวายนัก ต้องการผู้มีความสามารถ ลงเขามาช่วยข้าเถิด
+Bộ Lĩnh huynh, đám yêu quái ở Tam Đảo đang lộng hành. Nếu đệ theo huynh xuống núi e chùa sẽ khó mà giữ được.	ท่านพี่โบ่ หลิญ ปีศาจแห่งตาม ด๋าว อาละวาดหนัก หากอาตมาตามท่านลงเขา เกรงว่าจะไม่มีใครปกป้องวัด
+Đệ yên tâm, ta sẽ giúp đệ diệt đám yêu đó.	ไม่ต้องห่วง ท่านพี่ ข้าจะช่วยกำจัดปีศาจเหล่านั้นเอง
+Yêu quái đã bị diệt, mọi người an toàn rồi!	ปีศาจถูกกำจัดแล้ว ทุกคนปลอดภัยแล้ว!
+Đa tạ đại vương cứu giúp!	ขอบพระคุณที่ฝ่าบาทช่วยชีวิตพวกเรา!
+Tiểu thư, hãy đứng lên. Mọi người trong sơn trang đâu cả, sao chỉ còn lại mình nàng?	ลุกขึ้นเถิดแม่นาง คนในคฤหาสน์ไปไหนหมด? ทำไมเหลือเจ้าคนเดียว?
+Mọi người đã bị yêu quái sát hại, Vân Nga may mắn được đại vương kịp thời cứu giúp. Nếu không chê, xin đại vương hãy cho tiểu nữ theo hầu để báo đáp ân tình.	ทุกคนถูกปีศาจฆ่าตายหมด เวิน งา โชคดีที่ฝ่าบาทมาทันเวลา หากไม่รังเกียจ โปรดให้หม่อมฉันรับใช้เพื่อตอบแทนพระคุณ
+Ở đây hoang vắng nguy hiểm, một mình nàng ở lại cũng không tốt. Hãy theo cận vệ của ta về Hoa Lư trước, ta về gặp nàng sau.	ที่นี่เปลี่ยวและอันตราย อยู่คนเดียวไม่ดีนัก กลับฮวาลือกับองครักษ์ของข้าก่อน แล้วข้าจะไปพบเจ้าทีหลัง
+Tạ ơn đại vương	ขอบพระคุณ ฝ่าบาท
+Khá lắm!	ทำได้ดีมาก!
+Đại vương! quân ta rất cần một tiên phong dũng mãnh như vị tráng sĩ này.	ฝ่าบาท! ทัพของเราต้องการกองหน้าที่กล้าหาญเช่นนักรบผู้นี้ยิ่งนัก
+Lê Hoàn! ta giao ngươi trọng trách tiên phong tướng quân.	เล ฮหว่าน! ข้ามอบหน้าที่แม่ทัพกองหน้าให้เจ้า
+Đa tạ đại vương. Dù có thịt nát xương tan, tiểu tướng cũng sẽ hoàn thành nhiệm vụ đại vương đã giao.	ขอบพระคุณ ฝ่าบาท แม้กายจะแหลกเป็นผุยผง ข้าน้อยจะทำภารกิจที่พระองค์มอบหมายให้สำเร็จ
+Võ công của tướng quân thật cao thâm! Bần tăng được mở rộng tầm mắt.	วิทยายุทธ์ของท่านแม่ทัพล้ำลึกนัก! อาตมาได้เปิดหูเปิดตาแล้ว
+Đại sư đã quá khen, tôi chỉ may mắn phá được trận.	ท่านอาจารย์ชมเกินไป ข้าแค่โชคดีที่ทำลายค่ายกลได้
+Lưu tiên sinh, hãy đợi tôi thu xếp rồi cùng đến Hoa Lư.	ท่านหลิว รอสักครู่ให้อาตมาจัดการธุระ แล้วเราไปฮวาลือด้วยกัน
+Đại sư cứ từ từ thu xếp, tôi sẽ chờ.	ท่านอาจารย์ตามสบาย ข้าจะรอ
+Tướng quân, hãy dừng tay!	ท่านแม่ทัพ หยุดก่อน!
+Xin hỏi tráng sĩ có phải là hào trưởng Nguyễn Ninh?	ขอถามท่านนักรบ ท่านคือผู้ใหญ่เงวียน นิญ ใช่หรือไม่?
+Các hạ là ai sao lại biết tên ta?	พวกเจ้าเป็นใคร รู้ชื่อข้าได้อย่างไร?
+Chúng tôi là người của Vạn Thắng Vương, bấy lâu nghe danh hào trưởng anh dũng hơn người, nay chúng tôi đi ngang qua đây, nếu có mạo phạm xin thứ lỗi.	พวกเราเป็นคนของวั่นทั้งเวือง ได้ยินมานานว่าท่านกล้าหาญที่สุดในหมู่ผู้นำ เราแค่ผ่านมา หากล่วงเกินก็โปรดอภัย
+Vạn Thắng Vương !!! Thật may quá, tôi cũng đang đến Hoa Lư để đầu quân.	วั่นทั้งเวือง!!! โชคดีจริง ข้ากำลังจะไปฮวาลือเพื่อสมัครเป็นทหารพอดี
+Nếu Hoa Lư có thêm vị tướng anh dũng như hào trưởng thật là phước của muôn dân.	หากฮวาลือได้ขุนพลกล้าหาญเช่นท่าน จะเป็นบุญของราษฎรทั้งปวง
+Một chút tài mọn, tiên sinh đã quá lời. Xin tiên sinh hãy đưa tôi đi gặp Vạn Thắng Vương.	เป็นเพียงความสามารถเล็กน้อย ท่านชมเกินไป โปรดพาข้าไปพบวั่นทั้งเวืองเถิด
+Hào trưởng, xin mời.	ท่านผู้ใหญ่ เชิญก่อน
+Kiếm pháp của tiên sinh rất cao thâm, nếu ở lại nơi này thật uổng phí. Nếu không chê, tôi sẽ tiến cử tiên sinh với Vạn Thắng Vương.	วิชาดาบของท่านล้ำลึกนัก อยู่ที่นี่ก็น่าเสียดาย หากไม่รังเกียจ ข้าจะแนะนำท่านต่อวั่นทั้งเวือง
+Đa tạ tướng quân! Được góp chút tài mọn cho Vạn Thắng Vương thật là vinh hạnh cho tôi.	ขอบคุณท่านแม่ทัพ! ได้ถวายความสามารถเล็กน้อยแด่วั่นทั้งเวือง เป็นเกียรติยิ่งสำหรับข้า
+Tiên sinh, làm sao chúng ta ra khỏi vùng này?	ท่าน เราจะออกจากแถบนี้ได้อย่างไร?
+Tướng quân! hãy theo tôi.	ท่านแม่ทัพ! ตามข้ามา
+Yêu quái đã diệt xong, mọi người hãy mau trở về chùa.	ปีศาจถูกกำจัดแล้ว ทุกคนรีบกลับวัด
+Đa tạ Bộ Lĩnh huynh đã giúp đỡ. Hãy đợi tôi thu xếp hành lý xuống núi.	ขอบคุณท่านพี่โบ่ หลิญ ที่ช่วยเหลือ รอสักครู่ให้อาตมาเก็บของลงเขา
+Á......á.....yêu...quái.......mạnh...quá....hự......hự!	อ๊ากก......อ๊ะ.....พวก...ปีศาจ.......แกร่ง...เกินไป....อึก......อึก!
+[intro]	ปี 944 โง เกวียน สิ้นพระชนม์ เซือง ตาม คา พี่ชายของพระมเหสีชิงบัลลังก์ ตั้งตนเป็นกษัตริย์ใช้พระนามเซือง บิ่ญ เวือง\n\nหลังเซือง ตาม คา ชิงบัลลังก์ตระกูลโง หัวหน้าท้องถิ่นทุกแห่งไม่ยอมสวามิภักดิ์ ต่างลุกฮือยึดอำเภอและหัวเมือง บ้านเมืองตกอยู่ในความวุ่นวาย...\n\nปี 950 เซือง บิ่ญ เวือง ส่งโง เซือง วัน บุตรคนที่สองของโง เกวียน ไปตีท้าย บิ่ญ โง เซือง วัน กลับทัพโค่นเซือง ตาม คา และขึ้นเป็นกษัตริย์นามนาม เติ๊น เวือง\n\nปี 954 โง เซือง วัน ออกไปปราบขุนนางกบฏ และถูกซุ่มโจมตีสิ้นพระชนม์\n\nโง เซือง สี หลานชายขึ้นสืบทอด แต่อำนาจเสื่อมลงเรื่อย ๆ จนต้องถอยไปรักษาบิ่ญ เกี่ยว\n\nถึงปี 966 ขุนศึกทั้ง 12 ต่างยึดครองแผ่นดิน:\n\n1. โง เซือง สี ครองบิ่ญ เกี่ยว\n2. โด๋ แก๋ญ ทัก ครองโด๋ ด่ง ยาง\n3. เจิ่น หลาม ครองโบ๊ ไฮ่ เคา\n4. เกี่ยว กง ห่าน ครองฟอง เจิว\n5. เงวียน โควน ครองตาม ด๊าย\n6. โง ญ้าต คั้ญ ครองเดื่อง เลิม\n7. หลี เคว ครองเซียว หลว่าย\n8. เงวียน ถู่ เตี่ยป ครองเตียน ซู\n9. หล่า เดื่อง ครองเต๊ ยาง\n10. เงวียน เซียว ครองเตย ฝู เลี่ยต\n11. เกี่ยว ถ่วน ครองโห่ย โห่\n12. ฝ่าม บั่ก โห่ ครองดั่ง เจิว\n\nในเวลาเดียวกัน ดิ่ญ โบ่ หลิญ ลุกขึ้นรวบรวมชาวฮวาลือ และรอคอยโอกาส\n\nเพื่อขยายฐานกำลัง ดิ่ญ โบ่ หลิญ เข้าร่วมกับเจิ่น หลาม ผู้ยกบุตรสาวให้แต่งงานกับเขา\n\nต่อมาเจิ่น หลาม มอบอำนาจบัญชาทัพให้ เขานำทัพกลับฮวาลือ รวบรวมขุนพลผู้มีความสามารถ และยืนหยัดต่อต้านตระกูลโงและขุนศึกอื่น ๆ\n\nวีรบุรุษจากทุกสารทิศมาสวามิภักดิ์ วันแล้ววันเล่าพวกเขาฝึกปรือ รอคอยวันเคลื่อนทัพ...
+[ending]	ปี 968 หลังยุติยุคจลาจล 12 ขุนศึก ดิ่ญ โบ่ หลิญ ขึ้นครองราชย์เป็นจักรพรรดิ ใช้พระนามด่าย ทั้ง มิญ ฮหว่าง เด๊ - หรือที่รู้จักกันว่าดิ่ญ เตียน ฮหว่าง - ตั้งราชธานีที่ฮวาลือ\n\nปี 971 ดิ่ญ เตียน ฮหว่าง เริ่มจัดลำดับยศขุนนางฝ่ายบุ๋นและฝ่ายบู๊ในราชสำนัก\n\nพระสงฆ์ก็มีส่วนร่วมในราชสำนัก ด้วยคุณูปการในการยุติยุคจลาจล 12 ขุนศึก\n\nดิ่ญ เตียน ฮหว่าง แต่งตั้งขุนนางดังนี้:\n\n- เงวียน บั๊ก เป็นดิ่ญ ก๊วก กง\n- หลิว เกอ เป็นโด โห่ ฝู่ สี่ ซือ\n- เล ฮหว่าน เป็นเถิบ ด่าว เตื๋อง เกวิน\n- โง เจิน หลิว เป็นควง เหวียต ด่าย ซือ\n- ฝ่าม บั่ก โห่ เป็นเทิน เว่ ด่าย เตื๋อง เกวิน\n- ฝ่าม กื๋อ หลั่ง เป็นฝ่อง หงือ ซื๊อ เตื๋อง เกวิน\n- บุ่ย กวาง สุ่ง เป็นเจิ๊น ดง เตี๊ยต โด่ ซื๊อ\n- {s} เป็น ......
+Tướng quân hãy làm theo chỉ dẫn của tôi.	ท่านแม่ทัพ ทำตามที่ข้าสอนนะ
+Hãy chạm vào thanh kiếm (hoặc bấm phím 5) để chọn	แตะดาบเพื่อเลือก
+Vuốt xuống hoặc chạm ô bên dưới (phím 8) để đổi chỗ	ปัดลงหรือแตะช่องด้านล่างเพื่อสลับ
+Để tấn công kẻ thù hãy xếp 3 thanh kiếm các loại sát nhau theo hàng ngang hoặc dọc.	หากต้องการโจมตีศัตรู ให้เรียงดาบชนิดใดก็ได้ 3 เล่มติดกัน แนวนอนหรือแนวตั้ง
+Bây giờ đến lượt ta...	ทีนี้ตาข้าบ้างล่ะ...
+Tướng quân đã bị thương	ท่านแม่ทัพบาดเจ็บแล้ว
+Để hồi phục sinh lực hãy xếp 3 trái tim	หากต้องการฟื้น HP ให้เรียงหัวใจ 3 ดวง
+Tốt lắm.	ดีมาก
+Phía dưới có 1 thanh màu xanh lá tượng trưng cho lương thực, hết lương thực thì sẽ thua cuộc.	แถบสีเขียวด้านล่างคือเสบียง หากเสบียงหมดจะแพ้
+Để lấy lương thực hãy xếp 3 bánh chưng	หากต้องการเสบียง ให้เรียงขนมบั๊ญจง 3 ชิ้น
+Rất tốt!	ยอดเยี่ยม!
+Thanh màu xanh ngọc bích là năng lượng	แถบสีฟ้าอมเขียวคือพลังงาน
+Để lấy năng lượng hãy xếp 3 biểu tượng âm dương	หากต้องการพลังงาน ให้เรียงไอคอนหยินหยาง 3 อัน
+Cây năng lượng có 3 phần ứng với 3 tuyệt chiêu	แถบพลังงานมี 3 ช่อง สำหรับท่าไม้ตาย 3 ท่า
+Tướng quân hãy mở bảng phép thuật bằng cách nhấn phím 'T.Chiêu' ,chọn một loại tuyệt chiêu và bấm 'Dùng'.	ท่านแม่ทัพ เปิดแผงท่าไม้ตาย เลือกท่าแล้วแตะ 'ใช้'
+Tuyệt vời!	ยอดเยี่ยมมาก!
+Tướng quân sẽ được thăng cấp khi thu được nhiều kinh nghiệm chiến đấu, cấp càng cao thì chỉ số tấn công và sinh lực càng cao.	ท่านจะเลเวลอัปจากการสะสม EXP ในการต่อสู้ ยิ่งเลเวลสูง พลังโจมตีและ HP ยิ่งมาก
+Để lấy kinh nghiệm chiến đấu hãy xếp các biểu tượng cuốn sách.	หากต้องการ EXP ให้เรียงไอคอนตำรา
+Ngoài ra, để mua các vật phẩm hỗ trợ tại cửa hàng tướng quân phải thu thập các thỏi vàng.	นอกจากนี้ หากต้องการซื้อไอเทมช่วยเหลือที่ร้านค้า ให้สะสมทองแท่ง
+Nếu xếp 4 biểu tượng trở lên sẽ được đi thêm 1 lượt.	เรียงไอคอน 4 อันขึ้นไปจะได้เทิร์นเพิ่ม
+Và xếp 5 biểu tượng trở lên sẽ nhận được thêm các vật phẩm hỗ trợ	และเรียง 5 อันขึ้นไปจะได้ไอเทมช่วยเหลือ
+Bây giờ hãy thử xếp 5 biểu tượng	ทีนี้ลองเรียงไอคอน 5 อันดู
+Tướng quân đã được thưởng 1 vật phẩm, hãy chạm 'Túi' (hoặc bấm phím #) để chọn và sử dụng vật phẩm.	ท่านได้รับไอเทมเป็นรางวัลแล้ว แตะ 'กระเป๋า' เพื่อเลือกและใช้
+Chú ý, một lượt đi phải ghép ít nhất 3 biểu tượng giống nhau, nếu thực hiện không đúng sẽ bị mất lượt đi và tiêu hao sinh lực. Hãy cẩn trọng.	ระวัง: ทุกการเดินต้องเรียงไอคอนเหมือนกันอย่างน้อย 3 อัน เดินผิดจะเสียเทิร์นและเสีย HP ระวังให้ดี
+Bạn đã hoàn thành sự kiện. Bạn được thưởng thêm {0}	อีเวนต์สำเร็จ! รางวัล: {0}
+{0} tấn công	{0} โจมตี
+Hãy chạm vào thanh kiếm để chọn	แตะดาบเพื่อเลือก
+Vuốt xuống hoặc chạm ô bên dưới để đổi chỗ	ปัดลงหรือแตะช่องด้านล่างเพื่อสลับ
+Tướng quân hãy chạm vào một tuyệt chiêu ở hàng dưới các chân dung, rồi bấm 'Dùng'.	ท่านแม่ทัพ แตะท่าไม้ตายในแถวใต้รูปตัวละคร แล้วแตะ 'ใช้'
+Tướng quân đã được thưởng 1 vật phẩm. Hãy chạm vào vật phẩm ở hàng dưới cùng, rồi bấm 'Dùng'.	ท่านได้รับไอเทมเป็นรางวัลแล้ว แตะไอเทมในแถวล่างสุด แล้วแตะ 'ใช้'

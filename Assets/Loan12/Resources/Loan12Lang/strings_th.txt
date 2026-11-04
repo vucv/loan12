@@ -1,0 +1,612 @@
+# vi	en	ja	ko  (see Assets/Loan12/Unity/Loc.cs)
+# ---- common
+Đóng	ปิด
+ĐÓNG	ปิด
+Có	ใช่
+Không	ไม่
+Hủy	ยกเลิก
+Xong	เสร็จ
+Dừng	หยุด
+Thoát	ออก
+THOÁT	ออก
+Ở lại	อยู่ต่อ
+Ở LẠI	อยู่ต่อ
+Để sau	ไว้ทีหลัง
+Bỏ qua	ข้าม
+BỎ QUA	ข้าม
+TIẾP TỤC	ต่อไป
+Chạm để tiếp tục	แตะเพื่อไปต่อ
+Chạm để bỏ qua	แตะเพื่อข้าม
+Chạm để xem	แตะเพื่อดู
+Chạm ra ngoài để đóng	แตะด้านนอกเพื่อปิด
+chạm để tiếp	แตะเพื่อไปต่อ
+BẬT	เปิด
+TẮT	ปิด
+MỚI	ใหม่
+VIP	VIP
+OK	ตกลง
+Tiếng Việt	Tiếng Việt
+English	English
+Ngôn ngữ	ภาษา
+NGÔN NGỮ	ภาษา
+vàng	ทอง
+VÀNG	ทอง
+{0} vàng	{0} ทอง
++{0} vàng	+{0} ทอง
+{0} máu	{0} HP
++{0} máu	+{0} HP
+-{0} máu	-{0} HP
++{0} năng lượng	+{0} พลังงาน
+{0} KN	{0} EXP
++{0} KN	+{0} EXP
++{0} tấn công	+{0} พลังโจมตี
+{0} cái	{0} ชิ้น
+Có {0}	มี {0}
+Còn {0}	เหลือ {0}
+Cần {0}	ต้องใช้ {0}
+Đang có {0}	มีอยู่ {0}
+Đang có	มีแล้ว
+Chưa có	ยังไม่มี
+Đang có: {0}	มีอยู่: {0}
+Cấp {0}	Lv {0}
+cấp {0}	Lv {0}
+Lên cấp {0}!	เลเวลอัป! Lv {0}
+Hệ {0}	ธาตุ{0}
+HỆ {0}	ธาตุ{0}
+Hệ {0} · Cấp {1}	ธาตุ{0} · Lv {1}
+Hỏa	ไฟ
+Lôi	สายฟ้า
+Thủy	น้ำ
+HỎA	ไฟ
+LÔI	สายฟ้า
+THỦY	น้ำ
+Máu	HP
+Máu {0} · Tấn công {1}	HP {0} · โจมตี {1}
+Tấn công	โจมตี
+Kinh nghiệm	ประสบการณ์
+Ô {0}	ช่อง {0}
+Mức {0}	ระดับ {0}
+MỨC {0}	ระดับ {0}
+{0} phút trước	{0} นาทีก่อน
+{0} ngày trước	{0} วันก่อน
+vừa xong	เมื่อสักครู่
+hôm nay	วันนี้
+hôm qua	เมื่อวาน
+???	???
+# ---- items, skills, heroes
+Long Thần Kiếm	ดาบมังกร
+Nhân Sâm	โสม
+Ngân Lượng	เงินตำลึง
+Quỷ Diện Giáp	เกราะหน้าปีศาจ
+Bình Thuốc	ขวดยา
+Ngọc Ấn	ตราหยก
+Bình Hồi Mạng	ขวดคืนชีพ
+Long Thần Kiếm x3	ดาบมังกร x3
+Nhân Sâm x3	โสม x3
+{0} x{1}	{0} x{1}
+Nhân đôi sức mạnh tấn công trong một lượt.	เพิ่มพลังโจมตีเป็นสองเท่าเป็นเวลาหนึ่งเทิร์น
+Nhân đôi lượng máu cơ bản của võ tướng. Chỉ sử dụng một lần trong một trận đánh.	เพิ่ม HP พื้นฐานของขุนพลเป็นสองเท่า ใช้ได้ครั้งเดียวต่อการต่อสู้
+Nhận thêm được 1000 vàng.	รับทองเพิ่ม 1000
+Ngăn cản 3/4 lực tấn công của kẻ thù trong một lượt	ป้องกันพลังโจมตีของศัตรู 3/4 เป็นเวลาหนึ่งเทิร์น
+Hồi phục ngay lập tức 10% sinh lực. Chỉ sử dụng một lần trong một lượt.	ฟื้นฟู HP 10% ทันที ใช้ได้ครั้งเดียวต่อเทิร์น
+Được ưu tiên đi trước nếu sở hữu ngọc ấn. Tự động kích hoạt khi bắt đầu trận đánh.	ถือตราหยกไว้จะได้เดินก่อน ใช้อัตโนมัติเมื่อเริ่มการต่อสู้
+{0} (+{1} máu)	{0} (+{1} HP)
+Hồi đầy mạng chơi ({0} mạng). Dùng ngoài trận, ở túi đồ hoặc khi hết mạng.	เติมชีวิตจนเต็ม ({0} ชีวิต) ใช้นอกการต่อสู้ จากกระเป๋า หรือเมื่อชีวิตหมด
+Dùng trong 1 lượt	ใช้ได้ 1 เทิร์น
+1 lần mỗi trận	1 ครั้งต่อการต่อสู้
+1 lần mỗi lượt	1 ครั้งต่อเทิร์น
+Dùng ngoài trận	ใช้นอกการต่อสู้
+Tự dùng khi bắt đầu trận	ใช้อัตโนมัติตอนเริ่มศึก
+Tấn công lượt đó: {0} thành {1}	พลังโจมตีเทิร์นนั้น: {0} เป็น {1}
+Máu trận đó: {0} thành {1}	HP ในศึกนั้น: {0} เป็น {1}
+Chặn 3/4 sát thương của lượt địch	ป้องกันความเสียหาย 3/4 ในเทิร์นของศัตรู
+Với máu {0} của bạn: +{1} máu	จาก HP {0} ของคุณ: +{1} HP
+Bạn luôn được đi trước	คุณได้เดินก่อนเสมอ
+Quả Cầu Lửa	ลูกไฟ
+Mưa Thiên Thạch	ฝนดาวตก
+Lửa Địa Ngục	ไฟนรก
+Chuỗi Sét	สายฟ้าลูกโซ่
+Khiên Sét	โล่สายฟ้า
+Sấm Sét	อสนีบาต
+Mũi Tên Băng	ศรน้ำแข็ง
+Cam Lộ Thủy	น้ำค้างทิพย์
+Băng Phong	พายุน้ำแข็ง
+Gây sát thương kẻ thù, lực sát thương bằng {0}, phá hủy tức thì 1 vùng diện tích 3x3ô trên bàn cờ.	สร้างความเสียหาย {0} แก่ศัตรู และทำลายพื้นที่ 3x3 บนกระดาน 1 จุดทันที
+Gây sát thương kẻ thù, lực sát thương bằng {0}, phá hủy tức thì từ 3 đến 5 vùng diện tích 2x2ô trên bàn cờ.	สร้างความเสียหาย {0} แก่ศัตรู และทำลายพื้นที่ 2x2 บนกระดาน 3 ถึง 5 จุดทันที
+Gây sát thương kẻ thù, lực sát thương bằng {0}, phá hủy tức thì 2 vùng diện tích 4x4ô trên bàn cờ.	สร้างความเสียหาย {0} แก่ศัตรู และทำลายพื้นที่ 4x4 บนกระดาน 2 จุดทันที
+Gây sát thương kẻ thù, lực sát thương bằng {0}, phá hủy tức thì từ 4 đến 8 ô trên bàn cờ.	สร้างความเสียหาย {0} แก่ศัตรู และทำลาย 4 ถึง 8 ช่องบนกระดานทันที
+Hóa giải tất cả các đòn tấn công của kẻ thù. Tác dụng trong 6 lượt.	ล้างการโจมตีทั้งหมดของศัตรู มีผล 6 เทิร์น
+Gây sát thương kẻ thù, lực sát thương bằng {0}, phá hủy tức thì từ 3 đến 6 vùng diện tích 3x3ô trên bàn cờ.	สร้างความเสียหาย {0} แก่ศัตรู และทำลายพื้นที่ 3x3 บนกระดาน 3 ถึง 6 จุดทันที
+Gây sát thương kẻ thù, lực sát thương bằng {0}, triệt tiêu một lượng nhỏ năng lượng của kẻ thù.	สร้างความเสียหาย {0} แก่ศัตรู และดูดพลังงานของศัตรูเล็กน้อย
+Phục hồi 20% sinh lực cho bản thân. Phá hủy tất cả trái tim trên bàn cờ và hấp thụ sinh lực của trái tim bị hủy.	ฟื้นฟู HP ตนเอง 20% ทำลายหัวใจทั้งหมดบนกระดานและดูดซับ HP จากหัวใจเหล่านั้น
+Đóng băng kẻ thù trong 2 lượt, gây sát thương kẻ thù, lực sát thương bằng {0}, triệt tiêu một lượng lớn năng lượng của kẻ thù.	แช่แข็งศัตรู 2 เทิร์น สร้างความเสียหาย {0} และดูดพลังงานของศัตรูจำนวนมาก
+Một hào kiệt mang trong người sức mạnh hủy diệt của Lửa.	ยอดวีรบุรุษผู้ครอบครองพลังทำลายล้างแห่งไฟ
+Đại đệ tử của Lôi Thần, có khả năng điều khiển sấm sét để tấn công kẻ thù hoặc bảo vệ bản thân.	ศิษย์เอกของเทพสายฟ้า ควบคุมสายฟ้าเพื่อโจมตีศัตรูหรือปกป้องตนเอง
+Mang trong người dòng máu của Thủy Thần, có thể tự hồi phục tổn thương và đóng băng kẻ thù.	มีสายเลือดเทพแห่งน้ำ รักษาบาดแผลตนเองและแช่แข็งศัตรูได้
+Đệ tử của Hỏa Phụng Tiên, sở hữu sức mạnh hủy diệt của Lửa.	ศิษย์ของเซียนหงส์เพลิง ครอบครองพลังทำลายล้างแห่งไฟ
+Nữ hào kiệt xuất chúng, có quyền năng gọi sấm sét để tấn công kẻ thù hoặc tự bảo vệ bản thân.	วีรสตรีผู้โดดเด่น เรียกสายฟ้ามาโจมตีศัตรูหรือปกป้องตนเอง
+Hậu duệ của Bắc Hải Long Vương, có thể tự trị thương hoặc làm ngưng tụ hơi nước để đóng băng kẻ thù.	ทายาทราชามังกรทะเลเหนือ รักษาตนเองหรือควบแน่นไอน้ำเพื่อแช่แข็งศัตรู
+# ---- bag
+Sát thương diện rộng mạnh nhất: Lửa Địa Ngục phá 2 vùng 4x4	ความเสียหายวงกว้างสูงสุด: ไฟนรกทำลายพื้นที่ 4x4 ได้ 2 จุด
+Phá nhiều ô một lúc, dễ tạo chuỗi nổ liên hoàn	ทำลายหลายช่องพร้อมกัน สร้างคอมโบต่อเนื่องได้ง่าย
+Hạ gục nhanh, hợp với lối đánh tấn công	ปิดเกมไว เหมาะกับสายบุก
+Khiên Sét hóa giải mọi đòn tấn công trong 6 lượt	โล่สายฟ้าป้องกันการโจมตีทั้งหมดได้ 6 เทิร์น
+Chuỗi Sét chỉ cần 1 ô năng lượng, phá ô rải rác	สายฟ้าลูกโซ่ใช้พลังงานแค่ 1 ช่อง ทำลายช่องที่กระจัดกระจาย
+Cân bằng giữa công và thủ, an toàn khi gặp địch mạnh	สมดุลทั้งบุกและรับ ปลอดภัยเมื่อเจอศัตรูแกร่ง
+Tự hồi máu: Cam Lộ Thủy hồi 20% và hút máu từ trái tim	ฮีลตัวเองได้: น้ำค้างทิพย์ฟื้นฟู 20% และดูด HP จากหัวใจ
+Đóng băng địch 2 lượt, làm mất năng lượng của địch	แช่แข็งศัตรู 2 เทิร์น และทำให้ศัตรูเสียพลังงาน
+Bền bỉ nhất, hợp đánh lâu	ถึกที่สุด เหมาะกับการสู้ยืดเยื้อ
+Gom đủ 3 ô năng lượng rồi tung Lửa Địa Ngục khi địch còn nhiều máu	เก็บพลังงานให้ครบ 3 ช่อง แล้วปล่อยไฟนรกตอนศัตรู HP ยังเยอะ
+Dùng Quả Cầu Lửa dọn chỗ bàn cờ đang bí nước	ใช้ลูกไฟเคลียร์จุดที่กระดานตัน
+Không tự hồi máu được: mang vật phẩm hồi máu khi đánh trùm	ฮีลตัวเองไม่ได้: พกไอเทมฟื้น HP ไปสู้บอส
+Bật Khiên Sét khi địch sắp đầy năng lượng để chặn tuyệt chiêu	เปิดโล่สายฟ้าตอนศัตรูพลังงานใกล้เต็ม เพื่อกันท่าไม้ตาย
+Trong 6 lượt có khiên, tấn công dồn dập không cần phòng thủ	ระหว่าง 6 เทิร์นที่มีโล่ บุกได้เต็มที่ไม่ต้องตั้งรับ
+Để dành Sấm Sét để kết liễu	เก็บอสนีบาตไว้ปิดฉาก
+Đợi bàn cờ có nhiều trái tim rồi mới dùng Cam Lộ Thủy	รอให้กระดานมีหัวใจเยอะก่อนค่อยใช้น้ำค้างทิพย์
+Tung Băng Phong khi địch sắp ra chiêu, rồi tranh thủ 2 lượt bị băng	ปล่อยพายุน้ำแข็งก่อนศัตรูออกท่า แล้วใช้ 2 เทิร์นที่ศัตรูโดนแช่แข็งให้คุ้ม
+Mũi Tên Băng làm địch chậm tích năng lượng	ศรน้ำแข็งทำให้ศัตรูสะสมพลังงานช้าลง
+ƯU ĐIỂM	จุดเด่น
+MẸO KHI CHƠI	เคล็ดลับ
+Thông tin nhân vật	ข้อมูลตัวละคร
+Kinh nghiệm {0} / {1} (lên cấp {2})	EXP {0} / {1} (ถึง Lv {2})
+TUYỆT CHIÊU	ท่าไม้ตาย
+{0} ô năng lượng	พลังงาน {0} ช่อง
+VẬT PHẨM	ไอเทม
+Dùng trong trận	ใช้ในการต่อสู้
+Cửa hàng	ร้านค้า
+mua thêm	ซื้อเพิ่ม
+Hết · chạm để mua	หมด · แตะเพื่อซื้อ
+chọn khi chuẩn bị trận	เลือกตอนเตรียมศึก
+Ngọc Ấn x{0}	ตราหยก x{0}
+hồi đầy mạng	ชีวิตเต็ม
+BẢO VẬT	สมบัติ
+gốc {0} · sự kiện +{1}	พื้นฐาน {0} · อีเวนต์ +{1}
+Đã hồi đầy {0} mạng	เติมชีวิตเต็ม {0} แล้ว
+Đã mua {0} {1} (-{2} vàng)	ซื้อ {0} {1} แล้ว (-{2} ทอง)
+Chưa có Bình Hồi Mạng	ยังไม่มีขวดคืนชีพ
+Mạng đang đầy	ชีวิตเต็มอยู่แล้ว
+DÙNG · hồi đầy mạng	ใช้ · เติมชีวิตเต็ม
+MUA THÊM {0} · {1} vàng	ซื้อเพิ่ม {0} · {1} ทอง
+Thiếu {0} vàng · nạp thêm	ขาดอีก {0} ทอง · เติมทอง
+Hệ {0} · {1} ô năng lượng	ธาตุ{0} · พลังงาน {1} ช่อง
+# ---- battle
+Á! Đau quá...	อ๊าก! เจ็บชะมัด...
+Hự! Ngươi khá lắm...	อึก! ฝีมือไม่เลว...
+Không xong rồi!	แย่แล้ว!
+Á! Ngươi khá lắm...	อ๊ะ! เก่งไม่เบาเลย...
+Hự... lợi hại!	อึก... ร้ายกาจนัก!
+Đáng ghét!	น่าแค้นนัก!
+Không lẽ ta thua ở đây sao...	หรือข้าจะแพ้ที่นี่...
+Ta... chưa chịu thua đâu!	ข้า... ยังไม่ยอมแพ้หรอก!
+Kẻ nào dám đến đây? Nạp mạng!	ผู้ใดกล้าบุกมาที่นี่? มาสู้กัน!
+Ngươi chạy đâu cho thoát!	เจ้าหนีไม่พ้นหรอก!
+Để xem ngươi được mấy chiêu!	ไหนดูซิว่าเจ้ามีดีแค่ไหน!
+Khỏe lại rồi!	กลับมาแข็งแรงแล้ว!
+Vẫn còn sức chiến đấu!	ข้ายังสู้ไหว!
+Hừ! Chẳng nhằm nhò gì.	ฮึ! แค่นี้ไม่ระคายผิว
+Đòn này chưa đủ đâu!	แค่นี้ยังไม่พอหรอก!
+Ha ha! Biết lợi hại của ta chưa!	ฮ่า ฮ่า! รู้ฤทธิ์ข้าแล้วสินะ!
+Thắng rồi!	ชนะแล้ว!
+Kẻ nào dám cản đường ta nữa?	ยังมีใครกล้าขวางทางข้าอีก?
+Ngươi còn non lắm!	เจ้ายังอ่อนหัดนัก!
+Về luyện thêm đi!	กลับไปฝึกมาใหม่เถอะ!
+Ha ha! Chỉ có vậy thôi sao?	ฮ่า ฮ่า! มีแค่นี้หรือ?
+Chờ đến lượt của bạn	รอเทิร์นของคุณ
+Cần thêm {0} năng lượng	ต้องการพลังงานอีก {0}
+Đã hết, mua thêm ở màn chuẩn bị	หมดแล้ว ซื้อเพิ่มได้ตอนเตรียมศึก
+Lượt này đã dùng 1 vật phẩm	เทิร์นนี้ใช้ไอเทมไปแล้ว 1 ชิ้น
+{0} mất {1} máu	{0} เสีย {1} HP
+{0} hồi {1} máu	{0} ฟื้น {1} HP
+{0} dùng {1}	{0} ใช้ {1}
+Nếm thử {0}!	ลองรับ{0}ของข้าดู!
+Quỷ Diện Giáp chặn 3/4 đòn	เกราะหน้าปีศาจกันได้ 3/4
+Long Thần Kiếm: đánh x2	ดาบมังกร: โจมตี x2
+{0} đã chiến thắng!	{0} ชนะ!
+{0} đã thua trận	{0} พ่ายแพ้
+Lưu Cơ	หลิว เกอ
+CHIẾN THẮNG	ชัยชนะ
+THẤT BẠI	พ่ายแพ้
+LƯỢT CỦA BẠN	เทิร์นของคุณ
+LƯỢT ĐỐI THỦ	เทิร์นศัตรู
+Tuyệt chiêu {0}	ท่าไม้ตาย {0}
+Mỗi lượt dùng 1 vật phẩm	ใช้ได้ 1 ไอเทมต่อเทิร์น
+DÙNG	ใช้
+# ---- hero
+TẠO NHÂN VẬT	สร้างตัวละคร
+CHỌN TƯỚNG	เลือกขุนพล
+Bạn đã có tướng này ở Ô {0} (vẫn tạo được)	คุณมีขุนพลนี้อยู่แล้วในช่อง {0} (ยังสร้างได้)
+CHỌN TƯỚNG NÀY	เลือกขุนพลนี้
+Cấp 1 · tăng theo cấp	Lv 1 · เพิ่มตามเลเวล
+HỦY TẠO NHÂN VẬT?	ยกเลิกการสร้าง?
+Chưa mất lượt tạo, lần sau tạo lại được.	สิทธิ์สร้างยังอยู่ ครั้งหน้าสร้างใหม่ได้
+# ---- ads, lives
+QUẢNG CÁO (THỬ NGHIỆM)	โฆษณา (ทดสอบ)
+Sẽ thay bằng quảng cáo thật	จะแทนที่ด้วยโฆษณาจริง
++1 mạng chơi	+1 ชีวิต
+Cần xem hết quảng cáo để nhận mạng	ต้องดูโฆษณาจนจบจึงจะได้ชีวิต
+Chưa có quảng cáo, thử lại sau ít phút	ยังไม่มีโฆษณา ลองใหม่ในอีกไม่กี่นาที
+Đã mua và dùng Bình Hồi Mạng: đầy {0} mạng	ซื้อและใช้ขวดคืนชีพแล้ว: ชีวิตเต็ม {0}
+Thiếu {0} vàng để mua Bình Hồi Mạng	ขาดอีก {0} ทองเพื่อซื้อขวดคืนชีพ
+HẾT MẠNG	ชีวิตหมด
+MẠNG CHƠI	ชีวิต
+Mạng chơi	ชีวิต
+Bạn đã hết mạng chơi. Mỗi trận cần 1 mạng (thắng thì được trả lại).	ชีวิตของคุณหมดแล้ว ทุกการต่อสู้ใช้ 1 ชีวิต (ชนะแล้วได้คืน)
+Mạng chơi đang đầy ({0}/{1}).	ชีวิตเต็มแล้ว ({0}/{1})
+Bạn còn {0}/{1} mạng. Mỗi trận cần 1 mạng.	คุณมี {0}/{1} ชีวิต ทุกการต่อสู้ใช้ 1 ชีวิต
+{0} +1 mạng sau {1}.	{0} +1 ชีวิตในอีก {1}
++1 MẠNG (VIP)	+1 ชีวิต (VIP)
+XEM QUẢNG CÁO · +1 MẠNG	ดูโฆษณา · +1 ชีวิต
+DÙNG BÌNH HỒI MẠNG (có {0})	ใช้ขวดคืนชีพ (มี {0})
+MUA BÌNH HỒI MẠNG · {0} vàng	ซื้อขวดคืนชีพ · {0} ทอง
+Bình Hồi Mạng: hồi đầy {0} mạng	ขวดคืนชีพ: เติมชีวิตเต็ม {0}
+# ---- map
+Bạn đang ở {0}	คุณอยู่ที่ {0}
+Chưa có đường tới {0}	ยังไม่มีทางไป {0}
+Chưa mở. Làm tiếp nhiệm vụ chính để mở vùng này.	ยังล็อกอยู่ ทำภารกิจหลักต่อเพื่อปลดล็อกพื้นที่นี้
+đánh {0}	สู้ {0}
+{0} đường	{0} เส้นทาง
+Đang đi tới {0}	กำลังไป {0}
+Bản đồ	แผนที่
+Túi đồ	กระเป๋า
+Nhiệm vụ	ภารกิจ
+Dấu đỏ là nhiệm vụ chính. Chạm vào một nơi, tướng sẽ tự đi tới theo đường.	เครื่องหมายแดงคือภารกิจหลัก แตะสถานที่ แล้วขุนพลจะเดินไปตามทางเอง
+Dấu cam là sự kiện phụ, dấu vàng là quân canh. Xem hết ở thẻ Nhiệm vụ.	เครื่องหมายส้มคืออีเวนต์รอง เครื่องหมายเหลืองคือทหารยาม ดูทั้งหมดได้ในแท็บภารกิจ
+{0}/2 · chạm để tiếp	{0}/2 · แตะเพื่อไปต่อ
+# ---- menu
+NHÂN VẬT	ตัวละคร
+Tạo nhân vật đầu tiên · miễn phí	สร้างตัวละครแรก · ฟรี
+Tạo nhân vật mới	สร้างตัวละครใหม่
+Xem 1 quảng cáo để tạo nhân vật	ดูโฆษณา 1 ครั้งเพื่อสร้างตัวละคร
+CHƠI MỚI	เริ่มเกมใหม่
+CÀI ĐẶT	ตั้งค่า
+THOÁT GAME	ออกจากเกม
+CHƠI TIẾP	เล่นต่อ
+Đã đủ 3 nhân vật. Hãy xóa 1 nhân vật để tạo mới.	มีตัวละครครบ 3 ตัวแล้ว ลบ 1 ตัวเพื่อสร้างใหม่
+THOÁT GAME?	ออกจากเกม?
+Tiến độ đã được lưu.	บันทึกความคืบหน้าแล้ว
+# ---- pause
+TẠM DỪNG	หยุดชั่วคราว
+Trận đấu đang tạm dừng	การต่อสู้หยุดชั่วคราว
+Bạn vừa rời trò chơi, trận đấu đã tạm dừng	คุณออกจากเกม การต่อสู้จึงหยุดชั่วคราว
+ÂM THANH	เสียง
+RUNG	การสั่น
+THOÁT TRẬN	ออกจากศึก
+Bỏ trận, về bản đồ · tính là thua	ทิ้งศึก กลับแผนที่ · นับเป็นแพ้
+THOÁT TRẬN?	ออกจากศึก?
+Trận này sẽ tính là thua: mất 1 mạng chơi, không bị trừ kinh nghiệm.	นับเป็นแพ้: เสีย 1 ชีวิต ไม่หัก EXP
+Trận này sẽ tính là thua: mất 1 mạng chơi và bị phạt kinh nghiệm như khi thua.	นับเป็นแพ้: เสีย 1 ชีวิต และโดนหัก EXP เหมือนแพ้ปกติ
+# ---- prepare
+Chưa có {0}, bấm MUA để mua	ยังไม่มี {0} แตะ ซื้อ เพื่อซื้อ
+Đã đủ 3 món, chạm vào ô trên để bỏ bớt	ครบ 3 ชิ้นแล้ว แตะช่องด้านบนเพื่อเอาออก
+Không đủ vàng	ทองไม่พอ
+CHUẨN BỊ XUẤT TRẬN	เตรียมออกศึก
+Bạn được đi trước	คุณได้เดินก่อน
+{0} được đi trước	{0} ได้เดินก่อน
+MANG VÀO TRẬN	นำเข้าศึก
+TÚI ĐỒ	กระเป๋า
+RÚT LUI	ถอย
+XUẤT TRẬN	ออกศึก
+Gợi ý: {0} đánh mạnh, nên mang Quỷ Diện Giáp.	คำแนะนำ: {0} ตีแรง ควรพกเกราะหน้าปีศาจ
+Gợi ý: {0} nhiều máu, nên mang Long Thần Kiếm.	คำแนะนำ: {0} HP เยอะ ควรพกดาบมังกร
+Gợi ý: mang Bình Thuốc để hồi máu khi cần.	คำแนะนำ: พกขวดยาไว้ฟื้น HP เมื่อจำเป็น
+Mua {0} cái giá {1} vàng?	ซื้อ {0} ชิ้น ราคา {1} ทอง?
+Bạn đang có {0} vàng	คุณมี {0} ทอง
+MUA	ซื้อ
+# ---- quests
+CHÍNH TUYẾN {0}	หลัก {0}
+SỰ KIỆN {0}	อีเวนต์ {0}
+QUÂN CANH {0}	ทหารยาม {0}
+Chương {0}	บทที่ {0}
+Chương {0} · nhiệm vụ {1}	บทที่ {0} · ภารกิจ {1}
+ĐÃ THỐNG NHẤT GIANG SƠN!	แผ่นดินรวมเป็นหนึ่งแล้ว!
+Mở khi xong nhiệm vụ {0}	เปิดหลังภารกิจ {0}
++ {0} nhiệm vụ nữa trong chương	+ อีก {0} ภารกิจในบทนี้
+Hội thoại	เนื้อเรื่อง
+Trận hướng dẫn	ศึกสอนเล่น
+Đánh	ต่อสู้
+{0}. ĐANG LÀM	{0}. กำลังทำ
+BẮT ĐẦU	เริ่ม
+ĐI TỚI	ไป
+Đánh bại {0}	ปราบ {0}
+Gặp {0}	พบ {0}
++1 hộp vật phẩm	+1 กล่องไอเทม
+hộp vật phẩm	กล่องไอเทม
+nhiệm vụ {0}	ภารกิจ {0}
+Đã hoàn thành	สำเร็จแล้ว
+! Đang làm	! กำลังทำ
+Loại	ประเภท
+Nơi	สถานที่
+Đối thủ	คู่ต่อสู้
+Đã nhận	ได้รับแล้ว
+Đã nhận {0}	ได้รับ {0}
+Thưởng	รางวัล
+Thưởng: {0}	รางวัล: {0}
+Mở thêm	ปลดล็อก
+Đọc lại hội thoại	อ่านเนื้อเรื่องอีกครั้ง
+Trước nhiệm vụ	ก่อนภารกิจ
+Sau khi thắng	หลังชนะศึก
+Gặp gỡ	พบปะ
+gặp gỡ	พบปะ
+Đi tới	ไป
+Đã xong	เสร็จ
+Ở vùng chưa mở trên bản đồ	อยู่ในพื้นที่ที่ยังล็อกบนแผนที่
+ĐẤU TRƯỜNG · TAM ĐIỆP	ลานประลอง · ตามเดี๊ยป
+{0}/5 mức	{0}/5 ระดับ
+mở sẵn	เปิดแล้ว
+thắng Lê Hoàn	ชนะ เล ฮหว่าน
+thắng Nguyễn Ninh	ชนะ เงวียน นิญ
+đạt cấp 30	ถึง Lv 30
+cấp {0} (bằng cấp bạn)	Lv {0} (เท่าเลเวลคุณ)
+Đã dẹp	ปราบแล้ว
+Còn {0} trạm gác ở vùng chưa mở	เหลืออีก {0} ด่านยามในพื้นที่ที่ยังล็อก
+Nhiệm vụ {0}	ภารกิจ {0}
+trạm gác gần {0}	ด่านยามใกล้ {0}
+Trạm gác	ด่านยาม
+# ---- result
+HOÀN THÀNH NHIỆM VỤ	ภารกิจสำเร็จ
+LUYỆN TẬP	ฝึกซ้อม
+Vàng nhặt được	ทองที่เก็บได้
+Thưởng thắng trận	รางวัลชนะศึก
+Vật phẩm: {0}	ไอเทม: {0}
+Hộp vật phẩm (2 vật phẩm)	กล่องไอเทม (2 ชิ้น)
+Vàng thưởng	ทองรางวัล
+Kinh nghiệm thưởng	EXP รางวัล
+Hộp vật phẩm cuối	กล่องไอเทมสุดท้าย
+Hộp vật phẩm	กล่องไอเทม
+Mở thêm: {0}	ปลดล็อก: {0}
+Kinh nghiệm luyện tập	EXP ฝึกซ้อม
+Vàng hiện có	ทองที่มี
+thua {0}	แพ้ {0}
+Kinh nghiệm bị phạt	EXP ที่โดนหัก
+Gợi ý: mua Bình Thuốc hoặc Quỷ Diện Giáp ở màn chuẩn bị trước khi đánh lại.	คำแนะนำ: ซื้อขวดยาหรือเกราะหน้าปีศาจตอนเตรียมศึกก่อนสู้ใหม่
+Đánh lại trận này?	สู้ศึกนี้ใหม่?
+TRỞ VỀ	กลับ
+ĐÁNH LẠI	สู้ใหม่
+Mở hộp vật phẩm: {0}	เปิดกล่องไอเทม: {0}
+Đã mở thêm 1 mức luyện tập ở Đấu trường. Hãy vào đó thử sức!	ลานประลองเปิดระดับฝึกใหม่แล้ว ไปลองฝีมือกันเลย!
+Bỏ qua trận hướng dẫn và về bản đồ? Luật chơi xem lại được trong Cài đặt.	ข้ามศึกสอนเล่นและกลับแผนที่? ดูกติกาได้ในตั้งค่า
+# ---- settings
+Âm thanh	เสียง
+Nhạc và tiếng trong game	เพลงและเสียงในเกม
+Âm lượng	ระดับเสียง
+Rung	การสั่น
+Khi trúng đòn, mua hàng, giữ để xoá	ตอนโดนโจมตี ซื้อของ กดค้างเพื่อลบ
+TRÒ CHƠI	เกม
+Luật chơi	กติกา
+Xếp biểu tượng, vật phẩm, cấp độ	การจับคู่ ไอเทม เลเวล
+Hướng dẫn bản đồ	สอนใช้แผนที่
+Xem lại 3 bước chỉ tay	ดู 3 ขั้นตอนนิ้วชี้อีกครั้ง
+Mở khi đang ở bản đồ	เปิดได้ตอนอยู่ที่แผนที่
+Đổi nhân vật	เปลี่ยนตัวละคร
+MUA HÀNG VÀ QUẢNG CÁO	การซื้อและโฆษณา
+Khôi phục giao dịch	กู้คืนการซื้อ
+Không có giao dịch nào để khôi phục	ไม่มีการซื้อให้กู้คืน
+HỖ TRỢ	ช่วยเหลือ
+Đánh giá game	ให้คะแนนเกม
+Chia sẻ với bạn bè	แชร์ให้เพื่อน
+Chính sách quyền riêng tư	นโยบายความเป็นส่วนตัว
+Thông tin và tác giả	ข้อมูลและผู้สร้าง
+Mã người chơi: {0}	รหัสผู้เล่น: {0}
+Phiên bản {0}	เวอร์ชัน {0}
+Loạn 12 sứ quân	ยุค 12 ขุนศึก
+Loạn 12 Sứ Quân	ยุค 12 ขุนศึก
+2010 MicroGame	2010 MicroGame
+Về menu chính	กลับเมนูหลัก
+MENU	เมนู
+Thanh kiếm	ดาบ
+Tấn công đối phương.	โจมตีคู่ต่อสู้
+Kiếm lửa	ดาบเพลิง
+Mạnh hơn kiếm thường, nổ thêm 1 ô xung quanh; xếp chung được với kiếm thường.	แรงกว่าดาบธรรมดา และระเบิดช่องรอบข้าง จับคู่กับดาบธรรมดาได้
+Âm dương	หยินหยาง
+Lấy năng lượng để dùng tuyệt chiêu.	ได้พลังงานไว้ใช้ท่าไม้ตาย
+Bánh chưng	ขนมบั๊ญจง
+Lấy lương thực. Lương thực tiêu hao mỗi lượt của đối phương; hết là thua.	ได้เสบียง เสบียงลดลงทุกเทิร์นของศัตรู หมดเมื่อไรแพ้
+Thỏi vàng	ทองแท่ง
+Lấy vàng để mua vật phẩm.	ได้ทองไว้ซื้อไอเทม
+Cuốn sách	ตำรา
+Lấy kinh nghiệm để lên cấp.	ได้ EXP ไว้เลเวลอัป
+Trái tim	หัวใจ
+Hồi máu. Hết máu là thua trận.	ฟื้น HP ถ้า HP หมดจะแพ้
+Xếp ít nhất 3 biểu tượng cùng loại, ngang hoặc dọc.	เรียงไอคอนเหมือนกันอย่างน้อย 3 อัน แนวนอนหรือแนวตั้ง
+Xếp 4 được thêm 1 lượt và có thể rơi vật phẩm; xếp 5 luôn rơi 1 vật phẩm.	เรียง 4 ได้เทิร์นเพิ่มและมีโอกาสได้ไอเทม เรียง 5 ได้ไอเทมแน่นอน
+Xếp sai mất lượt và mất máu.	เดินผิดเสียเทิร์นและเสีย HP
+CÁCH ĐI	วิธีเดิน
+BIỂU TƯỢNG	ไอคอน
+Cấp càng cao thì tấn công và máu càng lớn.	เลเวลยิ่งสูง พลังโจมตีและ HP ยิ่งมาก
+LUẬT CHƠI	กติกา
+hỗ trợ	ช่วยเหลือ
+Bản chuyển sang Unity	เวอร์ชัน Unity
+Màn hình cảm ứng toàn màn hình	ระบบสัมผัสเต็มจอ
+Ghi chú	หมายเหตุ
+Tình tiết, cốt truyện và tên nhân vật phụ của trò chơi dựa vào sự kiện Loạn 12 Sứ Quân trong lịch sử Việt Nam ở thế kỷ X.	เนื้อเรื่องและชื่อตัวละครรองอ้างอิงจากเหตุการณ์ยุคจลาจล 12 ขุนศึกในประวัติศาสตร์เวียดนามศตวรรษที่ 10
+THÔNG TIN	เกี่ยวกับ
+Chia sẻ	แชร์
+Đã chép lời mời vào bộ nhớ tạm	คัดลอกคำเชิญไปยังคลิปบอร์ดแล้ว
+Trang chính sách quyền riêng tư sẽ có trước khi phát hành	หน้านโยบายความเป็นส่วนตัวจะพร้อมก่อนเปิดตัว
+# ---- shop
+PHỔ BIẾN	ยอดนิยม
+LỜI NHẤT	คุ้มสุด
++{0} vàng vào ví chung	+{0} ทองเข้ากระเป๋ากลาง
+ƯU ĐÃI	ข้อเสนอ
+Thiếu vàng?	ทองไม่พอ?
+Rương miễn phí, gói vàng	หีบฟรี แพ็กทอง
+Vàng và vật phẩm dùng chung cho mọi nhân vật	ทองและไอเทมใช้ร่วมกันทุกตัวละคร
+{0} vàng / gói {1} cái · có {2}	{0} ทอง / แพ็ก {1} ชิ้น · มี {2}
+{0} GÓI	{0} แพ็ก
+Còn lại sau khi mua: {0} vàng	หลังซื้อเหลือ: {0} ทอง
+Bạn có {0} vàng	คุณมี {0} ทอง
++ VÀNG (thiếu {0})	+ ทอง (ขาด {0})
+Cần xem hết quảng cáo để nhận vàng	ต้องดูโฆษณาจนจบจึงจะได้ทอง
+RƯƠNG MIỄN PHÍ	หีบฟรี
+còn {0} lượt hôm nay	เหลือ {0} ครั้งวันนี้
+Mỗi lần mở cách nhau ít nhất 1 giờ	เปิดห่างกันอย่างน้อย 1 ชั่วโมง
+Lượt mới lúc 0:00	รีเซ็ตเวลา 0:00
+Hết lượt	หมดสิทธิ์วันนี้
+Chờ	รอ
+MỞ NGAY	เปิดเลย
+MỞ	เปิด
+Mua bằng tiền thật sẽ mở khi kết nối Google Play	การซื้อด้วยเงินจริงจะเปิดเมื่อเชื่อมต่อ Google Play
+Mua bằng tiền thật sẽ mở khi game kết nối Google Play	การซื้อด้วยเงินจริงจะเปิดเมื่อเกมเชื่อมต่อ Google Play
+Vàng dùng chung cho mọi nhân vật · giá theo Google Play (chưa kết nối)	ทองใช้ร่วมกันทุกตัวละคร · ราคาตาม Google Play (ยังไม่เชื่อมต่อ)
+GÓI KHỞI ĐẦU	แพ็กเริ่มต้น
+CHỈ 1 LẦN	ครั้งเดียวเท่านั้น
+3.000 vàng	3.000 ทอง
+Đầy mạng	ชีวิตเต็ม
+Trị giá 6.000 vàng và đầy mạng	มูลค่า 6.000 ทอง พร้อมชีวิตเต็ม
+ĐÃ MUA	ซื้อแล้ว
+VIP TRỌN ĐỜI	VIP ถาวร
+Mua 1 lần, dùng mãi, cho mọi nhân vật	ซื้อครั้งเดียว ใช้ได้ตลอด ทุกตัวละคร
+Nhận thưởng quảng cáo ngay, không phải xem	รับรางวัลโฆษณาทันที ไม่ต้องดู
+Ô vật phẩm thứ 4 khi chuẩn bị xuất trận	ช่องไอเทมที่ 4 ตอนเตรียมออกศึก
+Tối đa 6 mạng (thường 5)	ชีวิตสูงสุด 6 (ปกติ 5)
+Tạo nhân vật mới không cần xem quảng cáo	สร้างตัวละครใหม่โดยไม่ต้องดูโฆษณา
+ĐÃ KÍCH HOẠT	เปิดใช้งานแล้ว
+CỬA HÀNG	ร้านค้า
+# ---- slots
+Lưu tối đa 3 nhân vật.	เก็บได้สูงสุด 3 ตัวละคร
+Lưu tối đa 3 nhân vật, mỗi nhân vật có bản đồ và cấp riêng. Vàng và vật phẩm dùng chung.	เก็บได้สูงสุด 3 ตัวละคร แต่ละตัวมีแผนที่และเลเวลของตัวเอง ทองและไอเทมใช้ร่วมกัน
+Đã đủ 3 nhân vật.	มีตัวละครครบ 3 ตัวแล้ว
+Muốn tạo nhân vật khác, hãy xóa 1 nhân vật.	หากต้องการสร้างตัวใหม่ ให้ลบ 1 ตัวก่อน
+Chạm vào thẻ để chọn · biểu tượng thùng rác để xóa	แตะการ์ดเพื่อเลือก · แตะถังขยะเพื่อลบ
+CHƠI	เล่น
+Chơi gần nhất: {0}	เล่นล่าสุด: {0}
+ĐANG CHƠI	กำลังเล่น
+trống	ว่าง
+Tạo ngay (VIP)	สร้างเลย (VIP)
+Xem QC để tạo	ดูโฆษณาเพื่อสร้าง
+Đang tải quảng cáo…	กำลังโหลดโฆษณา…
+Cần xem hết quảng cáo để nhận lượt tạo	ต้องดูโฆษณาจนจบจึงจะได้สิทธิ์สร้าง
+NHÂN VẬT MỚI	ตัวละครใหม่
+Xem 1 quảng cáo ngắn để mở lượt tạo nhân vật thứ {0}.	ดูโฆษณาสั้น 1 ครั้งเพื่อปลดล็อกการสร้างตัวละครที่ {0}
+Xem 1 quảng cáo ngắn để mở lượt tạo nhân vật thứ {0}. {1} nhân vật hiện có giữ nguyên.	ดูโฆษณาสั้น 1 ครั้งเพื่อปลดล็อกการสร้างตัวละครที่ {0} ตัวละคร {1} ตัวที่มีอยู่จะไม่เปลี่ยนแปลง
+XEM QUẢNG CÁO	ดูโฆษณา
+VIP: tạo ngay, không cần xem quảng cáo	VIP: สร้างได้เลย ไม่ต้องดูโฆษณา
+Đã xóa {0}	ลบ {0} แล้ว
+XÓA NHÂN VẬT?	ลบตัวละคร?
+Sẽ mất vĩnh viễn:	จะหายไปถาวร:
+· Tiến độ bản đồ và nhiệm vụ	· ความคืบหน้าแผนที่และภารกิจ
+· Cấp {0} và kinh nghiệm	· Lv {0} และ EXP
+· {0} bảo vật đã sưu tập	· สมบัติที่สะสมไว้ {0} ชิ้น
+Vàng, vật phẩm, mạng chơi và VIP vẫn giữ nguyên.	ทอง ไอเทม ชีวิต และ VIP ยังอยู่ครบ
+GIỮ 2 GIÂY ĐỂ XÓA	กดค้าง 2 วิเพื่อลบ
+# ---- arena
+ĐẤU TRƯỜNG	ลานประลอง
+Tam Điệp · luyện kinh nghiệm, trả vé bằng vàng	ตามเดี๊ยป · ฝึกเก็บ EXP จ่ายค่าตั๋วด้วยทอง
+Thiếu vàng: vé mức {0} là {1} vàng	ทองไม่พอ: ตั๋วระดับ {0} ราคา {1} ทอง
+Mức {0} chưa mở: {1}	ระดับ {0} ยังล็อก: {1}
++{0}% cấp	+{0}% เลเวล
+Thiếu vàng	ทองไม่พอ
+Chưa mở	ยังล็อก
+Đối thủ mức {0}	คู่ต่อสู้ระดับ {0}
+Thắng: +{0} kinh nghiệm ({1}% một cấp)	ชนะ: +{0} EXP ({1}% ของหนึ่งเลเวล)
+Thua: mất 1 mạng, không trừ kinh nghiệm. Vàng, KN nhặt trong trận không tính.	แพ้: เสีย 1 ชีวิต ไม่หัก EXP ทองและ EXP ที่เก็บในศึกจะไม่นับ
+Bạn không đủ vàng cho mức nào đang mở. Mở rương miễn phí hoặc mua vàng ở Cửa hàng.	ทองไม่พอสำหรับระดับที่เปิดอยู่ เปิดหีบฟรีหรือซื้อทองที่ร้านค้า
+ĐÁNH	สู้
+Vé {0} vàng	ตั๋ว {0} ทอง
+# ---- quest titles (names without accents)
+Học binh pháp với Lưu Cơ	เรียนตำราพิชัยสงครามกับหลิว เกอ
+Nhận lệnh hộ tống chủ tướng	รับคำสั่งคุ้มกันแม่ทัพ
+Hộ tống chủ tướng về Kỳ Bố	คุ้มกันแม่ทัพกลับกี่ โบ๊
+Bàn việc xưng hiệu	ปรึกษาเรื่องตั้งพระนาม
+Dẹp sơn tặc ở Tam Điệp	ปราบโจรภูเขาที่ตามเดี๊ยป
+Dự đại lễ xưng Vạn Thắng Vương	ร่วมพิธีสถาปนาวั่นทั้งเวือง
+Kết hòa ước với Phạm Bạch Hổ	ทำสนธิสัญญากับฝ่าม บั่ก โห่
+Bàn kế đánh Bình Kiều	วางแผนตีบิ่ญ เกี่ยว
+Đánh chiếm Bình Kiều	ยึดบิ่ญ เกี่ยว
+Chọn hướng tiến quân	เลือกเส้นทางเดินทัพ
+Đánh Ngô Nhật Khánh	สู้โง ญ้าต คั้ญ
+Nhận tin Lã Đường đánh Đằng Châu	ข่าว: หล่า เดื่อง บุกดั่ง เจิว
+Cứu viện Đằng Châu	ช่วยดั่ง เจิว
+Bàn kế đánh Tế Giang	วางแผนตีเต๊ ยาง
+Phá quân canh Tế Giang	ทลายทหารยามเต๊ ยาง
+Diệt Lã Đường ở Tế Giang	ปราบหล่า เดื่อง ที่เต๊ ยาง
+Từ biệt Phạm Bạch Hổ	อำลาฝ่าม บั่ก โห่
+Phá đồn Bảo Đà	ตีค่ายบ๋าว ด่า
+Bắt Đỗ Cảnh Thạc	จับโด๋ แก๋ญ ทัก
+Củng cố Đỗ Động	รักษาโด๋ ด่ง
+Giữ thành Đỗ Động	ป้องกันเมืองโด๋ ด่ง
+Bàn kế đánh Tây Phù Liệt	วางแผนตีเตย ฝู เลี่ยต
+Hỏi tội Nguyễn Trí Khả	เอาผิดเงวียน จี๊ ค้า
+Diệt Nguyễn Siêu	ปราบเงวียน เซียว
+Bàn kế phá liên minh	วางแผนทลายพันธมิตร
+Cứu viện Ô Man	ช่วยโอ มาน
+Chuẩn bị đánh Siêu Loại	เตรียมตีเซียว หลว่าย
+Đánh vào Siêu Loại	บุกเซียว หลว่าย
+Đuổi bắt Lý Khuê	ไล่ล่าหลี เคว
+Xuất binh đánh Tiên Du	ยกทัพตีเตียน ซู
+Đánh Nguyễn Thủ Tiệp	สู้เงวียน ถู่ เตี่ยป
+Bàn kế đánh Cổ Loa	วางแผนตีโก๋ ลวา
+Phá quân canh Cổ Loa	ทลายทหารยามโก๋ ลวา
+Đánh Lữ Xử Bình ở Cổ Loa	สู้หลือ สือ บิ่ญ ที่โก๋ ลวา
+Bàn kế đánh Tam Đái	วางแผนตีตาม ด๊าย
+Phá quân canh Tam Đái	ทลายทหารยามตาม ด๊าย
+Đánh Nguyễn Khoan ở Tam Đái	สู้เงวียน โควน ที่ตาม ด๊าย
+Nhận tin Kỳ Bố bị vây	ข่าว: กี่ โบ๊ ถูกล้อม
+Giải vây Kỳ Bố	ทลายวงล้อมกี่ โบ๊
+Bàn kế đánh Hồi Hồ	วางแผนตีโห่ย โห่
+Phá quân canh Hồi Hồ	ทลายทหารยามโห่ย โห่
+Đánh Kiều Công Hãn	สู้เกี่ยว กง ห่าน
+Đánh Kiều Thuận	สู้เกี่ยว ถ่วน
+Bàn việc xưng đế	ปรึกษาเรื่องขึ้นครองราชย์
+Diệt Ấu Rồng ở Hoa Lư	ปราบมังกรน้อยที่ฮวาลือ
+Lễ lên ngôi Đinh Tiên Hoàng	พิธีราชาภิเษกดิ่ญ เตียน ฮหว่าง
+Khởi binh ở Hoa Lư	ลุกฮือที่ฮวาลือ
+Bình Kiều	บิ่ญ เกี่ยว
+Cứu Đằng Châu, diệt Tế Giang	ช่วยดั่ง เจิว ยึดเต๊ ยาง
+Đỗ Động Giang	โด๋ ด่ง ยาง
+Tây Phù Liệt	เตย ฝู เลี่ยต
+Siêu Loại và Tiên Du	เซียว หลว่าย และเตียน ซู
+Cổ Loa và Tam Đái	โก๋ ลวา และตาม ด๊าย
+Kỳ Bố và Hồi Hồ	กี่ โบ๊ และโห่ย โห่
+Thống nhất giang sơn	รวมแผ่นดินเป็นหนึ่ง
+ĐỒNG Ý	ตกลง
+NHẬN	รับ
+HỘP QUÀ	กล่องของขวัญ
+MỞ HỘP	เปิด
+XEM QUẢNG CÁO · X2	ดูโฆษณา · X2
+Bạn nhận được {0} hộp quà	คุณได้รับกล่องของขวัญ {0} กล่อง
+Bạn nhận được 1 hộp quà	คุณได้รับกล่องของขวัญ 1 กล่อง
+Mỗi hộp có 1 vật phẩm	แต่ละกล่องมีไอเทม 1 ชิ้น
+Đã mở {0} hộp quà	เปิดกล่องของขวัญ {0} กล่องแล้ว
+Đã cất vào túi đồ	เก็บเข้ากระเป๋าแล้ว
+Hộp quà	กล่องของขวัญ
+Hộp quà rơi trong trận	กล่องของขวัญที่ดรอปในศึก
++{0} hộp quà	+{0} กล่องของขวัญ
+{0} hộp quà	{0} กล่องของขวัญ
+Đã mở Đấu trường Tam Điệp: nơi luyện điểm kinh nghiệm.	ลานประลองตามเดี๊ยปเปิดแล้ว: สถานที่ฝึกเก็บ EXP
+Mỗi lần vào đấu phải trả vé bằng vàng.	ทุกครั้งที่เข้าประลองต้องจ่ายค่าตั๋วเป็นทอง
+Thắng: nhận kinh nghiệm theo cấp hiện tại.	ชนะ: ได้ EXP ตามเลเวลปัจจุบัน
+Thua: mất 1 mạng, không bị trừ kinh nghiệm.	แพ้: เสีย 1 ชีวิต ไม่โดนหัก EXP
+Vàng và kinh nghiệm nhặt trong trận không được tính; máu không bị ảnh hưởng.	ทองและ EXP ที่เก็บในศึกจะไม่นับ HP ไม่ได้รับผลกระทบ
+Lúc đầu mở 2 mức, thắng các tướng mạnh để mở thêm 3 mức.	ตอนแรกเปิด 2 ระดับ ชนะขุนพลแกร่งเพื่อเปิดเพิ่มอีก 3 ระดับ
+Vàng, kinh nghiệm hoặc vật phẩm quý	ทอง EXP หรือไอเทมหายาก
+Đang mở…	กำลังเปิด…
+Bạn được đi trước (Ngọc Ấn)	คุณได้เดินก่อน (ตราหยก)
+Vàng	ทอง
+HỒI SINH?	ฟื้นคืนชีพ?
+HỒI 30 MÁU	+30 HP
+BỎ CUỘC	ยอมแพ้
+{0} chỉ còn {1}/{2} máu!	{0} เหลือ HP แค่ {1}/{2}!
+Xem quảng cáo để hồi 30 máu và đánh tiếp.	ดูโฆษณาเพื่อฟื้น 30 HP แล้วสู้ต่อ
+KHỞI ĐẦU	เริ่มต้น
+Ô thứ 3 mở khi mua Gói khởi đầu (Cửa hàng · Ưu đãi)	ช่องที่ 3 เปิดเมื่อซื้อแพ็กเริ่มต้น (ร้านค้า · ข้อเสนอ)
+Ô thứ 4 mở khi mua gói VIP (Cửa hàng · Ưu đãi)	ช่องที่ 4 เปิดเมื่อซื้อแพ็ก VIP (ร้านค้า · ข้อเสนอ)
+Đã đủ {0} món, chạm vào ô trên để bỏ bớt	ครบ {0} ชิ้นแล้ว แตะช่องด้านบนเพื่อเอาออก
+Mang 3 vật phẩm vào trận	นำไอเทม 3 ชิ้นเข้าศึก
+tối đa 4 mạng	ชีวิตสูงสุด 4
+Mang 4 vật phẩm vào trận (thường 2)	นำไอเทม 4 ชิ้นเข้าศึก (ปกติ 2)
+Tối đa 5 mạng (thường 3)	ชีวิตสูงสุด 5 (ปกติ 3)
+Bốc thăm ai đi trước (cùng cấp)	สุ่มว่าใครเดินก่อน (เลเวลเท่ากัน)
+TRỞ LẠI	กลับ
+49.000 đ · thử	49.000 đ · ทดสอบ
+199.000 đ · thử	199.000 đ · ทดสอบ
+Đã mua Gói khởi đầu (giả lập): 3.000 vàng, Long Thần Kiếm x3, Nhân Sâm x3, đầy mạng	ซื้อแพ็กเริ่มต้นแล้ว (จำลอง): 3.000 ทอง ดาบมังกร x3 โสม x3 ชีวิตเต็ม
+Đã kích hoạt VIP (giả lập)	เปิดใช้ VIP แล้ว (จำลอง)
+Đã khôi phục: {0}	กู้คืนแล้ว: {0}
+Các gói đã mua đều đang có	แพ็กที่ซื้อไว้ใช้งานอยู่ครบ
+Đã gỡ các gói (thử). Bấm Khôi phục giao dịch để lấy lại	ลบแพ็กแล้ว (ทดสอบ) แตะ กู้คืนการซื้อ เพื่อเอาคืน
+Thử: gỡ các gói đã mua	ทดสอบ: ลบแพ็กที่ซื้อ
+Đang giả lập mua hàng để thử: chưa trừ tiền thật, sẽ thay bằng Google Play	กำลังจำลองการซื้อเพื่อทดสอบ: ยังไม่ตัดเงินจริง จะเปลี่ยนเป็น Google Play ภายหลัง
+Đã mua {0} vàng (giả lập, {1})	ซื้อ {0} ทองแล้ว (จำลอง, {1})
+thử	ทดสอบ
+Vàng dùng chung cho mọi nhân vật · mua giả lập để thử, chưa trừ tiền thật	ทองใช้ร่วมกันทุกตัวละคร · จำลองการซื้อเพื่อทดสอบ ยังไม่ตัดเงินจริง

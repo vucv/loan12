@@ -1,0 +1,389 @@
+# story id
+Lính Tế Giang	Prajurit Te Giang
+Lính Bình Kiều	Prajurit Binh Kieu
+Lính Đỗ Động	Prajurit Do Dong
+Tàn Tướng Đỗ Động	Sisa Jenderal Do Dong
+Lính Siêu Loại	Prajurit Sieu Loai
+Phản Tướng	Jenderal Pemberontak
+Lính Cổ Loa	Prajurit Co Loa
+Lính Tam Đái	Prajurit Tam Dai
+Lính Phong Châu	Prajurit Phong Chau
+Lính Hồi Hồ	Prajurit Hoi Ho
+Sơn Tặc	Bandit
+Bọ Quái	Serangga Siluman
+Quỷ Ong	Lebah Iblis
+Thạch Sùng Tinh	Siluman Tokek
+Quỷ Lùn	Iblis Kerdil
+Ma Nhãn	Mata Jahat
+Ngọc Thố Tinh	Siluman Kelinci Giok
+Ma Điểu	Burung Iblis
+Xà Tinh	Siluman Ular
+Hầu Tinh	Siluman Monyet
+Ấu Quỷ	Iblis Muda
+Thổ Tinh	Roh Bumi
+Thạch Ma	Iblis Batu
+Linh Miêu	Kucing Siluman
+Lão Hầu Tinh	Siluman Monyet Tua
+Quái Sư	Singa Siluman
+Mộc Ma	Iblis Pohon
+Đại Mộc Ma	Iblis Pohon Raksasa
+Độc Nhãn Trư	Babi Hutan Bermata Satu
+Quái Cóc	Kodok Siluman
+Sâu Quỷ	Cacing Iblis
+Trùng Quỷ	Ulat Iblis
+Lão Trùng Quỷ	Ulat Iblis Tua
+Quái Ưng	Elang Siluman
+Thằn Lằn Quỷ	Kadal Iblis
+Hạc Yêu	Siluman Bangau
+Độc Ngư	Ikan Beracun
+Quỷ Cóc	Katak Iblis
+Ma Cây	Hantu Pohon
+Ma Trơi	Api Gaib
+Chồn Tinh	Siluman Musang
+Nhện Tinh	Siluman Laba-laba
+Ấu Rồng	Naga Muda
+Lính	Prajurit
+Lính Tiên Du	Prajurit Tien Du
+{p} tướng quân! Lưu Cơ được giao nhiệm vụ hướng dẫn tướng quân tất cả những quy tắc của chiến trường. Ngài đã sẵn sàng chưa?	Jenderal {p}! Aku, Luu Co, ditugaskan mengajarimu semua aturan medan perang. Sudah siap?
+Lưu quân sư, xin chỉ bảo!	Ahli Strategi Luu, mohon ajari aku!
+Trần Lãm-Trần Minh Công lâm bệnh. Sớm mai Đinh chủ tướng sẽ về Kỳ Bố, sự an toàn của chủ tướng trông cậy vào tướng quân	Tuan Tran Lam - Tran Minh Cong jatuh sakit. Besok pagi Panglima Dinh kembali ke Ky Bo, dan keselamatannya ada di tanganmu, Jenderal.
+Quân sư yên tâm, mạt tướng sẽ hộ tống Chủ tướng đến Kỳ Bố an toàn.	Tenang saja, Ahli Strategi. Aku akan mengawal Panglima dengan selamat ke Ky Bo.
+Thưa Nhạc phụ, con đã về!	Ayah mertua, aku sudah kembali!
+Con về thật đúng lúc, ta có chuyện cần bàn với con đây.	Kau pulang tepat waktu, ada yang ingin kubicarakan denganmu.
+Nhưng sức khỏe của Nhạc phụ...	Tapi kesehatan Ayah mertua...
+Không sao, con yên tâm!	Bukan apa-apa, jangan khawatir!
+Đất nước loạn lạc! Ta già rồi, những Sứ quân khác đã đều xưng hùng xưng bá một phương. Con cũng cần lộ diện để thiên hạ biết.	Negeri sedang kacau! Aku sudah tua, dan para panglima perang lain sudah menobatkan diri sebagai penguasa wilayahnya. Kau juga harus menampakkan diri agar dunia mengenalmu.
+Thưa Cha! Bộ Lĩnh nguyện suốt đời phò cha, con nào dám mang tội bất trung bất hiếu.	Ayah! Aku, Bo Linh, bersumpah mengabdi padamu seumur hidup. Mana mungkin aku berbuat durhaka dan tidak setia?
+Nhưng đây là nguyện vọng của ta.	Tapi inilah keinginanku.
+Thưa Cha...!	Ayah...!
+Hãy nghe lời ta, định ngày lành mà xưng hiệu. 	Dengarkan aku. Pilih hari baik dan umumkan gelarmu.
+Con trẻ xin nghe lời! Giờ con về Hoa Lư lo mọi việc. Cha hãy giữ sức khỏe!	Aku patuh! Aku akan kembali ke Hoa Lu untuk menyiapkan segalanya. Jagalah kesehatan, Ayah!
+Chủ tướng, các sứ quân khác đều chỉ xưng Công, tức khiêm nhường chỉ nhận là bá chủ 1 phương. Không lẽ chủ tướng cũng xưng hiệu là Đinh Công?	Panglima, panglima perang lain hanya menyebut diri Adipati, dengan rendah hati mengaku menguasai satu wilayah. Masa Panglima juga mau bergelar Adipati Dinh?
+Không! Ta không muốn làm Sứ, ta có một ước mơ là giang sơn này được quy về một mối, chấm dứt nạn binh đao liên miên cho muôn dân được an lành 	Tidak! Aku tak mau jadi panglima perang biasa. Aku bermimpi menyatukan negeri ini, mengakhiri perang tanpa ujung agar seluruh rakyat bisa hidup damai.
+Nếu vậy, chủ tướng nên xưng hiệu Vạn Thắng Vương, đó là tước hiệu của vị Phật có công đức đánh đuổi yêu tà đem an bình cho chúng dân, được Phật Tổ tuyên phong.	Kalau begitu, Panglima sebaiknya bergelar Van Thang Vuong - gelar Buddha yang mengusir kejahatan dan membawa damai bagi rakyat, seperti yang dinyatakan Sang Buddha sendiri.
+Hay lắm! Rất hợp với tâm nguyện của ta. Nhờ Lưu quân sư chuẩn bị tiến hành đại lễ.	Bagus sekali! Itu pas dengan keinginanku. Ahli Strategi Luu, siapkan upacara besar.
+Thưa chủ tướng! Lúc này làm lễ xưng Vương e không được nhân hòa.	Panglima! Mengadakan penobatan sekarang mungkin tak akan merebut hati rakyat.
+Tại sao? Quân sư, xin hãy nói.	Mengapa? Ahli Strategi, silakan bicara.
+Loạn sơn tặc Tam Điệp khiến người dân quanh vùng khiếp sợ, sống không yên.	Bandit Tam Diep meneror rakyat di wilayah itu, sampai mereka tak bisa hidup tenang.
+Chủ tướng nên cho người đến bình loạn trước, sau xưng Vương thì được lòng dân trong vùng hơn.	Panglima, kirim pasukan untuk menumpas bandit dulu; menobatkan diri sebagai raja sesudahnya akan merebut hati rakyat wilayah ini.
+Quân sư nói phải lắm!	Ahli Strategi benar!
+Chủ tướng! Hãy để tôi dẹp loạn sơn tặc.	Panglima! Biar aku yang menumpas bandit.
+Tướng quân, ngài phải giúp tôi chuẩn bị cho đại lễ. Việc dẹp sơn tặc xin nhờ {p} tướng quân.	Jenderal, kau harus membantuku menyiapkan upacara. Aku akan meminta Jenderal {p} menangani bandit.
+Nếu quân sư đã có sắp xếp rồi thì ta cũng nên theo. {p} tướng quân hãy thận trọng!	Kalau Ahli Strategi sudah mengaturnya, biarlah begitu. Jenderal {p}, hati-hati!
+Mạt tướng tuân lệnh!	Siap laksanakan!
+Quân Hoa Lư chỉ có bấy nhiêu thôi ư? Chúng xem thường ta quá đấy!.	Cuma segini yang bisa dikirim Hoa Lu? Mereka terlalu meremehkanku!
+Tấn công! Giết hết bọn rác rưởi cho ta.	Serang! Habisi gerombolan ini!
+Tiến lên, tiêu diệt bọn đạo tặc! 	Maju, hancurkan para bandit!
+Chủ tướng, giờ lành đã đến. Chúng ta mau tiến hành đại lễ cho kịp.	Panglima, saat baik telah tiba. Mari kita mulai upacaranya.
+Thiên hạ đại nghĩa, Ngô vương chẳng may mất sớm, loạn thần mải tranh giành vương bá, không lo thiên hạ, để đất nước loạn lạc, chiến tranh liên miên, dân chúng lầm than. Nay thuận thiên ý, Bộ Lĩnh họp quân dẹp loạn, quyết thu giang sơn về một mối. Kẻ nào không phục, thì Vạn Thắng Vương này tiêu diệt không tha!	Demi keadilan agung langit: Raja Ngo wafat terlalu cepat, dan para tuan pengkhianat berebut kuasa tanpa memikirkan negeri, membuat negeri kacau dan perang tak berujung, dan rakyat menderita. Kini, mengikuti kehendak langit, Bo Linh menghimpun pasukan untuk mengakhiri kekacauan dan menyatukan negeri. Siapa pun yang menolak tunduk, aku, Van Thang Vuong, akan menghancurkannya tanpa ampun!
+Vạn Thắng Vương vạn tuế! Vạn tuế!	Hidup Van Thang Vuong! Hidup!
+Chư tướng, hãy đứng lên!	Para jenderal, bangkitlah!
+Trận đầu, ta muốn đánh một trận thật lừng lẫy để các nơi phải khiếp sợ. Lưu Cơ, ta nên đánh ai trước? 	Untuk pertempuran pertama, aku ingin kemenangan gemilang yang membuat semua gemetar. Luu Co, siapa yang harus kita serang dulu?
+Thưa đại vương, 12 sứ quân đáng gờm nhất là Phạm Bạch Hổ. Ông ta vốn làm tướng dưới thời Ngô Vương lại là người có uy đức. Quân sĩ được huấn luyện rất bài bản, quân thủy bộ uy dũng. Đánh Phạm Bạch Hổ nếu thắng thì uy phong rất lớn, nếu thua quân ta sẽ mất nhuệ khí mà các sứ quân khác cũng xem thường.	Baginda, yang paling tangguh dari 12 panglima perang adalah Pham Bach Ho. Dia pernah menjadi jenderal di bawah Raja Ngo dan orang yang berwibawa dan berbudi. Prajuritnya terlatih betul, pasukan darat dan lautnya perkasa. Mengalahkan Pham Bach Ho akan membawa wibawa besar, tapi kalau kita kalah, pasukan kita akan patah semangat dan panglima perang lain akan meremehkan kita.
+Tập trung toàn quân, đánh một trận quyết tử. Thắng được Phạm Bạch Hổ xem như ta có nửa giang sơn. Sợ gì !	Kerahkan seluruh pasukan untuk perang hidup mati. Kalahkan Pham Bach Ho dan separuh negeri jadi milik kita. Apa yang perlu ditakuti!
+Không được! Kế đó là “Được ăn cả ngã về không”. Tốt nhất là ta cứ theo binh pháp cơ bản, đánh kẻ yếu hòa kẻ mạnh, xưa nay vẫn thế. Ta nên hòa với Phạm Bạch Hổ.	Jangan! Rencana itu "semua atau tidak sama sekali". Lebih baik ikuti strategi dasar: serang yang lemah, berdamai dengan yang kuat, seperti biasanya. Kita sebaiknya berdamai dengan Pham Bach Ho.
+Vậy ai sẽ là người đi sang thuyết khách đây?	Lalu siapa yang akan pergi membujuknya?
+Nhiệm vụ thuyết khách, xin để Lưu Cơ!	Serahkan tugas membujuk itu padaku, Luu Co!
+Chuyến đi lành ít dữ nhiều, tướng quân {p} hãy đi cùng quân sư. Hai vị hãy cẩn trọng.	Perjalanannya berbahaya. Jenderal {p}, pergilah bersama Ahli Strategi. Kalian berdua, hati-hati.
+Lưu Cơ ở Hoa Lư, xin bái kiến Phạm sứ quân!!	Luu Co dari Hoa Lu memberi hormat kepada Tuan Pham!
+Lưu tiên sinh, mời an tọa! 	Tuan Luu, silakan duduk!
+Chẳng hay Lưu quân sư đến xứ Đằng Châu có việc gì?	Ada urusan apa Ahli Strategi Luu datang ke Dang Chau?
+Chủ tướng tôi có thư này gửi Phạm sứ quân, xin sứ quân xem qua.	Tuanku mengirim surat ini untuk Tuan Pham. Silakan dibaca.
+Hãy đưa thư cho ta...........	Berikan suratnya...........
+Thư ta đã đọc, chuyện an hòa nghe cũng thuận lòng. Nhưng còn phải xem ý trời ra sao?	Aku sudah membaca suratnya. Perdamaian terdengar baik. Tapi kita tetap harus melihat kehendak langit.
+Nghe nói tiên sinh tinh thông Kỳ môn độn giáp. Ông hãy xem ý trời giúp tôi.	Kudengar Tuan ahli ramalan. Tolong bacakan kehendak langit untukku.
+Mời sứ quân gieo quẻ!	Silakan undi ramalannya, Tuanku!
+Quẻ của tướng quân là quẻ Thủy Địa Tỷ. Lời quẻ nói rằng “Lục nhị: tỷ chi tử nội, trinh cát”. Xin dịch nghĩa như sau: “ Hai bên thân nhau vì đạo đồng chí hợp, chứ không phải vì kết thân với bề trên để cầu phú quí, như vậy là chính đáng, không thất thân, nên tốt. ”	Heksagram Tuan adalah Bi, "Bersatu". Garisnya berbunyi: "Enam di tempat kedua: bersatu dari dalam, ketekunan membawa keberuntungan." Artinya: "Kedua pihak dekat karena berbagi jalan dan tujuan yang sama, bukan menjilat yang berkuasa demi harta. Itu benar dan terhormat, maka baik adanya."
+Ý trời đã vậy, Bạch Hổ không dám trái thiên ý. 	Karena langit menghendakinya, Bach Ho tak berani menentangnya.
+Quân sư hãy mang hòa ước này về Hoa Lư. Từ nay, chúng ta hiếu hòa, không xâm lấn, không gây phiền hà cho nhau, ai giàu nấy hưởng, ai mạnh tự cường, tình hữu hảo láng giềng, trước sau như một. Nếu có kẻ đánh Hoa Lư, Phạm Bạch Hổ sẵn lòng giúp đỡ.	Ahli Strategi, bawalah perjanjian damai ini kembali ke Hoa Lu. Mulai sekarang kita hidup damai: tak ada serangan, tak ada masalah, masing-masing menikmati hartanya dan memperkuat dirinya, bertetangga baik kini dan selamanya. Jika ada yang menyerang Hoa Lu, Pham Bach Ho dengan senang hati akan membantu.
+Lưu Cơ thay mặt Vạn Thắng Vương vô cùng cảm kích Phạm sứ quân!	Atas nama Van Thang Vuong, Luu Co sangat berterima kasih kepada Tuan Pham!
+Ta đã hòa với Phạm Bạch Hổ, vậy gần Hoa Lư nhất chỉ còn Ngô Xương Xí ở Bình Kiều.	Kita sudah berdamai dengan Pham Bach Ho, jadi yang tersisa di dekat Hoa Lu hanya Ngo Xuong Xi di Binh Kieu.
+Con thỏ non trốn chạy về miền rừng núi âm u ấy, đáng kể gì!  	Kelinci muda yang kabur ke pegunungan gelap itu - apa hebatnya!
+Nhưng cũng không thể chủ quan, nếu lấy được Bình Kiều thì sẽ an tâm hơn khi tiến quân lên phía bắc.	Tapi kita tak boleh lengah. Merebut Binh Kieu akan membuat perjalanan kita ke utara jauh lebih aman.
+Xương Xí thân là cháu Ngô Vương, diệt hắn thì thiên hạ sẽ có nhiều lời không hay. Ta nên chiêu hàng hắn, Nguyễn Bặc ở Hoa Lư phòng thủ. Những người còn lại theo ta.	Xuong Xi adalah keponakan Raja Ngo; membunuhnya akan jadi bahan omongan. Kita sebaiknya membujuknya menyerah. Nguyen Bac tinggal untuk menjaga Hoa Lu. Sisanya, ikut aku.
+Tuân lệnh Đại Vương.	Siap laksanakan, Baginda.
+Ngô Xương Xí! Bình Kiều đã bị bao vây, khôn ngoan hãy mau ra hàng.	Ngo Xuong Xi! Binh Kieu sudah terkepung. Kalau kau bijak, menyerahlah sekarang.
+Có thực lực thì đến đây, đừng nhiều lời.	Kalau kau punya kekuatan, datang dan tangkap aku. Cukup bicaranya.
+Trước mặt ta có Đỗ Cảnh Thạc và Ngô Nhật Khánh. Quân sư, chúng ta nên đánh ai trước.	Di depan kita ada Do Canh Thac dan Ngo Nhat Khanh. Ahli Strategi, siapa yang harus kita serang dulu?
+Đỗ Cảnh Thạc là lão tướng dày dặn kinh nghiệm, có thành trì chắc chắn và hào sâu bao quanh, nếu đánh trước chắn chắn lực lượng sẽ hao tổn rất nhiều. Ngô Nhật Khánh thì ở rất xa, chỉ có một đường duy nhất đến đó lại gập ghềnh nguy hiểm. Quân ta đến nơi thì cũng rất mệt mỏi, sức đâu mà đánh trận.	Do Canh Thac veteran berpengalaman dengan benteng kokoh dikelilingi parit dalam; menyerangnya duluan pasti merugikan kita. Ngo Nhat Khanh sangat jauh, hanya ada satu jalan kasar dan berbahaya ke sana. Pasukan kita akan tiba kelelahan, tanpa tenaga untuk bertarung.
+Gần không đánh được, Xa cũng không được đánh. Vậy ta ở đây làm gì ?!	Yang dekat tak bisa diserang, yang jauh juga tidak. Lalu kita ngapain di sini?!
+Haha, tướng quân! Hãy để quân sư nói tiếp xem sao.	Haha, Jenderal! Biarkan Ahli Strategi selesai bicara.
+Tướng quân, hãy bình tĩnh. Đánh ai trước, ta cũng phải bàn tính kỹ càng.	Tenang, Jenderal. Siapa pun yang kita serang dulu, kita harus berencana matang.
+Thưa Đại Vương, trong 2 sứ quân thì Ngô Nhật Khánh là yếu nhất, tuy thông minh nhưng còn rất trẻ, ít trải nghiệm và rất bốc đồng. Đánh Khánh trước là thích hợp nhất mà khả năng hao tổn lực lượng ít hơn so với những người khác. Nhưng ta cũng phải đề phòng Đỗ Cảnh Thạc đánh từ phía sau lại. 	Baginda, dari kedua panglima perang itu Ngo Nhat Khanh yang paling lemah: cerdik, tapi masih sangat muda, kurang pengalaman dan gegabah. Menyerang Khanh dulu adalah yang terbaik dan memakan lebih sedikit pasukan. Tapi kita harus waspada Do Canh Thac menyerang kita dari belakang.
+Tôi có ý này. Đem quân giả đánh Cảnh Thạc, đến Ô Man chia quân làm 3 đạo. Đạo thứ nhất do tướng Nguyễn Bặc chỉ huy đóng ở Ô Man, đạo thứ 2 do Đại vương chỉ huy đóng trực diện với đồn Bảo Đà. Đạo thứ 3 sẽ do tướng {p} dẫn đầu, bí mật đi đến Đường Lâm bất ngờ đến đánh Ngô Nhật Khánh chắc chắn hắn sẽ trơ tay không kịp.	Aku punya ide. Pura-pura menyerang Canh Thac, dan di O Man pecah pasukan jadi tiga. Pertama, di bawah Jenderal Nguyen Bac, berkemah di O Man; kedua, di bawah Baginda, menghadapi benteng Bao Da secara langsung. Ketiga, dipimpin Jenderal {p}, diam-diam bergerak ke Duong Lam dan menyerang Ngo Nhat Khanh secara mendadak - dia takkan sempat bereaksi.
+Tốt! Mọi người hãy y theo mà hành động.	Bagus! Semua, bertindak sesuai rencana.
+Tuân lệnh Đại Vương	Siap laksanakan, Baginda
+Bọn ngươi là quân của ai, muốn chết hay sao mà đám đến đây làm loạn?	Pasukan siapa kalian? Mau mati, datang ke sini bikin onar?
+Ta là {p}, tướng tiên phong của Vạn Thắng Vương, hôm nay ta đến lấy đầu ngươi!	Aku {p}, jenderal garis depan Van Thang Vuong. Hari ini aku datang untuk kepalamu!
+Láo xược! Ta sẽ phân thây ngươi để làm gương cho kẻ khác.	Kurang ajar! Akan kucabik-cabik kau sebagai peringatan bagi yang lain.
+Lã Đường ở Tế Giang đã cất binh đánh Phạm Bạch Hổ. Ta đã có hòa ước với Bạch Hổ, nên không thể không giúp, hơn nữa nếu Đằng Châu mất thì Kỳ Bố cũng sẽ khó mà yên. Đại Vương và tướng Nguyễn Bặc đang giữ chân Cảnh Thạc không thể đem quân tiếp ứng. Thời gian cấp bách, tướng quân hãy đem quân ứng cứu trước, tôi sẽ theo sau. Trong 5 ngày chúng ta phải đến đó, nếu không thì Đằng Châu khó mà giữ được.	La Duong dari Te Giang mengerahkan pasukan melawan Pham Bach Ho. Kita punya perjanjian dengan Bach Ho, jadi kita harus membantu; lagi pula, kalau Dang Chau jatuh, Ky Bo juga tak akan aman. Baginda dan Jenderal Nguyen Bac sedang menahan Canh Thac dan tak bisa mengirim bala bantuan. Waktunya mepet: Jenderal, bawa pasukan untuk menolong dulu, aku menyusul. Kita harus tiba dalam 5 hari, atau Dang Chau akan sulit dipertahankan.
+Lưu quân sư yên tâm, mạt tướng sẽ đi ngay!	Tenang, Ahli Strategi Luu, aku berangkat sekarang!
+Phạm sứ quân! Có tôi đến trợ giúp đây.	Tuan Pham! Aku datang membantu!
+Hừ, quân giặc có viện binh, không xong rồi!	Hmph, musuh dapat bala bantuan. Gawat!
+Lão ác tặc, hãy xem đây!	Penjahat tua, rasakan ini!
+Đa tạ tướng quân giúp đỡ.	Terima kasih banyak atas bantuanmu, Jenderal.
+Chúng ta là người một nhà, Phạm sứ quân xin đừng khách sáo.	Kita satu keluarga, Tuan Pham, tak perlu sungkan.
+Sau trận vừa rồi binh lực của Lã Đường đã suy yếu, nhuệ khí không còn. Hơn nữa quân ta lại đông hơn, hào khí ngất trời. Nhân cơ hội này, tiến quân đánh vào Tế Giang chắc chắn sẽ hạ được.	Setelah pertempuran itu pasukan La Duong melemah dan semangatnya patah. Pasukan kita lebih besar dan semangat kita setinggi langit. Jika kita manfaatkan kesempatan ini dan bergerak ke Te Giang, kita pasti menang.
+Lưu quân sư nói phải lắm. Mọi người nghỉ ngơi lấy sức, sớm mai xuất quân.	Ahli Strategi Luu benar. Semua istirahat dan pulihkan tenaga; kita berangkat saat fajar.
+Lưu Cơ xin cáo lui.	Luu Co mohon diri.
+{p} xin cáo lui.	{p} mohon diri.
+Lã Đường, ta đến lấy đầu ngươi đây!	La Duong, aku datang untuk kepalamu!
+Với sức ngươi ư? Ảo tưởng ! Sáttttt	Dengan kekuatanmu? Mimpi saja! Seraaang!
+Phạm sứ quân, Tế Giang đã diệt xong. Chúng tôi phải trở về, Lưu Cơ xin bái biệt!	Tuan Pham, Te Giang sudah direbut. Kami harus kembali; Luu Co mohon pamit!
+Lưu quân sư, Vạn Thắng Vương là người nhân nghĩa lại có chí lớn bình định thiên hạ, đúng là phước của muôn dân. Nếu Bạch Hổ được giúp một tay thì thật là vinh hạnh lắm lắm!	Ahli Strategi Luu, Van Thang Vuong orang yang berperikemanusiaan dan adil dengan cita-cita besar mendamaikan negeri - sungguh berkah bagi rakyat. Jika Bach Ho bisa ikut membantu, itu kehormatan besar!
+Lưu Cơ sẽ chuyển tâm ý của Phạm sứ quân đến Vạn Thắng Vương. 	Luu Co akan menyampaikan keinginan Tuan Pham kepada Van Thang Vuong.
+Đa tạ quân sư!	Terima kasih banyak, Ahli Strategi!
+Nhất định sẽ có ngày chúng ta gặp lại. Phạm sứ quân, hẹn ngày tái ngộ!	Kita pasti bertemu lagi kelak. Tuan Pham, sampai jumpa lagi!
+Lưu quân sư, hãy bảo trọng!	Ahli Strategi Luu, jaga diri!
+Quân sư, ông đến thật đúng lúc, quân địch phòng thủ rất chặt, ta khó mà đánh vào được.	Ahli Strategi, kau datang tepat waktu. Pertahanan musuh sangat rapat, kami nyaris tak bisa menembus.
+Đại vương yên tâm, cơ hội của chúng ta đã đến. Đỗ Cảnh Thạc đang ở đồn Bảo Đà, thành Quèn ở Đỗ Động không người chỉ huy chắc chắn sẽ có sở hở. Đêm mai chủ công, cùng tướng {p} dẫn quân quân vây thành, sau đó đốt lửa thật lớn. Thấy lửa chắc chắn Cảnh Thạc sẽ rút quân từ Bảo Đà về ứng cứu, tình hình ở Bảo Đà lẫn thành Quèn sẽ xảy ra hỗn loạn. Khi đó Đại vương quay đầu tấn công Cảnh Thạc, cùng lúc tướng Nguyễn Bặc và Lê Hoàn tấn công thẳng vào Bảo Đà, ép Cảnh Thạc vào giữa. Bị tấn công bất ngờ địch sẽ hoảng loạn, quân ta ắt sẽ thành công.	Tenang, Baginda, kesempatan kita sudah tiba. Do Canh Thac ada di benteng Bao Da, jadi benteng Quen di Do Dong tak punya komandan dan pasti punya titik lemah. Besok malam, tuanku dan Jenderal {p} memimpin pasukan mengepung benteng dan menyalakan api besar. Melihat api itu, Canh Thac pasti menarik pasukannya dari Bao Da untuk menolong, dan Bao Da maupun benteng Quen akan kacau. Lalu Baginda berbalik menyerang Canh Thac sementara Jenderal Nguyen Bac dan Le Hoan menggempur Bao Da dari depan, menjepit Canh Thac di tengah. Diserang mendadak, musuh akan panik, dan kita pasti berhasil.
+Được! Ta sẽ làm theo cách này. Đêm mai sẽ hành động, mọi người hãy chuẩn bị.	Bagus! Akan kulakukan begitu. Kita bergerak besok malam; semua bersiap.
+Thành Quèn bị tấn công, ta phải về cứu ngay, các người hãy ở lại cố thủ.	Benteng Quen diserang, aku harus kembali menyelamatkannya. Kau tetap di sini dan pertahankan tempat ini.
+Cảnh Thạc!! Ngươi đã hết đường chạy, muốn sống hãy mau chịu trói.	Canh Thac!! Kau tak punya tempat lari lagi. Kalau mau hidup, menyerahlah sekarang.
+Hahaha, thật nực cười ! Chỉ một đám trẻ con mà dám cản đường ta ư? Có bản lĩnh thì hãy đến đây.	Hahaha, konyol sekali! Segerombolan bocah berani menghalangiku? Kalau berani, maju sini.
+Đại vương! Đỗ Động Giang đã lấy được, nhưng quân lực ta hao tổn khá nặng. Nếu đánh luôn Tây Phù Liệt thì rất khó, tốt nhất nên án binh bất động để cũng cố lực lượng. Mặt khác Đại vương nên đích thân đến Đằng Châu tiếp nhận binh lực của Phạm Bạch Hổ.	Baginda! Do Dong Giang milik kita, tapi pasukan kita menderita kerugian besar. Menyerang Tay Phu Liet sekarang akan sangat sulit; lebih baik diam dan membangun kekuatan lagi. Selain itu, Baginda sebaiknya pergi sendiri ke Dang Chau untuk memimpin pasukan Pham Bach Ho.
+Ừm, Bạch Hổ đã có ý về đầu quân, ta cũng nên đến gặp trực tiếp ông ta. Có thêm binh lực của Đằng Châu thì việc diệt Nguyễn Siêu cũng không quá khó khăn. 	Hmm, Bach Ho ingin bergabung, jadi aku harus menemuinya langsung. Dengan pasukan Dang Chau, menghancurkan Nguyen Sieu tak akan terlalu sulit.
+Đường xa nguy hiểm, người nên để Lê Hoàn tướng quân đi cùng.	Jalannya jauh dan berbahaya; Baginda sebaiknya membawa Jenderal Le Hoan.
+Việc ở đây quân sư hãy cố sắp xếp.	Ahli Strategi, tolong urus semuanya di sini.
+Đại vương hãy yên tâm!	Tenang saja, Baginda!
+Không xong! Quân sư! Quân sư!! Nguyễn Siêu đã vây thành!	Celaka! Ahli Strategi! Ahli Strategi!! Nguyen Sieu mengepung benteng!
+Nguyễn Siêu đã đánh Đỗ Động sớm hơn ta dự tính. Binh lực và lương thảo hiện tại chỉ có thể cố thủ chờ viện binh từ Đằng Châu đến. Nguyễn Bặc hãy trấn thủ ở cửa Tây, cửa bắc mọi sự trông cậy vào {p} tướng quân. Năm ngày nữa quân viện binh sẽ đến, mọi người hãy cố gắng thủ thành.	Nguyen Sieu menyerang Do Dong lebih cepat dari dugaanku. Dengan pasukan dan perbekalan sekarang, kita hanya bisa bertahan sampai bala bantuan dari Dang Chau tiba. Nguyen Bac, jaga gerbang barat; gerbang utara kuserahkan sepenuhnya kepada Jenderal {p}. Bala bantuan tiba dalam lima hari; semua pertahankan benteng!
+Hôm nay bổn tướng đến đây, ngỡ có thể so kiếm với anh hùng, nào ngờ chỉ thấy lũ chuột chạy nháo nhào trong thành tìm chỗ trốn!	Hari ini aku datang berharap beradu pedang dengan para pahlawan, tapi yang kulihat cuma tikus-tikus berlarian di sekitar benteng mencari tempat sembunyi!
+Quân sư có biết người dưới kia là ai không?	Ahli Strategi, kau tahu siapa orang di bawah sana?
+Nguyễn Trí Khả, tướng tiên phong của Nguyễn Siêu, dũng mãnh nhưng vô mưu. Tướng quân, hãy ráng nhẫn nhịn.	Nguyen Tri Kha, garis depan Nguyen Sieu: berani tapi tak berotak. Jenderal, cobalah bersabar.
+Lũ chuột nghe đây! Thời gian của bổn tướng quân có hạn, trong hôm nay nếu không ra khỏi hang, ta sẽ san bằng nơi này.	Dengar, tikus-tikus! Waktuku terbatas. Kalau kalian tak keluar dari lubang hari ini, akan kuratakan tempat ini dengan tanah.
+Thật ngoan cố! Để xem lũ chuột các ngươi trốn được bao lâu?	Keras kepala sekali! Mari kita lihat berapa lama kalian tikus bisa bersembunyi!
+Địch tấn công, mọi người vào vị trí!	Musuh menyerang! Semua ke posisi!
+Âm mưu phá thành Đỗ Động thất bại, Nguyễn Siêu đã đắp thành cao hơn để phòng bị. Muốn tiến quân vào Tây Phù Liệt e rất khó, quân sư có cao kiến gì không?	Siasat menembus Do Dong gagal, dan Nguyen Sieu meninggikan temboknya. Masuk ke Tay Phu Liet akan sangat sulit. Ahli Strategi, ada ide cemerlang?
+Tướng quân chớ lo! Nguyễn Siêu thận trọng phòng bị, như vậy trận chiến vừa rồi binh lực của hắn hao tổn khá nặng, hắn sẽ phải đích thân đi cầu cứu viện binh của 2 người anh Nguyễn Thủ Tiệp hoặc Nguyễn Khoan.	Jangan khawatir, Jenderal! Nguyen Sieu bertahan dengan hati-hati, artinya pasukannya menderita berat di pertempuran lalu. Dia harus pergi sendiri meminta bala bantuan kepada dua saudaranya, Nguyen Thu Tiep atau Nguyen Khoan.
+Vậy có nghĩa là Tây Phù Liệt như rắn mất đầu ?!	Jadi Tay Phu Liet akan seperti ular tanpa kepala?!
+Tướng quân nói rất phải! Đó chính là yếu điểm của Tây Phù Liệt, đêm mai quân ta nổi lửa đồng loạt đốt cửa Đông, cửa Tây, cửa Nam thì chắc binh lính sẽ hoảng loạn.	Tepat, Jenderal! Itulah kelemahan Tay Phu Liet. Besok malam pasukan kita membakar gerbang timur, barat dan selatan sekaligus, dan prajurit mereka pasti panik.
+Được lắm! Ta sẽ hỏi tội chúng những ngày qua.	Bagus sekali! Akan kubuat mereka membayar hari-hari kemarin.
+Trận này, nhất định phải lấy được thành. Mọi người tranh thủ nghỉ ngơi, đêm mai xuất binh.	Di pertempuran ini kita harus merebut benteng. Semua istirahat; kita bergerak besok malam.
+Trí Khả! Ta đến hỏi tội ngươi đây!	Tri Kha! Aku datang untuk membuatmu menebus kejahatanmu!
+Chỉ là con chuột nhắt, bổn tướng sẽ hóa kiếp cho ngươi!	Cuma tikus kecil. Akan kukirim kau ke kehidupan berikutnya!
+Tự tin thì cứ đến đây!!!	Kalau kau begitu yakin, maju sini!!!
+Nguyễn Siêu, chạy đâu cho thoát. Nạp mạng !!	Nguyen Sieu, tak ada jalan lari. Serahkan nyawamu!!
+Muốn cản ta ư !? Mộng tưởng quá đấy !	Kau mau menghentikanku!? Mimpi saja terus!
+Hay tin Nguyễn Siêu bị diệt. Nguyễn Khoan và Kiều Công Hãn đẵ liên kết, cùng trấn thủ ở vùng Tam Đái. Lý Khuê và Nguyễn Thủ Tiệp thì dựng tuyến phòng thủ ở Siêu Loại, xem ra ta gặp khó khăn lớn rồi.	Mendengar Nguyen Sieu hancur, Nguyen Khoan dan Kieu Cong Han bersekutu dan bersama-sama menguasai wilayah Tam Dai. Ly Khue dan Nguyen Thu Tiep membangun garis pertahanan di Sieu Loai. Sepertinya kita dalam masalah serius.
+Tướng quân đừng quá lo! Mối liên kết giữa Lý Khuê và Nguyễn Thủ Tiệp ngoài mặt nhìn rất chắc chắn, nhưng thực chất lại rất yếu. Hai người này từ lâu đã có mối hiềm khích với nhau, nên cắt đứt mối liên kết này không phải là khó.	Jangan terlalu khawatir, Jenderal! Persekutuan Ly Khue dan Nguyen Thu Tiep tampak kokoh di luar tapi sebenarnya sangat rapuh. Keduanya sudah lama menyimpan dendam, jadi memecah persekutuan mereka tak akan sulit.
+Quân sư đã có cao kiến gì không?	Ahli Strategi punya rencana cemerlang?
+Cao kiến thì không, nhưng tôi có mẹo này. Năm ngày nữa 49 ngày mất của Nguyễn Siêu, chắc chắn Nguyễn Thủ Tiệp sẽ trở về Tiên Du. Cho một nhóm người trà trộn vào thành Siêu Loại, nửa đêm đốt cổng bắc. Bên ngoài ta giả làm quân của Thủ Tiệp tung cờ xí, nổi trống trận, đi từ hướng Tiên Du vào phá thành. Với tính đa nghi, Lý Khuê sẽ tưởng Thủ Tiệp còn nuôi thù cũ, lợi dụng đâm lén sau lưng. Nội chiến xảy ra, việc lấy thành Siêu Loại dễ như trở bàn tay.	Bukan rencana cemerlang, tapi aku punya siasat. Lima hari lagi genap 49 hari wafatnya Nguyen Sieu, dan Nguyen Thu Tiep pasti kembali ke Tien Du. Kita kirim satu regu menyusup ke Sieu Loai dan membakar gerbang utara tengah malam. Di luar, kita menyamar sebagai pasukan Thu Tiep, mengibarkan panjinya, menabuh genderang perang dan menyerang dari arah Tien Du. Karena curiga, Ly Khue akan mengira Thu Tiep masih menyimpan dendam lama dan menusuknya dari belakang. Begitu mereka saling bertarung, merebut Sieu Loai semudah membalik telapak tangan.
+Lưu quân sư, việc trà trộn hãy để tôi cùng các anh em trong doanh trại.	Ahli Strategi Luu, biar aku dan saudara-saudaraku dari perkemahan yang menyusup.
+Việc này rất nguy hiểm...	Ini sangat berbahaya...
+Quân sư hãy yên tâm, tôi có thể lo liệu được.	Tenang, Ahli Strategi, aku bisa mengatasinya.
+Tướng quân hãy cầm theo bí kíp này, nếu gặp nguy hãy mở ra.	Jenderal, bawalah gulungan rahasia ini. Jika dalam bahaya, bukalah.
+Giờ mọi người về nghỉ. Sáng mai, chúng ta sẽ về Tế Giang hội ngộ với Vạn Thắng Vương. Lưu cơ có việc phải làm ở Đỗ Động, tôi sẽ đến sau. 	Sekarang semua pergi istirahat. Besok pagi kita kembali ke Te Giang menemui Van Thang Vuong. Luu Co ada urusan di Do Dong; aku menyusul nanti.
+Quân sư, xin cáo lui.	Ahli Strategi, aku mohon diri.
+{p} tướng quân xin dừng bước, tôi có chuyện cần bàn với tướng quân!	Jenderal {p}, tunggu, ada yang ingin kubicarakan!
+Xin quân sư cứ nói!	Silakan bicara, Ahli Strategi!
+Tôi nghe nói, ở vùng Đỗ Động có đám người tự xưng là con cháu Ngô tiên chúa đã khởi binh tiến đánh Hoa Lư, nhưng khi đến Ô Man thì đụng độ với hào trưởng làng ấy là Ngô Phó. Đám người này không diệt sau này sẽ rắc rối, tướng quân hãy cùng tôi đến giúp Ngô Phó một tay. Ngài hãy về chuẩn bị, sớm mai ta sẽ lên đường. 	Kudengar di wilayah Do Dong ada gerombolan yang mengaku keturunan mendiang Tuan Ngo mengerahkan pasukan menyerang Hoa Lu, tapi di O Man mereka bentrok dengan kepala desa, Ngo Pho. Kalau tak kita hancurkan, mereka akan jadi masalah nanti. Jenderal, ikut aku membantu Ngo Pho. Pergilah bersiap; kita berangkat saat fajar.
+Mạt tướng xin cáo lui!	Aku mohon diri!
+Ngô hào trưởng, quân của Vạn Thắng Vương xin đến giúp một tay!	Kepala Desa Ngo, pasukan Van Thang Vuong datang membantu!
+Thật tốt quá! Quân địch rất hung hãn, tướng quân hãy cẩn trọng!	Syukurlah! Musuhnya sangat ganas, Jenderal, hati-hati!
+Thưa Đại vương, việc ở Tây Phù Liệt tôi đã sắp xếp xong.	Baginda, aku sudah selesai mengatur urusan di Tay Phu Liet.
+Quân sư, Nguyễn Thủ Tiệp đã về Tiên Du. Khi nào ta sẽ đánh vào Siêu Loại?	Ahli Strategi, Nguyen Thu Tiep sudah kembali ke Tien Du. Kapan kita menyerang Sieu Loai?
+Theo thuộc hạ tính thì đêm mai có gió lớn, nội gián của ta sẽ đốt doanh trại địch, khi đó lửa lan rất nhanh. Thấy lửa, địch sẽ náo loạn, lúc đó ta xuất binh đánh vào Siêu Loại	Menurut perhitunganku, besok malam akan ada angin kencang. Mata-mata kita akan membakar perkemahan musuh dan apinya akan menyebar cepat. Melihat api, musuh akan panik, lalu kita kirim pasukan masuk ke Sieu Loai.
+Được, đêm mai ta sẽ lấy Siêu Loại. Mọi người hãy về chuẩn bị.	Bagus, besok malam kita rebut Sieu Loai. Semua pergi bersiap.
+Tuân lệnh Đại vương!	Siap laksanakan, Baginda!
+Báo! Báo! Nguyễn Thủ Tiệp đã trở mặt, hắn đang phá cổng bắc.	Lapor! Lapor! Nguyen Thu Tiep berbalik melawan kita, dia mendobrak gerbang utara.
+Grr...grr...Con cáo già! Giết, giết hết bọn chúng cho ta!!	Grr...grr...Rubah tua itu! Bunuh mereka, bunuh semuanya!!
+Báoooo!!! Cổng nam, quân của Đinh Bộ Lĩnh đã đánh vào!	Lapooor!!! Gerbang selatan - pasukan Dinh Bo Linh berhasil masuk!
+Nguy rồi !! Mau mau....	Habislah kita!! Cepat, cepat...
+Lý Khuê ở đằng kia! Mau đuổi theo.	Ly Khue ada di sana! Kejar dia!
+Mau! Mau chạy vào làng.	Cepat! Lari ke desa.
+Chạy đâu cho thoát!	Tak ada jalan lari!
+Thất bại ở Siêu Loại, binh lực của Nguyễn Thủ Tiệp đã mất hơn nữa, quân lính gần như mất hết nhuệ khí. Đây là thời cơ thuận lợi cho ta đánh Tiên Du. Đại vương, hãy cho xuất binh.	Setelah kalah di Sieu Loai, Nguyen Thu Tiep kehilangan lebih banyak pasukan dan prajuritnya nyaris tak bersemangat lagi. Inilah waktu yang tepat untuk menyerang Tien Du. Baginda, berilah perintah berangkat.
+Nguyễn Bặc, ông dẫn quân đánh vào cánh trái Tiên Du. Lê Hoàn thì đánh vào cánh phải. Ta cùng các tướng khác tấn công trực diện. Mọi người, tiến thẳng Tiên Du!	Nguyen Bac, pimpin pasukanmu menyerang sayap kiri Tien Du. Le Hoan, ambil sayap kanan. Aku menyerang dari depan bersama para jenderal lain. Semua, langsung ke Tien Du!
+Thuộc hạ tuân lệnh!	Siap laksanakan!
+Báoooo! quân ta đã thất thủ.	Lapooor! Barisan kita jebol.
+Mau, mau theo ta chạy vào núi.	Cepat, ikut aku ke pegunungan.
+Ác tặc, chạy đâu cho thoát!!	Penjahat, tak ada jalan lari!!
+Hừ, không ngờ tên phản tặc Lã Xử Bình gửi thư cầu cứu liên quân Nguyễn Khoan và Kiều Công Hãn, 7 ngày nữa liên quân sẽ đến Cổ Loa.	Hmph, siapa sangka si pengkhianat La Xu Binh menulis surat meminta bantuan pasukan sekutu Nguyen Khoan dan Kieu Cong Han. Dalam 7 hari sekutu akan tiba di Co Loa.
+Nếu liên quân hợp sức với Lữ Xử Bình, ta sẽ khó tiến vào Cổ Loa. Quân sư, ông có kế sách gì không?	Kalau sekutu bergabung dengan Lu Xu Binh, akan sulit bagi kita memasuki Co Loa. Ahli Strategi, ada rencana?
+Hiện tại quân lực ở Cổ Loa còn yếu. Trong 5 ngày, phải đánh vào Cổ Loa trước khi liên quân đến. Nếu không quân ta không còn cơ hội nào khác.	Saat ini kekuatan Co Loa masih lemah. Dalam 5 hari kita harus menyerang Co Loa sebelum sekutu tiba, atau kita takkan punya kesempatan lain.
+{p}, Nguyễn Bặc, Lê Hoàn đi tiên phong, cấp tốc đến Cổ Loa. Mọi người hãy cố gắng!	{p}, Nguyen Bac dan Le Hoan memimpin garis depan, segera ke Co Loa. Semua, berikan yang terbaik!
+Địch đã tấn công. Chủ công, hãy ra lệnh!	Musuh menyerang. Tuanku, berilah perintah!
+Hãy ráng cầm cự chờ liên quân đến. Cung thủ, bắn tên!	Bertahan sampai sekutu tiba. Pemanah, tembak!
+Chủ công, quân ta đã thất thủ...	Tuanku, barisan kita jebol...
+Grrr....Mau, rút về Tam Đái.	Grrr....Cepat, mundur ke Tam Dai.
+Lữ Xử Bình, ngươi hết đường rồi! Sáaatttt	Lu Xu Binh, tamatlah riwayatmu! Seraaang
+Biết quân ta đã chiếm Cổ Loa, liên quân rút về cố thủ ở Tam Đái. Bây giờ đánh từ Cổ Loa vào Tam Đái rất khó, mọi người có kế sách gì không? 	Tahu kita sudah merebut Co Loa, sekutu mundur untuk mempertahankan Tam Dai. Menyerang Tam Dai dari Co Loa kini sangat sulit. Ada yang punya rencana?
+Nếu Tam Đái đánh khó thì ta sẽ đánh Phong Châu trước.	Kalau Tam Dai sulit diserang, kita gempur Phong Chau dulu.
+Phong Châu?	Phong Chau?
+Kiều Công Hãn đem quân xuống Tam Đái, chắc chắn Phong Châu sẽ sơ hở. Ta cho 2 đạo quân tiến từ 2 hướng Đường Lâm và Cổ Loa đánh vào Tam Đái. Mặt khác cho đạo quân khác đi vòng đường núi đánh Phong Châu, Kiều Công Hãn chắc chắn rút quân về. Lúc đó chỉ còn mình Nguyễn Khoan ở Tam Đái, ta sẽ đánh vào được.	Kieu Cong Han membawa pasukannya turun ke Tam Dai, jadi Phong Chau pasti terbuka. Kita kirim dua pasukan dari Duong Lam dan Co Loa melawan Tam Dai. Sementara itu pasukan lain memutar lewat jalan gunung untuk menyerang Phong Chau, dan Kieu Cong Han pasti menarik mundur pasukannya. Lalu hanya Nguyen Khoan yang tersisa di Tam Dai, dan kita bisa menerobos masuk.
+Nguyễn Bặc, {p} tướng quân hãy đem quân đến Đường Lâm, Lê Hoàn dẫn quân đến Phong Châu, các tướng còn lại hãy theo ta đánh thẳng từ Cổ Loa đến. Mọi người về nghỉ ngơi, sớm mai ta sẽ xuất quân!	Nguyen Bac dan Jenderal {p}, bawa pasukan ke Duong Lam; Le Hoan memimpin pasukan ke Phong Chau; jenderal lainnya ikut aku langsung dari Co Loa. Semua istirahat, kita berangkat saat fajar!
+Báoooo!! Thưa chủ công, Phong Châu bị tấn công!	Lapooor!! Tuanku, Phong Chau diserang!
+Mau! Về hỗ trợ Phong Châu.	Cepat! Kembali dan bantu Phong Chau.
+Báoooo!! Tướng giặc Lê Hoàn đã chiếm Phong Châu!	Lapooor!! Jenderal musuh Le Hoan merebut Phong Chau!
+Grr..grr...Ta đã quá sơ ý! Lui về Hồi Hồ tạm lánh một thời gian.	Grr..grr...Aku terlalu lengah! Mundur ke Hoi Ho dan bersembunyi sementara.
+Đinh Bộ Lĩnh! Ta thề sẽ lấy lại Phong Châu.	Dinh Bo Linh! Aku bersumpah akan merebut kembali Phong Chau.
+Nguyễn Khoan, có gan ra đây so cao thấp với ta!	Nguyen Khoan, kalau berani, keluar dan hadapi aku!
+Ngông cuồng! Hôm nay ta sẽ lấy đầu bọn bay để trả thù của Nguyễn Siêu và Thủ Tiệp.	Sombong sekali! Hari ini akan kuambil kepala kalian untuk membalas Nguyen Sieu dan Thu Tiep.
+Đại vương, hạ tướng cũ của Trần lão công đã làm phản, hắn đem quân đánh vào Kỳ Bố. Mọi người trong thành đang cố thủ, lương thực chỉ đủ dùng trong vài ngày, ta phải đem quân đến giải vây ngay!	Baginda, seorang bekas perwira mendiang Tuan Tran memberontak dan menyerang Ky Bo. Semua di benteng bertahan, tapi makanan hanya cukup beberapa hari. Kita harus segera mengirim pasukan untuk membebaskan kepungan!
+{p} tướng quân, khanh hãy đem quân trở về ứng cứu Kỳ Bố. Nhưng người còn lại theo ta đánh vào Phong Châu.	Jenderal {p}, bawa pasukanmu kembali menyelamatkan Ky Bo. Sisanya ikut aku menyerang Phong Chau.
+Phản tặc, có ta đến đây, hãy mau chịu tội!	Pengkhianat, aku sudah di sini. Tebus kejahatanmu!
+Sức ngươi còn kém lắm, chưa đủ đâu!	Kau masih terlalu lemah, itu belum cukup!
+Chớ ngông cuồng! Hãy xem đây !!!	Jangan sombong! Rasakan ini!!!
+Thất bại ở Phong Châu và Tam Đái, Kiều Công Hãn đã rút quân thẳng về Hồi Hồ nương nhờ em hắn là Kiều Thuận. Địa hình ở đó hiểm trở, rất khó tấn công, quân sư có kế sách gì không?	Kalah di Phong Chau dan Tam Dai, Kieu Cong Han mundur langsung ke Hoi Ho untuk berlindung pada saudaranya Kieu Thuan. Medan di sana terjal dan sangat sulit diserang. Ahli Strategi, ada rencana?
+Thưa Đại Vương, thực ra địa hình hiểm trở chính là yếu điểm của Hồi Hồ!	Baginda, justru medan yang terjal itulah kelemahan Hoi Ho!
+Yếu điểm!? Ta chưa hiểu, quân sư hãy nói rõ.	Kelemahan!? Aku tak mengerti. Ahli Strategi, jelaskan.
+Thành Hồi Hồ xung quanh là vùng đồi núi hiểm trở, ta không nên tấn công, chia quân ra đóng ở  nơi hiểm yếu ngăn chặn nguồn nước. Vây phục ba ngày, tự chúng sẽ mò ra, lúc ấy ta sẽ diệt được.	Benteng Hoi Ho dikelilingi bukit terjal. Kita jangan menyerang; sebaliknya kita bagi pasukan untuk menjaga celah-celah penting dan memutus air mereka. Setelah tiga hari dikepung, mereka akan keluar sendiri, dan saat itulah kita hancurkan mereka.
+Quân sư nói phải lắm, 12 sứ quân nay chỉ còn anh em họ Kiều, ta cũng không cần phải vội. Chúng ta hãy theo kế của quân sư.	Ahli Strategi benar. Dari 12 panglima perang hanya Kieu bersaudara yang tersisa, jadi tak perlu terburu-buru. Kita ikuti rencana Ahli Strategi.
+Tuân lệnh đại vương!	Siap laksanakan, Baginda!
+Huynh trưởng, lương thực trong thành chẳng còn bao nhiêu. Nếu tiếp tục ở trong thành e rằng sẽ không qua khỏi.	Kakak, makanan di benteng hampir habis. Kalau kita tetap di dalam, aku takut kita tak selamat.
+Với tình thế này, nên tìm cách thoát thân trước.	Dalam keadaan begini, kita harus mencari jalan kabur dulu.
+Địch đã bao vây 4 hướng, ta chạy đi đâu bây giờ.	Musuh mengepung kita dari empat penjuru. Ke mana kita bisa lari?
+Ở cửa Bắc, lực lượng của địch yếu nhất. Nếu phá được vòng vây, thì chạy lên phương Bắc xin nhà Tống cứu viện.	Di gerbang utara musuh paling lemah. Kalau kita bisa tembus, kita lari ke utara dan meminta bantuan istana Song.
+Đệ sẽ chọn ra 1 đám quân tinh nhuệ, đêm nay chúng ta phá vòng vây.	Aku akan memilih regu prajurit terbaik; malam ini kita tembus kepungan.
+Kiều tặc, chạy đâu cho thoát!	Pengkhianat Kieu, tak ada jalan lari!
+Thưa đại vương, loạn 12 sứ quân đã dẹp xong, bây giờ đã đến lúc xưng đế.	Baginda, Anarki 12 Panglima Perang sudah berakhir. Kini saatnya Baginda menobatkan diri sebagai kaisar.
+Ta đang suy nghĩ, không biết chọn nơi nào làm kinh đô. Quân sư có cao kiến gì không?	Aku sudah memikirkannya, tapi tak tahu di mana mendirikan ibu kota. Ahli Strategi, ada ide?
+Người Hoa Lư nên chọn Hoa Lư làm gốc, hơn nữa Hoa Lư là nơi núi non trùng điệp. Núi trong sông, sông trong núi. Căn cứ thủy bộ thuận tiện, sau lưng là rừng, trước mặt là đồng bằng, xa nữa là biển cả. Nơi đây non sông thì tráng lệ, phong thủy hài hòa nên Ấu Rồng thường xuất hiện gây nhiều khó khăn cho bá tánh.	Orang Hoa Lu sebaiknya menjadikan Hoa Lu sebagai akarnya. Lagi pula, Hoa Lu dikelilingi lapisan pegunungan: gunung di dalam sungai, sungai di dalam gunung. Ini pangkalan yang baik di darat dan air, dengan hutan di belakang, dataran di depan dan laut di kejauhan. Alamnya megah dan fengshuinya selaras, karena itulah Naga Muda sering muncul di sana, menyusahkan rakyat.
+Vậy ta diệt Ấu Rồng trước, sau dựng kinh đô. Mọi người về nghỉ ngơi, sớm mai trở về Hoa Lư.	Kalau begitu kita bunuh Naga Muda dulu dan membangun ibu kota sesudahnya. Semua istirahat; besok pagi kita kembali ke Hoa Lu.
+Tuân lệnh đại vương.	Siap laksanakan, Baginda.
+Ta, một người nhỏ bé, nhờ hưng binh mà dẹp loạn, thống nhất đất nước. Nay thuận ý muôn dân, ta xưng hiệu Đinh Tiên Hoàng đế, đặt quốc hiệu là Đại Cồ Việt.	Aku, orang biasa, mengangkat senjata untuk mengakhiri kekacauan dan menyatukan negeri. Kini, mengikuti kehendak rakyat, aku bergelar Kaisar Dinh Tien Hoang dan menamai negeri kita Dai Co Viet.
+Đinh Tiên Hoàng vạn tuế vạn tuế!	Hidup Dinh Tien Hoang, hidup!
+Tướng quân rất thông minh, những gì tôi truyền đạt ngài tiếp nhận khá nhanh.	Jenderal, kau sangat cerdas; kau cepat sekali menyerap apa yang kuajarkan.
+Chỉ là chút tài mọn, quân sư đã quá khen!	Cuma bakat kecil, Ahli Strategi terlalu memuji!
+Sơn tặc đã diệt xong. Doanh trại rất thích hợp làm Đấu Trường luyện tập cho quân ta. Các ngươi hãy ở lại canh giữ, còn lại mau theo ta trở về Hoa Lư.	Para bandit sudah tumpas. Perkemahan ini sempurna sebagai Arena untuk melatih pasukan. Kau tetap di sini menjaganya; sisanya ikut aku kembali ke Hoa Lu.
+Giặc quá mạnh, ta thua rồi. Mau mở cửa thành...đầu hàng	Musuh terlalu kuat, kita kalah. Buka gerbang... kami menyerah.
+Nhật Khánh, bây giờ ngươi muốn sống hay muốn chết?	Nhat Khanh, kau mau hidup atau mati?
+Họ Ngô ta đã dựng nên đất nước, chẳng may gặp kẻ gian thần hãm hại mà mất nước. Ta nuôi chí khôi phục cơ nghiệp tiên chúa, nghiệp lớn không thành, muốn chém thì chém, chớ nhiều lời !!!	Klan Ngo mendirikan negeri ini, tapi para menteri pengkhianat menjatuhkan kami dan kami kehilangan kerajaan. Aku berusaha memulihkan warisan leluhurku; karena tugas besar ini gagal, tebaslah aku jika mau, dan tak usah banyak bicara!!!
+Được, ta sẽ cho ngươi toại nguyện.	Baik, akan kukabulkan keinginanmu.
+Tướng quân dừng tay!!!	Jenderal, berhenti!!!
+Lưu Cơ đến muộn, mong Ngô công tử bỏ qua. Tiên phụ công tử với Vạn Thắng Vương là bạn từ thời tóc còn để chỏm, chiến tranh loạn lạc 2 người đi 2 hướng khác nhau. Hay biết công tử là con cố nhân, nay người muốn gặp công tử ở Hoa Lư. Xin mời công tử lên xe ngựa.	Luu Co terlambat, mohon maaf, Tuan Muda. Mendiang ayahmu dan Van Thang Vuong bersahabat sejak kecil, tapi perang memisahkan jalan mereka. Mengetahui kau putra sahabat lamanya, kini beliau ingin menemuimu di Hoa Lu. Silakan, Tuan Muda, naik ke kereta.
+Hmm ... ... ...	Hmm ... ... ...
+Rút quân !!!!	Mundur!!!!
+Đừng đuổi theo! Hãy lui vào thành.	Jangan kejar! Mundur ke dalam benteng.
+Lã Đường đã chết!! Kẻ nào đầu hàng sẽ được tha.	La Duong sudah mati!! Siapa yang menyerah akan diampuni.
+Thắng thua đã rõ. Trói hắn lại.	Hasilnya sudah jelas. Ikat dia.
+Muốn bắt ta ư? Còn lâu.....Yaaaa........hự....hự... !!	Mau menangkapku? Tak akan pernah.....Yaaaa........ugh....ugh... !!
+Hắn đã tự sát, hãy mau lấy thành.	Dia mengakhiri hidupnya sendiri. Cepat, rebut benteng.
+Viện binh đã đến, mọi người phản công !!!	Bala bantuan datang, semua serang balik!!!
+Không xong rồi! Hãy mau rút về tiền đồn chờ lệnh Hữu công Nguyễn Siêu.	Gawat! Mundur ke pos dan tunggu perintah Tuan Nguyen Sieu.
+Trí Khả đã bị diệt, hãy mau tìm Nguyễn Siêu!	Tri Kha sudah mati, cepat cari Nguyen Sieu!
+Nguyễn Siêu đã chạy hướng Đông Phù Liệt sang Tiên Du, tướng quân hãy mau đuổi theo, đừng để hắn qua sông!	Nguyen Sieu kabur lewat Dong Phu Liet menuju Tien Du. Jenderal, cepat kejar dia, jangan biarkan dia menyeberang sungai!
+Thủ cấp của Nguyễn Siêu trong tay ta, muốn sống thì mau buông vũ khí đầu hàng! 	Aku memegang kepala Nguyen Sieu. Kalau mau hidup, letakkan senjata dan menyerah!
+Đa tạ tướng quân đã trợ giúp!	Terima kasih banyak atas bantuanmu, Jenderal!
+Ngô hào trưởng, đừng khách sáo. Đây là nhiệm vụ của tôi. Phản loạn đã diệt xong, nay tôi phải về Tế Giang để giúp Vạn Thắng Vương. Ngô hào trưởng, hẹn ngày tái ngộ!	Kepala Desa Ngo, tak perlu berterima kasih. Ini tugasku. Pemberontak sudah hancur; sekarang aku harus kembali ke Te Giang membantu Van Thang Vuong. Kepala Desa Ngo, sampai jumpa lagi!
+Tướng quân, bảo trọng!	Jenderal, jaga diri!
+Nói !! Muốn sống thì cho ta biết Lý Khuê đang ở đâu !?	Bicara!! Kalau mau hidup, katakan di mana Ly Khue!?
+Lý sứ quân đã chạy về hướng Dương Xá, xin tướng quân tha mạng.	Tuan Ly kabur ke arah Duong Xa. Ampuni nyawaku, Jenderal.
+Nhốt tên này lại, chờ ta về xử lý. Những người còn lại mau đuổi theo Lý Khuê!	Kurung orang ini sampai aku kembali. Sisanya, kejar Ly Khue!
+Chém! Đem đầu Lý Khuê về.	Bunuh! Bawa kembali kepala Ly Khue.
+Còn kẻ nào chán sống thì hãy bước lên !	Siapa lagi yang bosan hidup, maju!
+Á.....! Chết ta......	Aaah.....! Tamatlah aku......
+Nguyễn Khoan đã bỏ mạng. Kẻ nào đầu hàng sẽ được tha chết!	Nguyen Khoan sudah mati. Siapa yang menyerah akan diampuni!
+Phản tặc đã diệt, hãy mau đến Phong Châu.	Pengkhianat sudah hancur, segera ke Phong Chau.
+Anh em họ Kiều đã diệt xong, mau báo cho Vạn Thắng Vương.	Kieu bersaudara sudah hancur, segera lapor kepada Van Thang Vuong.
+Không cho chúng chạy! Đuổi theo giết sạch, không chừa một mống.	Jangan biarkan mereka lolos! Kejar dan habisi semuanya, jangan sisakan satu pun.
+Thực lực quá kém, đúng là không biết trời cao.	Selemah itu - kau benar-benar tak tahu tingginya langit.
+Chết nè !!!	Matilah!!!
+A....a....a......	Ah....ah....ah......
+Chống đối ta chỉ có chết, hãy nhìn đó mà làm gương.	Melawanku berarti mati; jadikan itu pelajaran.
+Áaaaaa ... a.......a.......	Aaaaaah ... ah.......ah.......
+{p} tướng quân đã bại trận. Rút quân!!!	Jenderal {p} sudah kalah. Mundur!!!
+Tiến lên!! Ai bắt được Đinh Bộ Lĩnh dù sống hay đã chết sẽ được phong quan.	Maju!! Siapa yang menangkap Dinh Bo Linh, hidup atau mati, akan diangkat jadi pejabat.
+Thành đã thất thủ, mọi người mau rút về Hoa Lư, ta sẽ ở lại cản đường. Mau!! Không được chần chừ. Vạn Thắng Vương, xin thứ lỗi cho thuộc hạ.	Benteng sudah jatuh. Semua mundur ke Hoa Lu, aku tetap di sini menghadang. Pergi!! Jangan ragu. Van Thang Vuong, ampuni hambamu.
+Còn tên nào muốn được hóa kiếp thì bước lên !	Siapa lagi yang mau terlahir kembali, maju!
+Hừm, làm mất thời gian!	Hmph, buang-buang waktu!
+{p} tướng quân đã bại trận!! Rút quân.	Jenderal {p} sudah kalah!! Mundur.
+Tướng giặc đã chết! Đuổi theo giết sạch bọn chúng.	Jenderal musuh sudah mati! Kejar dan habisi semuanya.
+Chỉ có bấy nhiêu mà cũng dám cản đường ta sao !?	Cuma segitu, dan kau berani menghalangiku!?
+Sức chỉ thế mà đòi lấy đầu ta ư !?	Dengan kekuatan segitu kau mau kepalaku!?
+Mau ra khỏi thành!	Cepat, keluar dari benteng!
+Siêu, Tiệp! Ta đã báo thù cho hai đệ.	Sieu, Tiep! Aku sudah membalaskan kalian, saudara-saudaraku.
+Muốn cản ta ư? Chưa đủ sức!	Mau menghentikanku? Kau tak cukup kuat!
+Qua ngọn núi phía trước ta sẽ an toàn. Đinh Bộ Lĩnh hãy chờ đó, nhất định ta sẽ quay về lấy lại tất cả.	Lewat gunung di depan kita akan aman. Dinh Bo Linh, tunggu saja, aku pasti kembali dan merebut semuanya.
+Giúp chúng tôi với !!!	Tolong kami!!!
+Sơn trang phía trước bị yêu quái tấn công, tướng quân hãy mau đến giúp!	Wisma gunung di depan diserang siluman. Jenderal, cepat bantu!
+Các ngươi là ai? Sao dám cản đường !	Siapa kau? Berani-beraninya menghalangiku!
+Thưa tướng quân! Tiểu dân xin gặp Vạn Thắng Vương.	Jenderal! Rakyat jelata ini mohon bertemu Van Thang Vuong.
+Ngươi là ai?  Gặp ta có việc gì ?	Siapa kau? Apa maumu denganku?
+Thưa đại vương, tiểu dân họ Lê tên Hoàn, người ở Bảo Thái, từ lâu đã nghe danh đức của đại vương, nên muốn phò giúp.	Baginda, namaku Le Hoan, dari Bao Thai. Sudah lama aku mendengar kebajikan Baginda dan ingin mengabdi.
+Hãy đến Hoa Lư, chờ ta đánh trận về rồi tính.	Pergilah ke Hoa Lu dan tunggu sampai aku kembali dari perang.
+Tiểu dân chờ người rất lâu rồi, hãy cho tôi một cơ hội.	Aku sudah lama menunggu Baginda, mohon beri aku kesempatan.
+Vậy ngươi hãy thử đấu với {p} xem sao.	Kalau begitu coba lawan {p}, kita lihat saja.
+Mô phật! Bần tăng tiếp đón chậm trễ, Lưu tiên sinh hãy lượng thứ.	Amitabha! Maafkan biksu miskin ini atas sambutan yang terlambat, Tuan Luu.
+Đại sư đừng khách sáo! Hôm nay tôi đến đây có việc cần ngài giúp đỡ. 	Tak perlu sungkan, Guru! Hari ini aku datang karena butuh bantuanmu.
+Lưu quân sư, nếu giúp được bần tăng sẽ cố hết sức.	Ahli Strategi Luu, jika bisa membantu, biksu miskin ini akan berusaha sebaik mungkin.
+Không dấu gì đại sư, binh lực của Vạn Thắng Vương tuy uy dũng nhưng vẫn còn thiếu người chỉ dẫn. Đại sư, xin hãy giúp một tay.	Tak akan kusembunyikan, Guru: pasukan Van Thang Vuong perkasa tapi masih kurang bimbingan. Guru, mohon ulurkan tangan.
+Việc này hơi khó cho bần tăng vì chùa có quy định nếu thỉnh sư xuống núi phải phá được La Hán Trận. Trước nay chưa có ai phá được trận này, Lưu tiên sinh e rằng tôi khó mà giúp ông.	Itu agak sulit bagiku: aturan kuil berkata biksu yang diundang turun gunung harus lebih dulu memecahkan Formasi Arhat. Belum pernah ada yang memecahkannya, jadi kurasa aku sulit membantumu, Tuan Luu.
+Lưu tiên sinh, hãy để tiểu tướng thử phá La Hán Trận	Tuan Luu, biar aku mencoba memecahkan Formasi Arhat.
+Tướng quân, hãy trận trọng.	Jenderal, hati-hati.
+Các ngươi là ai, hãy mau tránh đường cho ta.	Siapa kau? Minggir dari jalanku.
+Láo xược, tiếp chiêu!	Kurang ajar! Rasakan ini!
+Chẳng hay tướng quân ghé đến tệ xá có việc cần gì chỉ bảo?	Ada urusan apa Jenderal datang ke gubuk sederhanaku? Apa yang bisa kubantu?
+Ta đi lạc đến đây, xin hỏi cao danh quý tánh của tiên sinh.	Aku tersesat dan sampai di sini. Bolehkah aku tahu nama Tuan yang mulia?
+Tại hạ họ Bùi tên Quang Dũng...	Namaku Bui Quang Dung...
+Người là Bùi Quang Dũng !? Nghe danh đã lâu, hôm nay có cơ hội gặp gỡ, xin tiên sinh chỉ giáo.	Tuan adalah Bui Quang Dung!? Sudah lama aku mendengar nama Tuan. Kini kita bertemu, mohon ajari aku, Tuan.
+Thật không dám. Tướng quân! xin mời.	Aku tak berani. Jenderal! Silakan duluan.
+Tướng quân, xin hãy dừng bước.	Jenderal, tunggu sebentar.
+Công tử là....	Tuan muda, kau ini....
+Cự Lạng là cháu nội của Phạm Lệnh Công – Đông giáp tướng quân dưới thời Ngô tiên chúa, chẳng may chiến tranh loạn lạc nên lui về đây chờ minh chủ. Hay tin quân của Vạn Thắng Vương đi qua, chúng tôi dẫn mọi người đến giúp một tay.	Aku, Cu Lang, cucu Tuan Pham Lenh Cong - Jenderal Zirah Timur di bawah mendiang Tuan Ngo. Sayangnya, perang dan kekacauan membuat kami mundur ke sini menunggu penguasa yang bijak. Mendengar pasukan Van Thang Vuong lewat, kami membawa orang-orang kami untuk membantu.
+Vạn Thắng Vương đang ở ngoài chiến trường, công tử hãy theo tôi.	Van Thang Vuong sedang di medan perang; tuan muda, ikutlah denganku.
+Chân Lưu đệ! Giang sơn đại loạn rất cần người tài, đệ hãy xuống núi giúp ta một phen.	Saudara Chan Luu! Negeri sedang sangat kacau dan butuh orang berbakat. Turunlah gunung dan bantu aku.
+Bộ Lĩnh huynh, đám yêu quái ở Tam Đảo đang lộng hành. Nếu đệ theo huynh xuống núi e chùa sẽ khó mà giữ được.	Saudara Bo Linh, siluman Tam Dao sedang merajalela. Kalau aku ikut turun gunung, aku takut kuil tak bisa dilindungi.
+Đệ yên tâm, ta sẽ giúp đệ diệt đám yêu đó.	Jangan khawatir, saudaraku, akan kubantu menghancurkan siluman-siluman itu.
+Yêu quái đã bị diệt, mọi người an toàn rồi!	Siluman sudah hancur, semua sudah aman!
+Đa tạ đại vương cứu giúp!	Terima kasih telah menyelamatkan kami, Baginda!
+Tiểu thư, hãy đứng lên. Mọi người trong sơn trang đâu cả, sao chỉ còn lại mình nàng?	Bangunlah, Nona. Di mana semua orang dari wisma ini? Kenapa hanya kau yang tersisa?
+Mọi người đã bị yêu quái sát hại, Vân Nga may mắn được đại vương kịp thời cứu giúp. Nếu không chê, xin đại vương hãy cho tiểu nữ theo hầu để báo đáp ân tình.	Semua dibunuh siluman; Van Nga beruntung Baginda datang tepat waktu. Jika tak keberatan, izinkan aku mengabdi pada Baginda untuk membalas budi.
+Ở đây hoang vắng nguy hiểm, một mình nàng ở lại cũng không tốt. Hãy theo cận vệ của ta về Hoa Lư trước, ta về gặp nàng sau.	Tempat ini sepi dan berbahaya; tak baik kau tinggal sendiri. Kembalilah ke Hoa Lu bersama pengawalku dulu, nanti aku menemuimu.
+Tạ ơn đại vương	Terima kasih, Baginda
+Khá lắm!	Bagus sekali!
+Đại vương! quân ta rất cần một tiên phong dũng mãnh như vị tráng sĩ này.	Baginda! Pasukan kita sangat butuh garis depan pemberani seperti pendekar ini.
+Lê Hoàn! ta giao ngươi trọng trách tiên phong tướng quân.	Le Hoan! Kupercayakan padamu tugas jenderal garis depan.
+Đa tạ đại vương. Dù có thịt nát xương tan, tiểu tướng cũng sẽ hoàn thành nhiệm vụ đại vương đã giao.	Terima kasih, Baginda. Walau tubuhku hancur berkeping-keping, akan kutunaikan tugas yang Baginda berikan.
+Võ công của tướng quân thật cao thâm! Bần tăng được mở rộng tầm mắt.	Ilmu bela dirimu sungguh dalam, Jenderal! Mata biksu miskin ini telah terbuka.
+Đại sư đã quá khen, tôi chỉ may mắn phá được trận.	Guru terlalu memuji. Aku cuma beruntung bisa memecahkan formasi itu.
+Lưu tiên sinh, hãy đợi tôi thu xếp rồi cùng đến Hoa Lư.	Tuan Luu, tunggulah selagi aku bersiap, lalu kita ke Hoa Lu bersama.
+Đại sư cứ từ từ thu xếp, tôi sẽ chờ.	Silakan, Guru, aku akan menunggu.
+Tướng quân, hãy dừng tay!	Jenderal, berhenti!
+Xin hỏi tráng sĩ có phải là hào trưởng Nguyễn Ninh?	Bolehkah aku bertanya, pendekar, apakah kau Kepala Suku Nguyen Ninh?
+Các hạ là ai sao lại biết tên ta?	Siapa kalian, dan bagaimana kalian tahu namaku?
+Chúng tôi là người của Vạn Thắng Vương, bấy lâu nghe danh hào trưởng anh dũng hơn người, nay chúng tôi đi ngang qua đây, nếu có mạo phạm xin thứ lỗi.	Kami orang-orang Van Thang Vuong. Sudah lama kami dengar kau kepala suku paling pemberani; kami kebetulan lewat, jadi maafkan jika kami menyinggungmu.
+Vạn Thắng Vương !!! Thật may quá, tôi cũng đang đến Hoa Lư để đầu quân.	Van Thang Vuong!!! Untung sekali, aku sedang dalam perjalanan ke Hoa Lu untuk mendaftar.
+Nếu Hoa Lư có thêm vị tướng anh dũng như hào trưởng thật là phước của muôn dân.	Jika Hoa Lu mendapat jenderal seberani dirimu, Kepala Suku, itu berkah bagi seluruh rakyat.
+Một chút tài mọn, tiên sinh đã quá lời. Xin tiên sinh hãy đưa tôi đi gặp Vạn Thắng Vương.	Cuma bakat kecil, Tuan terlalu berlebihan. Tolong antar aku menemui Van Thang Vuong.
+Hào trưởng, xin mời.	Kepala Suku, silakan duluan.
+Kiếm pháp của tiên sinh rất cao thâm, nếu ở lại nơi này thật uổng phí. Nếu không chê, tôi sẽ tiến cử tiên sinh với Vạn Thắng Vương.	Ilmu pedang Tuan sungguh dalam; tinggal di sini sungguh sia-sia. Jika tak keberatan, akan kurekomendasikan Tuan kepada Van Thang Vuong.
+Đa tạ tướng quân! Được góp chút tài mọn cho Vạn Thắng Vương thật là vinh hạnh cho tôi.	Terima kasih, Jenderal! Mempersembahkan bakat kecilku kepada Van Thang Vuong adalah kehormatan besar bagiku.
+Tiên sinh, làm sao chúng ta ra khỏi vùng này?	Tuan, bagaimana cara keluar dari daerah ini?
+Tướng quân! hãy theo tôi.	Jenderal! Ikuti aku.
+Yêu quái đã diệt xong, mọi người hãy mau trở về chùa.	Siluman sudah hancur; semua, cepat kembali ke kuil.
+Đa tạ Bộ Lĩnh huynh đã giúp đỡ. Hãy đợi tôi thu xếp hành lý xuống núi.	Terima kasih atas bantuanmu, Saudara Bo Linh. Tunggu selagi aku berkemas untuk turun gunung.
+Á......á.....yêu...quái.......mạnh...quá....hự......hự!	Aaah......ah.....para...siluman.......terlalu...kuat....ugh......ugh!
+[intro]	Tahun 944, Ngo Quyen wafat. Iparnya, Duong Tam Kha, merebut takhta, mengangkat diri sebagai raja dan bergelar Duong Binh Vuong.\n\nSetelah Duong Tam Kha merebut takhta keluarga Ngo, para kepala suku di mana-mana menolak tunduk. Mereka bangkit satu per satu dan merebut distrik serta kota. Negeri jatuh dalam kekacauan...\n\nTahun 950, Duong Binh Vuong mengutus putra kedua Ngo Quyen, Ngo Xuong Van, untuk menyerang Thai Binh. Ngo Xuong Van membalikkan pasukannya, menggulingkan Duong Tam Kha dan menjadi raja bergelar Nam Tan Vuong.\n\nTahun 954, Ngo Xuong Van pergi menghukum para tuan pemberontak dan tewas dalam sergapan.\n\nKeponakannya, Ngo Xuong Xi, menggantikannya, tapi kekuasaannya terus melemah dan ia harus mundur mempertahankan Binh Kieu.\n\nPada tahun 966, 12 Panglima Perang telah menguasai negeri:\n\n1. Ngo Xuong Xi menguasai Binh Kieu\n2. Do Canh Thac menguasai Do Dong Giang\n3. Tran Lam menguasai Bo Hai Khau\n4. Kieu Cong Han menguasai Phong Chau\n5. Nguyen Khoan menguasai Tam Dai\n6. Ngo Nhat Khanh menguasai Duong Lam\n7. Ly Khue menguasai Sieu Loai\n8. Nguyen Thu Tiep menguasai Tien Du\n9. La Duong menguasai Te Giang\n10. Nguyen Sieu menguasai Tay Phu Liet\n11. Kieu Thuan menguasai Hoi Ho\n12. Pham Bach Ho menguasai Dang Chau\n\nPada saat yang sama, Dinh Bo Linh bangkit, menghimpun rakyat Hoa Lu dan menunggu saatnya.\n\nUntuk memperluas pangkalannya, Dinh Bo Linh bergabung dengan Tran Lam, yang menikahkannya dengan putrinya.\n\nKemudian, Tran Lam menyerahkan komando pasukan kepadanya. Ia memimpinnya kembali ke Hoa Lu, merekrut jenderal-jenderal berbakat dan berdiri melawan keluarga Ngo dan para panglima perang lain.\n\nPara pahlawan dari segala penjuru datang mengabdi kepadanya. Hari demi hari mereka berlatih, menunggu saat untuk bergerak...
+[ending]	Tahun 968, setelah mengakhiri Anarki 12 Panglima Perang, Dinh Bo Linh naik takhta sebagai Kaisar, bergelar Dai Thang Minh Hoang De - dikenal sebagai Dinh Tien Hoang - dengan ibu kota di Hoa Lu.\n\nTahun 971, Dinh Tien Hoang mulai menetapkan pangkat para pejabat sipil dan militer di istana.\n\nPara biksu juga ikut berperan di istana, atas jasa mereka mengakhiri Anarki 12 Panglima Perang.\n\nDinh Tien Hoang mengangkat para pejabatnya:\n\n- Nguyen Bac sebagai Dinh Quoc Cong\n- Luu Co sebagai Do Ho Phu Si Su\n- Le Hoan sebagai Thap Dao Tuong Quan\n- Ngo Chan Luu sebagai Khuong Viet Dai Su\n- Pham Bach Ho sebagai Than Ve Dai Tuong Quan\n- Pham Cu Lang sebagai Phong Ngu Su Tuong Quan\n- Bui Quang Dung sebagai Tran Dong Tiet Do Su\n- {s} sebagai ......
+Tướng quân hãy làm theo chỉ dẫn của tôi.	Jenderal, ikuti petunjukku.
+Hãy chạm vào thanh kiếm (hoặc bấm phím 5) để chọn	Ketuk pedang untuk memilihnya
+Vuốt xuống hoặc chạm ô bên dưới (phím 8) để đổi chỗ	Geser ke bawah atau ketuk petak di bawahnya untuk menukar
+Để tấn công kẻ thù hãy xếp 3 thanh kiếm các loại sát nhau theo hàng ngang hoặc dọc.	Untuk menyerang musuh, jajarkan 3 pedang jenis apa saja berdampingan, mendatar atau menurun.
+Bây giờ đến lượt ta...	Sekarang giliranku...
+Tướng quân đã bị thương	Kau terluka, Jenderal
+Để hồi phục sinh lực hãy xếp 3 trái tim	Untuk memulihkan HP, jajarkan 3 hati
+Tốt lắm.	Bagus sekali.
+Phía dưới có 1 thanh màu xanh lá tượng trưng cho lương thực, hết lương thực thì sẽ thua cuộc.	Bar hijau di bawah adalah makananmu; kalau makanan habis, kau kalah.
+Để lấy lương thực hãy xếp 3 bánh chưng	Untuk dapat makanan, jajarkan 3 kue beras
+Rất tốt!	Hebat!
+Thanh màu xanh ngọc bích là năng lượng	Bar biru toska adalah energi
+Để lấy năng lượng hãy xếp 3 biểu tượng âm dương	Untuk dapat energi, jajarkan 3 ikon yin-yang
+Cây năng lượng có 3 phần ứng với 3 tuyệt chiêu	Bar energi punya 3 bagian untuk 3 skill-mu
+Tướng quân hãy mở bảng phép thuật bằng cách nhấn phím 'T.Chiêu' ,chọn một loại tuyệt chiêu và bấm 'Dùng'.	Jenderal, buka panel skill, pilih skill dan ketuk 'Pakai'.
+Tuyệt vời!	Luar biasa!
+Tướng quân sẽ được thăng cấp khi thu được nhiều kinh nghiệm chiến đấu, cấp càng cao thì chỉ số tấn công và sinh lực càng cao.	Kau naik level dengan mengumpulkan pengalaman bertempur; makin tinggi levelmu, makin tinggi serangan dan HP-mu.
+Để lấy kinh nghiệm chiến đấu hãy xếp các biểu tượng cuốn sách.	Untuk dapat pengalaman bertempur, jajarkan ikon buku.
+Ngoài ra, để mua các vật phẩm hỗ trợ tại cửa hàng tướng quân phải thu thập các thỏi vàng.	Selain itu, untuk membeli item pendukung di toko, kumpulkan batang emas.
+Nếu xếp 4 biểu tượng trở lên sẽ được đi thêm 1 lượt.	Mencocokkan 4 ikon atau lebih memberimu giliran tambahan.
+Và xếp 5 biểu tượng trở lên sẽ nhận được thêm các vật phẩm hỗ trợ	Dan mencocokkan 5 atau lebih memberimu item pendukung
+Bây giờ hãy thử xếp 5 biểu tượng	Sekarang coba cocokkan 5 ikon
+Tướng quân đã được thưởng 1 vật phẩm, hãy chạm 'Túi' (hoặc bấm phím #) để chọn và sử dụng vật phẩm.	Kau mendapat hadiah item. Ketuk 'Tas' untuk memilih dan memakainya.
+Chú ý, một lượt đi phải ghép ít nhất 3 biểu tượng giống nhau, nếu thực hiện không đúng sẽ bị mất lượt đi và tiêu hao sinh lực. Hãy cẩn trọng.	Hati-hati: tiap langkah harus mencocokkan minimal 3 ikon yang sama. Langkah salah menghabiskan giliran dan sedikit HP. Berhati-hatilah.
+Bạn đã hoàn thành sự kiện. Bạn được thưởng thêm {0}	Event selesai! Hadiah: {0}
+{0} tấn công	{0} serangan
+Hãy chạm vào thanh kiếm để chọn	Ketuk pedang untuk memilihnya
+Vuốt xuống hoặc chạm ô bên dưới để đổi chỗ	Geser ke bawah atau ketuk petak di bawahnya untuk menukar
+Tướng quân hãy chạm vào một tuyệt chiêu ở hàng dưới các chân dung, rồi bấm 'Dùng'.	Jenderal, ketuk skill di baris bawah potret, lalu ketuk 'Pakai'.
+Tướng quân đã được thưởng 1 vật phẩm. Hãy chạm vào vật phẩm ở hàng dưới cùng, rồi bấm 'Dùng'.	Kau mendapat hadiah item. Ketuk di baris bawah, lalu ketuk 'Pakai'.

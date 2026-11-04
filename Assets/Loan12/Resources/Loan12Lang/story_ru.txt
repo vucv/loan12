@@ -1,0 +1,389 @@
+# story: vi	ru
+Lính Tế Giang	Воин Тезянга
+Lính Bình Kiều	Воин Бинькьеу
+Lính Đỗ Động	Воин Додонга
+Tàn Tướng Đỗ Động	Уцелевший полководец Додонга
+Lính Siêu Loại	Воин Сьеулоая
+Phản Tướng	Мятежный полководец
+Lính Cổ Loa	Воин Колоа
+Lính Tam Đái	Воин Тамдая
+Lính Phong Châu	Воин Фонгтяу
+Lính Hồi Hồ	Воин Хойхо
+Sơn Tặc	Разбойник
+Bọ Quái	Жук-чудище
+Quỷ Ong	Пчела-демон
+Thạch Sùng Tinh	Дух-геккон
+Quỷ Lùn	Демон-карлик
+Ma Nhãn	Злое око
+Ngọc Thố Tinh	Дух нефритового кролика
+Ma Điểu	Демоническая птица
+Xà Tinh	Змеиный дух
+Hầu Tinh	Обезьяний дух
+Ấu Quỷ	Юный демон
+Thổ Tinh	Дух земли
+Thạch Ma	Каменный демон
+Linh Miêu	Кошка-дух
+Lão Hầu Tinh	Старый обезьяний дух
+Quái Sư	Лев-чудище
+Mộc Ma	Древесный демон
+Đại Mộc Ma	Великий древесный демон
+Độc Nhãn Trư	Одноглазый кабан
+Quái Cóc	Жаба-чудище
+Sâu Quỷ	Червь-демон
+Trùng Quỷ	Личинка-демон
+Lão Trùng Quỷ	Старая личинка-демон
+Quái Ưng	Ястреб-чудище
+Thằn Lằn Quỷ	Ящер-демон
+Hạc Yêu	Журавль-оборотень
+Độc Ngư	Ядовитая рыба
+Quỷ Cóc	Демоническая жаба
+Ma Cây	Древесный призрак
+Ma Trơi	Блуждающий огонек
+Chồn Tinh	Дух ласки
+Nhện Tinh	Паучий дух
+Ấu Rồng	Юный дракон
+Lính	Воин
+Lính Tiên Du	Воин Тьензу
+{p} tướng quân! Lưu Cơ được giao nhiệm vụ hướng dẫn tướng quân tất cả những quy tắc của chiến trường. Ngài đã sẵn sàng chưa?	Генерал {p}! Мне, Лыу Ко, поручено обучить вас всем законам поля боя. Вы готовы?
+Lưu quân sư, xin chỉ bảo!	Советник Лыу, прошу, наставьте меня!
+Trần Lãm-Trần Minh Công lâm bệnh. Sớm mai Đinh chủ tướng sẽ về Kỳ Bố, sự an toàn của chủ tướng trông cậy vào tướng quân	Господин Чан Лам — Чан Минь Конг — занемог. Завтра утром командующий Динь возвращается в Кибо, и его безопасность в ваших руках, генерал.
+Quân sư yên tâm, mạt tướng sẽ hộ tống Chủ tướng đến Kỳ Bố an toàn.	Не беспокойтесь, советник. Я доставлю командующего в Кибо в целости.
+Thưa Nhạc phụ, con đã về!	Тесть, я вернулся!
+Con về thật đúng lúc, ta có chuyện cần bàn với con đây.	Ты вернулся как раз вовремя, мне нужно с тобой поговорить.
+Nhưng sức khỏe của Nhạc phụ...	Но ваше здоровье, тесть...
+Không sao, con yên tâm!	Пустяки, не тревожься!
+Đất nước loạn lạc! Ta già rồi, những Sứ quân khác đã đều xưng hùng xưng bá một phương. Con cũng cần lộ diện để thiên hạ biết.	В стране смута! Я стар, а прочие шыкуаны уже провозгласили себя владыками своих земель. Тебе тоже пора заявить о себе, чтобы мир тебя узнал.
+Thưa Cha! Bộ Lĩnh nguyện suốt đời phò cha, con nào dám mang tội bất trung bất hiếu.	Отец! Я, Бо Линь, поклялся служить вам всю жизнь. Как могу я совершить грех неверности и непочтительности?
+Nhưng đây là nguyện vọng của ta.	Но такова моя воля.
+Thưa Cha...!	Отец...!
+Hãy nghe lời ta, định ngày lành mà xưng hiệu. 	Послушай меня. Выбери благоприятный день и прими титул.
+Con trẻ xin nghe lời! Giờ con về Hoa Lư lo mọi việc. Cha hãy giữ sức khỏe!	Повинуюсь! Я вернусь в Хоалы и все подготовлю. Берегите здоровье, отец!
+Chủ tướng, các sứ quân khác đều chỉ xưng Công, tức khiêm nhường chỉ nhận là bá chủ 1 phương. Không lẽ chủ tướng cũng xưng hiệu là Đinh Công?	Командующий, прочие шыкуаны зовут себя лишь гунами, скромно правя одной областью. Неужели и вы примете титул гуна Диня?
+Không! Ta không muốn làm Sứ, ta có một ước mơ là giang sơn này được quy về một mối, chấm dứt nạn binh đao liên miên cho muôn dân được an lành 	Нет! Я не хочу быть просто шыкуаном. Я мечтаю объединить эту землю, положить конец бесконечным войнам, чтобы весь народ жил в мире.
+Nếu vậy, chủ tướng nên xưng hiệu Vạn Thắng Vương, đó là tước hiệu của vị Phật có công đức đánh đuổi yêu tà đem an bình cho chúng dân, được Phật Tổ tuyên phong.	Тогда, командующий, примите титул Ван Тханг Выонг — так зовется Будда, изгнавший зло и принесший народу мир, как провозгласил сам Будда.
+Hay lắm! Rất hợp với tâm nguyện của ta. Nhờ Lưu quân sư chuẩn bị tiến hành đại lễ.	Превосходно! Это как раз по моему сердцу. Советник Лыу, прошу, подготовьте великую церемонию.
+Thưa chủ tướng! Lúc này làm lễ xưng Vương e không được nhân hòa.	Командующий! Если короноваться сейчас, можно не завоевать сердца народа.
+Tại sao? Quân sư, xin hãy nói.	Почему? Говорите, советник.
+Loạn sơn tặc Tam Điệp khiến người dân quanh vùng khiếp sợ, sống không yên.	Разбойники Тамдьепа терроризируют окрестный народ, и людям нет покоя.
+Chủ tướng nên cho người đến bình loạn trước, sau xưng Vương thì được lòng dân trong vùng hơn.	Командующий, сперва пошлите людей усмирить разбойников; если провозгласить себя королем после этого, вы завоюете сердца всей области.
+Quân sư nói phải lắm!	Советник совершенно прав!
+Chủ tướng! Hãy để tôi dẹp loạn sơn tặc.	Командующий! Позвольте мне усмирить разбойников.
+Tướng quân, ngài phải giúp tôi chuẩn bị cho đại lễ. Việc dẹp sơn tặc xin nhờ {p} tướng quân.	Генерал, вы должны помочь мне с церемонией. Разбойников я попрошу взять на себя генерала {p}.
+Nếu quân sư đã có sắp xếp rồi thì ta cũng nên theo. {p} tướng quân hãy thận trọng!	Раз советник так решил, быть по сему. Генерал {p}, будьте осторожны!
+Mạt tướng tuân lệnh!	Слушаюсь!
+Quân Hoa Lư chỉ có bấy nhiêu thôi ư? Chúng xem thường ta quá đấy!.	И это все, что смог прислать Хоалы? Они меня явно недооценивают!
+Tấn công! Giết hết bọn rác rưởi cho ta.	В атаку! Перебейте этот сброд!
+Tiến lên, tiêu diệt bọn đạo tặc! 	Вперед, уничтожить разбойников!
+Chủ tướng, giờ lành đã đến. Chúng ta mau tiến hành đại lễ cho kịp.	Командующий, благоприятный час настал. Начнем же церемонию.
+Thiên hạ đại nghĩa, Ngô vương chẳng may mất sớm, loạn thần mải tranh giành vương bá, không lo thiên hạ, để đất nước loạn lạc, chiến tranh liên miên, dân chúng lầm than. Nay thuận thiên ý, Bộ Lĩnh họp quân dẹp loạn, quyết thu giang sơn về một mối. Kẻ nào không phục, thì Vạn Thắng Vương này tiêu diệt không tha!	По великой справедливости небес: государь Нго ушел слишком рано, а вероломные владыки грызутся за власть, не думая о стране, ввергнув ее в смуту и бесконечную войну, а народ — в нищету. Ныне, следуя воле небес, Бо Линь собирает войско, чтобы покончить со смутой и объединить землю. Кто не покорится — того я, Ван Тханг Выонг, уничтожу без пощады!
+Vạn Thắng Vương vạn tuế! Vạn tuế!	Да здравствует Ван Тханг Выонг! Слава!
+Chư tướng, hãy đứng lên!	Полководцы, встаньте!
+Trận đầu, ta muốn đánh một trận thật lừng lẫy để các nơi phải khiếp sợ. Lưu Cơ, ta nên đánh ai trước? 	В первом бою я хочу славной победы, чтобы все затрепетали. Лыу Ко, на кого ударить первым?
+Thưa đại vương, 12 sứ quân đáng gờm nhất là Phạm Bạch Hổ. Ông ta vốn làm tướng dưới thời Ngô Vương lại là người có uy đức. Quân sĩ được huấn luyện rất bài bản, quân thủy bộ uy dũng. Đánh Phạm Bạch Hổ nếu thắng thì uy phong rất lớn, nếu thua quân ta sẽ mất nhuệ khí mà các sứ quân khác cũng xem thường.	Ваше Величество, самый грозный из 12 шыкуанов — Фам Бать Хо. Он был полководцем при государе Нго и пользуется уважением и славой добродетельного мужа. Его воины отлично обучены, его войско и флот могучи. Победа над Фам Бать Хо принесет великую славу, но если мы проиграем, наши воины падут духом, а прочие шыкуаны станут нас презирать.
+Tập trung toàn quân, đánh một trận quyết tử. Thắng được Phạm Bạch Hổ xem như ta có nửa giang sơn. Sợ gì !	Соберем все войско для смертельной битвы. Одолеем Фам Бать Хо — и полстраны наша. Чего бояться!
+Không được! Kế đó là “Được ăn cả ngã về không”. Tốt nhất là ta cứ theo binh pháp cơ bản, đánh kẻ yếu hòa kẻ mạnh, xưa nay vẫn thế. Ta nên hòa với Phạm Bạch Hổ.	Нет! Это план «пан или пропал». Лучше следовать основам военного искусства: бить слабых, мириться с сильными, как было испокон веков. Нам следует заключить мир с Фам Бать Хо.
+Vậy ai sẽ là người đi sang thuyết khách đây?	Кто же тогда отправится его уговаривать?
+Nhiệm vụ thuyết khách, xin để Lưu Cơ!	Позвольте взять переговоры на себя, мне, Лыу Ко!
+Chuyến đi lành ít dữ nhiều, tướng quân {p} hãy đi cùng quân sư. Hai vị hãy cẩn trọng.	Путь опасен. Генерал {p}, отправляйтесь с советником. Будьте оба осторожны.
+Lưu Cơ ở Hoa Lư, xin bái kiến Phạm sứ quân!!	Лыу Ко из Хоалы приветствует господина Фама!
+Lưu tiên sinh, mời an tọa! 	Почтенный Лыу, прошу, садитесь!
+Chẳng hay Lưu quân sư đến xứ Đằng Châu có việc gì?	Что привело советника Лыу в Дангтяу?
+Chủ tướng tôi có thư này gửi Phạm sứ quân, xin sứ quân xem qua.	Мой господин передает это письмо господину Фаму. Прошу, прочтите.
+Hãy đưa thư cho ta...........	Дайте мне письмо...........
+Thư ta đã đọc, chuyện an hòa nghe cũng thuận lòng. Nhưng còn phải xem ý trời ra sao?	Я прочел письмо. Мир звучит заманчиво. Но надо еще узнать, какова воля небес.
+Nghe nói tiên sinh tinh thông Kỳ môn độn giáp. Ông hãy xem ý trời giúp tôi.	Слышал, вы мастер гаданий, почтенный. Прочтите для меня волю небес.
+Mời sứ quân gieo quẻ!	Прошу, бросьте жребий, господин!
+Quẻ của tướng quân là quẻ Thủy Địa Tỷ. Lời quẻ nói rằng “Lục nhị: tỷ chi tử nội, trinh cát”. Xin dịch nghĩa như sau: “ Hai bên thân nhau vì đạo đồng chí hợp, chứ không phải vì kết thân với bề trên để cầu phú quí, như vậy là chính đáng, không thất thân, nên tốt. ”	Ваша гексаграмма — Би, «Единение». Ее строка гласит: «Шестерка вторая: единение изнутри, стойкость — к счастью». Смысл таков: «Две стороны близки, ибо у них общий путь и цель, а не ради угождения сильным в погоне за богатством. Это праведно и честно, а значит, к добру».
+Ý trời đã vậy, Bạch Hổ không dám trái thiên ý. 	Раз такова воля небес, Бать Хо не смеет ей противиться.
+Quân sư hãy mang hòa ước này về Hoa Lư. Từ nay, chúng ta hiếu hòa, không xâm lấn, không gây phiền hà cho nhau, ai giàu nấy hưởng, ai mạnh tự cường, tình hữu hảo láng giềng, trước sau như một. Nếu có kẻ đánh Hoa Lư, Phạm Bạch Hổ sẵn lòng giúp đỡ.	Советник, отвезите этот мирный договор в Хоалы. Отныне мы живем в мире: без набегов, без обид, каждый пользуется своим богатством и копит свою силу, добрые соседи ныне и вовек. Если кто нападет на Хоалы, Фам Бать Хо с радостью поможет.
+Lưu Cơ thay mặt Vạn Thắng Vương vô cùng cảm kích Phạm sứ quân!	От имени Ван Тханг Выонга Лыу Ко глубоко благодарен господину Фаму!
+Ta đã hòa với Phạm Bạch Hổ, vậy gần Hoa Lư nhất chỉ còn Ngô Xương Xí ở Bình Kiều.	Мы заключили мир с Фам Бать Хо, и ближе всех к Хоалы остался лишь Нго Сыонг Ши в Бинькьеу.
+Con thỏ non trốn chạy về miền rừng núi âm u ấy, đáng kể gì!  	Юный кролик, сбежавший в эти мрачные горы, — чего он стоит!
+Nhưng cũng không thể chủ quan, nếu lấy được Bình Kiều thì sẽ an tâm hơn khi tiến quân lên phía bắc.	Но беспечность недопустима. Взяв Бинькьеу, мы сможем спокойнее идти на север.
+Xương Xí thân là cháu Ngô Vương, diệt hắn thì thiên hạ sẽ có nhiều lời không hay. Ta nên chiêu hàng hắn, Nguyễn Bặc ở Hoa Lư phòng thủ. Những người còn lại theo ta.	Сыонг Ши — племянник государя Нго; убьем его — пойдут дурные толки. Лучше склонить его к сдаче. Нгуен Бак остается защищать Хоалы. Остальные — за мной.
+Tuân lệnh Đại Vương.	Слушаюсь, Ваше Величество.
+Ngô Xương Xí! Bình Kiều đã bị bao vây, khôn ngoan hãy mau ra hàng.	Нго Сыонг Ши! Бинькьеу окружен. Если ты мудр, сдавайся немедля.
+Có thực lực thì đến đây, đừng nhiều lời.	Если есть сила — приходи и возьми. Хватит болтать.
+Trước mặt ta có Đỗ Cảnh Thạc và Ngô Nhật Khánh. Quân sư, chúng ta nên đánh ai trước.	Перед нами До Кань Тхак и Нго Нят Кхань. Советник, на кого ударить первым?
+Đỗ Cảnh Thạc là lão tướng dày dặn kinh nghiệm, có thành trì chắc chắn và hào sâu bao quanh, nếu đánh trước chắn chắn lực lượng sẽ hao tổn rất nhiều. Ngô Nhật Khánh thì ở rất xa, chỉ có một đường duy nhất đến đó lại gập ghềnh nguy hiểm. Quân ta đến nơi thì cũng rất mệt mỏi, sức đâu mà đánh trận.	До Кань Тхак — опытный старый полководец, у него крепкая цитадель, окруженная глубокими рвами; напав на него первым, мы наверняка понесем огромные потери. Нго Нят Кхань очень далеко, туда ведет лишь одна дорога, ухабистая и опасная. Наши воины дойдут изможденными, и сил на бой уже не останется.
+Gần không đánh được, Xa cũng không được đánh. Vậy ta ở đây làm gì ?!	Ближнего бить нельзя, дальнего — тоже. Так что мы тут делаем?!
+Haha, tướng quân! Hãy để quân sư nói tiếp xem sao.	Ха-ха, генерал! Дайте советнику договорить.
+Tướng quân, hãy bình tĩnh. Đánh ai trước, ta cũng phải bàn tính kỹ càng.	Успокойтесь, генерал. На кого бы мы ни напали первым, нужно все тщательно продумать.
+Thưa Đại Vương, trong 2 sứ quân thì Ngô Nhật Khánh là yếu nhất, tuy thông minh nhưng còn rất trẻ, ít trải nghiệm và rất bốc đồng. Đánh Khánh trước là thích hợp nhất mà khả năng hao tổn lực lượng ít hơn so với những người khác. Nhưng ta cũng phải đề phòng Đỗ Cảnh Thạc đánh từ phía sau lại. 	Ваше Величество, из двух шыкуанов слабейший — Нго Нят Кхань: умен, но очень молод, неопытен и горяч. Ударить по Кханю первым — лучше всего, и потерь будет меньше. Но надо остерегаться удара До Кань Тхака с тыла.
+Tôi có ý này. Đem quân giả đánh Cảnh Thạc, đến Ô Man chia quân làm 3 đạo. Đạo thứ nhất do tướng Nguyễn Bặc chỉ huy đóng ở Ô Man, đạo thứ 2 do Đại vương chỉ huy đóng trực diện với đồn Bảo Đà. Đạo thứ 3 sẽ do tướng {p} dẫn đầu, bí mật đi đến Đường Lâm bất ngờ đến đánh Ngô Nhật Khánh chắc chắn hắn sẽ trơ tay không kịp.	У меня есть мысль. Сделаем вид, что идем на Кань Тхака, а в Омане разделим войско на три части. Первая, под началом генерала Нгуен Бака, встанет лагерем в Омане; вторая, под началом Вашего Величества, встанет напротив форта Баода. Третья, во главе с генералом {p}, тайно пройдет к Дыонгламу и внезапно ударит по Нго Нят Кханю — он и опомниться не успеет.
+Tốt! Mọi người hãy y theo mà hành động.	Отлично! Действуйте согласно плану.
+Tuân lệnh Đại Vương	Слушаюсь, Ваше Величество
+Bọn ngươi là quân của ai, muốn chết hay sao mà đám đến đây làm loạn?	Чье вы войско? Жить надоело, что пришли сюда буянить?
+Ta là {p}, tướng tiên phong của Vạn Thắng Vương, hôm nay ta đến lấy đầu ngươi!	Я — {p}, полководец авангарда Ван Тханг Выонга. Сегодня твоя голова — моя!
+Láo xược! Ta sẽ phân thây ngươi để làm gương cho kẻ khác.	Наглец! Я разорву тебя на куски в назидание другим.
+Lã Đường ở Tế Giang đã cất binh đánh Phạm Bạch Hổ. Ta đã có hòa ước với Bạch Hổ, nên không thể không giúp, hơn nữa nếu Đằng Châu mất thì Kỳ Bố cũng sẽ khó mà yên. Đại Vương và tướng Nguyễn Bặc đang giữ chân Cảnh Thạc không thể đem quân tiếp ứng. Thời gian cấp bách, tướng quân hãy đem quân ứng cứu trước, tôi sẽ theo sau. Trong 5 ngày chúng ta phải đến đó, nếu không thì Đằng Châu khó mà giữ được.	Ла Дыонг из Тезянга поднял войска против Фам Бать Хо. У нас с Бать Хо договор, и мы обязаны помочь; к тому же, если падет Дангтяу, не будет покоя и Кибо. Его Величество и генерал Нгуен Бак сдерживают Кань Тхака и не могут прислать подкрепление. Время не ждет: генерал, ведите войска на выручку первым, я последую за вами. Мы должны успеть за 5 дней, иначе Дангтяу не удержать.
+Lưu quân sư yên tâm, mạt tướng sẽ đi ngay!	Не беспокойтесь, советник Лыу, выступаю немедля!
+Phạm sứ quân! Có tôi đến trợ giúp đây.	Господин Фам! Подмога здесь!
+Hừ, quân giặc có viện binh, không xong rồi!	Хм, у врага подкрепление. Дело плохо!
+Lão ác tặc, hãy xem đây!	Старый злодей, получай!
+Đa tạ tướng quân giúp đỡ.	Премного благодарю за помощь, генерал.
+Chúng ta là người một nhà, Phạm sứ quân xin đừng khách sáo.	Мы одна семья, господин Фам, не стоит церемоний.
+Sau trận vừa rồi binh lực của Lã Đường đã suy yếu, nhuệ khí không còn. Hơn nữa quân ta lại đông hơn, hào khí ngất trời. Nhân cơ hội này, tiến quân đánh vào Tế Giang chắc chắn sẽ hạ được.	После этой битвы силы Ла Дыонга ослабли, а дух сломлен. Наше войско больше, и боевой дух до небес. Если воспользоваться случаем и выступить на Тезянг, победа будет за нами.
+Lưu quân sư nói phải lắm. Mọi người nghỉ ngơi lấy sức, sớm mai xuất quân.	Советник Лыу прав. Всем отдыхать и набираться сил; выступаем на рассвете.
+Lưu Cơ xin cáo lui.	Лыу Ко откланивается.
+{p} xin cáo lui.	{p} откланивается.
+Lã Đường, ta đến lấy đầu ngươi đây!	Ла Дыонг, твоя голова — моя!
+Với sức ngươi ư? Ảo tưởng ! Sáttttt	С твоей-то силой? Мечтай! Убиииить!
+Phạm sứ quân, Tế Giang đã diệt xong. Chúng tôi phải trở về, Lưu Cơ xin bái biệt!	Господин Фам, Тезянг взят. Нам пора возвращаться; Лыу Ко прощается с вами!
+Lưu quân sư, Vạn Thắng Vương là người nhân nghĩa lại có chí lớn bình định thiên hạ, đúng là phước của muôn dân. Nếu Bạch Hổ được giúp một tay thì thật là vinh hạnh lắm lắm!	Советник Лыу, Ван Тханг Выонг — муж человечный и справедливый, с великим стремлением умиротворить Поднебесную. Поистине благо для народа. Если Бать Хо сможет помочь, это будет великая честь!
+Lưu Cơ sẽ chuyển tâm ý của Phạm sứ quân đến Vạn Thắng Vương. 	Лыу Ко передаст Ван Тханг Выонгу пожелания господина Фама.
+Đa tạ quân sư!	Премного благодарю, советник!
+Nhất định sẽ có ngày chúng ta gặp lại. Phạm sứ quân, hẹn ngày tái ngộ!	Мы непременно встретимся вновь. Господин Фам, до новой встречи!
+Lưu quân sư, hãy bảo trọng!	Советник Лыу, берегите себя!
+Quân sư, ông đến thật đúng lúc, quân địch phòng thủ rất chặt, ta khó mà đánh vào được.	Советник, вы прибыли как раз вовремя. Враг держит оборону очень плотно, нам почти не прорваться.
+Đại vương yên tâm, cơ hội của chúng ta đã đến. Đỗ Cảnh Thạc đang ở đồn Bảo Đà, thành Quèn ở Đỗ Động không người chỉ huy chắc chắn sẽ có sở hở. Đêm mai chủ công, cùng tướng {p} dẫn quân quân vây thành, sau đó đốt lửa thật lớn. Thấy lửa chắc chắn Cảnh Thạc sẽ rút quân từ Bảo Đà về ứng cứu, tình hình ở Bảo Đà lẫn thành Quèn sẽ xảy ra hỗn loạn. Khi đó Đại vương quay đầu tấn công Cảnh Thạc, cùng lúc tướng Nguyễn Bặc và Lê Hoàn tấn công thẳng vào Bảo Đà, ép Cảnh Thạc vào giữa. Bị tấn công bất ngờ địch sẽ hoảng loạn, quân ta ắt sẽ thành công.	Не тревожьтесь, Ваше Величество, наш час настал. До Кань Тхак сейчас в форте Баода, а значит, крепость Куэн в Додонге осталась без командира, и в ней наверняка найдутся слабые места. Завтра ночью вы с генералом {p} окружите крепость и разведете огромный огонь. Увидев пламя, Кань Тхак непременно отведет войска из Баода на помощь, и в Баода и в Куэне начнется хаос. Тогда Ваше Величество развернется и ударит по Кань Тхаку, а генералы Нгуен Бак и Ле Хоан ударят в лоб по Баода, зажав Кань Тхака меж двух огней. Застигнутый врасплох, враг впадет в панику, и успех нам обеспечен.
+Được! Ta sẽ làm theo cách này. Đêm mai sẽ hành động, mọi người hãy chuẩn bị.	Хорошо! Так и сделаем. Выступаем завтра ночью, всем готовиться.
+Thành Quèn bị tấn công, ta phải về cứu ngay, các người hãy ở lại cố thủ.	Крепость Куэн атакована, я должен вернуться и спасти ее. Вы оставайтесь и держите оборону.
+Cảnh Thạc!! Ngươi đã hết đường chạy, muốn sống hãy mau chịu trói.	Кань Тхак!! Тебе некуда бежать. Хочешь жить — сдавайся.
+Hahaha, thật nực cười ! Chỉ một đám trẻ con mà dám cản đường ta ư? Có bản lĩnh thì hãy đến đây.	Ха-ха-ха, смешно! Какие-то дети смеют преградить мне путь? Если хватит духу — нападайте.
+Đại vương! Đỗ Động Giang đã lấy được, nhưng quân lực ta hao tổn khá nặng. Nếu đánh luôn Tây Phù Liệt thì rất khó, tốt nhất nên án binh bất động để cũng cố lực lượng. Mặt khác Đại vương nên đích thân đến Đằng Châu tiếp nhận binh lực của Phạm Bạch Hổ.	Ваше Величество! Додонгзянг наш, но наши силы понесли тяжелые потери. Сразу идти на Тэйфульет будет очень трудно; лучше переждать и восстановить силы. Кроме того, Вашему Величеству стоит лично отправиться в Дангтяу и принять под начало войска Фам Бать Хо.
+Ừm, Bạch Hổ đã có ý về đầu quân, ta cũng nên đến gặp trực tiếp ông ta. Có thêm binh lực của Đằng Châu thì việc diệt Nguyễn Siêu cũng không quá khó khăn. 	Хм, Бать Хо желает примкнуть к нам, так что мне стоит встретиться с ним лично. С войсками Дангтяу одолеть Нгуен Сьеу будет нетрудно.
+Đường xa nguy hiểm, người nên để Lê Hoàn tướng quân đi cùng.	Дорога долгая и опасная; возьмите с собой генерала Ле Хоана.
+Việc ở đây quân sư hãy cố sắp xếp.	Советник, позаботьтесь о делах здесь.
+Đại vương hãy yên tâm!	Не тревожьтесь, Ваше Величество!
+Không xong! Quân sư! Quân sư!! Nguyễn Siêu đã vây thành!	Беда! Советник! Советник!! Нгуен Сьеу окружил крепость!
+Nguyễn Siêu đã đánh Đỗ Động sớm hơn ta dự tính. Binh lực và lương thảo hiện tại chỉ có thể cố thủ chờ viện binh từ Đằng Châu đến. Nguyễn Bặc hãy trấn thủ ở cửa Tây, cửa bắc mọi sự trông cậy vào {p} tướng quân. Năm ngày nữa quân viện binh sẽ đến, mọi người hãy cố gắng thủ thành.	Нгуен Сьеу напал на Додонг раньше, чем я ожидал. С нынешними войсками и припасами мы можем лишь держаться до прихода подкрепления из Дангтяу. Нгуен Бак, охраняйте западные ворота; северные ворота я целиком доверяю генералу {p}. Подкрепление прибудет через пять дней — держите крепость!
+Hôm nay bổn tướng đến đây, ngỡ có thể so kiếm với anh hùng, nào ngờ chỉ thấy lũ chuột chạy nháo nhào trong thành tìm chỗ trốn!	Сегодня я надеялся скрестить мечи с героями, а вижу лишь крыс, что мечутся по крепости в поисках норы!
+Quân sư có biết người dưới kia là ai không?	Советник, вы знаете, кто там внизу?
+Nguyễn Trí Khả, tướng tiên phong của Nguyễn Siêu, dũng mãnh nhưng vô mưu. Tướng quân, hãy ráng nhẫn nhịn.	Нгуен Чи Кха, авангард Нгуен Сьеу: храбр, но безмозгл. Генерал, наберитесь терпения.
+Lũ chuột nghe đây! Thời gian của bổn tướng quân có hạn, trong hôm nay nếu không ra khỏi hang, ta sẽ san bằng nơi này.	Слушайте, крысы! Мое время дорого. Если сегодня не вылезете из норы, я сровняю это место с землей.
+Thật ngoan cố! Để xem lũ chuột các ngươi trốn được bao lâu?	Какое упрямство! Посмотрим, долго ли вы, крысы, просидите в норе!
+Địch tấn công, mọi người vào vị trí!	Враг атакует! Все по местам!
+Âm mưu phá thành Đỗ Động thất bại, Nguyễn Siêu đã đắp thành cao hơn để phòng bị. Muốn tiến quân vào Tây Phù Liệt e rất khó, quân sư có cao kiến gì không?	Замысел взять Додонг провалился, а Нгуен Сьеу поднял стены еще выше. Идти на Тэйфульет будет очень трудно. Советник, есть ли у вас мудрая мысль?
+Tướng quân chớ lo! Nguyễn Siêu thận trọng phòng bị, như vậy trận chiến vừa rồi binh lực của hắn hao tổn khá nặng, hắn sẽ phải đích thân đi cầu cứu viện binh của 2 người anh Nguyễn Thủ Tiệp hoặc Nguyễn Khoan.	Не тревожьтесь, генерал! Нгуен Сьеу осторожничает, а значит, в прошлом бою он понес тяжелые потери. Ему придется лично просить подкрепления у двух братьев — Нгуен Тху Тьепа или Нгуен Кхоана.
+Vậy có nghĩa là Tây Phù Liệt như rắn mất đầu ?!	Значит, Тэйфульет станет как змея без головы?!
+Tướng quân nói rất phải! Đó chính là yếu điểm của Tây Phù Liệt, đêm mai quân ta nổi lửa đồng loạt đốt cửa Đông, cửa Tây, cửa Nam thì chắc binh lính sẽ hoảng loạn.	Именно, генерал! В этом слабость Тэйфульета. Завтра ночью наше войско разом подожжет восточные, западные и южные ворота, и их воины наверняка впадут в панику.
+Được lắm! Ta sẽ hỏi tội chúng những ngày qua.	Превосходно! Я заставлю их заплатить за эти дни.
+Trận này, nhất định phải lấy được thành. Mọi người tranh thủ nghỉ ngơi, đêm mai xuất binh.	В этой битве мы обязаны взять крепость. Всем отдыхать; выступаем завтра ночью.
+Trí Khả! Ta đến hỏi tội ngươi đây!	Чи Кха! Пора тебе ответить за всё!
+Chỉ là con chuột nhắt, bổn tướng sẽ hóa kiếp cho ngươi!	Всего лишь мышонок. Я отправлю тебя в следующую жизнь!
+Tự tin thì cứ đến đây!!!	Раз такой смелый — нападай!!!
+Nguyễn Siêu, chạy đâu cho thoát. Nạp mạng !!	Нгуен Сьеу, тебе не уйти. Готовься к смерти!!
+Muốn cản ta ư !? Mộng tưởng quá đấy !	Хочешь остановить меня!? Мечтай!
+Hay tin Nguyễn Siêu bị diệt. Nguyễn Khoan và Kiều Công Hãn đẵ liên kết, cùng trấn thủ ở vùng Tam Đái. Lý Khuê và Nguyễn Thủ Tiệp thì dựng tuyến phòng thủ ở Siêu Loại, xem ra ta gặp khó khăn lớn rồi.	Узнав о гибели Нгуен Сьеу, Нгуен Кхоан и Кьеу Конг Хан заключили союз и вместе держат область Тамдай. Ли Кхюе и Нгуен Тху Тьеп возвели линию обороны в Сьеулоае. Похоже, у нас серьезные трудности.
+Tướng quân đừng quá lo! Mối liên kết giữa Lý Khuê và Nguyễn Thủ Tiệp ngoài mặt nhìn rất chắc chắn, nhưng thực chất lại rất yếu. Hai người này từ lâu đã có mối hiềm khích với nhau, nên cắt đứt mối liên kết này không phải là khó.	Не тревожьтесь так, генерал! Союз Ли Кхюе и Нгуен Тху Тьепа с виду прочен, но на деле очень слаб. Эти двое давно затаили друг на друга обиду, так что расколоть их союз будет нетрудно.
+Quân sư đã có cao kiến gì không?	Есть ли у вас мудрый план, советник?
+Cao kiến thì không, nhưng tôi có mẹo này. Năm ngày nữa 49 ngày mất của Nguyễn Siêu, chắc chắn Nguyễn Thủ Tiệp sẽ trở về Tiên Du. Cho một nhóm người trà trộn vào thành Siêu Loại, nửa đêm đốt cổng bắc. Bên ngoài ta giả làm quân của Thủ Tiệp tung cờ xí, nổi trống trận, đi từ hướng Tiên Du vào phá thành. Với tính đa nghi, Lý Khuê sẽ tưởng Thủ Tiệp còn nuôi thù cũ, lợi dụng đâm lén sau lưng. Nội chiến xảy ra, việc lấy thành Siêu Loại dễ như trở bàn tay.	Мудрого плана нет, но есть одна хитрость. Через пять дней исполнится 49 дней со смерти Нгуен Сьеу, и Нгуен Тху Тьеп наверняка вернется в Тьензу. Мы пошлем отряд, чтобы проник в Сьеулоай и в полночь поджег северные ворота. Снаружи мы переоденемся в войско Тху Тьепа, поднимем его знамена, ударим в боевые барабаны и нападем со стороны Тьензу. Подозрительный Ли Кхюе решит, что Тху Тьеп помнит старую обиду и бьет ему в спину. Когда они схлестнутся друг с другом, взять Сьеулоай будет проще простого.
+Lưu quân sư, việc trà trộn hãy để tôi cùng các anh em trong doanh trại.	Советник Лыу, позвольте мне с братьями из лагеря проникнуть в крепость.
+Việc này rất nguy hiểm...	Это очень опасно...
+Quân sư hãy yên tâm, tôi có thể lo liệu được.	Не тревожьтесь, советник, я справлюсь.
+Tướng quân hãy cầm theo bí kíp này, nếu gặp nguy hãy mở ra.	Генерал, возьмите этот тайный свиток. Окажетесь в опасности — откройте его.
+Giờ mọi người về nghỉ. Sáng mai, chúng ta sẽ về Tế Giang hội ngộ với Vạn Thắng Vương. Lưu cơ có việc phải làm ở Đỗ Động, tôi sẽ đến sau. 	А теперь всем отдыхать. Завтра утром мы вернемся в Тезянг к Ван Тханг Выонгу. У Лыу Ко есть дела в Додонге, я прибуду позже.
+Quân sư, xin cáo lui.	Советник, позвольте откланяться.
+{p} tướng quân xin dừng bước, tôi có chuyện cần bàn với tướng quân!	Генерал {p}, постойте, мне нужно с вами поговорить!
+Xin quân sư cứ nói!	Говорите, советник!
+Tôi nghe nói, ở vùng Đỗ Động có đám người tự xưng là con cháu Ngô tiên chúa đã khởi binh tiến đánh Hoa Lư, nhưng khi đến Ô Man thì đụng độ với hào trưởng làng ấy là Ngô Phó. Đám người này không diệt sau này sẽ rắc rối, tướng quân hãy cùng tôi đến giúp Ngô Phó một tay. Ngài hãy về chuẩn bị, sớm mai ta sẽ lên đường. 	Я слышал, что в области Додонг шайка, называющая себя потомками покойного государя Нго, подняла войско против Хоалы, но в Омане столкнулась с местным старостой Нго Фо. Если их не уничтожить, позже будут беды. Генерал, отправимтесь вместе на помощь Нго Фо. Идите готовьтесь; выступаем на рассвете.
+Mạt tướng xin cáo lui!	Позвольте откланяться!
+Ngô hào trưởng, quân của Vạn Thắng Vương xin đến giúp một tay!	Староста Нго, войско Ван Тханг Выонга пришло на помощь!
+Thật tốt quá! Quân địch rất hung hãn, tướng quân hãy cẩn trọng!	Как хорошо! Враг очень свиреп, генерал, будьте осторожны!
+Thưa Đại vương, việc ở Tây Phù Liệt tôi đã sắp xếp xong.	Ваше Величество, дела в Тэйфульете улажены.
+Quân sư, Nguyễn Thủ Tiệp đã về Tiên Du. Khi nào ta sẽ đánh vào Siêu Loại?	Советник, Нгуен Тху Тьеп вернулся в Тьензу. Когда ударим по Сьеулоаю?
+Theo thuộc hạ tính thì đêm mai có gió lớn, nội gián của ta sẽ đốt doanh trại địch, khi đó lửa lan rất nhanh. Thấy lửa, địch sẽ náo loạn, lúc đó ta xuất binh đánh vào Siêu Loại	По моим расчетам, завтра ночью будет сильный ветер. Наши лазутчики подожгут вражеский лагерь, и огонь быстро разойдется. Увидев пламя, враг запаникует, и тогда мы двинем войска на Сьеулоай.
+Được, đêm mai ta sẽ lấy Siêu Loại. Mọi người hãy về chuẩn bị.	Хорошо, завтра ночью берем Сьеулоай. Всем готовиться.
+Tuân lệnh Đại vương!	Слушаюсь, Ваше Величество!
+Báo! Báo! Nguyễn Thủ Tiệp đã trở mặt, hắn đang phá cổng bắc.	Донесение! Донесение! Нгуен Тху Тьеп предал нас, он ломает северные ворота.
+Grr...grr...Con cáo già! Giết, giết hết bọn chúng cho ta!!	Грр...грр... Старый лис! Убить, убить их всех!!
+Báoooo!!! Cổng nam, quân của Đinh Bộ Lĩnh đã đánh vào!	Донесениеее!!! Южные ворота — войско Динь Бо Линя ворвалось!
+Nguy rồi !! Mau mau....	Нам конец!! Скорее, скорее...
+Lý Khuê ở đằng kia! Mau đuổi theo.	Ли Кхюе вон там! За ним!
+Mau! Mau chạy vào làng.	Скорее! Бегите в деревню.
+Chạy đâu cho thoát!	Тебе не уйти!
+Thất bại ở Siêu Loại, binh lực của Nguyễn Thủ Tiệp đã mất hơn nữa, quân lính gần như mất hết nhuệ khí. Đây là thời cơ thuận lợi cho ta đánh Tiên Du. Đại vương, hãy cho xuất binh.	После поражения в Сьеулоае Нгуен Тху Тьеп потерял еще больше войск, и боевой дух его воинов почти угас. Лучшего часа для удара по Тьензу не будет. Ваше Величество, прикажите выступать.
+Nguyễn Bặc, ông dẫn quân đánh vào cánh trái Tiên Du. Lê Hoàn thì đánh vào cánh phải. Ta cùng các tướng khác tấn công trực diện. Mọi người, tiến thẳng Tiên Du!	Нгуен Бак, ведите войска на левый фланг Тьензу. Ле Хоан — на правый. Я с остальными генералами ударю в лоб. Все — прямо на Тьензу!
+Thuộc hạ tuân lệnh!	Слушаюсь!
+Báoooo! quân ta đã thất thủ.	Донесениеее! Наши позиции пали.
+Mau, mau theo ta chạy vào núi.	Скорее, за мной в горы.
+Ác tặc, chạy đâu cho thoát!!	Злодей, тебе не уйти!!
+Hừ, không ngờ tên phản tặc Lã Xử Bình gửi thư cầu cứu liên quân Nguyễn Khoan và Kiều Công Hãn, 7 ngày nữa liên quân sẽ đến Cổ Loa.	Хм, кто бы мог подумать, что предатель Лы Шы Бинь напишет о помощи союзным войскам Нгуен Кхоана и Кьеу Конг Хана. Через 7 дней союзники будут у Колоа.
+Nếu liên quân hợp sức với Lữ Xử Bình, ta sẽ khó tiến vào Cổ Loa. Quân sư, ông có kế sách gì không?	Если союзники объединятся с Лы Шы Бинем, нам будет трудно войти в Колоа. Советник, есть ли у вас план?
+Hiện tại quân lực ở Cổ Loa còn yếu. Trong 5 ngày, phải đánh vào Cổ Loa trước khi liên quân đến. Nếu không quân ta không còn cơ hội nào khác.	Сейчас силы Колоа еще слабы. За 5 дней мы должны ударить по Колоа до прихода союзников, иначе другого шанса не будет.
+{p}, Nguyễn Bặc, Lê Hoàn đi tiên phong, cấp tốc đến Cổ Loa. Mọi người hãy cố gắng!	{p}, Нгуен Бак и Ле Хоан идут в авангарде, спешно к Колоа. Все — не жалейте сил!
+Địch đã tấn công. Chủ công, hãy ra lệnh!	Враг атакует. Господин, отдайте приказ!
+Hãy ráng cầm cự chờ liên quân đến. Cung thủ, bắn tên!	Держитесь до прихода союзников. Лучники, огонь!
+Chủ công, quân ta đã thất thủ...	Господин, наши позиции пали...
+Grrr....Mau, rút về Tam Đái.	Гррр.... Скорее, отходим в Тамдай.
+Lữ Xử Bình, ngươi hết đường rồi! Sáaatttt	Лы Шы Бинь, твой путь окончен! Убиииить
+Biết quân ta đã chiếm Cổ Loa, liên quân rút về cố thủ ở Tam Đái. Bây giờ đánh từ Cổ Loa vào Tam Đái rất khó, mọi người có kế sách gì không? 	Узнав, что мы взяли Колоа, союзники отошли и заперлись в Тамдае. Наступать из Колоа на Тамдай теперь очень трудно. У кого есть план?
+Nếu Tam Đái đánh khó thì ta sẽ đánh Phong Châu trước.	Раз Тамдай трудно взять, сперва ударим по Фонгтяу.
+Phong Châu?	Фонгтяу?
+Kiều Công Hãn đem quân xuống Tam Đái, chắc chắn Phong Châu sẽ sơ hở. Ta cho 2 đạo quân tiến từ 2 hướng Đường Lâm và Cổ Loa đánh vào Tam Đái. Mặt khác cho đạo quân khác đi vòng đường núi đánh Phong Châu, Kiều Công Hãn chắc chắn rút quân về. Lúc đó chỉ còn mình Nguyễn Khoan ở Tam Đái, ta sẽ đánh vào được.	Кьеу Конг Хан увел войска в Тамдай, так что Фонгтяу наверняка оголен. Мы пошлем два войска на Тамдай — из Дыонглама и из Колоа. А другое войско горными тропами обойдет и ударит по Фонгтяу, и Кьеу Конг Хан непременно отведет войска назад. Тогда в Тамдае останется один Нгуен Кхоан, и мы прорвемся.
+Nguyễn Bặc, {p} tướng quân hãy đem quân đến Đường Lâm, Lê Hoàn dẫn quân đến Phong Châu, các tướng còn lại hãy theo ta đánh thẳng từ Cổ Loa đến. Mọi người về nghỉ ngơi, sớm mai ta sẽ xuất quân!	Нгуен Бак и генерал {p}, ведите войска к Дыонгламу; Ле Хоан ведет войска к Фонгтяу; остальные генералы — за мной прямо из Колоа. Всем отдыхать, выступаем на рассвете!
+Báoooo!! Thưa chủ công, Phong Châu bị tấn công!	Донесениеее!! Господин, Фонгтяу атакован!
+Mau! Về hỗ trợ Phong Châu.	Скорее! Назад, на помощь Фонгтяу.
+Báoooo!! Tướng giặc Lê Hoàn đã chiếm Phong Châu!	Донесениеее!! Вражеский генерал Ле Хоан взял Фонгтяу!
+Grr..grr...Ta đã quá sơ ý! Lui về Hồi Hồ tạm lánh một thời gian.	Грр..грр... Я был слишком беспечен! Отходим в Хойхо и затаимся на время.
+Đinh Bộ Lĩnh! Ta thề sẽ lấy lại Phong Châu.	Динь Бо Линь! Клянусь, я верну Фонгтяу.
+Nguyễn Khoan, có gan ra đây so cao thấp với ta!	Нгуен Кхоан, если хватит духу — выходи и сразись со мной!
+Ngông cuồng! Hôm nay ta sẽ lấy đầu bọn bay để trả thù của Nguyễn Siêu và Thủ Tiệp.	Наглец! Сегодня я возьму ваши головы, чтобы отомстить за Нгуен Сьеу и Тху Тьепа.
+Đại vương, hạ tướng cũ của Trần lão công đã làm phản, hắn đem quân đánh vào Kỳ Bố. Mọi người trong thành đang cố thủ, lương thực chỉ đủ dùng trong vài ngày, ta phải đem quân đến giải vây ngay!	Ваше Величество, бывший офицер старого господина Чана поднял мятеж и напал на Кибо. Все в крепости держат оборону, но еды хватит лишь на несколько дней. Нужно немедля послать войска и снять осаду!
+{p} tướng quân, khanh hãy đem quân trở về ứng cứu Kỳ Bố. Nhưng người còn lại theo ta đánh vào Phong Châu.	Генерал {p}, ведите войска назад, на выручку Кибо. Остальные — за мной на Фонгтяу.
+Phản tặc, có ta đến đây, hãy mau chịu tội!	Изменник, я здесь. Ответь за свои преступления!
+Sức ngươi còn kém lắm, chưa đủ đâu!	Ты еще слишком слаб, этого мало!
+Chớ ngông cuồng! Hãy xem đây !!!	Не зазнавайся! Получай!!!
+Thất bại ở Phong Châu và Tam Đái, Kiều Công Hãn đã rút quân thẳng về Hồi Hồ nương nhờ em hắn là Kiều Thuận. Địa hình ở đó hiểm trở, rất khó tấn công, quân sư có kế sách gì không?	Разбитый у Фонгтяу и Тамдая, Кьеу Конг Хан отступил прямо в Хойхо под крыло своего брата Кьеу Тхуана. Местность там суровая, атаковать очень трудно. Советник, есть ли у вас план?
+Thưa Đại Vương, thực ra địa hình hiểm trở chính là yếu điểm của Hồi Hồ!	Ваше Величество, именно суровая местность и есть слабость Хойхо!
+Yếu điểm!? Ta chưa hiểu, quân sư hãy nói rõ.	Слабость!? Не понимаю. Советник, объясните.
+Thành Hồi Hồ xung quanh là vùng đồi núi hiểm trở, ta không nên tấn công, chia quân ra đóng ở  nơi hiểm yếu ngăn chặn nguồn nước. Vây phục ba ngày, tự chúng sẽ mò ra, lúc ấy ta sẽ diệt được.	Крепость Хойхо окружена суровыми холмами. Нападать не нужно: разделим войска, займем ключевые проходы и перекроем им воду. Через три дня осады они сами выползут наружу, и тогда мы их уничтожим.
+Quân sư nói phải lắm, 12 sứ quân nay chỉ còn anh em họ Kiều, ta cũng không cần phải vội. Chúng ta hãy theo kế của quân sư.	Советник прав. Из 12 шыкуанов остались лишь братья Кьеу, так что спешить незачем. Последуем плану советника.
+Tuân lệnh đại vương!	Слушаюсь, Ваше Величество!
+Huynh trưởng, lương thực trong thành chẳng còn bao nhiêu. Nếu tiếp tục ở trong thành e rằng sẽ không qua khỏi.	Брат, еды в крепости почти не осталось. Если останемся внутри, боюсь, нам не выжить.
+Với tình thế này, nên tìm cách thoát thân trước.	В таком положении надо сперва искать путь к бегству.
+Địch đã bao vây 4 hướng, ta chạy đi đâu bây giờ.	Враг окружил нас с четырех сторон. Куда нам бежать?
+Ở cửa Bắc, lực lượng của địch yếu nhất. Nếu phá được vòng vây, thì chạy lên phương Bắc xin nhà Tống cứu viện.	У северных ворот враг слабее всего. Если прорвемся, бежим на север и попросим помощи у двора Сун.
+Đệ sẽ chọn ra 1 đám quân tinh nhuệ, đêm nay chúng ta phá vòng vây.	Я отберу отряд лучших воинов; этой ночью прорываем осаду.
+Kiều tặc, chạy đâu cho thoát!	Предатели Кьеу, вам не уйти!
+Thưa đại vương, loạn 12 sứ quân đã dẹp xong, bây giờ đã đến lúc xưng đế.	Ваше Величество, Смута 12 шыкуанов окончена. Пришло время провозгласить себя императором.
+Ta đang suy nghĩ, không biết chọn nơi nào làm kinh đô. Quân sư có cao kiến gì không?	Я все думаю, но не знаю, где основать столицу. Советник, есть ли мысли?
+Người Hoa Lư nên chọn Hoa Lư làm gốc, hơn nữa Hoa Lư là nơi núi non trùng điệp. Núi trong sông, sông trong núi. Căn cứ thủy bộ thuận tiện, sau lưng là rừng, trước mặt là đồng bằng, xa nữa là biển cả. Nơi đây non sông thì tráng lệ, phong thủy hài hòa nên Ấu Rồng thường xuất hiện gây nhiều khó khăn cho bá tánh.	Сыны Хоалы должны держаться своих корней. К тому же Хоалы окружен горами, ряд за рядом: горы среди рек, реки среди гор. Удобная опора на суше и на воде, за спиной лес, впереди равнина, а дальше — море. Земля здесь величественна, а фэншуй гармоничен, потому здесь часто появляется Юный дракон и приносит народу беды.
+Vậy ta diệt Ấu Rồng trước, sau dựng kinh đô. Mọi người về nghỉ ngơi, sớm mai trở về Hoa Lư.	Тогда сперва убьем Юного дракона, а затем построим столицу. Всем отдыхать; завтра утром возвращаемся в Хоалы.
+Tuân lệnh đại vương.	Слушаюсь, Ваше Величество.
+Ta, một người nhỏ bé, nhờ hưng binh mà dẹp loạn, thống nhất đất nước. Nay thuận ý muôn dân, ta xưng hiệu Đinh Tiên Hoàng đế, đặt quốc hiệu là Đại Cồ Việt.	Я, человек скромный, поднял войско, чтобы покончить со смутой и объединить страну. Ныне, следуя воле народа, я принимаю титул императора Динь Тьен Хоанга и нарекаю нашу страну Дайковьет.
+Đinh Tiên Hoàng vạn tuế vạn tuế!	Да здравствует Динь Тьен Хоанг, слава, слава!
+Tướng quân rất thông minh, những gì tôi truyền đạt ngài tiếp nhận khá nhanh.	Генерал, вы очень сообразительны: схватываете мои уроки на лету.
+Chỉ là chút tài mọn, quân sư đã quá khen!	Это лишь скромный талант, советник, вы мне льстите!
+Sơn tặc đã diệt xong. Doanh trại rất thích hợp làm Đấu Trường luyện tập cho quân ta. Các ngươi hãy ở lại canh giữ, còn lại mau theo ta trở về Hoa Lư.	Разбойники уничтожены. Этот лагерь отлично подойдет как Арена для тренировки наших войск. Вы остаетесь охранять его; остальные — за мной в Хоалы.
+Giặc quá mạnh, ta thua rồi. Mau mở cửa thành...đầu hàng	Враг слишком силен, мы проиграли. Открывайте ворота... мы сдаемся.
+Nhật Khánh, bây giờ ngươi muốn sống hay muốn chết?	Нят Кхань, ты хочешь жить или умереть?
+Họ Ngô ta đã dựng nên đất nước, chẳng may gặp kẻ gian thần hãm hại mà mất nước. Ta nuôi chí khôi phục cơ nghiệp tiên chúa, nghiệp lớn không thành, muốn chém thì chém, chớ nhiều lời !!!	Род Нго основал эту страну, но коварные сановники погубили нас, и мы лишились царства. Я стремился возродить наследие предков; раз великое дело не удалось — руби, если хочешь, и избавь меня от речей!!!
+Được, ta sẽ cho ngươi toại nguyện.	Хорошо, я исполню твое желание.
+Tướng quân dừng tay!!!	Генерал, остановитесь!!!
+Lưu Cơ đến muộn, mong Ngô công tử bỏ qua. Tiên phụ công tử với Vạn Thắng Vương là bạn từ thời tóc còn để chỏm, chiến tranh loạn lạc 2 người đi 2 hướng khác nhau. Hay biết công tử là con cố nhân, nay người muốn gặp công tử ở Hoa Lư. Xin mời công tử lên xe ngựa.	Лыу Ко опоздал, прошу простить, юный господин. Ваш покойный отец и Ван Тханг Выонг дружили с детства, но война развела их разными путями. Узнав, что вы сын его старого друга, он желает встретиться с вами в Хоалы. Прошу, юный господин, садитесь в повозку.
+Hmm ... ... ...	Хмм ... ... ...
+Rút quân !!!!	Отступаем!!!!
+Đừng đuổi theo! Hãy lui vào thành.	Не преследовать! Отходим в крепость.
+Lã Đường đã chết!! Kẻ nào đầu hàng sẽ được tha.	Ла Дыонг мертв!! Кто сдастся — будет пощажен.
+Thắng thua đã rõ. Trói hắn lại.	Исход ясен. Связать его.
+Muốn bắt ta ư? Còn lâu.....Yaaaa........hự....hự... !!	Хочешь взять меня в плен? Не дождешься.....Яаааа........ух....ух... !!
+Hắn đã tự sát, hãy mau lấy thành.	Он покончил с собой. Скорее, берите крепость.
+Viện binh đã đến, mọi người phản công !!!	Подкрепление здесь, все в контратаку!!!
+Không xong rồi! Hãy mau rút về tiền đồn chờ lệnh Hữu công Nguyễn Siêu.	Дело плохо! Отходим к заставе и ждем приказа господина Нгуен Сьеу.
+Trí Khả đã bị diệt, hãy mau tìm Nguyễn Siêu!	Чи Кха убит, скорее ищите Нгуен Сьеу!
+Nguyễn Siêu đã chạy hướng Đông Phù Liệt sang Tiên Du, tướng quân hãy mau đuổi theo, đừng để hắn qua sông!	Нгуен Сьеу бежал через Донгфульет к Тьензу. Генерал, скорее в погоню, не дайте ему переправиться через реку!
+Thủ cấp của Nguyễn Siêu trong tay ta, muốn sống thì mau buông vũ khí đầu hàng! 	Голова Нгуен Сьеу у меня в руках. Хотите жить — бросайте оружие и сдавайтесь!
+Đa tạ tướng quân đã trợ giúp!	Премного благодарю за помощь, генерал!
+Ngô hào trưởng, đừng khách sáo. Đây là nhiệm vụ của tôi. Phản loạn đã diệt xong, nay tôi phải về Tế Giang để giúp Vạn Thắng Vương. Ngô hào trưởng, hẹn ngày tái ngộ!	Староста Нго, не стоит благодарности. Это мой долг. Мятежники уничтожены; теперь мне нужно вернуться в Тезянг на помощь Ван Тханг Выонгу. Староста Нго, до новой встречи!
+Tướng quân, bảo trọng!	Генерал, берегите себя!
+Nói !! Muốn sống thì cho ta biết Lý Khuê đang ở đâu !?	Говори!! Хочешь жить — скажи, где Ли Кхюе!?
+Lý sứ quân đã chạy về hướng Dương Xá, xin tướng quân tha mạng.	Господин Ли бежал к Зыонгша. Пощадите, генерал.
+Nhốt tên này lại, chờ ta về xử lý. Những người còn lại mau đuổi theo Lý Khuê!	Запереть его до моего возвращения. Остальные — в погоню за Ли Кхюе!
+Chém! Đem đầu Lý Khuê về.	Руби! Принесите голову Ли Кхюе.
+Còn kẻ nào chán sống thì hãy bước lên !	Кому еще жить надоело — шаг вперед!
+Á.....! Chết ta......	Ааа.....! Мне конец......
+Nguyễn Khoan đã bỏ mạng. Kẻ nào đầu hàng sẽ được tha chết!	Нгуен Кхоан погиб. Кто сдастся — сохранит жизнь!
+Phản tặc đã diệt, hãy mau đến Phong Châu.	Изменник уничтожен, скорее в Фонгтяу.
+Anh em họ Kiều đã diệt xong, mau báo cho Vạn Thắng Vương.	Братья Кьеу уничтожены, немедля доложите Ван Тханг Выонгу.
+Không cho chúng chạy! Đuổi theo giết sạch, không chừa một mống.	Не дайте им уйти! В погоню, перебить всех до единого.
+Thực lực quá kém, đúng là không biết trời cao.	Как слабо — ты и впрямь не знаешь, как высоко небо.
+Chết nè !!!	Умри!!!
+A....a....a......	А....а....а......
+Chống đối ta chỉ có chết, hãy nhìn đó mà làm gương.	Против меня идти — значит умереть; пусть это будет вам уроком.
+Áaaaaa ... a.......a.......	Аааааа ... а.......а.......
+{p} tướng quân đã bại trận. Rút quân!!!	Поражение генерала {p}. Отступаем!!!
+Tiến lên!! Ai bắt được Đinh Bộ Lĩnh dù sống hay đã chết sẽ được phong quan.	Вперед!! Кто схватит Динь Бо Линя, живым или мертвым, получит чин.
+Thành đã thất thủ, mọi người mau rút về Hoa Lư, ta sẽ ở lại cản đường. Mau!! Không được chần chừ. Vạn Thắng Vương, xin thứ lỗi cho thuộc hạ.	Крепость пала. Все отходите в Хоалы, я останусь и прегражу путь. Скорее!! Не медлите. Ван Тханг Выонг, простите вашего слугу.
+Còn tên nào muốn được hóa kiếp thì bước lên !	Кто еще хочет переродиться — шаг вперед!
+Hừm, làm mất thời gian!	Хм, пустая трата времени!
+{p} tướng quân đã bại trận!! Rút quân.	Поражение генерала {p}!! Отступаем.
+Tướng giặc đã chết! Đuổi theo giết sạch bọn chúng.	Вражеский генерал мертв! В погоню, перебить их всех.
+Chỉ có bấy nhiêu mà cũng dám cản đường ta sao !?	И это всё, а вы смеете вставать у меня на пути!?
+Sức chỉ thế mà đòi lấy đầu ta ư !?	С такой силой ты хочешь мою голову!?
+Mau ra khỏi thành!	Скорее, прочь из крепости!
+Siêu, Tiệp! Ta đã báo thù cho hai đệ.	Сьеу, Тьеп! Я отомстил за вас, братья мои.
+Muốn cản ta ư? Chưa đủ sức!	Хочешь остановить меня? Силенок не хватит!
+Qua ngọn núi phía trước ta sẽ an toàn. Đinh Bộ Lĩnh hãy chờ đó, nhất định ta sẽ quay về lấy lại tất cả.	За той горой впереди мы будем в безопасности. Динь Бо Линь, ну погоди, я непременно вернусь и заберу всё назад.
+Giúp chúng tôi với !!!	Помогите нам!!!
+Sơn trang phía trước bị yêu quái tấn công, tướng quân hãy mau đến giúp!	На горную усадьбу впереди напали чудища. Генерал, скорее на помощь!
+Các ngươi là ai? Sao dám cản đường !	Кто вы такие? Как смеете преграждать мне путь!
+Thưa tướng quân! Tiểu dân xin gặp Vạn Thắng Vương.	Генерал! Этот скромный простолюдин просит встречи с Ван Тханг Выонгом.
+Ngươi là ai?  Gặp ta có việc gì ?	Кто ты? Чего тебе от меня нужно?
+Thưa đại vương, tiểu dân họ Lê tên Hoàn, người ở Bảo Thái, từ lâu đã nghe danh đức của đại vương, nên muốn phò giúp.	Ваше Величество, меня зовут Ле Хоан, я из Баотхая. Я давно наслышан о вашей добродетели и хочу служить вам.
+Hãy đến Hoa Lư, chờ ta đánh trận về rồi tính.	Ступай в Хоалы и жди, пока я вернусь из похода.
+Tiểu dân chờ người rất lâu rồi, hãy cho tôi một cơ hội.	Я ждал вас очень долго, прошу, дайте мне шанс.
+Vậy ngươi hãy thử đấu với {p} xem sao.	Тогда попробуй сразиться с {p}, и посмотрим.
+Mô phật! Bần tăng tiếp đón chậm trễ, Lưu tiên sinh hãy lượng thứ.	Амитабха! Простите бедного монаха за поздний прием, почтенный Лыу.
+Đại sư đừng khách sáo! Hôm nay tôi đến đây có việc cần ngài giúp đỡ. 	Не стоит церемоний, наставник! Я пришел сегодня, потому что мне нужна ваша помощь.
+Lưu quân sư, nếu giúp được bần tăng sẽ cố hết sức.	Советник Лыу, если смогу помочь, бедный монах сделает все, что в его силах.
+Không dấu gì đại sư, binh lực của Vạn Thắng Vương tuy uy dũng nhưng vẫn còn thiếu người chỉ dẫn. Đại sư, xin hãy giúp một tay.	Не стану скрывать, наставник: войско Ван Тханг Выонга могуче, но ему не хватает наставления. Наставник, прошу, помогите.
+Việc này hơi khó cho bần tăng vì chùa có quy định nếu thỉnh sư xuống núi phải phá được La Hán Trận. Trước nay chưa có ai phá được trận này, Lưu tiên sinh e rằng tôi khó mà giúp ông.	Это непросто для меня: по уставу храма монах, приглашенный спуститься с горы, должен сперва разбить Строй Архатов. Никто еще его не разбивал, так что, боюсь, я едва ли смогу вам помочь, почтенный Лыу.
+Lưu tiên sinh, hãy để tiểu tướng thử phá La Hán Trận	Почтенный Лыу, позвольте мне попробовать разбить Строй Архатов.
+Tướng quân, hãy trận trọng.	Генерал, будьте осторожны.
+Các ngươi là ai, hãy mau tránh đường cho ta.	Кто вы такие? Прочь с дороги.
+Láo xược, tiếp chiêu!	Наглец! Получай!
+Chẳng hay tướng quân ghé đến tệ xá có việc cần gì chỉ bảo?	Что привело генерала в мое скромное жилище? Чем могу помочь?
+Ta đi lạc đến đây, xin hỏi cao danh quý tánh của tiên sinh.	Дорога сама завела меня сюда. Могу ли узнать ваше почтенное имя?
+Tại hạ họ Bùi tên Quang Dũng...	Меня зовут Буй Куанг Зунг...
+Người là Bùi Quang Dũng !? Nghe danh đã lâu, hôm nay có cơ hội gặp gỡ, xin tiên sinh chỉ giáo.	Вы — Буй Куанг Зунг!? Давно слышу о вас. Раз уж мы встретились, прошу, наставьте меня.
+Thật không dám. Tướng quân! xin mời.	Не смею. Генерал! Прошу вас.
+Tướng quân, xin hãy dừng bước.	Генерал, прошу, постойте.
+Công tử là....	Юный господин, вы...
+Cự Lạng là cháu nội của Phạm Lệnh Công – Đông giáp tướng quân dưới thời Ngô tiên chúa, chẳng may chiến tranh loạn lạc nên lui về đây chờ minh chủ. Hay tin quân của Vạn Thắng Vương đi qua, chúng tôi dẫn mọi người đến giúp một tay.	Я, Кы Ланг, внук господина Фам Лень Конга — генерала Восточной брони при покойном государе Нго. Увы, война и смута заставили нас удалиться сюда в ожидании мудрого правителя. Прослышав, что мимо идет войско Ван Тханг Выонга, мы привели своих людей на помощь.
+Vạn Thắng Vương đang ở ngoài chiến trường, công tử hãy theo tôi.	Ван Тханг Выонг на поле боя; юный господин, следуйте за мной.
+Chân Lưu đệ! Giang sơn đại loạn rất cần người tài, đệ hãy xuống núi giúp ta một phen.	Брат Тян Лыу! Страна в великой смуте, и ей нужны таланты. Спустись с горы и помоги мне.
+Bộ Lĩnh huynh, đám yêu quái ở Tam Đảo đang lộng hành. Nếu đệ theo huynh xuống núi e chùa sẽ khó mà giữ được.	Брат Бо Линь, чудища Тамдао бесчинствуют. Если я спущусь с горы вслед за тобой, боюсь, храм некому будет защитить.
+Đệ yên tâm, ta sẽ giúp đệ diệt đám yêu đó.	Не тревожься, брат, я помогу тебе уничтожить этих чудищ.
+Yêu quái đã bị diệt, mọi người an toàn rồi!	Чудища уничтожены, все в безопасности!
+Đa tạ đại vương cứu giúp!	Благодарим за спасение, Ваше Величество!
+Tiểu thư, hãy đứng lên. Mọi người trong sơn trang đâu cả, sao chỉ còn lại mình nàng?	Встаньте, юная госпожа. Где все обитатели усадьбы? Почему осталась лишь вы одна?
+Mọi người đã bị yêu quái sát hại, Vân Nga may mắn được đại vương kịp thời cứu giúp. Nếu không chê, xin đại vương hãy cho tiểu nữ theo hầu để báo đáp ân tình.	Всех погубили чудища; Ван Нге посчастливилось, что Ваше Величество подоспели вовремя. Если не откажете, позвольте мне служить вам, чтобы отплатить за доброту.
+Ở đây hoang vắng nguy hiểm, một mình nàng ở lại cũng không tốt. Hãy theo cận vệ của ta về Hoa Lư trước, ta về gặp nàng sau.	Здесь пустынно и опасно; не годится вам оставаться одной. Отправляйтесь в Хоалы с моей стражей, а я навещу вас позже.
+Tạ ơn đại vương	Благодарю, Ваше Величество
+Khá lắm!	Отлично!
+Đại vương! quân ta rất cần một tiên phong dũng mãnh như vị tráng sĩ này.	Ваше Величество! Нашему войску очень нужен такой храбрый авангард, как этот воин.
+Lê Hoàn! ta giao ngươi trọng trách tiên phong tướng quân.	Ле Хоан! Вверяю тебе долг полководца авангарда.
+Đa tạ đại vương. Dù có thịt nát xương tan, tiểu tướng cũng sẽ hoàn thành nhiệm vụ đại vương đã giao.	Благодарю, Ваше Величество. Пусть даже тело мое разорвут на куски — я исполню порученное вами.
+Võ công của tướng quân thật cao thâm! Bần tăng được mở rộng tầm mắt.	Ваше боевое мастерство поистине глубоко, генерал! Глаза бедного монаха открылись.
+Đại sư đã quá khen, tôi chỉ may mắn phá được trận.	Вы мне льстите, наставник. Мне просто повезло разбить строй.
+Lưu tiên sinh, hãy đợi tôi thu xếp rồi cùng đến Hoa Lư.	Почтенный Лыу, подождите, пока я все улажу, и мы вместе отправимся в Хоалы.
+Đại sư cứ từ từ thu xếp, tôi sẽ chờ.	Не спешите, наставник, я подожду.
+Tướng quân, hãy dừng tay!	Генерал, остановитесь!
+Xin hỏi tráng sĩ có phải là hào trưởng Nguyễn Ninh?	Позвольте спросить, воин, не вы ли староста Нгуен Нинь?
+Các hạ là ai sao lại biết tên ta?	Кто вы и откуда знаете мое имя?
+Chúng tôi là người của Vạn Thắng Vương, bấy lâu nghe danh hào trưởng anh dũng hơn người, nay chúng tôi đi ngang qua đây, nếu có mạo phạm xin thứ lỗi.	Мы люди Ван Тханг Выонга. Давно слышали, что вы храбрейший из старост; мы проходили мимо, так что простите, если чем обидели.
+Vạn Thắng Vương !!! Thật may quá, tôi cũng đang đến Hoa Lư để đầu quân.	Ван Тханг Выонг!!! Какая удача, я как раз шел в Хоалы, чтобы вступить в войско.
+Nếu Hoa Lư có thêm vị tướng anh dũng như hào trưởng thật là phước của muôn dân.	Если у Хоалы появится полководец столь же храбрый, как вы, староста, это будет благом для всего народа.
+Một chút tài mọn, tiên sinh đã quá lời. Xin tiên sinh hãy đưa tôi đi gặp Vạn Thắng Vương.	Лишь скромный талант, почтенный, вы преувеличиваете. Прошу, отведите меня к Ван Тханг Выонгу.
+Hào trưởng, xin mời.	Староста, прошу вас.
+Kiếm pháp của tiên sinh rất cao thâm, nếu ở lại nơi này thật uổng phí. Nếu không chê, tôi sẽ tiến cử tiên sinh với Vạn Thắng Vương.	Ваше искусство меча поистине глубоко, почтенный; оставаться здесь — пустая трата. Если не откажете, я представлю вас Ван Тханг Выонгу.
+Đa tạ tướng quân! Được góp chút tài mọn cho Vạn Thắng Vương thật là vinh hạnh cho tôi.	Благодарю, генерал! Отдать свой скромный талант Ван Тханг Выонгу — великая честь для меня.
+Tiên sinh, làm sao chúng ta ra khỏi vùng này?	Почтенный, как нам выбраться отсюда?
+Tướng quân! hãy theo tôi.	Генерал! Следуйте за мной.
+Yêu quái đã diệt xong, mọi người hãy mau trở về chùa.	Чудища уничтожены; все скорее возвращайтесь в храм.
+Đa tạ Bộ Lĩnh huynh đã giúp đỡ. Hãy đợi tôi thu xếp hành lý xuống núi.	Спасибо за помощь, брат Бо Линь. Подожди, пока я соберусь в дорогу с горы.
+Á......á.....yêu...quái.......mạnh...quá....hự......hự!	Ааа......а.....чудища.......слишком...сильны....ух......ух!
+[intro]	В 944 году умер Нго Куен. Его шурин Зыонг Там Кха захватил трон, провозгласил себя королем и принял титул Зыонг Бинь Выонг.\n\nКогда Зыонг Там Кха захватил трон рода Нго, местные вожди повсюду отказались покориться. Один за другим они восставали и захватывали уезды и города. Страна погрузилась в смуту...\n\nВ 950 году Зыонг Бинь Выонг послал второго сына Нго Куена, Нго Сыонг Вана, в поход на Тхайбинь. Нго Сыонг Ван развернул войско, сверг Зыонг Там Кха и стал королем под именем Нам Тан Выонг.\n\nВ 954 году Нго Сыонг Ван отправился усмирять мятежных владык и погиб в засаде.\n\nЕму наследовал племянник, Нго Сыонг Ши, но его власть все слабела, и ему пришлось отступить и держать Бинькьеу.\n\nК 966 году землю поделили 12 шыкуанов:\n\n1. Нго Сыонг Ши — Бинькьеу\n2. До Кань Тхак — Додонгзянг\n3. Чан Лам — Бохайкхау\n4. Кьеу Конг Хан — Фонгтяу\n5. Нгуен Кхоан — Тамдай\n6. Нго Нят Кхань — Дыонглам\n7. Ли Кхюе — Сьеулоай\n8. Нгуен Тху Тьеп — Тьензу\n9. Ла Дыонг — Тезянг\n10. Нгуен Сьеу — Тэйфульет\n11. Кьеу Тхуан — Хойхо\n12. Фам Бать Хо — Дангтяу\n\nВ то же время поднялся Динь Бо Линь: он собрал народ Хоалы и ждал своего часа.\n\nЧтобы расширить свою опору, Динь Бо Линь примкнул к Чан Ламу, и тот отдал ему в жены свою дочь.\n\nПозже Чан Лам вверил ему командование войском. Он увел войско обратно в Хоалы, собрал талантливых полководцев и выступил против рода Нго и прочих шыкуанов.\n\nГерои отовсюду стекались к нему на службу. День за днем они упражнялись, ожидая часа выступить в поход...
+[ending]	В 968 году, положив конец Смуте 12 шыкуанов, Динь Бо Линь взошел на трон как император, приняв титул Дай Тханг Минь Хоанг Де — известный как Динь Тьен Хоанг, — со столицей в Хоалы.\n\nВ 971 году Динь Тьен Хоанг начал устанавливать ранги гражданских и военных чинов при дворе.\n\nВ делах двора участвовали и монахи — за их вклад в прекращение Смуты 12 шыкуанов.\n\nДинь Тьен Хоанг назначил своих сановников:\n\n- Нгуен Бак — Динь Куок Конг\n- Лыу Ко — До Хо Фу Ши Шы\n- Ле Хоан — Тхап Дао Тыонг Куан\n- Нго Тян Лыу — Кхуонг Вьет Дай Шы\n- Фам Бать Хо — Тхан Ве Дай Тыонг Куан\n- Фам Кы Ланг — Фонг Нгы Шы Тыонг Куан\n- Буй Куанг Зунг — Чан Донг Тьет До Шы\n- {s} — ......
+Tướng quân hãy làm theo chỉ dẫn của tôi.	Генерал, следуйте моим указаниям.
+Hãy chạm vào thanh kiếm (hoặc bấm phím 5) để chọn	Нажмите на меч, чтобы выбрать его
+Vuốt xuống hoặc chạm ô bên dưới (phím 8) để đổi chỗ	Смахните вниз или нажмите на клетку ниже, чтобы поменять местами
+Để tấn công kẻ thù hãy xếp 3 thanh kiếm các loại sát nhau theo hàng ngang hoặc dọc.	Чтобы атаковать врага, соберите в ряд 3 любых меча, по горизонтали или вертикали.
+Bây giờ đến lượt ta...	А теперь мой ход...
+Tướng quân đã bị thương	Генерал, вы ранены
+Để hồi phục sinh lực hãy xếp 3 trái tim	Чтобы восстановить HP, соберите в ряд 3 сердца
+Tốt lắm.	Очень хорошо.
+Phía dưới có 1 thanh màu xanh lá tượng trưng cho lương thực, hết lương thực thì sẽ thua cuộc.	Зеленая полоса внизу — ваша провизия; кончится провизия — поражение.
+Để lấy lương thực hãy xếp 3 bánh chưng	Чтобы получить провизию, соберите в ряд 3 рисовых пирога
+Rất tốt!	Превосходно!
+Thanh màu xanh ngọc bích là năng lượng	Бирюзовая полоса — это энергия
+Để lấy năng lượng hãy xếp 3 biểu tượng âm dương	Чтобы получить энергию, соберите в ряд 3 значка инь-ян
+Cây năng lượng có 3 phần ứng với 3 tuyệt chiêu	Полоса энергии разделена на 3 части — под ваши 3 умения
+Tướng quân hãy mở bảng phép thuật bằng cách nhấn phím 'T.Chiêu' ,chọn một loại tuyệt chiêu và bấm 'Dùng'.	Генерал, откройте панель умений, выберите умение и нажмите «Применить».
+Tuyệt vời!	Чудесно!
+Tướng quân sẽ được thăng cấp khi thu được nhiều kinh nghiệm chiến đấu, cấp càng cao thì chỉ số tấn công và sinh lực càng cao.	Вы повышаете уровень, набирая боевой опыт; чем выше уровень, тем выше атака и HP.
+Để lấy kinh nghiệm chiến đấu hãy xếp các biểu tượng cuốn sách.	Чтобы получить боевой опыт, собирайте в ряд значки книг.
+Ngoài ra, để mua các vật phẩm hỗ trợ tại cửa hàng tướng quân phải thu thập các thỏi vàng.	А чтобы покупать вспомогательные предметы в магазине, собирайте слитки золота.
+Nếu xếp 4 biểu tượng trở lên sẽ được đi thêm 1 lượt.	Ряд из 4 и более значков дает лишний ход.
+Và xếp 5 biểu tượng trở lên sẽ nhận được thêm các vật phẩm hỗ trợ	А ряд из 5 и более приносит вспомогательные предметы
+Bây giờ hãy thử xếp 5 biểu tượng	Теперь попробуйте собрать ряд из 5 значков
+Tướng quân đã được thưởng 1 vật phẩm, hãy chạm 'Túi' (hoặc bấm phím #) để chọn và sử dụng vật phẩm.	Вы получили предмет в награду. Нажмите «Сумка», чтобы выбрать и использовать его.
+Chú ý, một lượt đi phải ghép ít nhất 3 biểu tượng giống nhau, nếu thực hiện không đúng sẽ bị mất lượt đi và tiêu hao sinh lực. Hãy cẩn trọng.	Внимание: каждый ход должен собрать не меньше 3 одинаковых значков. Неверный ход стоит хода и части HP. Будьте осторожны.
+Bạn đã hoàn thành sự kiện. Bạn được thưởng thêm {0}	Событие пройдено! Награда: {0}
+{0} tấn công	{0} к атаке
+Hãy chạm vào thanh kiếm để chọn	Нажмите на меч, чтобы выбрать его
+Vuốt xuống hoặc chạm ô bên dưới để đổi chỗ	Смахните вниз или нажмите на клетку ниже, чтобы поменять местами
+Tướng quân hãy chạm vào một tuyệt chiêu ở hàng dưới các chân dung, rồi bấm 'Dùng'.	Генерал, нажмите на умение в ряду под портретами, затем нажмите «Применить».
+Tướng quân đã được thưởng 1 vật phẩm. Hãy chạm vào vật phẩm ở hàng dưới cùng, rồi bấm 'Dùng'.	Вы получили предмет в награду. Нажмите на него в нижнем ряду, затем нажмите «Применить».
