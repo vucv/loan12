@@ -58,6 +58,10 @@ namespace Loan12.UnityPort
             }
             J2MEGameHost host = J2MEGameHost.Instance;
             bool close = false;
+            if (langOpen)
+            {
+                Kit.Modal(new Rect(0, 0, 0, 0)); // the language box is open: nothing underneath takes taps
+            }
 
             // scrolling
             float room = Bottom - Top;
@@ -130,10 +134,10 @@ namespace Loan12.UnityPort
             {
                 Divider(y);
             }
-            // language of the interface: each tap the next one (Tiếng Việt, English, 日本語, 한국어)
+            // language of the interface and the story: a box with the 4 of them
             if (RowTap(104, y, "Ngôn ngữ", "Language", true))
             {
-                Loc.Current = (Lang) (((int) Loc.Current + 1) % Loc.Names.Length);
+                langOpen = true;
             }
             RightText(y, Loc.Names[(int) Loc.Current]);
             y += Row + 2 + 6;
@@ -314,13 +318,130 @@ namespace Loan12.UnityPort
                     TouchUi.RedButton(resume, "TIẾP TỤC", true, Kit.Down(602));
                 }
             }
-            if (Kit.Back())
+            if (langOpen)
+            {
+                Kit.Unblock();
+                LangBox();
+            }
+            else if (Kit.Back())
             {
                 close = true;
                 e.Use();
             }
             Kit.DrawToast(Kit.H - 60);
             return !close;
+        }
+
+        bool langOpen;
+
+        // flags drawn in a few pixels (no images needed): red / gold star, stripes, red sun, red-blue circle
+        static readonly string[] LangSub = {"Vietnamese", "English", "Japanese", "Korean"};
+
+        void LangBox()
+        {
+            float k = TouchUi.K;
+            const float rowH = 30;
+            float h = 30 + Loc.Names.Length * (rowH + 4) + 6;
+            bool close;
+            Rect box = MapUi.Box(0, Kit.H, h, out close, 700);
+            float y = TouchUi.V(box.position).y;
+            for (int i = 0; i < Loc.Names.Length; i++)
+            {
+                Rect r = TouchUi.R(17, y + 28 + i * (rowH + 4), 146, rowH);
+                bool on = (int) Loc.Current == i;
+                if (Kit.Tap(710 + i, r))
+                {
+                    if (!on)
+                    {
+                        Loc.Current = (Lang) i;
+                        Kit.Toast(Loc.Names[i]);
+                    }
+                    langOpen = false;
+                }
+                if (Kit.Paint)
+                {
+                    Kit.Box(r, on ? TouchUi.Hex(0x5A3A10) : (Kit.Down(710 + i) ? TouchUi.Hex(0x4A2A48) : TouchUi.Hex(0x2E1A2C)));
+                    if (on)
+                    {
+                        TouchUi.Fill(new Rect(r.x, r.y, r.width, k), Kit.Gold);
+                    }
+                    Flag(i, new Rect(r.x + 7 * k, r.y + 8 * k, 21 * k, 14 * k));
+                    // the language's own name, then its English name (both left as they are)
+                    TouchUi.Label(new Rect(r.x + 34 * k, r.y + 4 * k, 90 * k, 12 * k), Loc.Names[i], 7.5f, TextAnchor.UpperLeft, Color.white, true);
+                    TouchUi.Label(new Rect(r.x + 34 * k, r.y + 17 * k, 90 * k, 9 * k), LangSub[i], 5.5f, TextAnchor.UpperLeft, Kit.Muted);
+                    if (on)
+                    {
+                        Kit.Check(r.xMax - 14 * k, r.center.y, Kit.Gold);
+                    }
+                }
+            }
+            if (Kit.Paint)
+            {
+                TouchUi.PixelText("NGÔN NGỮ", 1, box.center.x, TouchUi.R(0, y + 14, 0, 0).y, 1, true);
+            }
+            if (close || Kit.Back())
+            {
+                langOpen = false;
+                if (Kit.E.type == EventType.KeyDown)
+                {
+                    Kit.E.Use();
+                }
+            }
+            Kit.Unblock();
+        }
+
+        static void Flag(int i, Rect r)
+        {
+            TouchUi.Fill(new Rect(r.x - 1, r.y - 1, r.width + 2, r.height + 2), TouchUi.Hex(0x120810));
+            switch (i)
+            {
+                case 0: // red, gold star
+                    TouchUi.Fill(r, TouchUi.Hex(0xDA251D));
+                    Star(r.center, r.height * 0.32f, TouchUi.Hex(0xFFDD00));
+                    break;
+                case 1: // blue with a red-white cross
+                    TouchUi.Fill(r, TouchUi.Hex(0x1F3C88));
+                    TouchUi.Fill(new Rect(r.x, r.center.y - r.height * 0.18f, r.width, r.height * 0.36f), Color.white);
+                    TouchUi.Fill(new Rect(r.center.x - r.height * 0.18f, r.y, r.height * 0.36f, r.height), Color.white);
+                    TouchUi.Fill(new Rect(r.x, r.center.y - r.height * 0.09f, r.width, r.height * 0.18f), TouchUi.Hex(0xC8102E));
+                    TouchUi.Fill(new Rect(r.center.x - r.height * 0.09f, r.y, r.height * 0.18f, r.height), TouchUi.Hex(0xC8102E));
+                    break;
+                case 2: // white, red sun
+                    TouchUi.Fill(r, Color.white);
+                    Disc(r.center, r.height * 0.3f, TouchUi.Hex(0xBC002D), TouchUi.Hex(0xBC002D));
+                    break;
+                default: // white, red-blue circle
+                    TouchUi.Fill(r, Color.white);
+                    Disc(r.center, r.height * 0.3f, TouchUi.Hex(0xCD2E3A), TouchUi.Hex(0x0047A0));
+                    break;
+            }
+        }
+
+        /// <summary>A disc of rows; the top half in one color, the bottom half in another.</summary>
+        static void Disc(Vector2 c, float rad, Color upper, Color lower)
+        {
+            float step = Mathf.Max(1, TouchUi.K * 0.5f);
+            for (float dy = -rad; dy < rad; dy += step)
+            {
+                float hw = Mathf.Sqrt(Mathf.Max(0, rad * rad - (dy + step / 2) * (dy + step / 2)));
+                TouchUi.Fill(new Rect(c.x - hw, c.y + dy, hw * 2, step), dy < 0 ? upper : lower);
+            }
+        }
+
+        static void Star(Vector2 c, float rad, Color col)
+        {
+            // a small 5-point star as a disc and five spikes (good enough at this size)
+            Disc(c, rad * 0.45f, col, col);
+            for (int i = 0; i < 5; i++)
+            {
+                float a = -Mathf.PI / 2 + i * Mathf.PI * 2 / 5;
+                for (float t = 0.3f; t < 1f; t += 0.15f)
+                {
+                    float s = rad * 0.28f * (1 - t);
+                    Vector2 p = c + new Vector2(Mathf.Cos(a), Mathf.Sin(a)) * rad * t;
+                    TouchUi.Fill(new Rect(p.x - s, p.y - s, 2 * s, 2 * s), col);
+                }
+            }
         }
 
         // ---------------------------------------------------------------------------------- rows

@@ -28,6 +28,7 @@ OK	OK	OK	OK
 Tiếng Việt	Tiếng Việt	Tiếng Việt	Tiếng Việt
 English	English	English	English
 Ngôn ngữ	Language	言語	언어
+NGÔN NGỮ	LANGUAGE	言語	언어
 vàng	gold	ゴールド	골드
 VÀNG	GOLD	ゴールド	골드
 {0} vàng	{0} gold	{0} ゴールド	{0} 골드
