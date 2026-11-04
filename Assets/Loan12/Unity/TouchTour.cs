@@ -286,6 +286,15 @@ namespace Loan12.UnityPort
                 {
                     continue;
                 }
+                if (C_PortScreens.hasDialog() && !C_PortUi.resultView())
+                {
+                    // a box of the game's own (no touch view for it): kept as found, then its first choice
+                    yield return new WaitForSeconds(0.6f);
+                    yield return Once("H", "game_dialog");
+                    C_PortUi.request(C_PortUi.f_DIALOG_KEY, 0);
+                    yield return new WaitForSeconds(1f);
+                    continue;
+                }
                 if (C_PortUi.battleView())
                 {
                     fought = true;
@@ -302,52 +311,57 @@ namespace Loan12.UnityPort
                     {
                         continue;
                     }
-                    else
+                    if (training)
                     {
-                        if (!seen.Contains("Hbattle"))
+                        // the tutorial battle: after its first lessons, skip it the way the game offers
+                        // (pause -> "Bạn có muốn bỏ qua phần luyện tập không?" -> Có)
+                        C_PortUi.request(C_PortUi.f_PAUSE, 0);
+                        yield return Until(() => C_PortScreens.hasDialog(), 5);
+                        yield return Once("H", "tutorial_skip_dialog");
+                        C_PortUi.request(C_PortUi.f_DIALOG_KEY, 0);
+                        yield return new WaitForSeconds(2f);
+                        continue;
+                    }
+                    if (!seen.Contains("Hbattle"))
+                    {
+                        yield return new WaitForSeconds(1f);
+                        yield return Once("H", "battle");
+                        TouchBattleView bv = J2MEGameHost.View<TouchBattleView>();
+                        if (bv != null)
                         {
-                            yield return new WaitForSeconds(1f);
-                            yield return Once("H", "battle");
-                            TouchBattleView bv = J2MEGameHost.View<TouchBattleView>();
-                            if (bv != null)
-                            {
-                                bv.popupKind = 1;
-                                bv.popupArg = 0;
-                                yield return Shot("H", "battle_skill_popup");
-                                bv.popupKind = 2;
-                                bv.popupArg = 0;
-                                yield return Shot("H", "battle_item_popup");
-                                bv.popupKind = 0;
-                            }
+                            bv.popupKind = 1;
+                            bv.popupArg = 0;
+                            yield return Shot("H", "battle_skill_popup");
+                            bv.popupKind = 0;
                         }
-                        if (lose || !paused)
+                    }
+                    if (lose || !paused)
+                    {
+                        paused = true;
+                        C_PortUi.request(C_PortUi.f_PAUSE, 0);
+                        yield return Until(() => C_PortUi.pauseView(), 5);
+                        yield return Once("H", "pause");
+                        TouchPauseView pv = J2MEGameHost.View<TouchPauseView>();
+                        if (pv != null)
                         {
-                            paused = true;
-                            C_PortUi.request(C_PortUi.f_PAUSE, 0);
-                            yield return Until(() => C_PortUi.pauseView(), 5);
-                            yield return Once("H", "pause");
-                            TouchPauseView pv = J2MEGameHost.View<TouchPauseView>();
-                            if (pv != null)
-                            {
-                                pv.confirm = true;
-                                yield return Once("H", "pause_leave_confirm");
-                                pv.confirm = false;
-                            }
-                            if (lose)
-                            {
-                                C_PortScreens.request(C_PortScreens.f_FORFEIT, 0);
-                                yield return new WaitForSeconds(2f);
-                                continue;
-                            }
-                            C_PortUi.request(C_PortUi.f_PAUSE_RESUME, 0);
-                            yield return new WaitForSeconds(1f);
+                            pv.confirm = true;
+                            yield return Once("H", "pause_leave_confirm");
+                            pv.confirm = false;
+                        }
+                        if (lose)
+                        {
+                            C_PortScreens.request(C_PortScreens.f_FORFEIT, 0);
+                            yield return new WaitForSeconds(2f);
                             continue;
                         }
-                        C_bn enemy = C_PortUi.fighter(1);
-                        if (enemy != null)
-                        {
-                            enemy.m(1);
-                        }
+                        C_PortUi.request(C_PortUi.f_PAUSE_RESUME, 0);
+                        yield return new WaitForSeconds(1f);
+                        continue;
+                    }
+                    C_bn enemy = C_PortUi.fighter(1);
+                    if (enemy != null)
+                    {
+                        enemy.m(1);
                     }
                     if (Time.realtimeSinceStartup - lastMove > 1.2f)
                     {
