@@ -2,7 +2,8 @@
 
 | File | Nhánh | Commit | Nội dung |
 |---|---|---|---|
-| `android/Loan12-ui-touch-102864e.apk` | `ui-touch` | `102864e` | Hộp quà: rớt trong trận, nhiệm vụ 1-3 hộp (cuối 5), màn mở hộp + quảng cáo x2; luật Đấu trường trong hộp cảm ứng (mới nhất) |
+| `android/Loan12-ui-touch-f42a9a1.apk` | `ui-touch` | `f42a9a1` | Màn mở hộp quà không còn tắt rồi mở lại sau tổng kết, hiện dần lên (mới nhất) |
+| `android/Loan12-ui-touch-102864e.apk` | `ui-touch` | `102864e` | Hộp quà: rớt trong trận, nhiệm vụ 1-3 hộp (cuối 5), màn mở hộp + quảng cáo x2; luật Đấu trường trong hộp cảm ứng |
 | `android/Loan12-ui-touch-ded78db.apk` | `ui-touch` | `ded78db` | Ngọc Ấn chọn ở màn Chuẩn bị (không tự dùng); rớt đồ giảm nhẹ; tab Túi đồ icon rương; màn tải liền một lần |
 | `android/Loan12-ui-touch-f9b3e8a.apk` | `ui-touch` | `f9b3e8a` | Bản đồ: trả lại hiệu ứng 2 kiếm chém khi gặp địch (trên bản đồ cảm ứng) |
 | `android/Loan12-ui-touch-52967ce.apk` | `ui-touch` | `52967ce` | Trước Chuẩn bị: bản đồ giữ nguyên khi hộp trận mở (không còn nháy hình khác tỉ lệ); nền hội thoại trùng bản đồ |
