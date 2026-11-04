@@ -1,0 +1,612 @@
+# vi	en	ja	ko  (see Assets/Loan12/Unity/Loc.cs)
+# ---- common
+Đóng	Fechar
+ĐÓNG	FECHAR
+Có	Sim
+Không	Não
+Hủy	Cancelar
+Xong	Pronto
+Dừng	Parar
+Thoát	Sair
+THOÁT	SAIR
+Ở lại	Ficar
+Ở LẠI	FICAR
+Để sau	Depois
+Bỏ qua	Pular
+BỎ QUA	PULAR
+TIẾP TỤC	CONTINUAR
+Chạm để tiếp tục	Toque para continuar
+Chạm để bỏ qua	Toque para pular
+Chạm để xem	Toque para ver
+Chạm ra ngoài để đóng	Toque fora para fechar
+chạm để tiếp	toque para continuar
+BẬT	LIGADO
+TẮT	DESLIG.
+MỚI	NOVO
+VIP	VIP
+OK	OK
+Tiếng Việt	Tiếng Việt
+English	English
+Ngôn ngữ	Idioma
+NGÔN NGỮ	IDIOMA
+vàng	ouro
+VÀNG	OURO
+{0} vàng	{0} de ouro
++{0} vàng	+{0} de ouro
+{0} máu	{0} HP
++{0} máu	+{0} HP
+-{0} máu	-{0} HP
++{0} năng lượng	+{0} de energia
+{0} KN	{0} XP
++{0} KN	+{0} XP
++{0} tấn công	+{0} de ataque
+{0} cái	{0} un.
+Có {0}	Tem {0}
+Còn {0}	Restam {0}
+Cần {0}	Precisa de {0}
+Đang có {0}	Tem {0}
+Đang có	Possui
+Chưa có	Não possui
+Đang có: {0}	Possui: {0}
+Cấp {0}	Nv {0}
+cấp {0}	nv {0}
+Lên cấp {0}!	Subiu de nível! Nv {0}
+Hệ {0}	{0}
+HỆ {0}	{0}
+Hệ {0} · Cấp {1}	{0} · Nv {1}
+Hỏa	Fogo
+Lôi	Raio
+Thủy	Água
+HỎA	FOGO
+LÔI	RAIO
+THỦY	ÁGUA
+Máu	HP
+Máu {0} · Tấn công {1}	HP {0} · Ataque {1}
+Tấn công	Ataque
+Kinh nghiệm	Experiência
+Ô {0}	Espaço {0}
+Mức {0}	Nível {0}
+MỨC {0}	NÍVEL {0}
+{0} phút trước	há {0} min
+{0} ngày trước	há {0} dias
+vừa xong	agora mesmo
+hôm nay	hoje
+hôm qua	ontem
+???	???
+# ---- items, skills, heroes
+Long Thần Kiếm	Espada do Dragão
+Nhân Sâm	Ginseng
+Ngân Lượng	Taéis de Prata
+Quỷ Diện Giáp	Armadura Demoníaca
+Bình Thuốc	Poção
+Ngọc Ấn	Selo de Jade
+Bình Hồi Mạng	Frasco da Vida
+Long Thần Kiếm x3	Espada do Dragão x3
+Nhân Sâm x3	Ginseng x3
+{0} x{1}	{0} x{1}
+Nhân đôi sức mạnh tấn công trong một lượt.	Dobra seu ataque por um turno.
+Nhân đôi lượng máu cơ bản của võ tướng. Chỉ sử dụng một lần trong một trận đánh.	Dobra o HP base do herói. Uma vez por batalha.
+Nhận thêm được 1000 vàng.	Dá 1000 de ouro extra.
+Ngăn cản 3/4 lực tấn công của kẻ thù trong một lượt	Bloqueia 3/4 do ataque inimigo por um turno
+Hồi phục ngay lập tức 10% sinh lực. Chỉ sử dụng một lần trong một lượt.	Recupera 10% do HP na hora. Uma vez por turno.
+Được ưu tiên đi trước nếu sở hữu ngọc ấn. Tự động kích hoạt khi bắt đầu trận đánh.	Com o Selo de Jade você joga primeiro. Usado sozinho no início da batalha.
+{0} (+{1} máu)	{0} (+{1} HP)
+Hồi đầy mạng chơi ({0} mạng). Dùng ngoài trận, ở túi đồ hoặc khi hết mạng.	Recarrega suas vidas ({0} vidas). Use fora da batalha, pela bolsa ou quando ficar sem vidas.
+Dùng trong 1 lượt	Dura 1 turno
+1 lần mỗi trận	Uma vez por batalha
+1 lần mỗi lượt	Uma vez por turno
+Dùng ngoài trận	Use fora da batalha
+Tự dùng khi bắt đầu trận	Usado no início da batalha
+Tấn công lượt đó: {0} thành {1}	Ataque no turno: {0} para {1}
+Máu trận đó: {0} thành {1}	HP na batalha: {0} para {1}
+Chặn 3/4 sát thương của lượt địch	Bloqueia 3/4 do dano do turno inimigo
+Với máu {0} của bạn: +{1} máu	Com seus {0} HP: +{1} HP
+Bạn luôn được đi trước	Você sempre joga primeiro
+Quả Cầu Lửa	Bola de Fogo
+Mưa Thiên Thạch	Chuva de Meteoros
+Lửa Địa Ngục	Fogo Infernal
+Chuỗi Sét	Raio em Cadeia
+Khiên Sét	Escudo de Raio
+Sấm Sét	Raio Fulminante
+Mũi Tên Băng	Flecha de Gelo
+Cam Lộ Thủy	Orvalho Curativo
+Băng Phong	Tempestade de Gelo
+Gây sát thương kẻ thù, lực sát thương bằng {0}, phá hủy tức thì 1 vùng diện tích 3x3ô trên bàn cờ.	Causa {0} de dano ao inimigo e destrói na hora uma área 3x3 do tabuleiro.
+Gây sát thương kẻ thù, lực sát thương bằng {0}, phá hủy tức thì từ 3 đến 5 vùng diện tích 2x2ô trên bàn cờ.	Causa {0} de dano ao inimigo e destrói na hora de 3 a 5 áreas 2x2 do tabuleiro.
+Gây sát thương kẻ thù, lực sát thương bằng {0}, phá hủy tức thì 2 vùng diện tích 4x4ô trên bàn cờ.	Causa {0} de dano ao inimigo e destrói na hora duas áreas 4x4 do tabuleiro.
+Gây sát thương kẻ thù, lực sát thương bằng {0}, phá hủy tức thì từ 4 đến 8 ô trên bàn cờ.	Causa {0} de dano ao inimigo e destrói na hora de 4 a 8 peças do tabuleiro.
+Hóa giải tất cả các đòn tấn công của kẻ thù. Tác dụng trong 6 lượt.	Anula todos os ataques do inimigo. Dura 6 turnos.
+Gây sát thương kẻ thù, lực sát thương bằng {0}, phá hủy tức thì từ 3 đến 6 vùng diện tích 3x3ô trên bàn cờ.	Causa {0} de dano ao inimigo e destrói na hora de 3 a 6 áreas 3x3 do tabuleiro.
+Gây sát thương kẻ thù, lực sát thương bằng {0}, triệt tiêu một lượng nhỏ năng lượng của kẻ thù.	Causa {0} de dano ao inimigo e drena um pouco da energia dele.
+Phục hồi 20% sinh lực cho bản thân. Phá hủy tất cả trái tim trên bàn cờ và hấp thụ sinh lực của trái tim bị hủy.	Recupera 20% do seu HP. Destrói todos os corações do tabuleiro e absorve o HP deles.
+Đóng băng kẻ thù trong 2 lượt, gây sát thương kẻ thù, lực sát thương bằng {0}, triệt tiêu một lượng lớn năng lượng của kẻ thù.	Congela o inimigo por 2 turnos, causa {0} de dano e drena muita energia dele.
+Một hào kiệt mang trong người sức mạnh hủy diệt của Lửa.	Um herói que carrega o poder destrutivo do Fogo.
+Đại đệ tử của Lôi Thần, có khả năng điều khiển sấm sét để tấn công kẻ thù hoặc bảo vệ bản thân.	Primeiro discípulo do Deus do Trovão, que comanda raios para atacar inimigos ou se proteger.
+Mang trong người dòng máu của Thủy Thần, có thể tự hồi phục tổn thương và đóng băng kẻ thù.	Tem o sangue do Deus das Águas: cura as próprias feridas e congela os inimigos.
+Đệ tử của Hỏa Phụng Tiên, sở hữu sức mạnh hủy diệt của Lửa.	Discípulo do Imortal Fênix de Fogo, dono do poder destrutivo do Fogo.
+Nữ hào kiệt xuất chúng, có quyền năng gọi sấm sét để tấn công kẻ thù hoặc tự bảo vệ bản thân.	Uma heroína notável que invoca raios para atacar inimigos ou se proteger.
+Hậu duệ của Bắc Hải Long Vương, có thể tự trị thương hoặc làm ngưng tụ hơi nước để đóng băng kẻ thù.	Descendente do Rei Dragão do Mar do Norte: cura as próprias feridas ou condensa névoa para congelar inimigos.
+# ---- bag
+Sát thương diện rộng mạnh nhất: Lửa Địa Ngục phá 2 vùng 4x4	Maior dano em área: Fogo Infernal varre duas áreas 4x4
+Phá nhiều ô một lúc, dễ tạo chuỗi nổ liên hoàn	Limpa muitas peças de uma vez, combos em cadeia fáceis
+Hạ gục nhanh, hợp với lối đánh tấn công	Nocautes rápidos, feito para jogar no ataque
+Khiên Sét hóa giải mọi đòn tấn công trong 6 lượt	Escudo de Raio bloqueia todo ataque por 6 turnos
+Chuỗi Sét chỉ cần 1 ô năng lượng, phá ô rải rác	Raio em Cadeia custa só 1 de energia e quebra peças soltas
+Cân bằng giữa công và thủ, an toàn khi gặp địch mạnh	Ataque e defesa equilibrados, seguro contra inimigos fortes
+Tự hồi máu: Cam Lộ Thủy hồi 20% và hút máu từ trái tim	Autocura: Orvalho Curativo recupera 20% e suga HP dos corações
+Đóng băng địch 2 lượt, làm mất năng lượng của địch	Congela o inimigo por 2 turnos e drena a energia dele
+Bền bỉ nhất, hợp đánh lâu	O mais resistente de todos, feito para lutas longas
+Gom đủ 3 ô năng lượng rồi tung Lửa Địa Ngục khi địch còn nhiều máu	Junte 3 de energia e solte Fogo Infernal enquanto o inimigo ainda tem muito HP
+Dùng Quả Cầu Lửa dọn chỗ bàn cờ đang bí nước	Use Bola de Fogo para limpar uma parte travada do tabuleiro
+Không tự hồi máu được: mang vật phẩm hồi máu khi đánh trùm	Sem autocura: leve itens de cura contra chefes
+Bật Khiên Sét khi địch sắp đầy năng lượng để chặn tuyệt chiêu	Ative o Escudo de Raio quando o inimigo estiver quase com a energia cheia
+Trong 6 lượt có khiên, tấn công dồn dập không cần phòng thủ	Enquanto o escudo durar, ataque sem parar
+Để dành Sấm Sét để kết liễu	Guarde o Raio Fulminante para o golpe final
+Đợi bàn cờ có nhiều trái tim rồi mới dùng Cam Lộ Thủy	Espere ter muitos corações no tabuleiro antes de usar Orvalho Curativo
+Tung Băng Phong khi địch sắp ra chiêu, rồi tranh thủ 2 lượt bị băng	Use Tempestade de Gelo logo antes da habilidade inimiga e aproveite os 2 turnos congelados
+Mũi Tên Băng làm địch chậm tích năng lượng	Flecha de Gelo atrasa o ganho de energia do inimigo
+ƯU ĐIỂM	PONTOS FORTES
+MẸO KHI CHƠI	DICAS
+Thông tin nhân vật	Info do herói
+Kinh nghiệm {0} / {1} (lên cấp {2})	XP {0} / {1} (até o Nv {2})
+TUYỆT CHIÊU	HABILIDADES
+{0} ô năng lượng	{0} de energia
+VẬT PHẨM	ITENS
+Dùng trong trận	Usado na batalha
+Cửa hàng	Loja
+mua thêm	comprar mais
+Hết · chạm để mua	Nenhum · toque para comprar
+chọn khi chuẩn bị trận	escolha antes da batalha
+Ngọc Ấn x{0}	Selo de Jade x{0}
+hồi đầy mạng	vidas cheias
+BẢO VẬT	RELÍQUIAS
+gốc {0} · sự kiện +{1}	base {0} · eventos +{1}
+Đã hồi đầy {0} mạng	Vidas recarregadas para {0}
+Đã mua {0} {1} (-{2} vàng)	Comprou {0} {1} (-{2} de ouro)
+Chưa có Bình Hồi Mạng	Ainda sem Frasco da Vida
+Mạng đang đầy	As vidas estão cheias
+DÙNG · hồi đầy mạng	USAR · recarregar vidas
+MUA THÊM {0} · {1} vàng	COMPRAR +{0} · {1} de ouro
+Thiếu {0} vàng · nạp thêm	Faltam {0} de ouro · pegar ouro
+Hệ {0} · {1} ô năng lượng	{0} · {1} de energia
+# ---- battle
+Á! Đau quá...	Argh! Isso dói...
+Hự! Ngươi khá lắm...	Ugh! Nada mal...
+Không xong rồi!	Isso tá feio!
+Á! Ngươi khá lắm...	Ah! Nada mal mesmo...
+Hự... lợi hại!	Ugh... impressionante!
+Đáng ghét!	Maldição!
+Không lẽ ta thua ở đây sao...	Será que vou perder aqui...
+Ta... chưa chịu thua đâu!	Eu... ainda não desisti!
+Kẻ nào dám đến đây? Nạp mạng!	Quem ousa vir aqui? Me enfrente!
+Ngươi chạy đâu cho thoát!	Você não vai escapar!
+Để xem ngươi được mấy chiêu!	Mostre o que você sabe!
+Khỏe lại rồi!	De pé de novo!
+Vẫn còn sức chiến đấu!	Ainda posso lutar!
+Hừ! Chẳng nhằm nhò gì.	Hmpf! Isso não foi nada.
+Đòn này chưa đủ đâu!	Isso não basta!
+Ha ha! Biết lợi hại của ta chưa!	Ha ha! Agora conhece meu poder!
+Thắng rồi!	Vitória!
+Kẻ nào dám cản đường ta nữa?	Quem mais ousa cruzar meu caminho?
+Ngươi còn non lắm!	Você ainda é verde!
+Về luyện thêm đi!	Vá treinar mais!
+Ha ha! Chỉ có vậy thôi sao?	Ha ha! Só isso?
+Chờ đến lượt của bạn	Espere sua vez
+Cần thêm {0} năng lượng	Precisa de mais {0} de energia
+Đã hết, mua thêm ở màn chuẩn bị	Acabou, compre mais antes da batalha
+Lượt này đã dùng 1 vật phẩm	Já usou um item neste turno
+{0} mất {1} máu	{0} perde {1} HP
+{0} hồi {1} máu	{0} recupera {1} HP
+{0} dùng {1}	{0} usa {1}
+Nếm thử {0}!	Prove meu {0}!
+Quỷ Diện Giáp chặn 3/4 đòn	Armadura Demoníaca bloqueia 3/4
+Long Thần Kiếm: đánh x2	Espada do Dragão: ataque x2
+{0} đã chiến thắng!	{0} venceu!
+{0} đã thua trận	{0} foi derrotado
+Lưu Cơ	Luu Co
+CHIẾN THẮNG	VITÓRIA
+THẤT BẠI	DERROTA
+LƯỢT CỦA BẠN	SUA VEZ
+LƯỢT ĐỐI THỦ	VEZ DO INIMIGO
+Tuyệt chiêu {0}	Habilidade {0}
+Mỗi lượt dùng 1 vật phẩm	Um item por turno
+DÙNG	USAR
+# ---- hero
+TẠO NHÂN VẬT	NOVO PERSONAGEM
+CHỌN TƯỚNG	ESCOLHA O HERÓI
+Bạn đã có tướng này ở Ô {0} (vẫn tạo được)	Você já tem este herói no espaço {0} (ainda pode criar)
+CHỌN TƯỚNG NÀY	ESCOLHER ESTE HERÓI
+Cấp 1 · tăng theo cấp	Nv 1 · cresce com o nível
+HỦY TẠO NHÂN VẬT?	CANCELAR CRIAÇÃO?
+Chưa mất lượt tạo, lần sau tạo lại được.	Sua criação fica salva, você pode criar depois.
+# ---- ads, lives
+QUẢNG CÁO (THỬ NGHIỆM)	ANÚNCIO (TESTE)
+Sẽ thay bằng quảng cáo thật	Será trocado por um anúncio de verdade
++1 mạng chơi	+1 vida
+Cần xem hết quảng cáo để nhận mạng	Assista ao anúncio inteiro para ganhar uma vida
+Chưa có quảng cáo, thử lại sau ít phút	Nenhum anúncio disponível, tente de novo em alguns minutos
+Đã mua và dùng Bình Hồi Mạng: đầy {0} mạng	Comprou e usou um Frasco da Vida: {0} vidas
+Thiếu {0} vàng để mua Bình Hồi Mạng	Faltam {0} de ouro para um Frasco da Vida
+HẾT MẠNG	SEM VIDAS
+MẠNG CHƠI	VIDAS
+Mạng chơi	Vidas
+Bạn đã hết mạng chơi. Mỗi trận cần 1 mạng (thắng thì được trả lại).	Você ficou sem vidas. Cada batalha custa 1 vida (devolvida se vencer).
+Mạng chơi đang đầy ({0}/{1}).	Vidas cheias ({0}/{1}).
+Bạn còn {0}/{1} mạng. Mỗi trận cần 1 mạng.	Você tem {0}/{1} vidas. Cada batalha custa 1 vida.
+{0} +1 mạng sau {1}.	{0} +1 vida em {1}.
++1 MẠNG (VIP)	+1 VIDA (VIP)
+XEM QUẢNG CÁO · +1 MẠNG	VER ANÚNCIO · +1 VIDA
+DÙNG BÌNH HỒI MẠNG (có {0})	USAR FRASCO DA VIDA (tem {0})
+MUA BÌNH HỒI MẠNG · {0} vàng	COMPRAR FRASCO · {0} de ouro
+Bình Hồi Mạng: hồi đầy {0} mạng	Frasco da Vida: recarrega {0} vidas
+# ---- map
+Bạn đang ở {0}	Você está em {0}
+Chưa có đường tới {0}	Ainda não há caminho para {0}
+Chưa mở. Làm tiếp nhiệm vụ chính để mở vùng này.	Bloqueado. Continue a missão principal para abrir esta área.
+đánh {0}	lutar contra {0}
+{0} đường	{0} caminhos
+Đang đi tới {0}	Indo para {0}
+Bản đồ	Mapa
+Túi đồ	Bolsa
+Nhiệm vụ	Missões
+Dấu đỏ là nhiệm vụ chính. Chạm vào một nơi, tướng sẽ tự đi tới theo đường.	Marcas vermelhas são missões principais. Toque num lugar e seu herói vai até lá pela estrada.
+Dấu cam là sự kiện phụ, dấu vàng là quân canh. Xem hết ở thẻ Nhiệm vụ.	Marcas laranja são eventos extras, as amarelas são guardas. Veja tudo na aba Missões.
+{0}/2 · chạm để tiếp	{0}/2 · toque para continuar
+# ---- menu
+NHÂN VẬT	PERSONAGENS
+Tạo nhân vật đầu tiên · miễn phí	Crie seu primeiro personagem · grátis
+Tạo nhân vật mới	Criar um novo personagem
+Xem 1 quảng cáo để tạo nhân vật	Veja 1 anúncio para criar um personagem
+CHƠI MỚI	NOVO JOGO
+CÀI ĐẶT	CONFIGURAÇÕES
+THOÁT GAME	SAIR DO JOGO
+CHƠI TIẾP	CONTINUAR
+Đã đủ 3 nhân vật. Hãy xóa 1 nhân vật để tạo mới.	Você tem 3 personagens. Apague um para criar outro.
+THOÁT GAME?	SAIR DO JOGO?
+Tiến độ đã được lưu.	Seu progresso foi salvo.
+# ---- pause
+TẠM DỪNG	PAUSADO
+Trận đấu đang tạm dừng	A batalha está pausada
+Bạn vừa rời trò chơi, trận đấu đã tạm dừng	Você saiu do jogo, então a batalha foi pausada
+ÂM THANH	SOM
+RUNG	VIBRAÇÃO
+THOÁT TRẬN	SAIR DA BATALHA
+Bỏ trận, về bản đồ · tính là thua	Sair e voltar ao mapa · conta como derrota
+THOÁT TRẬN?	SAIR DA BATALHA?
+Trận này sẽ tính là thua: mất 1 mạng chơi, không bị trừ kinh nghiệm.	Conta como derrota: você perde 1 vida, sem perda de XP.
+Trận này sẽ tính là thua: mất 1 mạng chơi và bị phạt kinh nghiệm như khi thua.	Conta como derrota: você perde 1 vida e a perda normal de XP.
+# ---- prepare
+Chưa có {0}, bấm MUA để mua	Ainda sem {0}, toque em COMPRAR para pegar
+Đã đủ 3 món, chạm vào ô trên để bỏ bớt	Já tem 3 itens, toque num espaço acima para tirar um
+Không đủ vàng	Ouro insuficiente
+CHUẨN BỊ XUẤT TRẬN	PREPARE-SE PARA A BATALHA
+Bạn được đi trước	Você joga primeiro
+{0} được đi trước	{0} joga primeiro
+MANG VÀO TRẬN	LEVAR PARA A BATALHA
+TÚI ĐỒ	BOLSA
+RÚT LUI	RECUAR
+XUẤT TRẬN	LUTAR
+Gợi ý: {0} đánh mạnh, nên mang Quỷ Diện Giáp.	Dica: {0} bate forte, leve a Armadura Demoníaca.
+Gợi ý: {0} nhiều máu, nên mang Long Thần Kiếm.	Dica: {0} tem muito HP, leve a Espada do Dragão.
+Gợi ý: mang Bình Thuốc để hồi máu khi cần.	Dica: leve Poções para se curar quando precisar.
+Mua {0} cái giá {1} vàng?	Comprar {0} por {1} de ouro?
+Bạn đang có {0} vàng	Você tem {0} de ouro
+MUA	COMPRAR
+# ---- quests
+CHÍNH TUYẾN {0}	PRINCIPAL {0}
+SỰ KIỆN {0}	EVENTOS {0}
+QUÂN CANH {0}	GUARDAS {0}
+Chương {0}	Capítulo {0}
+Chương {0} · nhiệm vụ {1}	Capítulo {0} · missão {1}
+ĐÃ THỐNG NHẤT GIANG SƠN!	A TERRA ESTÁ UNIFICADA!
+Mở khi xong nhiệm vụ {0}	Abre após a missão {0}
++ {0} nhiệm vụ nữa trong chương	+ {0} missões neste capítulo
+Hội thoại	História
+Trận hướng dẫn	Batalha tutorial
+Đánh	Batalha
+{0}. ĐANG LÀM	{0}. EM ANDAMENTO
+BẮT ĐẦU	INICIAR
+ĐI TỚI	IR
+Đánh bại {0}	Derrote {0}
+Gặp {0}	Encontre {0}
++1 hộp vật phẩm	+1 caixa de item
+hộp vật phẩm	caixa de item
+nhiệm vụ {0}	missão {0}
+Đã hoàn thành	Concluída
+! Đang làm	! Em andamento
+Loại	Tipo
+Nơi	Local
+Đối thủ	Oponente
+Đã nhận	Recebido
+Đã nhận {0}	Recebeu {0}
+Thưởng	Recompensa
+Thưởng: {0}	Recompensa: {0}
+Mở thêm	Desbloqueia
+Đọc lại hội thoại	Reler a história
+Trước nhiệm vụ	Antes da missão
+Sau khi thắng	Depois da vitória
+Gặp gỡ	Encontro
+gặp gỡ	encontro
+Đi tới	Ir
+Đã xong	Pronto
+Ở vùng chưa mở trên bản đồ	Numa área bloqueada do mapa
+ĐẤU TRƯỜNG · TAM ĐIỆP	ARENA · TAM DIEP
+{0}/5 mức	{0}/5 níveis
+mở sẵn	aberto
+thắng Lê Hoàn	vença Le Hoan
+thắng Nguyễn Ninh	vença Nguyen Ninh
+đạt cấp 30	chegue ao Nv 30
+cấp {0} (bằng cấp bạn)	Nv {0} (seu nível)
+Đã dẹp	Limpo
+Còn {0} trạm gác ở vùng chưa mở	Mais {0} postos de guarda em áreas bloqueadas
+Nhiệm vụ {0}	Missão {0}
+trạm gác gần {0}	posto de guarda perto de {0}
+Trạm gác	Posto de guarda
+# ---- result
+HOÀN THÀNH NHIỆM VỤ	MISSÃO CONCLUÍDA
+LUYỆN TẬP	TREINO
+Vàng nhặt được	Ouro coletado
+Thưởng thắng trận	Prêmio da vitória
+Vật phẩm: {0}	Itens: {0}
+Hộp vật phẩm (2 vật phẩm)	Caixa de item (2 itens)
+Vàng thưởng	Ouro de prêmio
+Kinh nghiệm thưởng	XP de prêmio
+Hộp vật phẩm cuối	Caixa de item final
+Hộp vật phẩm	Caixa de item
+Mở thêm: {0}	Desbloqueado: {0}
+Kinh nghiệm luyện tập	XP de treino
+Vàng hiện có	Ouro que você tem
+thua {0}	perdeu para {0}
+Kinh nghiệm bị phạt	Perda de XP
+Gợi ý: mua Bình Thuốc hoặc Quỷ Diện Giáp ở màn chuẩn bị trước khi đánh lại.	Dica: compre Poções ou a Armadura Demoníaca na tela de preparo antes de tentar de novo.
+Đánh lại trận này?	Lutar esta batalha de novo?
+TRỞ VỀ	VOLTAR
+ĐÁNH LẠI	REPETIR
+Mở hộp vật phẩm: {0}	Caixa de item aberta: {0}
+Đã mở thêm 1 mức luyện tập ở Đấu trường. Hãy vào đó thử sức!	Um novo nível de treino abriu na Arena. Vá testar sua força!
+Bỏ qua trận hướng dẫn và về bản đồ? Luật chơi xem lại được trong Cài đặt.	Pular a batalha tutorial e voltar ao mapa? As regras estão nas Configurações.
+# ---- settings
+Âm thanh	Som
+Nhạc và tiếng trong game	Música e efeitos sonoros
+Âm lượng	Volume
+Rung	Vibração
+Khi trúng đòn, mua hàng, giữ để xoá	Nos golpes, compras e ao segurar para apagar
+TRÒ CHƠI	JOGO
+Luật chơi	Regras
+Xếp biểu tượng, vật phẩm, cấp độ	Combinações, itens, níveis
+Hướng dẫn bản đồ	Tutorial do mapa
+Xem lại 3 bước chỉ tay	Rever os 3 passos com a seta
+Mở khi đang ở bản đồ	Disponível no mapa
+Đổi nhân vật	Trocar personagem
+MUA HÀNG VÀ QUẢNG CÁO	COMPRAS E ANÚNCIOS
+Khôi phục giao dịch	Restaurar compras
+Không có giao dịch nào để khôi phục	Nenhuma compra para restaurar
+HỖ TRỢ	SUPORTE
+Đánh giá game	Avaliar o jogo
+Chia sẻ với bạn bè	Compartilhar com amigos
+Chính sách quyền riêng tư	Política de privacidade
+Thông tin và tác giả	Sobre e créditos
+Mã người chơi: {0}	ID do jogador: {0}
+Phiên bản {0}	Versão {0}
+Loạn 12 sứ quân	Loan 12 Su Quan
+Loạn 12 Sứ Quân	Loan 12 Su Quan
+2010 MicroGame	2010 MicroGame
+Về menu chính	Voltar ao menu principal
+MENU	MENU
+Thanh kiếm	Espada
+Tấn công đối phương.	Ataca o oponente.
+Kiếm lửa	Espada de fogo
+Mạnh hơn kiếm thường, nổ thêm 1 ô xung quanh; xếp chung được với kiếm thường.	Mais forte que a espada e ainda explode as peças em volta; combina com espadas normais.
+Âm dương	Yin-yang
+Lấy năng lượng để dùng tuyệt chiêu.	Dá energia para as habilidades.
+Bánh chưng	Bolinho de arroz
+Lấy lương thực. Lương thực tiêu hao mỗi lượt của đối phương; hết là thua.	Dá comida. A comida cai a cada turno inimigo; se acabar, você perde.
+Thỏi vàng	Barra de ouro
+Lấy vàng để mua vật phẩm.	Dá ouro para comprar itens.
+Cuốn sách	Livro
+Lấy kinh nghiệm để lên cấp.	Dá XP para subir de nível.
+Trái tim	Coração
+Hồi máu. Hết máu là thua trận.	Recupera HP. Se o HP acabar, você perde.
+Xếp ít nhất 3 biểu tượng cùng loại, ngang hoặc dọc.	Alinhe pelo menos 3 ícones iguais, na horizontal ou na vertical.
+Xếp 4 được thêm 1 lượt và có thể rơi vật phẩm; xếp 5 luôn rơi 1 vật phẩm.	Combine 4 para um turno extra e chance de item; combine 5 e sempre cai um item.
+Xếp sai mất lượt và mất máu.	Um movimento errado custa seu turno e um pouco de HP.
+CÁCH ĐI	COMO MOVER
+BIỂU TƯỢNG	ÍCONES
+Cấp càng cao thì tấn công và máu càng lớn.	Quanto maior seu nível, mais ataque e HP.
+LUẬT CHƠI	REGRAS
+hỗ trợ	suporte
+Bản chuyển sang Unity	Versão Unity
+Màn hình cảm ứng toàn màn hình	Interface de toque em tela cheia
+Ghi chú	Nota
+Tình tiết, cốt truyện và tên nhân vật phụ của trò chơi dựa vào sự kiện Loạn 12 Sứ Quân trong lịch sử Việt Nam ở thế kỷ X.	A história e os nomes dos personagens secundários se baseiam na Anarquia dos 12 Senhores da Guerra, no Vietnã do século X.
+THÔNG TIN	SOBRE
+Chia sẻ	Compartilhar
+Đã chép lời mời vào bộ nhớ tạm	Convite copiado para a área de transferência
+Trang chính sách quyền riêng tư sẽ có trước khi phát hành	A página da política de privacidade estará pronta antes do lançamento
+# ---- shop
+PHỔ BIẾN	POPULAR
+LỜI NHẤT	MELHOR CUSTO
++{0} vàng vào ví chung	+{0} de ouro na carteira compartilhada
+ƯU ĐÃI	OFERTAS
+Thiếu vàng?	Precisa de ouro?
+Rương miễn phí, gói vàng	Baú grátis, pacotes de ouro
+Vàng và vật phẩm dùng chung cho mọi nhân vật	Ouro e itens são compartilhados por todos os personagens
+{0} vàng / gói {1} cái · có {2}	{0} de ouro / pacote de {1} · tem {2}
+{0} GÓI	{0} PACOTES
+Còn lại sau khi mua: {0} vàng	Depois da compra: {0} de ouro
+Bạn có {0} vàng	Você tem {0} de ouro
++ VÀNG (thiếu {0})	+ OURO (faltam {0})
+Cần xem hết quảng cáo để nhận vàng	Assista ao anúncio inteiro para ganhar o ouro
+RƯƠNG MIỄN PHÍ	BAÚ GRÁTIS
+còn {0} lượt hôm nay	Restam {0} hoje
+Mỗi lần mở cách nhau ít nhất 1 giờ	Pelo menos 1 hora entre aberturas
+Lượt mới lúc 0:00	Novas aberturas à 0:00
+Hết lượt	Acabou por hoje
+Chờ	Aguarde
+MỞ NGAY	ABRIR AGORA
+MỞ	ABRIR
+Mua bằng tiền thật sẽ mở khi kết nối Google Play	Compras com dinheiro real abrem quando o Google Play estiver conectado
+Mua bằng tiền thật sẽ mở khi game kết nối Google Play	Compras com dinheiro real abrem quando o jogo se conectar ao Google Play
+Vàng dùng chung cho mọi nhân vật · giá theo Google Play (chưa kết nối)	O ouro é compartilhado por todos os personagens · preços do Google Play (não conectado)
+GÓI KHỞI ĐẦU	PACOTE INICIAL
+CHỈ 1 LẦN	SÓ UMA VEZ
+3.000 vàng	3.000 de ouro
+Đầy mạng	Vidas cheias
+Trị giá 6.000 vàng và đầy mạng	Vale 6.000 de ouro mais vidas cheias
+ĐÃ MUA	COMPRADO
+VIP TRỌN ĐỜI	VIP VITALÍCIO
+Mua 1 lần, dùng mãi, cho mọi nhân vật	Compre uma vez, é seu para sempre, em todos os personagens
+Nhận thưởng quảng cáo ngay, không phải xem	Prêmios de anúncio na hora, sem assistir
+Ô vật phẩm thứ 4 khi chuẩn bị xuất trận	Um 4º espaço de item antes da batalha
+Tối đa 6 mạng (thường 5)	Até 6 vidas (normalmente 5)
+Tạo nhân vật mới không cần xem quảng cáo	Crie personagens sem assistir anúncios
+ĐÃ KÍCH HOẠT	ATIVO
+CỬA HÀNG	LOJA
+# ---- slots
+Lưu tối đa 3 nhân vật.	Até 3 personagens.
+Lưu tối đa 3 nhân vật, mỗi nhân vật có bản đồ và cấp riêng. Vàng và vật phẩm dùng chung.	Até 3 personagens, cada um com seu mapa e nível. Ouro e itens são compartilhados.
+Đã đủ 3 nhân vật.	Você tem 3 personagens.
+Muốn tạo nhân vật khác, hãy xóa 1 nhân vật.	Para criar outro, apague um primeiro.
+Chạm vào thẻ để chọn · biểu tượng thùng rác để xóa	Toque num cartão para escolher · na lixeira para apagar
+CHƠI	JOGAR
+Chơi gần nhất: {0}	Jogado por último: {0}
+ĐANG CHƠI	JOGANDO
+trống	vazio
+Tạo ngay (VIP)	Criar agora (VIP)
+Xem QC để tạo	Ver anúncio para criar
+Đang tải quảng cáo…	Carregando anúncio…
+Cần xem hết quảng cáo để nhận lượt tạo	Assista ao anúncio inteiro para liberar uma criação
+NHÂN VẬT MỚI	NOVO PERSONAGEM
+Xem 1 quảng cáo ngắn để mở lượt tạo nhân vật thứ {0}.	Assista 1 anúncio curto para liberar o personagem nº {0}.
+Xem 1 quảng cáo ngắn để mở lượt tạo nhân vật thứ {0}. {1} nhân vật hiện có giữ nguyên.	Assista 1 anúncio curto para liberar o personagem nº {0}. Seus {1} personagens atuais continuam como estão.
+XEM QUẢNG CÁO	VER ANÚNCIO
+VIP: tạo ngay, không cần xem quảng cáo	VIP: crie agora, sem anúncio
+Đã xóa {0}	{0} apagado
+XÓA NHÂN VẬT?	APAGAR PERSONAGEM?
+Sẽ mất vĩnh viễn:	Perdido para sempre:
+· Tiến độ bản đồ và nhiệm vụ	· Progresso no mapa e nas missões
+· Cấp {0} và kinh nghiệm	· Nível {0} e XP
+· {0} bảo vật đã sưu tập	· {0} relíquias coletadas
+Vàng, vật phẩm, mạng chơi và VIP vẫn giữ nguyên.	Ouro, itens, vidas e VIP continuam.
+GIỮ 2 GIÂY ĐỂ XÓA	SEGURE 2 SEG PARA APAGAR
+# ---- arena
+ĐẤU TRƯỜNG	ARENA
+Tam Điệp · luyện kinh nghiệm, trả vé bằng vàng	Tam Diep · treine para ganhar XP, ingressos custam ouro
+Thiếu vàng: vé mức {0} là {1} vàng	Ouro insuficiente: o ingresso do nível {0} custa {1} de ouro
+Mức {0} chưa mở: {1}	Nível {0} bloqueado: {1}
++{0}% cấp	+{0}% de nível
+Thiếu vàng	Precisa de ouro
+Chưa mở	Bloqueado
+Đối thủ mức {0}	Oponente do nível {0}
+Thắng: +{0} kinh nghiệm ({1}% một cấp)	Vitória: +{0} XP ({1}% de um nível)
+Thua: mất 1 mạng, không trừ kinh nghiệm. Vàng, KN nhặt trong trận không tính.	Derrota: 1 vida, sem perda de XP. Ouro e XP pegos na batalha não contam.
+Bạn không đủ vàng cho mức nào đang mở. Mở rương miễn phí hoặc mua vàng ở Cửa hàng.	Sem ouro para nenhum nível aberto. Abra o baú grátis ou compre ouro na Loja.
+ĐÁNH	LUTAR
+Vé {0} vàng	Ingresso {0} de ouro
+# ---- quest titles (names without accents)
+Học binh pháp với Lưu Cơ	Estudar estratégia com Luu Co
+Nhận lệnh hộ tống chủ tướng	Receber a ordem de escoltar o senhor
+Hộ tống chủ tướng về Kỳ Bố	Escoltar o senhor até Ky Bo
+Bàn việc xưng hiệu	Discutir a escolha de um título
+Dẹp sơn tặc ở Tam Điệp	Limpar os bandidos de Tam Diep
+Dự đại lễ xưng Vạn Thắng Vương	Assistir à coroação de Van Thang Vuong
+Kết hòa ước với Phạm Bạch Hổ	Fazer as pazes com Pham Bach Ho
+Bàn kế đánh Bình Kiều	Planejar o ataque a Binh Kieu
+Đánh chiếm Bình Kiều	Tomar Binh Kieu
+Chọn hướng tiến quân	Escolher a rota da marcha
+Đánh Ngô Nhật Khánh	Enfrentar Ngo Nhat Khanh
+Nhận tin Lã Đường đánh Đằng Châu	Notícia: La Duong ataca Dang Chau
+Cứu viện Đằng Châu	Socorrer Dang Chau
+Bàn kế đánh Tế Giang	Planejar o ataque a Te Giang
+Phá quân canh Tế Giang	Romper os guardas de Te Giang
+Diệt Lã Đường ở Tế Giang	Derrotar La Duong em Te Giang
+Từ biệt Phạm Bạch Hổ	Despedir-se de Pham Bach Ho
+Phá đồn Bảo Đà	Tomar o forte de Bao Da
+Bắt Đỗ Cảnh Thạc	Capturar Do Canh Thac
+Củng cố Đỗ Động	Garantir Do Dong
+Giữ thành Đỗ Động	Defender o castelo de Do Dong
+Bàn kế đánh Tây Phù Liệt	Planejar o ataque a Tay Phu Liet
+Hỏi tội Nguyễn Trí Khả	Cobrar satisfações de Nguyen Tri Kha
+Diệt Nguyễn Siêu	Derrotar Nguyen Sieu
+Bàn kế phá liên minh	Planejar o fim da aliança
+Cứu viện Ô Man	Socorrer O Man
+Chuẩn bị đánh Siêu Loại	Preparar o ataque a Sieu Loai
+Đánh vào Siêu Loại	Invadir Sieu Loai
+Đuổi bắt Lý Khuê	Caçar Ly Khue
+Xuất binh đánh Tiên Du	Marchar sobre Tien Du
+Đánh Nguyễn Thủ Tiệp	Enfrentar Nguyen Thu Tiep
+Bàn kế đánh Cổ Loa	Planejar o ataque a Co Loa
+Phá quân canh Cổ Loa	Romper os guardas de Co Loa
+Đánh Lữ Xử Bình ở Cổ Loa	Enfrentar Lu Xu Binh em Co Loa
+Bàn kế đánh Tam Đái	Planejar o ataque a Tam Dai
+Phá quân canh Tam Đái	Romper os guardas de Tam Dai
+Đánh Nguyễn Khoan ở Tam Đái	Enfrentar Nguyen Khoan em Tam Dai
+Nhận tin Kỳ Bố bị vây	Notícia: Ky Bo está cercada
+Giải vây Kỳ Bố	Romper o cerco de Ky Bo
+Bàn kế đánh Hồi Hồ	Planejar o ataque a Hoi Ho
+Phá quân canh Hồi Hồ	Romper os guardas de Hoi Ho
+Đánh Kiều Công Hãn	Enfrentar Kieu Cong Han
+Đánh Kiều Thuận	Enfrentar Kieu Thuan
+Bàn việc xưng đế	Discutir a subida ao trono
+Diệt Ấu Rồng ở Hoa Lư	Matar o Jovem Dragão em Hoa Lu
+Lễ lên ngôi Đinh Tiên Hoàng	Coroação de Dinh Tien Hoang
+Khởi binh ở Hoa Lư	Levante em Hoa Lu
+Bình Kiều	Binh Kieu
+Cứu Đằng Châu, diệt Tế Giang	Salvar Dang Chau, tomar Te Giang
+Đỗ Động Giang	Do Dong Giang
+Tây Phù Liệt	Tay Phu Liet
+Siêu Loại và Tiên Du	Sieu Loai e Tien Du
+Cổ Loa và Tam Đái	Co Loa e Tam Dai
+Kỳ Bố và Hồi Hồ	Ky Bo e Hoi Ho
+Thống nhất giang sơn	Unificar a terra
+ĐỒNG Ý	OK
+NHẬN	PEGAR
+HỘP QUÀ	CAIXA DE PRESENTE
+MỞ HỘP	ABRIR
+XEM QUẢNG CÁO · X2	VER ANÚNCIO · X2
+Bạn nhận được {0} hộp quà	Você ganhou {0} caixas de presente
+Bạn nhận được 1 hộp quà	Você ganhou 1 caixa de presente
+Mỗi hộp có 1 vật phẩm	Cada caixa tem 1 item
+Đã mở {0} hộp quà	Abriu {0} caixas de presente
+Đã cất vào túi đồ	Adicionado à sua bolsa
+Hộp quà	Caixas de presente
+Hộp quà rơi trong trận	Caixas de presente caíram
++{0} hộp quà	+{0} caixas de presente
+{0} hộp quà	{0} caixas de presente
+Đã mở Đấu trường Tam Điệp: nơi luyện điểm kinh nghiệm.	A arena de Tam Diep está aberta: um lugar para treinar e ganhar experiência.
+Mỗi lần vào đấu phải trả vé bằng vàng.	Cada luta custa um ingresso pago em ouro.
+Thắng: nhận kinh nghiệm theo cấp hiện tại.	Vitória: experiência de acordo com seu nível.
+Thua: mất 1 mạng, không bị trừ kinh nghiệm.	Derrota: perde 1 vida, nenhuma experiência perdida.
+Vàng và kinh nghiệm nhặt trong trận không được tính; máu không bị ảnh hưởng.	Ouro e experiência pegos na luta não contam; seu HP não é afetado.
+Lúc đầu mở 2 mức, thắng các tướng mạnh để mở thêm 3 mức.	2 níveis no começo; vença generais fortes para abrir mais 3.
+Vàng, kinh nghiệm hoặc vật phẩm quý	Ouro, experiência ou itens raros
+Đang mở…	Abrindo…
+Bạn được đi trước (Ngọc Ấn)	Você joga primeiro (Selo de Jade)
+Vàng	Ouro
+HỒI SINH?	REVIVER?
+HỒI 30 MÁU	+30 HP
+BỎ CUỘC	DESISTIR
+{0} chỉ còn {1}/{2} máu!	{0} só tem {1}/{2} HP!
+Xem quảng cáo để hồi 30 máu và đánh tiếp.	Veja um anúncio para recuperar 30 HP e continuar lutando.
+KHỞI ĐẦU	INICIAL
+Ô thứ 3 mở khi mua Gói khởi đầu (Cửa hàng · Ưu đãi)	O espaço 3 abre com o Pacote Inicial (Loja · Ofertas)
+Ô thứ 4 mở khi mua gói VIP (Cửa hàng · Ưu đãi)	O espaço 4 abre com o VIP (Loja · Ofertas)
+Đã đủ {0} món, chạm vào ô trên để bỏ bớt	Já tem {0} itens, toque num espaço acima para tirar um
+Mang 3 vật phẩm vào trận	Leve 3 itens para a batalha
+tối đa 4 mạng	até 4 vidas
+Mang 4 vật phẩm vào trận (thường 2)	Leve 4 itens para a batalha (normalmente 2)
+Tối đa 5 mạng (thường 3)	Até 5 vidas (normalmente 3)
+Bốc thăm ai đi trước (cùng cấp)	Quem joga primeiro é sorteado (mesmo nível)
+TRỞ LẠI	VOLTAR
+49.000 đ · thử	49.000 đ · teste
+199.000 đ · thử	199.000 đ · teste
+Đã mua Gói khởi đầu (giả lập): 3.000 vàng, Long Thần Kiếm x3, Nhân Sâm x3, đầy mạng	Pacote Inicial comprado (simulado): 3.000 de ouro, Espada do Dragão x3, Ginseng x3, vidas cheias
+Đã kích hoạt VIP (giả lập)	VIP ativado (simulado)
+Đã khôi phục: {0}	Restaurado: {0}
+Các gói đã mua đều đang có	Todos os pacotes comprados estão ativos
+Đã gỡ các gói (thử). Bấm Khôi phục giao dịch để lấy lại	Pacotes removidos (teste). Toque em Restaurar compras para recuperá-los
+Thử: gỡ các gói đã mua	Teste: remover pacotes comprados
+Đang giả lập mua hàng để thử: chưa trừ tiền thật, sẽ thay bằng Google Play	Compras simuladas para teste: sem dinheiro real, o Google Play vem depois
+Đã mua {0} vàng (giả lập, {1})	Comprou {0} de ouro (simulado, {1})
+thử	teste
+Vàng dùng chung cho mọi nhân vật · mua giả lập để thử, chưa trừ tiền thật	O ouro é compartilhado por todos os personagens · compras simuladas para teste, sem dinheiro real
