@@ -51,9 +51,9 @@ namespace Loan12.UnityPort
                 // the game's picture over the whole width, without its soft-key bar (its own BỎ QUA)
                 const float shown = 296f;
                 float W = J2MEGameHost.LcdWidth, H = J2MEGameHost.LcdHeight;
-                float s = Mathf.Max(Gx.Width / W, Gx.Height / shown);
+                float s = Gx.Width / W;
                 float w = W * s, h = shown * s;
-                Gx.DrawTextureWithTexCoords(new Rect((Gx.Width - w) / 2, (Gx.Height - h) / 2, w, h), lcd, new Rect(0, 1, 1, -shown / H), false);
+                Gx.DrawTextureWithTexCoords(new Rect(0, 0, w, h), lcd, new Rect(0, 1, 1, -shown / H), false);
                 TouchUi.Fill(new Rect(0, 0, Gx.Width, Gx.Height), new Color(0.02f, 0.01f, 0.03f, 0.55f));
 
                 const float size = 7.5f, width = 150;

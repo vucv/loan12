@@ -5,7 +5,7 @@
 //     screen, map). The game's "Có" (save the battle and go to the menu) is not offered any more;
 //   - "Bấm tiếp tục để chơi tiếp" (the game paused itself when the app went to the background).
 //   - "Bạn có muốn bỏ qua phần luyện tập không? Có / Không" (the pause button in the tutorial
-//     battle): BỎ QUA LUYỆN TẬP? with BỎ QUA / HỌC TIẾP.
+//     battle): LUYỆN TẬP with BỎ QUA / Ở LẠI.
 // Sound and vibration are switched here too (settings of the Unity host, kept between sessions).
 using UnityEngine;
 
@@ -213,11 +213,11 @@ namespace Loan12.UnityPort
                 TouchUi.Dim(0.62f);
                 Rect box = ConfirmRect();
                 TouchUi.Panel(box);
-                TouchUi.PixelText("BỎ QUA LUYỆN TẬP?", 1, box.center.x, box.y + 16 * k, 1, true);
-                TouchUi.Label(TouchUi.R(28, 146, 124, 40), "Trận hướng dẫn kết thúc ngay, bạn về bản đồ. Luật chơi xem lại được trong Cài đặt.", 6.25f,
+                TouchUi.PixelText("LUYỆN TẬP", 1, box.center.x, box.y + 16 * k, 1, true);
+                TouchUi.Label(TouchUi.R(28, 146, 124, 40), "Bỏ qua trận hướng dẫn và về bản đồ? Luật chơi xem lại được trong Cài đặt.", 6.25f,
                     TextAnchor.UpperCenter, TouchUi.TextSoft, false, true);
                 TouchUi.TextButton(ConfirmYes(), "BỎ QUA", Btn.Red, downKind == 8);
-                TouchUi.TextButton(ConfirmNo(), "HỌC TIẾP", Btn.Grey, downKind == 9);
+                TouchUi.TextButton(ConfirmNo(), "Ở LẠI", Btn.Grey, downKind == 9);
                 return;
             }
             float t = Mathf.Clamp01((Time.unscaledTime - shownAt) / 0.18f);
