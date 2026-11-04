@@ -374,6 +374,11 @@ namespace Loan12.UnityPort
                             bv.popupArg = 0;
                             yield return Shot("H", "battle_skill_popup");
                             bv.popupKind = 0;
+                            // with VIP: 4 item buttons
+                            bool vip0 = Rewards.Vip;
+                            Rewards.Vip = true;
+                            yield return Shot("H", "battle_vip_items");
+                            Rewards.Vip = vip0;
                         }
                     }
                     if (lose && !paused)
