@@ -341,7 +341,7 @@ namespace Loan12.UnityPort
             {
                 Rect card = TouchUi.R(4, y, 172, 96);
                 TouchUi.Panel(card);
-                TouchUi.Label(TouchUi.R(10, y + 84, 160, 9), "Thông tin nhân vật", 5.25f, TextAnchor.UpperRight, TouchUi.Hex(0x8CC4FF), true);
+                TouchUi.Label(TouchUi.R(10, y + 84, 148, 9), "Thông tin nhân vật", 5.25f, TextAnchor.UpperRight, TouchUi.Hex(0x8CC4FF), true);
                 TouchUi.Portrait(hero, TouchUi.R(10, y + 8, 32, 32));
                 TouchUi.PixelText(Kit.Cut(C_PortMap.heroName(), 12), 2, TouchUi.R(48, 0, 0, 0).x, TouchUi.R(0, y + 7, 0, 0).y, 0);
                 TouchUi.Label(TouchUi.R(48, y + 24, 120, 9), "Hệ " + Kit.ElementName(C_PortScreens.heroElement(hero)) + " · Cấp " + lv, 6.75f, TextAnchor.UpperLeft, Kit.Cream, true);
