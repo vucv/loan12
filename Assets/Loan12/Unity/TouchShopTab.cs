@@ -25,6 +25,7 @@ namespace Loan12.UnityPort
         const long ChestGap = 3600;
 
         static readonly int[] PackGold = {5000, 12500, 26000, 55000};
+        static readonly string[] PackPrice = {"22.000 đ", "49.000 đ", "99.000 đ", "199.000 đ"};
         static readonly string[] PackTag = {"", "+12%", "PHỔ BIẾN", "LỜI NHẤT"};
 
         public bool Back()
@@ -394,7 +395,11 @@ namespace Loan12.UnityPort
                 Rect r = TouchUi.R(4 + (i % 2) * 88, y + (i / 2) * 89, 84, 85);
                 if (Kit.Tap(60 + i, r))
                 {
-                    Kit.Toast("Mua bằng tiền thật sẽ mở khi kết nối Google Play");
+                    // simulated purchase (until Google Play): the gold, a record of the purchase
+                    C_bg.a(2, PackGold[i], 6);
+                    PlayerPrefs.SetInt("l12.iap.gold" + i, PlayerPrefs.GetInt("l12.iap.gold" + i, 0) + 1);
+                    PlayerPrefs.Save();
+                    Kit.Toast("Đã mua " + TouchUi.Money(PackGold[i]) + " vàng (giả lập, " + PackPrice[i] + ")");
                 }
                 if (!Kit.Paint)
                 {
@@ -419,12 +424,12 @@ namespace Loan12.UnityPort
                     TouchUi.Label(tag, PackTag[i], 5.25f, TextAnchor.MiddleCenter, Color.white, true, false, false);
                 }
                 Rect pb = new Rect(r.x + 8 * k, r.yMax - 20 * k, r.width - 16 * k, 15 * k);
-                Kit.FlatButton(pb, "— đ", Btn.Grey, false, false);
+                Kit.FlatButton(pb, PackPrice[i] + " · thử", Btn.Gold, Kit.Down(60 + i));
             }
             y += 2 * 89 + 2;
             if (Kit.Paint)
             {
-                TouchUi.Label(TouchUi.R(4, y, 172, 18), "Vàng dùng chung cho mọi nhân vật · giá theo Google Play (chưa kết nối)", 5.5f, TextAnchor.UpperCenter, Kit.Muted, false, true);
+                TouchUi.Label(TouchUi.R(4, y, 172, 18), "Vàng dùng chung cho mọi nhân vật · mua giả lập để thử, chưa trừ tiền thật", 5.5f, TextAnchor.UpperCenter, Kit.Muted, false, true);
             }
             return y + 22;
         }

@@ -609,3 +609,6 @@ Không có giao dịch nào để khôi phục	No purchases to restore	復元す
 Thử: gỡ các gói đã mua	Test: remove bought packs	テスト：購入パックを外す	테스트: 구매 팩 제거
 Đang giả lập mua hàng để thử: chưa trừ tiền thật, sẽ thay bằng Google Play	Purchases are simulated for testing: no real money, Google Play comes later	テスト用の模擬購入：実際の支払いなし、後でGoogle Playに置き換え	테스트용 모의 구매: 실제 결제 없음, 추후 Google Play로 교체
 Ô thứ 3 mở khi mua Gói khởi đầu (Cửa hàng · Ưu đãi)	Slot 3 opens with the Starter Pack (Shop · Offers)	3つ目の枠はスターターパックで開放（ショップ・特典）	3번째 칸은 스타터 팩으로 열림 (상점 · 혜택)
+Đã mua {0} vàng (giả lập, {1})	Bought {0} gold (simulated, {1})	金{0}を購入（模擬、{1}）	금 {0} 구매 (모의, {1})
+thử	test	テスト	테스트
+Vàng dùng chung cho mọi nhân vật · mua giả lập để thử, chưa trừ tiền thật	Gold is shared by all characters · simulated purchases for testing, no real money	金は全キャラ共通・テスト用の模擬購入で実際の支払いなし	금은 모든 캐릭터 공용 · 테스트용 모의 구매, 실제 결제 없음

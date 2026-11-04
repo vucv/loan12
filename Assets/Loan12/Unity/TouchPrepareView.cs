@@ -365,8 +365,24 @@ namespace Loan12.UnityPort
             TouchUi.Fill(sw, TouchUi.Outline);
             Texture2D swords = TouchUi.Img("/m/sw");
             TouchUi.Sprite(swords, TouchUi.R(71, 48, swords.width, swords.height));
-            TouchUi.PixelText(VsName(0).ToUpperInvariant(), 2, TouchUi.R(12, 0, 0, 0).x, TouchUi.R(0, 103, 0, 0).y, 0, true);
-            TouchUi.PixelText(VsName(1).ToUpperInvariant(), 2, TouchUi.R(168, 0, 0, 0).x, TouchUi.R(0, 103, 0, 0).y, 2, true);
+            // the two names, each in its half: the game's font when both fit, else both in a smaller one
+            string n0 = VsName(0).ToUpperInvariant(), n1 = VsName(1).ToUpperInvariant();
+            const float half = 76;
+            if (TouchUi.PixelWidth(n0, 2) <= half && TouchUi.PixelWidth(n1, 2) <= half)
+            {
+                TouchUi.PixelText(n0, 2, TouchUi.R(12, 0, 0, 0).x, TouchUi.R(0, 103, 0, 0).y, 0, true);
+                TouchUi.PixelText(n1, 2, TouchUi.R(168, 0, 0, 0).x, TouchUi.R(0, 103, 0, 0).y, 2, true);
+            }
+            else
+            {
+                float ns = 8f;
+                while (ns > 5.5f && (TouchUi.TextWidth(n0, ns, true) > half || TouchUi.TextWidth(n1, ns, true) > half))
+                {
+                    ns -= 0.5f;
+                }
+                TouchUi.Label(TouchUi.R(12, 96, half, 14), n0, ns, TextAnchor.MiddleLeft, Color.white, true);
+                TouchUi.Label(TouchUi.R(168 - half, 96, half, 14), n1, ns, TextAnchor.MiddleRight, Color.white, true);
+            }
             Color stat = TouchUi.Hex(0xFFE6A0);
             TouchUi.Label(TouchUi.R(12, 109, 76, 13), "Cấp " + VsLevel(0), 7, TextAnchor.UpperLeft, stat);
             TouchUi.Label(TouchUi.R(12, 122, 76, 13), VsHp(0) + " máu", 7, TextAnchor.UpperLeft, stat);
