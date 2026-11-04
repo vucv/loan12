@@ -697,20 +697,24 @@ namespace Loan12.UnityPort
                     TouchUi.Fill(r, TouchUi.Hex(0x6E3470));
                     TouchUi.Fill(new Rect(r.x, r.y, r.width, 2 * k), Kit.Gold);
                 }
-                Rect icon = new Rect(r.center.x - 8 * k, r.y + 5 * k, 16 * k, 16 * k);
                 switch (i)
                 {
                     case 0:
-                        TouchUi.Sprite(TouchUi.Img("/m/hm"), new Rect(r.center.x - 6.5f * k, r.y + 4 * k, 13 * k, 17 * k));
+                        // the whole map of the game, small, in a gold frame
+                        Rect map = new Rect(r.center.x - 8 * k, r.y + 4 * k, 16 * k, 16 * k);
+                        TouchUi.Fill(new Rect(map.x - 2 * k, map.y - 2 * k, map.width + 4 * k, map.height + 4 * k), TouchUi.Outline);
+                        TouchUi.Fill(new Rect(map.x - k, map.y - k, map.width + 2 * k, map.height + 2 * k), Kit.Gold);
+                        TouchUi.Sprite(TouchUi.Img("/m/m"), map);
                         break;
                     case 1:
-                        TouchUi.Item(4, new Rect(r.center.x - 9 * k, r.y + 3 * k, 18 * k, 18 * k));
+                        // the hero (the map's old icon)
+                        TouchUi.Sprite(TouchUi.Img("/m/hm"), new Rect(r.center.x - 6.5f * k, r.y + 4 * k, 13 * k, 17 * k));
                         break;
                     case 2:
                         TouchUi.Sprite(TouchUi.Img("/gold"), new Rect(r.center.x - 9 * k, r.y + 3 * k, 18 * k, 18 * k));
                         break;
                     case 3:
-                        TouchUi.Sprite(TouchUi.Img("/r/g"), icon);
+                        TouchUi.Sprite(TouchUi.Img("/book"), new Rect(r.center.x - 9 * k, r.y + 3 * k, 18 * k, 18 * k));
                         break;
                 }
                 TouchUi.Label(new Rect(r.x, r.y + 23 * k, r.width, 9 * k), TabNames[i], 6, TextAnchor.UpperCenter, on ? Kit.Gold : Kit.Cream, on);

@@ -147,7 +147,7 @@ Tung Băng Phong khi địch sắp ra chiêu, rồi tranh thủ 2 lượt bị b
 Mũi Tên Băng làm địch chậm tích năng lượng	Ice Arrow slows the enemy's energy gain	氷の矢で敵のエネルギー蓄積を遅らせる	얼음 화살로 적의 에너지 축적을 늦춘다
 ƯU ĐIỂM	STRENGTHS	長所	장점
 MẸO KHI CHƠI	TIPS	攻略のコツ	플레이 팁
-Cách chiến đấu	How to fight	戦い方	전투 방법
+Thông tin nhân vật	Hero info	キャラ情報	캐릭터 정보
 Kinh nghiệm {0} / {1} (lên cấp {2})	XP {0} / {1} (to Lv {2})	経験値 {0} / {1}(Lv {2}まで)	경험치 {0} / {1} (Lv {2}까지)
 TUYỆT CHIÊU	SKILLS	必殺技	필살기
 {0} ô năng lượng	{0} energy	エネルギー {0}	에너지 {0}
