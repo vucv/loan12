@@ -14,15 +14,59 @@ namespace Loan12.UnityPort
         bool doubled;
         float openedAt;
 
+        bool visible;         // on screen: stays until NHẬN, unless a dialogue or the game takes the map
+        float calmSince = -1f; // since when the map has been free (it flickers between free and busy
+        float lastCheck = -1f; // for a moment after the results): the boxes wait for it to settle
+        float shownAt = -10f;  // the box screen fades in over the map
+
         public bool Active()
         {
             try
             {
-                if (C_PortScreens.screenKind() != 4 || !C_PortMap.free() || C_PortMap.walking())
+                float now = Time.unscaledTime;
+                if (now - lastCheck > 0.2f)
                 {
+                    calmSince = -1f; // not asked for a while (another view had the screen): start again
+                }
+                lastCheck = now;
+                bool onMap = C_PortScreens.screenKind() == 4 && !C_PortScreens.hasDialog();
+                if (stage == 1)
+                {
+                    return onMap;
+                }
+                if (C_PortMap.f_boxes <= 0)
+                {
+                    visible = false;
                     return false;
                 }
-                return stage == 1 || C_PortMap.f_boxes > 0;
+                if (visible)
+                {
+                    if (onMap && !C_PortMap.talking() && !C_PortMap.walking() && !C_PortUi.prepareView())
+                    {
+                        return true;
+                    }
+                    visible = false;
+                    calmSince = -1f;
+                    return false;
+                }
+                if (onMap && C_PortMap.free() && !C_PortMap.walking())
+                {
+                    if (calmSince < 0)
+                    {
+                        calmSince = now;
+                    }
+                    if (now - calmSince >= 0.5f)
+                    {
+                        visible = true;
+                        shownAt = now;
+                        return true;
+                    }
+                }
+                else
+                {
+                    calmSince = -1f;
+                }
+                return false;
             }
             catch (System.Exception)
             {
@@ -53,6 +97,7 @@ namespace Loan12.UnityPort
         public void Take()
         {
             stage = 0;
+            visible = false;
         }
 
         public void OnGUI(Event e, Texture2D lcd, bool haptics)
@@ -96,7 +141,7 @@ namespace Loan12.UnityPort
                 }
                 else if (stage == 1 && Kit.Tap(3, take))
                 {
-                    stage = 0;
+                    Take();
                 }
             }
             if (Kit.Back())
@@ -106,7 +151,18 @@ namespace Loan12.UnityPort
 
             if (Kit.Paint)
             {
-                MapBackdrop.Draw(0.78f);
+                float fade = Mathf.Clamp01((Time.unscaledTime - shownAt) / 0.25f);
+                MapBackdrop.Draw(0.78f * fade);
+                if (fade < 1f)
+                {
+                    // the panel rises into place as the map darkens
+                    float rise = (1f - fade) * 12f * k;
+                    panel.y += rise;
+                    TouchUi.Panel(panel);
+                    Rewards.DrawOverlay();
+                    Kit.End();
+                    return;
+                }
                 TouchUi.Panel(panel);
                 TouchUi.PixelText("HỘP QUÀ", 1, TouchUi.R(90, 0, 0, 0).x, TouchUi.R(0, top + 12, 0, 0).y, 1, true);
                 Texture2D chest = TouchUi.Img("/r/g");

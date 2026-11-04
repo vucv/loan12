@@ -104,7 +104,7 @@ namespace Loan12.UnityPort
             {
                 seen.Add("Hboxes");
                 C_PortMap.f_boxes = 3;
-                yield return Shot("C", "boxes_closed");
+                yield return Shot("C", "boxes_closed", 1.4f);
                 TouchBoxView bv = J2MEGameHost.View<TouchBoxView>();
                 if (bv != null)
                 {
