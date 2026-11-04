@@ -83,6 +83,12 @@ public final class PortScreens {
         return s instanceof df ? ((df) s).portStory() : -1;
     }
 
+    /** while the story's picture opens: its open part (x, y, w, h inside the 200 x 130 picture); null after */
+    public static int[] storyOpening() {
+        ar s = PortUi.screen();
+        return s instanceof df ? ((df) s).portStoryOpening() : null;
+    }
+
     /** the game's intro (4) / ending (1) lines as paragraphs: lines joined, a blank line between parts */
     public static String storyText(int kind) {
         String[] lines = kind == 1 ? com.mic.smsgame.suquan.h.i : com.mic.smsgame.suquan.h.h;

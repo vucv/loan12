@@ -121,6 +121,15 @@ namespace Loan12.UnityPort
             string[] names = {"CHÍNH TUYẾN " + Mathf.Min(T, total) + "/" + total, "SỰ KIỆN " + evDone + "/" + evOpen, "QUÂN CANH " + gDone + "/" + gOpen};
 
             float listTop = top + 22;
+            // the sub tabs take the touch before the list: rows scrolled up under them must not catch it
+            for (int i = 0; i < 3; i++)
+            {
+                if (Kit.Tap(10 + i, TouchUi.R(4 + i * 58, top + 3, 56, 16)))
+                {
+                    sub = i;
+                    scroll = 0;
+                }
+            }
             if (!popup)
             {
                 scroll = MapUi.Scroll(scroll, contentH, bottom - listTop);
@@ -148,10 +157,6 @@ namespace Loan12.UnityPort
             for (int i = 0; i < 3; i++)
             {
                 Rect r = TouchUi.R(4 + i * 58, top + 3, 56, 16);
-                if (Kit.Tap(10 + i, r))
-                {
-                    sub = i;
-                }
                 if (Kit.Paint)
                 {
                     TouchUi.Button(r, i == sub ? Btn.Dark : Btn.Grey, false);

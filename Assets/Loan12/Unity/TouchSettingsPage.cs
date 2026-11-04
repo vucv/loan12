@@ -28,7 +28,7 @@ namespace Loan12.UnityPort
         float versionTapAt;
         bool showId;
 
-        /// <summary>Map only: "Về menu chính", "Đổi nhân vật", "Hướng dẫn bản đồ".</summary>
+        /// <summary>Map only: "MENU", "Đổi nhân vật", "Hướng dẫn bản đồ".</summary>
         public Action OnMenu, OnSwitchCharacter, OnMapTutorial;
 
         public TouchSettingsPage(Where w)
@@ -299,7 +299,7 @@ namespace Loan12.UnityPort
             if (where == Where.Map)
             {
                 Rect bar = TouchUi.R(0, Kit.H - 42, 180, 42);
-                Rect menu = TouchUi.R(6, Kit.H - 32, 79, 21), resume = TouchUi.R(88, Kit.H - 34, 86, 25);
+                Rect menu = TouchUi.R(6, Kit.H - 34, 79, 25), resume = TouchUi.R(88, Kit.H - 34, 86, 25);
                 if (Kit.Tap(601, menu) && OnMenu != null)
                 {
                     OnMenu();
@@ -313,8 +313,7 @@ namespace Loan12.UnityPort
                 {
                     TouchUi.Fill(new Rect(0, bar.y, Gx.Width, Gx.Height - bar.y), TouchUi.Hex(0x0A070A));
                     TouchUi.Fill(new Rect(0, bar.y, Gx.Width, TouchUi.K), TouchUi.GoldLine);
-                    TouchUi.Button(menu, Btn.Red, Kit.Down(601));
-                    TouchUi.Label(menu, "Về menu chính", 6.5f, TextAnchor.MiddleCenter, Color.white, true);
+                    TouchUi.TextButton(menu, "MENU", Btn.Red, Kit.Down(601));
                     TouchUi.RedButton(resume, "TIẾP TỤC", true, Kit.Down(602));
                 }
             }

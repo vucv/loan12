@@ -99,6 +99,13 @@ namespace Loan12
             return ((s is C_df) ? (((C_df)(s))).portStory() : -1);
         }
 
+        /** while the story's picture opens: its open part (x, y, w, h inside the 200 x 130 picture); null after */
+        public static int[] storyOpening()
+        {
+            C_ar s = C_PortUi.screen();
+            return ((s is C_df) ? (((C_df)(s))).portStoryOpening() : ((int[])null));
+        }
+
         /** the game's intro (4) / ending (1) lines as paragraphs: lines joined, a blank line between parts */
         public static string storyText(int kind)
         {

@@ -391,6 +391,7 @@ Loạn 12 sứ quân	Loan 12 Su Quan	Loan 12 Su Quan	Loan 12 Su Quan
 Loạn 12 Sứ Quân	Loan 12 Su Quan	Loan 12 Su Quan	Loan 12 Su Quan
 2010 MicroGame	2010 MicroGame	2010 MicroGame	2010 MicroGame
 Về menu chính	Back to main menu	メインメニューへ	메인 메뉴로
+MENU	MENU	メニュー	메뉴
 Thanh kiếm	Sword	剣	검
 Tấn công đối phương.	Attacks the opponent.	相手を攻撃する。	상대를 공격한다.
 Kiếm lửa	Fire sword	炎の剣	불꽃 검

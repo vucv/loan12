@@ -36,7 +36,8 @@ namespace Loan12.UnityPort
                 text = text.Replace("{s}", Loc.NoAccents(C_PortMap.heroName() ?? ""));
             }
             Rect skip = TouchUi.R(118, 8, 56, 18);
-            if ((Kit.Tap(1, skip) || Kit.Back()) && kind >= 0)
+            bool opening = C_PortScreens.storyOpening() != null; // no "Bỏ qua" yet while the picture opens (as in the game)
+            if (!opening && (Kit.Tap(1, skip) || Kit.Back()) && kind >= 0)
             {
                 C_PortScreens.request(C_PortScreens.f_SKIP, 0);
                 if (e.type == EventType.KeyDown)
@@ -53,11 +54,26 @@ namespace Loan12.UnityPort
                 const float boxW = 172, boxH = boxW * mh / mw;
                 float boxY = Mathf.Round((Kit.H - boxH) / 2);
                 Rect box = TouchUi.R(4, boxY, boxW, boxH);
-                TouchUi.Fill(new Rect(box.x - 2 * k, box.y - 2 * k, box.width + 4 * k, box.height + 4 * k), TouchUi.Outline);
-                TouchUi.Fill(new Rect(box.x - k, box.y - k, box.width + 2 * k, box.height + 2 * k), TouchUi.GoldLine);
                 float W = J2MEGameHost.LcdWidth, H = J2MEGameHost.LcdHeight;
-                Gx.DrawTextureWithTexCoords(box, lcd, new Rect(mx / W, (my + mh) / H, mw / W, -mh / H), false);
-                TouchUi.Fill(box, new Color(0.02f, 0.01f, 0.03f, 0.5f));
+                // the game first opens the picture from its centre: the same here, in the same frame
+                int[] open = C_PortScreens.storyOpening();
+                float ox = 0, oy = 0, ow = mw, oh = mh;
+                if (open != null)
+                {
+                    ox = Mathf.Clamp(open[0], 0, mw);
+                    oy = Mathf.Clamp(open[1], 0, mh);
+                    ow = Mathf.Clamp(open[2], 0, mw - ox);
+                    oh = Mathf.Clamp(open[3], 0, mh - oy);
+                }
+                float sx = box.width / mw, sy = box.height / mh;
+                Rect part = new Rect(box.x + ox * sx, box.y + oy * sy, ow * sx, oh * sy);
+                if (part.width > 0 && part.height > 0)
+                {
+                    TouchUi.Fill(new Rect(part.x - 2 * k, part.y - 2 * k, part.width + 4 * k, part.height + 4 * k), TouchUi.Outline);
+                    TouchUi.Fill(new Rect(part.x - k, part.y - k, part.width + 2 * k, part.height + 2 * k), TouchUi.GoldLine);
+                    Gx.DrawTextureWithTexCoords(part, lcd, new Rect((mx + ox) / W, (my + oy + oh) / H, ow / W, -oh / H), false);
+                    TouchUi.Fill(part, new Color(0.02f, 0.01f, 0.03f, 0.5f));
+                }
 
                 const float size = 7.5f;
                 float width = boxW - 16;
@@ -66,14 +82,17 @@ namespace Loan12.UnityPort
                 float contentH = lines * lh;
                 float p = Mathf.Clamp01(C_PortScreens.storyProgress());
                 // enters at the bottom of the picture, leaves at its top, as far as the game's own text
-                float top = boxH - p * (contentH + boxH);
+                float top = open != null ? boxH : boxH - p * (contentH + boxH);
                 Gx.BeginGroup(box);
                 Rect r = new Rect(8 * k, top * k, width * k, contentH * k + lh * k);
                 TouchUi.Label(r, text, size, TextAnchor.UpperCenter, TouchUi.Hex(0xFFE9B8), false, true);
                 Gx.EndGroup();
 
-                TouchUi.Button(skip, Btn.Dark, Kit.Down(1));
-                TouchUi.PixelText("BỎ QUA", 1, skip.center.x, skip.center.y + (Kit.Down(1) ? k : 0), 1, true);
+                if (!opening)
+                {
+                    TouchUi.Button(skip, Btn.Dark, Kit.Down(1));
+                    TouchUi.PixelText("BỎ QUA", 1, skip.center.x, skip.center.y + (Kit.Down(1) ? k : 0), 1, true);
+                }
             }
             Kit.End();
         }

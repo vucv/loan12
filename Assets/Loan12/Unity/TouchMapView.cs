@@ -545,8 +545,9 @@ namespace Loan12.UnityPort
             // hero
             Texture2D hm = TouchUi.Img("/m/hm");
             Vector2 h = o + new Vector2(C_PortMap.playerX(), C_PortMap.playerY()) * s;
-            float hw = 13 * s, hh = 17 * s;
-            Gx.DrawTexture(new Rect(Mathf.Round(h.x - hw / 2), Mathf.Round(h.y - hh / 2), hw, hh), hm);
+            // twice the game's size; the feet where the small one's were, so it stands over the town
+            float hw = 26 * s, hh = 34 * s;
+            Gx.DrawTexture(new Rect(Mathf.Round(h.x - hw / 2), Mathf.Round(h.y + 8.5f * s - hh), hw, hh), hm);
             Gx.EndGroup();
         }
 
@@ -700,11 +701,11 @@ namespace Loan12.UnityPort
                 switch (i)
                 {
                     case 0:
-                        // the whole map of the game, small, in a gold frame
-                        Rect map = new Rect(r.center.x - 8 * k, r.y + 4 * k, 16 * k, 16 * k);
-                        TouchUi.Fill(new Rect(map.x - 2 * k, map.y - 2 * k, map.width + 4 * k, map.height + 4 * k), TouchUi.Outline);
-                        TouchUi.Fill(new Rect(map.x - k, map.y - k, map.width + 2 * k, map.height + 2 * k), Kit.Gold);
-                        TouchUi.Sprite(TouchUi.Img("/m/m"), map);
+                        // the game's two crossed swords (m/sw without its frame), in a gold frame
+                        Rect sw = new Rect(r.center.x - 9 * k, r.y + 5 * k, 18 * k, 15 * k);
+                        TouchUi.Fill(new Rect(sw.x - 2 * k, sw.y - 2 * k, sw.width + 4 * k, sw.height + 4 * k), TouchUi.Outline);
+                        TouchUi.Fill(new Rect(sw.x - k, sw.y - k, sw.width + 2 * k, sw.height + 2 * k), Kit.Gold);
+                        TouchUi.Sprite(TouchUi.Img("/m/sw"), sw, new Rect(5, 2, 29, 25));
                         break;
                     case 1:
                         // the hero (the map's old icon)
