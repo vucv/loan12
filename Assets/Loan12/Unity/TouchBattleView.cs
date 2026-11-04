@@ -680,7 +680,12 @@ namespace Loan12.UnityPort
             }
         }
 
-        /// <summary>Tutorial battle: the coach's message (the game's bubble), over the lower part of the screen.</summary>
+        /// <summary>
+        /// Tutorial battle: the coach's message in a speech bubble from Lưu Cơ, the opponent of this battle
+        /// (right portrait), like the fighters' own lines; its height follows the text. While a lesson
+        /// asks for a move on the board (a gem is shown) the bubble hangs below the portraits, over the
+        /// skills and items; otherwise above them, over the bottom of the board.
+        /// </summary>
         void DrawCoach()
         {
             string text = C_PortScreens.training() ? C_PortScreens.coach() : null;
@@ -690,29 +695,53 @@ namespace Loan12.UnityPort
             }
             float k = TouchUi.K;
             bool waits = C_PortScreens.coachWaits();
-            int lines = Mathf.Max(2, TouchUi.Lines(text, 116, 6.75f));
-            float h = lines * TouchUi.LineHeight(6.75f) + (waits ? 22 : 14);
-            float y = GridH - h - 6;
-            Rect box = TouchUi.R(6, y, 168, h);
-            TouchUi.Fill(new Rect(box.x - 2 * k, box.y - 2 * k, box.width + 4 * k, box.height + 4 * k), new Color(0, 0, 0, 0.35f));
-            TouchUi.Panel(box);
-            TouchUi.Portrait(8, TouchUi.R(12, y + 7, 30, 30)); // Lưu Cơ, the coach of the first quest
-            TouchUi.Label(TouchUi.R(12, y + 38, 30, 9), "Lưu Cơ", 5.5f, TextAnchor.UpperCenter, Kit.Gold, true);
-            TouchUi.Label(TouchUi.R(48, y + 7, 120, lines * TouchUi.LineHeight(6.75f) + 4), text, 6.75f, TextAnchor.UpperLeft, Color.white, false, true);
+            const float size = 7f, textW = 146;
+            float lh = TouchUi.LineHeight(size);
+            int lines = Mathf.Max(1, TouchUi.Lines(text, textW, size));
+            float h = 12 + lines * lh + (waits ? 12 : 5);
             int gem = C_PortScreens.coachGem();
+            bool below = gem >= 0;
+            // above: ends just over the portraits, like the fighters' bubbles; below: starts under them
+            float y = below ? StripTop + StripH + 7 : 196 - h;
+            Rect b = TouchUi.R(8, y, 164, h);
+            Color line = new Color(0.01f, 0.01f, 0.01f, 1f), fill = new Color(1f, 1f, 1f, 1f);
+            BubbleShape(b, 161, line, fill, below);
+            TouchUi.Label(TouchUi.R(15, y + 3, 100, 9), "Lưu Cơ", 5.75f, TextAnchor.UpperLeft, TouchUi.Hex(0x9A5A12), true, false, false);
+            TouchUi.Label(TouchUi.R(15, y + 12, textW, lines * lh + 2), text, size, TextAnchor.UpperLeft, new Color(0.1f, 0.04f, 0.1f, 1f), true, true, false);
             if (gem >= 0)
             {
                 string[] gems = {"/sword", "/rice", "/heart", "/yinyang", "/gold", "/book", "/swordred"}; // bs.d
                 if (gem < gems.Length)
                 {
                     float bob = Mathf.Round(Mathf.Sin(Time.unscaledTime * 6) * 1.5f);
-                    TouchUi.Sprite(TouchUi.Img(gems[gem]), TouchUi.R(150, y - 18 + bob, 20, 20));
+                    TouchUi.Sprite(TouchUi.Img(gems[gem]), TouchUi.R(154, y + 1 + bob, 10, 10)); // the gem to line up, top right
                 }
             }
             if (waits)
             {
                 float a = 0.55f + 0.45f * Mathf.Sin(Time.unscaledTime * 5);
-                TouchUi.Label(TouchUi.R(48, y + h - 13, 120, 9), "Chạm để tiếp tục", 6, TextAnchor.UpperRight, new Color(1, 0.9f, 0.6f, a), true);
+                TouchUi.Label(TouchUi.R(15, y + h - 12, textW, 9), "Chạm để tiếp tục", 5.75f, TextAnchor.UpperRight, new Color(0.47f, 0.23f, 0.46f, a), true, false, false);
+            }
+        }
+
+        /// <summary>A white speech bubble with a dark pixel outline and a tail at grid x = tail, down (or up).</summary>
+        static void BubbleShape(Rect b, float tail, Color line, Color fill, bool tailUp = false)
+        {
+            float k = TouchUi.K;
+            TouchUi.Fill(new Rect(b.x + k, b.y, b.width - 2 * k, b.height), line);
+            TouchUi.Fill(new Rect(b.x, b.y + k, b.width, b.height - 2 * k), line);
+            TouchUi.Fill(new Rect(b.x + 2 * k, b.y + k, b.width - 4 * k, b.height - 2 * k), fill);
+            TouchUi.Fill(new Rect(b.x + k, b.y + 2 * k, b.width - 2 * k, b.height - 4 * k), fill);
+            Vector2 tv = TouchUi.V(new Vector2(0, tailUp ? b.y : b.yMax));
+            float dir = tailUp ? -1 : 1;
+            for (int i = 0; i < 6; i++)
+            {
+                float w = 6 - i;
+                TouchUi.Fill(TouchUi.R(tail - w / 2f - 1, tv.y + dir * i - (tailUp ? 1 : 0), w + 2, 1), line);
+                if (i < 5)
+                {
+                    TouchUi.Fill(TouchUi.R(tail - w / 2f, tv.y + dir * (i - 1) - (tailUp ? 1 : 0), w, 1), fill);
+                }
             }
         }
 
@@ -1001,9 +1030,9 @@ namespace Loan12.UnityPort
 
         void DrawBubble()
         {
-            if (bubbleSide < 0)
+            if (bubbleSide < 0 || (C_PortScreens.training() && !string.IsNullOrEmpty(C_PortScreens.coach())))
             {
-                return;
+                return; // one bubble at a time: the coach's comes first in the tutorial
             }
             float k = TouchUi.K;
             float age = Time.unscaledTime - bubbleTime;
@@ -1011,21 +1040,7 @@ namespace Loan12.UnityPort
             Rect b = bubbleSide == 0 ? TouchUi.R(2, 160, 140, 36) : TouchUi.R(38, 160, 140, 36);
             float tail = bubbleSide == 0 ? 19 : 161;
             Color line = new Color(0.01f, 0.01f, 0.01f, alpha), fill = new Color(1f, 1f, 1f, alpha);
-            TouchUi.Fill(new Rect(b.x + k, b.y, b.width - 2 * k, b.height), line);
-            TouchUi.Fill(new Rect(b.x, b.y + k, b.width, b.height - 2 * k), line);
-            TouchUi.Fill(new Rect(b.x + 2 * k, b.y + k, b.width - 4 * k, b.height - 2 * k), fill);
-            TouchUi.Fill(new Rect(b.x + k, b.y + 2 * k, b.width - 2 * k, b.height - 4 * k), fill);
-            Vector2 tv = TouchUi.V(new Vector2(0, b.yMax));
-            for (int i = 0; i < 6; i++)
-            {
-                float w = 6 - i;
-                Rect row = TouchUi.R(tail - w / 2f - 1, tv.y + i, w + 2, 1);
-                TouchUi.Fill(row, line);
-                if (i < 5)
-                {
-                    TouchUi.Fill(TouchUi.R(tail - w / 2f, tv.y - 1 + i, w, 1), fill);
-                }
-            }
+            BubbleShape(b, tail, line, fill);
             Rect text = new Rect(b.x + 5 * k, b.y + 3 * k, b.width - 10 * k, b.height - 6 * k);
             TouchUi.Label(text, bubbleText, 7.5f, TextAnchor.MiddleCenter, new Color(0.1f, 0.04f, 0.1f, alpha), true, true, false);
         }
