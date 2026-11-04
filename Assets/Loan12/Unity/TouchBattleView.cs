@@ -702,7 +702,7 @@ namespace Loan12.UnityPort
             int gem = C_PortScreens.coachGem();
             bool below = gem >= 0;
             // above: ends just over the portraits, like the fighters' bubbles; below: starts under them
-            float y = below ? StripTop + StripH + 7 : 196 - h;
+            float y = below ? StripTop + StripH + 7 : StripTop - 8 - h; // the tail ends at the portraits
             Rect b = TouchUi.R(8, y, 164, h);
             Color line = new Color(0.01f, 0.01f, 0.01f, 1f), fill = new Color(1f, 1f, 1f, 1f);
             BubbleShape(b, 161, line, fill, below);
