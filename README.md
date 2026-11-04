@@ -2,7 +2,8 @@
 
 | File | Nhánh | Commit | Nội dung |
 |---|---|---|---|
-| `android/Loan12-ui-touch-94cdd3e.apk` | `ui-touch` | `94cdd3e` | Đóng màn chiến thắng vào thẳng màn mở quà; tên dài màn Chuẩn bị; giả lập mua vàng (mới nhất) |
+| `android/Loan12-ui-touch-6e2c19b.apk` | `ui-touch` | `6e2c19b` | 11 ngôn ngữ (thêm Indonesia, Thái, Phồn thể, Bồ Đào Nha, Tây Ban Nha, Đức, Nga); thoại trong trận theo tính cách nhân vật, viết riêng từng ngôn ngữ (mới nhất) |
+| `android/Loan12-ui-touch-94cdd3e.apk` | `ui-touch` | `94cdd3e` | Đóng màn chiến thắng vào thẳng màn mở quà; tên dài màn Chuẩn bị; giả lập mua vàng |
 | `android/Loan12-ui-touch-c16e05b.apk` | `ui-touch` | `c16e05b` | Tên dài ở màn Chuẩn bị không đè nhau; giả lập mua gói vàng |
 | `android/Loan12-ui-touch-3910b09.apk` | `ui-touch` | `3910b09` | Đấu trường có màn chọn vật phẩm; giả lập mua gói, khôi phục giao dịch |
 | `android/Loan12-ui-touch-4436bb2.apk` | `ui-touch` | `4436bb2` | Ô vật phẩm 2/3/4 và mạng tối đa 3/4/5 (thường/Gói khởi đầu/VIP); bảng tên hội thoại một kiểu |
