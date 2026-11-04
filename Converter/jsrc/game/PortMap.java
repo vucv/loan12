@@ -529,15 +529,12 @@ public final class PortMap {
     /** what the last opening gave, by item type */
     public static int[] opened = new int[6];
 
-    /** gift boxes a quest gives: 1 early on, 2 in the middle of the war, 3 late, 5 for the last one */
+    /** gift boxes a quest gives: 1, 3 for the last one */
     public static int questBoxes(int q) {
         if (dd.g(q)) {
-            return 5;
+            return 3;
         }
-        if (!dd.f(q)) {
-            return 0;
-        }
-        return q < 16 ? 1 : (q < 32 ? 2 : 3);
+        return dd.f(q) ? 1 : 0;
     }
 
     /** the boxes the battle on screen brings (drops, and its quest's when won) */
@@ -550,11 +547,11 @@ public final class PortMap {
     public static final int BOX_REFILL = 6, BOX_EXP = 7;
 
     /**
-     * Opens the waiting boxes, one reward each: gold (3 in 10), experience (1 in 4) or a shop item
-     * (the rest), the dearer the item the rarer (chance in inverse proportion to its price: Bình Thuốc
-     * 250, Ngọc Ấn 500, Quỷ Diện Giáp and Bình Hồi Mạng 1.000, Long Thần Kiếm and Nhân Sâm 1.500).
-     * Gold and items go to the bag, experience to the hero; Bình Hồi Mạng (the touch port's item)
-     * is added by the box screen. opened() says what came out.
+     * Opens the waiting boxes, one reward each, kept small so the shop stays worth it: a little gold
+     * (1 in 2), a little experience (1 in 4) or a shop item (1 in 4), the dearer the item the rarer
+     * (chance in inverse proportion to its price: Bình Thuốc 250, Ngọc Ấn 500, Quỷ Diện Giáp and Bình
+     * Hồi Mạng 1.000, Long Thần Kiếm and Nhân Sâm 1.500). Gold and items go to the bag, experience to
+     * the hero; Bình Hồi Mạng (the touch port's item) is added by the box screen.
      */
     public static void openBoxes() {
         opened = new int[8];
@@ -562,12 +559,12 @@ public final class PortMap {
         int need = Math.max(20, heroExpFor(lv + 1) - heroExpFor(lv));
         for (int n = 0; n < boxes; n++) {
             int r = ay.a(1000);
-            if (r < 300) {
-                opened[2] += 40 + lv * 12 + ay.a(20 + lv * 6);
-            } else if (r < 550) {
-                opened[BOX_EXP] += Math.max(5, need / 12 + ay.a(Math.max(1, need / 24)));
+            if (r < 500) {
+                opened[2] += 15 + lv * 4 + ay.a(10 + lv * 3);
+            } else if (r < 750) {
+                opened[BOX_EXP] += Math.max(3, need / 25 + ay.a(Math.max(1, need / 50)));
             } else {
-                // 450 for items, shared as 1 / price: 6 + 3 + 1.5 + 1.5 + 1 + 1 = 14 parts
+                // items shared as 1 / price: 6 + 3 + 1.5 + 1.5 + 1 + 1 = 14 parts
                 int q = ay.a(140);
                 int t = q < 60 ? 4 : (q < 90 ? 5 : (q < 105 ? 3 : (q < 120 ? BOX_REFILL : (q < 130 ? 0 : 1))));
                 opened[t] += 1;

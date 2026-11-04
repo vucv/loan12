@@ -496,7 +496,7 @@ rep('game/bu.java', """    private int portEndWait;""", """    private int portE
     public int[] portWon = new int[6]; // PORT-UI: items won in this battle (5 in a row), by type""")
 
 # - item drops (touch): more often than the game's (40% on a line of 5): a line of 4 drops one item
-#   1 time in 4, a line of 5 or more 4 times in 5; the item flies out of the board (t.d) as in the game
+#   1 time in 10, a line of 5 or more about 1 time in 3, 2 boxes at most a battle; the item flies out of the board (t.d) as in the game
 rep('game/bu.java', """                        if (i6 >= 5) {
                             int i7 = g(i6);""", """                        if (i6 >= (game.PortScreens.touch ? 4 : 5)) {
                             int i7 = game.PortScreens.touch ? portDrop(i6) : g(i6);""")
@@ -507,7 +507,7 @@ rep('game/bu.java', """    private int portEndWait;""", """    private int portE
         if (this.s.d) {
             return g(len);
         }
-        if (ay.a(100) >= (len >= 5 ? 80 : 25)) { // a little less than before (100 / 34)
+        if ((this.portBoxes >= 2) || (ay.a(100) >= (len >= 5 ? 35 : 10))) { // at most 2 boxes a battle
             return -1;
         }
         int r = ay.a(100);

@@ -89,23 +89,35 @@ namespace Loan12.UnityPort
                 MapBackdrop.Draw(0.35f);
                 int who = C_PortMap.talkNowSpeaker();
                 string text = C_PortMap.talkNowText();
-                float size = 8f;
+                float size = 7.5f;
                 int lines = Mathf.Max(4, TouchUi.Lines(text, 152, size));
                 float boxH = Mathf.Min(H * 0.5f, lines * TouchUi.LineHeight(size) + 36);
                 // portrait + text box as one block, centred vertically
-                float block = (who >= 0 ? 64 : 0) + boxH;
-                float boxY = Mathf.Round((H - block) / 2f) + (who >= 0 ? 64 : 0);
+                const float pic0 = 50; // portrait size: leaves the name plate room up to the right edge
+                float block = (who >= 0 ? pic0 + 2 : 0) + boxH;
+                float boxY = Mathf.Round((H - block) / 2f) + (who >= 0 ? pic0 + 2 : 0);
                 float t = Mathf.Clamp01((Time.unscaledTime - shownAt) / 0.15f);
                 if (who >= 0)
                 {
-                    Rect pic = TouchUi.R(14, boxY - 62 + (1 - t) * 6, 62, 62);
+                    Rect pic = TouchUi.R(14, boxY - pic0 + (1 - t) * 6, pic0, pic0);
                     TouchUi.Fill(new Rect(pic.x - 2 * k, pic.y - 2 * k, pic.width + 4 * k, pic.height + 4 * k), TouchUi.GoldLine);
                     TouchUi.Portrait(who, pic);
+                    // the name plate fits between the portrait and the screen's edge: the game's font, or a
+                    // smaller one for a long name
                     string name = QuestData.Who(who).ToUpperInvariant();
-                    float w = Mathf.Max(60, TouchUi.PixelWidth(name, 1) + 16);
-                    Rect plate = TouchUi.R(82, boxY - 22, w, 18);
+                    const float px = 14 + pic0 + 6, room = 174 - px;
+                    float pw = TouchUi.PixelWidth(name, 1) + 16;
+                    float w = Mathf.Clamp(pw, 60, room);
+                    Rect plate = TouchUi.R(px, boxY - 20, w, 16);
                     Kit.Box(plate, TouchUi.Hex(0x46245C));
-                    TouchUi.PixelText(name, 1, plate.center.x, plate.center.y, 1, true);
+                    if (pw <= room)
+                    {
+                        TouchUi.PixelText(name, 1, plate.center.x, plate.center.y, 1, true);
+                    }
+                    else
+                    {
+                        TouchUi.Label(plate, name, 7, TextAnchor.MiddleCenter, TouchUi.Hex(0xFFD84A), true);
+                    }
                 }
                 Rect box = TouchUi.R(6, boxY, 168, boxH);
                 TouchUi.Panel(box);

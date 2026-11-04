@@ -105,7 +105,7 @@ namespace Loan12
         private int f_portEndWait;
         /** PORT-UI (tour): the player's move, a sword line when there is one; false when it is not the player's turn */
         /** PORT-UI: the touch interface's drop (rates above): items 3, 4, 5 a little more often than 0 and 1 */
-        // a little less than before (100 / 34)
+        // at most 2 boxes a battle
         // the chest (dn draws it instead of an item)
         public int f_portBoxes;
         public bool f_portReviveOffer;
@@ -1715,9 +1715,9 @@ namespace Loan12
             {
                 return this.g(len);
             }
-            if ((C_ay.a(100) >= (((len >= 5) ? 80 : 25))))
+            if (((this.f_portBoxes >= 2)) || ((C_ay.a(100) >= (((len >= 5) ? 35 : 10)))))
             {
-                // a little less than before (100 / 34)
+                // at most 2 boxes a battle
                 return -1;
             }
             this.f_portBoxes += 1;

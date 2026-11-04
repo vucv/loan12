@@ -1323,7 +1323,7 @@ public class bu
         if (this.s.d) {
             return g(len);
         }
-        if (ay.a(100) >= (len >= 5 ? 80 : 25)) { // a little less than before (100 / 34)
+        if ((this.portBoxes >= 2) || (ay.a(100) >= (len >= 5 ? 35 : 10))) { // at most 2 boxes a battle
             return -1;
         }
         this.portBoxes += 1;

@@ -75,19 +75,19 @@ namespace Loan12
         public static bool f_arenaIntro;
         /** what the last opening gave, by item type */
         public static int[] f_opened;
-        /** gift boxes a quest gives: 1 early on, 2 in the middle of the war, 3 late, 5 for the last one */
+        /** gift boxes a quest gives: 1, 3 for the last one */
         /** the boxes the battle on screen brings (drops, and its quest's when won) */
         /** a box's reward, by kind: 0..5 the game's items (2 is gold, an amount), 6 Bình Hồi Mạng, 7 experience */
         public const int f_BOX_REFILL = 6;
         public const int f_BOX_EXP = 7;
         /**
-         * Opens the waiting boxes, one reward each: gold (3 in 10), experience (1 in 4) or a shop item
-         * (the rest), the dearer the item the rarer (chance in inverse proportion to its price: Bình Thuốc
-         * 250, Ngọc Ấn 500, Quỷ Diện Giáp and Bình Hồi Mạng 1.000, Long Thần Kiếm and Nhân Sâm 1.500).
-         * Gold and items go to the bag, experience to the hero; Bình Hồi Mạng (the touch port's item)
-         * is added by the box screen. opened() says what came out.
+         * Opens the waiting boxes, one reward each, kept small so the shop stays worth it: a little gold
+         * (1 in 2), a little experience (1 in 4) or a shop item (1 in 4), the dearer the item the rarer
+         * (chance in inverse proportion to its price: Bình Thuốc 250, Ngọc Ấn 500, Quỷ Diện Giáp and Bình
+         * Hồi Mạng 1.000, Long Thần Kiếm and Nhân Sâm 1.500). Gold and items go to the bag, experience to
+         * the hero; Bình Hồi Mạng (the touch port's item) is added by the box screen.
          */
-        // 450 for items, shared as 1 / price: 6 + 3 + 1.5 + 1.5 + 1 + 1 = 14 parts
+        // items shared as 1 / price: 6 + 3 + 1.5 + 1.5 + 1 + 1 = 14 parts
         /** a rewarded ad watched: what the boxes gave, once more */
         /** experience for the hero, with the levels it brings */
         // ---- shop ---------------------------------------------------------------------------------
@@ -692,18 +692,14 @@ namespace Loan12
         /** gift boxes waiting to be opened (battle drops, quest rewards); opened on the map */
         /** the arena's rules are to be shown (its first visit) */
         /** what the last opening gave, by item type */
-        /** gift boxes a quest gives: 1 early on, 2 in the middle of the war, 3 late, 5 for the last one */
+        /** gift boxes a quest gives: 1, 3 for the last one */
         public static int questBoxes(int q)
         {
             if (C_dd.g(q))
             {
-                return 5;
+                return 3;
             }
-            if (!C_dd.f(q))
-            {
-                return 0;
-            }
-            return ((q < 16) ? 1 : (((q < 32) ? 2 : 3)));
+            return (C_dd.f(q) ? 1 : 0);
         }
 
         /** the boxes the battle on screen brings (drops, and its quest's when won) */
@@ -715,11 +711,11 @@ namespace Loan12
 
         /** a box's reward, by kind: 0..5 the game's items (2 is gold, an amount), 6 Bình Hồi Mạng, 7 experience */
         /**
-         * Opens the waiting boxes, one reward each: gold (3 in 10), experience (1 in 4) or a shop item
-         * (the rest), the dearer the item the rarer (chance in inverse proportion to its price: Bình Thuốc
-         * 250, Ngọc Ấn 500, Quỷ Diện Giáp and Bình Hồi Mạng 1.000, Long Thần Kiếm and Nhân Sâm 1.500).
-         * Gold and items go to the bag, experience to the hero; Bình Hồi Mạng (the touch port's item)
-         * is added by the box screen. opened() says what came out.
+         * Opens the waiting boxes, one reward each, kept small so the shop stays worth it: a little gold
+         * (1 in 2), a little experience (1 in 4) or a shop item (1 in 4), the dearer the item the rarer
+         * (chance in inverse proportion to its price: Bình Thuốc 250, Ngọc Ấn 500, Quỷ Diện Giáp and Bình
+         * Hồi Mạng 1.000, Long Thần Kiếm and Nhân Sâm 1.500). Gold and items go to the bag, experience to
+         * the hero; Bình Hồi Mạng (the touch port's item) is added by the box screen.
          */
         public static void openBoxes()
         {
@@ -729,17 +725,17 @@ namespace Loan12
             for (int n = 0; (n < C_PortMap.f_boxes); n++)
             {
                 int r = C_ay.a(1000);
-                if ((r < 300))
+                if ((r < 500))
                 {
-                    C_PortMap.f_opened[2] += 40 + lv * 12 + C_ay.a(20 + lv * 6);
+                    C_PortMap.f_opened[2] += 15 + lv * 4 + C_ay.a(10 + lv * 3);
                 }
-                else if ((r < 550))
+                else if ((r < 750))
                 {
-                    C_PortMap.f_opened[C_PortMap.f_BOX_EXP] += J2ME.JMath.max(5, need / 12 + C_ay.a(J2ME.JMath.max(1, need / 24)));
+                    C_PortMap.f_opened[C_PortMap.f_BOX_EXP] += J2ME.JMath.max(3, need / 25 + C_ay.a(J2ME.JMath.max(1, need / 50)));
                 }
                 else
                 {
-                    // 450 for items, shared as 1 / price: 6 + 3 + 1.5 + 1.5 + 1 + 1 = 14 parts
+                    // items shared as 1 / price: 6 + 3 + 1.5 + 1.5 + 1 + 1 = 14 parts
                     int q = C_ay.a(140);
                     int t = ((q < 60) ? 4 : (((q < 90) ? 5 : (((q < 105) ? 3 : (((q < 120) ? C_PortMap.f_BOX_REFILL : (((q < 130) ? 0 : 1)))))))));
                     C_PortMap.f_opened[t] += 1;
