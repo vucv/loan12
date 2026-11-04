@@ -80,13 +80,19 @@ namespace Loan12.UnityPort
                 }
             }
 
-            // ---- C: map
+            // ---- C / G / H: on the map the first quest's dialogue starts by itself; play it through
+            // (dialogue, prepare, the tutorial battle, its results), then the map
             yield return Until(() => Kind() == 4, 15);
             yield return new WaitForSeconds(3f);
             TouchMapView map = TouchMapView.Instance;
-            yield return Shot("C", "map_tutorial_1");
+            yield return PlayQuest(150);
+            yield return Until(() => Kind() == 4 && C_PortMap.free() && !C_PortMap.talking(), 20);
+            yield return new WaitForSeconds(1f);
             if (map != null)
             {
+                map.OpenTab(TouchMapView.TabMap);
+                map.tutorial = 0;
+                yield return Shot("C", "map_tutorial_1");
                 map.tutorial = 1;
                 yield return Shot("C", "map_tutorial_2");
                 map.tutorial = -1;
@@ -96,12 +102,7 @@ namespace Loan12.UnityPort
             yield return Shot("C", "lives_box");
             TouchLivesView.Requested = false;
 
-            // ---- first quest: dialogue and the tutorial battle
-            yield return PlayQuest(120);
-
             // ---- D: bag
-            yield return Until(() => Kind() == 4 && C_PortMap.free(), 20);
-            yield return new WaitForSeconds(1f);
             if (map != null)
             {
                 map.OpenTab(TouchMapView.TabBag);
@@ -152,10 +153,11 @@ namespace Loan12.UnityPort
                 map.OpenTab(TouchMapView.TabMap);
             }
 
-            // ---- H / I: more quests until a real battle (prepare, battle, pause, win), then one lost
-            yield return PlayQuest(150);
-            yield return PlayQuest(150);
-            yield return PlayQuest(150);
+            // ---- H / I: more quests until a real battle is won, then one given up from the pause screen
+            for (int i = 0; i < 4 && !seen.Contains("Iresult_0_won"); i++)
+            {
+                yield return PlayQuest(150);
+            }
             yield return PlayQuest(150, true);
 
             // ---- G: the arena, if a road leads there already
@@ -238,26 +240,26 @@ namespace Loan12.UnityPort
         /// </summary>
         static IEnumerator PlayQuest(float seconds, bool lose = false)
         {
-            yield return Until(() => Kind() == 4 && C_PortMap.free() && !C_PortMap.walking(), 20);
+            yield return Until(() => Kind() == 4 && (C_PortMap.talking() || (C_PortMap.free() && !C_PortMap.walking())), 20);
             int q = C_PortMap.questIndex();
             if (q >= C_PortMap.questCount())
             {
                 yield break;
             }
             int node = C_PortMap.questNode(q);
-            if (C_PortMap.playerNode() != node)
+            if (!C_PortMap.talking() && C_PortMap.playerNode() != node)
             {
                 C_PortMap.request(C_PortMap.f_GO, node);
                 yield return new WaitForSeconds(0.5f);
                 yield return Until(() => !C_PortMap.walking(), 40);
                 yield return new WaitForSeconds(0.8f);
             }
-            if (Kind() == 4 && C_PortMap.free())
+            if (Kind() == 4 && C_PortMap.free() && !C_PortMap.talking())
             {
                 C_PortMap.request(C_PortMap.f_START, 0);
             }
             float end = Time.realtimeSinceStartup + seconds;
-            bool fought = false, paused = false;
+            bool fought = false, paused = false, training0 = false;
             float lastMove = 0f;
             while (Time.realtimeSinceStartup < end)
             {
@@ -299,6 +301,7 @@ namespace Loan12.UnityPort
                 {
                     fought = true;
                     bool training = C_PortScreens.training();
+                    training0 |= training;
                     if (training && C_PortScreens.coachWaits())
                     {
                         yield return new WaitForSeconds(0.6f);
@@ -335,7 +338,7 @@ namespace Loan12.UnityPort
                             bv.popupKind = 0;
                         }
                     }
-                    if (lose || !paused)
+                    if (lose && !paused)
                     {
                         paused = true;
                         C_PortUi.request(C_PortUi.f_PAUSE, 0);
@@ -376,6 +379,15 @@ namespace Loan12.UnityPort
                 if (C_PortUi.resultView())
                 {
                     int mode = C_PortUi.resultMode();
+                    if (mode == 3)
+                    {
+                        // lost: no counting; TRỞ VỀ
+                        yield return new WaitForSeconds(1.2f);
+                        yield return Once("I", "result_lost");
+                        C_PortUi.request(C_PortUi.f_END_BACK, 0);
+                        yield return new WaitForSeconds(2f);
+                        continue;
+                    }
                     if (!C_PortUi.resultReady())
                     {
                         yield return new WaitForSeconds(1.2f);
@@ -385,18 +397,18 @@ namespace Loan12.UnityPort
                         continue;
                     }
                     yield return new WaitForSeconds(0.8f);
-                    yield return Once("I", mode == 3 ? "result_lost" : (mode == 1 ? "quest_complete" : "result_" + mode));
-                    C_PortUi.request(mode == 3 ? C_PortUi.f_END_BACK : C_PortUi.f_DIALOG_KEY, mode == 3 ? 0 : 1);
+                    yield return Once("I", mode == 1 ? "quest_complete" : (training0 ? "result_tutorial" : "result_" + mode + "_won"));
+                    C_PortUi.request(C_PortUi.f_DIALOG_KEY, 1);
                     yield return new WaitForSeconds(1.2f);
                     continue;
                 }
-                if (Kind() == 4 && C_PortMap.free() && fought)
+                if (Kind() == 4 && C_PortMap.free() && !C_PortMap.talking() && fought)
                 {
                     yield return new WaitForSeconds(1f);
                     yield return Once("C", "map_after_battle");
                     yield break;
                 }
-                if (Kind() == 4 && C_PortMap.free() && C_PortMap.questIndex() != q)
+                if (Kind() == 4 && C_PortMap.free() && !C_PortMap.talking() && C_PortMap.questIndex() != q)
                 {
                     yield break; // a quest without a battle
                 }
