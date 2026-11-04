@@ -1,0 +1,1000 @@
+# banter de
+[hero_fire.start]
+Los geht's! Ich bin heute on fire. Wortwörtlich.
+1v1, {enemy}! Keine Ausreden wegen Lag!
+Mach dich bereit für dein Tutorial, {enemy}!
+Aufwärmen? Brauch ich nicht, ich BIN warm.
+Kamera an, das wird ein Highlight-Clip!
+Na, {enemy}? Bereit, Staub zu fressen?
+[hero_fire.taunt]
+Skill Issue, {enemy}. Ganz klar Skill Issue.
+Ist das dein Main oder spielst du mit links?
+Digga, du bewegst dich wie im Energiesparmodus.
+Junge, ich hab schon schwerere Bosse gefrühstückt!
+Brauchst du 'ne Anleitung? Ich hab Zeit.
+Heiß, heißer, ich. Du? Lauwarm.
+Ey, {enemy}, dein Ladebalken hängt!
+Weinst du schon oder schwitzt du nur?
+[hero_fire.combo]
+KOMBOOO! Habt ihr das gesehen?!
+Clip it! Das geht ins Highlight-Video!
+Ich bin nicht zu stoppen! Brenn, Baby, brenn!
+Sheesh! Das war dreckig gut!
+Zack, zack, zack! Feuerwerk ohne Silvester!
+[hero_fire.hurt]
+Aua! Das war Glück, nur Glück!
+Hey! Wer hat dir das erlaubt?
+Autsch! Ich lass das mal als Warnschuss gelten.
+Okay, okay... DAS gibt Revanche!
+Lag! Das war eindeutig Lag!
+Grr! Jetzt bin ich auf hundertachtzig! Mindestens!
+[hero_fire.low]
+Bisschen knapp hier... ist Taktik!
+Ich spiel nur mit Handicap, damit's fair bleibt!
+Mein Feuer flackert... aber es geht nicht aus!
+Jetzt kommt das Comeback des Jahrhunderts!
+Lowkey Panik. Highkey Entschlossenheit!
+[hero_fire.heal]
+Aufgeladen! Zweite Halbzeit, Baby!
+Frisch wie ein Respawn!
+Ha! Volle Lotte zurück!
+[hero_fire.block]
+Abgeprallt! Versuch's nochmal, Noob!
+Nope! Nicht heute!
+Geblockt wie 'ne nervige Werbung!
+[hero_fire.skill]
+{skill}! Mitten ins Gesicht!
+Achtung, heiß und fettig: {skill}!
+Ultimate bereit! {skill}, LOS!
+Ihr wolltet Feuer? Hier: {skill}!
+[hero_fire.item]
+Kleines Upgrade, großer Ärger für dich!
+Pay to win? Nee, play to win!
+Item rein, Gegner raus!
+[hero_fire.win]
+GG EZ! Nächster!
+Wer hat gewonnen? Ich. Wie immer.
+Ab in die Hall of Fame mit mir!
+Schreib's dir auf, {enemy}: Ich bin der Endgegner.
+Ehrenrunde! Und gleich noch eine!
+Feierabend! Und ich hab nicht mal geschwitzt.
+[hero_fire.lose]
+Das war unfair! Ich verlange ein Rematch!
+Mein Controller... äh, mein Schwert ist kaputt!
+Nur ein Warm-up. Das zählt nicht!
+Rage Quit in drei... zwei...
+Okay. Ich geh kurz schreien. Bin gleich zurück.
+[hero_fire.revive]
+Respawn! Ich bin wieder daaa!
+Totgesagte leben länger, Digga!
+Phase zwei! Jetzt wird's ernst!
+[hero_storm.start]
+Statistisch gesehen verlierst du gleich. Nur so als Info.
+Ich habe 47 Strategien. Du brauchst nur eine Ausrede.
+Kurzer Systemcheck: Blitze geladen. Geduld gering.
+Hallo, {enemy}. Ich habe dich schon durchgerechnet.
+Lass uns das effizient erledigen. Ich hab noch Lektüre.
+Donner kommt nach dem Blitz. Du kommst nach mir.
+[hero_storm.taunt]
+Interessanter Zug. Falsch, aber interessant.
+Deine Taktik hat die Tiefe einer Pfütze.
+Ich würde dir helfen, aber das wäre Physik-Nachhilfe.
+Fun Fact: Du bist gerade das Gegenteil von Fun.
+Hast du das geplant oder ist das einfach passiert?
+{enemy}, deine Trefferquote ist bemerkenswert. Gering.
+Wow. Beeindruckend. Das war Sarkasmus, falls unklar.
+Ich habe Steine erlebt, die besser reagieren.
+[hero_storm.combo]
+Kettenreaktion. Wie im Lehrbuch.
+Exakt wie berechnet. Langweilig vorhersehbar.
+Elektrizität: unterschätzt seit Anbeginn der Zeit.
+Q.E.D. Quod erat demonstrandum.
+Hm. Effizient. Ich bin zufrieden. Glaube ich.
+[hero_storm.hurt]
+Aua. Das war nicht in meinen Berechnungen.
+Variable übersehen. Notiert.
+Ein Treffer. Wie unelegant.
+Fehler 404: Ausweichen nicht gefunden.
+Na toll. Jetzt muss ich neu rechnen.
+Das war physikalisch unnötig.
+[hero_storm.low]
+LP kritisch. Panikmodus wird... erwogen.
+Restwahrscheinlichkeit zu siegen: knapp, aber vorhanden.
+Ich bleibe ruhig. Mein Puls nicht.
+Akku bei zwei Prozent. Bitte nicht ausschalten.
+Interessant. So fühlt sich Verlieren an. Nein, danke.
+[hero_storm.heal]
+Systeme wiederhergestellt. Weiter im Text.
+Neustart erfolgreich.
+Heilung: logische Konsequenz.
+[hero_storm.block]
+Faradayscher Käfig, Baby. Also... Schild.
+Abgeleitet. Wie Strom in die Erde.
+Vorhergesehen. Geblockt. Gähn.
+[hero_storm.skill]
+{skill}. Rein wissenschaftlich betrachtet: autsch.
+Hiermit demonstriere ich {skill}. Bitte mitschreiben.
+Spannung steigt. {skill}!
+Ich nenne es {skill}. Du nennst es gleich Schmerz.
+[hero_storm.item]
+Ressource eingesetzt. Optimal getimt.
+Hilfsmittel sind erlaubt. Ich hab's nachgelesen.
+Inventar-Management: unterschätzte Kunst.
+[hero_storm.win]
+Ergebnis wie erwartet. Keine Fragen.
+GG. Ich schick dir meine Notizen.
+Sieg verifiziert. Peer-Review nicht nötig.
+War ja klar. Ich zitiere mich gern selbst.
+Gut gekämpft, {enemy}. Okay, gekämpft.
+Und jetzt zurück zu meinem Buch.
+[hero_storm.lose]
+Das... war ein Messfehler.
+Ich fordere eine Wiederholung unter Laborbedingungen.
+Datensatz unbrauchbar. Ich lösche das.
+Die Statistik hat mich verraten.
+Hm. Ich brauche mehr Daten. Und einen Tee.
+[hero_storm.revive]
+Reboot abgeschlossen. Version 2.0 online.
+Tod war nur eine Hypothese.
+Ich habe das Experiment wieder aufgenommen.
+[hero_water.start]
+Oh, wir kämpfen? Okay. Gibt's danach Essen?
+Ganz entspannt, {enemy}. Wie ein Fluss.
+Läuft bei mir. Also, fließt bei mir.
+Chillen wir erst 'ne Runde? Nein? Schade.
+Ich bin Wasser, Digga. Du kannst mich nicht greifen.
+Kleiner Kampf vor dem Mittagessen. Passt.
+[hero_water.taunt]
+Mach mal langsam, du bist ja ganz rot im Gesicht.
+Bleib geschmeidig, {enemy}. Du verkrampfst.
+Du hast Stress. Ich hab Snacks.
+Sorry, ich war kurz in Gedanken beim Essen.
+Ich hab Brotzeit dabei. Du nur Ausreden.
+Ruhig, Brauner. Atme mal durch.
+Du schlägst wie ein nasser Nudelteig.
+Hast du gefrühstückt? Merkt man nicht.
+[hero_water.combo]
+Platsch! Welle kommt!
+Ups. Das war wohl ein Tsunami.
+Easy going, heavy hitting.
+Flow-Zustand erreicht. Mmh, gemütlich.
+Wellenreiten auf deinem Spielfeld!
+[hero_water.hurt]
+Ey! Ich war gerade so entspannt.
+Aua. Mein Magen knurrt jetzt doppelt.
+Das tropft ab. Glaub ich.
+Hey, nicht ins Gesicht, da kommt das Essen rein!
+Oha. Kurz die Stimmung gekillt.
+Okay, jetzt bin ich ein bisschen wach.
+[hero_water.low]
+Ich glaub, ich brauch 'nen Snack. Dringend.
+Flut wird zu Ebbe... ganz schön trocken hier.
+Okay, das ist jetzt nicht mehr chillig.
+Unterzuckert. Das erklärt alles.
+Wenn ich falle, sagt meinem Reiskuchen, ich liebe ihn.
+[hero_water.heal]
+Ahh, Tau aufs Gesicht. Herrlich.
+Frisch aufgefüllt, wie 'ne Wasserflasche.
+Wellness-Tag mitten im Kampf. Gönn ich mir.
+[hero_water.block]
+Prallt ab wie Regen am Fenster.
+Nö. Heute nicht. Zu faul zum Verlieren.
+Gefroren und geblockt. Cool, oder?
+[hero_water.skill]
+Einmal {skill} zum Mitnehmen, bitte!
+{skill}... und dann Mittagspause.
+Kühl bleiben. {skill}!
+Bisschen Abkühlung gefällig? {skill}!
+[hero_water.item]
+Snack-Pause! Äh, Item-Pause.
+Ich nehm das. Schmeckt nach Sieg.
+Vorrat ist alles im Leben.
+[hero_water.win]
+GG. Wer kocht heute?
+Siehste? Entspannt gewinnt.
+Sieg! Jetzt erstmal 'ne Runde Reiskuchen.
+War nett mit dir, {enemy}. Bis zum nächsten Mal.
+Gewonnen, ohne mich aufzuregen. Skills.
+Fluss: eins. Felsen: null.
+[hero_water.lose]
+Okay... ich hab's mit leerem Magen versucht.
+Na gut. Ich leg mich kurz hin.
+Wasser findet immer einen Weg. Nur heute nicht.
+Ich bin nicht traurig, nur hungrig.
+Naja. Morgen ist auch noch ein Tag.
+[hero_water.revive]
+Ich bin wieder da! Hat jemand Essen mitgebracht?
+Wasser verdunstet, Wasser kommt zurück.
+Powernap beendet. Weiter geht's.
+[hero_phoenix.start]
+Vorhang auf! Die Bühne gehört MIR!
+Meine Damen und Herren... der Star ist da!
+Sein oder nicht sein? Ich bin. Du gleich nicht mehr.
+Aus der Asche erhebe ich mich, um dich zu blamieren!
+Licht! Musik! Dramatischer Wind, bitte!
+{enemy}, du bist heute meine Statistenrolle.
+[hero_phoenix.taunt]
+Was für eine hölzerne Darbietung, {enemy}!
+Bitte mit mehr Gefühl! Nochmal von vorn!
+Du hast die Ausstrahlung einer Rübe.
+Das Publikum gähnt, Darling.
+Ein Drama in drei Akten. Du stirbst im ersten.
+Ich hab mehr Aura im kleinen Finger.
+Diese Szene ist schwach. Wer schreibt dein Drehbuch?
+Minus tausend Aura für dich, {enemy}!
+[hero_phoenix.combo]
+Bravo! Bravissimo! Danke, danke!
+Applaus! Ich höre keinen Applaus!
+Was für ein Finale! Und es ist erst Akt zwei!
+Feuerwerk der Extraklasse! Verbeugung!
+Sheesh, das war oscarreif!
+[hero_phoenix.hurt]
+Ah! Mein Kostüm!
+Oh, welch Schmerz! Welch Tragödie!
+Du wagst es, den Star zu treffen?!
+Autsch! Das kommt nicht in den Trailer.
+Ein Stich ins Herz! Und ins Ego!
+Halt! Das war nicht im Skript!
+[hero_phoenix.low]
+Ist dies... das Ende? Wie poetisch!
+Mein letzter Akt... wird legendär!
+Seht her, wie ich tragisch flackere!
+Holt die Geigen! Es wird dramatisch!
+Ich sterbe nicht. Ich mache eine Kunstpause.
+[hero_phoenix.heal]
+Wie ein Phönix! Na ja, ich BIN ein Phönix.
+Die Diva ist zurück im Rampenlicht!
+Frisch gepudert und wieder bereit!
+[hero_phoenix.block]
+Nicht doch! Nicht mein schönes Gesicht!
+Ein Star lässt sich nicht berühren.
+Abgewehrt mit Stil und Grazie!
+[hero_phoenix.skill]
+Und nun... mein großer Auftritt: {skill}!
+Ladies and Gentlemen... {skill}!
+Spot an! {skill}!
+Eine Arie in Flammen: {skill}!
+[hero_phoenix.item]
+Kurzer Kostümwechsel!
+Requisite, bitte!
+Jede Diva braucht ihr Accessoire.
+[hero_phoenix.win]
+Vorhang! Standing Ovations!
+Danke, danke! Autogramme gibt's hinten!
+Das Stück heißt: Mein Triumph. Fünf Sterne.
+Ich möchte meiner Mutter danken... und mir.
+Abgang mit Stil. Wie immer.
+{enemy}, deine Rolle war klein, aber du warst... okay.
+[hero_phoenix.lose]
+Die Kritiker... verstehen mich nicht!
+Ein tragisches Ende. Ich liebe es trotzdem.
+Das war kein Verlieren. Das war Kunst.
+Ich verlange eine Zugabe!
+Oh, grausames Schicksal! Wie dramatisch!
+[hero_phoenix.revive]
+Aus der Asche! Wie es sich gehört!
+Die Diva stirbt nie! Fortsetzung folgt!
+Ich bin zurück! Habt ihr mich vermisst? Natürlich.
+[hero_queen.start]
+Krone sitzt. Haare sitzen. Los geht's.
+Schätzchen, du weißt schon, wer hier die Queen ist?
+Na, {enemy}? Bereit, dich zu verneigen?
+Ich mach das kurz. Hab noch Termine.
+Blitzschnell und bildschön. Das bin ich.
+Heute wird geslayed, nicht gespielt.
+[hero_queen.taunt]
+Oh, Schätzchen, hast du das ganz allein gemacht?
+Side Eye für diesen Zug.
+Du kämpfst wie mein Montag: zäh und nutzlos.
+Sprich mit meiner Hand, {enemy}.
+Hast du das geübt? Merkt man nicht.
+Ich würde mich ja anstrengen, aber wozu?
+Bist du ein NPC? Du wiederholst dich.
+Bitte. Ich hab schon Bessere zum Frühstück blockiert.
+[hero_queen.combo]
+Slay! Und zwar richtig!
+Das nennt man Klasse, Schätzchen.
+Blitz, Glanz, Gloria!
+Und das war noch nicht mal mein bester Tag.
+Queen-Move. Notier dir das.
+[hero_queen.hurt]
+Hey! Das Kleid war neu!
+Wie bitte?! Das nimmst du zurück!
+Autsch. Jetzt bin ich sauer, Schatz.
+Du hast mich getroffen? Mutig. Dumm, aber mutig.
+Uff. Das gibt einen Eintrag in mein Tagebuch.
+Na warte, das wird teuer für dich!
+[hero_queen.low]
+Okay, Krone wackelt. Fällt aber nicht.
+Eine Queen gibt nicht auf. Sie macht Pause.
+Ich bin angeschlagen, nicht geschlagen.
+Kein Stress. Ich hab das unter Kontrolle. Glaub ich.
+Wer zuletzt lacht, lacht in Glitzer.
+[hero_queen.heal]
+Glow-up! Wieder perfekt.
+Make-up aufgefrischt, Laune auch.
+Selbstpflege ist wichtig, Schatz.
+[hero_queen.block]
+Nö. Abgewiesen wie dein Liebesbrief.
+Nicht mal knapp, Schätzchen.
+Schutzschild an, Drama aus.
+[hero_queen.skill]
+{skill}! Mit freundlichen Grüßen von der Queen.
+Bühne frei für {skill}!
+Zeit für {skill}, Darling.
+Du hast es so gewollt: {skill}!
+[hero_queen.item]
+Accessoire des Tages, bitte!
+Shopping im Kampf? Natürlich.
+Eine Queen kommt vorbereitet.
+[hero_queen.win]
+Krone gerichtet. Gegner erledigt.
+Danke fürs Mitspielen, {enemy}. Wirklich süß.
+Slay. Mehr gibt's nicht zu sagen.
+Bow down! Okay, ein kleiner Knicks reicht.
+War das alles? Schade, ich war gerade warm.
+Ehrenfrau-Move. Ich weiß.
+[hero_queen.lose]
+Ich hab dich gewinnen lassen. Du darfst danken.
+Das war ein schlechter Tag für meine Frisur.
+Ich bin nicht besiegt. Ich bin nur kurz offline.
+Ugh. Niemand erzählt das weiter, klar?
+Gut, du darfst ein Foto mit mir machen. Einmal.
+[hero_queen.revive]
+Eine Queen kehrt immer zurück!
+Und wer ist wieder da? Richtig. Ich.
+Krone aufgehoben, Staub abgeklopft.
+[hero_dragon.start]
+Gestatten: Nachfahre des Drachenkönigs. Und du bist...?
+Mit Verlaub, {enemy}, Ihr steht in meinem Licht.
+Ich kämpfe nur ungern mit Bürgerlichen. Aber gut.
+Ein Duell? Wie altmodisch. Ich liebe es.
+Verneigt Euch ruhig vorher. Spart Zeit.
+Seht mich an. Prächtig, nicht wahr?
+[hero_dragon.taunt]
+Wie entzückend. Ihr gebt Euch ja Mühe.
+Mit allem Respekt: Das war erbärmlich.
+Ihr erinnert mich an meinen Diener. Nur langsamer.
+Verzeiht, ich hatte vergessen, dass Ihr auch hier seid.
+Ein Drache kämpft nicht. Er lässt Euch verlieren.
+Was für ein... rustikaler Kampfstil.
+Ich hoffe, Ihr habt eine Versicherung, {enemy}.
+Euer Stil ist so... volksnah.
+[hero_dragon.combo]
+Selbstverständlich. Wie sonst?
+Eine Lektion in Eleganz.
+Drachenblut lügt nicht.
+Formvollendet. Wie meine Frisur.
+Bitte, kein Beifall. Oder doch, ein wenig.
+[hero_dragon.hurt]
+Wie unhöflich!
+Ihr wagt es, Hoheit zu berühren?!
+Das wird ein diplomatisches Nachspiel haben.
+Meine Schuppen! Wisst Ihr, was die kosten?!
+Wie überaus ungehobelt.
+Hm. Ein Kratzer. Ich werde ihn tragen wie einen Orden.
+[hero_dragon.low]
+Dies ist... unter meiner Würde.
+Ein Drache wankt, doch er fällt nicht.
+Ich ziehe in Erwägung, mich ernsthaft anzustrengen.
+Wie lästig. Ich muss mich wohl bemühen.
+Der Nebel lichtet sich... meine Geduld auch.
+[hero_dragon.heal]
+Nebel der Nordsee, heile mich.
+So. Wieder makellos.
+Ein Drache regeneriert. Mit Stil.
+[hero_dragon.block]
+Ihr habt wohl angeklopft. Niemand hat geöffnet.
+Abgewiesen. Mit freundlichen Grüßen.
+Meine Schuppen danken für den Versuch.
+[hero_dragon.skill]
+Wenn ich bitten darf: {skill}.
+Bewundert {skill}. Ihr dürft staunen.
+Ein Geschenk des Drachenkönigs: {skill}!
+{skill}. Ihr werdet Euch erinnern.
+[hero_dragon.item]
+Ein kleines Erbstück der Familie.
+Mein Diener hat es mir eingepackt.
+Ich bediene mich. Wie es mir zusteht.
+[hero_dragon.win]
+Wie erwartet. Ihr dürft Euch entfernen.
+Ein Sieg, so selbstverständlich wie Ebbe und Flut.
+Habt Dank für dieses kleine Vergnügen.
+{enemy}, Ihr wart ein würdiger... Zeitvertreib.
+Noblesse oblige. Ich musste gewinnen.
+Nun bringt mir Tee. Und einen Spiegel.
+[hero_dragon.lose]
+Ich habe Euch aus Höflichkeit gewinnen lassen.
+Dies wird in keinem Geschichtsbuch erwähnt.
+Ein Drache verliert nicht. Er zieht sich zurück.
+Wie überaus... unangenehm.
+Mein Vater wird davon nichts erfahren. Klar?
+[hero_dragon.revive]
+Ein Drache erhebt sich stets aufs Neue.
+Habe ich etwas verpasst? Ah, meinen Sieg.
+Zurück aus der Tiefe des Meeres.
+[ally.start]
+Training ist Training, aber ich schenk dir nichts!
+Auf einen fairen Kampf, Kamerad!
+Zeig mir, was der Stratege dir beigebracht hat!
+Ehrensache: Wer verliert, schrubbt die Rüstungen.
+Für Hoa Lu! Und für die Ehre!
+Na, {enemy}? Wollen wir mal sehen, wer besser ist.
+[ally.taunt]
+Komm schon, du kannst mehr als das!
+Meine Großmutter schlägt härter, und die ist neunzig.
+Hast du heute schon trainiert, Bruder?
+Nicht schlafen, Kamerad! Der Feind tut's auch nicht.
+Nur weil wir Freunde sind, lass ich dich nicht gewinnen!
+Deine Deckung hat mehr Löcher als mein Zelt.
+Wer zuerst müde wird, zahlt das Essen!
+Das war ja fast gut! Fast.
+[ally.combo]
+Ha! Das war für Hoa Lu!
+So kämpft ein General!
+Ehrenmann-Kombo, oder was?
+Das hat gesessen, Kamerad!
+Lern daraus, Bruder!
+[ally.hurt]
+Ha! Guter Treffer, Freund!
+Uff! Du hast was gelernt, was?
+Respekt! Das hat gesessen.
+Au! Das sag ich dem Strategen!
+Nicht schlecht! Aber ich steh noch.
+Okay, das hab ich verdient.
+[ally.low]
+Ich gebe nicht auf! Nicht vor dir!
+Für die Ehre... noch ein Schlag!
+Puh, du bist wirklich stark geworden.
+Ein General kämpft bis zum Ende!
+Noch... nicht... vorbei!
+[ally.heal]
+Ein Schluck, und weiter geht's!
+Frisch gestärkt für die zweite Runde!
+Kamerad, ich bin wieder da!
+[ally.block]
+Gute Deckung ist alles!
+Das lernt man in der ersten Woche, Bruder!
+Abgefangen! Noch mal!
+[ally.skill]
+Für Hoa Lu: {skill}!
+Schau gut zu, Kamerad: {skill}!
+{skill}! Das hab ich lange geübt!
+Achtung, jetzt kommt {skill}!
+[ally.item]
+Vorräte sind auch Strategie!
+Der Stratege sagt: Immer was dabeihaben.
+Ein kleiner Vorteil unter Freunden.
+[ally.win]
+Gut gekämpft, Bruder! Nächstes Mal schaffst du's!
+Ehrlicher Sieg! Ich lade dich trotzdem zum Essen ein.
+Hand drauf, Kamerad. Das war stark.
+Heute ich, morgen du. So ist das.
+Ehre, wem Ehre gebührt. Diesmal mir!
+Du schrubbst die Rüstungen. Abgemacht ist abgemacht!
+[ally.lose]
+Respekt, Kamerad! Du bist besser geworden.
+Ich geb's zu: Du warst heute stärker.
+Revanche morgen früh, nach dem Frühstück!
+Ehrlich verloren. Das zählt auch was.
+Ich schrubb die Rüstungen. Seufz.
+[mentor.start]
+Lektion eins: Nicht sterben. Lektion zwei folgt.
+Setz dich. Äh, steh auf. Wir kämpfen.
+Heute prüfe ich, ob du zugehört hast.
+Das kommt alles in der Klausur dran, {enemy}.
+Zeig mir, was du gelernt hast, Schüler.
+Ich hoffe, du hast deine Hausaufgaben gemacht.
+[mentor.taunt]
+Das war Kapitel eins. Wir sind in Kapitel zwölf.
+Setzen, sechs!
+Wer nicht zuhört, muss fühlen.
+Hast du im Unterricht geschlafen?
+Dafür gibt es keine Punkte, {enemy}.
+Ich sehe Potenzial. Gut versteckt, aber vorhanden.
+Bitte melden, bevor du so etwas tust.
+Hm. Das schreib ich dir ins Zeugnis.
+[mentor.combo]
+So wird's gemacht. Bitte mitschreiben.
+Und das, meine Lieben, ist Strategie.
+Alte Schule. Funktioniert immer.
+Tafelbild: Treffer. Treffer. Treffer.
+Erfahrung schlägt Jugend. Notiert?
+[mentor.hurt]
+Aha! Du hast doch zugehört!
+Gut! Endlich ein Treffer mit Plan!
+Hm. Das gibt eine Eins minus.
+Au! Sehr gut... aber au!
+Mein Rücken... ich bin zu alt für sowas.
+Interessant. Das habe ich dir nicht beigebracht.
+[mentor.low]
+Der Lehrer wird überholt. Ich bin fast stolz.
+Strategischer Rückzug wird erwogen.
+Mein Bart zittert. Kein gutes Zeichen.
+Ich brauche eine Teepause. Sofort.
+Noch habe ich einen Plan. Irgendwo.
+[mentor.heal]
+Kräutertee wirkt Wunder.
+Ein weiser Mann sorgt vor.
+So. Weiter im Lehrplan.
+[mentor.block]
+Vorausgesehen. Wie alles.
+Das stand im Lehrbuch, Seite drei.
+Durchschaubar, mein Schüler.
+[mentor.skill]
+Merkt euch das für die Prüfung: {skill}!
+Fortgeschrittene Lektion: {skill}.
+{skill}. Das kommt dran!
+Kleine Demonstration: {skill}.
+[mentor.item]
+Ein Stratege hat immer etwas in der Tasche.
+Vorbereitung ist die halbe Schlacht.
+Sieh genau hin. Das nennt man Planung.
+[mentor.win]
+Durchgefallen. Aber Nachprüfung ist möglich.
+Gut gekämpft. Note: ausreichend.
+Wiederholung morgen. Gleiche Zeit, gleicher Ort.
+Der Lehrer bleibt der Lehrer.
+Sei nicht traurig, {enemy}. Lernen tut weh.
+Hausaufgabe: Diesen Kampf analysieren. Drei Seiten.
+[mentor.lose]
+Bestanden! Ich bin stolz auf dich, Schüler.
+Der Schüler übertrifft den Meister. Endlich!
+Gut so. Genau dafür habe ich dich ausgebildet.
+Eins mit Sternchen. Ich gönne es dir.
+Ich habe dich gewinnen lassen. Pädagogisch wertvoll.
+[warlord.start]
+Ihr wagt es, MIR gegenüberzutreten?
+Kniet nieder vor dem rechtmäßigen Herrscher!
+Wisst Ihr überhaupt, wer ich bin? Ich bin ICH!
+Mein Heer ist größer, meine Burg ist höher!
+Ein Bauernlümmel will mich herausfordern? Köstlich!
+Dieses Land gehört mir. Und du gleich auch, {enemy}.
+[warlord.taunt]
+Lächerlich! Meine Wachen kämpfen besser!
+Ich habe zwölf Titel. Du hast nicht mal ein Pferd.
+Unterwirf dich, und ich lasse dich die Ställe putzen!
+Spürst du die Macht eines wahren Fürsten?
+Mein Siegel ist größer als dein Ego.
+Du bist ein Nichts, ein Niemand, ein... Bauer!
+Die Geschichtsbücher werden mich preisen, nicht dich!
+Ich habe Leute, die für mich verlieren. Du nicht.
+[warlord.combo]
+Seht ihr? So herrscht ein Fürst!
+Ha! Spürt meine Allmacht!
+Erzittert vor meiner Herrlichkeit!
+Das war nur ein Bruchteil meiner Macht!
+Schreiber! Halte das für die Chronik fest!
+[warlord.hurt]
+Wie kannst du es wagen?!
+Wache! WACHE! Wo sind meine Wachen?!
+Das wird ein Nachspiel haben!
+Meine Rüstung war maßgefertigt!
+Ein Kratzer! Ein unverzeihlicher Kratzer!
+Du hast mich getroffen... MICH?!
+[warlord.low]
+Unmöglich! Ich bin doch der Größte!
+Das... das war nicht im Plan!
+Wo bleibt meine Verstärkung?!
+Ich ziehe mich strategisch zurück. Nicht weglaufen!
+Ich verhandle! Ich biete... die Hälfte! Ein Viertel!
+[warlord.heal]
+Ha! Ein Fürst stirbt nicht so leicht!
+Mein Leibarzt ist der beste im Land!
+Neue Kraft für meine grenzenlose Herrschaft!
+[warlord.block]
+Pah! Mein Schild ist aus reinstem Hochmut!
+Abgewehrt! Natürlich!
+Glaubtest du, mich zu treffen? Wie niedlich.
+[warlord.skill]
+Seht, die Technik meiner Ahnen: {skill}!
+Ich befehle: {skill}!
+Fürstliche Gewalt: {skill}!
+Zittert! {skill}!
+[warlord.item]
+Bringt mir meine Schätze!
+Mein Reichtum kauft mir den Sieg!
+Diener! Das Elixier, sofort!
+[warlord.win]
+So endet jeder, der sich mir widersetzt!
+Ich bin unbesiegbar! Schreibt das auf!
+Ein weiterer Narr, der meine Größe unterschätzt hat.
+Ruhm und Ehre mir! Nur mir!
+Lasst ein Fest ausrichten! Mir zu Ehren!
+{enemy}, du darfst mir jetzt die Füße küssen.
+[warlord.lose]
+Das war Betrug! Ich verlange eine Wiederholung!
+Das hier ist nie passiert, verstanden?!
+Meine Berater sind schuld! Alle!
+Ihr werdet von meinem Anwalt hören! Äh, Boten!
+Ich komme wieder! Mit einem größeren Heer!
+[lady.start]
+Oh. Ihr wollt kämpfen? Wie... ungewöhnlich.
+Bitte. Bemüht Euch nicht, mich zu beeindrucken.
+Eine Dame kämpft selten. Aber dann richtig.
+Ich hoffe, Ihr seid besser als Euer Ruf, {enemy}.
+Langweilt mich nicht. Das ist meine einzige Bitte.
+Fächer bereit. Geduld begrenzt.
+[lady.taunt]
+Wie niedlich. Ihr strengt Euch an.
+Ist das Euer Ernst? Oh, tatsächlich.
+Ich habe schon Schmetterlinge gesehen, die härter zuschlagen.
+Darf ich Euch einen Rat geben? Hört auf.
+Euer Kampfstil ist so... ländlich.
+Mich langweilt das, {enemy}.
+Ein Gentleman würde jetzt aufgeben.
+Bezaubernd. Wie ein Welpe, der bellt.
+[lady.combo]
+Eleganz ist eben eine Waffe.
+Haben wir das jetzt verstanden?
+Fein. Ganz fein.
+Mit Anmut und ohne Gnade.
+Wie unterhaltsam. Für mich.
+[lady.hurt]
+Wie ungehobelt!
+Mein Gewand! Wisst Ihr, was Seide kostet?
+Das verzeihe ich Euch nicht so bald.
+Oh. Ihr seid ja doch nicht harmlos.
+Ein Treffer? Wie unschicklich.
+Unverschämtheit hat einen Preis.
+[lady.low]
+Das ist... nicht damenhaft.
+Ich gebe nicht auf. Ich bin nur gelangweilt.
+Wie lästig. Muss ich mich jetzt anstrengen?
+Haltung bewahren. Immer.
+Ihr verwirrt meine Frisur. Das reicht jetzt.
+[lady.heal]
+Ein wenig Tee, und alles ist gut.
+Ruhe bewahren, Schönheit erhalten.
+So. Wieder vorzeigbar.
+[lady.block]
+Nein danke, kein Interesse.
+Abgelehnt. Höflich, aber bestimmt.
+Ihr kommt mir nicht zu nahe.
+[lady.skill]
+Erlaubt mir: {skill}.
+Ein wenig {skill} gefällig?
+Wenn Ihr darauf besteht: {skill}.
+{skill}. Mit besten Empfehlungen.
+[lady.item]
+Eine Dame ist immer vorbereitet.
+Aus meiner Handtasche. Sozusagen.
+Ein kleines Hilfsmittel. Ganz diskret.
+[lady.win]
+Wie erwartet. Ihr dürft gehen.
+Danke für die Unterhaltung. Sie war kurz.
+Unterschätzt niemals eine Dame.
+War das alles? Ich hatte mehr erwartet.
+Ich verzeihe Euch die Mühe, {enemy}.
+Und nun entschuldigt mich, der Tee wird kalt.
+[lady.lose]
+Ich habe Euch gewinnen lassen. Aus Mitleid.
+Wie... unerwartet. Und unangenehm.
+Erzählt das niemandem. Wirklich niemandem.
+Na schön. Diesmal. Nur diesmal.
+Eine Dame verliert nie. Sie verzichtet.
+[soldier.start]
+Schon wieder Kampf? Ich hatte Mittagspause beantragt!
+Für den Fürsten! ...Zahlt der eigentlich pünktlich?
+Okay, ganz ruhig. Einfach so tun, als wär ich mutig.
+Ich mach das nur für den Sold. Und der ist mies.
+Mama hat gesagt, werd Reisbauer. Hätt ich mal gehört.
+Halt! Stehen bleiben! ...Bitte?
+[soldier.taunt]
+Mein Speer ist zwar stumpf, aber ich bin motiviert!
+Ich hab Rücken, aber für dich reicht's!
+Geh nach Hause, {enemy}! Ich will auch nach Hause!
+Mein Hauptmann schaut zu, also tu wenigstens so!
+Ich krieg keine Zulage für dich. Also beeil dich.
+Weißt du, wie lang meine Schicht schon geht?
+Hau ab, sonst... sonst schreib ich 'nen Bericht!
+Ich hab drei Wochen nur Reis gegessen. Ich bin gefährlich!
+[soldier.combo]
+Hab ich das gemacht?! Hat das wer gesehen?!
+Ha! Das kommt in meine Beurteilung!
+Gehaltserhöhung, ich komme!
+Wow, ich bin ja richtig gut!
+Das erzähl ich meinen Enkeln!
+[soldier.hurt]
+Au! Das steht nicht in meinem Vertrag!
+Aua! Ist das ein Arbeitsunfall?
+Ich will meine Mama!
+Sanitäter! Gibt's hier überhaupt Sanitäter?
+Autsch! Und das für den Hungerlohn!
+Uff! Mein Helm ist aus Bambus, Mann!
+[soldier.low]
+Ich kündige! Ich kündige auf der Stelle!
+Kann ich mich krankmelden? Jetzt gleich?
+Ich hab noch nicht mal Urlaub gehabt...
+Sagt dem Hauptmann, er schuldet mir noch Sold!
+Okay, Plan B: Totstellen.
+[soldier.heal]
+Ah, Kantinenessen. Schmeckt furchtbar, wirkt aber.
+Puh! Durchatmen, weiterzittern.
+Ein Reiskuchen. Endlich mal was Gutes.
+[soldier.block]
+Mein Schild hat gehalten! Unglaublich!
+Huch! Ich hab gar nicht hingeguckt!
+Glück gehabt. Wie im Training! Nie trainiert.
+[soldier.skill]
+Ich hab das im Handbuch gelesen: {skill}!
+Bitte funktionier... {skill}!
+{skill}! Hoffentlich zählt das als Überstunde.
+Geheimtechnik der Wache: {skill}!
+[soldier.item]
+Hab ich aus dem Vorratslager... ausgeliehen.
+Ist das erlaubt? Egal!
+Notration! Endlich ein Grund dafür!
+[soldier.win]
+Ich hab gewonnen?! Krieg ich jetzt frei?
+Mama, ich bin ein Held!
+Feierabend! Endlich Feierabend!
+Das schreib ich in meinen Bericht. In Großbuchstaben.
+Sag's keinem, aber ich hatte mega Angst.
+Hauptmann! Haben Sie das gesehen? Hauptmann?
+[soldier.lose]
+Ich wusste es. Ich hätte Reisbauer werden sollen.
+Na gut. Ich leg mich hier hin. Gute Nacht.
+Für diesen Sold gebe ich nicht mehr.
+Ich hab's versucht! Steht das im Bericht?
+Endlich... Feierabend...
+[bandit.start]
+Ey, Digga! Wegzoll! Gold her, aber zackig!
+Das hier is' unser Revier, klar?
+Na, wen haben wir denn da? Frischfleisch!
+Haste mal 'nen Taler? Oder zwei? Oder alle?
+Kein Stress, Bruder. Einfach Gold her und gut is'.
+Ey, {enemy}, du siehst reich aus. Komm mal her.
+[bandit.taunt]
+Was guckst du so? Willst du Stress?
+Ey, Bruder, chill mal, gib einfach dein Gold!
+Bist du lost oder was?
+Dein Geldbeutel klimpert so schön, Digga!
+Mach keine Faxen, sonst gibt's Haue!
+Auf der Straße lernt man mehr als bei deinem Strategen.
+Hast du Muskeln oder nur Klamotten?
+Ey, das war voll cringe, Alter.
+[bandit.combo]
+Boah, Digga! Hast du das gesehen?!
+Straßenstyle, Baby!
+Zack! Ab in die Tasche!
+Das war Ehre, Bruder!
+Bam! Und tschüss!
+[bandit.hurt]
+Ey! Nicht so doll, Mann!
+Aua! Das war unnötig, Digga!
+Ey, wir können doch drüber reden!
+Alter! Das tat weh!
+Hey, Bruder, das war nicht abgesprochen!
+Oha! Okay, okay, du bist nicht ganz lost.
+[bandit.low]
+Ey, war nur Spaß mit dem Gold, ja?
+Ich hab Familie, Digga! Also... zwei Ziegen!
+Okay, Deal: Du behältst dein Gold, ich mein Leben.
+Bruder muss los... gleich... gleich...
+Ich schwör, ich bin eigentlich Gemüsehändler!
+[bandit.heal]
+Ha! Zäh wie Leder, Digga!
+Nochmal Glück gehabt, Alter.
+Wieder fit. Jetzt gibt's Ärger!
+[bandit.block]
+Nix da, Bruder!
+Haha, verfehlt! Lost!
+Ey, nicht mit mir, Digga!
+[bandit.skill]
+Straßentrick: {skill}!
+Ey, guck mal hier: {skill}!
+{skill}, Bruder! Gratis!
+Hab ich von meinem Cousin gelernt: {skill}!
+[bandit.item]
+Hab ich gefunden. Also... irgendwie.
+Geklaut? Nee, ausgeliehen. Für immer.
+Ha! Hehlerware, beste Qualität!
+[bandit.win]
+Danke für die Spende, Digga!
+Gold her! Und die Schuhe auch!
+Ehrenlos verloren, Bruder. Ehrenlos!
+Der Berg gehört uns! Für immer!
+Haha! Nächster Kunde, bitte!
+Ey {enemy}, komm morgen wieder. Mit mehr Gold.
+[bandit.lose]
+Okay, okay, ich geh ja schon!
+Ich hab nix gemacht! War mein Zwillingsbruder!
+Bruder muss los. Jetzt aber wirklich!
+Behalt dein Gold, ich will nur weg!
+Sag's nicht meiner Bande, ja?
+[critter.start]
+Bzzzz! Ich bin klein, aber gemein!
+Quaak! Mein Teich, meine Regeln!
+Sssss... du bist in meinem Netz gelandet!
+Zirp! Heute bin ICH der Boss!
+Bzz! {enemy}! Ich stech dich! Vielleicht!
+Kriech, kriech... Angriff!
+[critter.taunt]
+Bzzz! Fang mich doch, wenn du kannst!
+Quaak! Du bist so langsam, ich bin eingeschlafen!
+Ich bin winzig und trotzdem nervst DU mich!
+Ssss... gleich zwick ich dich ins Zehchen!
+Bzz bzz! Summ summ, du bist dumm!
+Quak! Mein Opa war eine Kröte. Ein Held!
+Zirp zirp! Ich hab sechs Beine, du nur zwei! Ha!
+Ich bin das Ungeziefer deiner Albträume!
+[critter.combo]
+BZZZZZZZ! Schwarmangriff!
+Quaaaak! Das war ein Riesensprung!
+Klein, aber oho!
+Netz gespannt, Beute gefangen!
+Zirp-Zirp-Zirp-ZACK!
+[critter.hurt]
+Bzz?! Nicht die Flügel!
+Quiek! Das war unfair, ich bin winzig!
+Au! Mein Panzer hat eine Delle!
+Quaak... ich bin zerquetscht... fast.
+Hey! Ich bin geschützt! Glaub ich!
+Sss! Nicht drauftreten!
+[critter.low]
+Bzz... bzz... Akku leer...
+Quak... ich will zurück in meinen Teich...
+Nur noch ein Beinchen übrig... von acht...
+Ich... bin... zu klein für sowas...
+Rückzug unters Blatt! Sofort!
+[critter.heal]
+Nektar! Lecker!
+Quaak! Frische Fliege, frische Kraft!
+Ich krabbel wieder! Hurra!
+[critter.block]
+Panzer hält! Ätsch!
+Bzz! Daneben!
+Quak! Abgeprallt am Schleim!
+[critter.skill]
+Bzzz! Insektenpower: {skill}!
+Quaak! {skill}!
+Tiny but mighty! {skill}!
+Ssss... {skill}! Klebrig!
+[critter.item]
+Hab ich im Laub gefunden!
+Quaak! Mein Schatz aus dem Teich!
+Krümel! Ein Riesenkrümel!
+[critter.win]
+BZZZ! Ich bin der König des Gartens!
+Quaaak! Wer ist jetzt klein, hä?
+Ich hab einen Riesen besiegt! Ich! Winzig ich!
+Netz gewinnt! Wie immer!
+Zirp! Heute Abend feiern wir im Komposthaufen!
+{enemy} wurde von einem Käfer besiegt. Peinlich!
+[critter.lose]
+Bzz... ich flieg nach Hause...
+Quaak... ich geh in den Teich weinen...
+Ich bin nur ein kleiner Käfer, was erwartest du?
+Unfair! Du bist hundertmal größer!
+Ich komm wieder. Mit meiner ganzen Familie!
+[trickster.start]
+Hihihi! Ein neues Spielzeug!
+Oh, {enemy}! Lass uns spielen!
+Kicher... Was ist das da hinter dir? Reingelegt!
+Fang mich, fang mich, wenn du kannst!
+Wer ist echt und wer ist eine Illusion? Hihi!
+Achtung, jetzt wird's lustig. Für mich.
+[trickster.taunt]
+Ätschibätsch, daneben!
+Hihi! Du schaust so ernst, das ist so süß!
+Rate mal, wo ich bin! Falsch!
+Kuckuck! Hier drüben!
+Dein Gesicht gerade? Unbezahlbar!
+Du bist so leicht reinzulegen, das ist fast langweilig!
+Psst... dein Schnürsenkel ist offen. Hihi, du hast keine!
+Bist du sicher, dass du nicht der NPC bist?
+[trickster.combo]
+Hihihi! Überraschung!
+Ta-daaa!
+Reingelegt, reingelegt, reingelegt!
+Simsalabim und weg bist du!
+Hehe! Hast du das kommen sehen? Nö!
+[trickster.hurt]
+Huch! Das war nicht lustig!
+Au! Nicht am Schwanz ziehen!
+Hey! Ich war doch nur eine Illusion! Oder nicht?
+Mau! Jetzt bin ich beleidigt!
+Okay, das zählt nicht, ich hab geblinzelt!
+Autsch! Du schummelst doch!
+[trickster.low]
+Äh... Pause? Bitte Pause?
+Zeit für meinen besten Trick: Weglaufen!
+Hihi... hi... nicht mehr so lustig...
+Ich bin nicht hier! Ich bin ganz woanders!
+Okay, okay, du hast gewonnen. Reingelegt! Noch nicht!
+[trickster.heal]
+Hihi! Wie neu!
+Zaubertrick: Wunden weg!
+Schwupps! Alles wieder heil!
+[trickster.block]
+Hihi, getroffen hast du nur meinen Schatten!
+Daneben! Ätsch!
+Hokuspokus, Treffer weg!
+[trickster.skill]
+Hokuspokus... {skill}!
+Mein Lieblingsstreich: {skill}!
+Hihi, pass auf: {skill}!
+Eins, zwei, drei... {skill}!
+[trickster.item]
+Was ist denn das? Meins!
+Aus dem Ärmel geschüttelt!
+Hihi! Hab ich dir geklaut!
+[trickster.win]
+Hihihi! Reingelegt bis zum Schluss!
+Zu einfach! Nächstes Opfer, bitte! Äh, Mitspieler!
+Ich bin der Meister des Chaos!
+Ätschibätsch, ich hab gewonnen!
+War ein Spaß, {enemy}! Für mich jedenfalls!
+Puff! Und ich bin weg. Mit deinem Stolz.
+[trickster.lose]
+Okay, okay... das war mein Plan! Nicht.
+Hmpf! Spielverderber!
+Ich bin gar nicht traurig. Hihi... schnief.
+Das zählt nicht, ich hab mit Absicht verloren!
+Ich verschwinde... und komm mit neuen Tricks!
+[brute.start]
+Grrr. Du. Klein. Ich. Groß.
+Ich hauen. Du weinen.
+Wer stört Mittagsschlaf?! GRRR!
+Hmm. Du riechst nach Ärger.
+Stein sagt: Geh weg.
+Brumm. Ich hab Hunger. Du siehst lecker aus.
+[brute.taunt]
+Du zappelig. Ich nicht mögen.
+Ich zähl bis drei. Eins... äh... Hauen!
+Kleine Mücke. Lästig.
+Hmpf. Du nicht stark. Ich stark.
+Groß schlägt klein. So einfach.
+Wääh! Du nervst!
+Ich nicht denken. Ich hauen.
+Komm her. Kuscheln. Mit Faust.
+[brute.combo]
+WUMMS!
+Grroooar! Alles kaputt!
+Hauen! Viel hauen!
+Bumm. Bumm. BUMM!
+Ich... gut... im Hauen!
+[brute.hurt]
+Grr? Kitzelt.
+Aua. Böse.
+Hm? Hat was gemacht?
+Rrrrah! Jetzt wütend!
+Ugh. Moos ab.
+Mein Ast! Du hast Ast kaputt gemacht!
+[brute.low]
+Grr... ich... müde...
+Nicht gut. Gar nicht gut.
+Ich... brauch... Nickerchen...
+Wackel... wackel...
+Mama Stein... hilf...
+[brute.heal]
+Mampf. Besser.
+Grr. Wieder stark.
+Moos wächst nach.
+[brute.block]
+Ich Fels. Du nix.
+Dong! Abgeprallt.
+Hehe. Hart wie Stein.
+[brute.skill]
+Grroar! {skill}!
+Ich kann was! {skill}!
+{skill}! Großes Hauen!
+Ich machen {skill}. Du kaputt.
+[brute.item]
+Mampf! Lecker!
+Was das? Egal. Rein damit.
+Hmm. Glänzt. Nehm ich.
+[brute.win]
+Ich gewonnen! Ich schlau!
+Grrr. Jetzt Mittagsschlaf.
+Klein ist weg. Gut.
+Wer nächster? Grr!
+Hehe. Ich bester.
+{enemy} platt. Wie Pfannkuchen.
+[brute.lose]
+Grr... ich... umfallen...
+Wääh! Du gemein!
+Ich... geh... schlafen...
+Hmpf. Morgen nochmal.
+Bumm. Ich am Boden.
