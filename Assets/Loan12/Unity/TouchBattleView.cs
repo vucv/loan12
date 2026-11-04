@@ -98,7 +98,7 @@ namespace Loan12.UnityPort
         }
 
         /// <summary>
-        /// The 3 item buttons: the items chosen before the battle; in the tutorial (no preparing screen)
+        /// The item buttons (2 to 4): the items chosen before the battle; in the tutorial (no preparing screen)
         /// the items the battle holds, so its "use an item" step can be done.
         /// </summary>
         static int[] Slots()
@@ -106,6 +106,7 @@ namespace Loan12.UnityPort
             if (!C_PortScreens.training())
             {
                 int[] chosen = Loadout.Get();
+                itemN = chosen.Length;
                 for (int i = 0; i < chosen.Length; i++)
                 {
                     if (chosen[i] == 5)
@@ -116,6 +117,7 @@ namespace Loan12.UnityPort
                 return chosen;
             }
             int[] r = {-1, -1, -1};
+            itemN = 3;
             int n = 0;
             foreach (int t in new[] {1, 0, 3, 4})
             {
@@ -234,9 +236,13 @@ namespace Loan12.UnityPort
             return TouchUi.R(2 + i * 60, 272, 56, 36);
         }
 
+        // the item buttons: 2 to 4 (Packs.ItemSlots) equal ones across the screen, 4 px apart
+        static int itemN = 3;
+
         static Rect ItemRect(int i)
         {
-            return TouchUi.R(2 + i * 60, 311, 56, 34);
+            float w = (176f - (itemN - 1) * 4f) / itemN;
+            return TouchUi.R(2 + i * (w + 4), 311, w, 34);
         }
 
         // The popup grows with its description: header (name, picture, details) 96, the description,
@@ -383,14 +389,14 @@ namespace Loan12.UnityPort
                     {
                         downKind = 3;
                     }
-                    for (int i = 0; i < 3; i++)
+                    for (int i = 0; i < Mathf.Max(3, slots.Length); i++)
                     {
-                        if (SkillRect(i).Contains(p) && i < C_PortUi.skillCount())
+                        if (i < 3 && SkillRect(i).Contains(p) && i < C_PortUi.skillCount())
                         {
                             downKind = 1;
                             downArg = i;
                         }
-                        if (ItemRect(i).Contains(p) && slots[i] >= 0)
+                        if (i < slots.Length && ItemRect(i).Contains(p) && slots[i] >= 0)
                         {
                             downKind = 2;
                             downArg = i;
@@ -865,7 +871,7 @@ namespace Loan12.UnityPort
 
             // items taken into battle
             int[] slots = Slots();
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < slots.Length; i++)
             {
                 Rect r = ItemRect(i);
                 int type = slots[i];
@@ -880,9 +886,19 @@ namespace Loan12.UnityPort
                     TouchUi.Label(r, "—", 9, TextAnchor.MiddleCenter, TouchUi.Hex(0x8A8090));
                     continue;
                 }
-                TouchUi.Item(type, new Rect(r.x + 3 * k, r.y + 3 * k, 28 * k, 28 * k), count > 0 ? (ItemEnabled(type) ? 1f : 0.75f) : 0.35f);
-                TouchUi.Label(new Rect(r.x + 32 * k, r.y + 10 * k, 22 * k, 14 * k), "x" + count, 8.5f, TextAnchor.MiddleCenter,
-                    count > 0 ? Color.white : TouchUi.Hex(0x8A8090), true);
+                if (r.width >= 50 * k)
+                {
+                    TouchUi.Item(type, new Rect(r.x + 3 * k, r.y + 3 * k, 28 * k, 28 * k), count > 0 ? (ItemEnabled(type) ? 1f : 0.75f) : 0.35f);
+                    TouchUi.Label(new Rect(r.x + 32 * k, r.y + 10 * k, r.width - 34 * k, 14 * k), "x" + count, 8.5f, TextAnchor.MiddleCenter,
+                        count > 0 ? Color.white : TouchUi.Hex(0x8A8090), true);
+                }
+                else
+                {
+                    // narrow (4 buttons): the item in the middle, the count in its corner
+                    TouchUi.Item(type, new Rect(r.center.x - 14 * k, r.y + 3 * k, 28 * k, 28 * k), count > 0 ? (ItemEnabled(type) ? 1f : 0.75f) : 0.35f);
+                    TouchUi.Label(new Rect(r.x, r.y, r.width - 3 * k, r.height - 2 * k), "x" + count, 7, TextAnchor.LowerRight,
+                        count > 0 ? Color.white : TouchUi.Hex(0x8A8090), true);
+                }
             }
         }
 

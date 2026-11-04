@@ -466,7 +466,7 @@ namespace Loan12.UnityPort
                     }
                     TouchUi.Label(new Rect(cell.x + k, cell.y + 26 * k, cell.width - 2 * k, 16 * k), what[i], 5.25f, TextAnchor.UpperCenter, Kit.Cream, true, true);
                 }
-                TouchUi.Label(TouchUi.R(8, y + 70, 164, 9), "Trị giá 6.000 vàng và đầy mạng", 6, TextAnchor.UpperCenter, TouchUi.Hex(0xFFE39A), true);
+                TouchUi.Label(TouchUi.R(8, y + 70, 164, 9), "Mang 3 vật phẩm vào trận · tối đa 4 mạng", 6, TextAnchor.UpperCenter, TouchUi.Hex(0xFFE39A), true);
                 Rect pb = TouchUi.R(40, y + 84, 100, 22);
                 if (Starter)
                 {
@@ -488,7 +488,7 @@ namespace Loan12.UnityPort
                 TouchUi.Label(TouchUi.R(42, y + 22, 130, 9), "Mua 1 lần, dùng mãi, cho mọi nhân vật", 5.75f, TextAnchor.UpperLeft, Kit.Cream);
                 string[] perks =
                 {
-                    "Nhận thưởng quảng cáo ngay, không phải xem", "Ô vật phẩm thứ 4 khi chuẩn bị xuất trận", "Tối đa 6 mạng (thường 5)",
+                    "Nhận thưởng quảng cáo ngay, không phải xem", "Mang 4 vật phẩm vào trận (thường 2)", "Tối đa 5 mạng (thường 3)",
                     "Tạo nhân vật mới không cần xem quảng cáo"
                 };
                 for (int i = 0; i < perks.Length; i++)

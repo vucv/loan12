@@ -553,11 +553,37 @@ namespace Loan12.UnityPort
         }
     }
 
-    /// <summary>The (up to) three items taken into battle; chosen on the "Chuẩn bị xuất trận" screen.</summary>
+    /// <summary>What the purchases give: item slots taken into battle and the most lives.</summary>
+    public static class Packs
+    {
+        public static bool Starter
+        {
+            get { return PlayerPrefs.GetInt("l12.starterBought", 0) == 1; }
+        }
+
+        /// <summary>Items taken into battle: 2, 3 with the starter pack, 4 with VIP.</summary>
+        public static int ItemSlots
+        {
+            get { return Rewards.Vip ? 4 : (Starter ? 3 : 2); }
+        }
+
+        /// <summary>Most lives: 3, 4 with the starter pack, 5 with VIP.</summary>
+        public static int MaxLives
+        {
+            get { return Rewards.Vip ? 5 : (Starter ? 4 : 3); }
+        }
+    }
+
+    /// <summary>The items taken into battle (2 to 4, Packs.ItemSlots); chosen on the "Chuẩn bị xuất trận" screen.</summary>
     public static class Loadout
     {
         const string Pref = "Loan12.Loadout";
-        public const int Slots = 3;
+        public const int MaxSlots = 4;
+
+        public static int Slots
+        {
+            get { return Packs.ItemSlots; }
+        }
 
         /// <summary>Item types taken into battle: the ones used in it, then Ngọc Ấn (the player moves first,
         /// used on XUẤT TRẬN, taken again for each battle); Ngân Lượng is gold.</summary>
@@ -565,7 +591,12 @@ namespace Loan12.UnityPort
 
         public static int[] Get()
         {
-            int[] r = {-1, -1, -1};
+            int n0 = Slots;
+            int[] r = new int[n0];
+            for (int i = 0; i < n0; i++)
+            {
+                r[i] = -1;
+            }
             string s = PlayerPrefs.GetString(Pref, "");
             if (s.Length == 0)
             {
@@ -573,7 +604,7 @@ namespace Loan12.UnityPort
                 int n = 0;
                 foreach (int t in Usable)
                 {
-                    if (n < Slots && SafeOwned(t) > 0)
+                    if (n < n0 && t != 5 && SafeOwned(t) > 0)
                     {
                         r[n++] = t;
                     }
@@ -581,7 +612,7 @@ namespace Loan12.UnityPort
                 return r;
             }
             string[] parts = s.Split(',');
-            for (int i = 0; i < Slots && i < parts.Length; i++)
+            for (int i = 0; i < n0 && i < parts.Length; i++)
             {
                 int v;
                 if (int.TryParse(parts[i], out v) && System.Array.IndexOf(Usable, v) >= 0)
@@ -594,7 +625,14 @@ namespace Loan12.UnityPort
 
         public static void Set(int[] slots)
         {
-            PlayerPrefs.SetString(Pref, slots[0] + "," + slots[1] + "," + slots[2]);
+            // the slots beyond the current ones are kept (they come back with a pack)
+            string[] old = PlayerPrefs.GetString(Pref, "").Split(',');
+            string[] parts = new string[MaxSlots];
+            for (int i = 0; i < MaxSlots; i++)
+            {
+                parts[i] = i < slots.Length ? slots[i].ToString() : (i < old.Length && old[i].Length > 0 ? old[i] : "-1");
+            }
+            PlayerPrefs.SetString(Pref, string.Join(",", parts));
             PlayerPrefs.Save();
         }
 

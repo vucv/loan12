@@ -429,6 +429,10 @@ namespace Loan12.UnityPort
             }
 
             backend.UpdateAudio();
+            if (touchInterface)
+            {
+                C_cx.f_J = Packs.MaxLives; // most lives: 3, 4 with the starter pack, 5 with VIP
+            }
             LifeTimer.Tick(); // +1 life every 30 minutes
             C_PortScreens.f_storyHidden = touchInterface; // TouchStoryView draws it
             UpdateSystemKeyboard();

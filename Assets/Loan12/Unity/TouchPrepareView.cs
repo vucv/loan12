@@ -128,7 +128,7 @@ namespace Loan12.UnityPort
                     }
                     for (int i = 0; i < BagCount; i++)
                     {
-                        if (i < Loadout.Slots && SlotRect(i).Contains(p))
+                        if (i < Loadout.MaxSlots && SlotRect(i).Contains(p))
                         {
                             downKind = 3;
                             downArg = i;
@@ -180,7 +180,12 @@ namespace Loan12.UnityPort
                         }
                         break;
                     case 3:
-                        if (SlotRect(downArg).Contains(p) && slots[downArg] >= 0)
+                        if (SlotRect(downArg).Contains(p) && downArg >= slots.Length)
+                        {
+                            // a locked slot: what opens it
+                            Toast(downArg == 2 ? "Ô thứ 3 mở khi mua Gói khởi đầu (Cửa hàng · Ưu đãi)" : "Ô thứ 4 mở khi mua gói VIP (Cửa hàng · Ưu đãi)");
+                        }
+                        else if (SlotRect(downArg).Contains(p) && slots[downArg] >= 0)
                         {
                             slots[downArg] = -1;
                             Loadout.Set(slots);
@@ -232,7 +237,7 @@ namespace Loan12.UnityPort
             int free = System.Array.IndexOf(slots, -1);
             if (free < 0)
             {
-                Toast("Đã đủ 3 món, chạm vào ô trên để bỏ bớt");
+                Toast("Đã đủ " + slots.Length + " món, chạm vào ô trên để bỏ bớt");
                 return;
             }
             slots[free] = type;
@@ -298,15 +303,23 @@ namespace Loan12.UnityPort
             TouchUi.PixelText("MANG VÀO TRẬN", 1, TouchUi.R(90, 0, 0, 0).x, TouchUi.R(0, 167, 0, 0).y, 1, true);
             Texture2D focus = TouchUi.Img("/focusitem");
             int[] slots = Loadout.Get();
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < Loadout.MaxSlots; i++)
             {
-                Rect r = i < 3 ? SlotRect(i) : TouchUi.R(CellX(3), 176, 36, 36);
-                if (i == 3)
+                Rect r = SlotRect(i);
+                if (i >= slots.Length)
                 {
+                    // locked: the 3rd slot comes with the starter pack, the 4th with VIP
                     TouchUi.Fill(r, TouchUi.Hex(0x140812));
                     Texture2D lk = TouchUi.Img("/m/lock");
-                    TouchUi.Sprite(lk, TouchUi.R(CellX(3) + 10, 180, 16, 16));
-                    TouchUi.PixelText("VIP", 2, r.center.x, TouchUi.R(0, 204, 0, 0).y, 1, true);
+                    TouchUi.Sprite(lk, TouchUi.R(CellX(i) + 10, 179, 16, 16));
+                    if (i == 3)
+                    {
+                        TouchUi.PixelText("VIP", 2, r.center.x, TouchUi.R(0, 204, 0, 0).y, 1, true);
+                    }
+                    else
+                    {
+                        TouchUi.Label(TouchUi.R(CellX(i), 196, 36, 14), "KHỞI ĐẦU", 5, TextAnchor.MiddleCenter, Kit.Gold, true);
+                    }
                     continue;
                 }
                 if (slots[i] < 0)

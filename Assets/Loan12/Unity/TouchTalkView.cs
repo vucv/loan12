@@ -102,22 +102,13 @@ namespace Loan12.UnityPort
                     Rect pic = TouchUi.R(14, boxY - pic0 + (1 - t) * 6, pic0, pic0);
                     TouchUi.Fill(new Rect(pic.x - 2 * k, pic.y - 2 * k, pic.width + 4 * k, pic.height + 4 * k), TouchUi.GoldLine);
                     TouchUi.Portrait(who, pic);
-                    // the name plate fits between the portrait and the screen's edge: the game's font, or a
-                    // smaller one for a long name
+                    // the name plate: one style for every name, sized to it, never past the screen's edge
                     string name = QuestData.Who(who).ToUpperInvariant();
                     const float px = 14 + pic0 + 6, room = 174 - px;
-                    float pw = TouchUi.PixelWidth(name, 1) + 16;
-                    float w = Mathf.Clamp(pw, 60, room);
-                    Rect plate = TouchUi.R(px, boxY - 20, w, 16);
+                    float w = Mathf.Clamp(TouchUi.TextWidth(name, 7.5f, true) + 14, 56, room);
+                    Rect plate = TouchUi.R(px, boxY - 19, w, 15);
                     Kit.Box(plate, TouchUi.Hex(0x46245C));
-                    if (pw <= room)
-                    {
-                        TouchUi.PixelText(name, 1, plate.center.x, plate.center.y, 1, true);
-                    }
-                    else
-                    {
-                        TouchUi.Label(plate, name, 7, TextAnchor.MiddleCenter, TouchUi.Hex(0xFFD84A), true);
-                    }
+                    TouchUi.Label(plate, name, 7.5f, TextAnchor.MiddleCenter, TouchUi.Hex(0xFFD84A), true);
                 }
                 Rect box = TouchUi.R(6, boxY, 168, boxH);
                 TouchUi.Panel(box);
