@@ -1220,8 +1220,9 @@ namespace Loan12
                     this.f_Z = new C_s();
                     this.f_Z.d(this.f_F, this.f_G);
                     this.f_Z.a();
-                    if ((C_bg.f(5) > 0))
+                    if (!C_PortScreens.f_touch && ((C_bg.f(5) > 0)))
                     {
+                        // PORT-UI: chosen on the prepare screen
                         C_dd.f_h = true;
                         C_bg.g(5);
                     }

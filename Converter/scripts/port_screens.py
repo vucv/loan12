@@ -498,7 +498,7 @@ rep('game/bu.java', """    private int portEndWait;""", """    private int portE
     public int[] portWon = new int[6]; // PORT-UI: items won in this battle (5 in a row), by type""")
 
 # - item drops (touch): more often than the game's (40% on a line of 5): a line of 4 drops one item
-#   in 3, a line of 5 or more always does; the item flies out of the board (t.d) as in the game
+#   1 time in 4, a line of 5 or more 4 times in 5; the item flies out of the board (t.d) as in the game
 rep('game/bu.java', """                        if (i6 >= 5) {
                             int i7 = g(i6);""", """                        if (i6 >= (game.PortScreens.touch ? 4 : 5)) {
                             int i7 = game.PortScreens.touch ? portDrop(i6) : g(i6);""")
@@ -509,7 +509,7 @@ rep('game/bu.java', """    private int portEndWait;""", """    private int portE
         if (this.s.d) {
             return g(len);
         }
-        if (ay.a(100) >= (len >= 5 ? 100 : 34)) {
+        if (ay.a(100) >= (len >= 5 ? 80 : 25)) { // a little less than before (100 / 34)
             return -1;
         }
         int r = ay.a(100);
@@ -727,5 +727,16 @@ rep('com/mic/smsgame/suquan/aa.java', """    public boolean portVsReady() {""", 
     }
 
     public boolean portVsReady() {""")
+
+# Ngọc Ấn (item 5) is not used by itself before a battle any more: on the touch interface the player
+# chooses it on the prepare screen (PortScreens.useSeal); the arena does not use it
+rep('com/mic/smsgame/suquan/aa.java', """                this.Z.a();
+                if (bg.f(5) > 0) {""", """                this.Z.a();
+                if (!game.PortScreens.touch && (bg.f(5) > 0)) { // PORT-UI: chosen on the prepare screen""")
+rep('game/co.java', """        if (bg.f(5) > 0) {
+            dd.h = true;
+            bg.g(5);""", """        if (!PortScreens.touch && (bg.f(5) > 0)) { // PORT-UI: no Ngọc Ấn by itself
+            dd.h = true;
+            bg.g(5);""")
 
 print('port_screens: ok')

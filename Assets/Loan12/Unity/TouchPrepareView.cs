@@ -13,7 +13,8 @@ namespace Loan12.UnityPort
     {
         const int GridH = 372;
 
-        int downKind, downArg; // 1 fight, 2 retreat, 3 slot, 4 bag item, 5 buy, 6 confirm buy, 7 close confirm, 8 outside confirm
+        int downKind, downArg; // 1 fight, 2 retreat, 3 slot, 4 bag item, 5 buy, 6 confirm buy, 7 close confirm, 8 outside confirm, 9 Ngọc Ấn
+        bool sealOn; // Ngọc Ấn chosen for this battle: the player moves first (used on XUẤT TRẬN)
         int confirmType = -1;
         string toast = "";
         float toastTime = -10f;
@@ -34,6 +35,18 @@ namespace Loan12.UnityPort
         {
             downKind = 0;
             confirmType = -1;
+            sealOn = false; // chosen again before each battle
+        }
+
+        /// <summary>Ngọc Ấn can be chosen: the player owns one and would not move first anyway.</summary>
+        static bool SealOffered()
+        {
+            return C_PortUi.owned(5) > 0 && !C_PortUi.playerFirst();
+        }
+
+        static Rect SealRect()
+        {
+            return TouchUi.R(108, 141, 66, 15);
         }
 
         // four 36-px cells 6 px apart: x 9..171, centred on 90
@@ -119,6 +132,10 @@ namespace Loan12.UnityPort
                     {
                         downKind = 1;
                     }
+                    else if (SealOffered() && SealRect().Contains(p))
+                    {
+                        downKind = 9;
+                    }
                     else if (BackRect().Contains(p) && C_PortUi.canRetreat())
                     {
                         downKind = 2;
@@ -156,7 +173,18 @@ namespace Loan12.UnityPort
                     case 1:
                         if (FightRect().Contains(p))
                         {
+                            if (sealOn && SealOffered())
+                            {
+                                C_PortScreens.useSeal(); // one Ngọc Ấn: the player moves first
+                            }
+                            sealOn = false;
                             C_PortUi.request(C_PortUi.f_SCREEN_KEY, 0); // "Đánh"
+                        }
+                        break;
+                    case 9:
+                        if (SealRect().Contains(p))
+                        {
+                            sealOn = !sealOn;
                         }
                         break;
                     case 2:
@@ -274,8 +302,23 @@ namespace Loan12.UnityPort
             TouchUi.Label(TouchUi.R(12, 122, 76, 13), C_PortUi.vsHp(0) + " máu", 7, TextAnchor.UpperLeft, stat);
             TouchUi.Label(TouchUi.R(92, 109, 76, 13), "Cấp " + C_PortUi.vsLevel(1), 7, TextAnchor.UpperRight, stat);
             TouchUi.Label(TouchUi.R(92, 122, 76, 13), C_PortUi.vsHp(1) + " máu", 7, TextAnchor.UpperRight, stat);
-            string first = C_PortUi.playerFirst() ? "Bạn được đi trước" : C_PortUi.vsName(1) + " được đi trước";
-            TouchUi.Label(TouchUi.R(0, 142, 180, 14), first, 7, TextAnchor.MiddleCenter, TouchUi.TextSoft);
+            bool meFirst = C_PortUi.playerFirst() || (sealOn && SealOffered());
+            string first = meFirst ? "Bạn được đi trước" : C_PortUi.vsName(1) + " được đi trước";
+            if (SealOffered())
+            {
+                // Ngọc Ấn: chosen here before each battle (no longer used by itself)
+                TouchUi.Label(TouchUi.R(8, 142, 98, 14), first, 7, TextAnchor.MiddleLeft, sealOn ? TouchUi.TextGreen : TouchUi.TextSoft);
+                Rect seal = SealRect();
+                TouchUi.Button(seal, sealOn ? Btn.Gold : Btn.Dark, downKind == 9);
+                float dy = downKind == 9 ? k : 0;
+                TouchUi.Item(5, new Rect(seal.x + 3 * k, seal.y + 2 * k + dy, 11 * k, 11 * k));
+                TouchUi.Label(new Rect(seal.x + 15 * k, seal.y + dy, seal.width - 17 * k, seal.height), "Ngọc Ấn x" + C_PortUi.owned(5), 6,
+                    TextAnchor.MiddleCenter, sealOn ? TouchUi.Hex(0x2A1408) : Kit.Cream, true);
+            }
+            else
+            {
+                TouchUi.Label(TouchUi.R(0, 142, 180, 14), first, 7, TextAnchor.MiddleCenter, TouchUi.TextSoft);
+            }
 
             // the items to take
             TouchUi.Panel(TouchUi.R(4, 158, 172, 180));

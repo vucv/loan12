@@ -358,18 +358,24 @@ namespace Loan12.UnityPort
     public sealed class TouchBootView : ITouchView, IOwnsKeys
     {
         float asked = -10f;
+        static bool started; // the menu (or a game screen) has shown once
 
         public bool Active()
         {
             try
             {
-                // the game's logo canvas (no game screen yet), the sound question, the cover before the menu
+                // the game's logo canvas (no game screen yet), the sound question, the cover before the menu;
+                // until the menu first shows, every screen in between too: one loading screen, not two
                 if (C_PortUi.screen() == null)
                 {
-                    return true;
+                    return !started;
                 }
                 int k = C_PortScreens.screenKind();
-                return (k == 1 || k == 8) && !C_PortScreens.hasDialog();
+                if (k >= 2 && k <= 7)
+                {
+                    started = true;
+                }
+                return (!started || k == 1 || k == 8) && !C_PortScreens.hasDialog();
             }
             catch (System.Exception)
             {

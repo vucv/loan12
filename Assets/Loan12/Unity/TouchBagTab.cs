@@ -413,7 +413,7 @@ namespace Loan12.UnityPort
                 TouchUi.Fill(tag, n > 0 ? TouchUi.Hex(0x1A0C16) : TouchUi.Hex(0xA3201B));
                 TouchUi.Label(tag, "x" + n, 5.5f, TextAnchor.MiddleCenter, Color.white, true, false, false);
                 TouchUi.Label(new Rect(r.x, r.y + 28 * k, r.width, 9 * k), MapUi.Name(t), 5.5f, TextAnchor.UpperCenter, Kit.Cream, true);
-                string note = n == 0 ? "Hết · chạm để mua" : (t == 5 ? "tự dùng đầu trận" : (t == Refill.Type ? "hồi đầy mạng" : ""));
+                string note = n == 0 ? "Hết · chạm để mua" : (t == 5 ? "chọn khi chuẩn bị trận" : (t == Refill.Type ? "hồi đầy mạng" : ""));
                 if (note.Length > 0)
                 {
                     TouchUi.Label(new Rect(r.x, r.y + 37 * k, r.width, 9 * k), note, 5, TextAnchor.UpperCenter, n == 0 ? Kit.Red : Kit.Muted);

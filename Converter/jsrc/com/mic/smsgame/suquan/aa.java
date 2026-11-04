@@ -1015,7 +1015,7 @@ public class aa
                 this.Z = new s();
                 this.Z.d(this.F, this.G);
                 this.Z.a();
-                if (bg.f(5) > 0) {
+                if (!game.PortScreens.touch && (bg.f(5) > 0)) { // PORT-UI: chosen on the prepare screen
                     dd.h = true;
                     bg.g(5);
                 } else if (dd.e.e > dd.f.e) {

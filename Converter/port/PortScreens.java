@@ -83,6 +83,16 @@ public final class PortScreens {
         return s instanceof df ? ((df) s).portStory() : -1;
     }
 
+    /** Ngọc Ấn chosen on the prepare screen: the player moves first; one seal is used. false: none left */
+    public static boolean useSeal() {
+        if (bg.f(5) <= 0) {
+            return false;
+        }
+        dd.h = true;
+        bg.g(5);
+        return true;
+    }
+
     /** while the story's picture opens: its open part (x, y, w, h inside the 200 x 130 picture); null after */
     public static int[] storyOpening() {
         ar s = PortUi.screen();

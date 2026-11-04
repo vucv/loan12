@@ -110,7 +110,7 @@ public class co {
         if (this.j < 0) {
             return;
         }
-        if (bg.f(5) > 0) {
+        if (!PortScreens.touch && (bg.f(5) > 0)) { // PORT-UI: no Ngọc Ấn by itself
             dd.h = true;
             bg.g(5);
         } else if (dd.e.e > dd.f.e) {

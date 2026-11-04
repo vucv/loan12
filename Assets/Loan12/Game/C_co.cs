@@ -124,8 +124,9 @@ namespace Loan12
             {
                 return;
             }
-            if ((C_bg.f(5) > 0))
+            if (!C_PortScreens.f_touch && ((C_bg.f(5) > 0)))
             {
+                // PORT-UI: no Ngọc Ấn by itself
                 C_dd.f_h = true;
                 C_bg.g(5);
             }

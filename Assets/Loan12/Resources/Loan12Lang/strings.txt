@@ -156,7 +156,8 @@ Dùng trong trận	Used in battle	戦闘で使用	전투에서 사용
 Cửa hàng	Shop	ショップ	상점
 mua thêm	buy more	購入	추가 구매
 Hết · chạm để mua	None · tap to buy	なし · タップで購入	없음 · 탭하여 구매
-tự dùng đầu trận	auto at start	開始時に自動	시작 시 자동
+chọn khi chuẩn bị trận	pick before battle	戦闘前に選択	전투 전 선택
+Ngọc Ấn x{0}	Jade Seal x{0}	玉璽 x{0}	옥새 x{0}
 hồi đầy mạng	full lives	ライフ全回復	생명 가득
 BẢO VẬT	RELICS	宝物	보물
 gốc {0} · sự kiện +{1}	base {0} · events +{1}	基本 {0} · イベント +{1}	기본 {0} · 이벤트 +{1}

@@ -99,6 +99,18 @@ namespace Loan12
             return ((s is C_df) ? (((C_df)(s))).portStory() : -1);
         }
 
+        /** Ngọc Ấn chosen on the prepare screen: the player moves first; one seal is used. false: none left */
+        public static bool useSeal()
+        {
+            if ((C_bg.f(5) <= 0))
+            {
+                return false;
+            }
+            C_dd.f_h = true;
+            C_bg.g(5);
+            return true;
+        }
+
         /** while the story's picture opens: its open part (x, y, w, h inside the 200 x 130 picture); null after */
         public static int[] storyOpening()
         {

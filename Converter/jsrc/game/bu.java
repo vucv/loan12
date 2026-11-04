@@ -1320,7 +1320,7 @@ public class bu
         if (this.s.d) {
             return g(len);
         }
-        if (ay.a(100) >= (len >= 5 ? 100 : 34)) {
+        if (ay.a(100) >= (len >= 5 ? 80 : 25)) { // a little less than before (100 / 34)
             return -1;
         }
         int r = ay.a(100);

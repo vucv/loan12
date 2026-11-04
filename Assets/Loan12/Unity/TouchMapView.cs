@@ -734,8 +734,8 @@ namespace Loan12.UnityPort
                         TouchUi.Sprite(TouchUi.Img("/m/sw"), sw, new Rect(5, 2, 29, 25));
                         break;
                     case 1:
-                        // the hero (the map's old icon)
-                        TouchUi.Sprite(TouchUi.Img("/m/hm"), new Rect(r.center.x - 6.5f * k, r.y + 4 * k, 13 * k, 17 * k));
+                        // a chest (the game's r/g)
+                        TouchUi.Sprite(TouchUi.Img("/r/g"), new Rect(r.center.x - 9 * k, r.y + 3 * k, 18 * k, 19 * k));
                         break;
                     case 2:
                         TouchUi.Sprite(TouchUi.Img("/gold"), new Rect(r.center.x - 9 * k, r.y + 3 * k, 18 * k, 18 * k));
