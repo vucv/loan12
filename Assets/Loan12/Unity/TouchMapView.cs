@@ -494,8 +494,8 @@ namespace Loan12.UnityPort
                 if (C_PortMap.nodeType(n) == 0 && !C_PortMap.nodeOpen(n))
                 {
                     Vector2 c = o + new Vector2(C_PortMap.nodeX(n), C_PortMap.nodeY(n)) * s;
-                    Oval(c, 31 * k / 2, 27 * k / 2, new Color(0, 0, 0, 0.6f));
-                    float ls = 16 * Mathf.Max(1, Mathf.Round(s * 0.75f));
+                    // a big lock on the town, no dark disc under it
+                    float ls = 32 * Mathf.Max(1, Mathf.Round(s * 0.75f));
                     Gx.DrawTexture(new Rect(c.x - ls / 2, c.y - ls / 2, ls, ls), TouchUi.Img("/m/lock"));
                 }
             }

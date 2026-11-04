@@ -179,7 +179,7 @@ namespace Loan12.UnityPort
                             C_PortUi.request(C_PortUi.f_DIALOG_KEY, 0); // the game's "Có": skip the training
                             break;
                         case 9:
-                            C_PortUi.request(C_PortUi.f_DIALOG_KEY, 1); // "Không": back to the lesson
+                            C_PortUi.request(C_PortUi.f_DIALOG_KEY, 2); // "Không" (the dialog's right soft key): back to the lesson
                             break;
                     }
                 }
