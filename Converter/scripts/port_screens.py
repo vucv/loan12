@@ -709,4 +709,23 @@ rep('game/bu.java', """                arr[j].a();
                     bg.g(type); // PORT-UI: the tutorial's item is not from the bag
                 }""")
 
+# the map's "two swords" animation when the hero meets an enemy (s, before the battle box): its state for
+# the touch map, which draws it itself over its own map
+rep('game/s.java', """    public boolean c() {
+        return this.i;
+    }""", """    public boolean c() {
+        return this.i;
+    }
+
+    /** PORT-UI: x, y (map), swords' offset, sparkle frame, burst (0/1), burst distance, done (0/1) */
+    public int[] portState() {
+        return new int[] {this.p, this.q, this.g, this.f, this.j ? 1 : 0, this.h, this.i ? 1 : 0};
+    }""")
+rep('com/mic/smsgame/suquan/aa.java', """    public boolean portVsReady() {""", """    /** PORT-UI: the swords animation before the battle box (s.portState), or null */
+    public int[] portSlash() {
+        return (this.f == 3) && (this.Z != null) ? this.Z.portState() : null;
+    }
+
+    public boolean portVsReady() {""")
+
 print('port_screens: ok')

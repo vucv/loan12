@@ -81,6 +81,12 @@ namespace Loan12
             return this.f_i;
         }
 
+        /** PORT-UI: x, y (map), swords' offset, sparkle frame, burst (0/1), burst distance, done (0/1) */
+        public int[] portState()
+        {
+            return new int[] { this.f_p, this.f_q, this.f_g, this.f_f, (this.f_j ? 1 : 0), this.f_h, (this.f_i ? 1 : 0) };
+        }
+
         public override void a(Graphics paramGraphics, int paramInt1, int paramInt2)
         {
             if (this.f_i)

@@ -1277,6 +1277,12 @@ namespace Loan12
         }
 
         /** PORT-UI: the VS box is shown and its intro is over ("Đánh" is available) */
+        /** PORT-UI: the swords animation before the battle box (s.portState), or null */
+        public int[] portSlash()
+        {
+            return ((this.f_f == 3) && (this.f_Z != null) ? this.f_Z.portState() : ((int[])null));
+        }
+
         public bool portVsReady()
         {
             return (this.f_f == 3) && (this.f_Z == null) && (this.f_N != null);

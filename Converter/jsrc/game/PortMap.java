@@ -405,6 +405,12 @@ public final class PortMap {
     // ---- the dialogue on the map (quest, event, after a battle) --------------------------------------
 
     /** a dialogue is shown on the map (no popup over it) */
+    /** the swords animation of the map before a battle: see s.portState; null when none */
+    public static int[] slash() {
+        com.mic.smsgame.suquan.aa m = map();
+        return m == null ? null : m.portSlash();
+    }
+
     public static boolean talking() {
         com.mic.smsgame.suquan.aa m = map();
         return (m != null) && (PortUi.dialog() == null) && (m.portTalk() != null);

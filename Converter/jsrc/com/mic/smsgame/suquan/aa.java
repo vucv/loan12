@@ -1060,6 +1060,11 @@ public class aa
     }
 
     /** PORT-UI: the VS box is shown and its intro is over ("Đánh" is available) */
+    /** PORT-UI: the swords animation before the battle box (s.portState), or null */
+    public int[] portSlash() {
+        return (this.f == 3) && (this.Z != null) ? this.Z.portState() : null;
+    }
+
     public boolean portVsReady() {
         return (this.f == 3) && (this.Z == null) && (this.N != null);
     }

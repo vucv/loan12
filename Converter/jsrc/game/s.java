@@ -54,6 +54,11 @@ public class s
         return this.i;
     }
 
+    /** PORT-UI: x, y (map), swords' offset, sparkle frame, burst (0/1), burst distance, done (0/1) */
+    public int[] portState() {
+        return new int[] {this.p, this.q, this.g, this.f, this.j ? 1 : 0, this.h, this.i ? 1 : 0};
+    }
+
     public void a(Graphics paramGraphics, int paramInt1, int paramInt2) {
         if (this.i) {
             return;

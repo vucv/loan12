@@ -60,6 +60,7 @@ namespace Loan12
         /** portrait of the speaker of line i (the player: own hero), -1 for a voice off */
         // ---- the dialogue on the map (quest, event, after a battle) --------------------------------------
         /** a dialogue is shown on the map (no popup over it) */
+        /** the swords animation of the map before a battle: see s.portState; null when none */
         /** portrait of the speaker (0 in the table is the player's hero), -1 a voice off */
         // ---- the arena (Tam Điệp) ---------------------------------------------------------------------
         /** level chosen, -1 when no open level can be paid */
@@ -533,6 +534,13 @@ namespace Loan12
 
         // ---- the dialogue on the map (quest, event, after a battle) --------------------------------------
         /** a dialogue is shown on the map (no popup over it) */
+        /** the swords animation of the map before a battle: see s.portState; null when none */
+        public static int[] slash()
+        {
+            SQ_aa m = C_PortMap.map();
+            return (m == null ? ((int[])null) : m.portSlash());
+        }
+
         public static bool talking()
         {
             SQ_aa m = C_PortMap.map();
