@@ -52,8 +52,14 @@ namespace Loan12.UnityPort
             tabs[TabQuest] = new TouchQuestTab();
         }
 
+        /// <summary>The last map view: where map pixel (0, 0) was on the screen (MapBackdrop draws the same).</summary>
+        public static TouchMapView Instance;
+        public static Vector2 Origin;
+        public static bool HasOrigin;
+
         public bool Active()
         {
+            Instance = this;
             try
             {
                 return C_PortScreens.screenKind() == 4 && C_PortMap.free();
@@ -68,7 +74,21 @@ namespace Loan12.UnityPort
         {
             settings = null;
             dragMap = false;
-            camReady = false;
+            // the camera stays where it was while the game is still on the map (a dialogue, the opening of
+            // the battle box): no jump when the map shows again or is held behind (TouchMapHoldView)
+            bool onMap;
+            try
+            {
+                onMap = C_PortScreens.screenKind() == 4;
+            }
+            catch (System.Exception)
+            {
+                onMap = false;
+            }
+            if (!onMap)
+            {
+                camReady = false;
+            }
             if (C_PortScreens.f_slot != lastSlot)
             {
                 // another character (or back from the menu): tabs start fresh
@@ -94,11 +114,11 @@ namespace Loan12.UnityPort
             get { return Kit.H - NavH; }
         }
 
-        /// <summary>Screen pixels per map pixel: the map always shows about 240 map pixels across.</summary>
         // where a locked town's lock goes, from the town's point (x, y in the map picture), by town
         static readonly int[] LockAt = {-8, -9, -8, -9, -8, -9, -8, -9, -8, -9, -8, -9, -8, -9, -8, -9, -8, -9, -8, -9, -8, -9, -8, -9, -8, -9, -8, -9, -4, -9, -8, -9, -8, -4, -8, -3, -8, 0, -8, -9, -8, -2, -22, -1, -8, -9, -3, -9, 3, -9};
 
-        static float S
+        /// <summary>Screen pixels per map pixel: the map always shows about 240 map pixels across.</summary>
+        public static float S
         {
             get { return Mathf.Max(1, Mathf.Floor(Gx.Width / 240f)); }
         }
@@ -487,6 +507,8 @@ namespace Loan12.UnityPort
             float s = S, k = TouchUi.K;
             Gx.BeginGroup(view);
             Vector2 o = new Vector2(-camX * s, -camY * s);
+            Origin = new Vector2(view.x, view.y) + o;
+            HasOrigin = true;
             Rect mapR = new Rect(o.x, o.y, 380 * s, 380 * s);
             Gx.DrawTexture(mapR, TouchUi.Img("/m/m"));
 

@@ -18,7 +18,15 @@ namespace Loan12.UnityPort
         public static void Draw(float darken)
         {
             Texture2D map = TouchUi.Img("/m/m");
-            float s = Mathf.Max(1, Mathf.Floor(Gx.Width / 240f));
+            float s = TouchMapView.S;
+            if (TouchMapView.HasOrigin)
+            {
+                // exactly where the map view left it: no jump between the map and what covers it
+                TouchUi.Fill(new Rect(0, 0, Gx.Width, Gx.Height), TouchUi.Hex(0x0A121E));
+                Gx.DrawTexture(new Rect(TouchMapView.Origin.x, TouchMapView.Origin.y, 380 * s, 380 * s), map);
+                TouchUi.Fill(new Rect(0, 0, Gx.Width, Gx.Height), new Color(0.03f, 0.02f, 0.05f, darken));
+                return;
+            }
             float vw = Gx.Width / s, vh = Gx.Height / s;
             float x = C_PortMap.playerX() - vw / 2, y = C_PortMap.playerY() - vh / 2;
             x = vw >= 380 ? (380 - vw) / 2 : Mathf.Clamp(x, 0, 380 - vw);
