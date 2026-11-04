@@ -290,19 +290,17 @@ namespace Loan12.UnityPort
                 {
                     fought = true;
                     bool training = C_PortScreens.training();
+                    if (training && C_PortScreens.coachWaits())
+                    {
+                        yield return new WaitForSeconds(0.6f);
+                        yield return Once("H", "battle_tutorial");
+                        C_PortScreens.request(C_PortScreens.f_COACH_NEXT, 0);
+                        yield return new WaitForSeconds(0.6f);
+                        continue;
+                    }
                     if (!C_PortUi.waiting())
                     {
                         continue;
-                    }
-                    if (training)
-                    {
-                        yield return Once("H", "battle_tutorial");
-                        if (C_PortScreens.coachWaits())
-                        {
-                            C_PortScreens.request(C_PortScreens.f_COACH_NEXT, 0);
-                            yield return new WaitForSeconds(0.4f);
-                            continue;
-                        }
                     }
                     else
                     {
