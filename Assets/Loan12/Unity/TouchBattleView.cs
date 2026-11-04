@@ -105,7 +105,15 @@ namespace Loan12.UnityPort
         {
             if (!C_PortScreens.training())
             {
-                return Loadout.Get();
+                int[] chosen = Loadout.Get();
+                for (int i = 0; i < chosen.Length; i++)
+                {
+                    if (chosen[i] == 5)
+                    {
+                        chosen[i] = -1; // Ngọc Ấn works before the battle, not in it
+                    }
+                }
+                return chosen;
             }
             int[] r = {-1, -1, -1};
             int n = 0;

@@ -546,32 +546,64 @@ public final class PortMap {
         return b == null ? 0 : b.portBoxes;
     }
 
+    /** a box's reward, by kind: 0..5 the game's items (2 is gold, an amount), 6 Bình Hồi Mạng, 7 experience */
+    public static final int BOX_REFILL = 6, BOX_EXP = 7;
+
     /**
-     * Opens the waiting boxes: one item each (Bình Thuốc and Quỷ Diện Giáp more often than Long Thần
-     * Kiếm, Nhân Sâm and Ngọc Ấn), straight into the shared bag; opened() says what.
+     * Opens the waiting boxes, one reward each: gold (3 in 10), experience (1 in 4) or a shop item
+     * (the rest), the dearer the item the rarer (chance in inverse proportion to its price: Bình Thuốc
+     * 250, Ngọc Ấn 500, Quỷ Diện Giáp and Bình Hồi Mạng 1.000, Long Thần Kiếm and Nhân Sâm 1.500).
+     * Gold and items go to the bag, experience to the hero; Bình Hồi Mạng (the touch port's item)
+     * is added by the box screen. opened() says what came out.
      */
     public static void openBoxes() {
-        opened = new int[6];
+        opened = new int[8];
+        int lv = dd.e == null ? 1 : dd.e.e;
+        int need = Math.max(20, heroExpFor(lv + 1) - heroExpFor(lv));
         for (int n = 0; n < boxes; n++) {
-            int r = ay.a(100);
-            int t = r < 30 ? 4 : (r < 55 ? 3 : (r < 70 ? 0 : (r < 85 ? 1 : 5)));
-            opened[t] += 1;
-        }
-        boxes = 0;
-        for (int t = 0; t < opened.length; t++) {
-            if (opened[t] > 0) {
-                bg.a(t, opened[t], 6);
+            int r = ay.a(1000);
+            if (r < 300) {
+                opened[2] += 40 + lv * 12 + ay.a(20 + lv * 6);
+            } else if (r < 550) {
+                opened[BOX_EXP] += Math.max(5, need / 12 + ay.a(Math.max(1, need / 24)));
+            } else {
+                // 450 for items, shared as 1 / price: 6 + 3 + 1.5 + 1.5 + 1 + 1 = 14 parts
+                int q = ay.a(140);
+                int t = q < 60 ? 4 : (q < 90 ? 5 : (q < 105 ? 3 : (q < 120 ? BOX_REFILL : (q < 130 ? 0 : 1))));
+                opened[t] += 1;
             }
         }
+        boxes = 0;
+        give(1);
     }
 
     /** a rewarded ad watched: what the boxes gave, once more */
     public static void doubleOpened() {
-        for (int t = 0; t < opened.length; t++) {
+        give(1);
+    }
+
+    static void give(int times) {
+        for (int t = 0; t <= 5; t++) {
             if (opened[t] > 0) {
-                bg.a(t, opened[t], 6);
+                bg.a(t, opened[t] * times, 6);
             }
         }
+        if (opened[BOX_EXP] > 0) {
+            addExp(opened[BOX_EXP] * times);
+        }
+    }
+
+    /** experience for the hero, with the levels it brings */
+    public static void addExp(int n) {
+        if (dd.e == null) {
+            return;
+        }
+        int w = dd.b() + n;
+        dd.b(w);
+        while (dd.c(dd.e.e + 1, w)) {
+            dd.e.a();
+        }
+        dd.e.b();
     }
 
     public static int opened(int type) {

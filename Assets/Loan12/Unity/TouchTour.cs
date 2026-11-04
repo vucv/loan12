@@ -305,21 +305,16 @@ namespace Loan12.UnityPort
                 {
                     yield return new WaitForSeconds(0.8f);
                     yield return Once("H", "prepare");
-                    // the enemy moves first: Ngọc Ấn offered, then chosen (the tour's "Đánh" does not use it)
+                    // the enemy moves first: Ngọc Ấn in the bag row, then taken into the slots
                     if (!C_PortUi.playerFirst() && !seen.Contains("Hprepare_seal"))
                     {
                         C_bg.a(5, 1, 6);
+                        int[] keep = Loadout.Get();
+                        Loadout.Set(new[] {-1, -1, -1});
                         yield return Once("H", "prepare_seal");
-                        TouchPrepareView pv = J2MEGameHost.View<TouchPrepareView>();
-                        if (pv != null)
-                        {
-                            pv.sealOn = true;
-                        }
+                        Loadout.Set(new[] {5, -1, -1});
                         yield return Once("H", "prepare_seal_on");
-                        if (pv != null)
-                        {
-                            pv.sealOn = false;
-                        }
+                        Loadout.Set(keep);
                     }
                     C_PortUi.request(C_PortUi.f_SCREEN_KEY, 0); // "Đánh"
                     yield return new WaitForSeconds(1f);

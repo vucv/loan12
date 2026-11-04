@@ -77,11 +77,19 @@ namespace Loan12
         public static int[] f_opened;
         /** gift boxes a quest gives: 1 early on, 2 in the middle of the war, 3 late, 5 for the last one */
         /** the boxes the battle on screen brings (drops, and its quest's when won) */
+        /** a box's reward, by kind: 0..5 the game's items (2 is gold, an amount), 6 Bình Hồi Mạng, 7 experience */
+        public const int f_BOX_REFILL = 6;
+        public const int f_BOX_EXP = 7;
         /**
-         * Opens the waiting boxes: one item each (Bình Thuốc and Quỷ Diện Giáp more often than Long Thần
-         * Kiếm, Nhân Sâm and Ngọc Ấn), straight into the shared bag; opened() says what.
+         * Opens the waiting boxes, one reward each: gold (3 in 10), experience (1 in 4) or a shop item
+         * (the rest), the dearer the item the rarer (chance in inverse proportion to its price: Bình Thuốc
+         * 250, Ngọc Ấn 500, Quỷ Diện Giáp and Bình Hồi Mạng 1.000, Long Thần Kiếm and Nhân Sâm 1.500).
+         * Gold and items go to the bag, experience to the hero; Bình Hồi Mạng (the touch port's item)
+         * is added by the box screen. opened() says what came out.
          */
+        // 450 for items, shared as 1 / price: 6 + 3 + 1.5 + 1.5 + 1 + 1 = 14 parts
         /** a rewarded ad watched: what the boxes gave, once more */
+        /** experience for the hero, with the levels it brings */
         // ---- shop ---------------------------------------------------------------------------------
         private static bool f_lastBuyOk;
 
@@ -705,39 +713,77 @@ namespace Loan12
             return (b == null ? 0 : b.f_portBoxes);
         }
 
+        /** a box's reward, by kind: 0..5 the game's items (2 is gold, an amount), 6 Bình Hồi Mạng, 7 experience */
         /**
-         * Opens the waiting boxes: one item each (Bình Thuốc and Quỷ Diện Giáp more often than Long Thần
-         * Kiếm, Nhân Sâm and Ngọc Ấn), straight into the shared bag; opened() says what.
+         * Opens the waiting boxes, one reward each: gold (3 in 10), experience (1 in 4) or a shop item
+         * (the rest), the dearer the item the rarer (chance in inverse proportion to its price: Bình Thuốc
+         * 250, Ngọc Ấn 500, Quỷ Diện Giáp and Bình Hồi Mạng 1.000, Long Thần Kiếm and Nhân Sâm 1.500).
+         * Gold and items go to the bag, experience to the hero; Bình Hồi Mạng (the touch port's item)
+         * is added by the box screen. opened() says what came out.
          */
         public static void openBoxes()
         {
-            C_PortMap.f_opened = new int[6];
+            C_PortMap.f_opened = new int[8];
+            int lv = (C_dd.f_e == null ? 1 : C_dd.f_e.f_e);
+            int need = J2ME.JMath.max(20, C_PortMap.heroExpFor(lv + 1) - C_PortMap.heroExpFor(lv));
             for (int n = 0; (n < C_PortMap.f_boxes); n++)
             {
-                int r = C_ay.a(100);
-                int t = ((r < 30) ? 4 : (((r < 55) ? 3 : (((r < 70) ? 0 : (((r < 85) ? 1 : 5)))))));
-                C_PortMap.f_opened[t] += 1;
-            }
-            C_PortMap.f_boxes = 0;
-            for (int t_1 = 0; (t_1 < C_PortMap.f_opened.Length); t_1++)
-            {
-                if ((C_PortMap.f_opened[t_1] > 0))
+                int r = C_ay.a(1000);
+                if ((r < 300))
                 {
-                    C_bg.a(t_1, C_PortMap.f_opened[t_1], 6);
+                    C_PortMap.f_opened[2] += 40 + lv * 12 + C_ay.a(20 + lv * 6);
+                }
+                else if ((r < 550))
+                {
+                    C_PortMap.f_opened[C_PortMap.f_BOX_EXP] += J2ME.JMath.max(5, need / 12 + C_ay.a(J2ME.JMath.max(1, need / 24)));
+                }
+                else
+                {
+                    // 450 for items, shared as 1 / price: 6 + 3 + 1.5 + 1.5 + 1 + 1 = 14 parts
+                    int q = C_ay.a(140);
+                    int t = ((q < 60) ? 4 : (((q < 90) ? 5 : (((q < 105) ? 3 : (((q < 120) ? C_PortMap.f_BOX_REFILL : (((q < 130) ? 0 : 1)))))))));
+                    C_PortMap.f_opened[t] += 1;
                 }
             }
+            C_PortMap.f_boxes = 0;
+            C_PortMap.give(1);
         }
 
         /** a rewarded ad watched: what the boxes gave, once more */
         public static void doubleOpened()
         {
-            for (int t = 0; (t < C_PortMap.f_opened.Length); t++)
+            C_PortMap.give(1);
+        }
+
+        public static void give(int times)
+        {
+            for (int t = 0; (t <= 5); t++)
             {
                 if ((C_PortMap.f_opened[t] > 0))
                 {
-                    C_bg.a(t, C_PortMap.f_opened[t], 6);
+                    C_bg.a(t, C_PortMap.f_opened[t] * times, 6);
                 }
             }
+            if ((C_PortMap.f_opened[C_PortMap.f_BOX_EXP] > 0))
+            {
+                C_PortMap.addExp(C_PortMap.f_opened[C_PortMap.f_BOX_EXP] * times);
+            }
+        }
+
+        /** experience for the hero, with the levels it brings */
+        public static void addExp(int n)
+        {
+            if (C_dd.f_e == null)
+            {
+                return;
+            }
+            int w = C_dd.b() + n;
+            C_dd.b(w);
+            while (C_dd.c(C_dd.f_e.f_e + 1, w))
+            {
+                C_dd.f_e.a();
+            }
+            C_dd.f_e.b();
         }
 
         public static int opened(int type)

@@ -579,3 +579,7 @@ Thắng: nhận kinh nghiệm theo cấp hiện tại.	Win: experience based on 
 Thua: mất 1 mạng, không bị trừ kinh nghiệm.	Lose: 1 life lost, no experience lost.	敗北：命を1つ失うが経験値は減らない。	패배: 목숨 1개를 잃지만 경험치는 줄지 않음.
 Vàng và kinh nghiệm nhặt trong trận không được tính; máu không bị ảnh hưởng.	Gold and experience picked up in the fight do not count; your HP is not affected.	戦闘中に拾った金と経験値は加算されず、HPも減りません。	전투 중 얻은 금과 경험치는 반영되지 않으며 체력도 줄지 않음.
 Lúc đầu mở 2 mức, thắng các tướng mạnh để mở thêm 3 mức.	2 levels at first; beat strong generals to open 3 more.	最初は2段階、強い武将に勝つとさらに3段階開放。	처음엔 2단계, 강한 장수를 이기면 3단계 추가 개방.
+Vàng, kinh nghiệm hoặc vật phẩm quý	Gold, experience or rare items	金、経験値、または貴重なアイテム	금, 경험치 또는 귀한 아이템
+Đang mở…	Opening…	開封中…	여는 중…
+Bạn được đi trước (Ngọc Ấn)	You move first (Jade Seal)	先攻（玉璽）	선공 (옥새)
+Vàng	Gold	金	금

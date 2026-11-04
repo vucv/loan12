@@ -559,8 +559,9 @@ namespace Loan12.UnityPort
         const string Pref = "Loan12.Loadout";
         public const int Slots = 3;
 
-        /// <summary>Item types the battle can use (Ngọc Ấn is chosen on its own on the prepare screen, Ngân Lượng is gold).</summary>
-        public static readonly int[] Usable = {4, 3, 0, 1};
+        /// <summary>Item types taken into battle: the ones used in it, then Ngọc Ấn (the player moves first,
+        /// used on XUẤT TRẬN, taken again for each battle); Ngân Lượng is gold.</summary>
+        public static readonly int[] Usable = {4, 3, 0, 1, 5};
 
         public static int[] Get()
         {

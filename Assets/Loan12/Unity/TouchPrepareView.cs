@@ -13,8 +13,7 @@ namespace Loan12.UnityPort
     {
         const int GridH = 372;
 
-        int downKind, downArg; // 1 fight, 2 retreat, 3 slot, 4 bag item, 5 buy, 6 confirm buy, 7 close confirm, 8 outside confirm, 9 Ngọc Ấn
-        public bool sealOn; // Ngọc Ấn chosen for this battle: the player moves first (used on XUẤT TRẬN)
+        int downKind, downArg; // 1 fight, 2 retreat, 3 slot, 4 bag item, 5 buy, 6 confirm buy, 7 close confirm, 8 outside confirm
         int confirmType = -1;
         string toast = "";
         float toastTime = -10f;
@@ -35,18 +34,6 @@ namespace Loan12.UnityPort
         {
             downKind = 0;
             confirmType = -1;
-            sealOn = false; // chosen again before each battle
-        }
-
-        /// <summary>Ngọc Ấn can be chosen: the player owns one and would not move first anyway.</summary>
-        static bool SealOffered()
-        {
-            return C_PortUi.owned(5) > 0 && !C_PortUi.playerFirst();
-        }
-
-        static Rect SealRect()
-        {
-            return TouchUi.R(108, 141, 66, 15);
         }
 
         // four 36-px cells 6 px apart: x 9..171, centred on 90
@@ -60,14 +47,17 @@ namespace Loan12.UnityPort
             return TouchUi.R(CellX(i), 176, 36, 36);
         }
 
+        // the bag row has 5 items (Ngọc Ấn too): 30-px cells 3 px apart, x 9..171
+        const int BagCount = 5;
+
         static Rect BagRect(int i)
         {
-            return TouchUi.R(CellX(i), 234, 36, 36);
+            return TouchUi.R(9 + i * 33, 236, 30, 30);
         }
 
         static Rect BuyRect(int i)
         {
-            return TouchUi.R(CellX(i), 272, 36, 15);
+            return TouchUi.R(9 + i * 33, 269, 30, 15);
         }
 
         // XUẤT TRẬN alone, or RÚT LUI + XUẤT TRẬN side by side (8 px margins, room around the words)
@@ -132,15 +122,11 @@ namespace Loan12.UnityPort
                     {
                         downKind = 1;
                     }
-                    else if (SealOffered() && SealRect().Contains(p))
-                    {
-                        downKind = 9;
-                    }
                     else if (BackRect().Contains(p) && C_PortUi.canRetreat())
                     {
                         downKind = 2;
                     }
-                    for (int i = 0; i < 4; i++)
+                    for (int i = 0; i < BagCount; i++)
                     {
                         if (i < Loadout.Slots && SlotRect(i).Contains(p))
                         {
@@ -173,18 +159,18 @@ namespace Loan12.UnityPort
                     case 1:
                         if (FightRect().Contains(p))
                         {
-                            if (sealOn && SealOffered())
+                            // Ngọc Ấn taken: one is used, the player moves first; chosen again for the next battle
+                            int at = System.Array.IndexOf(slots, 5);
+                            if (at >= 0)
                             {
-                                C_PortScreens.useSeal(); // one Ngọc Ấn: the player moves first
+                                if (!C_PortUi.playerFirst())
+                                {
+                                    C_PortScreens.useSeal();
+                                }
+                                slots[at] = -1;
+                                Loadout.Set(slots);
                             }
-                            sealOn = false;
                             C_PortUi.request(C_PortUi.f_SCREEN_KEY, 0); // "Đánh"
-                        }
-                        break;
-                    case 9:
-                        if (SealRect().Contains(p))
-                        {
-                            sealOn = !sealOn;
                         }
                         break;
                     case 2:
@@ -302,23 +288,10 @@ namespace Loan12.UnityPort
             TouchUi.Label(TouchUi.R(12, 122, 76, 13), C_PortUi.vsHp(0) + " máu", 7, TextAnchor.UpperLeft, stat);
             TouchUi.Label(TouchUi.R(92, 109, 76, 13), "Cấp " + C_PortUi.vsLevel(1), 7, TextAnchor.UpperRight, stat);
             TouchUi.Label(TouchUi.R(92, 122, 76, 13), C_PortUi.vsHp(1) + " máu", 7, TextAnchor.UpperRight, stat);
-            bool meFirst = C_PortUi.playerFirst() || (sealOn && SealOffered());
-            string first = meFirst ? "Bạn được đi trước" : C_PortUi.vsName(1) + " được đi trước";
-            if (SealOffered())
-            {
-                // Ngọc Ấn: chosen here before each battle (no longer used by itself)
-                TouchUi.Label(TouchUi.R(8, 142, 98, 14), first, 7, TextAnchor.MiddleLeft, sealOn ? TouchUi.TextGreen : TouchUi.TextSoft);
-                Rect seal = SealRect();
-                TouchUi.Button(seal, sealOn ? Btn.Gold : Btn.Dark, downKind == 9);
-                float dy = downKind == 9 ? k : 0;
-                TouchUi.Item(5, new Rect(seal.x + 3 * k, seal.y + 2 * k + dy, 11 * k, 11 * k));
-                TouchUi.Label(new Rect(seal.x + 15 * k, seal.y + dy, seal.width - 17 * k, seal.height), "Ngọc Ấn x" + C_PortUi.owned(5), 6,
-                    TextAnchor.MiddleCenter, sealOn ? TouchUi.Hex(0x2A1408) : Kit.Cream, true);
-            }
-            else
-            {
-                TouchUi.Label(TouchUi.R(0, 142, 180, 14), first, 7, TextAnchor.MiddleCenter, TouchUi.TextSoft);
-            }
+            // Ngọc Ấn in the slots: the player moves first (one is used on XUẤT TRẬN)
+            bool seal = System.Array.IndexOf(Loadout.Get(), 5) >= 0 && C_PortUi.owned(5) > 0;
+            string first = C_PortUi.playerFirst() ? "Bạn được đi trước" : (seal ? "Bạn được đi trước (Ngọc Ấn)" : C_PortUi.vsName(1) + " được đi trước");
+            TouchUi.Label(TouchUi.R(0, 142, 180, 14), first, 7, TextAnchor.MiddleCenter, seal && !C_PortUi.playerFirst() ? TouchUi.TextGreen : TouchUi.TextSoft);
 
             // the items to take
             TouchUi.Panel(TouchUi.R(4, 158, 172, 180));
@@ -352,14 +325,14 @@ namespace Loan12.UnityPort
             Texture2D gold = TouchUi.Img("/gold");
             TouchUi.Label(TouchUi.R(84, 217, 70, 14), TouchUi.Money(C_PortUi.gold()), 8, TextAnchor.MiddleRight, TouchUi.TextGold, true);
             TouchUi.Sprite(gold, TouchUi.R(155, 216, 16, 16));
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < BagCount; i++)
             {
                 int type = Loadout.Usable[i];
                 int owned = C_PortUi.owned(type);
                 bool chosen = System.Array.IndexOf(slots, type) >= 0;
                 Rect r = BagRect(i);
                 TouchUi.Sprite(focus, r, new Rect(chosen ? 0 : 36, 0, 36, 36));
-                TouchUi.Item(type, new Rect(r.x + 4 * k, r.y + 4 * k, 28 * k, 28 * k), owned > 0 ? 1f : 0.4f);
+                TouchUi.Item(type, new Rect(r.x + 3 * k, r.y + 3 * k, 24 * k, 24 * k), owned > 0 ? 1f : 0.4f);
                 Count(r, owned);
                 if (chosen)
                 {
@@ -377,7 +350,7 @@ namespace Loan12.UnityPort
                 Rect b = BuyRect(i);
                 bool afford = price > 0 && C_PortUi.gold() >= price;
                 TouchUi.Button(b, afford ? Btn.Gold : Btn.Grey, downKind == 5 && downArg == i);
-                TouchUi.Label(b, TouchUi.Money(price), 6, TextAnchor.MiddleCenter, Color.white, true);
+                TouchUi.Label(b, TouchUi.Money(price), 5.5f, TextAnchor.MiddleCenter, Color.white, true);
             }
 
             // a hint about the enemy
