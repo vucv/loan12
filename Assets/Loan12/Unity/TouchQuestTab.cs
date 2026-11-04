@@ -299,7 +299,7 @@ namespace Loan12.UnityPort
             {
                 TouchUi.Fill(r, Kit.Down(200 + q) ? new Color(1, 1, 1, 0.1f) : new Color(0.16f, 0.08f, 0.16f, 0.8f));
                 Kit.Check(r.x + 4 * k, r.y + 6 * k, Kit.Green);
-                TouchUi.Label(new Rect(r.x + 15 * k, r.y + 1 * k, 130 * k, 9 * k), Kit.Cut((q + 1) + ". " + QuestData.Title(q), 34), 6, TextAnchor.UpperLeft, Kit.Cream, true);
+                TouchUi.Label(new Rect(r.x + 15 * k, r.y + 1 * k, 130 * k, 9 * k), Kit.Cut((q + 1) + ". " + Loc.T(QuestData.Title(q)), 34), 6, TextAnchor.UpperLeft, Kit.Cream, true);
                 TouchUi.Label(new Rect(r.x + 15 * k, r.y + 11 * k, 130 * k, 9 * k), Kit.Cut(Kind(q), 44), 5.25f, TextAnchor.UpperLeft, Kit.Muted);
                 // book: the dialogue can be read again
                 Rect bk = new Rect(r.xMax - 15 * k, r.y + 4 * k, 12 * k, 12 * k);

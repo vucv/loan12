@@ -148,8 +148,18 @@ namespace Loan12.UnityPort
             TouchUi.Portrait(portrait, TouchUi.R(14, y, 34, 34));
             TouchUi.PixelText(name.ToUpperInvariant(), 2, TouchUi.R(54, 0, 0, 0).x, TouchUi.R(0, y + 8, 0, 0).y, 0, true);
             bool up = startLevel >= 0 && level > startLevel;
-            TouchUi.Label(TouchUi.R(96, y + 1, 70, 14), up ? "Lên cấp " + level + "!" : "Cấp " + level, 7.5f, TextAnchor.MiddleRight,
-                up ? TouchUi.TextGreen : TouchUi.Hex(0xFFE6A0), true);
+            string text = up ? "Lên cấp " + level + "!" : "Cấp " + level;
+            Color c = up ? TouchUi.TextGreen : TouchUi.Hex(0xFFE6A0);
+            // beside the name when there is room; a long name puts it on the experience line, right side
+            float nameEnd = 54 + TouchUi.PixelWidth(name.ToUpperInvariant(), 2) + 4;
+            if (nameEnd <= 166 - TouchUi.TextWidth(text, 7.5f, true))
+            {
+                TouchUi.Label(TouchUi.R(96, y + 1, 70, 14), text, 7.5f, TextAnchor.MiddleRight, c, true);
+            }
+            else
+            {
+                TouchUi.Label(TouchUi.R(54, y + 23, 112, 11), text, 6.5f, TextAnchor.UpperRight, c, true);
+            }
         }
 
         void DrawWon(float slide)
@@ -171,7 +181,7 @@ namespace Loan12.UnityPort
                 TouchUi.PixelText("HOÀN THÀNH NHIỆM VỤ", 1, TouchUi.R(90, 0, 0, 0).x, TouchUi.R(0, 32 + slide, 0, 0).y, 1, true);
                 if (quest >= 0 && quest < C_PortMap.questCount())
                 {
-                    TouchUi.Label(TouchUi.R(8, 44 + slide, 164, 12), (quest + 1) + ". " + QuestData.Title(quest), 7, TextAnchor.UpperCenter, TouchUi.TextGold, true);
+                    TouchUi.Label(TouchUi.R(8, 44 + slide, 164, 12), (quest + 1) + ". " + Loc.T(QuestData.Title(quest)), 7, TextAnchor.UpperCenter, TouchUi.TextGold, true);
                     TouchUi.Label(TouchUi.R(8, 56 + slide, 164, 10), "Chương " + (QuestData.Chapter(quest) + 1) + " · " + QuestData.Chapters[QuestData.Chapter(quest)],
                         6, TextAnchor.UpperCenter, TouchUi.TextSoft);
                 }

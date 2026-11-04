@@ -165,7 +165,11 @@ namespace Loan12.UnityPort
             float tx = 14 + pic + 8;
             int el = C_PortScreens.heroElement(h);
             TouchUi.PixelText("HỆ " + Kit.ElementName(el).ToUpperInvariant(), 1, TouchUi.R(tx, 0, 0, 0).x, TouchUi.R(0, top + 18, 0, 0).y, 0, true);
-            TouchUi.Label(TouchUi.R(tx, top + 28, 100, 9), Kit.Title(C_PortScreens.heroName(h)), 6.75f, TextAnchor.UpperLeft, Color.white, true);
+            string hn = C_PortScreens.heroName(h);
+            if (hn != null && hn.ToUpperInvariant() != "PLAYER") // the game's placeholder before a name is given
+            {
+                TouchUi.Label(TouchUi.R(tx, top + 28, 100, 9), Kit.Title(hn), 6.75f, TextAnchor.UpperLeft, Color.white, true);
+            }
             TouchUi.Label(TouchUi.R(tx, top + 39, 100, 9), "Máu " + C_PortScreens.heroHp(h) + " · Tấn công " + C_PortScreens.heroAttack(h), 6.25f, TextAnchor.UpperLeft, TouchUi.Hex(0xFFE39A));
             TouchUi.Label(TouchUi.R(tx, top + 49, 100, 9), "Cấp 1 · tăng theo cấp", 5.75f, TextAnchor.UpperLeft, Kit.Muted);
 
