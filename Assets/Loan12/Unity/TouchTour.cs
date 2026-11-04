@@ -96,6 +96,7 @@ namespace Loan12.UnityPort
                 map.tutorial = 1;
                 yield return Shot("C", "map_tutorial_2");
                 map.tutorial = -1;
+                PlayerPrefs.SetInt("l12.mapTutorial.s" + C_PortScreens.f_slot, 1); // seen: not again by itself
             }
             yield return Shot("C", "map");
             TouchLivesView.Requested = true;
@@ -404,12 +405,22 @@ namespace Loan12.UnityPort
                 }
                 if (Kind() == 4 && C_PortMap.free() && !C_PortMap.talking() && fought)
                 {
-                    yield return new WaitForSeconds(1f);
+                    // the dialogue after a battle starts a moment later
+                    yield return new WaitForSeconds(3f);
+                    if (C_PortMap.talking() || !C_PortMap.free())
+                    {
+                        continue;
+                    }
                     yield return Once("C", "map_after_battle");
                     yield break;
                 }
                 if (Kind() == 4 && C_PortMap.free() && !C_PortMap.talking() && C_PortMap.questIndex() != q)
                 {
+                    yield return new WaitForSeconds(3f);
+                    if (C_PortMap.talking() || !C_PortMap.free())
+                    {
+                        continue;
+                    }
                     yield break; // a quest without a battle
                 }
             }
