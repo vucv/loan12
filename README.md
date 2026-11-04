@@ -2,7 +2,8 @@
 
 | File | Nhánh | Commit | Nội dung |
 |---|---|---|---|
-| `android/Loan12-ui-touch-b8dfd1c.apk` | `ui-touch` | `b8dfd1c` | Sửa lỗi duyệt giao diện: mở đầu cảm ứng, hộp bỏ luyện tập, Lên cấp, dịch tên nhiệm vụ; tour chụp màn hình (mới nhất) |
+| `android/Loan12-ui-touch-a088796.apk` | `ui-touch` | `a088796` | Như b8dfd1c, màn mở đầu bỏ hẳn nhãn BỎ QUA cũ (mới nhất) |
+| `android/Loan12-ui-touch-b8dfd1c.apk` | `ui-touch` | `b8dfd1c` | Sửa lỗi duyệt giao diện: mở đầu cảm ứng, hộp bỏ luyện tập, Lên cấp, dịch tên nhiệm vụ; tour chụp màn hình |
 | `android/Loan12-ui-touch-520ce97.apk` | `ui-touch` | `520ce97` | Đa ngôn ngữ cho cốt truyện (hội thoại, mở đầu/kết thúc, hướng dẫn), hộp chọn ngôn ngữ |
 | `android/Loan12-ui-touch-ba6640d.apk` | `ui-touch` | `ba6640d` | Đa ngôn ngữ giao diện (Việt, Anh, Nhật, Hàn), luật chơi cập nhật vật phẩm rơi |
 | `android/Loan12-ui-touch-df91f04.apk` | `ui-touch` | `df91f04` | Hội thoại canh giữa gợi ý, 'Cách chiến đấu', vật phẩm rơi nhiều hơn trong trận |
