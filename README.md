@@ -2,7 +2,8 @@
 
 | File | Nhánh | Commit | Nội dung |
 |---|---|---|---|
-| `android/Loan12-ui-touch-bd56c44.apk` | `ui-touch` | `bd56c44` | Trận hướng dẫn: lời Lưu Cơ trong bong bóng chat (mới nhất) |
+| `android/Loan12-ui-touch-17fe356.apk` | `ui-touch` | `17fe356` | Hướng dẫn kỹ năng/vật phẩm theo giao diện chạm, lời Lưu Cơ luôn ở trên, mở đầu canh giữa (chữ trong khung tranh), thoát game không còn nháy màn cũ (mới nhất) |
+| `android/Loan12-ui-touch-bd56c44.apk` | `ui-touch` | `bd56c44` | Trận hướng dẫn: lời Lưu Cơ trong bong bóng chat |
 | `android/Loan12-ui-touch-a07bb64.apk` | `ui-touch` | `a07bb64` | Sửa lỗi duyệt giao diện: mở đầu cảm ứng (không còn BỎ QUA cũ), hộp bỏ luyện tập, Lên cấp, dịch tên nhiệm vụ |
 | `android/Loan12-ui-touch-a088796.apk` | `ui-touch` | `a088796` | Như b8dfd1c, màn mở đầu bỏ hẳn nhãn BỎ QUA cũ |
 | `android/Loan12-ui-touch-b8dfd1c.apk` | `ui-touch` | `b8dfd1c` | Sửa lỗi duyệt giao diện: mở đầu cảm ứng, hộp bỏ luyện tập, Lên cấp, dịch tên nhiệm vụ; tour chụp màn hình |
