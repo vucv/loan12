@@ -95,6 +95,9 @@ namespace Loan12.UnityPort
         }
 
         /// <summary>Screen pixels per map pixel: the map always shows about 240 map pixels across.</summary>
+        // where a locked town's lock goes, from the town's point (x, y in the map picture), by town
+        static readonly int[] LockAt = {-8, -9, -8, -9, -8, -9, -8, -9, -8, -9, -8, -9, -8, -9, -8, -9, -8, -9, -8, -9, -8, -9, -8, -9, -8, -9, -8, -9, -4, -9, -8, -9, -8, -4, -8, -3, -8, 0, -8, -9, -8, -2, -22, -1, -8, -9, -3, -9, 3, -9};
+
         static float S
         {
             get { return Mathf.Max(1, Mathf.Floor(Gx.Width / 240f)); }
@@ -494,10 +497,12 @@ namespace Loan12.UnityPort
                 if (C_PortMap.nodeType(n) == 0 && !C_PortMap.nodeOpen(n))
                 {
                     Vector2 c = o + new Vector2(C_PortMap.nodeX(n), C_PortMap.nodeY(n)) * s;
-                    // a big lock on the town, no dark disc under it; at 1.5x the game's lock it stays clear of the
-                    // town names printed in the map picture (its own above it, a close neighbour's below it)
-                    float ls = 24 * Mathf.Max(1, Mathf.Round(s * 0.75f));
-                    Gx.DrawTexture(new Rect(c.x - ls / 2, c.y - ls / 2, ls, ls), TouchUi.Img("/m/lock"));
+                    // a lock 1.5x the game's on the town's house, no dark disc under it, moved where it
+                    // covers none of the town names printed in the map picture (LockAt, worked out from the picture)
+                    float ls = 18 * s;
+                    Vector2 at = n < LockAt.Length / 2 ? new Vector2(LockAt[2 * n], LockAt[2 * n + 1]) : new Vector2(-8, -9);
+                    c += at * s;
+                    Gx.DrawTexture(new Rect(Mathf.Round(c.x - ls / 2), Mathf.Round(c.y - ls / 2), ls, ls), TouchUi.Img("/m/lock"));
                 }
             }
             // open roads: gold dots
