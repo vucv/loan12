@@ -489,6 +489,23 @@ namespace Loan12.UnityPort
             while (!Safe(cond) && Time.realtimeSinceStartup < end)
             {
                 yield return null;
+                // gift boxes waiting on the map: shot closed and opened once, then taken
+                TouchBoxView bv = J2MEGameHost.View<TouchBoxView>();
+                if (bv != null && Safe(() => bv.Active()))
+                {
+                    if (seen.Add("Hboxes"))
+                    {
+                        yield return Shot("H", "boxes_closed");
+                        bv.Open();
+                        yield return Shot("H", "boxes_opened", 1.2f);
+                    }
+                    else if (bv.Stage == 0)
+                    {
+                        bv.Open();
+                    }
+                    bv.Take();
+                    yield return null;
+                }
                 // an enemy met on the road while walking: the swords on the map, once
                 if (!seen.Contains("Hmap_swords") && Safe(() => C_PortMap.slash() != null))
                 {

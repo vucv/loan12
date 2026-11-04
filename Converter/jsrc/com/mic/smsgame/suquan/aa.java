@@ -1103,7 +1103,7 @@ public class aa
             // PORT-UI: the quest's box holds items (relics needed an SMS to open); a note tells which
             this.an = game.PortScreens.touch ? -1 : bg.t();
             if (game.PortScreens.touch) {
-                game.PortMap.openBox(this.am);
+                game.PortMap.questBoxDone(); // PORT-UI: the quest's boxes wait to be opened on the map
             }
             if (this.an >= 0) {
                 localObject = "Bạn đã nhận được 1 vật phẩm. Bạn có muốn mở vật phẩm ngay không? (Tham khảo giá tại http://free.ola.vn.)";
@@ -1188,6 +1188,10 @@ public class aa
                 }
                 break;
             case 9:
+                if (!this.ai && game.PortScreens.touch) { // PORT-UI
+                    this.ai = true;
+                    game.PortMap.arenaIntro = true;
+                }
                 if (!this.ai) {
                     this.ai = true;
                     localObject = dj.a("Đấu trường", "Từ bây giờ, bạn có thể vào đấu trường để luyện điểm kinh nghiệm.@Nếu bạn đánh thắng, bạn sẽ được một số điểm kinh nghiệm tùy theo cấp độ hiện tại.@Nếu thua, bạn sẽ bị mất 1 mạng chơi, nhưng không bị trừ điểm kinh nghiệm.@*Lưu ý:@*-Bạn phải trả vàng để có thể tham gia đấu trường.@*-Vàng và điểm kinh nghiệm thu thập được trong quá trình đánh sẽ không có hiệu lực.@*-Máu của bạn sẽ không bị ảnh hưởng khi tham gia đấu trường.@*-Hiện tại chỉ có 2 mức luyện tập, hãy tìm khám phá để unlock thêm 3 mức luyện tập cao hơn.", null, null, null, null);

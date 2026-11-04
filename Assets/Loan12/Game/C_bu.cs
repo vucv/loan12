@@ -105,6 +105,9 @@ namespace Loan12
         /** PORT-UI (tour): the player's move, a sword line when there is one; false when it is not the player's turn */
         /** PORT-UI: the touch interface's drop (rates above): items 3, 4, 5 a little more often than 0 and 1 */
         // a little less than before (100 / 34)
+        // the chest (dn draws it instead of an item)
+        public int f_portBoxes;
+        // PORT-UI: gift boxes dropped in this battle
         public int[] f_portWon;
         // PORT-UI: items won in this battle (5 in a row), by type    // PORT-UI: ticks state 9 waited for the board's effects
         public C_ae f_portEndDialog;
@@ -1704,14 +1707,13 @@ namespace Loan12
                 // a little less than before (100 / 34)
                 return -1;
             }
-            int r = C_ay.a(100);
-            int i = ((r < 15) ? 0 : (((r < 30) ? 1 : (((r < 55) ? 3 : (((r < 75) ? 4 : 5)))))));
-            this.f_s.f_a[i].f_b += 1;
-            C_bg.a(i, 1, 6);
-            this.f_portWon[i] += 1;
-            return i;
+            this.f_portBoxes += 1;
+            C_PortMap.f_boxes += 1;
+            return 6;
+            // the chest (dn draws it instead of an item)
         }
 
+        // PORT-UI: gift boxes dropped in this battle
         // PORT-UI: items won in this battle (5 in a row), by type    // PORT-UI: ticks state 9 waited for the board's effects
         // the result (won) or "mất 1 mạng" (lost) dialog
         // the lost battle can be fought again

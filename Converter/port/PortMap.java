@@ -522,31 +522,67 @@ public final class PortMap {
         return (battleQuest >= 0) && (PortUi.battle() != null) && (dd.f(battleQuest) || dd.g(battleQuest));
     }
 
+    /** gift boxes waiting to be opened (battle drops, quest rewards); opened on the map */
+    public static int boxes;
+    /** the arena's rules are to be shown (its first visit) */
+    public static boolean arenaIntro;
+    /** what the last opening gave, by item type */
+    public static int[] opened = new int[6];
+
+    /** gift boxes a quest gives: 1 early on, 2 in the middle of the war, 3 late, 5 for the last one */
+    public static int questBoxes(int q) {
+        if (dd.g(q)) {
+            return 5;
+        }
+        if (!dd.f(q)) {
+            return 0;
+        }
+        return q < 16 ? 1 : (q < 32 ? 2 : 3);
+    }
+
+    /** the quest just won: its boxes join the ones to open */
+    public static void questBoxDone() {
+        if (battleQuest >= 0) {
+            boxes += questBoxes(battleQuest);
+        }
+    }
+
+    /** the boxes the battle on screen brings (drops, and its quest's when won) */
+    public static int battleBoxes() {
+        bu b = PortUi.battle();
+        return b == null ? 0 : b.portBoxes;
+    }
+
     /**
-     * A quest's box: 2 random items (the last box of the game: one of each), straight into the shared
-     * bag; a note on the map says which.
+     * Opens the waiting boxes: one item each (Bình Thuốc and Quỷ Diện Giáp more often than Long Thần
+     * Kiếm, Nhân Sâm and Ngọc Ấn), straight into the shared bag; opened() says what.
      */
-    public static void openBox(boolean last) {
-        int[] types = {0, 1, 3, 4, 5};
-        int[] got = new int[6];
-        if (last) {
-            for (int i = 0; i < types.length; i++) {
-                got[types[i]] += 1;
-            }
-        } else {
-            for (int i = 0; i < 2; i++) {
-                got[types[ay.a(types.length)]] += 1;
+    public static void openBoxes() {
+        opened = new int[6];
+        for (int n = 0; n < boxes; n++) {
+            int r = ay.a(100);
+            int t = r < 30 ? 4 : (r < 55 ? 3 : (r < 70 ? 0 : (r < 85 ? 1 : 5)));
+            opened[t] += 1;
+        }
+        boxes = 0;
+        for (int t = 0; t < opened.length; t++) {
+            if (opened[t] > 0) {
+                bg.a(t, opened[t], 6);
             }
         }
-        String s = "";
-        for (int i = 0; i < types.length; i++) {
-            int t = types[i];
-            if (got[t] > 0) {
-                bg.a(t, got[t], 6);
-                s = s + (s.length() > 0 ? ", " : "") + PortUi.itemName(t) + " x" + got[t];
+    }
+
+    /** a rewarded ad watched: what the boxes gave, once more */
+    public static void doubleOpened() {
+        for (int t = 0; t < opened.length; t++) {
+            if (opened[t] > 0) {
+                bg.a(t, opened[t], 6);
             }
         }
-        note = "Mở hộp vật phẩm: " + s;
+    }
+
+    public static int opened(int type) {
+        return (type < 0) || (type >= opened.length) ? 0 : opened[type];
     }
 
     // ---- shop ---------------------------------------------------------------------------------

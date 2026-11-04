@@ -472,7 +472,7 @@ rep('com/mic/smsgame/suquan/aa.java', """            this.ak = false;
             // PORT-UI: the quest's box holds items (relics needed an SMS to open); a note tells which
             this.an = game.PortScreens.touch ? -1 : bg.t();
             if (game.PortScreens.touch) {
-                game.PortMap.openBox(this.am);
+                game.PortMap.questBoxDone(); // PORT-UI: the quest's boxes wait to be opened on the map
             }
             if (this.an >= 0) {""")
 rep('com/mic/smsgame/suquan/aa.java', """    private void z() {
@@ -738,5 +738,58 @@ rep('game/co.java', """        if (bg.f(5) > 0) {
             bg.g(5);""", """        if (!PortScreens.touch && (bg.f(5) > 0)) { // PORT-UI: no Ngọc Ấn by itself
             dd.h = true;
             bg.g(5);""")
+
+# the arena's first visit: its rules in a touch box (TouchArenaView) instead of the game's text screen
+rep('com/mic/smsgame/suquan/aa.java', """                if (!this.ai) {
+                    this.ai = true;
+                    localObject = dj.a("Đấu trường",""", """                if (!this.ai && game.PortScreens.touch) { // PORT-UI
+                    this.ai = true;
+                    game.PortMap.arenaIntro = true;
+                }
+                if (!this.ai) {
+                    this.ai = true;
+                    localObject = dj.a("Đấu trường",""")
+
+# gift boxes (touch): a battle's drops are boxes (the chest flies out of the board), a quest gives
+# boxes too (PortMap.questBoxes); they wait in PortMap.boxes and are opened on the map (TouchBoxView)
+rep('game/bu.java', """        int r = ay.a(100);
+        int i = r < 15 ? 0 : (r < 30 ? 1 : (r < 55 ? 3 : (r < 75 ? 4 : 5)));
+        this.s.a[i].b += 1;
+        bg.a(i, 1, 6);
+        this.portWon[i] += 1;
+        return i;""", """        this.portBoxes += 1;
+        PortMap.boxes += 1;
+        return 6; // the chest (dn draws it instead of an item)""")
+rep('game/bu.java', """    public int[] portWon = new int[6];""", """    public int portBoxes; // PORT-UI: gift boxes dropped in this battle
+    public int[] portWon = new int[6];""")
+rep('game/dn.java', """        if (this.b > 15) {
+            if (this.b % 2 == 0) {
+                y.a(paramGraphics, this.a, this.c * this.r, 0, this.r, this.s, this.p, this.q - 7, 3);
+            }
+        } else {
+            y.a(paramGraphics, this.a, this.c * this.r, 0, this.r, this.s, this.p, this.q - (this.b >> 1), 3);
+        }""", """        // PORT-UI: kind 6 is a gift box (r/g), the others the item sheet
+        Image img = this.a;
+        int sx = this.c * this.r, w = this.r, h = this.s;
+        if (this.c >= 6) {
+            if (portBox == null) {
+                portBox = az.b("/r/g");
+            }
+            img = portBox;
+            sx = 0;
+            w = img.getWidth();
+            h = img.getHeight();
+        }
+        if (this.b > 15) {
+            if (this.b % 2 == 0) {
+                y.a(paramGraphics, img, sx, 0, w, h, this.p, this.q - 7, 3);
+            }
+        } else {
+            y.a(paramGraphics, img, sx, 0, w, h, this.p, this.q - (this.b >> 1), 3);
+        }""")
+rep('game/dn.java', """    private int d;
+""", """    private int d;
+    private static Image portBox; // PORT-UI
+""")
 
 print('port_screens: ok')

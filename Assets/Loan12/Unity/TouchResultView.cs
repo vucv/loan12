@@ -210,41 +210,25 @@ namespace Loan12.UnityPort
             rowH = 22;
             if (mode == 0)
             {
-                // items won with 5 in a row (already in the bag): one row each, like gold and experience
-                int rows = 3 + (C_PortMap.battleRelic() ? 1 : 0);
-                foreach (int t in MapUi.Items)
-                {
-                    if (C_PortMap.battleWon(t) > 0)
-                    {
-                        rows++;
-                    }
-                }
-                // up to 5 rows at full height, more get thinner to stay above "Vàng hiện có"
-                rowH = rows <= 5 ? 22 : Mathf.Max(13, Mathf.Floor(136f / rows) - 2);
+                // gift boxes dropped in the battle (opened on the map afterwards)
+                int boxes = C_PortMap.battleBoxes();
                 y = y0 + 50;
                 Row(ref y, "/gold", "Vàng nhặt được", "+" + C_PortUi.resultGoldGain());
                 Row(ref y, "/book", "Kinh nghiệm", "+" + C_PortUi.resultExpGain());
                 Row(ref y, "/book", "Thưởng thắng trận", "+" + C_PortUi.resultWinBonus());
-                foreach (int t in MapUi.Items)
+                if (boxes > 0)
                 {
-                    int n = C_PortMap.battleWon(t);
-                    if (n > 0)
-                    {
-                        Row(ref y, null, C_PortUi.itemName(t), "+" + n, t);
-                    }
-                }
-                if (C_PortMap.battleRelic())
-                {
-                    Row(ref y, "/r/g", "Hộp vật phẩm (2 vật phẩm)", "+1");
+                    Row(ref y, "/r/g", "Hộp quà rơi trong trận", "+" + boxes);
                 }
             }
             else if (mode == 1)
             {
                 Row(ref y, "/gold", "Vàng thưởng", "+" + C_PortUi.resultGoldGain());
                 Row(ref y, "/book", "Kinh nghiệm thưởng", "+" + C_PortUi.resultExpGain());
-                if (quest >= 0 && C_PortMap.questRelic(quest) > 0)
+                int qb = quest >= 0 ? C_PortMap.questBoxes(quest) : 0;
+                if (qb > 0)
                 {
-                    Row(ref y, "/r/g", C_PortMap.questRelic(quest) == 2 ? "Hộp vật phẩm cuối" : "Hộp vật phẩm", "+1");
+                    Row(ref y, "/r/g", "Hộp quà", "+" + qb);
                 }
                 string opens = Opens(quest);
                 if (opens.Length > 0)

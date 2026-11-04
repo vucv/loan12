@@ -11,7 +11,9 @@ namespace Loan12
         public int f_b;
         private int f_c;
         private int f_d;
+        private static Image f_portBox;
 
+        // PORT-UI
         public C_dn(Image paramImage)
         {
             this.f_u = false;
@@ -40,16 +42,32 @@ namespace Loan12
             {
                 return;
             }
+            // PORT-UI: kind 6 is a gift box (r/g), the others the item sheet
+            Image img = this.f_a;
+            int sx = this.f_c * this.f_r;
+            int w = this.f_r;
+            int h = this.f_s;
+            if ((this.f_c >= 6))
+            {
+                if (C_dn.f_portBox == null)
+                {
+                    C_dn.f_portBox = C_az.b("/r/g");
+                }
+                img = C_dn.f_portBox;
+                sx = 0;
+                w = img.getWidth();
+                h = img.getHeight();
+            }
             if ((this.f_b > 15))
             {
                 if (this.f_b % 2 == 0)
                 {
-                    C_y.a(paramGraphics, this.f_a, this.f_c * this.f_r, 0, this.f_r, this.f_s, this.f_p, this.f_q - 7, 3);
+                    C_y.a(paramGraphics, img, sx, 0, w, h, this.f_p, this.f_q - 7, 3);
                 }
             }
             else
             {
-                C_y.a(paramGraphics, this.f_a, this.f_c * this.f_r, 0, this.f_r, this.f_s, this.f_p, this.f_q - (this.f_b >> 1), 3);
+                C_y.a(paramGraphics, img, sx, 0, w, h, this.f_p, this.f_q - (this.f_b >> 1), 3);
             }
         }
 

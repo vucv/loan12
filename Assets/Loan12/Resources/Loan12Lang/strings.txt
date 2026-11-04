@@ -559,3 +559,23 @@ Siêu Loại và Tiên Du	Sieu Loai and Tien Du	Sieu LoaiとTien Du	Sieu Loai와
 Cổ Loa và Tam Đái	Co Loa and Tam Dai	Co LoaとTam Dai	Co Loa와 Tam Dai
 Kỳ Bố và Hồi Hồ	Ky Bo and Hoi Ho	Ky BoとHoi Ho	Ky Bo와 Hoi Ho
 Thống nhất giang sơn	Unite the land	天下統一	천하 통일
+ĐỒNG Ý	OK	OK	확인
+NHẬN	CLAIM	受け取る	받기
+HỘP QUÀ	GIFT BOX	ギフトボックス	선물 상자
+MỞ HỘP	OPEN	開ける	열기
+XEM QUẢNG CÁO · X2	WATCH AD · X2	広告で2倍	광고 보고 2배
+Bạn nhận được {0} hộp quà	You got {0} gift boxes	ギフトボックスを{0}個獲得	선물 상자 {0}개 획득
+Bạn nhận được 1 hộp quà	You got 1 gift box	ギフトボックスを1個獲得	선물 상자 1개 획득
+Mỗi hộp có 1 vật phẩm	Each box holds 1 item	1箱につきアイテム1個	상자마다 아이템 1개
+Đã mở {0} hộp quà	Opened {0} gift boxes	ギフトボックスを{0}個開けた	선물 상자 {0}개 열림
+Đã cất vào túi đồ	Added to your bag	バッグに入れました	가방에 넣었습니다
+Hộp quà	Gift boxes	ギフトボックス	선물 상자
+Hộp quà rơi trong trận	Gift boxes dropped	戦闘で落ちた箱	전투에서 얻은 상자
++{0} hộp quà	+{0} gift boxes	+{0} ギフトボックス	+{0} 선물 상자
+{0} hộp quà	{0} gift boxes	ギフトボックス{0}個	선물 상자 {0}개
+Đã mở Đấu trường Tam Điệp: nơi luyện điểm kinh nghiệm.	The Tam Diep arena is open: a place to train for experience.	Tam Diepの闘技場が開放：経験値を鍛える場所。	Tam Diep 투기장 개방: 경험치를 단련하는 곳.
+Mỗi lần vào đấu phải trả vé bằng vàng.	Each fight costs a ticket paid in gold.	毎回、金で入場券を払います。	매번 금으로 입장권을 냅니다.
+Thắng: nhận kinh nghiệm theo cấp hiện tại.	Win: experience based on your level.	勝利：現在のレベルに応じた経験値。	승리: 현재 레벨에 따른 경험치.
+Thua: mất 1 mạng, không bị trừ kinh nghiệm.	Lose: 1 life lost, no experience lost.	敗北：命を1つ失うが経験値は減らない。	패배: 목숨 1개를 잃지만 경험치는 줄지 않음.
+Vàng và kinh nghiệm nhặt trong trận không được tính; máu không bị ảnh hưởng.	Gold and experience picked up in the fight do not count; your HP is not affected.	戦闘中に拾った金と経験値は加算されず、HPも減りません。	전투 중 얻은 금과 경험치는 반영되지 않으며 체력도 줄지 않음.
+Lúc đầu mở 2 mức, thắng các tướng mạnh để mở thêm 3 mức.	2 levels at first; beat strong generals to open 3 more.	最初は2段階、強い武将に勝つとさらに3段階開放。	처음엔 2단계, 강한 장수를 이기면 3단계 추가 개방.

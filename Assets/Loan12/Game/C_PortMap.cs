@@ -69,16 +69,27 @@ namespace Loan12
         // ---- results ----------------------------------------------------------------------------------
         /** items of a type won in the battle on screen (5 in a row) */
         /** the battle on screen was a main quest's and brings a relic box */
+        /** gift boxes waiting to be opened (battle drops, quest rewards); opened on the map */
+        public static int f_boxes;
+        /** the arena's rules are to be shown (its first visit) */
+        public static bool f_arenaIntro;
+        /** what the last opening gave, by item type */
+        public static int[] f_opened;
+        /** gift boxes a quest gives: 1 early on, 2 in the middle of the war, 3 late, 5 for the last one */
+        /** the quest just won: its boxes join the ones to open */
+        /** the boxes the battle on screen brings (drops, and its quest's when won) */
         /**
-         * A quest's box: 2 random items (the last box of the game: one of each), straight into the shared
-         * bag; a note on the map says which.
+         * Opens the waiting boxes: one item each (Bình Thuốc and Quỷ Diện Giáp more often than Long Thần
+         * Kiếm, Nhân Sâm and Ngọc Ấn), straight into the shared bag; opened() says what.
          */
+        /** a rewarded ad watched: what the boxes gave, once more */
         // ---- shop ---------------------------------------------------------------------------------
         private static bool f_lastBuyOk;
 
         static C_PortMap()
         {
             C_PortMap.f_battleQuest = -1;
+            C_PortMap.f_opened = new int[6];
         }
 
         private C_PortMap()
@@ -671,39 +682,77 @@ namespace Loan12
             return ((C_PortMap.f_battleQuest >= 0)) && (C_PortUi.battle() != null) && (C_dd.f(C_PortMap.f_battleQuest) || C_dd.g(C_PortMap.f_battleQuest));
         }
 
-        /**
-         * A quest's box: 2 random items (the last box of the game: one of each), straight into the shared
-         * bag; a note on the map says which.
-         */
-        public static void openBox(bool last)
+        /** gift boxes waiting to be opened (battle drops, quest rewards); opened on the map */
+        /** the arena's rules are to be shown (its first visit) */
+        /** what the last opening gave, by item type */
+        /** gift boxes a quest gives: 1 early on, 2 in the middle of the war, 3 late, 5 for the last one */
+        public static int questBoxes(int q)
         {
-            int[] types = new int[] { 0, 1, 3, 4, 5 };
-            int[] got = new int[6];
-            if (last)
+            if (C_dd.g(q))
             {
-                for (int i = 0; (i < types.Length); i++)
+                return 5;
+            }
+            if (!C_dd.f(q))
+            {
+                return 0;
+            }
+            return ((q < 16) ? 1 : (((q < 32) ? 2 : 3)));
+        }
+
+        /** the quest just won: its boxes join the ones to open */
+        public static void questBoxDone()
+        {
+            if ((C_PortMap.f_battleQuest >= 0))
+            {
+                C_PortMap.f_boxes += C_PortMap.questBoxes(C_PortMap.f_battleQuest);
+            }
+        }
+
+        /** the boxes the battle on screen brings (drops, and its quest's when won) */
+        public static int battleBoxes()
+        {
+            C_bu b = C_PortUi.battle();
+            return (b == null ? 0 : b.f_portBoxes);
+        }
+
+        /**
+         * Opens the waiting boxes: one item each (Bình Thuốc and Quỷ Diện Giáp more often than Long Thần
+         * Kiếm, Nhân Sâm and Ngọc Ấn), straight into the shared bag; opened() says what.
+         */
+        public static void openBoxes()
+        {
+            C_PortMap.f_opened = new int[6];
+            for (int n = 0; (n < C_PortMap.f_boxes); n++)
+            {
+                int r = C_ay.a(100);
+                int t = ((r < 30) ? 4 : (((r < 55) ? 3 : (((r < 70) ? 0 : (((r < 85) ? 1 : 5)))))));
+                C_PortMap.f_opened[t] += 1;
+            }
+            C_PortMap.f_boxes = 0;
+            for (int t_1 = 0; (t_1 < C_PortMap.f_opened.Length); t_1++)
+            {
+                if ((C_PortMap.f_opened[t_1] > 0))
                 {
-                    got[types[i]] += 1;
+                    C_bg.a(t_1, C_PortMap.f_opened[t_1], 6);
                 }
             }
-            else
+        }
+
+        /** a rewarded ad watched: what the boxes gave, once more */
+        public static void doubleOpened()
+        {
+            for (int t = 0; (t < C_PortMap.f_opened.Length); t++)
             {
-                for (int i_1 = 0; (i_1 < 2); i_1++)
+                if ((C_PortMap.f_opened[t] > 0))
                 {
-                    got[types[C_ay.a(types.Length)]] += 1;
+                    C_bg.a(t, C_PortMap.f_opened[t], 6);
                 }
             }
-            string s = "";
-            for (int i_2 = 0; (i_2 < types.Length); i_2++)
-            {
-                int t = types[i_2];
-                if ((got[t] > 0))
-                {
-                    C_bg.a(t, got[t], 6);
-                    s = s + (((s.length() > 0) ? ", " : "")) + C_PortUi.itemName(t) + " x" + got[t];
-                }
-            }
-            C_PortMap.f_note = "Mở hộp vật phẩm: " + s;
+        }
+
+        public static int opened(int type)
+        {
+            return (((type < 0)) || ((type >= C_PortMap.f_opened.Length)) ? 0 : C_PortMap.f_opened[type]);
         }
 
         // ---- shop ---------------------------------------------------------------------------------

@@ -132,6 +132,54 @@ namespace Loan12.UnityPort
     {
         static readonly string[] Need = {"mở sẵn", "mở sẵn", "thắng Lê Hoàn", "thắng Nguyễn Ninh", "đạt cấp 30"};
 
+        static readonly string[] Rules =
+        {
+            "Mỗi lần vào đấu phải trả vé bằng vàng.",
+            "Thắng: nhận kinh nghiệm theo cấp hiện tại.",
+            "Thua: mất 1 mạng, không bị trừ kinh nghiệm.",
+            "Vàng và kinh nghiệm nhặt trong trận không được tính; máu không bị ảnh hưởng.",
+            "Lúc đầu mở 2 mức, thắng các tướng mạnh để mở thêm 3 mức."
+        };
+
+        /// <summary>The arena's rules on its first visit (the game's text screen, redone): ĐỒNG Ý closes it.</summary>
+        static void Intro(Event e)
+        {
+            float k = TouchUi.K, H = Kit.H;
+            float lineH = 0;
+            foreach (string r in Rules)
+            {
+                lineH += TouchUi.Lines(r, 132, 6.75f) * TouchUi.LineHeight(6.75f) + 5;
+            }
+            float h = 58 + lineH + 40;
+            float top = Mathf.Round((H - h) / 2);
+            Rect ok = TouchUi.R(46, top + h - 34, 88, 24);
+            if (Kit.Tap(30, ok) || Kit.Back())
+            {
+                C_PortMap.f_arenaIntro = false;
+                if (e.type == EventType.KeyDown)
+                {
+                    e.Use();
+                }
+            }
+            if (!Kit.Paint)
+            {
+                return;
+            }
+            MapBackdrop.Draw(0.72f);
+            TouchUi.Panel(TouchUi.R(8, top, 164, h));
+            TouchUi.PixelText("ĐẤU TRƯỜNG", 1, TouchUi.R(90, 0, 0, 0).x, TouchUi.R(0, top + 13, 0, 0).y, 1, true);
+            TouchUi.Label(TouchUi.R(16, top + 24, 148, 22), "Đã mở Đấu trường Tam Điệp: nơi luyện điểm kinh nghiệm.", 7, TextAnchor.UpperCenter, Kit.Cream, true, true);
+            float y = top + 50;
+            foreach (string r in Rules)
+            {
+                float rh = TouchUi.Lines(r, 132, 6.75f) * TouchUi.LineHeight(6.75f);
+                TouchUi.Fill(TouchUi.R(20, y + 3, 3, 3), Kit.Gold);
+                TouchUi.Label(TouchUi.R(28, y, 132, rh + 2), r, 6.75f, TextAnchor.UpperLeft, Color.white, false, true);
+                y += rh + 5;
+            }
+            TouchUi.TextButton(ok, "ĐỒNG Ý", Btn.Red, Kit.Down(30));
+        }
+
         public bool Active()
         {
             try
@@ -152,6 +200,12 @@ namespace Loan12.UnityPort
         {
             Kit.Begin(e);
             float k = TouchUi.K, H = Kit.H;
+            if (C_PortMap.f_arenaIntro)
+            {
+                Intro(e);
+                Kit.End();
+                return;
+            }
             bool busy = C_PortScreens.busy();
             int chosen = C_PortMap.arenaChosen();
             int levels = Mathf.Min(5, C_PortMap.arenaLevels());

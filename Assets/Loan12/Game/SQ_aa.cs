@@ -1332,7 +1332,8 @@ namespace Loan12
                 this.f_an = (C_PortScreens.f_touch ? -1 : C_bg.t());
                 if (C_PortScreens.f_touch)
                 {
-                    C_PortMap.openBox(this.f_am);
+                    C_PortMap.questBoxDone();
+                    // PORT-UI: the quest's boxes wait to be opened on the map
                 }
                 if ((this.f_an >= 0))
                 {
@@ -1438,6 +1439,12 @@ namespace Loan12
                     }
                     break;
                 case 9:
+                    if (!this.f_ai && C_PortScreens.f_touch)
+                    {
+                        // PORT-UI
+                        this.f_ai = true;
+                        C_PortMap.f_arenaIntro = true;
+                    }
                     if (!this.f_ai)
                     {
                         this.f_ai = true;

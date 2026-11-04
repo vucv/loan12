@@ -237,7 +237,7 @@ namespace Loan12.UnityPort
             touchViews = new ITouchView[]
             {
                 new TouchLivesView(), new TouchResultView(battle), new TouchPauseView(battle), new TouchPrepareView(), battle,
-                new TouchBootView(), new TouchStoryView(), new TouchMenuView(), new TouchHeroView(), new TouchMapView(), new TouchTalkView(), new TouchArenaView(), new TouchMapHoldView()
+                new TouchBootView(), new TouchStoryView(), new TouchMenuView(), new TouchHeroView(), new TouchBoxView(), new TouchMapView(), new TouchTalkView(), new TouchArenaView(), new TouchMapHoldView()
             };
             EnsureCamera();
             EnsureAudioListener();

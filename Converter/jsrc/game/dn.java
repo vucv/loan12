@@ -8,6 +8,7 @@ public class dn
     int b;
     private int c;
     private int d;
+    private static Image portBox; // PORT-UI
 
     public dn(Image paramImage) {
         this.u = false;
@@ -32,12 +33,24 @@ public class dn
         if (this.d > 0) {
             return;
         }
+        // PORT-UI: kind 6 is a gift box (r/g), the others the item sheet
+        Image img = this.a;
+        int sx = this.c * this.r, w = this.r, h = this.s;
+        if (this.c >= 6) {
+            if (portBox == null) {
+                portBox = az.b("/r/g");
+            }
+            img = portBox;
+            sx = 0;
+            w = img.getWidth();
+            h = img.getHeight();
+        }
         if (this.b > 15) {
             if (this.b % 2 == 0) {
-                y.a(paramGraphics, this.a, this.c * this.r, 0, this.r, this.s, this.p, this.q - 7, 3);
+                y.a(paramGraphics, img, sx, 0, w, h, this.p, this.q - 7, 3);
             }
         } else {
-            y.a(paramGraphics, this.a, this.c * this.r, 0, this.r, this.s, this.p, this.q - (this.b >> 1), 3);
+            y.a(paramGraphics, img, sx, 0, w, h, this.p, this.q - (this.b >> 1), 3);
         }
     }
 
