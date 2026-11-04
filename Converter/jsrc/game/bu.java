@@ -1288,6 +1288,33 @@ public class bu
     public boolean portForfeit; // PORT-UI: the player gave the battle up (pause box "Thoát trận")
     private int portEndWait;
 
+    /** PORT-UI (tour): the player's move, a sword line when there is one; false when it is not the player's turn */
+    public boolean portBotMove() {
+        if ((this.v != 8) || (this.s == null) || (this.s.a() != 0)) {
+            return false;
+        }
+        di moves = q();
+        if ((moves == null) || (moves.b() == 0)) {
+            return false;
+        }
+        int pick = 0;
+        search:
+        for (int k = 0; k < moves.b(); k++) {
+            com.mic.smsgame.suquan.a m = (com.mic.smsgame.suquan.a) moves.b(k);
+            int t1 = d(m.a, m.b), t2 = d(m.c, m.d);
+            int[] types = {t2, t2, t1, t1};
+            for (int i = 0; i < m.e.length; i++) {
+                if (((m.e[i] & 0xFF) >= 3) && ((types[i] == 0) || (types[i] == 6))) {
+                    pick = k;
+                    break search;
+                }
+            }
+        }
+        com.mic.smsgame.suquan.a m = (com.mic.smsgame.suquan.a) moves.b(pick);
+        a(m.a, m.b, m.c, m.d);
+        return true;
+    }
+
     /** PORT-UI: the touch interface's drop (rates above): items 3, 4, 5 a little more often than 0 and 1 */
     private int portDrop(int len) {
         if (this.s.d) {

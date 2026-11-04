@@ -15,7 +15,7 @@ namespace Loan12.UnityPort
 
         readonly TouchBattleView battle;
         int downKind; // 1 resume, 2 sound, 3 vibration, 5 give up, 6 confirm, 7 cancel
-        bool confirm;
+        public bool confirm;
         float shownAt = -1f;
 
         public TouchPauseView(TouchBattleView battle)

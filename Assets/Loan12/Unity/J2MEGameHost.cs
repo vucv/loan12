@@ -71,6 +71,23 @@ namespace Loan12.UnityPort
         // touch interface (option B of the redesign plan)
         // first active wins: the result and the pause lie over the battle, the VS panel over the map
         ITouchView[] touchViews;
+
+        /// <summary>The touch view of a type (screenshot tour).</summary>
+        public static T View<T>() where T : class, ITouchView
+        {
+            if (Instance == null || Instance.touchViews == null)
+            {
+                return null;
+            }
+            foreach (ITouchView v in Instance.touchViews)
+            {
+                if (v is T)
+                {
+                    return (T) v;
+                }
+            }
+            return null;
+        }
         ITouchView touchShown;
 
         // sound and vibration switches of the touch interface (kept between sessions)

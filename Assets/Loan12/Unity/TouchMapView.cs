@@ -36,7 +36,7 @@ namespace Loan12.UnityPort
         float lastTouch = -10f;
         bool camReady;
         bool dragMap;
-        int tutorial = -1;
+        public int tutorial = -1;
         int lastSlot = -1;
         readonly int[] route = new int[64];
         int routeLen;

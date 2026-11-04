@@ -300,9 +300,9 @@ namespace Loan12.UnityPort
     public sealed class TouchBagTab : IMapTab
     {
         float scroll, contentH;
-        int detail = -1;
-        int skillDetail = -1;
-        bool guide;
+        public int detail = -1; // public: the screenshot tour opens the boxes
+        public int skillDetail = -1;
+        public bool guide;
 
         public bool Back()
         {

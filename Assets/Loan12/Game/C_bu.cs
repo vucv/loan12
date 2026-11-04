@@ -102,6 +102,7 @@ namespace Loan12
         public bool f_portForfeit;
         // PORT-UI: the player gave the battle up (pause box "Thoát trận")
         private int f_portEndWait;
+        /** PORT-UI (tour): the player's move, a sword line when there is one; false when it is not the player's turn */
         /** PORT-UI: the touch interface's drop (rates above): items 3, 4, 5 a little more often than 0 and 1 */
         public int[] f_portWon;
         // PORT-UI: items won in this battle (5 in a row), by type    // PORT-UI: ticks state 9 waited for the board's effects
@@ -1656,6 +1657,40 @@ namespace Loan12
         // PORT-UI: state and actions for the Unity touch interface (see PortUi)
         // the "dừng game" dialog of this battle
         // PORT-UI: the player gave the battle up (pause box "Thoát trận")
+        /** PORT-UI (tour): the player's move, a sword line when there is one; false when it is not the player's turn */
+        public bool portBotMove()
+        {
+            if ((this.f_v != 8) || (this.f_s == null) || (this.f_s.a() != 0))
+            {
+                return false;
+            }
+            C_di moves = this.q();
+            if ((moves == null) || (moves.b() == 0))
+            {
+                return false;
+            }
+            int pick = 0;
+            for (int k = 0; (k < moves.b()); k++)
+            {
+                SQ_a m = ((SQ_a)(moves.b(k)));
+                int t1 = this.d(m.f_a, m.f_b);
+                int t2 = this.d(m.f_c, m.f_d);
+                int[] types = new int[] { t2, t2, t1, t1 };
+                for (int i = 0; (i < m.f_e.Length); i++)
+                {
+                    if ((((m.f_e[i] & 255) >= 3)) && ((types[i] == 0) || (types[i] == 6)))
+                    {
+                        pick = k;
+                        goto lbl_search_break;
+                    }
+                }
+            }
+            lbl_search_break: ;
+            SQ_a m_1 = ((SQ_a)(moves.b(pick)));
+            this.a(m_1.f_a, m_1.f_b, m_1.f_c, m_1.f_d);
+            return true;
+        }
+
         /** PORT-UI: the touch interface's drop (rates above): items 3, 4, 5 a little more often than 0 and 1 */
         private int portDrop(int len)
         {

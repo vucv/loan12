@@ -17,12 +17,12 @@ namespace Loan12.UnityPort
         int lastSub = -1;
         readonly bool[] open = new bool[9];
         int openedFor = -1;
-        int detail = -1;
+        public int detail = -1;
         bool newThisTime;
         bool scrollToCurrent;
 
         // dialogue reader (read-only)
-        int readQ = -1, readSet, readLine;
+        public int readQ = -1, readSet, readLine;
 
         string SeenKey
         {

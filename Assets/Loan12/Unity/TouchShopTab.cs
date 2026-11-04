@@ -17,7 +17,7 @@ namespace Loan12.UnityPort
         public int sub;
         float scroll, contentH;
         int lastSub = -1;
-        int buying = -1;
+        public int buying = -1;
         int packs = 1;
         float plusHeldAt = -1f, plusRepeat;
 

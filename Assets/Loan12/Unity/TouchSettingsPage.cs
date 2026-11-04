@@ -332,7 +332,7 @@ namespace Loan12.UnityPort
             return !close;
         }
 
-        bool langOpen;
+        public bool langOpen;
 
         // flags drawn in a few pixels (no images needed): red / gold star, stripes, red sun, red-blue circle
         static readonly string[] LangSub = {"Vietnamese", "English", "Japanese", "Korean"};

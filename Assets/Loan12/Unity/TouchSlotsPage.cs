@@ -12,7 +12,7 @@ namespace Loan12.UnityPort
     public sealed class TouchSlotsPage : IPage
     {
         int selected;
-        int deleting = -1;
+        public int deleting = -1;
         bool adBox;
         string adError;
         float sheetAt;

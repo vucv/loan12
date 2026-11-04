@@ -44,7 +44,7 @@ namespace Loan12.UnityPort
         // input
         bool boardHeld;
         int downKind, downArg; // 1 skill, 2 item, 3 pause, 4 popup USE, 5 popup CLOSE, 6 outside popup
-        int popupKind, popupArg; // 1 skill slot, 2 item slot
+        public int popupKind, popupArg; // 1 skill slot, 2 item slot
         int bx, by, bw, bh;
         Rect boardRect;
 

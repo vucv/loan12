@@ -20,7 +20,7 @@ namespace Loan12.UnityPort
     public sealed class TouchMenuView : ITouchView, IOwnsKeys
     {
         IPage page;
-        bool askExit;
+        public bool askExit;
         bool refreshed;
         float shownAt;
 
