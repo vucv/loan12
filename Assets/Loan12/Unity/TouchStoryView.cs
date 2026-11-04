@@ -49,7 +49,7 @@ namespace Loan12.UnityPort
                 // the game's picture, fitted, then a dark veil for the text
                 TouchUi.Fill(new Rect(0, 0, Gx.Width, Gx.Height), TouchUi.Hex(0x05070C));
                 // the game's picture over the whole width, without its soft-key bar (its own BỎ QUA)
-                const float shown = 278f; // rows above the soft-key labels (BỎ QUA sits near row 288)
+                const float shown = 200f; // the map part; the game's soft-key label BỎ QUA sits near row 270
                 float W = J2MEGameHost.LcdWidth, H = J2MEGameHost.LcdHeight;
                 float s = Gx.Width / W;
                 float w = W * s, h = shown * s;
