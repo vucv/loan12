@@ -2,7 +2,8 @@
 
 | File | Nhánh | Commit | Nội dung |
 |---|---|---|---|
-| `android/Loan12-ui-touch-c16e05b.apk` | `ui-touch` | `c16e05b` | Tên dài ở màn Chuẩn bị không đè nhau; giả lập mua gói vàng (mới nhất) |
+| `android/Loan12-ui-touch-94cdd3e.apk` | `ui-touch` | `94cdd3e` | Đóng màn chiến thắng vào thẳng màn mở quà; tên dài màn Chuẩn bị; giả lập mua vàng (mới nhất) |
+| `android/Loan12-ui-touch-c16e05b.apk` | `ui-touch` | `c16e05b` | Tên dài ở màn Chuẩn bị không đè nhau; giả lập mua gói vàng |
 | `android/Loan12-ui-touch-3910b09.apk` | `ui-touch` | `3910b09` | Đấu trường có màn chọn vật phẩm; giả lập mua gói, khôi phục giao dịch |
 | `android/Loan12-ui-touch-4436bb2.apk` | `ui-touch` | `4436bb2` | Ô vật phẩm 2/3/4 và mạng tối đa 3/4/5 (thường/Gói khởi đầu/VIP); bảng tên hội thoại một kiểu |
 | `android/Loan12-ui-touch-55ac883.apk` | `ui-touch` | `55ac883` | Hồi sinh xem quảng cáo +30 máu; hội thoại chân dung nhỏ, tên vừa màn; hộp quà ít và nhỏ hơn |
