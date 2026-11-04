@@ -288,7 +288,25 @@ namespace Loan12.UnityPort
                 if (C_PortUi.prepareView())
                 {
                     yield return new WaitForSeconds(0.8f);
-                    yield return Once("H", "prepare");
+                    if (!seen.Add("Hprepare"))
+                    {
+                        // a later battle where the enemy moves first: Ngọc Ấn offered, then chosen
+                        if (!C_PortUi.playerFirst() && !seen.Contains("Hprepare_seal"))
+                        {
+                            C_bg.a(5, 1, 6);
+                            yield return Once("H", "prepare_seal");
+                            TouchPrepareView pv = J2MEGameHost.View<TouchPrepareView>();
+                            if (pv != null)
+                            {
+                                pv.sealOn = true;
+                            }
+                            yield return Once("H", "prepare_seal_on");
+                        }
+                    }
+                    else
+                    {
+                        yield return Shot("H", "prepare");
+                    }
                     C_PortUi.request(C_PortUi.f_SCREEN_KEY, 0); // "Đánh"
                     yield return new WaitForSeconds(1f);
                     continue;

@@ -14,7 +14,7 @@ namespace Loan12.UnityPort
         const int GridH = 372;
 
         int downKind, downArg; // 1 fight, 2 retreat, 3 slot, 4 bag item, 5 buy, 6 confirm buy, 7 close confirm, 8 outside confirm, 9 Ngọc Ấn
-        bool sealOn; // Ngọc Ấn chosen for this battle: the player moves first (used on XUẤT TRẬN)
+        public bool sealOn; // Ngọc Ấn chosen for this battle: the player moves first (used on XUẤT TRẬN)
         int confirmType = -1;
         string toast = "";
         float toastTime = -10f;
