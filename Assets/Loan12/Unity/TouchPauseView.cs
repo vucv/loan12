@@ -225,21 +225,22 @@ namespace Loan12.UnityPort
             Color old = Gx.color;
             Gx.color = old * new Color(1f, 1f, 1f, t);
             Rect panel = PanelRect();
-            panel.y += (1f - t) * 12 * k;
+            float rise = (1f - t) * 12 * k; // the whole popup (frame, texts, buttons) rises into place together
+            panel.y += rise;
             float top = TouchUi.V(new Vector2(0, panel.y)).y;
             TouchUi.Panel(panel);
             TouchUi.PixelText("TẠM DỪNG", 1, TouchUi.R(90, 0, 0, 0).x, TouchUi.R(0, top + 18, 0, 0).y, 1, true);
             string sub = CanQuit() ? "Trận đấu đang tạm dừng" : "Bạn vừa rời trò chơi, trận đấu đã tạm dừng";
             TouchUi.Label(TouchUi.R(16, top + 30, 148, 26), sub, 7, TextAnchor.MiddleCenter, TouchUi.TextSoft, false, true);
 
-            TouchUi.RedButton(ResumeRect(), "TIẾP TỤC", true, downKind == 1);
+            TouchUi.RedButton(Shift(ResumeRect(), rise), "TIẾP TỤC", true, downKind == 1);
             bool sound = host == null || host.SoundOn, vibrate = host == null || host.HapticsOn;
-            Toggle(SoundRect(), "ÂM THANH", sound, downKind == 2);
-            Toggle(VibrateRect(), "RUNG", vibrate, downKind == 3);
+            Toggle(Shift(SoundRect(), rise), "ÂM THANH", sound, downKind == 2);
+            Toggle(Shift(VibrateRect(), rise), "RUNG", vibrate, downKind == 3);
             if (CanQuit())
             {
                 TouchUi.Fill(TouchUi.R(26, top + 160, 128, 1), TouchUi.Hex(0x9A6A98));
-                TouchUi.TextButton(ForfeitRect(), "THOÁT TRẬN", Btn.Red, downKind == 5);
+                TouchUi.TextButton(Shift(ForfeitRect(), rise), "THOÁT TRẬN", Btn.Red, downKind == 5);
                 TouchUi.Label(TouchUi.R(18, top + 195, 144, 9), "Bỏ trận, về bản đồ · tính là thua", 5.75f,
                     TextAnchor.UpperCenter, TouchUi.Hex(0xD8C8DC), false, true);
             }
@@ -257,6 +258,11 @@ namespace Loan12.UnityPort
                 TouchUi.TextButton(ConfirmYes(), "THOÁT", Btn.Red, downKind == 6);
                 TouchUi.TextButton(ConfirmNo(), "Ở LẠI", Btn.Grey, downKind == 7);
             }
+        }
+
+        static Rect Shift(Rect r, float dy)
+        {
+            return new Rect(r.x, r.y + dy, r.width, r.height);
         }
 
         /// <summary>A setting: its name on the left, a BẬT / TẮT switch on the right.</summary>

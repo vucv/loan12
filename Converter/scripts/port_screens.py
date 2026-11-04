@@ -471,9 +471,7 @@ rep('com/mic/smsgame/suquan/aa.java', """            this.ak = false;
             if (this.an >= 0) {""", """            this.ak = false;
             // PORT-UI: the quest's box holds items (relics needed an SMS to open); a note tells which
             this.an = game.PortScreens.touch ? -1 : bg.t();
-            if (game.PortScreens.touch) {
-                game.PortMap.questBoxDone(); // PORT-UI: the quest's boxes wait to be opened on the map
-            }
+
             if (this.an >= 0) {""")
 rep('com/mic/smsgame/suquan/aa.java', """    private void z() {
         ae localae""", """    private void z() {
@@ -791,5 +789,13 @@ rep('game/dn.java', """    private int d;
 """, """    private int d;
     private static Image portBox; // PORT-UI
 """)
+
+# the quest's gift boxes are counted when its reward is given (A), for every quest that has them
+rep('com/mic/smsgame/suquan/aa.java', """                this.ak = dd.f(this.z[this.B].e);
+                this.am = dd.g(this.z[this.B].e);""", """                this.ak = dd.f(this.z[this.B].e);
+                this.am = dd.g(this.z[this.B].e);
+                if (game.PortScreens.touch) { // PORT-UI: its boxes wait to be opened on the map
+                    game.PortMap.boxes += game.PortMap.questBoxes(this.z[this.B].e);
+                }""")
 
 print('port_screens: ok')

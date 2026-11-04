@@ -941,6 +941,11 @@ namespace Loan12
                     i += C_dd.j(this.f_z[this.f_B].f_e);
                     this.f_ak = C_dd.f(this.f_z[this.f_B].f_e);
                     this.f_am = C_dd.g(this.f_z[this.f_B].f_e);
+                    if (C_PortScreens.f_touch)
+                    {
+                        // PORT-UI: its boxes wait to be opened on the map
+                        C_PortMap.f_boxes += C_PortMap.questBoxes(this.f_z[this.f_B].f_e);
+                    }
                     if (this.f_T == 0)
                     {
                         SQ_aa.f_e = true;
@@ -1330,11 +1335,6 @@ namespace Loan12
                 this.f_ak = false;
                 // PORT-UI: the quest's box holds items (relics needed an SMS to open); a note tells which
                 this.f_an = (C_PortScreens.f_touch ? -1 : C_bg.t());
-                if (C_PortScreens.f_touch)
-                {
-                    C_PortMap.questBoxDone();
-                    // PORT-UI: the quest's boxes wait to be opened on the map
-                }
                 if ((this.f_an >= 0))
                 {
                     localObject = "Bạn đã nhận được 1 vật phẩm. Bạn có muốn mở vật phẩm ngay không? (Tham khảo giá tại http://free.ola.vn.)";

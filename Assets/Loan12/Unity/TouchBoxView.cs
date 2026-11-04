@@ -41,7 +41,8 @@ namespace Loan12.UnityPort
                 }
                 if (visible)
                 {
-                    if (onMap && !C_PortMap.talking() && !C_PortMap.walking() && !C_PortUi.prepareView())
+                    // a dialogue that starts behind waits for NHẬN (it waits for a tap anyway)
+                    if (onMap && !C_PortMap.walking() && !C_PortUi.prepareView())
                     {
                         return true;
                     }
@@ -49,13 +50,16 @@ namespace Loan12.UnityPort
                     calmSince = -1f;
                     return false;
                 }
-                if (onMap && C_PortMap.free() && !C_PortMap.walking())
+                // right after the results: on the free map, or before the next dialogue (a quest's ending talk,
+                // the next quest's opening) so the boxes come first
+                if (onMap && (C_PortMap.free() || C_PortMap.talking()) && !C_PortMap.walking() && !C_PortUi.prepareView())
                 {
                     if (calmSince < 0)
                     {
                         calmSince = now;
                     }
-                    if (now - calmSince >= 0.5f)
+                    // a dialogue waits for a tap: no need to wait for it to settle
+                    if (now - calmSince >= 0.5f || C_PortMap.talking())
                     {
                         visible = true;
                         shownAt = now;

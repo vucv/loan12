@@ -540,13 +540,6 @@ public final class PortMap {
         return q < 16 ? 1 : (q < 32 ? 2 : 3);
     }
 
-    /** the quest just won: its boxes join the ones to open */
-    public static void questBoxDone() {
-        if (battleQuest >= 0) {
-            boxes += questBoxes(battleQuest);
-        }
-    }
-
     /** the boxes the battle on screen brings (drops, and its quest's when won) */
     public static int battleBoxes() {
         bu b = PortUi.battle();

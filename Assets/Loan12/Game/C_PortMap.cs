@@ -76,7 +76,6 @@ namespace Loan12
         /** what the last opening gave, by item type */
         public static int[] f_opened;
         /** gift boxes a quest gives: 1 early on, 2 in the middle of the war, 3 late, 5 for the last one */
-        /** the quest just won: its boxes join the ones to open */
         /** the boxes the battle on screen brings (drops, and its quest's when won) */
         /**
          * Opens the waiting boxes: one item each (Bình Thuốc and Quỷ Diện Giáp more often than Long Thần
@@ -697,15 +696,6 @@ namespace Loan12
                 return 0;
             }
             return ((q < 16) ? 1 : (((q < 32) ? 2 : 3)));
-        }
-
-        /** the quest just won: its boxes join the ones to open */
-        public static void questBoxDone()
-        {
-            if ((C_PortMap.f_battleQuest >= 0))
-            {
-                C_PortMap.f_boxes += C_PortMap.questBoxes(C_PortMap.f_battleQuest);
-            }
         }
 
         /** the boxes the battle on screen brings (drops, and its quest's when won) */

@@ -799,6 +799,9 @@ public class aa
                 i += dd.j(this.z[this.B].e);
                 this.ak = dd.f(this.z[this.B].e);
                 this.am = dd.g(this.z[this.B].e);
+                if (game.PortScreens.touch) { // PORT-UI: its boxes wait to be opened on the map
+                    game.PortMap.boxes += game.PortMap.questBoxes(this.z[this.B].e);
+                }
                 if (this.T == 0) {
                     e = true;
                 }
@@ -1102,9 +1105,7 @@ public class aa
             this.ak = false;
             // PORT-UI: the quest's box holds items (relics needed an SMS to open); a note tells which
             this.an = game.PortScreens.touch ? -1 : bg.t();
-            if (game.PortScreens.touch) {
-                game.PortMap.questBoxDone(); // PORT-UI: the quest's boxes wait to be opened on the map
-            }
+
             if (this.an >= 0) {
                 localObject = "Bạn đã nhận được 1 vật phẩm. Bạn có muốn mở vật phẩm ngay không? (Tham khảo giá tại http://free.ola.vn.)";
                 if (this.am) {
