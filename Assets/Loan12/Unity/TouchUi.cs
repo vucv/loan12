@@ -68,11 +68,11 @@ namespace Loan12.UnityPort
         /// <summary>Fits a 180 x gridH layout in the safe area (whole-number scale when possible).</summary>
         public static void Begin(int gridH)
         {
-            Rect safe = UnityEngine.Device.Screen.safeArea;
-            area = new Rect(safe.x, Screen.height - safe.yMax, safe.width, safe.height);
+            Rect safe = Gx.SafeArea;
+            area = new Rect(safe.x, Gx.Height - safe.yMax, safe.width, safe.height);
             if (area.width <= 0 || area.height <= 0)
             {
-                area = new Rect(0, 0, Screen.width, Screen.height);
+                area = new Rect(0, 0, Gx.Width, Gx.Height);
             }
             K = Mathf.Min(area.width / GridW, area.height / gridH);
             if (K >= 1f)
@@ -162,13 +162,13 @@ namespace Loan12.UnityPort
             return new Color32((byte) (rgb >> 16), (byte) (rgb >> 8), (byte) rgb, 255);
         }
 
-        /// <summary>A plain rectangle (tinted by GUI.color too, so a whole view can fade).</summary>
+        /// <summary>A plain rectangle (tinted by Gx.color too, so a whole view can fade).</summary>
         public static void Fill(Rect r, Color c)
         {
-            Color old = GUI.color;
-            GUI.color = old * c;
-            GUI.DrawTexture(r, Texture2D.whiteTexture);
-            GUI.color = old;
+            Color old = Gx.color;
+            Gx.color = old * c;
+            Gx.DrawTexture(r, Texture2D.whiteTexture);
+            Gx.color = old;
         }
 
         // ------------------------------------------------------------------ backgrounds
@@ -214,14 +214,14 @@ namespace Loan12.UnityPort
             float ts = 21 * K;
             // tiles start at the layout's left edge, so the pattern sits the same way on every screen
             float ox = origin.x - Mathf.Ceil(origin.x / ts) * ts, oy = origin.y - Mathf.Ceil(origin.y / ts) * ts;
-            Rect all = new Rect(ox, oy, Screen.width - ox, Screen.height - oy);
-            Color old = GUI.color;
-            GUI.color = old * new Color(brightness, brightness * 0.94f, brightness * 0.98f, 1f);
-            GUI.DrawTextureWithTexCoords(all, tile, new Rect(0, 1 - all.height / ts, all.width / ts, all.height / ts), false);
-            GUI.color = old;
-            float edge = Mathf.Min(Screen.height * 0.16f, 50 * K);
-            Shade(new Rect(0, 0, Screen.width, edge), new Color(0.03f, 0.01f, 0.02f, 0.75f), true);
-            Shade(new Rect(0, Screen.height - edge, Screen.width, edge), new Color(0.03f, 0.01f, 0.02f, 0.75f), false);
+            Rect all = new Rect(ox, oy, Gx.Width - ox, Gx.Height - oy);
+            Color old = Gx.color;
+            Gx.color = old * new Color(brightness, brightness * 0.94f, brightness * 0.98f, 1f);
+            Gx.DrawTextureWithTexCoords(all, tile, new Rect(0, 1 - all.height / ts, all.width / ts, all.height / ts), false);
+            Gx.color = old;
+            float edge = Mathf.Min(Gx.Height * 0.16f, 50 * K);
+            Shade(new Rect(0, 0, Gx.Width, edge), new Color(0.03f, 0.01f, 0.02f, 0.75f), true);
+            Shade(new Rect(0, Gx.Height - edge, Gx.Width, edge), new Color(0.03f, 0.01f, 0.02f, 0.75f), false);
         }
 
         /// <summary>A colour fading out across the rectangle: strongest at the top (or at the bottom).</summary>
@@ -240,10 +240,10 @@ namespace Loan12.UnityPort
                 ramp.SetPixels32(px);
                 ramp.Apply(false, true);
             }
-            Color old = GUI.color;
-            GUI.color = old * c;
-            GUI.DrawTextureWithTexCoords(r, ramp, strongAtTop ? new Rect(0, 0, 1, 1) : new Rect(0, 1, 1, -1), true);
-            GUI.color = old;
+            Color old = Gx.color;
+            Gx.color = old * c;
+            Gx.DrawTextureWithTexCoords(r, ramp, strongAtTop ? new Rect(0, 0, 1, 1) : new Rect(0, 1, 1, -1), true);
+            Gx.color = old;
         }
 
         /// <summary>Part of a texture (source rectangle in pixels, top-left origin) into a screen rectangle.</summary>
@@ -260,7 +260,7 @@ namespace Loan12.UnityPort
                 uv.y += uv.height;
                 uv.height = -uv.height;
             }
-            GUI.DrawTextureWithTexCoords(dst, t, uv, true);
+            Gx.DrawTextureWithTexCoords(dst, t, uv, true);
         }
 
         public static void Sprite(Texture2D t, Rect dst)
@@ -319,10 +319,10 @@ namespace Loan12.UnityPort
         /// <summary>The big dark-red framed button of the game (m/ff) with a gold title.</summary>
         public static void RedButton(Rect r, string text, bool enabled, bool down)
         {
-            Color old = GUI.color;
+            Color old = Gx.color;
             if (!enabled)
             {
-                GUI.color = new Color(0.5f, 0.46f, 0.5f, 1f); // the whole button greyed out
+                Gx.color = new Color(0.5f, 0.46f, 0.5f, 1f); // the whole button greyed out
             }
             Nine(Img("/m/ff"), 12, r);
             if (down)
@@ -330,20 +330,20 @@ namespace Loan12.UnityPort
                 Fill(new Rect(r.x + 4 * K, r.y + 4 * K, r.width - 8 * K, r.height - 8 * K), new Color(1f, 0.85f, 0.4f, 0.25f));
             }
             PixelText(text, 1, r.center.x, r.center.y + (down ? K : 0), 1, true);
-            GUI.color = old;
+            Gx.color = old;
         }
 
         /// <summary>A pixel button with its label in the game's white font, centred.</summary>
         public static void TextButton(Rect r, string text, Btn style, bool down, bool enabled = true)
         {
             Button(r, enabled ? style : Btn.Grey, down && enabled);
-            Color old = GUI.color;
+            Color old = Gx.color;
             if (!enabled)
             {
-                GUI.color = old * new Color(0.72f, 0.7f, 0.75f, 1f);
+                Gx.color = old * new Color(0.72f, 0.7f, 0.75f, 1f);
             }
             PixelText(text, 2, r.center.x, r.center.y + (down && enabled ? K : 0), 1, true);
-            GUI.color = old;
+            Gx.color = old;
         }
 
         // The game's bitmap fonts draw a text 1 px in from the left of its image; capitals fill rows
@@ -394,7 +394,7 @@ namespace Loan12.UnityPort
             float w = t.width * K, h = t.height * K, ink = (t.width - 3) * K;
             float left = anchor == 1 ? x - InkLeft * K - ink / 2f : (anchor == 2 ? x - InkLeft * K - ink : x - InkLeft * K);
             float top = centreY ? y - (CapTop + CapBottom) / 2f * K : y;
-            GUI.DrawTexture(new Rect(Mathf.Round(left), Mathf.Round(top), w, h), t);
+            Gx.DrawTexture(new Rect(Mathf.Round(left), Mathf.Round(top), w, h), t);
         }
 
         // Small text (descriptions, labels, speech bubbles): Inter, an HD font with every Vietnamese
@@ -467,16 +467,16 @@ namespace Loan12.UnityPort
             GUIStyle st = Hd(size, strong, anchor, wrap);
             Rect dst = new Rect(r.x, Mathf.Round(r.y), r.width, r.height);
             hdText.text = s;
-            Color old = GUI.color;
+            Color old = Gx.color;
             if (outline)
             {
                 float o = Mathf.Max(1f, Mathf.Round(K * 0.5f));
                 st.normal.textColor = new Color(0.08f, 0.02f, 0.07f, 0.85f * color.a);
-                st.Draw(new Rect(dst.x + o, dst.y + o, dst.width, dst.height), hdText, false, false, false, false);
+                Gx.DrawText(st, new Rect(dst.x + o, dst.y + o, dst.width, dst.height), hdText);
             }
             st.normal.textColor = color;
-            st.Draw(dst, hdText, false, false, false, false);
-            GUI.color = old;
+            Gx.DrawText(st, dst, hdText);
+            Gx.color = old;
         }
 
         /// <summary>Lines a text of the default size takes when wrapped at width grid pixels.</summary>
@@ -521,16 +521,16 @@ namespace Loan12.UnityPort
         /// <summary>Item icon (shop index 0..5) from /itemshops.</summary>
         public static void Item(int type, Rect dst, float dim = 1f)
         {
-            Color old = GUI.color;
-            GUI.color = new Color(dim, dim, dim, 1f);
+            Color old = Gx.color;
+            Gx.color = new Color(dim, dim, dim, 1f);
             Sprite(Img("/itemshops"), dst, new Rect(type * 28, 0, 28, 28));
-            GUI.color = old;
+            Gx.color = old;
         }
 
         /// <summary>Darkens the whole screen behind a popup.</summary>
         public static void Dim(float alpha = 0.6f)
         {
-            Fill(new Rect(0, 0, Screen.width, Screen.height), new Color(0.03f, 0.01f, 0.03f, alpha));
+            Fill(new Rect(0, 0, Gx.Width, Gx.Height), new Color(0.03f, 0.01f, 0.03f, alpha));
         }
 
         /// <summary>Downward pointer under a popup panel (to the button it belongs to).</summary>

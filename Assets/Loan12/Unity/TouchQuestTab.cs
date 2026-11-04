@@ -143,7 +143,7 @@ namespace Loan12.UnityPort
             // sub tabs over the list
             if (Kit.Paint)
             {
-                TouchUi.Fill(new Rect(0, TouchUi.R(0, top, 0, 0).y, Screen.width, 22 * k), TouchUi.Hex(0x0A121E));
+                TouchUi.Fill(new Rect(0, TouchUi.R(0, top, 0, 0).y, Gx.Width, 22 * k), TouchUi.Hex(0x0A121E));
             }
             for (int i = 0; i < 3; i++)
             {
@@ -516,7 +516,7 @@ namespace Loan12.UnityPort
                 readQ = -1;
                 return;
             }
-            Rect all = new Rect(0, 0, Screen.width, Screen.height);
+            Rect all = new Rect(0, 0, Gx.Width, Gx.Height);
             Kit.Modal(all);
             Rect skip = TouchUi.R(130, top + 4, 44, 16);
             if (Kit.Tap(501, skip) || Kit.Back())
@@ -608,13 +608,13 @@ namespace Loan12.UnityPort
                     {
                         TouchUi.Fill(r, new Color(0.14f, 0.08f, 0.14f, 0.7f));
                         Kit.Check(r.x + 4 * k, r.y + 11 * k, Kit.Green);
-                        Color old = GUI.color;
-                        GUI.color = old * new Color(1, 1, 1, 0.55f);
+                        Color old = Gx.color;
+                        Gx.color = old * new Color(1, 1, 1, 0.55f);
                         if (enemy >= 0)
                         {
                             TouchUi.Portrait(enemy, new Rect(r.x + 14 * k, r.y + 3 * k, 24 * k, 24 * k));
                         }
-                        GUI.color = old;
+                        Gx.color = old;
                         TouchUi.Label(new Rect(r.x + 42 * k, r.y + 3 * k, 120 * k, 9 * k), Kit.Cut((fight ? QuestData.Who(enemy) : "Gặp gỡ") + " · " + QuestData.Place(node), 30), 6, TextAnchor.UpperLeft, Kit.Muted, true);
                         TouchUi.Label(new Rect(r.x + 42 * k, r.y + 14 * k, 120 * k, 9 * k), reward.Length > 0 ? "Đã nhận " + reward.Replace("Thưởng: ", "") : "Đã xong", 5.5f, TextAnchor.UpperLeft, Kit.Muted);
                     }

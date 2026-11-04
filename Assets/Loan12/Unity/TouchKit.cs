@@ -38,11 +38,11 @@ namespace Loan12.UnityPort
             E = e;
             blocked = false;
             clipped = false;
-            Rect safe = UnityEngine.Device.Screen.safeArea;
-            Rect area = new Rect(safe.x, Screen.height - safe.yMax, safe.width, safe.height);
+            Rect safe = Gx.SafeArea;
+            Rect area = new Rect(safe.x, Gx.Height - safe.yMax, safe.width, safe.height);
             if (area.width <= 0 || area.height <= 0)
             {
-                area = new Rect(0, 0, Screen.width, Screen.height);
+                area = new Rect(0, 0, Gx.Width, Gx.Height);
             }
             float k = Mathf.Min(area.width / TouchUi.GridW, area.height / minH);
             if (k >= 1f)
@@ -202,8 +202,8 @@ namespace Loan12.UnityPort
             {
                 return;
             }
-            Color old = GUI.color;
-            GUI.color = old * new Color(1, 1, 1, Mathf.Clamp01((toastFor - t) / 0.3f));
+            Color old = Gx.color;
+            Gx.color = old * new Color(1, 1, 1, Mathf.Clamp01((toastFor - t) / 0.3f));
             float w = Mathf.Min(170, TouchUi.TextWidth(toast) + 16);
             int lines = TouchUi.Lines(toast, w - 10);
             float h = lines * UiFont.LineHeight + 10;
@@ -211,7 +211,7 @@ namespace Loan12.UnityPort
             TouchUi.Fill(new Rect(r.x - TouchUi.K, r.y - TouchUi.K, r.width + 2 * TouchUi.K, r.height + 2 * TouchUi.K), TouchUi.GoldLine);
             TouchUi.Fill(r, new Color(0.08f, 0.03f, 0.08f, 0.94f));
             TouchUi.Label(new Rect(r.x + 5 * TouchUi.K, r.y, r.width - 10 * TouchUi.K, r.height), toast, 6.5f, TextAnchor.MiddleCenter, Color.white, false, true);
-            GUI.color = old;
+            Gx.color = old;
         }
 
         // ------------------------------------------------------------------ pieces
@@ -259,10 +259,10 @@ namespace Loan12.UnityPort
                 TouchUi.RedButton(r, title, enabled, down);
                 return;
             }
-            Color old = GUI.color;
+            Color old = Gx.color;
             if (!enabled)
             {
-                GUI.color = new Color(0.5f, 0.46f, 0.5f, 1f);
+                Gx.color = new Color(0.5f, 0.46f, 0.5f, 1f);
             }
             TouchUi.Nine(TouchUi.Img("/m/ff"), 12, r);
             float k = TouchUi.K, dy = down ? k : 0;
@@ -272,20 +272,20 @@ namespace Loan12.UnityPort
             }
             TouchUi.PixelText(title, 1, r.center.x, r.y + r.height * 0.36f + dy, 1, true);
             TouchUi.Label(new Rect(r.x, r.y + r.height * 0.56f + dy, r.width, 9 * k), sub, 6.5f, TextAnchor.UpperCenter, Cream);
-            GUI.color = old;
+            Gx.color = old;
         }
 
         /// <summary>A flat button (green ad, gold price, grey ...) with a label in the small font.</summary>
         public static void FlatButton(Rect r, string label, Btn style, bool down, bool enabled = true)
         {
             TouchUi.Button(r, enabled ? style : Btn.Grey, down && enabled);
-            Color old = GUI.color;
+            Color old = Gx.color;
             if (!enabled)
             {
-                GUI.color = old * new Color(0.75f, 0.72f, 0.78f, 1f);
+                Gx.color = old * new Color(0.75f, 0.72f, 0.78f, 1f);
             }
             TouchUi.Label(new Rect(r.x, r.y + (down && enabled ? TouchUi.K : 0), r.width, r.height), label, 7, TextAnchor.MiddleCenter, Color.white, true);
-            GUI.color = old;
+            Gx.color = old;
         }
 
         /// <summary>Green "watch an ad" button: a play triangle, then the label (the small font has no ▶).</summary>
@@ -297,13 +297,13 @@ namespace Loan12.UnityPort
             float w = TouchUi.TextWidth(label) + 9;
             float x = r.center.x - w * k / 2;
             Play(x, r.center.y + dy, Color.white);
-            Color old = GUI.color;
+            Color old = Gx.color;
             if (!enabled)
             {
-                GUI.color = old * new Color(0.75f, 0.72f, 0.78f, 1f);
+                Gx.color = old * new Color(0.75f, 0.72f, 0.78f, 1f);
             }
             TouchUi.Label(new Rect(x + 8 * k, r.y + dy, w * k, r.height), label, 7, TextAnchor.MiddleLeft, Color.white, true);
-            GUI.color = old;
+            Gx.color = old;
         }
 
         /// <summary>Small right-pointing triangle (play), 5 wide, centred on cy.</summary>
@@ -443,17 +443,17 @@ namespace Loan12.UnityPort
         public static void Switch(Rect r, bool on, bool enabled = true)
         {
             float k = TouchUi.K;
-            Color old = GUI.color;
+            Color old = Gx.color;
             if (!enabled)
             {
-                GUI.color = old * new Color(1, 1, 1, 0.45f);
+                Gx.color = old * new Color(1, 1, 1, 0.45f);
             }
             TouchUi.Fill(r, TouchUi.Outline);
             TouchUi.Fill(new Rect(r.x + k, r.y + k, r.width - 2 * k, r.height - 2 * k), on ? TouchUi.Hex(0x2F9A3C) : TouchUi.Hex(0x4E4A50));
             float knob = r.height - 4 * k;
             float x = on ? r.xMax - 2 * k - knob : r.x + 2 * k;
             TouchUi.Fill(new Rect(x, r.y + 2 * k, knob, knob), TouchUi.Hex(0xF0E6D2));
-            GUI.color = old;
+            Gx.color = old;
         }
 
         /// <summary>Horizontal slider, value 0..1; returns the new value while dragged.</summary>
@@ -476,10 +476,10 @@ namespace Loan12.UnityPort
             }
             if (Paint)
             {
-                Color old = GUI.color;
+                Color old = Gx.color;
                 if (!enabled)
                 {
-                    GUI.color = old * new Color(1, 1, 1, 0.4f);
+                    Gx.color = old * new Color(1, 1, 1, 0.4f);
                 }
                 Rect track = new Rect(bar.x, bar.center.y - 2 * k, bar.width, 4 * k);
                 TouchUi.Fill(track, TouchUi.Outline);
@@ -487,7 +487,7 @@ namespace Loan12.UnityPort
                 float kx = bar.x + bar.width * value;
                 TouchUi.Fill(new Rect(kx - 5 * k, bar.center.y - 5 * k, 10 * k, 10 * k), TouchUi.Outline);
                 TouchUi.Fill(new Rect(kx - 4 * k, bar.center.y - 4 * k, 8 * k, 8 * k), TouchUi.Hex(0xF0E6D2));
-                GUI.color = old;
+                Gx.color = old;
             }
             return value;
         }
@@ -638,7 +638,7 @@ namespace Loan12.UnityPort
             {
                 return;
             }
-            TouchUi.Fill(new Rect(0, 0, Screen.width, Screen.height), new Color(0, 0, 0, 0.92f));
+            TouchUi.Fill(new Rect(0, 0, Gx.Width, Gx.Height), new Color(0, 0, 0, 0.92f));
             TouchUi.Label(TouchUi.R(10, Kit.H / 2 - 20, 160, 12), "QUẢNG CÁO (THỬ NGHIỆM)", 7, TextAnchor.MiddleCenter, Kit.Gold, true);
             TouchUi.Label(TouchUi.R(10, Kit.H / 2 - 6, 160, 12), "Sẽ thay bằng quảng cáo thật", 6, TextAnchor.MiddleCenter, Kit.Muted);
             Kit.Spinner(TouchUi.R(90, Kit.H / 2 + 16, 0, 0).position);

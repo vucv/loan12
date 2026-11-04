@@ -70,7 +70,7 @@ namespace Loan12.UnityPort
             {
                 if (Kit.Paint)
                 {
-                    TouchUi.Fill(new Rect(0, 0, Screen.width, Screen.height), TouchUi.Background);
+                    TouchUi.Fill(new Rect(0, 0, Gx.Width, Gx.Height), TouchUi.Background);
                 }
                 if (!page.OnGUI(e))
                 {
@@ -202,7 +202,7 @@ namespace Loan12.UnityPort
         void DrawBackground()
         {
             float k = TouchUi.K;
-            TouchUi.Fill(new Rect(0, 0, Screen.width, Screen.height), TouchUi.Hex(0x0E0303));
+            TouchUi.Fill(new Rect(0, 0, Gx.Width, Gx.Height), TouchUi.Hex(0x0E0303));
             float t = Time.unscaledTime - shownAt;
             Texture2D cover = TouchUi.Img("/bksplashscreen");
             float top = 22, room = TouchUi.V(ContinueRect(Slots.Data.activeSlot >= 0).position).y - 10 - top;
@@ -214,10 +214,10 @@ namespace Loan12.UnityPort
             Vector2 drift = new Vector2(Mathf.Sin(t * 0.33f), Mathf.Cos(t * 0.27f)) * 2.5f * k;
             Rect r = new Rect(frame.center.x - frame.width * zoom / 2 + drift.x, frame.center.y - frame.height * zoom / 2 + drift.y + (1 - ease) * 10 * k,
                 frame.width * zoom, frame.height * zoom);
-            GUI.BeginGroup(frame);
-            Color old = GUI.color;
-            GUI.color = new Color(old.r, old.g, old.b, ease);
-            GUI.DrawTexture(new Rect(r.x - frame.x, r.y - frame.y, r.width, r.height), cover);
+            Gx.BeginGroup(frame);
+            Color old = Gx.color;
+            Gx.color = new Color(old.r, old.g, old.b, ease);
+            Gx.DrawTexture(new Rect(r.x - frame.x, r.y - frame.y, r.width, r.height), cover);
             // a glint every 5 s
             float g = (t % 5f) / 1.1f;
             if (g < 1f)
@@ -225,12 +225,12 @@ namespace Loan12.UnityPort
                 float gx = Mathf.Lerp(-0.3f, 1.3f, g) * frame.width;
                 for (int i = 0; i < 6; i++)
                 {
-                    GUI.color = new Color(1f, 0.92f, 0.7f, 0.05f * ease * (6 - Mathf.Abs(i - 2.5f) * 2) / 6);
-                    GUI.DrawTexture(new Rect(gx + i * 4 * k, 0, 4 * k, frame.height), Texture2D.whiteTexture);
+                    Gx.color = new Color(1f, 0.92f, 0.7f, 0.05f * ease * (6 - Mathf.Abs(i - 2.5f) * 2) / 6);
+                    Gx.DrawTexture(new Rect(gx + i * 4 * k, 0, 4 * k, frame.height), Texture2D.whiteTexture);
                 }
             }
-            GUI.color = old;
-            GUI.EndGroup();
+            Gx.color = old;
+            Gx.EndGroup();
             float fade = 30 * k;
             TouchUi.Shade(new Rect(frame.x, frame.yMax - fade, frame.width, fade + k), TouchUi.Hex(0x0E0303), false);
             TouchUi.Shade(new Rect(frame.x, frame.y, frame.width, 10 * k), TouchUi.Hex(0x0E0303), true);
@@ -244,19 +244,19 @@ namespace Loan12.UnityPort
                 float y = Kit.H * (0.95f - p * 0.85f);
                 float a = Mathf.Sin(p * Mathf.PI) * 0.75f * ease;
                 float size = (1 + (i % 3) * 0.5f) * k;
-                GUI.color = new Color(1f, 0.55f + 0.3f * seed, 0.15f, a);
-                GUI.DrawTexture(new Rect(TouchUi.R(x, 0, 0, 0).x, TouchUi.R(0, y, 0, 0).y, size * 1.5f, size * 1.5f), Texture2D.whiteTexture);
+                Gx.color = new Color(1f, 0.55f + 0.3f * seed, 0.15f, a);
+                Gx.DrawTexture(new Rect(TouchUi.R(x, 0, 0, 0).x, TouchUi.R(0, y, 0, 0).y, size * 1.5f, size * 1.5f), Texture2D.whiteTexture);
             }
-            GUI.color = old;
+            Gx.color = old;
         }
 
         static void DrawContinue(Rect r, SlotInfo s, bool down, bool busy)
         {
             float k = TouchUi.K, dy = down ? k : 0;
-            Color old = GUI.color;
+            Color old = Gx.color;
             if (busy)
             {
-                GUI.color = new Color(0.6f, 0.56f, 0.6f, 1f);
+                Gx.color = new Color(0.6f, 0.56f, 0.6f, 1f);
             }
             TouchUi.Nine(TouchUi.Img("/m/ff"), 12, r);
             if (down)
@@ -268,7 +268,7 @@ namespace Loan12.UnityPort
             TouchUi.PixelText("CHƠI TIẾP", 1, r.x + 37 * k, r.y + 14 * k + dy, 0, true);
             string sub = Kit.Cut(Kit.Title(s.name), 14) + " · Hệ " + Kit.ElementName(SafeElement(s.hero)) + " · Cấp " + s.level;
             TouchUi.Label(new Rect(r.x + 37 * k, r.y + 21 * k + dy, r.width - 42 * k, 9 * k), sub, 6.5f, TextAnchor.UpperLeft, Kit.Cream);
-            GUI.color = old;
+            Gx.color = old;
         }
 
         static int SafeElement(int hero)
@@ -391,7 +391,7 @@ namespace Loan12.UnityPort
             Kit.Begin(e);
             if (Kit.Paint)
             {
-                TouchUi.Fill(new Rect(0, 0, Screen.width, Screen.height), TouchUi.Hex(0x0E0303));
+                TouchUi.Fill(new Rect(0, 0, Gx.Width, Gx.Height), TouchUi.Hex(0x0E0303));
                 float h = Mathf.Min(240, Kit.H - 60), w = h * 0.75f;
                 Rect r = TouchUi.R(90 - w / 2, 30, w, h);
                 TouchUi.Sprite(TouchUi.Img("/bksplashscreen"), r);

@@ -452,10 +452,26 @@ namespace Loan12.UnityPort
         public static IEnumerator Shot(string group, string name)
         {
             yield return new WaitForSeconds(0.7f);
-            yield return new WaitForEndOfFrame();
+            yield return Gx.Offscreen ? null : new WaitForEndOfFrame();
             n++;
             string path = Path.Combine(dir, group + n.ToString("00") + "_" + name + ".png");
-            ScreenCapture.CaptureScreenshot(path, 2);
+            RenderTexture rt = J2MEGameHost.Instance != null ? J2MEGameHost.Instance.Offscreen : null;
+            if (Gx.Offscreen && rt != null)
+            {
+                // batch mode: the picture the host drew offscreen this frame
+                RenderTexture prev = RenderTexture.active;
+                RenderTexture.active = rt;
+                Texture2D t = new Texture2D(rt.width, rt.height, TextureFormat.RGB24, false);
+                t.ReadPixels(new Rect(0, 0, rt.width, rt.height), 0, 0);
+                t.Apply();
+                RenderTexture.active = prev;
+                File.WriteAllBytes(path, t.EncodeToPNG());
+                Object.Destroy(t);
+            }
+            else
+            {
+                ScreenCapture.CaptureScreenshot(path, 2);
+            }
             Debug.Log("Loan12 tour: " + path);
             yield return new WaitForSeconds(0.3f);
         }

@@ -3,7 +3,7 @@
 // Resources/Loan12Fonts/Galmuri-OFL.md), baked by Converter/scripts/make_ui_font.py into 1-bit bitmaps
 // at its own pixel size and made bold like the game's letters. Texts are drawn at the same whole-number
 // scale as the game's pixel art, white with a 1-pixel dark outline like the game's fonts, and tinted
-// with GUI.color. Each text (and wrap width) is turned into a texture once and kept.
+// with Gx.color. Each text (and wrap width) is turned into a texture once and kept.
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;

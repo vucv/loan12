@@ -66,7 +66,7 @@ namespace Loan12.UnityPort
             bool close = false;
             if (Kit.Paint)
             {
-                TouchUi.Fill(new Rect(0, 0, Screen.width, Screen.height), TouchUi.Background);
+                TouchUi.Fill(new Rect(0, 0, Gx.Width, Gx.Height), TouchUi.Background);
                 TouchUi.Wallpaper(0.55f);
             }
             if (sheet)
@@ -219,10 +219,10 @@ namespace Loan12.UnityPort
         void DrawEmpty(Rect r, int i, bool usable, bool down)
         {
             float k = TouchUi.K;
-            Color old = GUI.color;
+            Color old = Gx.color;
             if (!usable)
             {
-                GUI.color = old * new Color(1, 1, 1, 0.5f);
+                Gx.color = old * new Color(1, 1, 1, 0.5f);
             }
             TouchUi.Fill(r, new Color(0.1f, 0.04f, 0.1f, 0.8f));
             bool credit = Slots.CanCreate && !Rewards.Vip || Slots.Data.createCredits > 0;
@@ -268,7 +268,7 @@ namespace Loan12.UnityPort
             {
                 Kit.AdButton(b, "Đang tải quảng cáo…", false, false);
             }
-            GUI.color = old;
+            Gx.color = old;
         }
 
         // ---------------------------------------------------------------------------------- sheets

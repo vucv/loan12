@@ -205,7 +205,7 @@ namespace Loan12.UnityPort
         /// <summary>A snapshot (rows stored top first, like the game's screen) into a screen rectangle.</summary>
         static void DrawSnap(Texture2D snap, Rect dst)
         {
-            GUI.DrawTextureWithTexCoords(dst, snap, new Rect(0f, 1f, 1f, -1f), false);
+            Gx.DrawTextureWithTexCoords(dst, snap, new Rect(0f, 1f, 1f, -1f), false);
         }
 
         // ---------------------------------------------------------------------------------- rects
@@ -720,7 +720,7 @@ namespace Loan12.UnityPort
         void DrawScene(Texture2D lcd)
         {
             float k = TouchUi.K;
-            TouchUi.Fill(new Rect(0, 0, Screen.width, Screen.height), TouchUi.Background);
+            TouchUi.Fill(new Rect(0, 0, Gx.Width, Gx.Height), TouchUi.Background);
             TouchUi.Wallpaper();
 
             // whose turn + pause
@@ -802,10 +802,10 @@ namespace Loan12.UnityPort
                 J2ME.Image icon = C_PortUi.skillIcon(i);
                 if (icon != null)
                 {
-                    Color old = GUI.color;
-                    GUI.color = old * (usable ? Color.white : new Color(0.5f, 0.47f, 0.52f, 1f));
+                    Color old = Gx.color;
+                    Gx.color = old * (usable ? Color.white : new Color(0.5f, 0.47f, 0.52f, 1f));
                     TouchUi.Sprite(SkillTexture(i, icon), new Rect(r.x + 3 * k, r.y + 3 * k, 30 * k, 30 * k));
-                    GUI.color = old;
+                    Gx.color = old;
                 }
                 TouchUi.Fill(new Rect(r.x + 44 * k, r.y + 6 * k, 5 * k, 5 * k), TouchUi.Hex(0x3C7CE8));
                 TouchUi.Label(new Rect(r.x + 34 * k, r.y + 15 * k, 18 * k, 14 * k), C_PortUi.skillCost(i).ToString(), 8.5f, TextAnchor.MiddleCenter,
@@ -861,7 +861,7 @@ namespace Loan12.UnityPort
             Rect dst = new Rect(c.x - w / 2f, c.y - h / 2f + dy * k, w, h);
             int frame = t < 0.18f ? 0 : 1 + (int) ((t - 0.18f) / 0.16f) % 2;
 
-            Color old = GUI.color;
+            Color old = Gx.color;
             if (won)
             {
                 // a burst of light when the banner lands, then gold sparkles around it
@@ -870,9 +870,9 @@ namespace Loan12.UnityPort
                 {
                     Texture2D burst = TouchUi.Img("/m/e2");
                     float bs = (1.4f + 1.6f * bt) * k;
-                    GUI.color = old * new Color(1f, 0.9f, 0.55f, 1f - bt);
+                    Gx.color = old * new Color(1f, 0.9f, 0.55f, 1f - bt);
                     TouchUi.Sprite(burst, new Rect(c.x - burst.width * bs / 2f, c.y - burst.height * bs / 2f, burst.width * bs, burst.height * bs));
-                    GUI.color = old;
+                    Gx.color = old;
                 }
                 if (t > 0.4f)
                 {
@@ -888,9 +888,9 @@ namespace Loan12.UnityPort
                     }
                 }
             }
-            GUI.color = old * new Color(1f, 1f, 1f, Mathf.Clamp01(t / 0.12f));
+            Gx.color = old * new Color(1f, 1f, 1f, Mathf.Clamp01(t / 0.12f));
             TouchUi.Sprite(img, dst, new Rect(frame * fw, 0, fw, fh));
-            GUI.color = old;
+            Gx.color = old;
         }
 
         /// <summary>A pixel twinkle: a cross of arm pixels with a white centre.</summary>
@@ -944,7 +944,7 @@ namespace Loan12.UnityPort
         static void DrawLcd(Texture2D lcd, Rect dst, int x, int y, int w, int h)
         {
             const float W = J2MEGameHost.LcdWidth, H = J2MEGameHost.LcdHeight;
-            GUI.DrawTextureWithTexCoords(dst, lcd, new Rect(x / W, (y + h) / H, w / W, -h / H), false);
+            Gx.DrawTextureWithTexCoords(dst, lcd, new Rect(x / W, (y + h) / H, w / W, -h / H), false);
         }
 
         readonly Texture2D[] skillTex = new Texture2D[3];

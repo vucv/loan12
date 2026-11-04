@@ -143,8 +143,8 @@ namespace Loan12.UnityPort
         public static void Icon(Rect r, float dim = 1f)
         {
             float k = TouchUi.K;
-            Color old = GUI.color;
-            GUI.color = old * new Color(dim, dim, dim, 1f);
+            Color old = Gx.color;
+            Gx.color = old * new Color(dim, dim, dim, 1f);
             Rect h = new Rect(r.x + r.width * 0.08f, r.y + r.height * 0.08f, r.width * 0.84f, r.height * 0.84f);
             TouchUi.Sprite(TouchUi.Img("/m/ih"), h);
             float p = Mathf.Max(5 * k, Mathf.Round(r.width * 0.42f / k) * k);
@@ -154,7 +154,7 @@ namespace Loan12.UnityPort
             float t = Mathf.Max(k, Mathf.Round(p / k / 5) * k);
             TouchUi.Fill(new Rect(b.center.x - t / 2, b.y + 2 * k, t, b.height - 4 * k), Color.white);
             TouchUi.Fill(new Rect(b.x + 2 * k, b.center.y - t / 2, b.width - 4 * k, t), Color.white);
-            GUI.color = old;
+            Gx.color = old;
         }
     }
 
@@ -267,10 +267,10 @@ namespace Loan12.UnityPort
                 // hearts
                 for (int i = 0; i < max; i++)
                 {
-                    Color old = GUI.color;
-                    GUI.color = i < lives ? old : old * new Color(0.25f, 0.22f, 0.27f, 1f);
+                    Color old = Gx.color;
+                    Gx.color = i < lives ? old : old * new Color(0.25f, 0.22f, 0.27f, 1f);
                     TouchUi.Sprite(TouchUi.Img("/m/ih"), TouchUi.R(90 - max * 10 + i * 20 + 3, y + 26, 14, 14));
-                    GUI.color = old;
+                    Gx.color = old;
                 }
                 string line = none ? "Bạn đã hết mạng chơi. Mỗi trận cần 1 mạng (thắng thì được trả lại)."
                     : (full ? "Mạng chơi đang đầy (" + lives + "/" + max + ")." : "Bạn còn " + lives + "/" + max + " mạng. Mỗi trận cần 1 mạng.");

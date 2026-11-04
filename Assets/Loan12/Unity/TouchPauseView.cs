@@ -181,7 +181,7 @@ namespace Loan12.UnityPort
                 }
                 else
                 {
-                    TouchUi.Fill(new Rect(0, 0, Screen.width, Screen.height), TouchUi.Background);
+                    TouchUi.Fill(new Rect(0, 0, Gx.Width, Gx.Height), TouchUi.Background);
                 }
                 Draw(host);
             }
@@ -192,8 +192,8 @@ namespace Loan12.UnityPort
             float k = TouchUi.K;
             float t = Mathf.Clamp01((Time.unscaledTime - shownAt) / 0.18f);
             TouchUi.Dim(0.62f * t);
-            Color old = GUI.color;
-            GUI.color = old * new Color(1f, 1f, 1f, t);
+            Color old = Gx.color;
+            Gx.color = old * new Color(1f, 1f, 1f, t);
             Rect panel = PanelRect();
             panel.y += (1f - t) * 12 * k;
             float top = TouchUi.V(new Vector2(0, panel.y)).y;
@@ -213,7 +213,7 @@ namespace Loan12.UnityPort
                 TouchUi.Label(TouchUi.R(18, top + 195, 144, 9), "Bỏ trận, về bản đồ · tính là thua", 5.75f,
                     TextAnchor.UpperCenter, TouchUi.Hex(0xD8C8DC), false, true);
             }
-            GUI.color = old;
+            Gx.color = old;
             if (confirm)
             {
                 TouchUi.Dim(0.6f);

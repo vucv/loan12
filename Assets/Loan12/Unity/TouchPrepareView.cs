@@ -255,7 +255,7 @@ namespace Loan12.UnityPort
         void Draw()
         {
             float k = TouchUi.K;
-            TouchUi.Fill(new Rect(0, 0, Screen.width, Screen.height), TouchUi.Background);
+            TouchUi.Fill(new Rect(0, 0, Gx.Width, Gx.Height), TouchUi.Background);
             TouchUi.Wallpaper();
             TouchUi.PixelText("CHUẨN BỊ XUẤT TRẬN", 1, TouchUi.R(90, 0, 0, 0).x, TouchUi.R(0, 11, 0, 0).y, 1, true);
 

@@ -73,13 +73,13 @@ namespace Loan12.UnityPort
             scroll = Mathf.Clamp(scroll, 0, Mathf.Max(0, contentH - room));
             if (Kit.Paint)
             {
-                TouchUi.Fill(new Rect(0, 0, Screen.width, Screen.height), TouchUi.Hex(0x141014));
+                TouchUi.Fill(new Rect(0, 0, Gx.Width, Gx.Height), TouchUi.Hex(0x141014));
             }
 
             float y = Top + 4 - scroll;
             // rows scroll under the title bar (and the map's bottom bar): their taps stay between them
             Rect area = TouchUi.R(0, Top, 180, Bottom - Top);
-            Kit.Clip(new Rect(0, area.y, Screen.width, area.height));
+            Kit.Clip(new Rect(0, area.y, Gx.Width, area.height));
             // 1. sound
             y = GroupTitle("ÂM THANH", y);
             int rows = 4;
@@ -290,7 +290,7 @@ namespace Loan12.UnityPort
             // bars over the scrolled content
             if (Kit.Paint)
             {
-                TouchUi.Fill(new Rect(0, 0, Screen.width, TouchUi.R(0, Top, 0, 0).y), TouchUi.Hex(0x0A070A));
+                TouchUi.Fill(new Rect(0, 0, Gx.Width, TouchUi.R(0, Top, 0, 0).y), TouchUi.Hex(0x0A070A));
             }
             if (Kit.TitleBar("CÀI ĐẶT"))
             {
@@ -311,8 +311,8 @@ namespace Loan12.UnityPort
                 }
                 if (Kit.Paint)
                 {
-                    TouchUi.Fill(new Rect(0, bar.y, Screen.width, Screen.height - bar.y), TouchUi.Hex(0x0A070A));
-                    TouchUi.Fill(new Rect(0, bar.y, Screen.width, TouchUi.K), TouchUi.GoldLine);
+                    TouchUi.Fill(new Rect(0, bar.y, Gx.Width, Gx.Height - bar.y), TouchUi.Hex(0x0A070A));
+                    TouchUi.Fill(new Rect(0, bar.y, Gx.Width, TouchUi.K), TouchUi.GoldLine);
                     TouchUi.Button(menu, Btn.Red, Kit.Down(601));
                     TouchUi.Label(menu, "Về menu chính", 6.5f, TextAnchor.MiddleCenter, Color.white, true);
                     TouchUi.RedButton(resume, "TIẾP TỤC", true, Kit.Down(602));
@@ -489,13 +489,13 @@ namespace Loan12.UnityPort
         {
             if (Kit.Paint)
             {
-                Color old = GUI.color;
+                Color old = Gx.color;
                 if (!enabled)
                 {
-                    GUI.color = old * new Color(1, 1, 1, 0.4f);
+                    Gx.color = old * new Color(1, 1, 1, 0.4f);
                 }
                 Kit.Chevron(TouchUi.R(168, 0, 0, 0).x, TouchUi.R(0, y + Row / 2, 0, 0).y);
-                GUI.color = old;
+                Gx.color = old;
             }
         }
 
@@ -571,7 +571,7 @@ namespace Loan12.UnityPort
             }
             if (Kit.Paint)
             {
-                TouchUi.Fill(new Rect(0, 0, Screen.width, Screen.height), TouchUi.Hex(0x141014));
+                TouchUi.Fill(new Rect(0, 0, Gx.Width, Gx.Height), TouchUi.Hex(0x141014));
             }
             float y = top + 4 - scroll;
             // how to move
@@ -630,7 +630,7 @@ namespace Loan12.UnityPort
             contentH = y + scroll - top;
             if (Kit.Paint)
             {
-                TouchUi.Fill(new Rect(0, 0, Screen.width, TouchUi.R(0, top, 0, 0).y), TouchUi.Hex(0x0A070A));
+                TouchUi.Fill(new Rect(0, 0, Gx.Width, TouchUi.R(0, top, 0, 0).y), TouchUi.Hex(0x0A070A));
             }
             bool close = Kit.TitleBar("LUẬT CHƠI");
             if (Kit.Back())
@@ -657,7 +657,7 @@ namespace Loan12.UnityPort
             }
             if (Kit.Paint)
             {
-                TouchUi.Fill(new Rect(0, 0, Screen.width, Screen.height), TouchUi.Hex(0x141014));
+                TouchUi.Fill(new Rect(0, 0, Gx.Width, Gx.Height), TouchUi.Hex(0x141014));
             }
             float y = top + 6 - scroll;
             int n = 0;
@@ -699,7 +699,7 @@ namespace Loan12.UnityPort
             contentH = y + scroll - top;
             if (Kit.Paint)
             {
-                TouchUi.Fill(new Rect(0, 0, Screen.width, TouchUi.R(0, top, 0, 0).y), TouchUi.Hex(0x0A070A));
+                TouchUi.Fill(new Rect(0, 0, Gx.Width, TouchUi.R(0, top, 0, 0).y), TouchUi.Hex(0x0A070A));
             }
             bool close = Kit.TitleBar("THÔNG TIN");
             if (Kit.Back())

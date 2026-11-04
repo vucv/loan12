@@ -116,7 +116,7 @@ namespace Loan12.UnityPort
                 }
                 else
                 {
-                    TouchUi.Fill(new Rect(0, 0, Screen.width, Screen.height), TouchUi.Background);
+                    TouchUi.Fill(new Rect(0, 0, Gx.Width, Gx.Height), TouchUi.Background);
                     TouchUi.Wallpaper();
                 }
                 Draw(afterBattle);
@@ -129,8 +129,8 @@ namespace Loan12.UnityPort
             float t = Mathf.Clamp01((Time.unscaledTime - shownAt) / 0.3f);
             float ease = 1f - (1f - t) * (1f - t);
             TouchUi.Dim((afterBattle ? 0.8f : 0.45f) * ease);
-            Color old = GUI.color;
-            GUI.color = old * new Color(1f, 1f, 1f, ease);
+            Color old = Gx.color;
+            Gx.color = old * new Color(1f, 1f, 1f, ease);
             float slide = (1f - ease) * 18f;
             if (Lost())
             {
@@ -140,7 +140,7 @@ namespace Loan12.UnityPort
             {
                 DrawWon(slide);
             }
-            GUI.color = old;
+            Gx.color = old;
         }
 
         void Hero(float y, int portrait, string name, int level)

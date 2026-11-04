@@ -448,10 +448,10 @@ namespace Loan12.UnityPort
                 {
                     TouchUi.Fill(new Rect(r.x, r.y, r.width, k), Kit.Gold);
                 }
-                Color old = GUI.color;
-                GUI.color = have ? old : old * new Color(0.3f, 0.3f, 0.32f, 1f);
+                Color old = Gx.color;
+                Gx.color = have ? old : old * new Color(0.3f, 0.3f, 0.32f, 1f);
                 TouchUi.Sprite(TouchUi.Img("/r/" + (i + 1)), new Rect(r.center.x - 12 * k, r.y + 3 * k, 24 * k, 24 * k));
-                GUI.color = old;
+                Gx.color = old;
                 if (!have)
                 {
                     TouchUi.Sprite(TouchUi.Img("/m/lock"), new Rect(r.center.x - 5 * k, r.y + 9 * k, 10 * k, 10 * k));

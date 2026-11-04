@@ -270,6 +270,12 @@ namespace Loan12.UnityPort
                 UnityBackend.DeleteAllSavedStores();
                 PlayerPrefs.DeleteAll();
                 muted = true;
+                // batch mode (e.g. a locked Mac): no window and no OnGUI; the views are drawn offscreen
+                Gx.Offscreen = Application.isBatchMode;
+                if (Gx.Offscreen)
+                {
+                    Application.targetFrameRate = 30;
+                }
             }
             C_PortScreens.f_touch = touchInterface; // the touch views replace the map's key tutorial ...
             J2ME.Host.init(backend, LcdWidth, LcdHeight);
@@ -335,6 +341,76 @@ namespace Loan12.UnityPort
             yield return new WaitForSeconds(0.15f);
             J2ME.Host.keyReleased(code);
             padHeldCode = 0;
+        }
+
+        RenderTexture offscreen;
+
+        /// <summary>The screenshot tour's picture (batch mode): the touch views drawn into a render texture.</summary>
+        public RenderTexture Offscreen
+        {
+            get { return offscreen; }
+        }
+
+        void LateUpdate()
+        {
+            if (!Gx.Offscreen || !running || lcd == null || touchViews == null)
+            {
+                return;
+            }
+            if (offscreen == null)
+            {
+                offscreen = new RenderTexture(Gx.OffW, Gx.OffH, 0, RenderTextureFormat.ARGB32);
+            }
+            RenderTexture prev = RenderTexture.active;
+            RenderTexture.active = offscreen;
+            GL.Clear(true, true, Color.black);
+            GL.PushMatrix();
+            GL.LoadPixelMatrix(0, Gx.OffW, Gx.OffH, 0);
+            Gx.BeginFrame();
+            Event ev = new Event();
+            ev.type = EventType.Repaint;
+            Event.current = ev;
+            ITouchView view = null;
+            foreach (ITouchView v in touchViews)
+            {
+                if (v.Active())
+                {
+                    view = v;
+                    break;
+                }
+            }
+            if (view != touchShown)
+            {
+                if (touchShown != null)
+                {
+                    touchShown.Reset();
+                }
+                if (view != null)
+                {
+                    view.Reset();
+                }
+                touchShown = view;
+            }
+            try
+            {
+                if (view != null)
+                {
+                    view.OnGUI(ev, lcd, false);
+                }
+                else
+                {
+                    // a screen of the game's own: its picture, fitted
+                    float sc = Mathf.Min(Gx.OffW / (float) LcdWidth, Gx.OffH / (float) LcdHeight);
+                    float w = LcdWidth * sc, h = LcdHeight * sc;
+                    Gx.DrawTextureWithTexCoords(new Rect((Gx.OffW - w) / 2, (Gx.OffH - h) / 2, w, h), lcd, new Rect(0, 1, 1, -1), false);
+                }
+            }
+            catch (System.Exception ex)
+            {
+                Debug.LogWarning("Loan12 tour: offscreen frame: " + ex.Message);
+            }
+            GL.PopMatrix();
+            RenderTexture.active = prev;
         }
 
         void Update()

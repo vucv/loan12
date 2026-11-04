@@ -18,14 +18,14 @@ namespace Loan12.UnityPort
         public static void Draw(float darken)
         {
             Texture2D map = TouchUi.Img("/m/m");
-            float s = Mathf.Max(1, Mathf.Floor(Screen.width / 240f));
-            float vw = Screen.width / s, vh = Screen.height / s;
+            float s = Mathf.Max(1, Mathf.Floor(Gx.Width / 240f));
+            float vw = Gx.Width / s, vh = Gx.Height / s;
             float x = C_PortMap.playerX() - vw / 2, y = C_PortMap.playerY() - vh / 2;
             x = vw >= 380 ? (380 - vw) / 2 : Mathf.Clamp(x, 0, 380 - vw);
             y = vh >= 380 ? (380 - vh) / 2 : Mathf.Clamp(y, 0, 380 - vh);
-            TouchUi.Fill(new Rect(0, 0, Screen.width, Screen.height), TouchUi.Hex(0x0A121E));
-            GUI.DrawTexture(new Rect(-x * s, -y * s, 380 * s, 380 * s), map);
-            TouchUi.Fill(new Rect(0, 0, Screen.width, Screen.height), new Color(0.03f, 0.02f, 0.05f, darken));
+            TouchUi.Fill(new Rect(0, 0, Gx.Width, Gx.Height), TouchUi.Hex(0x0A121E));
+            Gx.DrawTexture(new Rect(-x * s, -y * s, 380 * s, 380 * s), map);
+            TouchUi.Fill(new Rect(0, 0, Gx.Width, Gx.Height), new Color(0.03f, 0.02f, 0.05f, darken));
         }
     }
 
@@ -67,7 +67,7 @@ namespace Loan12.UnityPort
             {
                 C_PortMap.request(C_PortMap.f_TALK_SKIP, 0);
             }
-            else if (Kit.Tap(2, new Rect(0, 0, Screen.width, Screen.height)) && !busy && Time.unscaledTime - shownAt > 0.25f)
+            else if (Kit.Tap(2, new Rect(0, 0, Gx.Width, Gx.Height)) && !busy && Time.unscaledTime - shownAt > 0.25f)
             {
                 C_PortMap.request(C_PortMap.f_TALK_NEXT, 0);
             }
@@ -101,10 +101,10 @@ namespace Loan12.UnityPort
                 }
                 Rect box = TouchUi.R(6, boxY, 168, boxH);
                 TouchUi.Panel(box);
-                Color old = GUI.color;
-                GUI.color = old * new Color(1, 1, 1, t);
+                Color old = Gx.color;
+                Gx.color = old * new Color(1, 1, 1, t);
                 TouchUi.Label(TouchUi.R(14, boxY + 8, 152, boxH - 26), text, size, TextAnchor.UpperLeft, Color.white, false, true);
-                GUI.color = old;
+                Gx.color = old;
                 // centred under the text: the hint, and the bobbing arrow below it
                 TouchUi.Label(TouchUi.R(14, boxY + boxH - 21, 152, 10), "Chạm để tiếp tục · " + (index + 1) + "/" + C_PortMap.talkNowCount(),
                     6, TextAnchor.UpperCenter, TouchUi.Hex(0xD8C8DC));
@@ -190,10 +190,10 @@ namespace Loan12.UnityPort
                     TouchUi.Fill(new Rect(r.x - 1.5f * k, r.y - 1.5f * k, r.width + 3 * k, r.height + 3 * k), TouchUi.Hex(0x8BE05C));
                 }
                 Kit.Box(r, sel ? TouchUi.Hex(0x4A2049) : (can ? TouchUi.Hex(0x2E1630) : TouchUi.Hex(0x1C1220)));
-                Color old = GUI.color;
+                Color old = Gx.color;
                 if (!can)
                 {
-                    GUI.color = old * new Color(1, 1, 1, 0.55f);
+                    Gx.color = old * new Color(1, 1, 1, 0.55f);
                 }
                 TouchUi.PixelText("MỨC " + (i + 1), 1, r.x + 8 * k, r.center.y, 0, true);
                 if (open)
@@ -209,7 +209,7 @@ namespace Loan12.UnityPort
                     TouchUi.Sprite(TouchUi.Img("/m/lock"), new Rect(r.x + 58 * k, r.center.y - 6 * k, 12 * k, 12 * k));
                     TouchUi.Label(new Rect(r.x + 74 * k, r.y, 92 * k, r.height), "Chưa mở · " + Need[i], 6, TextAnchor.MiddleLeft, Kit.Muted);
                 }
-                GUI.color = old;
+                Gx.color = old;
             }
 
             // the opponent of the chosen level

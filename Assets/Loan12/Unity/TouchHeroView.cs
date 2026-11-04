@@ -68,7 +68,7 @@ namespace Loan12.UnityPort
 
             if (Kit.Paint)
             {
-                TouchUi.Fill(new Rect(0, 0, Screen.width, Screen.height), TouchUi.Background);
+                TouchUi.Fill(new Rect(0, 0, Gx.Width, Gx.Height), TouchUi.Background);
                 TouchUi.Wallpaper(0.6f);
             }
             if (askCancel)

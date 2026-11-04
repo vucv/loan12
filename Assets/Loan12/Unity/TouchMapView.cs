@@ -97,13 +97,13 @@ namespace Loan12.UnityPort
         /// <summary>Screen pixels per map pixel: the map always shows about 240 map pixels across.</summary>
         static float S
         {
-            get { return Mathf.Max(1, Mathf.Floor(Screen.width / 240f)); }
+            get { return Mathf.Max(1, Mathf.Floor(Gx.Width / 240f)); }
         }
 
         Rect ViewRect()
         {
             Rect a = TouchUi.R(0, ViewTop, 180, ViewBottom - ViewTop);
-            return new Rect(0, a.y, Screen.width, a.height);
+            return new Rect(0, a.y, Gx.Width, a.height);
         }
 
         Vector2 ToScreen(float mx, float my)
@@ -118,7 +118,7 @@ namespace Loan12.UnityPort
             Rewards.Tick();
             if (Kit.Paint)
             {
-                TouchUi.Fill(new Rect(0, 0, Screen.width, Screen.height), TouchUi.Hex(0x0A121E));
+                TouchUi.Fill(new Rect(0, 0, Gx.Width, Gx.Height), TouchUi.Hex(0x0A121E));
             }
             if (settings != null)
             {
@@ -148,7 +148,7 @@ namespace Loan12.UnityPort
             {
                 // the tab's list scrolls under the bars: its taps stay between them
                 Rect area = TouchUi.R(0, ViewTop, 180, ViewBottom - ViewTop);
-                Kit.Clip(new Rect(0, area.y, Screen.width, area.height));
+                Kit.Clip(new Rect(0, area.y, Gx.Width, area.height));
                 tabs[tab].OnGUI(this, ViewTop, ViewBottom);
                 Kit.Unclip();
             }
@@ -156,7 +156,7 @@ namespace Loan12.UnityPort
             if (Kit.Paint)
             {
                 // solid behind the resource bar (and the notch area above it)
-                TouchUi.Fill(new Rect(0, 0, Screen.width, TouchUi.R(0, ViewTop, 0, 0).y), TouchUi.Hex(0x0A121E));
+                TouchUi.Fill(new Rect(0, 0, Gx.Width, TouchUi.R(0, ViewTop, 0, 0).y), TouchUi.Hex(0x0A121E));
             }
             int bar = Kit.TopBar(4);
             if (bar == 1)
@@ -482,10 +482,10 @@ namespace Loan12.UnityPort
         void DrawMap(Rect view)
         {
             float s = S, k = TouchUi.K;
-            GUI.BeginGroup(view);
+            Gx.BeginGroup(view);
             Vector2 o = new Vector2(-camX * s, -camY * s);
             Rect mapR = new Rect(o.x, o.y, 380 * s, 380 * s);
-            GUI.DrawTexture(mapR, TouchUi.Img("/m/m"));
+            Gx.DrawTexture(mapR, TouchUi.Img("/m/m"));
 
             int nodes = C_PortMap.nodeCount();
             // locked cities
@@ -496,7 +496,7 @@ namespace Loan12.UnityPort
                     Vector2 c = o + new Vector2(C_PortMap.nodeX(n), C_PortMap.nodeY(n)) * s;
                     Oval(c, 31 * k / 2, 27 * k / 2, new Color(0, 0, 0, 0.6f));
                     float ls = 16 * Mathf.Max(1, Mathf.Round(s * 0.75f));
-                    GUI.DrawTexture(new Rect(c.x - ls / 2, c.y - ls / 2, ls, ls), TouchUi.Img("/m/lock"));
+                    Gx.DrawTexture(new Rect(c.x - ls / 2, c.y - ls / 2, ls, ls), TouchUi.Img("/m/lock"));
                 }
             }
             // open roads: gold dots
@@ -546,8 +546,8 @@ namespace Loan12.UnityPort
             Texture2D hm = TouchUi.Img("/m/hm");
             Vector2 h = o + new Vector2(C_PortMap.playerX(), C_PortMap.playerY()) * s;
             float hw = 13 * s, hh = 17 * s;
-            GUI.DrawTexture(new Rect(Mathf.Round(h.x - hw / 2), Mathf.Round(h.y - hh / 2), hw, hh), hm);
-            GUI.EndGroup();
+            Gx.DrawTexture(new Rect(Mathf.Round(h.x - hw / 2), Mathf.Round(h.y - hh / 2), hw, hh), hm);
+            Gx.EndGroup();
         }
 
         void Dots(Vector2 o, int a, int b, float step, float size, Color c)
@@ -673,8 +673,8 @@ namespace Loan12.UnityPort
             if (Kit.Paint)
             {
                 Rect bar = TouchUi.R(0, y, 180, NavH);
-                TouchUi.Fill(new Rect(0, bar.y, Screen.width, Screen.height - bar.y), TouchUi.Hex(0x1E1020));
-                TouchUi.Fill(new Rect(0, bar.y, Screen.width, k), TouchUi.Hex(0x4A2049));
+                TouchUi.Fill(new Rect(0, bar.y, Gx.Width, Gx.Height - bar.y), TouchUi.Hex(0x1E1020));
+                TouchUi.Fill(new Rect(0, bar.y, Gx.Width, k), TouchUi.Hex(0x4A2049));
             }
             for (int i = 0; i < 4; i++)
             {
@@ -784,8 +784,8 @@ namespace Loan12.UnityPort
             {
                 focus = TouchUi.R(135, Kit.H - NavH, 45, NavH);
             }
-            Kit.Modal(new Rect(0, 0, Screen.width, Screen.height));
-            if (Kit.Tap(300, new Rect(0, 0, Screen.width, Screen.height)) || Kit.Back())
+            Kit.Modal(new Rect(0, 0, Gx.Width, Gx.Height));
+            if (Kit.Tap(300, new Rect(0, 0, Gx.Width, Gx.Height)) || Kit.Back())
             {
                 tutorial++;
                 if (tutorial > 1)
@@ -799,10 +799,10 @@ namespace Loan12.UnityPort
             {
                 // dim everything but the focus
                 Color dim = new Color(0.02f, 0.01f, 0.03f, 0.62f);
-                TouchUi.Fill(new Rect(0, 0, Screen.width, focus.y), dim);
-                TouchUi.Fill(new Rect(0, focus.yMax, Screen.width, Screen.height - focus.yMax), dim);
+                TouchUi.Fill(new Rect(0, 0, Gx.Width, focus.y), dim);
+                TouchUi.Fill(new Rect(0, focus.yMax, Gx.Width, Gx.Height - focus.yMax), dim);
                 TouchUi.Fill(new Rect(0, focus.y, focus.x, focus.height), dim);
-                TouchUi.Fill(new Rect(focus.xMax, focus.y, Screen.width - focus.xMax, focus.height), dim);
+                TouchUi.Fill(new Rect(focus.xMax, focus.y, Gx.Width - focus.xMax, focus.height), dim);
                 float pulse = (Mathf.Sin(Time.unscaledTime * 6) + 1) * k;
                 Rect fr = new Rect(focus.x - pulse, focus.y - pulse, focus.width + 2 * pulse, focus.height + 2 * pulse);
                 TouchUi.Fill(new Rect(fr.x, fr.y, fr.width, k), Kit.Gold);

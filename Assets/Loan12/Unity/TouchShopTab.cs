@@ -150,7 +150,7 @@ namespace Loan12.UnityPort
             if (Kit.Paint)
             {
                 // the sub tabs stay above the scrolled list
-                TouchUi.Fill(new Rect(0, TouchUi.R(0, top, 0, 0).y, Screen.width, 22 * k), TouchUi.Hex(0x0A121E));
+                TouchUi.Fill(new Rect(0, TouchUi.R(0, top, 0, 0).y, Gx.Width, 22 * k), TouchUi.Hex(0x0A121E));
                 for (int i = 0; i < 3; i++)
                 {
                     Rect r = TouchUi.R(4 + i * 58, top + 3, 56, 16);
@@ -537,16 +537,16 @@ namespace Loan12.UnityPort
         {
             if (Kit.Paint)
             {
-                TouchUi.Fill(new Rect(0, 0, Screen.width, Screen.height), TouchUi.Hex(0x0A121E));
+                TouchUi.Fill(new Rect(0, 0, Gx.Width, Gx.Height), TouchUi.Hex(0x0A121E));
             }
             Rect area = TouchUi.R(0, 26, 180, Kit.H - 26);
-            Kit.Clip(new Rect(0, area.y, Screen.width, area.height));
+            Kit.Clip(new Rect(0, area.y, Gx.Width, area.height));
             shop.OnGUI(null, 26, Kit.H);
             Kit.Unclip();
             bool close = false;
             if (Kit.Paint)
             {
-                TouchUi.Fill(new Rect(0, 0, Screen.width, TouchUi.R(0, 26, 0, 0).y), TouchUi.Hex(0x0A070A));
+                TouchUi.Fill(new Rect(0, 0, Gx.Width, TouchUi.R(0, 26, 0, 0).y), TouchUi.Hex(0x0A070A));
             }
             if (Kit.TitleBar("CỬA HÀNG"))
             {
