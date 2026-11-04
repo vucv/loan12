@@ -35,6 +35,17 @@ private int I;
 private int J;
 private dq K;
 
+/** PORT-UI: 4 the intro scroll, 1 the ending scroll, -1 none */
+public int portStory()
+        {
+        return (this.y != null) && !this.y.a() && ((this.c == 4) || (this.c == 1)) ? this.c : -1;
+        }
+
+public float portStoryProgress()
+        {
+        return this.y == null ? 0f : this.y.portProgress();
+        }
+
 public df(boolean paramBoolean)
         {
         a(this);

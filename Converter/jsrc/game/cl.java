@@ -42,8 +42,15 @@ public class cl
         return this.b;
     }
 
+    /** PORT-UI: how far the text has scrolled, 0..1 */
+    public float portProgress() {
+        int total = this.a.length * 15 + this.s;
+        float done = this.b * 15 + this.q + this.s - this.e;
+        return Math.max(0f, Math.min(1f, done / total));
+    }
+
     public void a(Graphics paramGraphics, int paramInt1, int paramInt2) {
-        if (this.b >= this.a.length) {
+        if ((this.b >= this.a.length) || game.PortScreens.storyHidden) { // PORT-UI
             return;
         }
         int i = this.e;

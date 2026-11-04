@@ -43,6 +43,17 @@ namespace Loan12
             this.f_H = false;
         }
 
+        /** PORT-UI: 4 the intro scroll, 1 the ending scroll, -1 none */
+        public int portStory()
+        {
+            return ((this.f_y != null) && !this.f_y.a() && ((this.f_c == 4) || (this.f_c == 1)) ? this.f_c : -1);
+        }
+
+        public float portStoryProgress()
+        {
+            return (this.f_y == null ? 0.0f : this.f_y.portProgress());
+        }
+
         public C_df(bool paramBoolean)
         {
             this.__init_C_df();

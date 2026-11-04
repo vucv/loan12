@@ -74,6 +74,20 @@ public final class PortScreens {
         return 0;
     }
 
+    /** PORT-UI: the touch interface draws the story scroll itself (other languages) */
+    public static boolean storyHidden;
+
+    /** 4 the intro scroll, 1 the ending scroll, -1 none */
+    public static int story() {
+        ar s = PortUi.screen();
+        return s instanceof df ? ((df) s).portStory() : -1;
+    }
+
+    public static float storyProgress() {
+        ar s = PortUi.screen();
+        return s instanceof df ? ((df) s).portStoryProgress() : 0f;
+    }
+
     public static boolean hasDialog() {
         return PortUi.dialog() != null;
     }

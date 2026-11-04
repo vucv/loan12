@@ -119,13 +119,19 @@ namespace Loan12.UnityPort
                 return Pick(row, s);
             }
             string trimmed = s.Trim();
-            if (trimmed.Length == 0 || IsNumber(trimmed))
+            if (trimmed.Length == 0 || IsNumber(trimmed) || NeedsSystemFont(s))
             {
-                return s;
+                return s; // nothing to translate, or already Japanese / Korean
             }
             if (trimmed != s && exact.TryGetValue(trimmed, out row))
             {
                 return s.Replace(trimmed, Pick(row, trimmed));
+            }
+            // dialogues name the player's hero: "{p} tướng quân!" in the table
+            string player = PlayerName();
+            if (player.Length > 1 && s.Contains(player) && exact.TryGetValue(s.Replace(player, "{p}"), out row))
+            {
+                return Pick(row, s).Replace("{p}", NoAccents(player));
             }
             if (depth < 6)
             {
@@ -197,6 +203,30 @@ namespace Loan12.UnityPort
                 parts[i] = Translate(parts[i], depth + 1);
             }
             return string.Join(sep, parts);
+        }
+
+        static string PlayerName()
+        {
+            try
+            {
+                return C_PortMap.heroName() ?? "";
+            }
+            catch (System.Exception)
+            {
+                return "";
+            }
+        }
+
+        /// <summary>A text of the table by its key ("[intro]", "[ending]"); null in Vietnamese or when missing.</summary>
+        public static string Block(string key)
+        {
+            if (Current == Lang.Vi)
+            {
+                return null;
+            }
+            Load();
+            string[] row;
+            return exact.TryGetValue(key, out row) ? Pick(row, null) : null;
         }
 
         static string Pick(string[] row, string s)
@@ -278,12 +308,22 @@ namespace Loan12.UnityPort
             }
             exact = new Dictionary<string, string[]>();
             templates = new List<Template>();
-            TextAsset a = Resources.Load<TextAsset>("Loan12Lang/strings");
-            if (a == null)
+            // the interface (strings) and the story (dialogues, intro / ending, tutorial)
+            foreach (string file in new[] {"Loan12Lang/strings", "Loan12Lang/story"})
             {
-                return;
+                TextAsset a = Resources.Load<TextAsset>(file);
+                if (a != null)
+                {
+                    LoadTable(a.text);
+                }
             }
-            foreach (string raw in a.text.Split('\n'))
+            // longer templates first: "Hệ {0} · Cấp {1}" before "Hệ {0}"
+            templates.Sort((x, y) => Literal(y.to[0]).CompareTo(Literal(x.to[0])));
+        }
+
+        static void LoadTable(string text)
+        {
+            foreach (string raw in text.Split('\n'))
             {
                 string line = raw.TrimEnd('\r');
                 if (line.Length == 0 || line.StartsWith("#"))
@@ -311,8 +351,6 @@ namespace Loan12.UnityPort
                     exact[row[0]] = row;
                 }
             }
-            // longer templates first: "Hệ {0} · Cấp {1}" before "Hệ {0}"
-            templates.Sort((x, y) => Literal(y.to[0]).CompareTo(Literal(x.to[0])));
         }
     }
 }

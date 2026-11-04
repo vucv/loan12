@@ -611,4 +611,38 @@ rep('com/mic/smsgame/suquan/aa.java', """                if (!bg.l()) {
                 } else if (!bg.l()) {
                     localae1 = cz.a""")
 
+# the intro / ending scroll (df + cl): in another language the touch interface draws the translated
+# text over it (TouchStoryView); the game then hides its own lines, keeps the map behind and the timing
+rep('game/cl.java', """    public void a(Graphics paramGraphics, int paramInt1, int paramInt2) {
+        if (this.b >= this.a.length) {
+            return;
+        }""", """    public void a(Graphics paramGraphics, int paramInt1, int paramInt2) {
+        if ((this.b >= this.a.length) || game.PortScreens.storyHidden) { // PORT-UI
+            return;
+        }""")
+rep('game/cl.java', """    public int c() {
+        return this.b;
+    }""", """    public int c() {
+        return this.b;
+    }
+
+    /** PORT-UI: how far the text has scrolled, 0..1 */
+    public float portProgress() {
+        int total = this.a.length * 15 + this.s;
+        float done = this.b * 15 + this.q + this.s - this.e;
+        return Math.max(0f, Math.min(1f, done / total));
+    }""")
+rep('game/df.java', """public df(boolean paramBoolean)""", """/** PORT-UI: 4 the intro scroll, 1 the ending scroll, -1 none */
+public int portStory()
+        {
+        return (this.y != null) && !this.y.a() && ((this.c == 4) || (this.c == 1)) ? this.c : -1;
+        }
+
+public float portStoryProgress()
+        {
+        return this.y == null ? 0f : this.y.portProgress();
+        }
+
+public df(boolean paramBoolean)""")
+
 print('port_screens: ok')

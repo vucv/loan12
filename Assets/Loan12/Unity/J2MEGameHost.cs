@@ -220,7 +220,7 @@ namespace Loan12.UnityPort
             touchViews = new ITouchView[]
             {
                 new TouchLivesView(), new TouchResultView(battle), new TouchPauseView(battle), new TouchPrepareView(), battle,
-                new TouchBootView(), new TouchMenuView(), new TouchHeroView(), new TouchMapView(), new TouchTalkView(), new TouchArenaView()
+                new TouchBootView(), new TouchStoryView(), new TouchMenuView(), new TouchHeroView(), new TouchMapView(), new TouchTalkView(), new TouchArenaView()
             };
             EnsureCamera();
             EnsureAudioListener();
@@ -337,6 +337,7 @@ namespace Loan12.UnityPort
 
             backend.UpdateAudio();
             LifeTimer.Tick(); // +1 life every 30 minutes
+            C_PortScreens.f_storyHidden = touchInterface && Loc.Current != Lang.Vi; // TouchStoryView draws it
             UpdateSystemKeyboard();
             J2ME.Host.tick();
 

@@ -32,6 +32,13 @@ namespace Loan12
         public static int f_slot;
         private static int f_reqKind;
         private static int f_reqArg;
+        // ---- screens ------------------------------------------------------------------------------
+        /**
+         * 0 other, 1 the sound question, 2 menu, 3 hero choice, 4 map, 5 story (intro / ending), 6 shop,
+         * 7 battle, 8 splash
+         */
+        /** PORT-UI: the touch interface draws the story scroll itself (other languages) */
+        public static bool f_storyHidden;
 
         private C_PortScreens()
         {
@@ -82,6 +89,20 @@ namespace Loan12
                 return 8;
             }
             return 0;
+        }
+
+        /** PORT-UI: the touch interface draws the story scroll itself (other languages) */
+        /** 4 the intro scroll, 1 the ending scroll, -1 none */
+        public static int story()
+        {
+            C_ar s = C_PortUi.screen();
+            return ((s is C_df) ? (((C_df)(s))).portStory() : -1);
+        }
+
+        public static float storyProgress()
+        {
+            C_ar s = C_PortUi.screen();
+            return ((s is C_df) ? (((C_df)(s))).portStoryProgress() : 0.0f);
         }
 
         public static bool hasDialog()
