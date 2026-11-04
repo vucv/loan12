@@ -682,13 +682,12 @@ namespace Loan12.UnityPort
 
         /// <summary>
         /// Tutorial battle: the coach's message in a speech bubble from Lưu Cơ, the opponent of this battle
-        /// (right portrait), like the fighters' own lines; its height follows the text. While a lesson
-        /// asks for a move on the board (a gem is shown) the bubble hangs below the portraits, over the
-        /// skills and items; otherwise above them, over the bottom of the board.
+        /// (right portrait), like the fighters' own lines, above the portraits; its height follows the
+        /// text. The game's lessons about keys and its old menus are told the touch way (CoachText).
         /// </summary>
         void DrawCoach()
         {
-            string text = C_PortScreens.training() ? C_PortScreens.coach() : null;
+            string text = C_PortScreens.training() ? CoachText(C_PortScreens.coach()) : null;
             if (string.IsNullOrEmpty(text))
             {
                 return;
@@ -700,12 +699,10 @@ namespace Loan12.UnityPort
             int lines = Mathf.Max(1, TouchUi.Lines(text, textW, size));
             float h = 12 + lines * lh + (waits ? 12 : 5);
             int gem = C_PortScreens.coachGem();
-            bool below = gem >= 0;
-            // above: ends just over the portraits, like the fighters' bubbles; below: starts under them
-            float y = below ? StripTop + StripH + 7 : StripTop - 8 - h; // the tail ends at the portraits
+            float y = StripTop - 8 - h; // the tail ends at the portraits
             Rect b = TouchUi.R(8, y, 164, h);
             Color line = new Color(0.01f, 0.01f, 0.01f, 1f), fill = new Color(1f, 1f, 1f, 1f);
-            BubbleShape(b, 161, line, fill, below);
+            BubbleShape(b, 161, line, fill);
             TouchUi.Label(TouchUi.R(15, y + 3, 100, 9), "Lưu Cơ", 5.75f, TextAnchor.UpperLeft, TouchUi.Hex(0x9A5A12), true, false, false);
             TouchUi.Label(TouchUi.R(15, y + 12, textW, lines * lh + 2), text, size, TextAnchor.UpperLeft, new Color(0.1f, 0.04f, 0.1f, 1f), true, true, false);
             if (gem >= 0)
@@ -722,6 +719,23 @@ namespace Loan12.UnityPort
                 float a = 0.55f + 0.45f * Mathf.Sin(Time.unscaledTime * 5);
                 TouchUi.Label(TouchUi.R(15, y + h - 12, textW, 9), "Chạm để tiếp tục", 5.75f, TextAnchor.UpperRight, new Color(0.47f, 0.23f, 0.46f, a), true, false, false);
             }
+        }
+
+        /// <summary>The tutorial's lines that speak of keys, the T.Chiêu menu or the Túi menu, told for touch.</summary>
+        static readonly System.Collections.Generic.Dictionary<string, string> TouchLessons = new System.Collections.Generic.Dictionary<string, string>
+        {
+            {"Hãy chạm vào thanh kiếm (hoặc bấm phím 5) để chọn", "Hãy chạm vào thanh kiếm để chọn"},
+            {"Vuốt xuống hoặc chạm ô bên dưới (phím 8) để đổi chỗ", "Vuốt xuống hoặc chạm ô bên dưới để đổi chỗ"},
+            {"Tướng quân hãy mở bảng phép thuật bằng cách nhấn phím 'T.Chiêu' ,chọn một loại tuyệt chiêu và bấm 'Dùng'.",
+                "Tướng quân hãy chạm vào một tuyệt chiêu ở hàng dưới các chân dung, rồi bấm 'Dùng'."},
+            {"Tướng quân đã được thưởng 1 vật phẩm, hãy chạm 'Túi' (hoặc bấm phím #) để chọn và sử dụng vật phẩm.",
+                "Tướng quân đã được thưởng 1 vật phẩm. Hãy chạm vào vật phẩm ở hàng dưới cùng, rồi bấm 'Dùng'."}
+        };
+
+        static string CoachText(string s)
+        {
+            string t;
+            return s != null && TouchLessons.TryGetValue(s.Trim(), out t) ? t : s;
         }
 
         /// <summary>A white speech bubble with a dark pixel outline and a tail at grid x = tail, down (or up).</summary>

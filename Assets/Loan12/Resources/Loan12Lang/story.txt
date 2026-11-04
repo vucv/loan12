@@ -383,3 +383,7 @@ Tướng quân đã được thưởng 1 vật phẩm, hãy chạm 'Túi' (hoặ
 Chú ý, một lượt đi phải ghép ít nhất 3 biểu tượng giống nhau, nếu thực hiện không đúng sẽ bị mất lượt đi và tiêu hao sinh lực. Hãy cẩn trọng.	Careful: each move must match at least 3 identical icons. A wrong move costs your turn and some HP. Be careful.	注意: 1手で同じアイコンを3つ以上そろえる必要があります。間違えるとターンを失いHPも減ります。気をつけて。	주의: 한 번에 같은 아이콘을 3개 이상 맞춰야 합니다. 잘못하면 턴을 잃고 HP가 줄어듭니다. 조심하세요.
 Bạn đã hoàn thành sự kiện. Bạn được thưởng thêm {0}	Event complete! Reward: {0}	イベントクリア! 報酬: {0}	이벤트 완료! 보상: {0}
 {0} tấn công	{0} attack	攻撃 {0}	공격 {0}
+Hãy chạm vào thanh kiếm để chọn	Tap a sword to select it	剣をタップして選択してください	검을 탭하여 선택하세요
+Vuốt xuống hoặc chạm ô bên dưới để đổi chỗ	Swipe down or tap the tile below to swap	下にスワイプするか下のマスをタップして入れ替え	아래로 밀거나 아래 칸을 탭하여 교체하세요
+Tướng quân hãy chạm vào một tuyệt chiêu ở hàng dưới các chân dung, rồi bấm 'Dùng'.	General, tap a skill in the row under the portraits, then tap 'Use'.	将軍、肖像の下の列にある必殺技をタップして「使う」を押してください。	장군, 초상화 아래 줄의 필살기를 탭한 다음 '사용'을 누르세요.
+Tướng quân đã được thưởng 1 vật phẩm. Hãy chạm vào vật phẩm ở hàng dưới cùng, rồi bấm 'Dùng'.	You've been rewarded an item. Tap it in the bottom row, then tap 'Use'.	アイテムを1つ獲得しました。一番下の列のアイテムをタップして「使う」を押してください。	아이템 1개를 받았습니다. 맨 아래 줄의 아이템을 탭한 다음 '사용'을 누르세요.
