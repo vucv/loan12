@@ -43,12 +43,12 @@ namespace Loan12.UnityPort
             Kit.Begin(e, GridH);
             Rewards.Tick();
             float k = TouchUi.K, H = Kit.H;
-            const float h = 196;
+            const float h = 210;
             float t = Mathf.Clamp01((Time.unscaledTime - shownAt) / 0.2f);
             float top = Mathf.Round((H - h) / 2) + (1f - t) * 12f;
             Rect panel = TouchUi.R(14, top, 152, h);
-            Rect ad = TouchUi.R(24, top + 124, 132, 26);
-            Rect give = TouchUi.R(44, top + 158, 92, 22);
+            Rect ad = TouchUi.R(24, top + 138, 132, 26);
+            Rect give = TouchUi.R(44, top + 172, 92, 22);
             if (!Rewards.Busy && t >= 1f)
             {
                 if (Kit.Tap(1, ad))
@@ -94,7 +94,7 @@ namespace Loan12.UnityPort
                 TouchUi.Fill(new Rect(bar.x + k, bar.y + k, (bar.width - 2 * k) * Mathf.Clamp01(hp / (float) max), bar.height - 2 * k), TouchUi.Hex(0xE0383A));
                 TouchUi.Label(TouchUi.R(14, top + 82, 152, 12), C_PortUi.name(1) + " chỉ còn " + hp + "/" + max + " máu!", 7, TextAnchor.MiddleCenter,
                     TouchUi.TextGold, true);
-                TouchUi.Label(TouchUi.R(20, top + 96, 140, 24), "Xem quảng cáo để hồi 30 máu và đánh tiếp.", 6.75f, TextAnchor.UpperCenter, Kit.Cream,
+                TouchUi.Label(TouchUi.R(20, top + 98, 140, 30), "Xem quảng cáo để hồi 30 máu và đánh tiếp.", 6.75f, TextAnchor.UpperCenter, Kit.Cream,
                     false, true);
                 Kit.AdButton(ad, "HỒI 30 MÁU", Kit.Down(1), !Rewards.Busy);
                 TouchUi.TextButton(give, "BỎ CUỘC", Btn.Grey, Kit.Down(2));
