@@ -21,9 +21,8 @@ namespace Loan12.UnityPort
         float openedAt, openingAt, doubledAt = -10f;
 
         bool visible;          // on screen: stays until NHẬN, unless the game takes the map
-        float calmSince = -1f; // since when the map has been free (it flickers between free and busy
-        float lastCheck = -1f; // for a moment after the results): the boxes wait for it to settle
-        float shownAt = -10f;  // the box screen fades in over the map
+        float lastCheck = -1f;
+        float shownAt = -10f;
 
         // rewards in the order shown: gold, experience, then items from common to rare
         static readonly int[] Order = {2, C_PortMap.f_BOX_EXP, 4, 5, 3, C_PortMap.f_BOX_REFILL, 0, 1};
@@ -45,10 +44,6 @@ namespace Loan12.UnityPort
             try
             {
                 float now = Time.unscaledTime;
-                if (now - lastCheck > 0.2f)
-                {
-                    calmSince = -1f; // not asked for a while (another view had the screen): start again
-                }
                 lastCheck = now;
                 bool onMap = C_PortScreens.screenKind() == 4 && !C_PortScreens.hasDialog();
                 if (stage != 0)
@@ -63,33 +58,20 @@ namespace Loan12.UnityPort
                 if (visible)
                 {
                     // a dialogue that starts behind waits for NHẬN (it waits for a tap anyway)
-                    if (onMap && !C_PortMap.walking() && !C_PortUi.prepareView())
+                    if (onMap && !C_PortMap.walking() && !C_PortUi.prepareView() && C_PortMap.state() != 3)
                     {
                         return true;
                     }
                     visible = false;
-                    calmSince = -1f;
                     return false;
                 }
-                // right after the results: on the free map, or before the next dialogue (a quest's ending talk,
-                // the next quest's opening) so the boxes come first
-                if (onMap && (C_PortMap.free() || C_PortMap.talking()) && !C_PortMap.walking() && !C_PortUi.prepareView())
+                // straight after the results (the map behind is never shown first): as soon as the game is back on
+                // the map, busy or not, and before the next dialogue (it waits for NHẬN)
+                if (onMap && !C_PortMap.walking() && !C_PortUi.prepareView() && C_PortMap.state() != 3)
                 {
-                    if (calmSince < 0)
-                    {
-                        calmSince = now;
-                    }
-                    // a dialogue waits for a tap: no need to wait for it to settle
-                    if (now - calmSince >= 0.5f || C_PortMap.talking())
-                    {
-                        visible = true;
-                        shownAt = now;
-                        return true;
-                    }
-                }
-                else
-                {
-                    calmSince = -1f;
+                    visible = true;
+                    shownAt = now;
+                    return true;
                 }
                 return false;
             }
@@ -200,17 +182,7 @@ namespace Loan12.UnityPort
             {
                 float dt = Mathf.Clamp(now - lastFrame, 0f, 0.05f);
                 lastFrame = now;
-                float fade = Mathf.Clamp01((now - shownAt) / 0.25f);
-                MapBackdrop.Draw(0.78f * fade);
-                if (fade < 1f)
-                {
-                    // the panel rises into place as the map darkens
-                    panel.y += (1f - fade) * 12f * k;
-                    TouchUi.Panel(panel);
-                    Rewards.DrawOverlay();
-                    Kit.End();
-                    return;
-                }
+                MapBackdrop.Draw(0.78f); // dark at once: it follows the result screen directly
                 TouchUi.Panel(panel);
                 TouchUi.PixelText("HỘP QUÀ", 1, TouchUi.R(90, 0, 0, 0).x, TouchUi.R(0, top + 12, 0, 0).y, 1, true);
                 if (stage == 1)
