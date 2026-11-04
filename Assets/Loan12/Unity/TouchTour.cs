@@ -99,6 +99,22 @@ namespace Loan12.UnityPort
                 PlayerPrefs.SetInt("l12.mapTutorial.s" + C_PortScreens.f_slot, 1); // seen: not again by itself
             }
             yield return Shot("C", "map");
+            // gift boxes: 3 waiting (as after a battle), closed, opened, taken
+            if (!seen.Contains("Hboxes"))
+            {
+                seen.Add("Hboxes");
+                C_PortMap.f_boxes = 3;
+                yield return Shot("C", "boxes_closed");
+                TouchBoxView bv = J2MEGameHost.View<TouchBoxView>();
+                if (bv != null)
+                {
+                    bv.Open();
+                    yield return Shot("C", "boxes_opened", 1.2f);
+                    bv.Take();
+                }
+                C_PortMap.f_boxes = 0;
+                yield return null;
+            }
             TouchLivesView.Requested = true;
             yield return Shot("C", "lives_box");
             TouchLivesView.Requested = false;
