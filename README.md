@@ -2,7 +2,8 @@
 
 | File | Nhánh | Commit | Nội dung |
 |---|---|---|---|
-| `android/Loan12-ui-touch-1e79e50.apk` | `ui-touch` | `1e79e50` | Hồi sinh: thua khi địch dưới nửa máu thì xem quảng cáo hồi 30 máu, đánh tiếp (mới nhất) |
+| `android/Loan12-ui-touch-55ac883.apk` | `ui-touch` | `55ac883` | Hồi sinh xem quảng cáo +30 máu; hội thoại chân dung nhỏ, tên vừa màn; hộp quà ít và nhỏ hơn (mới nhất) |
+| `android/Loan12-ui-touch-1e79e50.apk` | `ui-touch` | `1e79e50` | Hồi sinh: thua khi địch dưới nửa máu thì xem quảng cáo hồi 30 máu, đánh tiếp |
 | `android/Loan12-ui-touch-78d42eb.apk` | `ui-touch` | `78d42eb` | Hộp quà: vàng/kinh nghiệm/vật phẩm (càng đắt càng hiếm), hiệu ứng mở hộp; Ngọc Ấn chọn trong túi ở màn Chuẩn bị |
 | `android/Loan12-ui-touch-ad41ed0.apk` | `ui-touch` | `ad41ed0` | Hộp quà nhiệm vụ mở được (cả nhiệm vụ hội thoại); popup Tạm dừng trượt lên đồng bộ |
 | `android/Loan12-ui-touch-f42a9a1.apk` | `ui-touch` | `f42a9a1` | Màn mở hộp quà không còn tắt rồi mở lại sau tổng kết, hiện dần lên |
