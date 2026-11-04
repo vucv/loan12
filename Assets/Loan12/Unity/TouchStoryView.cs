@@ -1,7 +1,8 @@
-// The intro and ending scroll (the game's df screen) in English, 日本語, 한국어: the game keeps its picture
-// and its timing, hides its own Vietnamese lines (PortScreens.storyHidden) and this view draws the
-// translated story over it, scrolled as far as the game's text has gone. In Vietnamese the game draws
-// it as before. BỎ QUA (top right) skips like the game's soft key.
+// The intro and ending scroll (the game's df screen), in every language: the game keeps its picture
+// (the map, without its soft-key bar) and its timing, hides its own lines (PortScreens.storyHidden) and
+// this view draws the story as paragraphs over it (the game's own lines joined in Vietnamese, the
+// table's in the other languages), scrolled as far as the game's text has gone. BỎ QUA (top right)
+// skips like the game's soft key.
 using UnityEngine;
 
 namespace Loan12.UnityPort
@@ -12,7 +13,7 @@ namespace Loan12.UnityPort
         {
             try
             {
-                return Loc.Current != Lang.Vi && C_PortScreens.screenKind() == 5 && C_PortScreens.story() >= 0 && !C_PortScreens.hasDialog();
+                return C_PortScreens.screenKind() == 5 && C_PortScreens.story() >= 0 && !C_PortScreens.hasDialog();
             }
             catch (System.Exception)
             {
@@ -29,7 +30,7 @@ namespace Loan12.UnityPort
             Kit.Begin(e);
             float k = TouchUi.K;
             int kind = C_PortScreens.story();
-            string text = Loc.Block(kind == 1 ? "[ending]" : "[intro]") ?? "";
+            string text = Loc.Block(kind == 1 ? "[ending]" : "[intro]") ?? C_PortScreens.storyText(kind) ?? "";
             if (kind == 1)
             {
                 text = text.Replace("{s}", Loc.NoAccents(C_PortMap.heroName() ?? ""));
@@ -47,9 +48,12 @@ namespace Loan12.UnityPort
             {
                 // the game's picture, fitted, then a dark veil for the text
                 TouchUi.Fill(new Rect(0, 0, Gx.Width, Gx.Height), TouchUi.Hex(0x05070C));
-                float s = Mathf.Min(Gx.Width / (float) J2MEGameHost.LcdWidth, Gx.Height / (float) J2MEGameHost.LcdHeight);
-                float w = J2MEGameHost.LcdWidth * s, h = J2MEGameHost.LcdHeight * s;
-                Gx.DrawTextureWithTexCoords(new Rect((Gx.Width - w) / 2, (Gx.Height - h) / 2, w, h), lcd, new Rect(0, 1, 1, -1), false);
+                // the game's picture over the whole width, without its soft-key bar (its own BỎ QUA)
+                const float shown = 296f;
+                float W = J2MEGameHost.LcdWidth, H = J2MEGameHost.LcdHeight;
+                float s = Mathf.Max(Gx.Width / W, Gx.Height / shown);
+                float w = W * s, h = shown * s;
+                Gx.DrawTextureWithTexCoords(new Rect((Gx.Width - w) / 2, (Gx.Height - h) / 2, w, h), lcd, new Rect(0, 1, 1, -shown / H), false);
                 TouchUi.Fill(new Rect(0, 0, Gx.Width, Gx.Height), new Color(0.02f, 0.01f, 0.03f, 0.55f));
 
                 const float size = 7.5f, width = 150;

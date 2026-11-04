@@ -83,6 +83,29 @@ public final class PortScreens {
         return s instanceof df ? ((df) s).portStory() : -1;
     }
 
+    /** the game's intro (4) / ending (1) lines as paragraphs: lines joined, a blank line between parts */
+    public static String storyText(int kind) {
+        String[] lines = kind == 1 ? com.mic.smsgame.suquan.h.i : com.mic.smsgame.suquan.h.h;
+        StringBuffer b = new StringBuffer();
+        boolean fresh = true;
+        for (int i = 0; i < lines.length; i++) {
+            String l = lines[i].trim();
+            if (l.length() == 0) {
+                if (!fresh) {
+                    b.append("\n\n");
+                    fresh = true;
+                }
+                continue;
+            }
+            if (!fresh) {
+                b.append(' ');
+            }
+            b.append(l);
+            fresh = false;
+        }
+        return b.toString();
+    }
+
     public static float storyProgress() {
         ar s = PortUi.screen();
         return s instanceof df ? ((df) s).portStoryProgress() : 0f;

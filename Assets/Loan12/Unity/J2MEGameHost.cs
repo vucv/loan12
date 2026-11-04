@@ -430,7 +430,7 @@ namespace Loan12.UnityPort
 
             backend.UpdateAudio();
             LifeTimer.Tick(); // +1 life every 30 minutes
-            C_PortScreens.f_storyHidden = touchInterface && Loc.Current != Lang.Vi; // TouchStoryView draws it
+            C_PortScreens.f_storyHidden = touchInterface; // TouchStoryView draws it
             UpdateSystemKeyboard();
             J2ME.Host.tick();
 

@@ -99,6 +99,34 @@ namespace Loan12
             return ((s is C_df) ? (((C_df)(s))).portStory() : -1);
         }
 
+        /** the game's intro (4) / ending (1) lines as paragraphs: lines joined, a blank line between parts */
+        public static string storyText(int kind)
+        {
+            string[] lines = (kind == 1 ? SQ_h.f_i : SQ_h.f_h);
+            global::System.Text.StringBuilder b = new global::System.Text.StringBuilder();
+            bool fresh = true;
+            for (int i = 0; (i < lines.Length); i++)
+            {
+                string l = lines[i].trim();
+                if (l.length() == 0)
+                {
+                    if (!fresh)
+                    {
+                        b.append("\n\n");
+                        fresh = true;
+                    }
+                    continue;
+                }
+                if (!fresh)
+                {
+                    b.append(' ');
+                }
+                b.append(l);
+                fresh = false;
+            }
+            return b.ToString();
+        }
+
         public static float storyProgress()
         {
             C_ar s = C_PortUi.screen();
