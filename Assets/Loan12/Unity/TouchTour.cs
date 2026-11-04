@@ -267,8 +267,10 @@ namespace Loan12.UnityPort
                 yield return null;
                 if (C_PortMap.slash() != null && !seen.Contains("Hmap_swords"))
                 {
-                    yield return new WaitForSeconds(0.15f); // the swords half way in
-                    yield return Once("H", "map_swords");
+                    if (seen.Add("Hmap_swords"))
+                    {
+                        yield return Shot("H", "map_swords", 0.05f); // a short animation: at once
+                    }
                     continue;
                 }
                 if (C_PortScreens.busy())
@@ -474,8 +476,10 @@ namespace Loan12.UnityPort
                 // an enemy met on the road while walking: the swords on the map, once
                 if (!seen.Contains("Hmap_swords") && Safe(() => C_PortMap.slash() != null))
                 {
-                    yield return new WaitForSeconds(0.15f);
-                    yield return Once("H", "map_swords");
+                    if (seen.Add("Hmap_swords"))
+                    {
+                        yield return Shot("H", "map_swords", 0.05f); // a short animation: at once
+                    }
                 }
             }
             if (!Safe(cond))
@@ -496,9 +500,9 @@ namespace Loan12.UnityPort
             }
         }
 
-        public static IEnumerator Shot(string group, string name)
+        public static IEnumerator Shot(string group, string name, float wait = 0.7f)
         {
-            yield return new WaitForSeconds(0.7f);
+            yield return new WaitForSeconds(wait);
             yield return Gx.Offscreen ? null : new WaitForEndOfFrame();
             n++;
             string path = Path.Combine(dir, group + n.ToString("00") + "_" + name + ".png");
