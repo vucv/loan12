@@ -553,6 +553,18 @@ namespace Loan12.UnityPort
             {
                 return;
             }
+            if (quitting)
+            {
+                // leaving (THOÁT GAME): a plain black screen until the app closes, not a frame of the
+                // game's own screen
+                if (Event.current.type == EventType.Repaint)
+                {
+                    GUI.color = Color.black;
+                    GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), Texture2D.whiteTexture);
+                    GUI.color = Color.white;
+                }
+                return;
+            }
             EnsureStyles();
             ComputeLayout();
 
