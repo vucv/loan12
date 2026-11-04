@@ -808,6 +808,7 @@ rep('game/bu.java', """    private boolean y() {
         }""")
 rep('game/bu.java', """    public int portBoxes;""", """    public int portBoxes;
     public boolean portReviveOffer;    // PORT-UI: the second chance is offered now
+    public int portV() { return this.v; } // PORT-UI (tour): the battle's state
     public boolean portReviveUsed;     // taken (or turned down) in this battle
 
     /** PORT-UI: the hero has fallen, the enemy is below half its HP, no second chance yet */

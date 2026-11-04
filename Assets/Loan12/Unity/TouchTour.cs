@@ -412,7 +412,13 @@ namespace Loan12.UnityPort
                             {
                                 b0.portBotMove();
                             }
-                            yield return Until(() => C_PortScreens.reviveOffer(), 8);
+                            for (int w = 0; w < 16 && !C_PortScreens.reviveOffer(); w++)
+                            {
+                                C_bu bb = C_PortUi.battle();
+                                Debug.Log("Loan12 tour revive: hp " + C_PortUi.hp(0) + "/" + C_PortUi.hp(1) + " of " + C_PortUi.maxHp(1)
+                                    + " state " + (bb != null ? bb.portV() : -1) + " offer " + C_PortScreens.reviveOffer());
+                                yield return new WaitForSeconds(0.5f);
+                            }
                         }
                         if (C_PortScreens.reviveOffer())
                         {

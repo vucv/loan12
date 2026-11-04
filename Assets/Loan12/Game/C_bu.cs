@@ -110,6 +110,7 @@ namespace Loan12
         public int f_portBoxes;
         public bool f_portReviveOffer;
         // PORT-UI: the second chance is offered now
+        // PORT-UI (tour): the battle's state
         public bool f_portReviveUsed;
         // taken (or turned down) in this battle
         /** PORT-UI: the hero has fallen, the enemy is below half its HP, no second chance yet */
@@ -1726,6 +1727,12 @@ namespace Loan12
         }
 
         // PORT-UI: the second chance is offered now
+        public int portV()
+        {
+            return this.f_v;
+        }
+
+        // PORT-UI (tour): the battle's state
         // taken (or turned down) in this battle
         /** PORT-UI: the hero has fallen, the enemy is below half its HP, no second chance yet */
         private bool portReviveHold(C_bn[] f)
