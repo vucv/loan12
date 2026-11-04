@@ -1,6 +1,6 @@
-// The intro and ending scroll (the game's df screen), in every language: the game keeps its picture
-// (the map, without its soft-key bar) and its timing, hides its own lines (PortScreens.storyHidden) and
-// this view draws the story as paragraphs over it (the game's own lines joined in Vietnamese, the
+// The intro and ending scroll (the game's df screen), in every language: the game keeps its map picture
+// (its map rect, shown centred in a gold frame) and its timing, hides its own lines and soft key
+// (PortScreens.storyHidden) and this view draws the story as paragraphs inside the picture (the game's own lines joined in Vietnamese, the
 // table's in the other languages), scrolled as far as the game's text has gone. BỎ QUA (top right)
 // skips like the game's soft key.
 using UnityEngine;
@@ -46,23 +46,29 @@ namespace Loan12.UnityPort
             }
             if (Kit.Paint)
             {
-                // the game's picture, fitted, then a dark veil for the text
                 TouchUi.Fill(new Rect(0, 0, Gx.Width, Gx.Height), TouchUi.Hex(0x05070C));
-                // the game's picture over the whole width (its soft key is not drawn: PortScreens.storyHidden)
-                float s = Gx.Width / (float) J2MEGameHost.LcdWidth;
-                Gx.DrawTextureWithTexCoords(new Rect(0, 0, J2MEGameHost.LcdWidth * s, J2MEGameHost.LcdHeight * s), lcd, new Rect(0, 1, 1, -1), false);
-                TouchUi.Fill(new Rect(0, 0, Gx.Width, Gx.Height), new Color(0.02f, 0.01f, 0.03f, 0.55f));
+                // the game's map picture (its rect A in df: 20, 30, 200 x 130 on the 240 x 320 screen),
+                // centred on the screen in a gold frame; the story scrolls inside it only
+                const float mx = 20, my = 30, mw = 200, mh = 130;
+                const float boxW = 172, boxH = boxW * mh / mw;
+                float boxY = Mathf.Round((Kit.H - boxH) / 2);
+                Rect box = TouchUi.R(4, boxY, boxW, boxH);
+                TouchUi.Fill(new Rect(box.x - 2 * k, box.y - 2 * k, box.width + 4 * k, box.height + 4 * k), TouchUi.Outline);
+                TouchUi.Fill(new Rect(box.x - k, box.y - k, box.width + 2 * k, box.height + 2 * k), TouchUi.GoldLine);
+                float W = J2MEGameHost.LcdWidth, H = J2MEGameHost.LcdHeight;
+                Gx.DrawTextureWithTexCoords(box, lcd, new Rect(mx / W, (my + mh) / H, mw / W, -mh / H), false);
+                TouchUi.Fill(box, new Color(0.02f, 0.01f, 0.03f, 0.5f));
 
-                const float size = 7.5f, width = 150;
+                const float size = 7.5f;
+                float width = boxW - 16;
                 float lh = TouchUi.LineHeight(size);
                 int lines = TouchUi.Lines(text, width, size);
                 float contentH = lines * lh;
                 float p = Mathf.Clamp01(C_PortScreens.storyProgress());
-                // enters from the bottom, leaves at the top, as far as the game's own text
-                float top = Kit.H - p * (contentH + Kit.H - 30);
-                Rect area = TouchUi.R(0, 30, 180, Kit.H - 30);
-                Gx.BeginGroup(area);
-                Rect r = new Rect(15 * k, (top - 30) * k, width * k, contentH * k + lh * k);
+                // enters at the bottom of the picture, leaves at its top, as far as the game's own text
+                float top = boxH - p * (contentH + boxH);
+                Gx.BeginGroup(box);
+                Rect r = new Rect(8 * k, top * k, width * k, contentH * k + lh * k);
                 TouchUi.Label(r, text, size, TextAnchor.UpperCenter, TouchUi.Hex(0xFFE9B8), false, true);
                 Gx.EndGroup();
 
