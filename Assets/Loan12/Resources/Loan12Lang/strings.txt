@@ -363,6 +363,9 @@ TRỞ VỀ	BACK	戻る	돌아가기
 ĐÁNH LẠI	RETRY	再挑戦	다시 전투
 Mở hộp vật phẩm: {0}	Item box opened: {0}	アイテム箱を開けた: {0}	아이템 상자 열림: {0}
 Đã mở thêm 1 mức luyện tập ở Đấu trường. Hãy vào đó thử sức!	A new training tier is open at the Arena. Go test your strength!	闘技場に新しい修練レベルが開放された。腕試しに行こう!	투기장에 새 수련 단계가 열렸습니다. 실력을 시험해 보세요!
+BỎ QUA LUYỆN TẬP?	SKIP TRAINING?	修練をスキップ?	수련 건너뛰기?
+Trận hướng dẫn kết thúc ngay, bạn về bản đồ. Luật chơi xem lại được trong Cài đặt.	The tutorial battle ends now and you return to the map. The rules are in Settings.	チュートリアル戦を終えてマップに戻ります。ルールは設定で確認できます。	튜토리얼 전투를 끝내고 지도로 돌아갑니다. 규칙은 설정에서 볼 수 있습니다.
+HỌC TIẾP	KEEP LEARNING	続ける	계속 배우기
 # ---- settings
 Âm thanh	Sound	サウンド	사운드
 Nhạc và tiếng trong game	Music and sound effects	BGMと効果音	음악과 효과음

@@ -4,6 +4,8 @@
 //     the battle up after a confirmation: the game's own defeat (life of the battle lost, result
 //     screen, map). The game's "Có" (save the battle and go to the menu) is not offered any more;
 //   - "Bấm tiếp tục để chơi tiếp" (the game paused itself when the app went to the background).
+//   - "Bạn có muốn bỏ qua phần luyện tập không? Có / Không" (the pause button in the tutorial
+//     battle): BỎ QUA LUYỆN TẬP? with BỎ QUA / HỌC TIẾP.
 // Sound and vibration are switched here too (settings of the Unity host, kept between sessions).
 using UnityEngine;
 
@@ -27,7 +29,7 @@ namespace Loan12.UnityPort
         {
             try
             {
-                return C_PortUi.pauseView();
+                return C_PortUi.pauseView() || TrainingAsk();
             }
             catch (System.Exception)
             {
@@ -40,6 +42,12 @@ namespace Loan12.UnityPort
             downKind = 0;
             shownAt = -1f;
             confirm = false;
+        }
+
+        /// <summary>The tutorial battle's pause: the game asks whether to skip the training.</summary>
+        static bool TrainingAsk()
+        {
+            return C_PortUi.battle() != null && C_PortScreens.training() && C_PortScreens.hasDialog();
         }
 
         static bool CanQuit()
@@ -94,6 +102,10 @@ namespace Loan12.UnityPort
 
         int Hit(Vector2 p)
         {
+            if (TrainingAsk())
+            {
+                return ConfirmYes().Contains(p) ? 8 : (ConfirmNo().Contains(p) || !ConfirmRect().Contains(p) ? 9 : 0);
+            }
             if (confirm)
             {
                 return ConfirmYes().Contains(p) ? 6 : (ConfirmNo().Contains(p) || !ConfirmRect().Contains(p) ? 7 : 0);
@@ -163,6 +175,12 @@ namespace Loan12.UnityPort
                         case 7:
                             confirm = false;
                             break;
+                        case 8:
+                            C_PortUi.request(C_PortUi.f_DIALOG_KEY, 0); // the game's "Có": skip the training
+                            break;
+                        case 9:
+                            C_PortUi.request(C_PortUi.f_DIALOG_KEY, 1); // "Không": back to the lesson
+                            break;
                     }
                 }
                 downKind = 0;
@@ -190,6 +208,18 @@ namespace Loan12.UnityPort
         void Draw(J2MEGameHost host)
         {
             float k = TouchUi.K;
+            if (TrainingAsk())
+            {
+                TouchUi.Dim(0.62f);
+                Rect box = ConfirmRect();
+                TouchUi.Panel(box);
+                TouchUi.PixelText("BỎ QUA LUYỆN TẬP?", 1, box.center.x, box.y + 16 * k, 1, true);
+                TouchUi.Label(TouchUi.R(28, 146, 124, 40), "Trận hướng dẫn kết thúc ngay, bạn về bản đồ. Luật chơi xem lại được trong Cài đặt.", 6.25f,
+                    TextAnchor.UpperCenter, TouchUi.TextSoft, false, true);
+                TouchUi.TextButton(ConfirmYes(), "BỎ QUA", Btn.Red, downKind == 8);
+                TouchUi.TextButton(ConfirmNo(), "HỌC TIẾP", Btn.Grey, downKind == 9);
+                return;
+            }
             float t = Mathf.Clamp01((Time.unscaledTime - shownAt) / 0.18f);
             TouchUi.Dim(0.62f * t);
             Color old = Gx.color;
