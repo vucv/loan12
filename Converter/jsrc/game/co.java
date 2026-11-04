@@ -110,7 +110,7 @@ public class co {
         if (this.j < 0) {
             return;
         }
-        if (!PortScreens.touch && (bg.f(5) > 0)) { // PORT-UI: no Ngọc Ấn by itself
+        if ((!PortScreens.touch && (bg.f(5) > 0)) || PortMap.takeArenaSeal()) { // PORT-UI: Ngọc Ấn only when chosen
             dd.h = true;
             bg.g(5);
         } else if (dd.e.e > dd.f.e) {

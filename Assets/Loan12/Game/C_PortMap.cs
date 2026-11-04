@@ -71,6 +71,9 @@ namespace Loan12
         /** the battle on screen was a main quest's and brings a relic box */
         /** gift boxes waiting to be opened (battle drops, quest rewards); opened on the map */
         public static int f_boxes;
+        /** Ngọc Ấn chosen for the arena's next battle (its prepare screen) */
+        public static bool f_arenaSeal;
+        /** the arena pays its ticket: the chosen Ngọc Ấn, if any is left, makes the player move first */
         /** the arena's rules are to be shown (its first visit) */
         public static bool f_arenaIntro;
         /** what the last opening gave, by item type */
@@ -690,6 +693,15 @@ namespace Loan12
         }
 
         /** gift boxes waiting to be opened (battle drops, quest rewards); opened on the map */
+        /** Ngọc Ấn chosen for the arena's next battle (its prepare screen) */
+        /** the arena pays its ticket: the chosen Ngọc Ấn, if any is left, makes the player move first */
+        public static bool takeArenaSeal()
+        {
+            bool on = C_PortMap.f_arenaSeal && ((C_bg.f(5) > 0));
+            C_PortMap.f_arenaSeal = false;
+            return on;
+        }
+
         /** the arena's rules are to be shown (its first visit) */
         /** what the last opening gave, by item type */
         /** gift boxes a quest gives: 1, 3 for the last one */

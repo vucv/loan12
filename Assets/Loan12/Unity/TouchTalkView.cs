@@ -316,7 +316,7 @@ namespace Loan12.UnityPort
             }
             if (Kit.Tap(31, fight) && !busy && chosen >= 0)
             {
-                C_PortMap.request(C_PortMap.f_ARENA_FIGHT, 0);
+                TouchPrepareView.ArenaOpen = true; // choose the items first; its XUẤT TRẬN fights
             }
             if (Kit.Back())
             {

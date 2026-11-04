@@ -524,6 +524,16 @@ public final class PortMap {
 
     /** gift boxes waiting to be opened (battle drops, quest rewards); opened on the map */
     public static int boxes;
+    /** Ngọc Ấn chosen for the arena's next battle (its prepare screen) */
+    public static boolean arenaSeal;
+
+    /** the arena pays its ticket: the chosen Ngọc Ấn, if any is left, makes the player move first */
+    public static boolean takeArenaSeal() {
+        boolean on = arenaSeal && (bg.f(5) > 0);
+        arenaSeal = false;
+        return on;
+    }
+
     /** the arena's rules are to be shown (its first visit) */
     public static boolean arenaIntro;
     /** what the last opening gave, by item type */

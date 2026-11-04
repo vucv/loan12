@@ -434,6 +434,65 @@ namespace Loan12.UnityPort
             get { return PlayerPrefs.GetInt("l12.starterBought", 0) == 1; }
         }
 
+        // ---- purchases, simulated until Google Play is connected: what a store would do. A purchase is
+        // recorded (as the store keeps it) apart from what it unlocks, so "Khôi phục giao dịch" can be
+        // tried: "gỡ gói" takes the unlocks away, the restore brings them back from the record.
+        const string StarterId = "starter_pack", VipId = "vip_lifetime";
+
+        static bool Recorded(string id)
+        {
+            return PlayerPrefs.GetInt("l12.iap." + id, 0) == 1;
+        }
+
+        static void BuyStarter()
+        {
+            PlayerPrefs.SetInt("l12.iap." + StarterId, 1);
+            PlayerPrefs.SetInt("l12.starterBought", 1);
+            PlayerPrefs.Save();
+            // its contents, once: gold, 3 Long Thần Kiếm, 3 Nhân Sâm, lives full (the new maximum)
+            C_bg.a(2, 3000, 6);
+            C_bg.a(0, 3, 6);
+            C_bg.a(1, 3, 6);
+            C_cx.f_J = Packs.MaxLives;
+            C_PortScreens.refillLives();
+            Kit.Toast("Đã mua Gói khởi đầu (giả lập): 3.000 vàng, Long Thần Kiếm x3, Nhân Sâm x3, đầy mạng");
+        }
+
+        static void BuyVip()
+        {
+            PlayerPrefs.SetInt("l12.iap." + VipId, 1);
+            PlayerPrefs.Save();
+            Rewards.Vip = true;
+            Kit.Toast("Đã kích hoạt VIP (giả lập)");
+        }
+
+        /// <summary>Khôi phục giao dịch: the unlocks of the recorded purchases (not the starter pack's contents again).</summary>
+        static void Restore()
+        {
+            string got = "";
+            if (Recorded(StarterId) && !Starter)
+            {
+                PlayerPrefs.SetInt("l12.starterBought", 1);
+                got = "Gói khởi đầu";
+            }
+            if (Recorded(VipId) && !Rewards.Vip)
+            {
+                Rewards.Vip = true;
+                got += (got.Length > 0 ? ", " : "") + "VIP";
+            }
+            PlayerPrefs.Save();
+            Kit.Toast(got.Length > 0 ? "Đã khôi phục: " + got : (Recorded(StarterId) || Recorded(VipId) ? "Các gói đã mua đều đang có" : "Không có giao dịch nào để khôi phục"));
+        }
+
+        /// <summary>Test only: takes the unlocks away (the purchase records stay, for the restore).</summary>
+        static void Unlock0()
+        {
+            PlayerPrefs.SetInt("l12.starterBought", 0);
+            PlayerPrefs.Save();
+            Rewards.Vip = false;
+            Kit.Toast("Đã gỡ các gói (thử). Bấm Khôi phục giao dịch để lấy lại");
+        }
+
         float Offers(float y)
         {
             float k = TouchUi.K;
@@ -474,8 +533,12 @@ namespace Loan12.UnityPort
                 }
                 else
                 {
-                    Kit.FlatButton(pb, "— đ", Btn.Grey, false, false);
+                    Kit.FlatButton(pb, "49.000 đ · thử", Btn.Gold, Kit.Down(71));
                 }
+            }
+            if (!Starter && Kit.Tap(71, TouchUi.R(40, y + 84, 100, 22)))
+            {
+                BuyStarter();
             }
             y += 117 + 8;
             // VIP
@@ -503,23 +566,36 @@ namespace Loan12.UnityPort
                 }
                 else
                 {
-                    Kit.FlatButton(pb, "— đ", Btn.Grey, false, false);
+                    Kit.FlatButton(pb, "199.000 đ · thử", Btn.Gold, Kit.Down(72));
                 }
+            }
+            if (!Rewards.Vip && Kit.Tap(72, TouchUi.R(40, y + 96, 100, 22)))
+            {
+                BuyVip();
             }
             y += 128 + 8;
             Rect restore = TouchUi.R(40, y, 100, 12);
             if (Kit.Tap(70, restore))
             {
-                Kit.Toast("Không có giao dịch nào để khôi phục");
+                Restore();
+            }
+            Rect unlock0 = TouchUi.R(40, y + 36, 100, 12);
+            if ((Starter || Rewards.Vip) && Kit.Tap(73, unlock0))
+            {
+                Unlock0();
+            }
+            if (Kit.Paint && (Starter || Rewards.Vip))
+            {
+                TouchUi.Label(unlock0, "Thử: gỡ các gói đã mua", 6, TextAnchor.MiddleCenter, TouchUi.Hex(0xE08080), true);
             }
             if (Kit.Paint)
             {
                 TouchUi.Label(restore, "Khôi phục giao dịch", 6.25f, TextAnchor.MiddleCenter, TouchUi.Hex(0x8CC4FF), true);
                 float w = TouchUi.TextWidth("Khôi phục giao dịch") * k;
                 TouchUi.Fill(new Rect(restore.center.x - w / 2, restore.yMax - k, w, k), TouchUi.Hex(0x8CC4FF));
-                TouchUi.Label(TouchUi.R(4, y + 16, 172, 18), "Mua bằng tiền thật sẽ mở khi game kết nối Google Play", 5.5f, TextAnchor.UpperCenter, Kit.Muted, false, true);
+                TouchUi.Label(TouchUi.R(4, y + 16, 172, 18), "Đang giả lập mua hàng để thử: chưa trừ tiền thật, sẽ thay bằng Google Play", 5.5f, TextAnchor.UpperCenter, Kit.Muted, false, true);
             }
-            return y + 36;
+            return y + 54;
         }
     }
 

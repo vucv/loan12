@@ -733,7 +733,7 @@ rep('com/mic/smsgame/suquan/aa.java', """                this.Z.a();
                 if (!game.PortScreens.touch && (bg.f(5) > 0)) { // PORT-UI: chosen on the prepare screen""")
 rep('game/co.java', """        if (bg.f(5) > 0) {
             dd.h = true;
-            bg.g(5);""", """        if (!PortScreens.touch && (bg.f(5) > 0)) { // PORT-UI: no Ngọc Ấn by itself
+            bg.g(5);""", """        if ((!PortScreens.touch && (bg.f(5) > 0)) || PortMap.takeArenaSeal()) { // PORT-UI: Ngọc Ấn only when chosen
             dd.h = true;
             bg.g(5);""")
 

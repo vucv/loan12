@@ -18,11 +18,23 @@ namespace Loan12.UnityPort
         string toast = "";
         float toastTime = -10f;
 
+        /// <summary>The arena's battle is being prepared (ĐÁNH in the arena): the same screen, its opponent.</summary>
+        public static bool ArenaOpen;
+
+        static bool Arena
+        {
+            get { return ArenaOpen && !C_PortUi.prepareView(); }
+        }
+
         public bool Active()
         {
             try
             {
-                return C_PortUi.prepareView();
+                if (ArenaOpen && !(C_PortScreens.screenKind() == 4 && C_PortMap.arena()))
+                {
+                    ArenaOpen = false; // the arena has gone (left, or its battle started)
+                }
+                return C_PortUi.prepareView() || ArenaOpen;
             }
             catch (System.Exception)
             {
@@ -34,6 +46,54 @@ namespace Loan12.UnityPort
         {
             downKind = 0;
             confirmType = -1;
+        }
+
+        // ---- the two fighters: the map's VS box, or the arena's chosen level
+
+        static int ArenaLevel
+        {
+            get { return Mathf.Max(0, C_PortMap.arenaChosen()); }
+        }
+
+        static int VsPortrait(int i)
+        {
+            return !Arena ? C_PortUi.vsPortrait(i) : (i == 0 ? C_PortMap.hero() : C_PortMap.arenaEnemy(ArenaLevel));
+        }
+
+        static string VsName(int i)
+        {
+            return !Arena ? C_PortUi.vsName(i) : (i == 0 ? C_PortMap.heroName() : QuestData.Who(C_PortMap.arenaEnemy(ArenaLevel)));
+        }
+
+        static int VsLevel(int i)
+        {
+            return !Arena ? C_PortUi.vsLevel(i) : (i == 0 ? C_PortMap.heroLevel() : C_PortMap.arenaEnemyLevel(ArenaLevel));
+        }
+
+        static int VsHp(int i)
+        {
+            return !Arena ? C_PortUi.vsHp(i) : (i == 0 ? C_PortMap.heroMaxHp() : C_PortMap.arenaEnemyHp(ArenaLevel));
+        }
+
+        static int VsAttack(int i)
+        {
+            return !Arena ? C_PortUi.vsAttack(i) : (i == 0 ? C_PortMap.heroAttack() : C_PortMap.arenaEnemyAttack(ArenaLevel));
+        }
+
+        /// <summary>1 the player moves first, -1 the enemy, 0 drawn by lot (the arena between equal levels).</summary>
+        static int First()
+        {
+            if (!Arena)
+            {
+                return C_PortUi.playerFirst() ? 1 : -1;
+            }
+            int a = VsLevel(0), b = VsLevel(1);
+            return a > b ? 1 : (a < b ? -1 : 0);
+        }
+
+        static bool CanRetreat()
+        {
+            return Arena || C_PortUi.canRetreat();
         }
 
         // four 36-px cells 6 px apart: x 9..171, centred on 90
@@ -63,7 +123,7 @@ namespace Loan12.UnityPort
         // XUẤT TRẬN alone, or RÚT LUI + XUẤT TRẬN side by side (8 px margins, room around the words)
         static Rect FightRect()
         {
-            return C_PortUi.canRetreat() ? TouchUi.R(76, 342, 96, 30) : TouchUi.R(20, 342, 140, 30);
+            return CanRetreat() ? TouchUi.R(76, 342, 96, 30) : TouchUi.R(20, 342, 140, 30);
         }
 
         static Rect BackRect()
@@ -122,7 +182,7 @@ namespace Loan12.UnityPort
                     {
                         downKind = 1;
                     }
-                    else if (BackRect().Contains(p) && C_PortUi.canRetreat())
+                    else if (BackRect().Contains(p) && CanRetreat())
                     {
                         downKind = 2;
                     }
@@ -163,20 +223,39 @@ namespace Loan12.UnityPort
                             int at = System.Array.IndexOf(slots, 5);
                             if (at >= 0)
                             {
-                                if (!C_PortUi.playerFirst())
+                                if (Arena)
+                                {
+                                    C_PortMap.f_arenaSeal = First() < 1; // used when the arena pays the ticket
+                                }
+                                else if (!C_PortUi.playerFirst())
                                 {
                                     C_PortScreens.useSeal();
                                 }
                                 slots[at] = -1;
                                 Loadout.Set(slots);
                             }
-                            C_PortUi.request(C_PortUi.f_SCREEN_KEY, 0); // "Đánh"
+                            if (Arena)
+                            {
+                                ArenaOpen = false;
+                                C_PortMap.request(C_PortMap.f_ARENA_FIGHT, 0); // the arena's "Đánh": ticket, battle
+                            }
+                            else
+                            {
+                                C_PortUi.request(C_PortUi.f_SCREEN_KEY, 0); // "Đánh"
+                            }
                         }
                         break;
                     case 2:
                         if (BackRect().Contains(p))
                         {
-                            C_PortUi.request(C_PortUi.f_SCREEN_KEY, 2); // "Rút lui"
+                            if (Arena)
+                            {
+                                ArenaOpen = false; // back to the arena's levels
+                            }
+                            else
+                            {
+                                C_PortUi.request(C_PortUi.f_SCREEN_KEY, 2); // "Rút lui"
+                            }
                         }
                         break;
                     case 3:
@@ -280,23 +359,24 @@ namespace Loan12.UnityPort
 
             // the two fighters
             TouchUi.Nine(TouchUi.Img("/m/ff"), 12, TouchUi.R(4, 22, 172, 118));
-            TouchUi.Portrait(C_PortUi.vsPortrait(0), TouchUi.R(12, 30, 64, 64));
-            TouchUi.Portrait(C_PortUi.vsPortrait(1), TouchUi.R(104, 30, 64, 64), true);
+            TouchUi.Portrait(VsPortrait(0), TouchUi.R(12, 30, 64, 64));
+            TouchUi.Portrait(VsPortrait(1), TouchUi.R(104, 30, 64, 64), true);
             Rect sw = TouchUi.R(77, 50, 26, 26);
             TouchUi.Fill(sw, TouchUi.Outline);
             Texture2D swords = TouchUi.Img("/m/sw");
             TouchUi.Sprite(swords, TouchUi.R(71, 48, swords.width, swords.height));
-            TouchUi.PixelText(C_PortUi.vsName(0).ToUpperInvariant(), 2, TouchUi.R(12, 0, 0, 0).x, TouchUi.R(0, 103, 0, 0).y, 0, true);
-            TouchUi.PixelText(C_PortUi.vsName(1).ToUpperInvariant(), 2, TouchUi.R(168, 0, 0, 0).x, TouchUi.R(0, 103, 0, 0).y, 2, true);
+            TouchUi.PixelText(VsName(0).ToUpperInvariant(), 2, TouchUi.R(12, 0, 0, 0).x, TouchUi.R(0, 103, 0, 0).y, 0, true);
+            TouchUi.PixelText(VsName(1).ToUpperInvariant(), 2, TouchUi.R(168, 0, 0, 0).x, TouchUi.R(0, 103, 0, 0).y, 2, true);
             Color stat = TouchUi.Hex(0xFFE6A0);
-            TouchUi.Label(TouchUi.R(12, 109, 76, 13), "Cấp " + C_PortUi.vsLevel(0), 7, TextAnchor.UpperLeft, stat);
-            TouchUi.Label(TouchUi.R(12, 122, 76, 13), C_PortUi.vsHp(0) + " máu", 7, TextAnchor.UpperLeft, stat);
-            TouchUi.Label(TouchUi.R(92, 109, 76, 13), "Cấp " + C_PortUi.vsLevel(1), 7, TextAnchor.UpperRight, stat);
-            TouchUi.Label(TouchUi.R(92, 122, 76, 13), C_PortUi.vsHp(1) + " máu", 7, TextAnchor.UpperRight, stat);
+            TouchUi.Label(TouchUi.R(12, 109, 76, 13), "Cấp " + VsLevel(0), 7, TextAnchor.UpperLeft, stat);
+            TouchUi.Label(TouchUi.R(12, 122, 76, 13), VsHp(0) + " máu", 7, TextAnchor.UpperLeft, stat);
+            TouchUi.Label(TouchUi.R(92, 109, 76, 13), "Cấp " + VsLevel(1), 7, TextAnchor.UpperRight, stat);
+            TouchUi.Label(TouchUi.R(92, 122, 76, 13), VsHp(1) + " máu", 7, TextAnchor.UpperRight, stat);
             // Ngọc Ấn in the slots: the player moves first (one is used on XUẤT TRẬN)
             bool seal = System.Array.IndexOf(Loadout.Get(), 5) >= 0 && C_PortUi.owned(5) > 0;
-            string first = C_PortUi.playerFirst() ? "Bạn được đi trước" : (seal ? "Bạn được đi trước (Ngọc Ấn)" : C_PortUi.vsName(1) + " được đi trước");
-            TouchUi.Label(TouchUi.R(0, 142, 180, 14), first, 7, TextAnchor.MiddleCenter, seal && !C_PortUi.playerFirst() ? TouchUi.TextGreen : TouchUi.TextSoft);
+            int f0 = First();
+            string first = f0 == 1 ? "Bạn được đi trước" : (seal ? "Bạn được đi trước (Ngọc Ấn)" : (f0 == 0 ? "Bốc thăm ai đi trước (cùng cấp)" : VsName(1) + " được đi trước"));
+            TouchUi.Label(TouchUi.R(0, 142, 180, 14), first, 7, TextAnchor.MiddleCenter, seal && f0 != 1 ? TouchUi.TextGreen : TouchUi.TextSoft);
 
             // the items to take
             TouchUi.Panel(TouchUi.R(4, 158, 172, 180));
@@ -380,9 +460,9 @@ namespace Loan12.UnityPort
                 TouchUi.Label(TouchUi.R(10, 294, 160, 34), toast, 7, TextAnchor.MiddleCenter, c, true, true);
             }
 
-            if (C_PortUi.canRetreat())
+            if (CanRetreat())
             {
-                TouchUi.TextButton(BackRect(), "RÚT LUI", Btn.Grey, downKind == 2);
+                TouchUi.TextButton(BackRect(), Arena ? "TRỞ LẠI" : "RÚT LUI", Btn.Grey, downKind == 2);
             }
             TouchUi.RedButton(FightRect(), "XUẤT TRẬN", true, downKind == 1);
 
@@ -400,10 +480,10 @@ namespace Loan12.UnityPort
 
         static string Hint()
         {
-            string enemy = C_PortUi.vsName(1);
-            int pa = C_PortUi.vsAttack(0), ea = C_PortUi.vsAttack(1);
-            int ph = C_PortUi.vsHp(0), eh = C_PortUi.vsHp(1);
-            if (ea > pa || C_PortUi.vsLevel(1) > C_PortUi.vsLevel(0))
+            string enemy = VsName(1);
+            int pa = VsAttack(0), ea = VsAttack(1);
+            int ph = VsHp(0), eh = VsHp(1);
+            if (ea > pa || VsLevel(1) > VsLevel(0))
             {
                 return "Gợi ý: " + enemy + " đánh mạnh, nên mang Quỷ Diện Giáp.";
             }

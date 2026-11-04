@@ -124,9 +124,9 @@ namespace Loan12
             {
                 return;
             }
-            if (!C_PortScreens.f_touch && ((C_bg.f(5) > 0)))
+            if ((!C_PortScreens.f_touch && ((C_bg.f(5) > 0))) || C_PortMap.takeArenaSeal())
             {
-                // PORT-UI: no Ngọc Ấn by itself
+                // PORT-UI: Ngọc Ấn only when chosen
                 C_dd.f_h = true;
                 C_bg.g(5);
             }
