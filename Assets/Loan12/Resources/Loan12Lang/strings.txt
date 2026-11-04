@@ -583,3 +583,8 @@ Vàng, kinh nghiệm hoặc vật phẩm quý	Gold, experience or rare items	金
 Đang mở…	Opening…	開封中…	여는 중…
 Bạn được đi trước (Ngọc Ấn)	You move first (Jade Seal)	先攻（玉璽）	선공 (옥새)
 Vàng	Gold	金	금
+HỒI SINH?	REVIVE?	復活する？	부활?
+HỒI 30 MÁU	+30 HP	HP30回復	체력 30 회복
+BỎ CUỘC	GIVE UP	あきらめる	포기
+{0} chỉ còn {1}/{2} máu!	{0} has only {1}/{2} HP left!	{0}の残りHPは{1}/{2}!	{0}의 남은 체력 {1}/{2}!
+Xem quảng cáo để hồi 30 máu và đánh tiếp.	Watch an ad to get 30 HP back and fight on.	広告を見てHPを30回復し、戦い続けよう。	광고를 보고 체력 30을 회복해 계속 싸우세요.

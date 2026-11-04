@@ -79,6 +79,7 @@ namespace Loan12
         //ice1
         //ice2
         //ice3
+        // PORT-UI: waiting for the player's answer (the battle stands still)
         //Detroy and random new
         // PORT-FIX: hoisted (decompiler scope bug)
         // PORT-FIX: hoisted (decompiler scope bug)
@@ -107,6 +108,12 @@ namespace Loan12
         // a little less than before (100 / 34)
         // the chest (dn draws it instead of an item)
         public int f_portBoxes;
+        public bool f_portReviveOffer;
+        // PORT-UI: the second chance is offered now
+        public bool f_portReviveUsed;
+        // taken (or turned down) in this battle
+        /** PORT-UI: the hero has fallen, the enemy is below half its HP, no second chance yet */
+        /** PORT-UI: the answer: back with 30 HP (an ad was watched), or the defeat goes on */
         // PORT-UI: gift boxes dropped in this battle
         public int[] f_portWon;
         // PORT-UI: items won in this battle (5 in a row), by type    // PORT-UI: ticks state 9 waited for the board's effects
@@ -1228,6 +1235,11 @@ namespace Loan12
         private bool y()
         {
             C_bn[] arrayOfbn = this.f_s.d();
+            if (this.portReviveHold(arrayOfbn))
+            {
+                return true;
+                // PORT-UI: waiting for the player's answer (the battle stands still)
+            }
             int i = (((arrayOfbn[0].r() > 0)) && ((arrayOfbn[1].r() > 0)) ? 0 : 1);
             if ((i != 0) || (this.f_t.o() == 1))
             {
@@ -1711,6 +1723,39 @@ namespace Loan12
             C_PortMap.f_boxes += 1;
             return 6;
             // the chest (dn draws it instead of an item)
+        }
+
+        // PORT-UI: the second chance is offered now
+        // taken (or turned down) in this battle
+        /** PORT-UI: the hero has fallen, the enemy is below half its HP, no second chance yet */
+        private bool portReviveHold(C_bn[] f)
+        {
+            if (!C_PortScreens.f_touch || this.f_s.f_d || this.f_portReviveUsed || ((f[0].r() > 0)) || ((f[1].r() <= 0)))
+            {
+                this.f_portReviveOffer = false;
+                return false;
+            }
+            if ((f[1].r() * 2 >= f[1].s()))
+            {
+                return false;
+            }
+            this.f_portReviveOffer = true;
+            return true;
+        }
+
+        /** PORT-UI: the answer: back with 30 HP (an ad was watched), or the defeat goes on */
+        public void portRevive(bool back)
+        {
+            if (!this.f_portReviveOffer)
+            {
+                return;
+            }
+            this.f_portReviveOffer = false;
+            this.f_portReviveUsed = true;
+            if (back)
+            {
+                this.f_s.d()[0].m(30);
+            }
         }
 
         // PORT-UI: gift boxes dropped in this battle

@@ -236,7 +236,7 @@ namespace Loan12.UnityPort
             TouchBattleView battle = new TouchBattleView();
             touchViews = new ITouchView[]
             {
-                new TouchLivesView(), new TouchResultView(battle), new TouchPauseView(battle), new TouchPrepareView(), battle,
+                new TouchLivesView(), new TouchResultView(battle), new TouchReviveView(battle), new TouchPauseView(battle), new TouchPrepareView(), battle,
                 new TouchBootView(), new TouchStoryView(), new TouchMenuView(), new TouchHeroView(), new TouchBoxView(), new TouchMapView(), new TouchTalkView(), new TouchArenaView(), new TouchMapHoldView()
             };
             EnsureCamera();

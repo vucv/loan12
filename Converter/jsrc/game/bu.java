@@ -939,6 +939,9 @@ public class bu
 
     private boolean y() {
         bn[] arrayOfbn = this.s.d();
+        if (portReviveHold(arrayOfbn)) {
+            return true; // PORT-UI: waiting for the player's answer (the battle stands still)
+        }
         int i = (arrayOfbn[0].r() > 0) && (arrayOfbn[1].r() > 0) ? 0 : 1;
         if ((i != 0) || (this.t.o() == 1)) {
             if (this.s.d) {
@@ -1327,7 +1330,34 @@ public class bu
         PortMap.boxes += 1;
         return 6; // the chest (dn draws it instead of an item)
     }
-    public int portBoxes; // PORT-UI: gift boxes dropped in this battle
+    public int portBoxes;
+    public boolean portReviveOffer;    // PORT-UI: the second chance is offered now
+    public boolean portReviveUsed;     // taken (or turned down) in this battle
+
+    /** PORT-UI: the hero has fallen, the enemy is below half its HP, no second chance yet */
+    private boolean portReviveHold(bn[] f) {
+        if (!PortScreens.touch || this.s.d || this.portReviveUsed || (f[0].r() > 0) || (f[1].r() <= 0)) {
+            this.portReviveOffer = false;
+            return false;
+        }
+        if (f[1].r() * 2 >= f[1].s()) {
+            return false;
+        }
+        this.portReviveOffer = true;
+        return true;
+    }
+
+    /** PORT-UI: the answer: back with 30 HP (an ad was watched), or the defeat goes on */
+    public void portRevive(boolean back) {
+        if (!this.portReviveOffer) {
+            return;
+        }
+        this.portReviveOffer = false;
+        this.portReviveUsed = true;
+        if (back) {
+            this.s.d()[0].m(30);
+        }
+    } // PORT-UI: gift boxes dropped in this battle
     public int[] portWon = new int[6]; // PORT-UI: items won in this battle (5 in a row), by type    // PORT-UI: ticks state 9 waited for the board's effects
     public ae portEndDialog;   // the result (won) or "mất 1 mạng" (lost) dialog
     public boolean portEndRetry; // the lost battle can be fought again

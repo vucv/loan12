@@ -83,6 +83,20 @@ public final class PortScreens {
         return s instanceof df ? ((df) s).portStory() : -1;
     }
 
+    /** the battle offers a second chance (beaten, the enemy below half its HP) */
+    public static boolean reviveOffer() {
+        bu b = PortUi.battle();
+        return (b != null) && b.portReviveOffer;
+    }
+
+    /** the second chance: true back with 30 HP (ad watched), false the defeat */
+    public static void revive(boolean back) {
+        bu b = PortUi.battle();
+        if (b != null) {
+            b.portRevive(back);
+        }
+    }
+
     /** Ngọc Ấn chosen on the prepare screen: the player moves first; one seal is used. false: none left */
     public static boolean useSeal() {
         if (bg.f(5) <= 0) {

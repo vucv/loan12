@@ -99,6 +99,23 @@ namespace Loan12
             return ((s is C_df) ? (((C_df)(s))).portStory() : -1);
         }
 
+        /** the battle offers a second chance (beaten, the enemy below half its HP) */
+        public static bool reviveOffer()
+        {
+            C_bu b = C_PortUi.battle();
+            return (b != null) && b.f_portReviveOffer;
+        }
+
+        /** the second chance: true back with 30 HP (ad watched), false the defeat */
+        public static void revive(bool back)
+        {
+            C_bu b = C_PortUi.battle();
+            if (b != null)
+            {
+                b.portRevive(back);
+            }
+        }
+
         /** Ngọc Ấn chosen on the prepare screen: the player moves first; one seal is used. false: none left */
         public static bool useSeal()
         {

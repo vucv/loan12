@@ -400,6 +400,29 @@ namespace Loan12.UnityPort
                         continue;
                     }
                     C_bn enemy = C_PortUi.fighter(1);
+                    // the second chance: the hero down, the enemy under half its HP, once
+                    if (!seen.Contains("Hrevive") && !C_PortScreens.training() && enemy != null && C_PortUi.fighter(0) != null)
+                    {
+                        if (!C_PortScreens.reviveOffer())
+                        {
+                            enemy.m(C_PortUi.maxHp(1) * 3 / 10);
+                            C_PortUi.fighter(0).m(0);
+                            C_bu b0 = C_PortUi.battle();
+                            if (b0 != null)
+                            {
+                                b0.portBotMove();
+                            }
+                            yield return Until(() => C_PortScreens.reviveOffer(), 8);
+                        }
+                        if (C_PortScreens.reviveOffer())
+                        {
+                            yield return Once("H", "revive");
+                            C_PortScreens.revive(true);
+                            yield return new WaitForSeconds(1f);
+                        }
+                        seen.Add("Hrevive");
+                        continue;
+                    }
                     if (enemy != null)
                     {
                         enemy.m(1);

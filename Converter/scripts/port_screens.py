@@ -798,4 +798,41 @@ rep('com/mic/smsgame/suquan/aa.java', """                this.ak = dd.f(this.z[t
                     game.PortMap.boxes += game.PortMap.questBoxes(this.z[this.B].e);
                 }""")
 
+# second chance (touch): beaten while the enemy is below half its HP, the battle stops on an offer
+# (TouchReviveView): a rewarded ad brings the hero back with 30 HP, once per battle; or the defeat
+rep('game/bu.java', """    private boolean y() {
+        bn[] arrayOfbn = this.s.d();""", """    private boolean y() {
+        bn[] arrayOfbn = this.s.d();
+        if (portReviveHold(arrayOfbn)) {
+            return true; // PORT-UI: waiting for the player's answer (the battle stands still)
+        }""")
+rep('game/bu.java', """    public int portBoxes;""", """    public int portBoxes;
+    public boolean portReviveOffer;    // PORT-UI: the second chance is offered now
+    public boolean portReviveUsed;     // taken (or turned down) in this battle
+
+    /** PORT-UI: the hero has fallen, the enemy is below half its HP, no second chance yet */
+    private boolean portReviveHold(bn[] f) {
+        if (!PortScreens.touch || this.s.d || this.portReviveUsed || (f[0].r() > 0) || (f[1].r() <= 0)) {
+            this.portReviveOffer = false;
+            return false;
+        }
+        if (f[1].r() * 2 >= f[1].s()) {
+            return false;
+        }
+        this.portReviveOffer = true;
+        return true;
+    }
+
+    /** PORT-UI: the answer: back with 30 HP (an ad was watched), or the defeat goes on */
+    public void portRevive(boolean back) {
+        if (!this.portReviveOffer) {
+            return;
+        }
+        this.portReviveOffer = false;
+        this.portReviveUsed = true;
+        if (back) {
+            this.s.d()[0].m(30);
+        }
+    }""")
+
 print('port_screens: ok')
