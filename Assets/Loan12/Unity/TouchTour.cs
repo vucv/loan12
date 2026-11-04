@@ -265,6 +265,12 @@ namespace Loan12.UnityPort
             while (Time.realtimeSinceStartup < end)
             {
                 yield return null;
+                if (C_PortMap.slash() != null && !seen.Contains("Hmap_swords"))
+                {
+                    yield return new WaitForSeconds(0.15f); // the swords half way in
+                    yield return Once("H", "map_swords");
+                    continue;
+                }
                 if (C_PortScreens.busy())
                 {
                     continue;
