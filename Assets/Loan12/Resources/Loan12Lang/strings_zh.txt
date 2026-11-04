@@ -1,0 +1,612 @@
+# vi	en	ja	ko  (see Assets/Loan12/Unity/Loc.cs)
+# ---- common
+Đóng	關閉
+ĐÓNG	關閉
+Có	是
+Không	否
+Hủy	取消
+Xong	完成
+Dừng	停止
+Thoát	離開
+THOÁT	離開
+Ở lại	留下
+Ở LẠI	留下
+Để sau	稍後
+Bỏ qua	略過
+BỎ QUA	略過
+TIẾP TỤC	繼續
+Chạm để tiếp tục	點擊繼續
+Chạm để bỏ qua	點擊略過
+Chạm để xem	點擊查看
+Chạm ra ngoài để đóng	點擊外側關閉
+chạm để tiếp	點擊繼續
+BẬT	開
+TẮT	關
+MỚI	新
+VIP	VIP
+OK	確定
+Tiếng Việt	Tiếng Việt
+English	English
+Ngôn ngữ	語言
+NGÔN NGỮ	語言
+vàng	金幣
+VÀNG	金幣
+{0} vàng	{0} 金幣
++{0} vàng	+{0} 金幣
+{0} máu	{0} HP
++{0} máu	+{0} HP
+-{0} máu	-{0} HP
++{0} năng lượng	+{0} 能量
+{0} KN	{0} 經驗
++{0} KN	+{0} 經驗
++{0} tấn công	+{0} 攻擊
+{0} cái	{0} 個
+Có {0}	持有 {0}
+Còn {0}	剩餘 {0}
+Cần {0}	需要 {0}
+Đang có {0}	擁有 {0}
+Đang có	已擁有
+Chưa có	未擁有
+Đang có: {0}	持有：{0}
+Cấp {0}	Lv {0}
+cấp {0}	Lv {0}
+Lên cấp {0}!	升級！Lv {0}
+Hệ {0}	{0}系
+HỆ {0}	{0}系
+Hệ {0} · Cấp {1}	{0}系 · Lv {1}
+Hỏa	火
+Lôi	雷
+Thủy	水
+HỎA	火
+LÔI	雷
+THỦY	水
+Máu	HP
+Máu {0} · Tấn công {1}	HP {0} · 攻擊 {1}
+Tấn công	攻擊
+Kinh nghiệm	經驗
+Ô {0}	欄位 {0}
+Mức {0}	第 {0} 階
+MỨC {0}	第 {0} 階
+{0} phút trước	{0} 分鐘前
+{0} ngày trước	{0} 天前
+vừa xong	剛剛
+hôm nay	今天
+hôm qua	昨天
+???	???
+# ---- items, skills, heroes
+Long Thần Kiếm	龍神劍
+Nhân Sâm	人參
+Ngân Lượng	銀兩
+Quỷ Diện Giáp	鬼面甲
+Bình Thuốc	藥瓶
+Ngọc Ấn	玉璽
+Bình Hồi Mạng	回命瓶
+Long Thần Kiếm x3	龍神劍 x3
+Nhân Sâm x3	人參 x3
+{0} x{1}	{0} x{1}
+Nhân đôi sức mạnh tấn công trong một lượt.	一回合內攻擊力加倍。
+Nhân đôi lượng máu cơ bản của võ tướng. Chỉ sử dụng một lần trong một trận đánh.	英雄基礎 HP 加倍。每場戰鬥限一次。
+Nhận thêm được 1000 vàng.	額外獲得 1000 金幣。
+Ngăn cản 3/4 lực tấn công của kẻ thù trong một lượt	一回合內擋下敵人 3/4 的攻擊
+Hồi phục ngay lập tức 10% sinh lực. Chỉ sử dụng một lần trong một lượt.	立即回復 10% HP。每回合限一次。
+Được ưu tiên đi trước nếu sở hữu ngọc ấn. Tự động kích hoạt khi bắt đầu trận đánh.	持有玉璽可取得先攻。戰鬥開始時自動使用。
+{0} (+{1} máu)	{0}（+{1} HP）
+Hồi đầy mạng chơi ({0} mạng). Dùng ngoài trận, ở túi đồ hoặc khi hết mạng.	補滿生命（{0} 條）。可在戰鬥外從背包使用，或生命用完時使用。
+Dùng trong 1 lượt	持續 1 回合
+1 lần mỗi trận	每場戰鬥一次
+1 lần mỗi lượt	每回合一次
+Dùng ngoài trận	戰鬥外使用
+Tự dùng khi bắt đầu trận	開戰時自動使用
+Tấn công lượt đó: {0} thành {1}	該回合攻擊：{0} → {1}
+Máu trận đó: {0} thành {1}	該場 HP：{0} → {1}
+Chặn 3/4 sát thương của lượt địch	擋下敵方回合 3/4 的傷害
+Với máu {0} của bạn: +{1} máu	以你的 {0} HP 計：+{1} HP
+Bạn luôn được đi trước	你永遠先攻
+Quả Cầu Lửa	火球
+Mưa Thiên Thạch	隕石雨
+Lửa Địa Ngục	地獄火
+Chuỗi Sét	連鎖閃電
+Khiên Sét	雷盾
+Sấm Sét	雷霆
+Mũi Tên Băng	冰箭
+Cam Lộ Thủy	甘露水
+Băng Phong	冰風暴
+Gây sát thương kẻ thù, lực sát thương bằng {0}, phá hủy tức thì 1 vùng diện tích 3x3ô trên bàn cờ.	對敵人造成 {0} 傷害，並立即摧毀盤面一塊 3x3 區域。
+Gây sát thương kẻ thù, lực sát thương bằng {0}, phá hủy tức thì từ 3 đến 5 vùng diện tích 2x2ô trên bàn cờ.	對敵人造成 {0} 傷害，並立即摧毀盤面 3 到 5 塊 2x2 區域。
+Gây sát thương kẻ thù, lực sát thương bằng {0}, phá hủy tức thì 2 vùng diện tích 4x4ô trên bàn cờ.	對敵人造成 {0} 傷害，並立即摧毀盤面兩塊 4x4 區域。
+Gây sát thương kẻ thù, lực sát thương bằng {0}, phá hủy tức thì từ 4 đến 8 ô trên bàn cờ.	對敵人造成 {0} 傷害，並立即摧毀盤面 4 到 8 個圖塊。
+Hóa giải tất cả các đòn tấn công của kẻ thù. Tác dụng trong 6 lượt.	抵銷敵人所有攻擊，持續 6 回合。
+Gây sát thương kẻ thù, lực sát thương bằng {0}, phá hủy tức thì từ 3 đến 6 vùng diện tích 3x3ô trên bàn cờ.	對敵人造成 {0} 傷害，並立即摧毀盤面 3 到 6 塊 3x3 區域。
+Gây sát thương kẻ thù, lực sát thương bằng {0}, triệt tiêu một lượng nhỏ năng lượng của kẻ thù.	對敵人造成 {0} 傷害，並吸取少量能量。
+Phục hồi 20% sinh lực cho bản thân. Phá hủy tất cả trái tim trên bàn cờ và hấp thụ sinh lực của trái tim bị hủy.	回復自身 20% HP。摧毀盤面上所有愛心並吸收其 HP。
+Đóng băng kẻ thù trong 2 lượt, gây sát thương kẻ thù, lực sát thương bằng {0}, triệt tiêu một lượng lớn năng lượng của kẻ thù.	冰凍敵人 2 回合，造成 {0} 傷害並吸取大量能量。
+Một hào kiệt mang trong người sức mạnh hủy diệt của Lửa.	身懷烈火毀滅之力的英雄。
+Đại đệ tử của Lôi Thần, có khả năng điều khiển sấm sét để tấn công kẻ thù hoặc bảo vệ bản thân.	雷神首徒，能號令雷電擊敵或護身。
+Mang trong người dòng máu của Thủy Thần, có thể tự hồi phục tổn thương và đóng băng kẻ thù.	身流水神之血：能治癒自身傷勢、冰封敵人。
+Đệ tử của Hỏa Phụng Tiên, sở hữu sức mạnh hủy diệt của Lửa.	火鳳仙人之徒，掌握烈火毀滅之力。
+Nữ hào kiệt xuất chúng, có quyền năng gọi sấm sét để tấn công kẻ thù hoặc tự bảo vệ bản thân.	傑出的女英雄，能召喚雷電擊敵或護身。
+Hậu duệ của Bắc Hải Long Vương, có thể tự trị thương hoặc làm ngưng tụ hơi nước để đóng băng kẻ thù.	北海龍王後裔：能治癒自身傷勢，或凝霧冰封敵人。
+# ---- bag
+Sát thương diện rộng mạnh nhất: Lửa Địa Ngục phá 2 vùng 4x4	範圍傷害最強：地獄火可清除兩塊 4x4 區域
+Phá nhiều ô một lúc, dễ tạo chuỗi nổ liên hoàn	一次清除大量圖塊，容易連鎖
+Hạ gục nhanh, hợp với lối đánh tấn công	速戰速決，適合猛攻打法
+Khiên Sét hóa giải mọi đòn tấn công trong 6 lượt	雷盾可擋下 6 回合內的所有攻擊
+Chuỗi Sét chỉ cần 1 ô năng lượng, phá ô rải rác	連鎖閃電只需 1 能量，可擊碎零散圖塊
+Cân bằng giữa công và thủ, an toàn khi gặp địch mạnh	攻守平衡，面對強敵也穩
+Tự hồi máu: Cam Lộ Thủy hồi 20% và hút máu từ trái tim	自我治療：甘露水回復 20%，並吸收愛心的 HP
+Đóng băng địch 2 lượt, làm mất năng lượng của địch	冰凍敵人 2 回合並吸取其能量
+Bền bỉ nhất, hợp đánh lâu	最耐打，適合持久戰
+Gom đủ 3 ô năng lượng rồi tung Lửa Địa Ngục khi địch còn nhiều máu	存 3 能量，趁敵人 HP 還多時放地獄火
+Dùng Quả Cầu Lửa dọn chỗ bàn cờ đang bí nước	用火球清掉盤面卡住的地方
+Không tự hồi máu được: mang vật phẩm hồi máu khi đánh trùm	無法自我治療：打首領記得帶回復道具
+Bật Khiên Sét khi địch sắp đầy năng lượng để chặn tuyệt chiêu	敵人快集滿能量時開雷盾
+Trong 6 lượt có khiên, tấn công dồn dập không cần phòng thủ	護盾持續期間，全力猛攻
+Để dành Sấm Sét để kết liễu	雷霆留著當最後一擊
+Đợi bàn cờ có nhiều trái tim rồi mới dùng Cam Lộ Thủy	等盤面愛心多了再用甘露水
+Tung Băng Phong khi địch sắp ra chiêu, rồi tranh thủ 2 lượt bị băng	在敵人放技能前施放冰風暴，再利用冰凍的 2 回合
+Mũi Tên Băng làm địch chậm tích năng lượng	冰箭能減緩敵人累積能量
+ƯU ĐIỂM	優勢
+MẸO KHI CHƠI	技巧
+Thông tin nhân vật	英雄資訊
+Kinh nghiệm {0} / {1} (lên cấp {2})	經驗 {0} / {1}（升至 Lv {2}）
+TUYỆT CHIÊU	技能
+{0} ô năng lượng	{0} 能量
+VẬT PHẨM	道具
+Dùng trong trận	戰鬥中使用
+Cửa hàng	商店
+mua thêm	購買更多
+Hết · chạm để mua	無 · 點擊購買
+chọn khi chuẩn bị trận	戰前選擇
+Ngọc Ấn x{0}	玉璽 x{0}
+hồi đầy mạng	生命已滿
+BẢO VẬT	寶物
+gốc {0} · sự kiện +{1}	基礎 {0} · 事件 +{1}
+Đã hồi đầy {0} mạng	生命已補滿至 {0}
+Đã mua {0} {1} (-{2} vàng)	已購買 {0} {1}（-{2} 金幣）
+Chưa có Bình Hồi Mạng	還沒有回命瓶
+Mạng đang đầy	生命已滿
+DÙNG · hồi đầy mạng	使用 · 補滿生命
+MUA THÊM {0} · {1} vàng	再買 {0} 個 · {1} 金幣
+Thiếu {0} vàng · nạp thêm	還差 {0} 金幣 · 取得金幣
+Hệ {0} · {1} ô năng lượng	{0} · {1} 能量
+# ---- battle
+Á! Đau quá...	啊！好痛……
+Hự! Ngươi khá lắm...	唔！還不賴……
+Không xong rồi!	不妙！
+Á! Ngươi khá lắm...	啊！真有兩下子……
+Hự... lợi hại!	呃……厲害！
+Đáng ghét!	可惡！
+Không lẽ ta thua ở đây sao...	難道我要輸在這裡……
+Ta... chưa chịu thua đâu!	我……還不會放棄！
+Kẻ nào dám đến đây? Nạp mạng!	何人膽敢來此？接招！
+Ngươi chạy đâu cho thoát!	你逃不掉的！
+Để xem ngươi được mấy chiêu!	讓我看看你的本事！
+Khỏe lại rồi!	我又站起來了！
+Vẫn còn sức chiến đấu!	我還能戰！
+Hừ! Chẳng nhằm nhò gì.	哼！不痛不癢。
+Đòn này chưa đủ đâu!	還不夠！
+Ha ha! Biết lợi hại của ta chưa!	哈哈！見識到我的厲害了吧！
+Thắng rồi!	勝利！
+Kẻ nào dám cản đường ta nữa?	還有誰敢擋我的路？
+Ngươi còn non lắm!	你還太嫩了！
+Về luyện thêm đi!	回去多練練吧！
+Ha ha! Chỉ có vậy thôi sao?	哈哈！就這點本事？
+Chờ đến lượt của bạn	請等待你的回合
+Cần thêm {0} năng lượng	還需要 {0} 能量
+Đã hết, mua thêm ở màn chuẩn bị	已用完，請在戰前購買
+Lượt này đã dùng 1 vật phẩm	本回合已使用過道具
+{0} mất {1} máu	{0} 損失 {1} HP
+{0} hồi {1} máu	{0} 回復 {1} HP
+{0} dùng {1}	{0} 使用了 {1}
+Nếm thử {0}!	嚐嚐我的{0}！
+Quỷ Diện Giáp chặn 3/4 đòn	鬼面甲擋下 3/4
+Long Thần Kiếm: đánh x2	龍神劍：攻擊 x2
+{0} đã chiến thắng!	{0} 獲勝！
+{0} đã thua trận	{0} 被擊敗了
+Lưu Cơ	劉基
+CHIẾN THẮNG	勝利
+THẤT BẠI	戰敗
+LƯỢT CỦA BẠN	你的回合
+LƯỢT ĐỐI THỦ	敵方回合
+Tuyệt chiêu {0}	技能 {0}
+Mỗi lượt dùng 1 vật phẩm	每回合限一個道具
+DÙNG	使用
+# ---- hero
+TẠO NHÂN VẬT	新角色
+CHỌN TƯỚNG	選擇英雄
+Bạn đã có tướng này ở Ô {0} (vẫn tạo được)	欄位 {0} 已有這位英雄（仍可建立）
+CHỌN TƯỚNG NÀY	選擇這位英雄
+Cấp 1 · tăng theo cấp	Lv 1 · 隨等級成長
+HỦY TẠO NHÂN VẬT?	取消建立？
+Chưa mất lượt tạo, lần sau tạo lại được.	建立進度會保留，之後可以再建立。
+# ---- ads, lives
+QUẢNG CÁO (THỬ NGHIỆM)	廣告（測試）
+Sẽ thay bằng quảng cáo thật	之後會換成真正的廣告
++1 mạng chơi	+1 生命
+Cần xem hết quảng cáo để nhận mạng	看完整段廣告即可獲得 1 條生命
+Chưa có quảng cáo, thử lại sau ít phút	目前沒有廣告，請過幾分鐘再試
+Đã mua và dùng Bình Hồi Mạng: đầy {0} mạng	已購買並使用回命瓶：{0} 條生命
+Thiếu {0} vàng để mua Bình Hồi Mạng	還差 {0} 金幣才能買回命瓶
+HẾT MẠNG	生命用完了
+MẠNG CHƠI	生命
+Mạng chơi	生命
+Bạn đã hết mạng chơi. Mỗi trận cần 1 mạng (thắng thì được trả lại).	你的生命用完了。每場戰鬥消耗 1 條生命（獲勝會退還）。
+Mạng chơi đang đầy ({0}/{1}).	生命已滿（{0}/{1}）。
+Bạn còn {0}/{1} mạng. Mỗi trận cần 1 mạng.	你有 {0}/{1} 條生命。每場戰鬥消耗 1 條。
+{0} +1 mạng sau {1}.	{0} {1} 後 +1 生命。
++1 MẠNG (VIP)	+1 生命（VIP）
+XEM QUẢNG CÁO · +1 MẠNG	看廣告 · +1 生命
+DÙNG BÌNH HỒI MẠNG (có {0})	使用回命瓶（持有 {0}）
+MUA BÌNH HỒI MẠNG · {0} vàng	購買回命瓶 · {0} 金幣
+Bình Hồi Mạng: hồi đầy {0} mạng	回命瓶：補滿 {0} 條生命
+# ---- map
+Bạn đang ở {0}	你在{0}
+Chưa có đường tới {0}	還沒有通往{0}的路
+Chưa mở. Làm tiếp nhiệm vụ chính để mở vùng này.	未開放。繼續主線任務即可開啟此區域。
+đánh {0}	對戰{0}
+{0} đường	{0} 條路
+Đang đi tới {0}	前往{0}
+Bản đồ	地圖
+Túi đồ	背包
+Nhiệm vụ	任務
+Dấu đỏ là nhiệm vụ chính. Chạm vào một nơi, tướng sẽ tự đi tới theo đường.	紅色標記是主線任務。點擊地點，英雄就會沿路走過去。
+Dấu cam là sự kiện phụ, dấu vàng là quân canh. Xem hết ở thẻ Nhiệm vụ.	橘色標記是支線事件，黃色是守衛。可在任務頁查看全部。
+{0}/2 · chạm để tiếp	{0}/2 · 點擊繼續
+# ---- menu
+NHÂN VẬT	角色
+Tạo nhân vật đầu tiên · miễn phí	建立你的第一個角色 · 免費
+Tạo nhân vật mới	建立新角色
+Xem 1 quảng cáo để tạo nhân vật	看 1 則廣告即可建立角色
+CHƠI MỚI	新遊戲
+CÀI ĐẶT	設定
+THOÁT GAME	離開遊戲
+CHƠI TIẾP	繼續
+Đã đủ 3 nhân vật. Hãy xóa 1 nhân vật để tạo mới.	你已有 3 個角色。請先刪除一個才能建立新角色。
+THOÁT GAME?	離開遊戲？
+Tiến độ đã được lưu.	你的進度已儲存。
+# ---- pause
+TẠM DỪNG	暫停
+Trận đấu đang tạm dừng	戰鬥已暫停
+Bạn vừa rời trò chơi, trận đấu đã tạm dừng	你離開了遊戲，戰鬥已暫停
+ÂM THANH	音效
+RUNG	震動
+THOÁT TRẬN	離開戰鬥
+Bỏ trận, về bản đồ · tính là thua	離開並返回地圖 · 視為戰敗
+THOÁT TRẬN?	離開戰鬥？
+Trận này sẽ tính là thua: mất 1 mạng chơi, không bị trừ kinh nghiệm.	視為戰敗：失去 1 條生命，不扣經驗。
+Trận này sẽ tính là thua: mất 1 mạng chơi và bị phạt kinh nghiệm như khi thua.	視為戰敗：失去 1 條生命，並照常扣經驗。
+# ---- prepare
+Chưa có {0}, bấm MUA để mua	還沒有{0}，點擊購買取得
+Đã đủ 3 món, chạm vào ô trên để bỏ bớt	已帶 3 個道具，點擊上方欄位可移除
+Không đủ vàng	金幣不足
+CHUẨN BỊ XUẤT TRẬN	戰前準備
+Bạn được đi trước	你先攻
+{0} được đi trước	{0} 先攻
+MANG VÀO TRẬN	帶入戰鬥
+TÚI ĐỒ	背包
+RÚT LUI	撤退
+XUẤT TRẬN	出戰
+Gợi ý: {0} đánh mạnh, nên mang Quỷ Diện Giáp.	提示：{0} 攻擊很痛，帶上鬼面甲。
+Gợi ý: {0} nhiều máu, nên mang Long Thần Kiếm.	提示：{0} HP 很厚，帶上龍神劍。
+Gợi ý: mang Bình Thuốc để hồi máu khi cần.	提示：帶些藥瓶，需要時回血。
+Mua {0} cái giá {1} vàng?	花 {1} 金幣購買{0}？
+Bạn đang có {0} vàng	你有 {0} 金幣
+MUA	購買
+# ---- quests
+CHÍNH TUYẾN {0}	主線 {0}
+SỰ KIỆN {0}	事件 {0}
+QUÂN CANH {0}	守衛 {0}
+Chương {0}	第 {0} 章
+Chương {0} · nhiệm vụ {1}	第 {0} 章 · 任務 {1}
+ĐÃ THỐNG NHẤT GIANG SƠN!	天下一統！
+Mở khi xong nhiệm vụ {0}	任務 {0} 後開放
++ {0} nhiệm vụ nữa trong chương	+ 本章還有 {0} 個任務
+Hội thoại	劇情
+Trận hướng dẫn	教學戰
+Đánh	戰鬥
+{0}. ĐANG LÀM	{0}. 進行中
+BẮT ĐẦU	開始
+ĐI TỚI	前往
+Đánh bại {0}	擊敗{0}
+Gặp {0}	會見{0}
++1 hộp vật phẩm	+1 道具箱
+hộp vật phẩm	道具箱
+nhiệm vụ {0}	任務 {0}
+Đã hoàn thành	已完成
+! Đang làm	! 進行中
+Loại	類型
+Nơi	地點
+Đối thủ	對手
+Đã nhận	已獲得
+Đã nhận {0}	已獲得 {0}
+Thưởng	獎勵
+Thưởng: {0}	獎勵：{0}
+Mở thêm	解鎖
+Đọc lại hội thoại	重溫劇情
+Trước nhiệm vụ	任務前
+Sau khi thắng	勝利後
+Gặp gỡ	會面
+gặp gỡ	會面
+Đi tới	前往
+Đã xong	完成
+Ở vùng chưa mở trên bản đồ	位於地圖未開放區域
+ĐẤU TRƯỜNG · TAM ĐIỆP	競技場 · 三疊
+{0}/5 mức	{0}/5 階
+mở sẵn	已開放
+thắng Lê Hoàn	擊敗黎桓
+thắng Nguyễn Ninh	擊敗 Nguyen Ninh
+đạt cấp 30	達到 Lv 30
+cấp {0} (bằng cấp bạn)	Lv {0}（你的等級）
+Đã dẹp	已通關
+Còn {0} trạm gác ở vùng chưa mở	未開放區域還有 {0} 個哨站
+Nhiệm vụ {0}	任務 {0}
+trạm gác gần {0}	{0}附近的哨站
+Trạm gác	哨站
+# ---- result
+HOÀN THÀNH NHIỆM VỤ	任務完成
+LUYỆN TẬP	修練
+Vàng nhặt được	拾得金幣
+Thưởng thắng trận	勝利獎勵
+Vật phẩm: {0}	道具：{0}
+Hộp vật phẩm (2 vật phẩm)	道具箱（2 個道具）
+Vàng thưởng	金幣獎勵
+Kinh nghiệm thưởng	經驗獎勵
+Hộp vật phẩm cuối	最終道具箱
+Hộp vật phẩm	道具箱
+Mở thêm: {0}	已解鎖：{0}
+Kinh nghiệm luyện tập	修練經驗
+Vàng hiện có	持有金幣
+thua {0}	敗給{0}
+Kinh nghiệm bị phạt	經驗懲罰
+Gợi ý: mua Bình Thuốc hoặc Quỷ Diện Giáp ở màn chuẩn bị trước khi đánh lại.	提示：再戰前，可在準備畫面購買藥瓶或鬼面甲。
+Đánh lại trận này?	要再打一次這場戰鬥嗎？
+TRỞ VỀ	返回
+ĐÁNH LẠI	重試
+Mở hộp vật phẩm: {0}	道具箱已開啟：{0}
+Đã mở thêm 1 mức luyện tập ở Đấu trường. Hãy vào đó thử sức!	競技場開放了新的修練階級，去試試你的實力吧！
+Bỏ qua trận hướng dẫn và về bản đồ? Luật chơi xem lại được trong Cài đặt.	要略過教學戰並返回地圖嗎？規則可在設定中查看。
+# ---- settings
+Âm thanh	音效
+Nhạc và tiếng trong game	音樂與音效
+Âm lượng	音量
+Rung	震動
+Khi trúng đòn, mua hàng, giữ để xoá	受擊、購買、長按刪除時
+TRÒ CHƠI	遊戲
+Luật chơi	規則
+Xếp biểu tượng, vật phẩm, cấp độ	消除、道具、等級
+Hướng dẫn bản đồ	地圖教學
+Xem lại 3 bước chỉ tay	重看 3 步指引
+Mở khi đang ở bản đồ	可在地圖上使用
+Đổi nhân vật	切換角色
+MUA HÀNG VÀ QUẢNG CÁO	購買與廣告
+Khôi phục giao dịch	恢復購買
+Không có giao dịch nào để khôi phục	沒有可恢復的購買
+HỖ TRỢ	支援
+Đánh giá game	為遊戲評分
+Chia sẻ với bạn bè	分享給朋友
+Chính sách quyền riêng tư	隱私權政策
+Thông tin và tác giả	關於與製作群
+Mã người chơi: {0}	玩家 ID：{0}
+Phiên bản {0}	版本 {0}
+Loạn 12 sứ quân	十二使君之亂
+Loạn 12 Sứ Quân	十二使君之亂
+2010 MicroGame	2010 MicroGame
+Về menu chính	返回主選單
+MENU	選單
+Thanh kiếm	劍
+Tấn công đối phương.	攻擊對手。
+Kiếm lửa	火劍
+Mạnh hơn kiếm thường, nổ thêm 1 ô xung quanh; xếp chung được với kiếm thường.	比劍更強，還會炸開周圍圖塊；可與普通劍一起消除。
+Âm dương	陰陽
+Lấy năng lượng để dùng tuyệt chiêu.	提供技能能量。
+Bánh chưng	米糕
+Lấy lương thực. Lương thực tiêu hao mỗi lượt của đối phương; hết là thua.	提供糧食。每個敵方回合都會消耗糧食，耗盡就輸了。
+Thỏi vàng	金條
+Lấy vàng để mua vật phẩm.	提供金幣，用來購買道具。
+Cuốn sách	書
+Lấy kinh nghiệm để lên cấp.	提供經驗，用來升級。
+Trái tim	愛心
+Hồi máu. Hết máu là thua trận.	回復 HP。HP 歸零就輸了。
+Xếp ít nhất 3 biểu tượng cùng loại, ngang hoặc dọc.	橫向或縱向排出至少 3 個相同圖示。
+Xếp 4 được thêm 1 lượt và có thể rơi vật phẩm; xếp 5 luôn rơi 1 vật phẩm.	消 4 個可多一回合並有機會掉落道具；消 5 個必定掉落道具。
+Xếp sai mất lượt và mất máu.	走錯一步會失去回合並扣一些 HP。
+CÁCH ĐI	操作方式
+BIỂU TƯỢNG	圖示
+Cấp càng cao thì tấn công và máu càng lớn.	等級越高，攻擊與 HP 越高。
+LUẬT CHƠI	規則
+hỗ trợ	支援
+Bản chuyển sang Unity	Unity 移植
+Màn hình cảm ứng toàn màn hình	全螢幕觸控介面
+Ghi chú	備註
+Tình tiết, cốt truyện và tên nhân vật phụ của trò chơi dựa vào sự kiện Loạn 12 Sứ Quân trong lịch sử Việt Nam ở thế kỷ X.	本作劇情與配角名稱取材自越南十世紀歷史上的「十二使君之亂」。
+THÔNG TIN	關於
+Chia sẻ	分享
+Đã chép lời mời vào bộ nhớ tạm	邀請內容已複製到剪貼簿
+Trang chính sách quyền riêng tư sẽ có trước khi phát hành	隱私權政策頁面將在上線前備妥
+# ---- shop
+PHỔ BIẾN	熱門
+LỜI NHẤT	最划算
++{0} vàng vào ví chung	+{0} 金幣存入共用錢包
+ƯU ĐÃI	優惠
+Thiếu vàng?	需要金幣？
+Rương miễn phí, gói vàng	免費寶箱、金幣包
+Vàng và vật phẩm dùng chung cho mọi nhân vật	金幣與道具由所有角色共用
+{0} vàng / gói {1} cái · có {2}	{0} 金幣 / {1} 個一包 · 持有 {2}
+{0} GÓI	{0} 包
+Còn lại sau khi mua: {0} vàng	購買後：{0} 金幣
+Bạn có {0} vàng	你有 {0} 金幣
++ VÀNG (thiếu {0})	+ 金幣（差 {0}）
+Cần xem hết quảng cáo để nhận vàng	看完整段廣告即可獲得金幣
+RƯƠNG MIỄN PHÍ	免費寶箱
+còn {0} lượt hôm nay	今日剩餘 {0} 次
+Mỗi lần mở cách nhau ít nhất 1 giờ	每次開啟需間隔至少 1 小時
+Lượt mới lúc 0:00	0:00 重置開啟次數
+Hết lượt	今天已無次數
+Chờ	等待
+MỞ NGAY	立即開啟
+MỞ	開啟
+Mua bằng tiền thật sẽ mở khi kết nối Google Play	連接 Google Play 後即可使用真實付費
+Mua bằng tiền thật sẽ mở khi game kết nối Google Play	遊戲連接 Google Play 後即可使用真實付費
+Vàng dùng chung cho mọi nhân vật · giá theo Google Play (chưa kết nối)	金幣由所有角色共用 · 價格來自 Google Play（未連接）
+GÓI KHỞI ĐẦU	新手禮包
+CHỈ 1 LẦN	限購一次
+3.000 vàng	3,000 金幣
+Đầy mạng	生命全滿
+Trị giá 6.000 vàng và đầy mạng	價值 6,000 金幣外加生命全滿
+ĐÃ MUA	已購買
+VIP TRỌN ĐỜI	永久 VIP
+Mua 1 lần, dùng mãi, cho mọi nhân vật	一次購買，永久有效，所有角色適用
+Nhận thưởng quảng cáo ngay, không phải xem	廣告獎勵直接領取，免看廣告
+Ô vật phẩm thứ 4 khi chuẩn bị xuất trận	戰前多 1 個道具欄（第 4 格）
+Tối đa 6 mạng (thường 5)	生命上限 6 條（一般為 5 條）
+Tạo nhân vật mới không cần xem quảng cáo	建立角色免看廣告
+ĐÃ KÍCH HOẠT	生效中
+CỬA HÀNG	商店
+# ---- slots
+Lưu tối đa 3 nhân vật.	最多 3 個角色。
+Lưu tối đa 3 nhân vật, mỗi nhân vật có bản đồ và cấp riêng. Vàng và vật phẩm dùng chung.	最多 3 個角色，各自擁有地圖與等級。金幣與道具共用。
+Đã đủ 3 nhân vật.	你已有 3 個角色。
+Muốn tạo nhân vật khác, hãy xóa 1 nhân vật.	若要再建立，請先刪除一個。
+Chạm vào thẻ để chọn · biểu tượng thùng rác để xóa	點擊卡片選擇 · 點垃圾桶刪除
+CHƠI	開始
+Chơi gần nhất: {0}	上次遊玩：{0}
+ĐANG CHƠI	遊玩中
+trống	空
+Tạo ngay (VIP)	立即建立（VIP）
+Xem QC để tạo	看廣告以建立
+Đang tải quảng cáo…	廣告載入中…
+Cần xem hết quảng cáo để nhận lượt tạo	看完整段廣告即可解鎖建立次數
+NHÂN VẬT MỚI	新角色
+Xem 1 quảng cáo ngắn để mở lượt tạo nhân vật thứ {0}.	看 1 則短廣告即可解鎖第 {0} 個角色。
+Xem 1 quảng cáo ngắn để mở lượt tạo nhân vật thứ {0}. {1} nhân vật hiện có giữ nguyên.	看 1 則短廣告即可解鎖第 {0} 個角色。現有的 {1} 個角色不受影響。
+XEM QUẢNG CÁO	看廣告
+VIP: tạo ngay, không cần xem quảng cáo	VIP：立即建立，免看廣告
+Đã xóa {0}	已刪除 {0}
+XÓA NHÂN VẬT?	刪除角色？
+Sẽ mất vĩnh viễn:	將永久失去：
+· Tiến độ bản đồ và nhiệm vụ	· 地圖與任務進度
+· Cấp {0} và kinh nghiệm	· 等級 {0} 與經驗
+· {0} bảo vật đã sưu tập	· 已收集的 {0} 件寶物
+Vàng, vật phẩm, mạng chơi và VIP vẫn giữ nguyên.	金幣、道具、生命與 VIP 會保留。
+GIỮ 2 GIÂY ĐỂ XÓA	長按 2 秒刪除
+# ---- arena
+ĐẤU TRƯỜNG	競技場
+Tam Điệp · luyện kinh nghiệm, trả vé bằng vàng	三疊 · 修練經驗，門票以金幣支付
+Thiếu vàng: vé mức {0} là {1} vàng	金幣不足：第 {0} 階門票需 {1} 金幣
+Mức {0} chưa mở: {1}	第 {0} 階未開放：{1}
++{0}% cấp	+{0}% 等級
+Thiếu vàng	金幣不足
+Chưa mở	未開放
+Đối thủ mức {0}	第 {0} 階對手
+Thắng: +{0} kinh nghiệm ({1}% một cấp)	勝利：+{0} 經驗（一級的 {1}%）
+Thua: mất 1 mạng, không trừ kinh nghiệm. Vàng, KN nhặt trong trận không tính.	戰敗：失去 1 條生命，不扣經驗。戰鬥中拾得的金幣與經驗不計。
+Bạn không đủ vàng cho mức nào đang mở. Mở rương miễn phí hoặc mua vàng ở Cửa hàng.	金幣不足以挑戰任何已開放階級。請開啟免費寶箱或到商店購買金幣。
+ĐÁNH	出戰
+Vé {0} vàng	門票 {0} 金幣
+# ---- quest titles (names without accents)
+Học binh pháp với Lưu Cơ	隨劉基學習兵法
+Nhận lệnh hộ tống chủ tướng	受命護送主將
+Hộ tống chủ tướng về Kỳ Bố	護送主將回奇布
+Bàn việc xưng hiệu	商議稱號
+Dẹp sơn tặc ở Tam Điệp	掃蕩三疊山賊
+Dự đại lễ xưng Vạn Thắng Vương	出席萬勝王稱號大典
+Kết hòa ước với Phạm Bạch Hổ	與范白虎締結和約
+Bàn kế đánh Bình Kiều	謀劃攻打平橋
+Đánh chiếm Bình Kiều	攻佔平橋
+Chọn hướng tiến quân	選擇進軍方向
+Đánh Ngô Nhật Khánh	討伐吳日慶
+Nhận tin Lã Đường đánh Đằng Châu	急報：呂唐進攻藤州
+Cứu viện Đằng Châu	救援藤州
+Bàn kế đánh Tế Giang	謀劃攻打細江
+Phá quân canh Tế Giang	突破細江守軍
+Diệt Lã Đường ở Tế Giang	於細江擊滅呂唐
+Từ biệt Phạm Bạch Hổ	告別范白虎
+Phá đồn Bảo Đà	攻破 Bao Da 營寨
+Bắt Đỗ Cảnh Thạc	生擒杜景碩
+Củng cố Đỗ Động	鞏固杜洞
+Giữ thành Đỗ Động	固守杜洞城
+Bàn kế đánh Tây Phù Liệt	謀劃攻打西扶列
+Hỏi tội Nguyễn Trí Khả	問罪 Nguyen Tri Kha
+Diệt Nguyễn Siêu	擊滅阮超
+Bàn kế phá liên minh	謀劃瓦解同盟
+Cứu viện Ô Man	救援 O Man
+Chuẩn bị đánh Siêu Loại	準備攻打超類
+Đánh vào Siêu Loại	進攻超類
+Đuổi bắt Lý Khuê	追捕李奎
+Xuất binh đánh Tiên Du	出兵仙遊
+Đánh Nguyễn Thủ Tiệp	討伐阮守捷
+Bàn kế đánh Cổ Loa	謀劃攻打古螺
+Phá quân canh Cổ Loa	突破古螺守軍
+Đánh Lữ Xử Bình ở Cổ Loa	於古螺迎戰呂處平
+Bàn kế đánh Tam Đái	謀劃攻打三帶
+Phá quân canh Tam Đái	突破三帶守軍
+Đánh Nguyễn Khoan ở Tam Đái	於三帶迎戰阮寬
+Nhận tin Kỳ Bố bị vây	急報：奇布被圍
+Giải vây Kỳ Bố	解奇布之圍
+Bàn kế đánh Hồi Hồ	謀劃攻打回湖
+Phá quân canh Hồi Hồ	突破回湖守軍
+Đánh Kiều Công Hãn	討伐矯公罕
+Đánh Kiều Thuận	討伐矯順
+Bàn việc xưng đế	商議稱帝
+Diệt Ấu Rồng ở Hoa Lư	於華閭斬殺幼龍
+Lễ lên ngôi Đinh Tiên Hoàng	丁先皇登基大典
+Khởi binh ở Hoa Lư	華閭起兵
+Bình Kiều	平橋
+Cứu Đằng Châu, diệt Tế Giang	救藤州，取細江
+Đỗ Động Giang	杜洞江
+Tây Phù Liệt	西扶列
+Siêu Loại và Tiên Du	超類與仙遊
+Cổ Loa và Tam Đái	古螺與三帶
+Kỳ Bố và Hồi Hồ	奇布與回湖
+Thống nhất giang sơn	一統江山
+ĐỒNG Ý	確定
+NHẬN	領取
+HỘP QUÀ	禮盒
+MỞ HỘP	開啟
+XEM QUẢNG CÁO · X2	看廣告 · X2
+Bạn nhận được {0} hộp quà	你獲得了 {0} 個禮盒
+Bạn nhận được 1 hộp quà	你獲得了 1 個禮盒
+Mỗi hộp có 1 vật phẩm	每個禮盒含 1 個道具
+Đã mở {0} hộp quà	已開啟 {0} 個禮盒
+Đã cất vào túi đồ	已放入背包
+Hộp quà	禮盒
+Hộp quà rơi trong trận	掉落禮盒
++{0} hộp quà	+{0} 禮盒
+{0} hộp quà	{0} 個禮盒
+Đã mở Đấu trường Tam Điệp: nơi luyện điểm kinh nghiệm.	三疊競技場已開放：修練經驗的好地方。
+Mỗi lần vào đấu phải trả vé bằng vàng.	每場戰鬥需支付金幣門票。
+Thắng: nhận kinh nghiệm theo cấp hiện tại.	勝利：依你的等級獲得經驗。
+Thua: mất 1 mạng, không bị trừ kinh nghiệm.	戰敗：失去 1 條生命，不扣經驗。
+Vàng và kinh nghiệm nhặt trong trận không được tính; máu không bị ảnh hưởng.	戰鬥中拾得的金幣與經驗不計；你的 HP 不受影響。
+Lúc đầu mở 2 mức, thắng các tướng mạnh để mở thêm 3 mức.	初始開放 2 階；擊敗強將可再開啟 3 階。
+Vàng, kinh nghiệm hoặc vật phẩm quý	金幣、經驗或稀有道具
+Đang mở…	開啟中…
+Bạn được đi trước (Ngọc Ấn)	你先攻（玉璽）
+Vàng	金幣
+HỒI SINH?	復活？
+HỒI 30 MÁU	+30 HP
+BỎ CUỘC	放棄
+{0} chỉ còn {1}/{2} máu!	{0} 只剩 {1}/{2} HP！
+Xem quảng cáo để hồi 30 máu và đánh tiếp.	看廣告即可回復 30 HP 繼續戰鬥。
+KHỞI ĐẦU	新手
+Ô thứ 3 mở khi mua Gói khởi đầu (Cửa hàng · Ưu đãi)	欄位 3 隨新手禮包開放（商店 · 優惠）
+Ô thứ 4 mở khi mua gói VIP (Cửa hàng · Ưu đãi)	欄位 4 隨 VIP 開放（商店 · 優惠）
+Đã đủ {0} món, chạm vào ô trên để bỏ bớt	已帶 {0} 個道具，點擊上方欄位可移除
+Mang 3 vật phẩm vào trận	可帶 3 個道具入戰
+tối đa 4 mạng	生命上限 4 條
+Mang 4 vật phẩm vào trận (thường 2)	可帶 4 個道具入戰（一般為 2 個）
+Tối đa 5 mạng (thường 3)	生命上限 5 條（一般為 3 條）
+Bốc thăm ai đi trước (cùng cấp)	先攻順序隨機決定（同等級）
+TRỞ LẠI	返回
+49.000 đ · thử	49.000 đ · 測試
+199.000 đ · thử	199.000 đ · 測試
+Đã mua Gói khởi đầu (giả lập): 3.000 vàng, Long Thần Kiếm x3, Nhân Sâm x3, đầy mạng	已購買新手禮包（模擬）：3,000 金幣、龍神劍 x3、人參 x3、生命全滿
+Đã kích hoạt VIP (giả lập)	VIP 已啟用（模擬）
+Đã khôi phục: {0}	已恢復：{0}
+Các gói đã mua đều đang có	所有已購禮包皆已生效
+Đã gỡ các gói (thử). Bấm Khôi phục giao dịch để lấy lại	禮包已移除（測試）。點擊「恢復購買」即可取回
+Thử: gỡ các gói đã mua	測試：移除已購禮包
+Đang giả lập mua hàng để thử: chưa trừ tiền thật, sẽ thay bằng Google Play	購買為測試模擬：不花真錢，Google Play 之後上線
+Đã mua {0} vàng (giả lập, {1})	已購買 {0} 金幣（模擬，{1}）
+thử	測試
+Vàng dùng chung cho mọi nhân vật · mua giả lập để thử, chưa trừ tiền thật	金幣由所有角色共用 · 測試用模擬購買，不花真錢
