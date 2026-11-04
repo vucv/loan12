@@ -2,7 +2,8 @@
 
 | File | Nhánh | Commit | Nội dung |
 |---|---|---|---|
-| `android/Loan12-ui-touch-98aab6b.apk` | `ui-touch` | `98aab6b` | Mở đầu không nháy hình cũ; nút MENU chữ pixel; tướng trên bản đồ to gấp đôi; tab Bản đồ icon 2 kiếm; "Thông tin nhân vật" ở giữa; sửa tab trên màn nhiệm vụ (mới nhất) |
+| `android/Loan12-ui-touch-004916c.apk` | `ui-touch` | `004916c` | Trận hướng dẫn: Ở LẠI đóng hộp tạm dừng; bản đồ: ổ khóa to gấp đôi, bỏ nền đen (mới nhất) |
+| `android/Loan12-ui-touch-98aab6b.apk` | `ui-touch` | `98aab6b` | Mở đầu không nháy hình cũ; nút MENU chữ pixel; tướng trên bản đồ to gấp đôi; tab Bản đồ icon 2 kiếm; "Thông tin nhân vật" ở giữa; sửa tab trên màn nhiệm vụ |
 | `android/Loan12-ui-touch-589214a.apk` | `ui-touch` | `589214a` | Như 11fb4ee, chữ "Thông tin nhân vật" không đè góc khung |
 | `android/Loan12-ui-touch-11fb4ee.apk` | `ui-touch` | `11fb4ee` | Túi đồ: "Thông tin nhân vật"; icon tab mới: Bản đồ (bản đồ nhỏ), Túi đồ (tướng), Nhiệm vụ (kinh nghiệm) |
 | `android/Loan12-ui-touch-d35c327.apk` | `ui-touch` | `d35c327` | Trận hướng dẫn không mang vật phẩm; màn kết thúc: mỗi vật phẩm một dòng như vàng, kinh nghiệm |
