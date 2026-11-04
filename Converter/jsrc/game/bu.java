@@ -1392,7 +1392,9 @@ public class bu
         for (int j = 0; j < arr.length; j++) {
             if ((arr[j].a == type) && (arr[j].b > 0)) {
                 arr[j].a();
-                bg.g(type);
+                if (!this.s.d) {
+                    bg.g(type); // PORT-UI: the tutorial's item is not from the bag
+                }
                 a("item", type);
                 return;
             }

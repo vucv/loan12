@@ -683,4 +683,18 @@ rep('game/ar.java', """    protected final void c(Graphics paramGraphics) {
         }
         if (b()) {""")
 
+# the tutorial battle starts with no items (the bag's items are not brought into it): only the item
+# the tutorial gives (5 in a row) is there, and using it takes nothing from the bag
+rep('game/cq.java', """        arrayOfInt[5] = 0;
+        this.a = new dx[arrayOfInt.length];""", """        arrayOfInt[5] = 0;
+        if (this.d) {
+            arrayOfInt = new int[arrayOfInt.length]; // PORT-UI: no items in the tutorial
+        }
+        this.a = new dx[arrayOfInt.length];""")
+rep('game/bu.java', """                arr[j].a();
+                bg.g(type);""", """                arr[j].a();
+                if (!this.s.d) {
+                    bg.g(type); // PORT-UI: the tutorial's item is not from the bag
+                }""")
+
 print('port_screens: ok')

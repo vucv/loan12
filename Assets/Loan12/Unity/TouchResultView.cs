@@ -207,29 +207,31 @@ namespace Loan12.UnityPort
 
             // rewards
             float y = y0 + 50;
+            rowH = 22;
             if (mode == 0)
             {
+                // items won with 5 in a row (already in the bag): one row each, like gold and experience
+                int rows = 3 + (C_PortMap.battleRelic() ? 1 : 0);
+                foreach (int t in MapUi.Items)
+                {
+                    if (C_PortMap.battleWon(t) > 0)
+                    {
+                        rows++;
+                    }
+                }
+                // up to 5 rows at full height, more get thinner to stay above "Vàng hiện có"
+                rowH = rows <= 5 ? 22 : Mathf.Max(13, Mathf.Floor(136f / rows) - 2);
+                y = y0 + 50;
                 Row(ref y, "/gold", "Vàng nhặt được", "+" + C_PortUi.resultGoldGain());
                 Row(ref y, "/book", "Kinh nghiệm", "+" + C_PortUi.resultExpGain());
                 Row(ref y, "/book", "Thưởng thắng trận", "+" + C_PortUi.resultWinBonus());
-                // items won with 5 in a row (already in the bag)
-                string won = "";
-                int first = -1;
                 foreach (int t in MapUi.Items)
                 {
                     int n = C_PortMap.battleWon(t);
                     if (n > 0)
                     {
-                        won += (won.Length > 0 ? ", " : "") + C_PortUi.itemName(t) + " x" + n;
-                        if (first < 0)
-                        {
-                            first = t;
-                        }
+                        Row(ref y, null, C_PortUi.itemName(t), "+" + n, t);
                     }
-                }
-                if (first >= 0)
-                {
-                    ItemRow(ref y, first, "Vật phẩm: " + won);
                 }
                 if (C_PortMap.battleRelic())
                 {
@@ -289,20 +291,6 @@ namespace Loan12.UnityPort
             return s;
         }
 
-        static void ItemRow(ref float y, int type, string label)
-        {
-            float h = 22;
-            int lines = TouchUi.Lines(label, 118, 6.5f);
-            if (lines > 1)
-            {
-                h = 30;
-            }
-            TouchUi.Fill(TouchUi.R(14, y, 152, h), TouchUi.PurpleDark);
-            TouchUi.Item(type, TouchUi.R(17, y + (h - 20) / 2f, 20, 20));
-            TouchUi.Label(TouchUi.R(42, y, 120, h), label, 6.5f, TextAnchor.MiddleLeft, Color.white, true, true);
-            y += h + 3;
-        }
-
         void DrawLost(float slide)
         {
             Texture2D lose = TouchUi.Img("/strlose");
@@ -339,25 +327,36 @@ namespace Loan12.UnityPort
             }
         }
 
-        static void Row(ref float y, string icon, string label, string value)
+        static float rowH = 22; // a one-line row
+
+        /// <summary>A reward row: icon (or the item of type <paramref name="item"/>), label, value on the right.</summary>
+        static void Row(ref float y, string icon, string label, string value, int item = -1)
         {
             float k = TouchUi.K;
             // a two-line label makes the row taller
             float vw = TouchUi.PixelWidth(value, 1);
             float lw = 152 - 30 - vw - 12;
             int lines = Mathf.Max(1, TouchUi.Lines(label, lw, 6.5f));
-            float h = lines > 1 ? 30 : 22;
+            float h = lines > 1 ? rowH + 8 : rowH;
             Rect r = TouchUi.R(14, y, 152, h);
             TouchUi.Fill(r, TouchUi.PurpleDark);
-            Texture2D t = TouchUi.Img(icon);
-            float ic = Mathf.Min(20, Mathf.Min(t.width, t.height));
-            TouchUi.Sprite(t, TouchUi.R(17 + (20 - ic) / 2f, y + (h - ic) / 2f, ic, ic));
+            float box = Mathf.Min(20, rowH - 2);
+            if (item >= 0)
+            {
+                TouchUi.Item(item, TouchUi.R(17 + (20 - box) / 2f, y + (h - box) / 2f, box, box));
+            }
+            else
+            {
+                Texture2D t = TouchUi.Img(icon);
+                float ic = Mathf.Min(box, Mathf.Min(t.width, t.height));
+                TouchUi.Sprite(t, TouchUi.R(17 + (20 - ic) / 2f, y + (h - ic) / 2f, ic, ic));
+            }
             TouchUi.Label(TouchUi.R(42, y, lw, h), label, 6.5f, TextAnchor.MiddleLeft, Color.white, false, true);
             if (value.Length > 0)
             {
                 TouchUi.PixelText(value, 1, r.xMax - 6 * k, r.center.y, 2, true);
             }
-            y += h + 3;
+            y += h + (rowH < 22 ? 2 : 3);
         }
 
         static void Total(float y, string icon, string label, string value, Color c)

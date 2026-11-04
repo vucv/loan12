@@ -1789,7 +1789,11 @@ namespace Loan12
                 if ((arr[j].f_a == type) && ((arr[j].f_b > 0)))
                 {
                     arr[j].a();
-                    C_bg.g(type);
+                    if (!this.f_s.f_d)
+                    {
+                        C_bg.g(type);
+                        // PORT-UI: the tutorial's item is not from the bag
+                    }
                     this.a("item", type);
                     return;
                 }

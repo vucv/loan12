@@ -121,6 +121,11 @@ namespace Loan12
                 arrayOfInt = new int[6];
             }
             arrayOfInt[5] = 0;
+            if (this.f_d)
+            {
+                arrayOfInt = new int[arrayOfInt.Length];
+                // PORT-UI: no items in the tutorial
+            }
             this.f_a = new C_dx[arrayOfInt.Length];
             for (i = 0; (i < this.f_a.Length); i++)
             {
