@@ -159,7 +159,7 @@ namespace Loan12.UnityPort
                     rows++;
                 }
             }
-            float panelH = stage == 1 ? 104 + rows * 26 + 2 : 176;
+            float panelH = stage == 1 ? 128 + rows * 26 : 176;
             float top = Mathf.Round((H - panelH) / 2);
             Rect panel = TouchUi.R(10, top, 160, panelH);
             Rect open = TouchUi.R(30, top + panelH - 40, 120, 26);
