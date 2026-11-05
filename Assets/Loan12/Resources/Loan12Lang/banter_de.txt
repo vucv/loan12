@@ -51,6 +51,13 @@ Ihr wolltet Feuer? Hier: {skill}!
 Kleines Upgrade, großer Ärger für dich!
 Pay to win? Nee, play to win!
 Item rein, Gegner raus!
+Du hast mich getroffen? Trank rein, weg isses!
+Rüstung an! Jetzt hau doch, wenn du dich traust!
+Dein Schaden? Mit einem Schluck gelöscht. Heul!
+Ginseng intus, und du schnaufst schon. Lol.
+Drachenschwert! Lauf lieber, solange du kannst!
+Trank auf ex! Und du so: hä?
+Läuft bei mir. Bei dir eher nicht.
 [hero_fire.win]
 GG EZ! Nächster!
 Wer hat gewonnen? Ich. Wie immer.
@@ -120,6 +127,13 @@ Ich nenne es {skill}. Du nennst es gleich Schmerz.
 Ressource eingesetzt. Optimal getimt.
 Hilfsmittel sind erlaubt. Ich hab's nachgelesen.
 Inventar-Management: unterschätzte Kunst.
+Dein Aufwand wurde erfolgreich rückgängig gemacht.
+Rüstung angelegt. Deine Chancen sinken.
+Schaden erhalten. Schaden entfernt. Weiter.
+Ginseng: günstig, effektiv, nervig für dich.
+Logisch betrachtet wäre Aufgeben jetzt klug.
+Trank getrunken. Bitte neu starten, {enemy}.
+Was du da gemacht hast? Strg+Z. Erledigt.
 [hero_storm.win]
 Ergebnis wie erwartet. Keine Fragen.
 GG. Ich schick dir meine Notizen.
@@ -189,6 +203,13 @@ Bisschen Abkühlung gefällig? {skill}!
 Snack-Pause! Äh, Item-Pause.
 Ich nehm das. Schmeckt nach Sieg.
 Vorrat ist alles im Leben.
+Du haust, ich snacke. Passt doch.
+Ein Schlückchen, und deine Mühe ist futsch.
+Moment, das trink ich erst mal gemütlich.
+Ginseng ist bitter, dein Gesicht noch mehr.
+Mit Rüstung kann ich hier sogar pennen.
+Schmeckt nach Apfelschorle. Danke fürs Warten.
+Und die Beule? Weg. Einfach so.
 [hero_water.win]
 GG. Wer kocht heute?
 Siehste? Entspannt gewinnt.
@@ -258,6 +279,13 @@ Eine Arie in Flammen: {skill}!
 Kurzer Kostümwechsel!
 Requisite, bitte!
 Jede Diva braucht ihr Accessoire.
+Wunde? Das war Bühnen-Make-up, Schätzchen!
+Zweiter Akt! Volle Leben, Publikum steht!
+Kostümwechsel: jetzt in Rüstung!
+Ein Schluck, und der Star ersteht neu. Applaus!
+Drachenschwert! Scheinwerfer hierher, bitte!
+Dein Treffer? Im Schnitt rausgeflogen!
+Welch Drama! Du haust, ich heile. Bravo!
 [hero_phoenix.win]
 Vorhang! Standing Ovations!
 Danke, danke! Autogramme gibt's hinten!
@@ -327,6 +355,13 @@ Du hast es so gewollt: {skill}!
 Accessoire des Tages, bitte!
 Shopping im Kampf? Natürlich.
 Eine Queen kommt vorbereitet.
+Die Queen geschlagen? Die Queen trinkt Trank.
+Neue Rüstung. Und du? Immer noch dasselbe.
+Kurze Skincare-Pause. Du darfst warten.
+Ginseng für den Glow. Du kriegst keinen.
+Deine Mühe? Gelöscht, Süße.
+Das Schwert steht mir. Dir eher nicht.
+Geheilt. Versuch's ruhig weiter, Herzchen.
 [hero_queen.win]
 Krone gerichtet. Gegner erledigt.
 Danke fürs Mitspielen, {enemy}. Wirklich süß.
@@ -396,6 +431,13 @@ Ein Geschenk des Drachenkönigs: {skill}!
 Ein kleines Erbstück der Familie.
 Mein Diener hat es mir eingepackt.
 Ich bediene mich. Wie es mir zusteht.
+Ihr Kratzer wurde bereits versorgt. Danke.
+Familienrüstung. Weit über Ihrer Gehaltsklasse.
+Palasttrank. Den kennen Sie vermutlich nicht.
+Hundertjähriger Ginseng. Älter als Ihre Technik.
+Das Drachenschwert. Nicht für jedermann.
+Verzeihung, Ihr Angriff hinterließ keine Spur.
+Man reicht mir Tränke. Ihnen reicht man nichts.
 [hero_dragon.win]
 Wie erwartet. Ihr dürft Euch entfernen.
 Ein Sieg, so selbstverständlich wie Ebbe und Flut.

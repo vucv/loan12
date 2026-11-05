@@ -51,6 +51,13 @@ Rebotó, como tus ganas de ganar.
 Un poquito de ayuda no es trampa, ¿verdad?
 ¡Power up! Ahora sí, tiembla.
 Lo compré con mi oro, es legal.
+¿Me pegaste? Pocioncita y como nuevo, jaja.
+¡Armadura puesta! A ver si ahora me tocas.
+Tu daño, borrado de un trago. ¡Llora más!
+Ginseng al cuerpo, y tú ahí jadeando.
+¡Espada del dragón! Corre, que te pillo.
+Vida a tope otra vez. ¡Pegaste en balde!
+¡Toma ya! Y tú, toma nada.
 [hero_fire.win]
 ¡GG EZ! ¡Siguiente!
 ¿Alguien grabó eso? ¡Quiero el replay!
@@ -120,6 +127,13 @@ Ciencia, nivel avanzado.
 Uso de recursos: eficiente.
 Inventario optimizado.
 No es trampa, es preparación.
+Tu esfuerzo ha sido revertido con éxito.
+Armadura equipada. Tus opciones bajan.
+Daño recibido. Daño deshecho. Siguiente.
+Ginseng: barato, eficaz, irritante para ti.
+Lógicamente, deberías rendirte ya.
+Poción tomada. Vuelve a empezar, {enemy}.
+Esto se llama gestión de recursos. Apunta.
 [hero_storm.win]
 Experimento exitoso. Sujeto derrotado.
 Q.E.D. Queda demostrado.
@@ -189,6 +203,13 @@ Momento de enfriar el ambiente.
 Un tentempié de batalla.
 Esto me lo guardaba para el antojo.
 Pa'l camino.
+Tú pegas, yo meriendo. Estamos en paz.
+Un sorbito y tu paliza se fue por el desagüe.
+Espera, que me lo tomo con calma.
+El ginseng es amargo, pero tu cara más.
+Con armadura hasta me echo una siesta.
+Curado. Inténtalo otra vez, sin prisa.
+¿Y el chichón? Ni rastro, oye.
 [hero_water.win]
 Gané. ¿Ahora sí vamos a comer?
 Buena pelea. Ahora, a la siesta.
@@ -258,6 +279,13 @@ Ni de extra te contratarían.
 ¡Un accesorio de utilería indispensable!
 ¡Cambio de vestuario express!
 ¡Todo gran artista tiene sus trucos!
+¿Herida? ¡Era maquillaje de escena, cariño!
+¡Segundo acto! ¡Vida llena y el público en pie!
+¡Cambio de vestuario: ahora con armadura!
+Un sorbo y la estrella renace. ¡Aplausos!
+¡Espada del dragón! ¡Foco aquí, por favor!
+¡Tu golpe quedó en la sala de montaje!
+¡Qué culebrón! Tú pegas y yo me curo. ¡Olé!
 [hero_phoenix.win]
 ¡Gracias, gracias, son muy amables!
 ¡Telón! ¡Qué función tan gloriosa!
@@ -327,6 +355,13 @@ Rayos con estilo, querido.
 Un accesorio nunca está de más.
 Toque final del look.
 Inversión en mí misma.
+¿Pegarle a la reina? Ella se toma una poción.
+Armadura nueva. ¿Y tú? Lo mismo de siempre.
+Momento skincare de batalla. Espérate.
+Ginseng para estar divina. ¿Quieres? No hay.
+¿Tu esfuerzo? Borrado, cielo.
+Esta espada me queda ideal. A ti, no.
+Curada. Sigue intentándolo, mi vida.
 [hero_queen.win]
 Gané. ¿Alguien estaba en duda?
 Bye, {enemy}. Bye.
@@ -396,6 +431,13 @@ Ahora, un poco de poder ancestral.
 Una provisión de la cámara real.
 Solo lo mejor para mí.
 Un detalle de calidad.
+Su rasguño ya ha sido atendido. Gracias.
+Armadura familiar. Muy por encima de su nivel.
+Poción de palacio. Supongo que no la conoce.
+Ginseng centenario. Más viejo que su técnica.
+La espada del dragón. No es para cualquiera.
+Disculpe, su ataque no ha dejado huella.
+Inténtelo de nuevo. Con más clase, si puede.
 [hero_dragon.win]
 Fue un placer. Para mí, sobre todo.
 Gracias por la pelea, {enemy}. Hizo lo que pudo.

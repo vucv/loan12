@@ -51,6 +51,13 @@ Tekan tombol, auto menang!
 Pakai item dikit, biar makin OP.
 Belanja dulu, sultan mah bebas.
 Item keluar, kamu yang keluar arena.
+Kena pukul? Minum ramuan, sembuh. Ez banget.
+Damage kamu? Udah kuhapus pakai satu botol.
+Armor dipasang. Coba pukul lagi kalau berani!
+Ginseng dulu, biar kamu makin frustrasi.
+Pedang naga keluar. Siap-siap uninstall, bro!
+Darahku penuh lagi. Kasian deh lu.
+Noob mukul, pro minum potion. Gitu aja.
 [hero_fire.win]
 GG EZ! Next!
 Rank naik, harga diri {enemy} turun!
@@ -121,6 +128,13 @@ Zzzrt! Teori jadi praktik.
 Pakai item. Keputusan rasional.
 Sumber daya dipakai secara optimal.
 Item ini sudah kuhitung manfaatnya.
+Damage-mu baru saja kubatalkan. Efisien.
+Secara statistik, usahamu barusan sia-sia.
+Armor terpasang. Peluangmu turun drastis.
+Ramuan ini menghapus kerja kerasmu. Maaf.
+Ginseng: murah, efektif, bikin kamu kesal.
+Pukulanmu itu cuma data. Sudah kuhapus.
+Silakan ulangi dari awal, {enemy}.
 [hero_storm.win]
 Sesuai prediksi. Membosankan, tapi benar.
 Q.E.D. Terbukti kamu kalah.
@@ -191,6 +205,13 @@ Bekuin dulu, makan belakangan.
 Ngemil item dulu ah.
 Item ini enak nggak ya? Coba deh.
 Buka bekal dulu.
+Pukulanmu tadi? Udah sembuh sambil ngunyah.
+Minum ramuan dulu, kamu tunggu ya. Santai.
+Ginseng-nya pahit, tapi mukamu lebih pahit.
+Pakai armor ah, biar bisa rebahan di sini.
+Glek glek. Nah, capekmu sia-sia deh.
+Kamu mukul, aku jajan. Adil kan?
+Sabar ya, aku lagi ngecas tenaga.
 [hero_water.win]
 Menang! Sekarang waktunya makan!
 GG, santai tapi menang.
@@ -261,6 +282,13 @@ Sayap api terbentang! Lihat aku!
 Properti panggung, masuk!
 Kru, berikan item-ku!
 Sedikit bantuan dari belakang layar.
+Luka? Itu cuma riasan panggung, sayang!
+Babak kedua dimulai, darahku penuh lagi!
+Kostum baja! Penonton bersorak, kamu menangis!
+Seteguk ramuan, dan sang bintang bangkit!
+Pedang naga! Sorot lampu ke sini!
+Kerja kerasmu? Dihapus oleh satu adegan.
+Tepuk tangan untuk pukulanmu yang sia-sia!
 [hero_phoenix.win]
 Tirai turun! Standing ovation untukku!
 Terima kasih, terima kasih, aku tahu!
@@ -331,6 +359,13 @@ Petir, tunjukkan siapa bosnya!
 Aksesoris ratu, dipakai dulu.
 Item premium, untuk orang premium.
 Ratu selalu siap sedia.
+Kamu mukul ratu? Ratu tinggal minum ramuan.
+Armor baru. Kamu? Masih yang itu-itu aja.
+Glow up dulu ya, kamu nonton aja.
+Ginseng biar awet muda. Kamu kapan, {enemy}?
+Usahamu barusan? Udah kuhapus, bestie.
+Pedang naga cocok sama outfit-ku. Kamu nggak.
+Healing time. Kamu masih sibuk iri?
 [hero_queen.win]
 Slay! Seperti biasa.
 Sudah kubilang, ratu selalu menang.
@@ -401,6 +436,13 @@ Kabut Laut Utara, bangkitlah!
 Pusaka keluarga, tentu saja.
 Pelayan, ambilkan item-ku.
 Barang mewah untuk kebutuhan mewah.
+Goresan kecilmu sudah kuobati. Terima kasih.
+Zirah keluarga. Jauh di atas kelasmu.
+Ramuan istana. Kamu pasti belum pernah coba.
+Pedang naga. Kau tak layak menyentuhnya.
+Ginseng seratus tahun. Lebih tua dari jurusmu.
+Maaf, seranganmu tadi sudah tak berbekas.
+Silakan mencoba lagi. Dengan lebih sopan.
 [hero_dragon.win]
 Terima kasih atas pertandingannya. Kau kalah.
 Sudah takdir, darah naga selalu unggul.

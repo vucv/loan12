@@ -51,6 +51,13 @@ Vai, {skill}! Esquenta o rolê!
 Item na mão, vitória no bolso!
 Hora do power-up, se liga!
 Isso aqui é estratégia, tá?
+Me bateu? Uma poçãozinha e já era, kkkk
+Armadura on! Bate agora, quero ver!
+Teu dano? Apaguei com um gole. Chora mais!
+Ginseng na veia, e você aí cansadão, hein?
+Espada do dragão na mão. Corre que dá tempo!
+Vida cheia de novo. Bateu à toa, parça!
+Já era, mermão! Tomei e sarei. Próximo!
 [hero_fire.win]
 GG izi! Próximo!
 Eu avisei! Ninguém me segura!
@@ -120,6 +127,13 @@ Pesquisa concluída: {skill} resolve.
 Recurso adicional utilizado. Tudo no plano.
 Item usado. Não é trapaça, é planejamento.
 Inventário otimizado.
+Seu esforço foi revertido com sucesso.
+Armadura equipada. Sua chance caiu bastante.
+Dano recebido. Dano desfeito. Simples.
+Ginseng: barato, eficaz, irritante pra você.
+Pela lógica, você deveria desistir agora.
+Poção tomada. Pode recomeçar, {enemy}.
+Isso que você fez? Ctrl+Z. Pronto.
 [hero_storm.win]
 Resultado previsto. Sem emoção.
 Foi bom pra mim. Pra você, não sei.
@@ -189,6 +203,13 @@ Hora do {skill}, sem estresse.
 Lanchinho tático!
 Usando isso aqui, de boa.
 Item na mão, paz no coração.
+Tu bateu, eu fiz um lanchinho. Tamo quite.
+Um gole e tua surra foi pro ralo.
+Pera, deixa eu tomar isso aqui com calma.
+Ginseng é amargo, mas tua cara tá pior.
+Armadura de boa. Agora dá até pra cochilar.
+Pode bater, vou tomar meu chazinho.
+Ué, cadê o machucado? Sumiu, né?
 [hero_water.win]
 Ganhei? Ah, legal. Bora comer?
 Tranquilo, tranquilo. Sem ressentimentos.
@@ -258,6 +279,13 @@ Fogos de artifício! {skill}!
 Um adereço de cena muito útil!
 Truque de bastidor, meu bem!
 Contrarregra, meu item!
+Ferida? Era maquiagem de cena, querido!
+Segundo ato! Vida cheia e plateia em pé!
+Troca de figurino: agora de armadura!
+Um gole e a estrela renasce. Aplausos!
+Espada do dragão! Holofote aqui, por favor!
+Seu golpe foi cortado na edição!
+Que novela! Você bate e eu me curo. Bravo!
 [hero_phoenix.win]
 Fim do espetáculo! Podem jogar flores!
 E o prêmio de melhor ator vai para... EU!
@@ -327,6 +355,13 @@ Raio de rainha: {skill}!
 Acessório do dia: vitória.
 Bolsa de rainha tem de tudo.
 Um mimo pra mim mesma.
+Bateu na rainha? Ela toma uma poção e segue.
+Armadura nova. E você, nada de novo, né?
+Momento skincare de batalha. Espera aí.
+Ginseng pra ficar plena. Quer? Não tem.
+Teu esforço? Deletado, amore.
+Essa espada combina comigo. Com você, não.
+Curei. Pode continuar tentando, viu, linda?
 [hero_queen.win]
 Ganhei, como sempre. Próximo!
 Beijos, {enemy}, se cuida!
@@ -396,6 +431,13 @@ Com sua licença, {skill}.
 Um pequeno tesouro da família.
 Do baú real, com carinho.
 Com licença, um momento.
+Seu arranhão já foi tratado. Obrigado.
+Armadura da família. Muito acima do seu nível.
+Poção do palácio. Imagino que nunca provou.
+Ginseng centenário. Mais velho que sua técnica.
+A espada do dragão. Não é pro seu bico.
+Perdão, seu ataque não deixou marcas.
+Tente outra vez. Com mais classe, se puder.
 [hero_dragon.win]
 Foi um prazer. Principalmente para mim.
 Obrigado pela partida. Volte quando treinar.
