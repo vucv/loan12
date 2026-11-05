@@ -78,6 +78,24 @@ public class co {
         return this.j >= 0;
     }
 
+    /** PORT-UI: level chosen (-1: none can be paid) */
+    public int portLevel() {
+        return this.j;
+    }
+
+    /** PORT-UI: level i is open and its ticket can be paid */
+    public boolean portCan(int i) {
+        return (i >= 0) && (i < this.h.length) && this.h[i];
+    }
+
+    /** PORT-UI: choose level i (like the arrow keys) */
+    public void portSelect(int i) {
+        if (portCan(i)) {
+            this.j = i;
+            b(i);
+        }
+    }
+
     private void b(int paramInt) {
         if (paramInt < 0) {
             return;
@@ -92,7 +110,7 @@ public class co {
         if (this.j < 0) {
             return;
         }
-        if (bg.f(5) > 0) {
+        if ((!PortScreens.touch && (bg.f(5) > 0)) || PortMap.takeArenaSeal()) { // PORT-UI: Ngọc Ấn only when chosen
             dd.h = true;
             bg.g(5);
         } else if (dd.e.e > dd.f.e) {

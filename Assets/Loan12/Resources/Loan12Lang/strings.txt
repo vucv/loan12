@@ -1,0 +1,612 @@
+# vi	en	ja	ko  (see Assets/Loan12/Unity/Loc.cs)
+# ---- common
+Đóng	Close	閉じる	닫기
+ĐÓNG	CLOSE	閉じる	닫기
+Có	Yes	はい	예
+Không	No	いいえ	아니요
+Hủy	Cancel	キャンセル	취소
+Xong	Done	完了	완료
+Dừng	Stop	停止	정지
+Thoát	Quit	終了	종료
+THOÁT	QUIT	終了	종료
+Ở lại	Stay	戻る	머무르기
+Ở LẠI	STAY	戻る	머무르기
+Để sau	Later	あとで	나중에
+Bỏ qua	Skip	スキップ	건너뛰기
+BỎ QUA	SKIP	スキップ	건너뛰기
+TIẾP TỤC	CONTINUE	続ける	계속
+Chạm để tiếp tục	Tap to continue	タップして続ける	탭하여 계속
+Chạm để bỏ qua	Tap to skip	タップしてスキップ	탭하여 건너뛰기
+Chạm để xem	Tap to view	タップで表示	탭하여 보기
+Chạm ra ngoài để đóng	Tap outside to close	外側をタップで閉じる	바깥을 탭하여 닫기
+chạm để tiếp	tap to continue	タップで次へ	탭하여 다음
+BẬT	ON	オン	켜짐
+TẮT	OFF	オフ	꺼짐
+MỚI	NEW	NEW	NEW
+VIP	VIP	VIP	VIP
+OK	OK	OK	OK
+Tiếng Việt	Tiếng Việt	Tiếng Việt	Tiếng Việt
+English	English	English	English
+Ngôn ngữ	Language	言語	언어
+NGÔN NGỮ	LANGUAGE	言語	언어
+vàng	gold	ゴールド	골드
+VÀNG	GOLD	ゴールド	골드
+{0} vàng	{0} gold	{0} ゴールド	{0} 골드
++{0} vàng	+{0} gold	+{0} ゴールド	+{0} 골드
+{0} máu	{0} HP	HP {0}	HP {0}
++{0} máu	+{0} HP	HP +{0}	HP +{0}
+-{0} máu	-{0} HP	HP -{0}	HP -{0}
++{0} năng lượng	+{0} energy	エネルギー +{0}	에너지 +{0}
+{0} KN	{0} XP	{0} EXP	{0} EXP
++{0} KN	+{0} XP	+{0} EXP	+{0} EXP
++{0} tấn công	+{0} attack	攻撃 +{0}	공격 +{0}
+{0} cái	{0} pcs	{0} 個	{0} 개
+Có {0}	Own {0}	所持 {0}	보유 {0}
+Còn {0}	{0} left	残り {0}	남음 {0}
+Cần {0}	Needs {0}	必要 {0}	필요 {0}
+Đang có {0}	Have {0}	所持 {0}	보유 {0}
+Đang có	Owned	所持中	보유 중
+Chưa có	Not owned	未所持	미보유
+Đang có: {0}	Owned: {0}	所持数: {0}	보유: {0}
+Cấp {0}	Lv {0}	Lv {0}	Lv {0}
+cấp {0}	Lv {0}	Lv {0}	Lv {0}
+Lên cấp {0}!	Level up! Lv {0}	レベルアップ! Lv {0}	레벨 업! Lv {0}
+Hệ {0}	{0}	{0}属性	{0} 속성
+HỆ {0}	{0}	{0}属性	{0} 속성
+Hệ {0} · Cấp {1}	{0} · Lv {1}	{0}属性 · Lv {1}	{0} 속성 · Lv {1}
+Hỏa	Fire	火	화
+Lôi	Lightning	雷	뇌
+Thủy	Water	水	수
+HỎA	FIRE	火	화
+LÔI	LIGHTNING	雷	뇌
+THỦY	WATER	水	수
+Máu	HP	HP	HP
+Máu {0} · Tấn công {1}	HP {0} · Attack {1}	HP {0} · 攻撃 {1}	HP {0} · 공격 {1}
+Tấn công	Attack	攻撃	공격
+Kinh nghiệm	Experience	経験値	경험치
+Ô {0}	Slot {0}	スロット {0}	슬롯 {0}
+Mức {0}	Tier {0}	レベル {0}	단계 {0}
+MỨC {0}	TIER {0}	レベル {0}	단계 {0}
+{0} phút trước	{0} min ago	{0}分前	{0}분 전
+{0} ngày trước	{0} days ago	{0}日前	{0}일 전
+vừa xong	just now	たった今	방금
+hôm nay	today	今日	오늘
+hôm qua	yesterday	昨日	어제
+???	???	???	???
+# ---- items, skills, heroes
+Long Thần Kiếm	Dragon Sword	竜神剣	용신검
+Nhân Sâm	Ginseng	高麗人参	인삼
+Ngân Lượng	Silver Taels	銀両	은냥
+Quỷ Diện Giáp	Demon Mask Armor	鬼面甲	귀면갑
+Bình Thuốc	Potion	薬瓶	물약
+Ngọc Ấn	Jade Seal	玉璽	옥새
+Bình Hồi Mạng	Life Flask	命の瓶	생명의 병
+Long Thần Kiếm x3	Dragon Sword x3	竜神剣 x3	용신검 x3
+Nhân Sâm x3	Ginseng x3	高麗人参 x3	인삼 x3
+{0} x{1}	{0} x{1}	{0} x{1}	{0} x{1}
+Nhân đôi sức mạnh tấn công trong một lượt.	Doubles your attack for one turn.	1ターンの間、攻撃力が2倍になる。	한 턴 동안 공격력이 2배가 된다.
+Nhân đôi lượng máu cơ bản của võ tướng. Chỉ sử dụng một lần trong một trận đánh.	Doubles the hero's base HP. Once per battle.	武将の基本HPが2倍になる。1戦闘に1回のみ。	장수의 기본 HP가 2배가 된다. 전투당 1회만 사용.
+Nhận thêm được 1000 vàng.	Gives 1000 extra gold.	1000ゴールドを獲得する。	1000골드를 추가로 얻는다.
+Ngăn cản 3/4 lực tấn công của kẻ thù trong một lượt	Blocks 3/4 of the enemy's attack for one turn	1ターンの間、敵の攻撃を3/4防ぐ	한 턴 동안 적 공격의 3/4을 막는다
+Hồi phục ngay lập tức 10% sinh lực. Chỉ sử dụng một lần trong một lượt.	Instantly restores 10% HP. Once per turn.	HPを即座に10%回復する。1ターンに1回のみ。	HP를 즉시 10% 회복한다. 턴당 1회만 사용.
+Được ưu tiên đi trước nếu sở hữu ngọc ấn. Tự động kích hoạt khi bắt đầu trận đánh.	Holding the Jade Seal lets you move first. Used automatically when a battle starts.	玉璽を持っていれば先攻になる。戦闘開始時に自動で発動。	옥새를 가지고 있으면 선공한다. 전투 시작 시 자동 발동.
+{0} (+{1} máu)	{0} (+{1} HP)	{0}(HP +{1})	{0} (HP +{1})
+Hồi đầy mạng chơi ({0} mạng). Dùng ngoài trận, ở túi đồ hoặc khi hết mạng.	Refills your lives ({0} lives). Use outside battle, from the bag or when out of lives.	ライフを全回復({0})。戦闘外で、バッグから、またはライフ切れの時に使用。	생명을 가득 채운다({0}개). 전투 밖에서, 가방이나 생명이 없을 때 사용.
+Dùng trong 1 lượt	Lasts 1 turn	1ターン有効	1턴 동안
+1 lần mỗi trận	Once per battle	1戦闘に1回	전투당 1회
+1 lần mỗi lượt	Once per turn	1ターンに1回	턴당 1회
+Dùng ngoài trận	Use outside battle	戦闘外で使用	전투 밖에서 사용
+Tự dùng khi bắt đầu trận	Auto-used at battle start	戦闘開始時に自動使用	전투 시작 시 자동 사용
+Tấn công lượt đó: {0} thành {1}	Attack that turn: {0} to {1}	そのターンの攻撃: {0} → {1}	그 턴 공격: {0} → {1}
+Máu trận đó: {0} thành {1}	HP that battle: {0} to {1}	その戦闘のHP: {0} → {1}	그 전투 HP: {0} → {1}
+Chặn 3/4 sát thương của lượt địch	Blocks 3/4 of the damage of the enemy's turn	敵ターンのダメージを3/4軽減	적 턴 피해의 3/4을 막음
+Với máu {0} của bạn: +{1} máu	With your {0} HP: +{1} HP	あなたのHP {0}: +{1}回復	당신의 HP {0}: +{1} 회복
+Bạn luôn được đi trước	You always move first	常に先攻になる	항상 먼저 행동
+Quả Cầu Lửa	Fireball	火球	화염구
+Mưa Thiên Thạch	Meteor Shower	隕石雨	유성우
+Lửa Địa Ngục	Hellfire	地獄の炎	지옥불
+Chuỗi Sét	Chain Lightning	連鎖雷	연쇄 번개
+Khiên Sét	Lightning Shield	雷の盾	번개 방패
+Sấm Sét	Thunderbolt	雷撃	뇌격
+Mũi Tên Băng	Ice Arrow	氷の矢	얼음 화살
+Cam Lộ Thủy	Healing Dew	甘露水	감로수
+Băng Phong	Ice Storm	氷嵐	빙풍
+Gây sát thương kẻ thù, lực sát thương bằng {0}, phá hủy tức thì 1 vùng diện tích 3x3ô trên bàn cờ.	Deals {0} damage to the enemy and instantly destroys one 3x3 area of the board.	敵に{0}のダメージを与え、盤面の3x3範囲を1か所即座に破壊する。	적에게 {0}의 피해를 주고 보드의 3x3 영역 1곳을 즉시 파괴한다.
+Gây sát thương kẻ thù, lực sát thương bằng {0}, phá hủy tức thì từ 3 đến 5 vùng diện tích 2x2ô trên bàn cờ.	Deals {0} damage to the enemy and instantly destroys 3 to 5 areas of 2x2 on the board.	敵に{0}のダメージを与え、盤面の2x2範囲を3〜5か所即座に破壊する。	적에게 {0}의 피해를 주고 보드의 2x2 영역 3~5곳을 즉시 파괴한다.
+Gây sát thương kẻ thù, lực sát thương bằng {0}, phá hủy tức thì 2 vùng diện tích 4x4ô trên bàn cờ.	Deals {0} damage to the enemy and instantly destroys two 4x4 areas of the board.	敵に{0}のダメージを与え、盤面の4x4範囲を2か所即座に破壊する。	적에게 {0}의 피해를 주고 보드의 4x4 영역 2곳을 즉시 파괴한다.
+Gây sát thương kẻ thù, lực sát thương bằng {0}, phá hủy tức thì từ 4 đến 8 ô trên bàn cờ.	Deals {0} damage to the enemy and instantly destroys 4 to 8 tiles on the board.	敵に{0}のダメージを与え、盤面のマスを4〜8個即座に破壊する。	적에게 {0}의 피해를 주고 보드의 칸 4~8개를 즉시 파괴한다.
+Hóa giải tất cả các đòn tấn công của kẻ thù. Tác dụng trong 6 lượt.	Nullifies all of the enemy's attacks. Lasts 6 turns.	敵のすべての攻撃を無効化する。6ターン持続。	적의 모든 공격을 무효화한다. 6턴 지속.
+Gây sát thương kẻ thù, lực sát thương bằng {0}, phá hủy tức thì từ 3 đến 6 vùng diện tích 3x3ô trên bàn cờ.	Deals {0} damage to the enemy and instantly destroys 3 to 6 areas of 3x3 on the board.	敵に{0}のダメージを与え、盤面の3x3範囲を3〜6か所即座に破壊する。	적에게 {0}의 피해를 주고 보드의 3x3 영역 3~6곳을 즉시 파괴한다.
+Gây sát thương kẻ thù, lực sát thương bằng {0}, triệt tiêu một lượng nhỏ năng lượng của kẻ thù.	Deals {0} damage to the enemy and drains a little of its energy.	敵に{0}のダメージを与え、敵のエネルギーを少し奪う。	적에게 {0}의 피해를 주고 적의 에너지를 조금 없앤다.
+Phục hồi 20% sinh lực cho bản thân. Phá hủy tất cả trái tim trên bàn cờ và hấp thụ sinh lực của trái tim bị hủy.	Restores 20% of your HP. Destroys every heart on the board and absorbs their HP.	自分のHPを20%回復する。盤面のハートをすべて破壊し、そのHPを吸収する。	자신의 HP를 20% 회복한다. 보드의 모든 하트를 파괴하고 그 HP를 흡수한다.
+Đóng băng kẻ thù trong 2 lượt, gây sát thương kẻ thù, lực sát thương bằng {0}, triệt tiêu một lượng lớn năng lượng của kẻ thù.	Freezes the enemy for 2 turns, deals {0} damage and drains a lot of its energy.	敵を2ターン凍結させ、{0}のダメージを与え、敵のエネルギーを大きく奪う。	적을 2턴 동안 얼리고 {0}의 피해를 주며 적의 에너지를 크게 없앤다.
+Một hào kiệt mang trong người sức mạnh hủy diệt của Lửa.	A hero who carries the destructive power of Fire.	炎の破壊の力を宿す英傑。	불의 파괴적인 힘을 지닌 영웅.
+Đại đệ tử của Lôi Thần, có khả năng điều khiển sấm sét để tấn công kẻ thù hoặc bảo vệ bản thân.	First disciple of the Thunder God, who commands lightning to strike foes or protect himself.	雷神の一番弟子。雷を操り、敵を攻撃し、身を守る。	뇌신의 수제자. 번개를 다뤄 적을 공격하거나 자신을 지킨다.
+Mang trong người dòng máu của Thủy Thần, có thể tự hồi phục tổn thương và đóng băng kẻ thù.	Carries the blood of the Water God: heals own wounds and freezes enemies.	水神の血を引き、傷を癒し、敵を凍らせる。	수신의 피를 이어받아 상처를 회복하고 적을 얼린다.
+Đệ tử của Hỏa Phụng Tiên, sở hữu sức mạnh hủy diệt của Lửa.	Disciple of the Fire Phoenix Immortal, wielding the destructive power of Fire.	火鳳仙の弟子。炎の破壊の力を持つ。	화봉선의 제자. 불의 파괴적인 힘을 지녔다.
+Nữ hào kiệt xuất chúng, có quyền năng gọi sấm sét để tấn công kẻ thù hoặc tự bảo vệ bản thân.	An outstanding heroine who calls down lightning to strike foes or protect herself.	雷を呼び、敵を攻撃し身を守る卓越した女傑。	번개를 불러 적을 공격하거나 자신을 지키는 뛰어난 여걸.
+Hậu duệ của Bắc Hải Long Vương, có thể tự trị thương hoặc làm ngưng tụ hơi nước để đóng băng kẻ thù.	Descendant of the Dragon King of the North Sea: heals own wounds or condenses mist to freeze enemies.	北海竜王の末裔。傷を癒し、水蒸気を凝結させて敵を凍らせる。	북해용왕의 후예. 상처를 치료하거나 수증기를 응결시켜 적을 얼린다.
+# ---- bag
+Sát thương diện rộng mạnh nhất: Lửa Địa Ngục phá 2 vùng 4x4	Strongest area damage: Hellfire wipes two 4x4 areas	最強の範囲攻撃: 地獄の炎が4x4範囲を2か所破壊	가장 강한 범위 피해: 지옥불이 4x4 영역 2곳을 파괴
+Phá nhiều ô một lúc, dễ tạo chuỗi nổ liên hoàn	Clears many tiles at once, easy chain reactions	一度に多くのマスを壊し、連鎖を起こしやすい	한 번에 많은 칸을 부숴 연쇄가 쉽다
+Hạ gục nhanh, hợp với lối đánh tấn công	Fast knockouts, made for aggressive play	素早く倒せる攻撃型	빠르게 쓰러뜨리는 공격형
+Khiên Sét hóa giải mọi đòn tấn công trong 6 lượt	Lightning Shield blocks every attack for 6 turns	雷の盾が6ターンすべての攻撃を無効化	번개 방패가 6턴 동안 모든 공격을 막음
+Chuỗi Sét chỉ cần 1 ô năng lượng, phá ô rải rác	Chain Lightning costs just 1 energy and breaks scattered tiles	連鎖雷はエネルギー1つで散らばったマスを壊す	연쇄 번개는 에너지 1칸으로 흩어진 칸을 부순다
+Cân bằng giữa công và thủ, an toàn khi gặp địch mạnh	Balanced attack and defense, safe against strong foes	攻守のバランスが良く、強敵にも安全	공수 균형이 좋아 강적에게도 안전
+Tự hồi máu: Cam Lộ Thủy hồi 20% và hút máu từ trái tim	Self-healing: Healing Dew restores 20% and drains HP from hearts	自己回復: 甘露水で20%回復し、ハートからHPを吸収	자가 회복: 감로수로 20% 회복, 하트에서 HP 흡수
+Đóng băng địch 2 lượt, làm mất năng lượng của địch	Freezes the enemy for 2 turns and drains its energy	敵を2ターン凍結し、エネルギーを奪う	적을 2턴 얼리고 에너지를 빼앗음
+Bền bỉ nhất, hợp đánh lâu	Toughest of all, made for long fights	最も粘り強く、長期戦向き	가장 끈질겨 장기전에 강함
+Gom đủ 3 ô năng lượng rồi tung Lửa Địa Ngục khi địch còn nhiều máu	Save 3 energy and cast Hellfire while the enemy still has lots of HP	エネルギーを3つ貯め、敵のHPが多いうちに地獄の炎を放とう	에너지 3칸을 모아 적 HP가 많을 때 지옥불을 쓰자
+Dùng Quả Cầu Lửa dọn chỗ bàn cờ đang bí nước	Use Fireball to clear a stuck part of the board	手詰まりの盤面は火球で片付けよう	막힌 보드는 화염구로 정리하자
+Không tự hồi máu được: mang vật phẩm hồi máu khi đánh trùm	No self-healing: bring healing items against bosses	自己回復なし: ボス戦には回復アイテムを	자가 회복 불가: 보스전엔 회복 아이템을
+Bật Khiên Sét khi địch sắp đầy năng lượng để chặn tuyệt chiêu	Raise Lightning Shield when the enemy is about to fill its energy	敵のエネルギーが溜まる直前に雷の盾で必殺技を防ごう	적 에너지가 차기 직전 번개 방패로 필살기를 막자
+Trong 6 lượt có khiên, tấn công dồn dập không cần phòng thủ	While the shield lasts, attack nonstop	盾の6ターンは守りを気にせず攻め続けよう	방패가 있는 6턴 동안은 쉬지 않고 공격
+Để dành Sấm Sét để kết liễu	Save Thunderbolt for the finishing blow	雷撃はとどめに取っておこう	뇌격은 마무리용으로 아껴두자
+Đợi bàn cờ có nhiều trái tim rồi mới dùng Cam Lộ Thủy	Wait for many hearts on the board before using Healing Dew	盤面にハートが多い時に甘露水を使おう	보드에 하트가 많을 때 감로수를 쓰자
+Tung Băng Phong khi địch sắp ra chiêu, rồi tranh thủ 2 lượt bị băng	Cast Ice Storm just before the enemy's skill, then use the 2 frozen turns	敵の技の直前に氷嵐を放ち、凍結中の2ターンを活かそう	적의 기술 직전에 빙풍을 쓰고 얼어 있는 2턴을 활용하자
+Mũi Tên Băng làm địch chậm tích năng lượng	Ice Arrow slows the enemy's energy gain	氷の矢で敵のエネルギー蓄積を遅らせる	얼음 화살로 적의 에너지 축적을 늦춘다
+ƯU ĐIỂM	STRENGTHS	長所	장점
+MẸO KHI CHƠI	TIPS	攻略のコツ	플레이 팁
+Thông tin nhân vật	Hero info	キャラ情報	캐릭터 정보
+Kinh nghiệm {0} / {1} (lên cấp {2})	XP {0} / {1} (to Lv {2})	経験値 {0} / {1}(Lv {2}まで)	경험치 {0} / {1} (Lv {2}까지)
+TUYỆT CHIÊU	SKILLS	必殺技	필살기
+{0} ô năng lượng	{0} energy	エネルギー {0}	에너지 {0}
+VẬT PHẨM	ITEMS	アイテム	아이템
+Dùng trong trận	Used in battle	戦闘で使用	전투에서 사용
+Cửa hàng	Shop	ショップ	상점
+mua thêm	buy more	購入	추가 구매
+Hết · chạm để mua	None · tap to buy	なし · タップで購入	없음 · 탭하여 구매
+chọn khi chuẩn bị trận	pick before battle	戦闘前に選択	전투 전 선택
+Ngọc Ấn x{0}	Jade Seal x{0}	玉璽 x{0}	옥새 x{0}
+hồi đầy mạng	full lives	ライフ全回復	생명 가득
+BẢO VẬT	RELICS	宝物	보물
+gốc {0} · sự kiện +{1}	base {0} · events +{1}	基本 {0} · イベント +{1}	기본 {0} · 이벤트 +{1}
+Đã hồi đầy {0} mạng	Lives refilled to {0}	ライフを{0}まで回復	생명 {0}개로 회복
+Đã mua {0} {1} (-{2} vàng)	Bought {0} {1} (-{2} gold)	{1}を{0}個購入(-{2} ゴールド)	{1} {0}개 구매 (-{2} 골드)
+Chưa có Bình Hồi Mạng	No Life Flask yet	命の瓶がありません	생명의 병이 없음
+Mạng đang đầy	Lives are full	ライフは満タン	생명이 가득 참
+DÙNG · hồi đầy mạng	USE · refill lives	使う · ライフ全回復	사용 · 생명 회복
+MUA THÊM {0} · {1} vàng	BUY {0} MORE · {1} gold	{0}個購入 · {1} ゴールド	{0}개 더 구매 · {1} 골드
+Thiếu {0} vàng · nạp thêm	Need {0} more gold · get gold	{0} ゴールド不足 · 補充	{0} 골드 부족 · 충전
+Hệ {0} · {1} ô năng lượng	{0} · {1} energy	{0}属性 · エネルギー {1}	{0} 속성 · 에너지 {1}
+# ---- battle
+Á! Đau quá...	Argh! That hurts...	うっ! 痛い...	으악! 아프다...
+Hự! Ngươi khá lắm...	Ugh! Not bad...	ぐっ! やるな...	윽! 제법이군...
+Không xong rồi!	This is bad!	まずい!	큰일이다!
+Á! Ngươi khá lắm...	Ah! Not bad at all...	あっ! やるな...	아! 제법이군...
+Hự... lợi hại!	Ugh... impressive!	ぐ... 手強い!	윽... 대단하군!
+Đáng ghét!	Curses!	くそっ!	분하다!
+Không lẽ ta thua ở đây sao...	Could I really lose here...	ここで負けるというのか...	여기서 지는 건가...
+Ta... chưa chịu thua đâu!	I... won't give up yet!	まだ... 負けてはいない!	아직... 지지 않았다!
+Kẻ nào dám đến đây? Nạp mạng!	Who dares come here? Face me!	誰だ? 覚悟しろ!	누가 감히? 각오해라!
+Ngươi chạy đâu cho thoát!	You can't escape!	逃がさんぞ!	도망칠 수 없다!
+Để xem ngươi được mấy chiêu!	Let's see what you've got!	お前の腕を見せてもらおう!	실력 좀 보자!
+Khỏe lại rồi!	Back on my feet!	回復した!	회복했다!
+Vẫn còn sức chiến đấu!	I can still fight!	まだ戦える!	아직 싸울 수 있다!
+Hừ! Chẳng nhằm nhò gì.	Hmph! That was nothing.	ふん! 効かんな。	흥! 별것 아니군.
+Đòn này chưa đủ đâu!	That's not enough!	それでは足りん!	그걸로는 부족하다!
+Ha ha! Biết lợi hại của ta chưa!	Ha ha! Now you know my power!	はは! 思い知ったか!	하하! 내 힘을 알겠느냐!
+Thắng rồi!	Victory!	勝った!	이겼다!
+Kẻ nào dám cản đường ta nữa?	Who else dares to stand in my way?	まだ道を阻む者はいるか?	또 누가 내 길을 막겠느냐?
+Ngươi còn non lắm!	You're still green!	まだまだ未熟だな!	아직 멀었다!
+Về luyện thêm đi!	Go train some more!	出直してこい!	더 수련하고 와라!
+Ha ha! Chỉ có vậy thôi sao?	Ha ha! Is that all?	はは! その程度か?	하하! 그게 전부냐?
+Chờ đến lượt của bạn	Wait for your turn	自分のターンを待とう	당신의 턴을 기다리세요
+Cần thêm {0} năng lượng	Needs {0} more energy	エネルギーがあと{0}必要	에너지 {0} 더 필요
+Đã hết, mua thêm ở màn chuẩn bị	None left, buy more before battle	在庫なし、準備画面で購入	없음, 준비 화면에서 구매
+Lượt này đã dùng 1 vật phẩm	Already used an item this turn	このターンはアイテム使用済み	이번 턴에 이미 아이템 사용
+{0} mất {1} máu	{0} loses {1} HP	{0}は{1}のダメージ	{0} HP {1} 감소
+{0} hồi {1} máu	{0} heals {1} HP	{0}はHPを{1}回復	{0} HP {1} 회복
+{0} dùng {1}	{0} uses {1}	{0}の{1}	{0}의 {1}
+Nếm thử {0}!	Taste my {0}!	{0}をくらえ!	{0}을 받아라!
+Quỷ Diện Giáp chặn 3/4 đòn	Demon Mask Armor blocks 3/4	鬼面甲が3/4を防いだ	귀면갑이 3/4을 막음
+Long Thần Kiếm: đánh x2	Dragon Sword: attack x2	竜神剣: 攻撃x2	용신검: 공격 x2
+{0} đã chiến thắng!	{0} wins!	{0}の勝利!	{0} 승리!
+{0} đã thua trận	{0} was defeated	{0}は敗北した	{0} 패배
+Lưu Cơ	Luu Co	Luu Co	Luu Co
+CHIẾN THẮNG	VICTORY	勝利	승리
+THẤT BẠI	DEFEAT	敗北	패배
+LƯỢT CỦA BẠN	YOUR TURN	あなたのターン	당신의 턴
+LƯỢT ĐỐI THỦ	ENEMY TURN	相手のターン	상대의 턴
+Tuyệt chiêu {0}	Skill {0}	必殺技 {0}	필살기 {0}
+Mỗi lượt dùng 1 vật phẩm	One item per turn	1ターンにアイテム1つ	턴당 아이템 1개
+DÙNG	USE	使う	사용
+# ---- hero
+TẠO NHÂN VẬT	NEW CHARACTER	キャラ作成	캐릭터 생성
+CHỌN TƯỚNG	CHOOSE HERO	武将を選ぶ	장수 선택
+Bạn đã có tướng này ở Ô {0} (vẫn tạo được)	You already have this hero in slot {0} (you can still create)	スロット{0}にこの武将がいます(作成は可能)	슬롯 {0}에 이미 있는 장수 (생성은 가능)
+CHỌN TƯỚNG NÀY	PICK THIS HERO	この武将にする	이 장수 선택
+Cấp 1 · tăng theo cấp	Lv 1 · grows with level	Lv 1 · レベルで上昇	Lv 1 · 레벨에 따라 상승
+HỦY TẠO NHÂN VẬT?	CANCEL CREATION?	作成をやめますか?	생성을 취소할까요?
+Chưa mất lượt tạo, lần sau tạo lại được.	You keep your creation, you can create later.	作成回数は減りません。後で作成できます。	생성 기회는 유지되며 나중에 만들 수 있습니다.
+# ---- ads, lives
+QUẢNG CÁO (THỬ NGHIỆM)	AD (TEST)	広告(テスト)	광고 (테스트)
+Sẽ thay bằng quảng cáo thật	Will be replaced by a real ad	本番では実際の広告に置き換え	실제 광고로 교체될 예정
++1 mạng chơi	+1 life	ライフ +1	생명 +1
+Cần xem hết quảng cáo để nhận mạng	Watch the whole ad to get a life	ライフを得るには広告を最後まで見てください	생명을 받으려면 광고를 끝까지 보세요
+Chưa có quảng cáo, thử lại sau ít phút	No ad available, try again in a few minutes	広告がありません。数分後に再試行してください	광고가 없습니다. 잠시 후 다시 시도하세요
+Đã mua và dùng Bình Hồi Mạng: đầy {0} mạng	Bought and used a Life Flask: {0} lives	命の瓶を購入して使用: ライフ{0}	생명의 병 구매 및 사용: 생명 {0}개
+Thiếu {0} vàng để mua Bình Hồi Mạng	Need {0} more gold for a Life Flask	命の瓶には{0} ゴールド不足	생명의 병 구매에 {0} 골드 부족
+HẾT MẠNG	OUT OF LIVES	ライフ切れ	생명 없음
+MẠNG CHƠI	LIVES	ライフ	생명
+Mạng chơi	Lives	ライフ	생명
+Bạn đã hết mạng chơi. Mỗi trận cần 1 mạng (thắng thì được trả lại).	You're out of lives. Each battle costs 1 life (returned if you win).	ライフがありません。戦闘ごとにライフ1(勝てば返却)。	생명이 없습니다. 전투마다 생명 1개 (이기면 반환).
+Mạng chơi đang đầy ({0}/{1}).	Lives are full ({0}/{1}).	ライフは満タン({0}/{1})。	생명이 가득 참 ({0}/{1}).
+Bạn còn {0}/{1} mạng. Mỗi trận cần 1 mạng.	You have {0}/{1} lives. Each battle costs 1 life.	ライフ {0}/{1}。戦闘ごとにライフ1。	생명 {0}/{1}. 전투마다 생명 1개.
+{0} +1 mạng sau {1}.	{0} +1 life in {1}.	{0} {1}後にライフ+1。	{0} {1} 후 생명 +1.
++1 MẠNG (VIP)	+1 LIFE (VIP)	ライフ+1 (VIP)	생명 +1 (VIP)
+XEM QUẢNG CÁO · +1 MẠNG	WATCH AD · +1 LIFE	広告を見る · ライフ+1	광고 보기 · 생명 +1
+DÙNG BÌNH HỒI MẠNG (có {0})	USE LIFE FLASK (have {0})	命の瓶を使う(所持 {0})	생명의 병 사용 (보유 {0})
+MUA BÌNH HỒI MẠNG · {0} vàng	BUY LIFE FLASK · {0} gold	命の瓶を購入 · {0} ゴールド	생명의 병 구매 · {0} 골드
+Bình Hồi Mạng: hồi đầy {0} mạng	Life Flask: refills {0} lives	命の瓶: ライフを{0}まで回復	생명의 병: 생명 {0}개 회복
+# ---- map
+Bạn đang ở {0}	You are at {0}	現在地: {0}	현재 위치: {0}
+Chưa có đường tới {0}	No road to {0} yet	{0}への道はまだありません	{0}(으)로 가는 길이 아직 없음
+Chưa mở. Làm tiếp nhiệm vụ chính để mở vùng này.	Locked. Continue the main quest to open this area.	未開放。メインクエストを進めると開放されます。	잠김. 메인 퀘스트를 진행하면 열립니다.
+đánh {0}	fight {0}	{0}と戦う	{0}와 전투
+{0} đường	{0} roads	道 {0}	길 {0}
+Đang đi tới {0}	Heading to {0}	{0}へ移動中	{0}(으)로 이동 중
+Bản đồ	Map	マップ	지도
+Túi đồ	Bag	バッグ	가방
+Nhiệm vụ	Quests	クエスト	퀘스트
+Dấu đỏ là nhiệm vụ chính. Chạm vào một nơi, tướng sẽ tự đi tới theo đường.	Red marks are main quests. Tap a place and your hero walks there by road.	赤い印はメインクエスト。場所をタップすると武将が道を通って向かいます。	빨간 표시는 메인 퀘스트. 장소를 탭하면 장수가 길을 따라 이동합니다.
+Dấu cam là sự kiện phụ, dấu vàng là quân canh. Xem hết ở thẻ Nhiệm vụ.	Orange marks are side events, yellow marks are guards. See them all in the Quests tab.	オレンジはサブイベント、黄色は見張り。すべてクエストタブで確認できます。	주황색은 서브 이벤트, 노란색은 경비병. 퀘스트 탭에서 모두 볼 수 있습니다.
+{0}/2 · chạm để tiếp	{0}/2 · tap to continue	{0}/2 · タップで次へ	{0}/2 · 탭하여 다음
+# ---- menu
+NHÂN VẬT	CHARACTERS	キャラクター	캐릭터
+Tạo nhân vật đầu tiên · miễn phí	Create your first character · free	最初のキャラを作成 · 無料	첫 캐릭터 만들기 · 무료
+Tạo nhân vật mới	Create a new character	新しいキャラを作成	새 캐릭터 만들기
+Xem 1 quảng cáo để tạo nhân vật	Watch 1 ad to create a character	広告を1本見てキャラを作成	광고 1개 보고 캐릭터 만들기
+CHƠI MỚI	NEW GAME	ニューゲーム	새 게임
+CÀI ĐẶT	SETTINGS	設定	설정
+THOÁT GAME	QUIT GAME	ゲーム終了	게임 종료
+CHƠI TIẾP	CONTINUE	つづきから	이어하기
+Đã đủ 3 nhân vật. Hãy xóa 1 nhân vật để tạo mới.	You have 3 characters. Delete one to create a new one.	キャラは3人までです。1人削除すると作成できます。	캐릭터가 3명입니다. 1명을 삭제하면 만들 수 있습니다.
+THOÁT GAME?	QUIT GAME?	ゲームを終了?	게임을 종료할까요?
+Tiến độ đã được lưu.	Your progress has been saved.	進行状況は保存されました。	진행 상황이 저장되었습니다.
+# ---- pause
+TẠM DỪNG	PAUSED	一時停止	일시 정지
+Trận đấu đang tạm dừng	The battle is paused	戦闘は一時停止中	전투가 일시 정지됨
+Bạn vừa rời trò chơi, trận đấu đã tạm dừng	You left the game, so the battle was paused	ゲームを離れたため戦闘を一時停止しました	게임을 떠나 전투가 일시 정지되었습니다
+ÂM THANH	SOUND	サウンド	사운드
+RUNG	VIBRATION	振動	진동
+THOÁT TRẬN	LEAVE BATTLE	戦闘をやめる	전투 포기
+Bỏ trận, về bản đồ · tính là thua	Leave and return to the map · counts as a loss	マップに戻る · 敗北扱い	지도로 돌아가기 · 패배 처리
+THOÁT TRẬN?	LEAVE BATTLE?	戦闘をやめますか?	전투를 포기할까요?
+Trận này sẽ tính là thua: mất 1 mạng chơi, không bị trừ kinh nghiệm.	This counts as a loss: you lose 1 life, no XP penalty.	敗北扱いになります: ライフ1を失い、経験値は減りません。	패배로 처리됩니다: 생명 1개를 잃고 경험치는 깎이지 않습니다.
+Trận này sẽ tính là thua: mất 1 mạng chơi và bị phạt kinh nghiệm như khi thua.	This counts as a loss: you lose 1 life and the usual XP penalty.	敗北扱いになります: ライフ1と、敗北時の経験値ペナルティ。	패배로 처리됩니다: 생명 1개와 패배 시 경험치 페널티.
+# ---- prepare
+Chưa có {0}, bấm MUA để mua	No {0} yet, tap BUY to get some	{0}がありません。購入をタップ	{0}이(가) 없습니다. 구매를 탭하세요
+Đã đủ 3 món, chạm vào ô trên để bỏ bớt	3 items already, tap a slot above to remove one	すでに3つです。上の枠をタップで外せます	이미 3개입니다. 위 칸을 탭해 빼세요
+Không đủ vàng	Not enough gold	ゴールドが足りません	골드가 부족합니다
+CHUẨN BỊ XUẤT TRẬN	PREPARE FOR BATTLE	出陣準備	출전 준비
+Bạn được đi trước	You move first	あなたが先攻	당신이 선공
+{0} được đi trước	{0} moves first	{0}が先攻	{0} 선공
+MANG VÀO TRẬN	TAKE INTO BATTLE	持っていく	가져갈 아이템
+TÚI ĐỒ	BAG	バッグ	가방
+RÚT LUI	RETREAT	撤退	후퇴
+XUẤT TRẬN	FIGHT	出陣	출전
+Gợi ý: {0} đánh mạnh, nên mang Quỷ Diện Giáp.	Tip: {0} hits hard, bring Demon Mask Armor.	ヒント: {0}は攻撃が強い。鬼面甲を持っていこう。	팁: {0}은(는) 공격이 강합니다. 귀면갑을 챙기세요.
+Gợi ý: {0} nhiều máu, nên mang Long Thần Kiếm.	Tip: {0} has lots of HP, bring the Dragon Sword.	ヒント: {0}はHPが多い。竜神剣を持っていこう。	팁: {0}은(는) HP가 많습니다. 용신검을 챙기세요.
+Gợi ý: mang Bình Thuốc để hồi máu khi cần.	Tip: bring Potions to heal when needed.	ヒント: 薬瓶を持っていけば回復できる。	팁: 물약을 챙기면 필요할 때 회복할 수 있습니다.
+Mua {0} cái giá {1} vàng?	Buy {0} for {1} gold?	{0}個を{1} ゴールドで購入?	{0}개를 {1} 골드에 구매할까요?
+Bạn đang có {0} vàng	You have {0} gold	所持: {0} ゴールド	보유: {0} 골드
+MUA	BUY	購入	구매
+# ---- quests
+CHÍNH TUYẾN {0}	MAIN {0}	メイン {0}	메인 {0}
+SỰ KIỆN {0}	EVENTS {0}	イベント {0}	이벤트 {0}
+QUÂN CANH {0}	GUARDS {0}	見張り {0}	경비병 {0}
+Chương {0}	Chapter {0}	第{0}章	{0}장
+Chương {0} · nhiệm vụ {1}	Chapter {0} · quest {1}	第{0}章 · クエスト {1}	{0}장 · 퀘스트 {1}
+ĐÃ THỐNG NHẤT GIANG SƠN!	THE LAND IS UNITED!	天下統一!	천하 통일!
+Mở khi xong nhiệm vụ {0}	Opens after quest {0}	クエスト{0}クリアで開放	퀘스트 {0} 완료 후 열림
++ {0} nhiệm vụ nữa trong chương	+ {0} more quests in this chapter	+ この章のクエストあと{0}つ	+ 이 장에 퀘스트 {0}개 더
+Hội thoại	Story	会話	대화
+Trận hướng dẫn	Tutorial battle	チュートリアル戦	튜토리얼 전투
+Đánh	Battle	戦闘	전투
+{0}. ĐANG LÀM	{0}. IN PROGRESS	{0}. 進行中	{0}. 진행 중
+BẮT ĐẦU	START	開始	시작
+ĐI TỚI	GO	向かう	이동
+Đánh bại {0}	Defeat {0}	{0}を倒す	{0} 물리치기
+Gặp {0}	Meet {0}	{0}に会う	{0} 만나기
++1 hộp vật phẩm	+1 item box	アイテム箱 +1	아이템 상자 +1
+hộp vật phẩm	item box	アイテム箱	아이템 상자
+nhiệm vụ {0}	quest {0}	クエスト {0}	퀘스트 {0}
+Đã hoàn thành	Completed	クリア済み	완료됨
+! Đang làm	! In progress	! 進行中	! 진행 중
+Loại	Type	種類	종류
+Nơi	Place	場所	장소
+Đối thủ	Opponent	相手	상대
+Đã nhận	Received	受取済み	받음
+Đã nhận {0}	Received {0}	受取済み {0}	받음 {0}
+Thưởng	Reward	報酬	보상
+Thưởng: {0}	Reward: {0}	報酬: {0}	보상: {0}
+Mở thêm	Unlocks	開放	해금
+Đọc lại hội thoại	Read the story again	会話を読み返す	대화 다시 보기
+Trước nhiệm vụ	Before the quest	クエスト前	퀘스트 전
+Sau khi thắng	After the victory	勝利後	승리 후
+Gặp gỡ	Meeting	面会	만남
+gặp gỡ	meeting	面会	만남
+Đi tới	Go	向かう	이동
+Đã xong	Done	完了	완료
+Ở vùng chưa mở trên bản đồ	In a locked area of the map	マップの未開放エリア	지도의 잠긴 지역
+ĐẤU TRƯỜNG · TAM ĐIỆP	ARENA · TAM DIEP	闘技場 · TAM DIEP	투기장 · TAM DIEP
+{0}/5 mức	{0}/5 tiers	{0}/5 レベル	{0}/5 단계
+mở sẵn	open	開放済み	열림
+thắng Lê Hoàn	beat Le Hoan	Le Hoanに勝利	Le Hoan 격파
+thắng Nguyễn Ninh	beat Nguyen Ninh	Nguyen Ninhに勝利	Nguyen Ninh 격파
+đạt cấp 30	reach Lv 30	Lv 30に到達	Lv 30 달성
+cấp {0} (bằng cấp bạn)	Lv {0} (your level)	Lv {0}(あなたと同じ)	Lv {0} (당신과 같음)
+Đã dẹp	Cleared	制圧済み	소탕 완료
+Còn {0} trạm gác ở vùng chưa mở	{0} more guard posts in locked areas	未開放エリアに見張り所があと{0}	잠긴 지역에 경비 초소 {0}개 더
+Nhiệm vụ {0}	Quest {0}	クエスト {0}	퀘스트 {0}
+trạm gác gần {0}	guard post near {0}	{0}付近の見張り所	{0} 근처 경비 초소
+Trạm gác	Guard post	見張り所	경비 초소
+# ---- result
+HOÀN THÀNH NHIỆM VỤ	QUEST COMPLETE	クエストクリア	퀘스트 완료
+LUYỆN TẬP	TRAINING	修練	수련
+Vàng nhặt được	Gold collected	拾ったゴールド	획득한 골드
+Thưởng thắng trận	Victory reward	勝利報酬	승리 보상
+Vật phẩm: {0}	Items: {0}	アイテム: {0}	아이템: {0}
+Hộp vật phẩm (2 vật phẩm)	Item box (2 items)	アイテム箱(2個)	아이템 상자 (2개)
+Vàng thưởng	Gold reward	報酬ゴールド	보상 골드
+Kinh nghiệm thưởng	XP reward	報酬経験値	보상 경험치
+Hộp vật phẩm cuối	Final item box	最後のアイテム箱	마지막 아이템 상자
+Hộp vật phẩm	Item box	アイテム箱	아이템 상자
+Mở thêm: {0}	Unlocked: {0}	開放: {0}	해금: {0}
+Kinh nghiệm luyện tập	Training XP	修練の経験値	수련 경험치
+Vàng hiện có	Gold owned	所持ゴールド	보유 골드
+thua {0}	lost to {0}	{0}に敗北	{0}에게 패배
+Kinh nghiệm bị phạt	XP penalty	経験値ペナルティ	경험치 페널티
+Gợi ý: mua Bình Thuốc hoặc Quỷ Diện Giáp ở màn chuẩn bị trước khi đánh lại.	Tip: buy Potions or Demon Mask Armor on the prepare screen before trying again.	ヒント: 再挑戦の前に準備画面で薬瓶か鬼面甲を買おう。	팁: 다시 싸우기 전에 준비 화면에서 물약이나 귀면갑을 사세요.
+Đánh lại trận này?	Fight this battle again?	もう一度戦う?	이 전투를 다시 할까요?
+TRỞ VỀ	BACK	戻る	돌아가기
+ĐÁNH LẠI	RETRY	再挑戦	다시 전투
+Mở hộp vật phẩm: {0}	Item box opened: {0}	アイテム箱を開けた: {0}	아이템 상자 열림: {0}
+Đã mở thêm 1 mức luyện tập ở Đấu trường. Hãy vào đó thử sức!	A new training tier is open at the Arena. Go test your strength!	闘技場に新しい修練レベルが開放された。腕試しに行こう!	투기장에 새 수련 단계가 열렸습니다. 실력을 시험해 보세요!
+Bỏ qua trận hướng dẫn và về bản đồ? Luật chơi xem lại được trong Cài đặt.	Skip the tutorial battle and return to the map? The rules are in Settings.	チュートリアル戦をスキップしてマップに戻りますか? ルールは設定で確認できます。	튜토리얼 전투를 건너뛰고 지도로 돌아갈까요? 규칙은 설정에서 볼 수 있습니다.
+# ---- settings
+Âm thanh	Sound	サウンド	사운드
+Nhạc và tiếng trong game	Music and sound effects	BGMと効果音	음악과 효과음
+Âm lượng	Volume	音量	음량
+Rung	Vibration	振動	진동
+Khi trúng đòn, mua hàng, giữ để xoá	On hits, purchases, hold to delete	被弾、購入、長押し削除の時	피격, 구매, 길게 눌러 삭제할 때
+TRÒ CHƠI	GAME	ゲーム	게임
+Luật chơi	Rules	ルール	규칙
+Xếp biểu tượng, vật phẩm, cấp độ	Matching, items, levels	マッチ、アイテム、レベル	맞추기, 아이템, 레벨
+Hướng dẫn bản đồ	Map tutorial	マップの説明	지도 안내
+Xem lại 3 bước chỉ tay	Replay the 3 pointer steps	3つのステップをもう一度見る	3단계 안내 다시 보기
+Mở khi đang ở bản đồ	Available on the map	マップ画面で開けます	지도에서 열 수 있음
+Đổi nhân vật	Switch character	キャラ変更	캐릭터 변경
+MUA HÀNG VÀ QUẢNG CÁO	PURCHASES AND ADS	購入と広告	구매 및 광고
+Khôi phục giao dịch	Restore purchases	購入を復元	구매 복원
+Không có giao dịch nào để khôi phục	No purchases to restore	復元できる購入はありません	복원할 구매가 없습니다
+HỖ TRỢ	SUPPORT	サポート	지원
+Đánh giá game	Rate the game	ゲームを評価	게임 평가
+Chia sẻ với bạn bè	Share with friends	友達にシェア	친구에게 공유
+Chính sách quyền riêng tư	Privacy policy	プライバシーポリシー	개인정보 처리방침
+Thông tin và tác giả	About and credits	情報とクレジット	정보 및 제작진
+Mã người chơi: {0}	Player ID: {0}	プレイヤーID: {0}	플레이어 ID: {0}
+Phiên bản {0}	Version {0}	バージョン {0}	버전 {0}
+Loạn 12 sứ quân	Loan 12 Su Quan	Loan 12 Su Quan	Loan 12 Su Quan
+Loạn 12 Sứ Quân	Loan 12 Su Quan	Loan 12 Su Quan	Loan 12 Su Quan
+2010 MicroGame	2010 MicroGame	2010 MicroGame	2010 MicroGame
+Về menu chính	Back to main menu	メインメニューへ	메인 메뉴로
+MENU	MENU	メニュー	메뉴
+Thanh kiếm	Sword	剣	검
+Tấn công đối phương.	Attacks the opponent.	相手を攻撃する。	상대를 공격한다.
+Kiếm lửa	Fire sword	炎の剣	불꽃 검
+Mạnh hơn kiếm thường, nổ thêm 1 ô xung quanh; xếp chung được với kiếm thường.	Stronger than a sword and also blasts the tiles around it; matches with normal swords.	通常の剣より強く、周囲1マスも爆発する。通常の剣とそろえられる。	일반 검보다 강하고 주변 1칸도 터진다. 일반 검과 함께 맞출 수 있다.
+Âm dương	Yin-yang	陰陽	음양
+Lấy năng lượng để dùng tuyệt chiêu.	Gives energy for skills.	必殺技用のエネルギーを得る。	필살기용 에너지를 얻는다.
+Bánh chưng	Rice cake	ちまき	떡
+Lấy lương thực. Lương thực tiêu hao mỗi lượt của đối phương; hết là thua.	Gives food. Food drops on each enemy turn; run out and you lose.	食料を得る。食料は相手のターンごとに減り、尽きると負け。	식량을 얻는다. 식량은 상대 턴마다 줄고, 다 떨어지면 패배.
+Thỏi vàng	Gold bar	金塊	금괴
+Lấy vàng để mua vật phẩm.	Gives gold to buy items.	アイテム購入用のゴールドを得る。	아이템을 살 골드를 얻는다.
+Cuốn sách	Book	書物	책
+Lấy kinh nghiệm để lên cấp.	Gives XP to level up.	レベルアップ用の経験値を得る。	레벨 업용 경험치를 얻는다.
+Trái tim	Heart	ハート	하트
+Hồi máu. Hết máu là thua trận.	Heals HP. Run out of HP and you lose.	HPを回復する。HPが尽きると負け。	HP를 회복한다. HP가 다 떨어지면 패배.
+Xếp ít nhất 3 biểu tượng cùng loại, ngang hoặc dọc.	Line up at least 3 matching icons, across or down.	同じアイコンを縦か横に3つ以上そろえる。	같은 아이콘을 가로나 세로로 3개 이상 맞춘다.
+Xếp 4 được thêm 1 lượt và có thể rơi vật phẩm; xếp 5 luôn rơi 1 vật phẩm.	Match 4 for an extra turn and a chance of an item; match 5 always drops an item.	4つで追加ターンとアイテムのチャンス、5つで必ずアイテム獲得。	4개는 추가 턴과 아이템 기회, 5개는 반드시 아이템 획득.
+Xếp sai mất lượt và mất máu.	A wrong move costs your turn and some HP.	間違えるとターンとHPを失う。	잘못 맞추면 턴과 HP를 잃는다.
+CÁCH ĐI	HOW TO MOVE	操作方法	조작 방법
+BIỂU TƯỢNG	ICONS	アイコン	아이콘
+Cấp càng cao thì tấn công và máu càng lớn.	The higher your level, the more attack and HP.	レベルが高いほど攻撃とHPが上がる。	레벨이 높을수록 공격과 HP가 커진다.
+LUẬT CHƠI	RULES	ルール	규칙
+hỗ trợ	support	サポート	지원
+Bản chuyển sang Unity	Unity port	Unity移植版	Unity 이식판
+Màn hình cảm ứng toàn màn hình	Full-screen touch interface	フルスクリーンのタッチ操作	전체 화면 터치 인터페이스
+Ghi chú	Note	注記	참고
+Tình tiết, cốt truyện và tên nhân vật phụ của trò chơi dựa vào sự kiện Loạn 12 Sứ Quân trong lịch sử Việt Nam ở thế kỷ X.	The story and the names of the side characters are based on the Anarchy of the 12 Warlords in 10th-century Vietnamese history.	物語と脇役の名前は、10世紀ベトナム史の「十二使君の乱」に基づいています。	이야기와 조연의 이름은 10세기 베트남 역사의 '12사군의 난'을 바탕으로 합니다.
+THÔNG TIN	ABOUT	情報	정보
+Chia sẻ	Share	シェア	공유
+Đã chép lời mời vào bộ nhớ tạm	Invitation copied to the clipboard	招待文をクリップボードにコピーしました	초대 문구를 클립보드에 복사했습니다
+Trang chính sách quyền riêng tư sẽ có trước khi phát hành	The privacy policy page will be ready before release	プライバシーポリシーはリリース前に公開予定	개인정보 처리방침은 출시 전에 공개 예정
+# ---- shop
+PHỔ BIẾN	POPULAR	人気	인기
+LỜI NHẤT	BEST VALUE	最もお得	최고 가치
++{0} vàng vào ví chung	+{0} gold to the shared wallet	共有財布に +{0} ゴールド	공용 지갑에 +{0} 골드
+ƯU ĐÃI	OFFERS	特典	혜택
+Thiếu vàng?	Need gold?	ゴールド不足?	골드 부족?
+Rương miễn phí, gói vàng	Free chest, gold packs	無料宝箱、ゴールドパック	무료 상자, 골드 팩
+Vàng và vật phẩm dùng chung cho mọi nhân vật	Gold and items are shared by all characters	ゴールドとアイテムは全キャラ共通	골드와 아이템은 모든 캐릭터가 공유
+{0} vàng / gói {1} cái · có {2}	{0} gold / pack of {1} · own {2}	{0} ゴールド / {1}個パック · 所持 {2}	{0} 골드 / {1}개 팩 · 보유 {2}
+{0} GÓI	{0} PACKS	{0} パック	{0} 팩
+Còn lại sau khi mua: {0} vàng	After buying: {0} gold	購入後: {0} ゴールド	구매 후: {0} 골드
+Bạn có {0} vàng	You have {0} gold	所持: {0} ゴールド	보유: {0} 골드
++ VÀNG (thiếu {0})	+ GOLD ({0} short)	+ ゴールド({0}不足)	+ 골드 ({0} 부족)
+Cần xem hết quảng cáo để nhận vàng	Watch the whole ad to get the gold	ゴールドを得るには広告を最後まで見てください	골드를 받으려면 광고를 끝까지 보세요
+RƯƠNG MIỄN PHÍ	FREE CHEST	無料宝箱	무료 상자
+còn {0} lượt hôm nay	{0} left today	本日残り {0}	오늘 {0}회 남음
+Mỗi lần mở cách nhau ít nhất 1 giờ	At least 1 hour between openings	開封は1時間以上空けてください	열기 사이에 최소 1시간
+Lượt mới lúc 0:00	New openings at 0:00	0:00にリセット	0:00에 초기화
+Hết lượt	No more today	本日終了	오늘 종료
+Chờ	Wait	待機	대기
+MỞ NGAY	OPEN NOW	今すぐ開ける	지금 열기
+MỞ	OPEN	開ける	열기
+Mua bằng tiền thật sẽ mở khi kết nối Google Play	Real-money purchases open once Google Play is connected	課金はGoogle Play接続後に利用できます	실제 결제는 Google Play 연결 후 가능
+Mua bằng tiền thật sẽ mở khi game kết nối Google Play	Real-money purchases open once the game connects to Google Play	課金はゲームがGoogle Playに接続後に利用できます	실제 결제는 게임이 Google Play에 연결된 후 가능
+Vàng dùng chung cho mọi nhân vật · giá theo Google Play (chưa kết nối)	Gold is shared by all characters · prices from Google Play (not connected)	ゴールドは全キャラ共通 · 価格はGoogle Play(未接続)	골드는 모든 캐릭터 공유 · 가격은 Google Play (미연결)
+GÓI KHỞI ĐẦU	STARTER PACK	スターターパック	스타터 팩
+CHỈ 1 LẦN	ONCE ONLY	1回限り	1회 한정
+3.000 vàng	3,000 gold	3,000 ゴールド	3,000 골드
+Đầy mạng	Full lives	ライフ全回復	생명 가득
+Trị giá 6.000 vàng và đầy mạng	Worth 6,000 gold plus full lives	6,000ゴールド相当+ライフ全回復	6,000 골드 상당 + 생명 가득
+ĐÃ MUA	BOUGHT	購入済み	구매함
+VIP TRỌN ĐỜI	LIFETIME VIP	永久VIP	평생 VIP
+Mua 1 lần, dùng mãi, cho mọi nhân vật	Buy once, keep forever, for every character	一度の購入で永久に、全キャラ対象	한 번 구매로 영구히, 모든 캐릭터에
+Nhận thưởng quảng cáo ngay, không phải xem	Get ad rewards instantly, no watching	広告を見ずに報酬を即受け取り	광고 없이 보상 즉시 받기
+Ô vật phẩm thứ 4 khi chuẩn bị xuất trận	A 4th item slot before battle	出陣準備でアイテム枠4つ目	출전 준비 시 4번째 아이템 칸
+Tối đa 6 mạng (thường 5)	Up to 6 lives (normally 5)	ライフ最大6(通常5)	생명 최대 6개 (기본 5개)
+Tạo nhân vật mới không cần xem quảng cáo	Create characters without watching ads	広告なしで新キャラ作成	광고 없이 새 캐릭터 만들기
+ĐÃ KÍCH HOẠT	ACTIVE	有効	활성화됨
+CỬA HÀNG	SHOP	ショップ	상점
+# ---- slots
+Lưu tối đa 3 nhân vật.	Up to 3 characters.	キャラは最大3人。	캐릭터는 최대 3명.
+Lưu tối đa 3 nhân vật, mỗi nhân vật có bản đồ và cấp riêng. Vàng và vật phẩm dùng chung.	Up to 3 characters, each with its own map and level. Gold and items are shared.	最大3人まで。マップとレベルはキャラごと、ゴールドとアイテムは共通。	최대 3명. 지도와 레벨은 캐릭터별, 골드와 아이템은 공유.
+Đã đủ 3 nhân vật.	You have 3 characters.	キャラが3人います。	캐릭터가 3명입니다.
+Muốn tạo nhân vật khác, hãy xóa 1 nhân vật.	To create another, delete one first.	新しく作るには1人削除してください。	새로 만들려면 1명을 삭제하세요.
+Chạm vào thẻ để chọn · biểu tượng thùng rác để xóa	Tap a card to choose · the bin to delete	カードをタップで選択 · ゴミ箱で削除	카드를 탭해 선택 · 휴지통으로 삭제
+CHƠI	PLAY	プレイ	플레이
+Chơi gần nhất: {0}	Last played: {0}	最終プレイ: {0}	마지막 플레이: {0}
+ĐANG CHƠI	PLAYING	プレイ中	플레이 중
+trống	empty	空き	비어 있음
+Tạo ngay (VIP)	Create now (VIP)	今すぐ作成(VIP)	지금 만들기 (VIP)
+Xem QC để tạo	Watch ad to create	広告を見て作成	광고 보고 만들기
+Đang tải quảng cáo…	Loading ad…	広告を読み込み中…	광고 불러오는 중…
+Cần xem hết quảng cáo để nhận lượt tạo	Watch the whole ad to unlock a creation	作成するには広告を最後まで見てください	생성하려면 광고를 끝까지 보세요
+NHÂN VẬT MỚI	NEW CHARACTER	新キャラ	새 캐릭터
+Xem 1 quảng cáo ngắn để mở lượt tạo nhân vật thứ {0}.	Watch 1 short ad to unlock character #{0}.	短い広告を1本見ると{0}人目のキャラを作成できます。	짧은 광고 1개를 보면 {0}번째 캐릭터를 만들 수 있습니다.
+Xem 1 quảng cáo ngắn để mở lượt tạo nhân vật thứ {0}. {1} nhân vật hiện có giữ nguyên.	Watch 1 short ad to unlock character #{0}. Your existing characters stay as they are.	短い広告を1本見ると{0}人目のキャラを作成できます。今のキャラはそのままです。	짧은 광고 1개를 보면 {0}번째 캐릭터를 만들 수 있습니다. 기존 캐릭터는 그대로 유지됩니다.
+XEM QUẢNG CÁO	WATCH AD	広告を見る	광고 보기
+VIP: tạo ngay, không cần xem quảng cáo	VIP: create now, no ad needed	VIP: 広告なしで今すぐ作成	VIP: 광고 없이 바로 만들기
+Đã xóa {0}	Deleted {0}	{0}を削除しました	{0} 삭제됨
+XÓA NHÂN VẬT?	DELETE CHARACTER?	キャラを削除?	캐릭터를 삭제할까요?
+Sẽ mất vĩnh viễn:	Lost forever:	完全に失われるもの:	영구히 사라지는 것:
+· Tiến độ bản đồ và nhiệm vụ	· Map and quest progress	· マップとクエストの進行	· 지도 및 퀘스트 진행
+· Cấp {0} và kinh nghiệm	· Level {0} and XP	· Lv {0}と経験値	· Lv {0} 및 경험치
+· {0} bảo vật đã sưu tập	· {0} collected relics	· 集めた宝物 {0}	· 모은 보물 {0}개
+Vàng, vật phẩm, mạng chơi và VIP vẫn giữ nguyên.	Gold, items, lives and VIP stay.	ゴールド、アイテム、ライフ、VIPはそのままです。	골드, 아이템, 생명, VIP는 유지됩니다.
+GIỮ 2 GIÂY ĐỂ XÓA	HOLD 2 SEC TO DELETE	2秒長押しで削除	2초 길게 눌러 삭제
+# ---- arena
+ĐẤU TRƯỜNG	ARENA	闘技場	투기장
+Tam Điệp · luyện kinh nghiệm, trả vé bằng vàng	Tam Diep · train for XP, tickets cost gold	Tam Diep · 経験値の修練、チケットはゴールド	Tam Diep · 경험치 수련, 입장권은 골드
+Thiếu vàng: vé mức {0} là {1} vàng	Not enough gold: tier {0} ticket costs {1} gold	ゴールド不足: レベル{0}のチケットは{1} ゴールド	골드 부족: {0}단계 입장권은 {1} 골드
+Mức {0} chưa mở: {1}	Tier {0} is locked: {1}	レベル{0}は未開放: {1}	{0}단계 잠김: {1}
++{0}% cấp	+{0}% level	レベルの+{0}%	레벨 +{0}%
+Thiếu vàng	Need gold	ゴールド不足	골드 부족
+Chưa mở	Locked	未開放	잠김
+Đối thủ mức {0}	Tier {0} opponent	レベル{0}の相手	{0}단계 상대
+Thắng: +{0} kinh nghiệm ({1}% một cấp)	Win: +{0} XP ({1}% of a level)	勝利: 経験値 +{0}(1レベルの{1}%)	승리: 경험치 +{0} (한 레벨의 {1}%)
+Thua: mất 1 mạng, không trừ kinh nghiệm. Vàng, KN nhặt trong trận không tính.	Lose: 1 life, no XP penalty. Gold and XP picked up in the battle don't count.	敗北: ライフ1を失い、経験値は減らない。戦闘中に拾ったゴールドと経験値は無効。	패배: 생명 1개 손실, 경험치 감소 없음. 전투 중 얻은 골드와 경험치는 무효.
+Bạn không đủ vàng cho mức nào đang mở. Mở rương miễn phí hoặc mua vàng ở Cửa hàng.	Not enough gold for any open tier. Open the free chest or buy gold in the Shop.	開放中のどのレベルにもゴールドが足りません。ショップで無料宝箱を開けるかゴールドを購入しよう。	열린 단계에 필요한 골드가 부족합니다. 상점에서 무료 상자를 열거나 골드를 사세요.
+ĐÁNH	FIGHT	戦う	전투
+Vé {0} vàng	Ticket {0} gold	チケット {0} ゴールド	입장권 {0} 골드
+# ---- quest titles (names without accents)
+Học binh pháp với Lưu Cơ	Study strategy with Luu Co	Luu Coに兵法を学ぶ	Luu Co에게 병법 배우기
+Nhận lệnh hộ tống chủ tướng	Take the order to escort the lord	主君護衛の命を受ける	주군 호위 명령 받기
+Hộ tống chủ tướng về Kỳ Bố	Escort the lord to Ky Bo	主君をKy Boへ護衛	주군을 Ky Bo로 호위
+Bàn việc xưng hiệu	Discuss taking a title	称号について協議	칭호에 대한 논의
+Dẹp sơn tặc ở Tam Điệp	Clear the bandits at Tam Diep	Tam Diepの山賊を討伐	Tam Diep의 산적 소탕
+Dự đại lễ xưng Vạn Thắng Vương	Attend the crowning of Van Thang Vuong	Van Thang Vuongの即位式に出席	Van Thang Vuong 즉위식 참석
+Kết hòa ước với Phạm Bạch Hổ	Make peace with Pham Bach Ho	Pham Bach Hoと和平を結ぶ	Pham Bach Ho와 화친
+Bàn kế đánh Bình Kiều	Plan the attack on Binh Kieu	Binh Kieu攻略の策を練る	Binh Kieu 공격 계획
+Đánh chiếm Bình Kiều	Capture Binh Kieu	Binh Kieuを攻略	Binh Kieu 점령
+Chọn hướng tiến quân	Choose the march route	進軍方向を選ぶ	진군 방향 선택
+Đánh Ngô Nhật Khánh	Fight Ngo Nhat Khanh	Ngo Nhat Khanhを討つ	Ngo Nhat Khanh 공격
+Nhận tin Lã Đường đánh Đằng Châu	News: La Duong attacks Dang Chau	La DuongがDang Chauを攻撃との報	La Duong의 Dang Chau 공격 소식
+Cứu viện Đằng Châu	Relieve Dang Chau	Dang Chauを救援	Dang Chau 구원
+Bàn kế đánh Tế Giang	Plan the attack on Te Giang	Te Giang攻略の策を練る	Te Giang 공격 계획
+Phá quân canh Tế Giang	Break the Te Giang guards	Te Giangの見張りを破る	Te Giang 경비병 격파
+Diệt Lã Đường ở Tế Giang	Defeat La Duong at Te Giang	Te GiangでLa Duongを討つ	Te Giang에서 La Duong 격파
+Từ biệt Phạm Bạch Hổ	Farewell to Pham Bach Ho	Pham Bach Hoに別れを告げる	Pham Bach Ho와 작별
+Phá đồn Bảo Đà	Take the Bao Da fort	Bao Da砦を攻略	Bao Da 요새 격파
+Bắt Đỗ Cảnh Thạc	Capture Do Canh Thac	Do Canh Thacを捕らえる	Do Canh Thac 생포
+Củng cố Đỗ Động	Secure Do Dong	Do Dongを固める	Do Dong 강화
+Giữ thành Đỗ Động	Hold Do Dong castle	Do Dong城を守る	Do Dong 성 사수
+Bàn kế đánh Tây Phù Liệt	Plan the attack on Tay Phu Liet	Tay Phu Liet攻略の策を練る	Tay Phu Liet 공격 계획
+Hỏi tội Nguyễn Trí Khả	Call Nguyen Tri Kha to account	Nguyen Tri Khaの罪を問う	Nguyen Tri Kha 문책
+Diệt Nguyễn Siêu	Defeat Nguyen Sieu	Nguyen Sieuを討つ	Nguyen Sieu 격파
+Bàn kế phá liên minh	Plan to break the alliance	同盟を崩す策を練る	동맹 분열 계획
+Cứu viện Ô Man	Relieve O Man	O Manを救援	O Man 구원
+Chuẩn bị đánh Siêu Loại	Prepare to attack Sieu Loai	Sieu Loai攻撃の準備	Sieu Loai 공격 준비
+Đánh vào Siêu Loại	Storm Sieu Loai	Sieu Loaiに攻め込む	Sieu Loai 진격
+Đuổi bắt Lý Khuê	Hunt down Ly Khue	Ly Khueを追う	Ly Khue 추격
+Xuất binh đánh Tiên Du	March on Tien Du	Tien Duへ出兵	Tien Du 출병
+Đánh Nguyễn Thủ Tiệp	Fight Nguyen Thu Tiep	Nguyen Thu Tiepを討つ	Nguyen Thu Tiep 공격
+Bàn kế đánh Cổ Loa	Plan the attack on Co Loa	Co Loa攻略の策を練る	Co Loa 공격 계획
+Phá quân canh Cổ Loa	Break the Co Loa guards	Co Loaの見張りを破る	Co Loa 경비병 격파
+Đánh Lữ Xử Bình ở Cổ Loa	Fight Lu Xu Binh at Co Loa	Co LoaでLu Xu Binhを討つ	Co Loa에서 Lu Xu Binh 공격
+Bàn kế đánh Tam Đái	Plan the attack on Tam Dai	Tam Dai攻略の策を練る	Tam Dai 공격 계획
+Phá quân canh Tam Đái	Break the Tam Dai guards	Tam Daiの見張りを破る	Tam Dai 경비병 격파
+Đánh Nguyễn Khoan ở Tam Đái	Fight Nguyen Khoan at Tam Dai	Tam DaiでNguyen Khoanを討つ	Tam Dai에서 Nguyen Khoan 공격
+Nhận tin Kỳ Bố bị vây	News: Ky Bo is besieged	Ky Bo包囲の報	Ky Bo 포위 소식
+Giải vây Kỳ Bố	Lift the siege of Ky Bo	Ky Boの包囲を解く	Ky Bo 포위 해제
+Bàn kế đánh Hồi Hồ	Plan the attack on Hoi Ho	Hoi Ho攻略の策を練る	Hoi Ho 공격 계획
+Phá quân canh Hồi Hồ	Break the Hoi Ho guards	Hoi Hoの見張りを破る	Hoi Ho 경비병 격파
+Đánh Kiều Công Hãn	Fight Kieu Cong Han	Kieu Cong Hanを討つ	Kieu Cong Han 공격
+Đánh Kiều Thuận	Fight Kieu Thuan	Kieu Thuanを討つ	Kieu Thuan 공격
+Bàn việc xưng đế	Discuss taking the throne	帝位について協議	황제 즉위 논의
+Diệt Ấu Rồng ở Hoa Lư	Slay the Young Dragon at Hoa Lu	Hoa Luで幼竜を倒す	Hoa Lu에서 새끼 용 처치
+Lễ lên ngôi Đinh Tiên Hoàng	Coronation of Dinh Tien Hoang	Dinh Tien Hoangの即位式	Dinh Tien Hoang 즉위식
+Khởi binh ở Hoa Lư	Rising at Hoa Lu	Hoa Luで挙兵	Hoa Lu에서 거병
+Bình Kiều	Binh Kieu	Binh Kieu	Binh Kieu
+Cứu Đằng Châu, diệt Tế Giang	Save Dang Chau, take Te Giang	Dang Chau救援、Te Giang制圧	Dang Chau 구원, Te Giang 격파
+Đỗ Động Giang	Do Dong Giang	Do Dong Giang	Do Dong Giang
+Tây Phù Liệt	Tay Phu Liet	Tay Phu Liet	Tay Phu Liet
+Siêu Loại và Tiên Du	Sieu Loai and Tien Du	Sieu LoaiとTien Du	Sieu Loai와 Tien Du
+Cổ Loa và Tam Đái	Co Loa and Tam Dai	Co LoaとTam Dai	Co Loa와 Tam Dai
+Kỳ Bố và Hồi Hồ	Ky Bo and Hoi Ho	Ky BoとHoi Ho	Ky Bo와 Hoi Ho
+Thống nhất giang sơn	Unite the land	天下統一	천하 통일
+ĐỒNG Ý	OK	OK	확인
+NHẬN	CLAIM	受け取る	받기
+HỘP QUÀ	GIFT BOX	ギフトボックス	선물 상자
+MỞ HỘP	OPEN	開ける	열기
+XEM QUẢNG CÁO · X2	WATCH AD · X2	広告で2倍	광고 보고 2배
+Bạn nhận được {0} hộp quà	You got {0} gift boxes	ギフトボックスを{0}個獲得	선물 상자 {0}개 획득
+Bạn nhận được 1 hộp quà	You got 1 gift box	ギフトボックスを1個獲得	선물 상자 1개 획득
+Mỗi hộp có 1 vật phẩm	Each box holds 1 item	1箱につきアイテム1個	상자마다 아이템 1개
+Đã mở {0} hộp quà	Opened {0} gift boxes	ギフトボックスを{0}個開けた	선물 상자 {0}개 열림
+Đã cất vào túi đồ	Added to your bag	バッグに入れました	가방에 넣었습니다
+Hộp quà	Gift boxes	ギフトボックス	선물 상자
+Hộp quà rơi trong trận	Gift boxes dropped	戦闘で落ちた箱	전투에서 얻은 상자
++{0} hộp quà	+{0} gift boxes	+{0} ギフトボックス	+{0} 선물 상자
+{0} hộp quà	{0} gift boxes	ギフトボックス{0}個	선물 상자 {0}개
+Đã mở Đấu trường Tam Điệp: nơi luyện điểm kinh nghiệm.	The Tam Diep arena is open: a place to train for experience.	Tam Diepの闘技場が開放：経験値を鍛える場所。	Tam Diep 투기장 개방: 경험치를 단련하는 곳.
+Mỗi lần vào đấu phải trả vé bằng vàng.	Each fight costs a ticket paid in gold.	毎回、金で入場券を払います。	매번 금으로 입장권을 냅니다.
+Thắng: nhận kinh nghiệm theo cấp hiện tại.	Win: experience based on your level.	勝利：現在のレベルに応じた経験値。	승리: 현재 레벨에 따른 경험치.
+Thua: mất 1 mạng, không bị trừ kinh nghiệm.	Lose: 1 life lost, no experience lost.	敗北：命を1つ失うが経験値は減らない。	패배: 목숨 1개를 잃지만 경험치는 줄지 않음.
+Vàng và kinh nghiệm nhặt trong trận không được tính; máu không bị ảnh hưởng.	Gold and experience picked up in the fight do not count; your HP is not affected.	戦闘中に拾った金と経験値は加算されず、HPも減りません。	전투 중 얻은 금과 경험치는 반영되지 않으며 체력도 줄지 않음.
+Lúc đầu mở 2 mức, thắng các tướng mạnh để mở thêm 3 mức.	2 levels at first; beat strong generals to open 3 more.	最初は2段階、強い武将に勝つとさらに3段階開放。	처음엔 2단계, 강한 장수를 이기면 3단계 추가 개방.
+Vàng, kinh nghiệm hoặc vật phẩm quý	Gold, experience or rare items	金、経験値、または貴重なアイテム	금, 경험치 또는 귀한 아이템
+Đang mở…	Opening…	開封中…	여는 중…
+Bạn được đi trước (Ngọc Ấn)	You move first (Jade Seal)	先攻（玉璽）	선공 (옥새)
+Vàng	Gold	金	금
+HỒI SINH?	REVIVE?	復活する？	부활?
+HỒI 30 MÁU	+30 HP	HP30回復	체력 30 회복
+BỎ CUỘC	GIVE UP	あきらめる	포기
+{0} chỉ còn {1}/{2} máu!	{0} has only {1}/{2} HP left!	{0}の残りHPは{1}/{2}!	{0}의 남은 체력 {1}/{2}!
+Xem quảng cáo để hồi 30 máu và đánh tiếp.	Watch an ad to get 30 HP back and fight on.	広告を見てHPを30回復し、戦い続けよう。	광고를 보고 체력 30을 회복해 계속 싸우세요.
+KHỞI ĐẦU	STARTER	スターター	스타터
+Ô thứ 3 mở khi mua Gói khởi đầu (Cửa hàng · Ưu đãi)	Slot 3 opens with the Starter Pack (Shop · Offers)	3つ目の枠はスターターパックで開放（ショップ・特典）	3번째 칸은 스타터 팩으로 열림 (상점 · 혜택)
+Ô thứ 4 mở khi mua gói VIP (Cửa hàng · Ưu đãi)	Slot 4 opens with VIP (Shop · Offers)	4つ目の枠はVIPで開放（ショップ・特典）	4번째 칸은 VIP로 열림 (상점 · 혜택)
+Đã đủ {0} món, chạm vào ô trên để bỏ bớt	{0} items already, tap a slot above to remove one	もう{0}個です。上の枠をタップして外してください	이미 {0}개입니다. 위 칸을 눌러 빼세요
+Mang 3 vật phẩm vào trận	Take 3 items into battle	戦闘にアイテム3個	전투에 아이템 3개
+tối đa 4 mạng	up to 4 lives	最大ライフ4	최대 목숨 4
+Mang 4 vật phẩm vào trận (thường 2)	Take 4 items into battle (normally 2)	戦闘にアイテム4個（通常2）	전투에 아이템 4개 (보통 2)
+Tối đa 5 mạng (thường 3)	Up to 5 lives (normally 3)	最大ライフ5（通常3）	최대 목숨 5 (보통 3)
+Bốc thăm ai đi trước (cùng cấp)	Who moves first is drawn (same level)	先攻は抽選（同レベル）	선공은 추첨 (같은 레벨)
+TRỞ LẠI	BACK	戻る	돌아가기
+49.000 đ · thử	49,000 đ · test	49,000 đ · テスト	49,000 đ · 테스트
+199.000 đ · thử	199,000 đ · test	199,000 đ · テスト	199,000 đ · 테스트
+Đã mua Gói khởi đầu (giả lập): 3.000 vàng, Long Thần Kiếm x3, Nhân Sâm x3, đầy mạng	Starter Pack bought (simulated): 3,000 gold, Dragon Sword x3, Ginseng x3, full lives	スターターパック購入（模擬）：金3,000、龍神剣x3、人参x3、ライフ全回復	스타터 팩 구매(모의): 금 3,000, 용신검 x3, 인삼 x3, 목숨 가득
+Đã kích hoạt VIP (giả lập)	VIP activated (simulated)	VIP有効化（模擬）	VIP 활성화 (모의)
+Đã khôi phục: {0}	Restored: {0}	復元：{0}	복원됨: {0}
+Các gói đã mua đều đang có	All purchased packs are active	購入済みパックはすべて有効	구매한 팩이 모두 활성 상태
+Đã gỡ các gói (thử). Bấm Khôi phục giao dịch để lấy lại	Packs removed (test). Tap Restore purchases to get them back	パックを外しました（テスト）。購入の復元で戻せます	팩을 제거했습니다 (테스트). 구매 복원으로 되돌리세요
+Thử: gỡ các gói đã mua	Test: remove bought packs	テスト：購入パックを外す	테스트: 구매 팩 제거
+Đang giả lập mua hàng để thử: chưa trừ tiền thật, sẽ thay bằng Google Play	Purchases are simulated for testing: no real money, Google Play comes later	テスト用の模擬購入：実際の支払いなし、後でGoogle Playに置き換え	테스트용 모의 구매: 실제 결제 없음, 추후 Google Play로 교체
+Đã mua {0} vàng (giả lập, {1})	Bought {0} gold (simulated, {1})	金{0}を購入（模擬、{1}）	금 {0} 구매 (모의, {1})
+thử	test	テスト	테스트
+Vàng dùng chung cho mọi nhân vật · mua giả lập để thử, chưa trừ tiền thật	Gold is shared by all characters · simulated purchases for testing, no real money	金は全キャラ共通・テスト用の模擬購入で実際の支払いなし	금은 모든 캐릭터 공용 · 테스트용 모의 구매, 실제 결제 없음

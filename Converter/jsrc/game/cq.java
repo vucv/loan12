@@ -97,6 +97,9 @@ public class cq
             arrayOfInt = new int[6];
         }
         arrayOfInt[5] = 0;
+        if (this.d) {
+            arrayOfInt = new int[arrayOfInt.length]; // PORT-UI: no items in the tutorial
+        }
         this.a = new dx[arrayOfInt.length];
         for (i = 0; i < this.a.length; i++) {
             this.a[i] = new dx();

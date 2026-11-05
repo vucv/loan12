@@ -615,6 +615,8 @@ namespace Loan12
                 this.f_k = true;
                 C_du localdu = new C_du("Thông tin", "Bấm tiếp tục để chơi tiếp", new string[] { "Tiếp tục" }, new int[] { 1 }, 1);
                 ((C_ar)localdu).a(((MG_b)(this)));
+                C_PortUi.f_resumeDialog = localdu;
+                // PORT-UI
                 this.a(((C_ae)(localdu)), false);
             }
         }

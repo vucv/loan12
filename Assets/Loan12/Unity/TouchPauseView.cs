@@ -1,0 +1,281 @@
+// The pause of a battle in the touch interface, drawn over the battle (plan: "Tạm dừng: tiếp tục /
+// âm thanh / thoát"). It replaces two dialogs of the game:
+//   - "Bạn muốn dừng game lại? Có / Không" (the pause button): TIẾP TỤC = "Không"; THOÁT TRẬN gives
+//     the battle up after a confirmation: the game's own defeat (life of the battle lost, result
+//     screen, map). The game's "Có" (save the battle and go to the menu) is not offered any more;
+//   - "Bấm tiếp tục để chơi tiếp" (the game paused itself when the app went to the background).
+//   - "Bạn có muốn bỏ qua phần luyện tập không? Có / Không" (the pause button in the tutorial
+//     battle): LUYỆN TẬP with BỎ QUA / Ở LẠI.
+// Sound and vibration are switched here too (settings of the Unity host, kept between sessions).
+using UnityEngine;
+
+namespace Loan12.UnityPort
+{
+    public sealed class TouchPauseView : ITouchView
+    {
+        const int GridH = 346;
+
+        readonly TouchBattleView battle;
+        int downKind; // 1 resume, 2 sound, 3 vibration, 5 give up, 6 confirm, 7 cancel
+        public bool confirm;
+        float shownAt = -1f;
+
+        public TouchPauseView(TouchBattleView battle)
+        {
+            this.battle = battle;
+        }
+
+        public bool Active()
+        {
+            try
+            {
+                return C_PortUi.pauseView() || TrainingAsk();
+            }
+            catch (System.Exception)
+            {
+                return false;
+            }
+        }
+
+        public void Reset()
+        {
+            downKind = 0;
+            shownAt = -1f;
+            confirm = false;
+        }
+
+        /// <summary>The tutorial battle's pause: the game asks whether to skip the training.</summary>
+        static bool TrainingAsk()
+        {
+            return C_PortUi.battle() != null && C_PortScreens.training() && C_PortScreens.hasDialog();
+        }
+
+        static bool CanQuit()
+        {
+            return C_PortUi.pauseKind() == 1;
+        }
+
+        static Rect PanelRect()
+        {
+            return CanQuit() ? TouchUi.R(14, 66, 152, 214) : TouchUi.R(14, 82, 152, 172);
+        }
+
+        static float Top()
+        {
+            return TouchUi.V(new Vector2(0, PanelRect().y)).y;
+        }
+
+        static Rect ResumeRect()
+        {
+            return TouchUi.R(26, Top() + 60, 128, 30);
+        }
+
+        static Rect SoundRect()
+        {
+            return TouchUi.R(26, Top() + 98, 128, 24);
+        }
+
+        static Rect VibrateRect()
+        {
+            return TouchUi.R(26, Top() + 128, 128, 24);
+        }
+
+        static Rect ForfeitRect()
+        {
+            return TouchUi.R(26, Top() + 168, 128, 24);
+        }
+
+        static Rect ConfirmRect()
+        {
+            return TouchUi.R(18, 120, 144, 106);
+        }
+
+        static Rect ConfirmYes()
+        {
+            return TouchUi.R(26, 194, 62, 22);
+        }
+
+        static Rect ConfirmNo()
+        {
+            return TouchUi.R(92, 194, 62, 22);
+        }
+
+        int Hit(Vector2 p)
+        {
+            if (TrainingAsk())
+            {
+                return ConfirmYes().Contains(p) ? 8 : (ConfirmNo().Contains(p) || !ConfirmRect().Contains(p) ? 9 : 0);
+            }
+            if (confirm)
+            {
+                return ConfirmYes().Contains(p) ? 6 : (ConfirmNo().Contains(p) || !ConfirmRect().Contains(p) ? 7 : 0);
+            }
+            if (ResumeRect().Contains(p))
+            {
+                return 1;
+            }
+            if (SoundRect().Contains(p))
+            {
+                return 2;
+            }
+            if (VibrateRect().Contains(p))
+            {
+                return 3;
+            }
+            return CanQuit() && ForfeitRect().Contains(p) ? 5 : 0;
+        }
+
+        public void OnGUI(Event e, Texture2D lcd, bool haptics)
+        {
+            if (shownAt < 0f)
+            {
+                shownAt = Time.unscaledTime;
+            }
+            TouchUi.Begin(GridH);
+            Vector2 p = e.mousePosition;
+            J2MEGameHost host = J2MEGameHost.Instance;
+            if (e.type == EventType.MouseDown && e.button == 0)
+            {
+                downKind = Hit(p);
+                if (downKind != 0)
+                {
+                    Haptics.Tap(haptics);
+                }
+                e.Use();
+            }
+            else if (e.type == EventType.MouseUp)
+            {
+                if (downKind != 0 && Hit(p) == downKind)
+                {
+                    switch (downKind)
+                    {
+                        case 1:
+                            C_PortUi.request(C_PortUi.f_PAUSE_RESUME, 0);
+                            break;
+                        case 2:
+                            if (host != null)
+                            {
+                                host.SoundOn = !host.SoundOn;
+                            }
+                            break;
+                        case 3:
+                            if (host != null)
+                            {
+                                host.HapticsOn = !host.HapticsOn;
+                                Haptics.Tap(host.HapticsOn);
+                            }
+                            break;
+                        case 5:
+                            confirm = true;
+                            break;
+                        case 6:
+                            confirm = false;
+                            C_PortScreens.request(C_PortScreens.f_FORFEIT, 0);
+                            break;
+                        case 7:
+                            confirm = false;
+                            break;
+                        case 8:
+                            C_PortUi.request(C_PortUi.f_DIALOG_KEY, 0); // the game's "Có": skip the training
+                            break;
+                        case 9:
+                            C_PortUi.request(C_PortUi.f_DIALOG_KEY, 2); // "Không" (the dialog's right soft key): back to the lesson
+                            break;
+                    }
+                }
+                downKind = 0;
+                e.Use();
+            }
+            else if (e.type == EventType.MouseDrag)
+            {
+                e.Use();
+            }
+            if (e.type == EventType.Repaint)
+            {
+                if (battle != null)
+                {
+                    battle.DrawBackdrop(lcd);
+                    TouchUi.Begin(GridH);
+                }
+                else
+                {
+                    TouchUi.Fill(new Rect(0, 0, Gx.Width, Gx.Height), TouchUi.Background);
+                }
+                Draw(host);
+            }
+        }
+
+        void Draw(J2MEGameHost host)
+        {
+            float k = TouchUi.K;
+            if (TrainingAsk())
+            {
+                TouchUi.Dim(0.62f);
+                Rect box = ConfirmRect();
+                TouchUi.Panel(box);
+                TouchUi.PixelText("LUYỆN TẬP", 1, box.center.x, box.y + 16 * k, 1, true);
+                TouchUi.Label(TouchUi.R(28, 146, 124, 40), "Bỏ qua trận hướng dẫn và về bản đồ? Luật chơi xem lại được trong Cài đặt.", 6.25f,
+                    TextAnchor.UpperCenter, TouchUi.TextSoft, false, true);
+                TouchUi.TextButton(ConfirmYes(), "BỎ QUA", Btn.Red, downKind == 8);
+                TouchUi.TextButton(ConfirmNo(), "Ở LẠI", Btn.Grey, downKind == 9);
+                return;
+            }
+            float t = Mathf.Clamp01((Time.unscaledTime - shownAt) / 0.18f);
+            TouchUi.Dim(0.62f * t);
+            Color old = Gx.color;
+            Gx.color = old * new Color(1f, 1f, 1f, t);
+            Rect panel = PanelRect();
+            float rise = (1f - t) * 12 * k; // the whole popup (frame, texts, buttons) rises into place together
+            panel.y += rise;
+            float top = TouchUi.V(new Vector2(0, panel.y)).y;
+            TouchUi.Panel(panel);
+            TouchUi.PixelText("TẠM DỪNG", 1, TouchUi.R(90, 0, 0, 0).x, TouchUi.R(0, top + 18, 0, 0).y, 1, true);
+            string sub = CanQuit() ? "Trận đấu đang tạm dừng" : "Bạn vừa rời trò chơi, trận đấu đã tạm dừng";
+            TouchUi.Label(TouchUi.R(16, top + 30, 148, 26), sub, 7, TextAnchor.MiddleCenter, TouchUi.TextSoft, false, true);
+
+            TouchUi.RedButton(Shift(ResumeRect(), rise), "TIẾP TỤC", true, downKind == 1);
+            bool sound = host == null || host.SoundOn, vibrate = host == null || host.HapticsOn;
+            Toggle(Shift(SoundRect(), rise), "ÂM THANH", sound, downKind == 2);
+            Toggle(Shift(VibrateRect(), rise), "RUNG", vibrate, downKind == 3);
+            if (CanQuit())
+            {
+                TouchUi.Fill(TouchUi.R(26, top + 160, 128, 1), TouchUi.Hex(0x9A6A98));
+                TouchUi.TextButton(Shift(ForfeitRect(), rise), "THOÁT TRẬN", Btn.Red, downKind == 5);
+                TouchUi.Label(TouchUi.R(18, top + 195, 144, 9), "Bỏ trận, về bản đồ · tính là thua", 5.75f,
+                    TextAnchor.UpperCenter, TouchUi.Hex(0xD8C8DC), false, true);
+            }
+            Gx.color = old;
+            if (confirm)
+            {
+                TouchUi.Dim(0.6f);
+                Rect box = ConfirmRect();
+                TouchUi.Panel(box);
+                TouchUi.PixelText("THOÁT TRẬN?", 1, box.center.x, box.y + 16 * k, 1, true);
+                string why = C_PortUi.arena()
+                    ? "Trận này sẽ tính là thua: mất 1 mạng chơi, không bị trừ kinh nghiệm."
+                    : "Trận này sẽ tính là thua: mất 1 mạng chơi và bị phạt kinh nghiệm như khi thua.";
+                TouchUi.Label(TouchUi.R(28, 146, 124, 40), why, 6.25f, TextAnchor.UpperCenter, TouchUi.TextSoft, false, true);
+                TouchUi.TextButton(ConfirmYes(), "THOÁT", Btn.Red, downKind == 6);
+                TouchUi.TextButton(ConfirmNo(), "Ở LẠI", Btn.Grey, downKind == 7);
+            }
+        }
+
+        static Rect Shift(Rect r, float dy)
+        {
+            return new Rect(r.x, r.y + dy, r.width, r.height);
+        }
+
+        /// <summary>A setting: its name on the left, a BẬT / TẮT switch on the right.</summary>
+        static void Toggle(Rect r, string name, bool on, bool down)
+        {
+            float k = TouchUi.K;
+            TouchUi.Button(r, Btn.Dark, down);
+            float dy = down ? k : 0;
+            TouchUi.PixelText(name, 2, r.x + 8 * k, r.center.y + dy, 0, true);
+            Rect sw = new Rect(r.xMax - 42 * k, r.y + 4 * k + dy, 36 * k, r.height - 8 * k);
+            TouchUi.Fill(sw, TouchUi.Outline);
+            TouchUi.Fill(new Rect(sw.x + k, sw.y + k, sw.width - 2 * k, sw.height - 2 * k), on ? TouchUi.Hex(0x2F8A22) : TouchUi.Hex(0x4E4A50));
+            TouchUi.PixelText(on ? "BẬT" : "TẮT", 2, sw.center.x, sw.center.y, 1, true);
+        }
+    }
+}

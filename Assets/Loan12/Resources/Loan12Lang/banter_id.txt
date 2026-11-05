@@ -1,0 +1,1056 @@
+# banter id
+[hero_fire.start]
+Gaskeun! Siapa yang mau jadi korban pertama?
+Mabar sama {enemy}? Siap-siap kalah, bang!
+Pemanasan dulu, ini cuma tutorial buat aku.
+Menyala abangku! Api siap membakar!
+Push rank dimulai. {enemy}, kamu poin gratis.
+Ayo duel! Yang kalah traktir bakso.
+[hero_fire.taunt]
+Cuma segitu? Bocil juga bisa.
+{enemy}, mainnya pake jempol kaki ya?
+Skill issue sih ini, bukan salah game.
+Lemah teles! Gas terus!
+Panik gak? Panik gak? Panik lah masa nggak!
+Noob terdeteksi, auto farming!
+Jago kandang doang ya, {enemy}?
+Kaleng-kaleng! Aku mah bukan kaleng-kaleng!
+[hero_fire.combo]
+KOMBO! Savage parah!
+Wkwkwk, gacor banget aku hari ini!
+Kebakar habis! Menyala!
+Combo gini masuk highlight nih!
+Tangan panas, papan panas, kamu gosong!
+[hero_fire.hurt]
+Aduh! Lag nih, sumpah lag!
+Eh eh, curang! Itu ngebug!
+Oke, oke, itu tadi hoki doang.
+Sakit, tapi gengsi bilang sakit.
+Woilah cik, kena juga!
+Hah? Siapa yang ngizinin kamu mukul?
+[hero_fire.low]
+Darah tipis, mental tetap tebal!
+Jangan panik... jangan panik... PANIK!
+Tenang, comeback is real!
+HP kritis, tapi ego masih full bar!
+Bentar, aku lagi mode serius sekarang.
+[hero_fire.heal]
+Isi bensin dulu, bos!
+HP naik, sombong juga naik!
+Healing dulu biar nggak rungkad.
+[hero_fire.block]
+Tangkis! Kurang greget, bang!
+Gak tembus! Coba lagi tahun depan.
+Nggak mempan, wle!
+[hero_fire.skill]
+{skill}! Rasain nih, full damage!
+Nih ultimate-ku, siap-siap rata!
+{skill}, menyala abangku!
+Tekan tombol, auto menang!
+[hero_fire.item]
+Pakai item dikit, biar makin OP.
+Belanja dulu, sultan mah bebas.
+Item keluar, kamu yang keluar arena.
+Kena pukul? Minum ramuan, sembuh. Ez banget.
+Damage kamu? Udah kuhapus pakai satu botol.
+Armor dipasang. Coba pukul lagi kalau berani!
+Ginseng dulu, biar kamu makin frustrasi.
+Pedang naga keluar. Siap-siap uninstall, bro!
+Darahku penuh lagi. Kasian deh lu.
+Noob mukul, pro minum potion. Gitu aja.
+[hero_fire.win]
+GG EZ! Next!
+Rank naik, harga diri {enemy} turun!
+Juara! Mana piala dan mana baksonya?
+Ampun bang jago? Iya, aku jagonya.
+Udah kubilang, aku tuh pro player!
+Screenshot! Ini harus masuk story!
+[hero_fire.lose]
+Ini pasti lag. Pasti!
+Tadi aku ngalah. Iya, ngalah.
+Rematch! Sekarang! Nggak terima!
+Rungkad... tapi jangan bilang siapa-siapa.
+Joki mana joki? Aku butuh joki!
+[hero_fire.revive]
+Respawn! Aku balik lebih ngegas!
+Bangkit dari kubur, eh dari lantai.
+Plot twist: aku belum tamat!
+
+[hero_storm.start]
+Halo. Peluang menangmu sekitar 3 persen. Dibulatkan.
+Sudah kuhitung. Hasilnya: kamu kalah.
+Oke. Ayo selesaikan ini sebelum jam makan.
+Petir siap. Kamu siap? Tidak. Ya sudah.
+{enemy}, aku sudah baca pola seranganmu. Tipis.
+Mari kita mulai eksperimen ini.
+[hero_storm.taunt]
+Wah, hebat. Itu sarkasme, ya.
+Strategimu menarik. Menarik untuk ditertawakan.
+Kamu nanya? Kamu bertanya-tanya?
+Bukan salahmu. Eh, sebenarnya salahmu.
+Aku pernah lihat batu main lebih pintar.
+Data menunjukkan: kamu panik.
+Coba baca tutorial lagi. Pelan-pelan.
+Seru juga. Kalau aku lagi gabut.
+[hero_storm.combo]
+Sesuai perhitungan.
+Fisika dasar. Tidak usah kaget.
+Zzzt. Efisien.
+Kombo ini sudah kurencanakan dari tadi pagi.
+Rantai petir, rantai kekalahanmu.
+[hero_storm.hurt]
+Hm. Itu tidak ada di kalkulasiku.
+Aduh. Dicatat.
+Oke, itu sakit. Secara ilmiah.
+Menarik. Ternyata kamu bisa menyerang.
+Variabel tak terduga. Menyebalkan.
+Itu tadi beruntung. Statistiknya jelas.
+[hero_storm.low]
+HP rendah. Revisi rencana, versi dua.
+Ini... bukan bagian dari simulasi.
+Tenang. Aku masih punya plan B sampai Z.
+Kritis. Tapi ekspresiku tetap datar.
+Baterai lemah. Mode hemat daya aktif.
+[hero_storm.heal]
+Pemulihan sistem selesai.
+Isi ulang. Seperti ponsel, tapi lebih keren.
+HP kembali normal. Kamu tidak.
+[hero_storm.block]
+Perisai aktif. Otakmu tidak.
+Diblok. Sudah diprediksi.
+Tidak tembus. Coba pakai logika.
+[hero_storm.skill]
+{skill}. Silakan kagum.
+Mengaktifkan {skill}. Mohon menjauh.
+Ini namanya sains. {skill}.
+Zzzrt! Teori jadi praktik.
+[hero_storm.item]
+Pakai item. Keputusan rasional.
+Sumber daya dipakai secara optimal.
+Item ini sudah kuhitung manfaatnya.
+Damage-mu baru saja kubatalkan. Efisien.
+Secara statistik, usahamu barusan sia-sia.
+Armor terpasang. Peluangmu turun drastis.
+Ramuan ini menghapus kerja kerasmu. Maaf.
+Ginseng: murah, efektif, bikin kamu kesal.
+Pukulanmu itu cuma data. Sudah kuhapus.
+Silakan ulangi dari awal, {enemy}.
+[hero_storm.win]
+Sesuai prediksi. Membosankan, tapi benar.
+Q.E.D. Terbukti kamu kalah.
+Menang. Aku mau pulang baca buku.
+GG. Itu singkatan dari Gampang Gampang.
+Skor akhir: aku 1, kamu 0. Seperti biasa.
+Laporan selesai. Kamu sudah boleh nangis.
+[hero_storm.lose]
+Ada galat di sistem. Bukan di aku.
+Hm. Butuh data tambahan.
+Kekalahan ini akan kutulis jadi skripsi.
+Oke. Aku akan pura-pura ini tidak terjadi.
+Peluang 3 persen itu... ternyata milikmu.
+[hero_storm.revive]
+Reboot berhasil.
+Sistem menyala ulang. Kamu kecewa?
+Matikan lalu nyalakan lagi. Selalu berhasil.
+
+[hero_water.start]
+Santuy aja, abis ini kita makan ya.
+Duh, mager. Tapi ya udah, ayo.
+{enemy}, cepetan ya, aku lapar.
+Selow, bro. Air mengalir, aku juga.
+Kalau aku menang, traktir seblak ya.
+Bangun tidur langsung tarung? Oke deh.
+[hero_water.taunt]
+Kamu tegang banget, minum dulu sana.
+Santai, bestie, kalahnya pelan-pelan aja.
+Mukamu kayak orang belum sarapan.
+Udah, nyerah aja, terus kita jajan cilok.
+Kamu galak ya. Lagi lapar juga?
+Pukulanmu kayak es teh tanpa es.
+Hmm... kamu wangi mi rebus. Iri.
+Chill, ini cuma game. Tapi aku menang.
+[hero_water.combo]
+Wah, kombo. Kebetulan sih, wkwk.
+Byuurr! Basah semua!
+Tsunami kecil-kecilan nih.
+Mengalir aja, tiba-tiba kombo.
+Nah gitu dong, enak dilihat.
+[hero_water.hurt]
+Aduh, jangan kasar dong.
+Eh, kuahku tumpah... eh bukan, darahku.
+Sakit, tapi aku tetap santai kok.
+Pelan-pelan, aku belum makan siang.
+Waduh, kena. Ya udahlah.
+Hmm. Itu nggak sopan, tau.
+[hero_water.low]
+Lemes... butuh nasi padang.
+HP tipis kayak dompet akhir bulan.
+Kalau kalah, aku pulang makan aja deh.
+Mulai pusing. Mungkin lapar. Mungkin sekarat.
+Bentar, ambil napas dulu...
+[hero_water.heal]
+Seger! Kayak minum es kelapa.
+Ahh, healing beneran.
+Udah segar lagi, makasih Dewa Air.
+[hero_water.block]
+Nggak kena. Santai aja.
+Ditahan, kayak nahan lapar.
+Mantul! Eh, memantul maksudnya.
+[hero_water.skill]
+{skill}, pelan tapi pasti.
+Nih, {skill}. Jangan baper ya.
+Dinginin kepalamu pakai {skill}.
+Bekuin dulu, makan belakangan.
+[hero_water.item]
+Ngemil item dulu ah.
+Item ini enak nggak ya? Coba deh.
+Buka bekal dulu.
+Pukulanmu tadi? Udah sembuh sambil ngunyah.
+Minum ramuan dulu, kamu tunggu ya. Santai.
+Ginseng-nya pahit, tapi mukamu lebih pahit.
+Pakai armor ah, biar bisa rebahan di sini.
+Glek glek. Nah, capekmu sia-sia deh.
+Kamu mukul, aku jajan. Adil kan?
+Sabar ya, aku lagi ngecas tenaga.
+[hero_water.win]
+Menang! Sekarang waktunya makan!
+GG, santai tapi menang.
+Udah ya, aku mau rebahan.
+Air tenang menghanyutkan, bestie.
+Menang tanpa keringat. Paling keringat lapar.
+Hadiahnya bisa ditukar martabak nggak?
+[hero_water.lose]
+Yah... ya udah, makan aja yuk.
+Kalah karena lapar. Itu alasan valid.
+Nggak apa-apa, besok coba lagi. Atau lusa.
+Aku kalah, tapi hatiku tetap tenang.
+Tolong bilang ke emak, aku sudah berusaha.
+[hero_water.revive]
+Eh, bangun lagi. Kirain udah boleh tidur.
+Hidup lagi! Masih ada jatah makan malam.
+Mengalir balik ke medan perang.
+
+[hero_phoenix.start]
+Hadirin sekalian! Pertunjukan dimulai!
+Lampu sorot ke aku, ya. Terima kasih.
+{enemy}, kamu figuran di kisah epikku!
+Babak pertama: sang burung api turun!
+Siapkan tisu, ini bakal dramatis!
+Tepuk tangannya mana? Kurang keras!
+[hero_phoenix.taunt]
+Aktingmu kaku, {enemy}. Siapa yang kasting?
+Panggung ini terlalu megah untukmu.
+Penonton menguap melihatmu. Kasihan.
+Kamu cuma iklan sebelum aku tampil.
+Oh, betapa tragisnya nasibmu!
+Drama apa ini? Drama kekalahanmu!
+Kamu caper, aku bintang. Beda kelas.
+Penggemarku lebih banyak dari HP-mu.
+[hero_phoenix.combo]
+Bravo! Bravo! Untukku sendiri!
+Lihat! Kobaran seni yang sempurna!
+Inilah klimaks yang kalian tunggu!
+Spektakuler! Rekam, rekam!
+Ledakan! Tepuk tangan! Konfeti!
+[hero_phoenix.hurt]
+Aaah! Kostumku! Kostumku!
+Teganya kau melukai sang bintang!
+Ini... adegan sedih yang tak ada di naskah!
+Penonton, jangan lihat! Ini memalukan!
+Ugh! Riasanku luntur!
+Pengkhianatan! Drama! Air mata!
+[hero_phoenix.low]
+Inikah... babak terakhirku?
+Sutradara! Tolong ganti naskahnya!
+Aku layu... seperti bunga di panggung...
+Jangan tutup tirainya dulu!
+Ini adegan sedih sebelum comeback.
+[hero_phoenix.heal]
+Aku bangkit dari abu! Klise, tapi berhasil!
+Pemulihan yang anggun, bukan?
+Sang bintang kembali bersinar!
+[hero_phoenix.block]
+Ditolak! Seperti audisimu!
+Tak semudah itu menyentuh sang bintang!
+Tangkisan yang indah, catat itu!
+[hero_phoenix.skill]
+Saksikanlah... {skill}!
+Untuk penontonku tercinta: {skill}!
+Adegan puncak! {skill}!
+Sayap api terbentang! Lihat aku!
+[hero_phoenix.item]
+Properti panggung, masuk!
+Kru, berikan item-ku!
+Sedikit bantuan dari belakang layar.
+Luka? Itu cuma riasan panggung, sayang!
+Babak kedua dimulai, darahku penuh lagi!
+Kostum baja! Penonton bersorak, kamu menangis!
+Seteguk ramuan, dan sang bintang bangkit!
+Pedang naga! Sorot lampu ke sini!
+Kerja kerasmu? Dihapus oleh satu adegan.
+Tepuk tangan untuk pukulanmu yang sia-sia!
+[hero_phoenix.win]
+Tirai turun! Standing ovation untukku!
+Terima kasih, terima kasih, aku tahu!
+Pemeran utama selalu menang, sayang.
+Tulis di buku sejarah: aku memukau!
+Encore? Maaf, lawannya sudah habis.
+Piala aktor terbaik jatuh ke... aku!
+[hero_phoenix.lose]
+Tidak! Ini bukan akhir yang kutulis!
+Tragedi... tragedi yang indah...
+Aku jatuh, tapi dengan gaya.
+Kritikus pasti salah paham padaku!
+Matikan kamera... aku butuh waktu...
+[hero_phoenix.revive]
+Burung api tak pernah mati! Sekuel dimulai!
+Kebangkitan! Penonton, berdiri!
+Dari abu menjadi bintang lagi!
+
+[hero_queen.start]
+Ratu sudah datang. Tunduk dulu.
+Hai {enemy}, siap dibantai cantik?
+Petir di tangan, gaya di depan.
+Oke, slay time, bestie.
+Minggir, panggung ini milik ratu.
+Mental aman? Soalnya habis ini nggak.
+[hero_queen.taunt]
+Kamu lucu. Bukan pujian, ya.
+Spill dong, rahasia jadi selemah itu?
+Cringe banget gerakanmu, sayang.
+Ih, caper. Fokus aja dulu.
+Sorry, aku nggak selevel sama kamu.
+Seriusan? Itu yang terbaikmu?
+Salty ya? Kelihatan kok.
+Jangan baper kalau aku menang, ya.
+[hero_queen.combo]
+Slay! Petirku nggak ada obat!
+Cantik, kuat, kombo. Paket lengkap.
+Lihat itu? Itu namanya kelas.
+Zap zap zap! Ratu mengamuk!
+Duh, aku kok keren banget sih.
+[hero_queen.hurt]
+Hei! Rambutku berantakan!
+Berani ya kamu. Catat namanya.
+Oke, kamu cari masalah.
+Aw! Nggak sopan sama ratu!
+Itu cuma goresan. Tetap glowing.
+Hmph. Satu kali itu gratis.
+[hero_queen.low]
+Ratu nggak pernah menyerah. Paham?
+HP tipis, tapi auraku tetap tebal.
+Oke, sekarang aku beneran kesal.
+Jangan senang dulu, babak belum selesai.
+Mahkota miring, tapi tetap di kepala.
+[hero_queen.heal]
+Glow up! Kembali sempurna.
+Self care dulu, sayang.
+Ratu sudah pulih. Gemetar sana.
+[hero_queen.block]
+Nope. Nggak hari ini.
+Perisai ratu, bukan barang murahan.
+Ditolak, kayak chat-mu.
+[hero_queen.skill]
+{skill}! Tunduk pada ratu!
+Rasakan {skill}, sayang.
+Slay pakai {skill}!
+Petir, tunjukkan siapa bosnya!
+[hero_queen.item]
+Aksesoris ratu, dipakai dulu.
+Item premium, untuk orang premium.
+Ratu selalu siap sedia.
+Kamu mukul ratu? Ratu tinggal minum ramuan.
+Armor baru. Kamu? Masih yang itu-itu aja.
+Glow up dulu ya, kamu nonton aja.
+Ginseng biar awet muda. Kamu kapan, {enemy}?
+Usahamu barusan? Udah kuhapus, bestie.
+Pedang naga cocok sama outfit-ku. Kamu nggak.
+Healing time. Kamu masih sibuk iri?
+[hero_queen.win]
+Slay! Seperti biasa.
+Sudah kubilang, ratu selalu menang.
+Bye, {enemy}. Jangan lupa follow.
+Kalah sama aku itu kehormatan, lho.
+Mahkota tetap di tempat. Next!
+Cantik dan menang. Iri? Wajar.
+[hero_queen.lose]
+Aku... cuma lagi nggak mood.
+Ini nggak dihitung. Ratu bilang begitu.
+Oke. Kamu menang. Sekali ini saja.
+Rambutku jelek hari ini, makanya kalah.
+Jangan disebar, atau kamu tahu akibatnya.
+[hero_queen.revive]
+Ratu kembali. Kangen?
+Kamu pikir aku selesai? Lucu.
+Bangkit lagi, makin cantik.
+
+[hero_dragon.start]
+Selamat datang. Mohon kalah dengan sopan.
+Keturunan Raja Naga menyapamu, {enemy}.
+Mari bertarung dengan beradab. Lalu kau kalah.
+Sisikku baru dipoles. Jangan dikotori.
+Bertemu denganku adalah kehormatan bagimu.
+Silakan duluan. Rakyat kecil didahulukan.
+[hero_dragon.taunt]
+Maaf, apakah itu serangan atau salam?
+Dengan segala hormat, kau payah.
+Ilmumu mengingatkanku pada ikan teri.
+Aduh, kasihan. Pasti sulit jadi dirimu.
+Bersikaplah anggun meski kalah, ya.
+Ayahku Raja Naga. Ayahmu siapa?
+Kau perlu kursus tata krama bertarung.
+Wajahku terlalu tampan untuk dipukul.
+[hero_dragon.combo]
+Elegan, seperti seharusnya.
+Ombak Laut Utara menyapamu.
+Gelombang pasang bangsawan!
+Begitulah darah naga bekerja.
+Indah, bukan? Tak perlu berterima kasih.
+[hero_dragon.hurt]
+Beraninya menyentuh bangsawan!
+Sisikku... tergores... tidak sopan!
+Itu tadi kasar sekali, Tuan.
+Hmph. Akan kuingat penghinaan ini.
+Oh, kau bisa juga. Sedikit.
+Jubahku mahal, tahu!
+[hero_dragon.low]
+Seekor naga tak pernah merangkak.
+Situasi ini... kurang bermartabat.
+Leluhurku sedang melihat. Bangkit!
+Kabut, lindungi wajah tampanku!
+Aku hanya sedikit lelah. Hanya sedikit.
+[hero_dragon.heal]
+Embun laut memulihkan sang pangeran.
+Kembali sempurna, tentu saja.
+Darah naga memang istimewa.
+[hero_dragon.block]
+Tak layak menyentuhku.
+Ditolak dengan sopan.
+Perisai bangsawan, jauh dari jangkauanmu.
+[hero_dragon.skill]
+Dengan restu Raja Naga: {skill}!
+Nikmati {skill}, hadiah dariku.
+{skill}. Silakan membeku dengan hormat.
+Kabut Laut Utara, bangkitlah!
+[hero_dragon.item]
+Pusaka keluarga, tentu saja.
+Pelayan, ambilkan item-ku.
+Barang mewah untuk kebutuhan mewah.
+Goresan kecilmu sudah kuobati. Terima kasih.
+Zirah keluarga. Jauh di atas kelasmu.
+Ramuan istana. Kamu pasti belum pernah coba.
+Pedang naga. Kau tak layak menyentuhnya.
+Ginseng seratus tahun. Lebih tua dari jurusmu.
+Maaf, seranganmu tadi sudah tak berbekas.
+Silakan mencoba lagi. Dengan lebih sopan.
+[hero_dragon.win]
+Terima kasih atas pertandingannya. Kau kalah.
+Sudah takdir, darah naga selalu unggul.
+Kemenangan yang pantas untuk wajah ini.
+Silakan pulang. Hati-hati di jalan.
+Kau bertarung dengan berani. Dan sia-sia.
+Tolong lukis momen ini untuk istanaku.
+[hero_dragon.lose]
+Ini... sangat tidak pantas.
+Aku mengalah demi diplomasi.
+Jangan ceritakan ini ke Laut Utara.
+Kekalahan terhormat tetaplah kekalahan...
+Ayahanda akan sangat kecewa.
+[hero_dragon.revive]
+Naga tak mudah tumbang.
+Aku kembali, lebih anggun dari sebelumnya.
+Bangkit dengan martabat utuh.
+
+[ally.start]
+Ayo latihan, saudaraku! Jangan sungkan!
+Hari ini aku tak akan mengalah, kawan.
+Pukul yang keras, tapi jangan sampai nangis.
+Kita satu pasukan, tapi di arena lawan dulu!
+Siap, {enemy}? Yang kalah cuci piring!
+Demi Hoa Lu, ayo adu tenaga!
+[ally.taunt]
+Kau lambat, kawan! Kurang makan nasi?
+Latihan pagimu bolos, ya?
+Baginda bakal geleng-geleng lihat ini!
+Ayo, aku tahu kau lebih kuat dari itu!
+Pedangmu berat sebelah, saudaraku.
+Hehe, kena kau! Fokus, fokus!
+Ini sih aku menang sambil merem.
+Kita bersaudara, tapi rasakan ini!
+[ally.combo]
+Itu jurus Guru Luu... eh, jurusku sendiri!
+Ha! Pelajaran dari medan perang!
+Kombo prajurit Hoa Lu!
+Gempur! Seperti di Co Loa!
+Rasakan semangat pasukan Dinh!
+[ally.hurt]
+Ugh! Pukulan bagus, saudaraku!
+Itu baru namanya jenderal!
+Aduh, aku terlalu lengah!
+Kau makin kuat ya, aku bangga.
+Oke, aku serius sekarang!
+Bagus! Tapi jangan sombong dulu.
+[ally.low]
+Aku belum selesai, kawan!
+Seorang jenderal tak mundur di latihan!
+Napasku berat, tapi semangat tidak!
+Sedikit lagi... jangan menyerah!
+Kalau aku tumbang, jangan lapor Baginda.
+[ally.heal]
+Segar lagi! Ayo lanjut!
+Luka kecil, sudah sembuh!
+Tenagaku kembali, kawan!
+[ally.block]
+Ditangkis! Gerakanmu terbaca!
+Pertahanan prajurit Hoa Lu!
+Belum cukup tajam, saudaraku!
+[ally.skill]
+Jurus andalanku: {skill}!
+Hati-hati, {skill} datang!
+Ini cuma latihan, jangan dendam: {skill}!
+Jurus pamungkas pasukan Dinh!
+[ally.item]
+Bekal dari perkemahan, berguna juga.
+Ambil dari gudang, jangan bilang juru masak.
+Persiapan itu separuh kemenangan!
+[ally.win]
+Latihan bagus! Kita makan bersama!
+Aku menang, tapi kau hebat, kawan.
+Hoa Lu bangga pada kita berdua!
+Satu kosong! Besok giliranmu, mungkin.
+Ayo, cuci piringnya sekarang, haha!
+Kau masih perlu latihan, saudaraku.
+[ally.lose]
+Kau hebat! Aku mengaku kalah!
+Aduh, aku traktir minum malam ini.
+Kau pantas menang, jenderal!
+Baiklah, kau yang terkuat hari ini.
+Latihanku harus ditambah dua kali lipat.
+
+[mentor.start]
+Pelajaran hari ini: jangan kalah.
+Duduk, murid. Eh, maksudku, bertarung.
+Mari lihat apakah kau mencatat pelajaranku.
+Strategi pertama: tetap tenang. Seperti aku.
+{enemy}, ini ujian. Tidak ada remedial.
+Siapkan pikiranmu, bukan cuma pedangmu.
+[mentor.taunt]
+Langkah itu? Nilai D. Kurang.
+Kitab strategi menangis melihat langkahmu.
+Kau menyerang tanpa berpikir. Klasik.
+Sudah kubilang, baca kitab strategi!
+Murid, jangan buru-buru. Kau berantakan.
+Kesabaranku panjang. HP-mu tidak.
+Aku sudah menebak langkahmu tadi.
+Hmm. Perlu kelas tambahan, rupanya.
+[mentor.combo]
+Teori yang dijalankan dengan benar.
+Begitulah siasat bekerja.
+Catat itu. Akan keluar di ujian.
+Kombo ini sudah kurencanakan tiga hari lalu.
+Tepat seperti di dalam kitab.
+[mentor.hurt]
+Hm. Kau belajar dariku, rupanya.
+Aduh, punggung tua ini...
+Bagus. Tapi jangan bangga dulu.
+Itu tidak ada di rencanaku. Menarik.
+Uhuk! Tenang, tenang, guru masih kuat.
+Memukul guru sendiri? Bangga sekali aku.
+[mentor.low]
+Ahli strategi tak pernah benar-benar kalah.
+Mundur sejenak itu juga siasat.
+Ini bagian dari rencana. Mungkin.
+Kakiku sudah tua, tapi otakku tidak.
+Nak, pelan-pelan dengan orang tua.
+[mentor.heal]
+Teh hangat dan napas panjang. Pulih.
+Orang bijak tahu kapan beristirahat.
+Sudah lebih baik. Lanjutkan pelajaran.
+[mentor.block]
+Sudah kuduga.
+Terbaca dari jarak seratus langkah.
+Pertahanan adalah awal kemenangan.
+[mentor.skill]
+Pelajaran praktik: {skill}.
+Perhatikan baik-baik. {skill}!
+{skill}, sesuai halaman tujuh kitabku.
+Siasat terakhir, keluar!
+[mentor.item]
+Persiapan matang, seperti biasa.
+Ahli strategi selalu membawa cadangan.
+Ini namanya logistik, murid.
+[mentor.win]
+Pelajaran selesai. PR-nya: latihan.
+Kau kalah, tapi kau belajar. Bagus.
+Strategi menang atas otot. Lagi-lagi.
+Kelas dibubarkan.
+Tak apa, aku juga dulu kalah. Dulu sekali.
+Nilaimu hari ini: cukup. Jangan sedih.
+[mentor.lose]
+Murid melampaui guru. Aku bangga... dan pegal.
+Baiklah, kau lulus. Jangan sombong.
+Hari ini kau gurunya. Besok aku lagi.
+Rencanaku sempurna. Pelaksanaannya tidak.
+Aku terharu. Juga sakit pinggang.
+
+[warlord.start]
+Berlututlah di hadapan penguasa wilayah ini!
+Siapa bocah ini? Pengawal, usir dia!
+Wilayahku, aturanku, kekalahanmu!
+Kau datang ke bentengku tanpa undangan?
+Akan kujadikan kau cerita peringatan!
+Hari ini sejarah mencatat namaku, bukan namamu!
+[warlord.taunt]
+Pasukanmu cuma petani bawa cangkul!
+Dinh Bo Linh mengirim bocah? Menghina!
+Hartaku lebih banyak dari langkahmu.
+Kau bahkan tak layak jadi pengawalku.
+Tahukah kau berapa luas wilayahku? Luas!
+Aku punya seribu prajurit. Kau punya... nyali.
+Lihat bajuku! Sutra! Bajumu? Karung!
+Di wilayahku, menang itu wajib. Bagiku.
+[warlord.combo]
+Rasakan kekuatan sang penguasa!
+Inilah alasan aku punya benteng!
+Hahaha! Tunduklah!
+Seribu tahun kejayaanku dimulai sekarang!
+Kekuatan wilayah ada di tanganku!
+[warlord.hurt]
+Beraninya! Aku punya gelar!
+Pengawal! Kenapa kalian diam saja?!
+Ini penghinaan terhadap martabatku!
+Aduh! Jubahku robek!
+Akan kubalas sepuluh kali lipat!
+Hmph! Itu cuma keberuntungan pemula!
+[warlord.low]
+Pengawal! Pengawal! Mana kalian?!
+Tidak mungkin! Aku ini penguasa!
+Aku... aku cuma pura-pura lemah!
+Siapkan kuda! Eh, maksudku, lanjutkan!
+Benteng ini tak boleh jatuh!
+[warlord.heal]
+Tabib istana, kerja bagus.
+Penguasa sejati tak mudah tumbang!
+Hahaha! Kembali penuh kekuatan!
+[warlord.block]
+Perisai emas, mahal tahu!
+Sang penguasa tak bisa disentuh!
+Ditahan oleh harta dan kuasa!
+[warlord.skill]
+Jurus warisan leluhur: {skill}!
+Tunduklah pada {skill}!
+Saksikan kekuatan penguasa: {skill}!
+Langit dan bumi tunduk padaku!
+[warlord.item]
+Pusaka dari gudang hartaku!
+Harta melimpah, item melimpah!
+Kau tak punya ini, kan? Kasihan.
+[warlord.win]
+Begitulah nasib penentang penguasa!
+Bawa dia pergi, lalu siapkan pesta!
+Tak ada yang bisa merebut wilayahku!
+Tulislah syair tentang kemenanganku!
+Sejarah akan memujiku selamanya!
+Sudah kubilang, aku tak terkalahkan!
+[warlord.lose]
+Ini curang! Aku protes ke langit!
+Mundur! Mundur! Ini mundur taktis!
+Aku cuma kurang tidur semalam!
+Aku akan kembali... dengan penasihatku!
+Tidak... wilayahku... harta karunku...
+
+[lady.start]
+Oh, jadi kau lawanku. Sangat... biasa.
+Jangan buang waktuku, ya.
+Aku sudah berdandan, jangan bikin berantakan.
+Silakan mulai. Aku menunggu. Sebentar saja.
+{enemy}, kau tahu sopan santun? Sudah kuduga.
+Mari selesaikan dengan anggun.
+[lady.taunt]
+Langkahmu seperti kerbau di sawah.
+Hmm. Tidak terkesan.
+Kau berkeringat. Tidak elegan.
+Itu caramu bertarung? Lucu sekali.
+Aku pernah lihat ayam lebih tangkas.
+Senyummu terlalu percaya diri. Sayang.
+Jaga sikapmu di depan seorang nona.
+Bahkan kipasku lebih berbahaya darimu.
+[lady.combo]
+Anggun dan mematikan.
+Seperti tarian istana.
+Begitulah caranya, kalau kau penasaran.
+Indah, bukan? Tentu saja.
+Satu kibasan, banyak korban.
+[lady.hurt]
+Kasar sekali!
+Kau merusak gaunku!
+Tidak sopan menyerang seorang nona.
+Hmph. Akan kuingat itu.
+Aduh. Sungguh tak beradab.
+Berani sekali kau.
+[lady.low]
+Ini... sungguh memalukan.
+Aku tak akan tumbang di depan orang sepertimu.
+Napasku tersengal. Menyebalkan.
+Seorang nona tetap tegak, apa pun yang terjadi.
+Kau beruntung aku memakai sandal hari ini.
+[lady.heal]
+Teh melati dan sedikit istirahat. Pulih.
+Kecantikan kembali, kekuatan juga.
+Sudah lebih baik. Tentu saja.
+[lady.block]
+Tidak semudah itu.
+Kipasku menangkis seranganmu.
+Kau pikir aku tak siap?
+[lady.skill]
+{skill}. Dengan anggun.
+Nikmati {skill}, jangan menangis.
+Lihat dan belajarlah: {skill}.
+Tarian terakhir untukmu.
+[lady.item]
+Sesuatu dari kotak perhiasanku.
+Seorang nona selalu siap.
+Hanya barang kecil, tak usah iri.
+[lady.win]
+Sudah selesai? Cepat sekali.
+Terima kasih, kau cukup menghibur.
+Seperti dugaanku. Membosankan.
+Bersihkan dirimu dan pergilah.
+Kemenangan ini serasi dengan gaunku.
+Jangan sedih. Eh, sedih juga boleh.
+[lady.lose]
+Aku... membiarkanmu menang.
+Ini tidak terjadi. Paham?
+Gaunku terlalu berat hari ini.
+Hmph. Nikmati selagi bisa.
+Lain kali, aku tak akan bermurah hati.
+
+[soldier.start]
+Gaji belum turun, disuruh perang lagi...
+Bos bilang ini gampang. Bos selalu bohong.
+Ayo... eh, kamu duluan aja deh.
+Aku cuma prajurit biasa, jangan galak-galak.
+Semoga hari ini jatah makannya ayam.
+Lembur lagi, lembur lagi. Nasib.
+[soldier.taunt]
+Ayo sini! ...Eh, jangan dekat-dekat.
+Kau pikir kau hebat? ...Memang sih.
+Aku dibayar buat ngalahin kamu! Dibayar dikit.
+Mundur! Atau... atau aku yang mundur!
+Aku punya tombak! Agak bengkok, tapi tombak!
+Jenderalku lebih galak darimu, tahu!
+Aku lebih takut sama mandor daripada kamu!
+Rasakan ini! Tolong rasakan ya, aku capek.
+[soldier.combo]
+Eh? Aku bisa? Aku bisa!
+Mamak, lihat aku!
+Kenaikan pangkat, aku datang!
+Woah, aku keren juga ternyata!
+Ini harus dapat bonus!
+[soldier.hurt]
+Aduh! Ini nggak ada di kontrak!
+Ampun! Aku punya anak... kucing!
+Sakit! Siapa yang bayar tabibnya?!
+Bos! Aku kena! Bos?!
+Ya ampun, helmku penyok!
+Aduh, jatah makanku belum kumakan!
+[soldier.low]
+Aku mau pulang kampung...
+Tolong bilang ke emak aku berani!
+Gaji segini nggak sebanding!
+Bolehkah aku pura-pura pingsan?
+Ini terakhir kali aku daftar jadi prajurit!
+[soldier.heal]
+Akhirnya ada obat gratis!
+Lumayan, masih bisa hidup.
+Segar! Jangan bilang ke bos aku istirahat.
+[soldier.block]
+Tamengku bekerja! Ajaib!
+Selamat! Hampir saja!
+Untung tamengnya baru dicat.
+[soldier.skill]
+Jurus andalan prajurit: {skill}!
+{skill}! Kupelajari dari pelatih galak.
+Coba {skill}! Semoga berhasil...
+Jurus rahasia: tutup mata dan tusuk!
+[soldier.item]
+Jatah dari gudang, jangan bilang-bilang.
+Ini kucuri... eh, kupinjam dari dapur.
+Bekal terakhirku, demi negara!
+[soldier.win]
+Aku menang?! Minta kenaikan gaji!
+Bos harus lihat ini!
+Malam ini makan daging! Mungkin.
+Ternyata aku jago. Siapa sangka.
+Mau kutulis surat ke kampung, aku menang!
+Akhirnya! Hari pertama aku tidak lari!
+[soldier.lose]
+Sudahlah, aku pensiun dini.
+Gaji nggak seberapa, sakitnya luar biasa.
+Lapor bos... aku kalah, jangan potong gaji.
+Aku pura-pura kalah biar cepat pulang.
+Lain kali aku jadi tukang masak saja.
+
+[bandit.start]
+Woi! Bayar dulu kalau mau lewat!
+Palak dulu, nanya belakangan!
+Jalan ini punya kami, ngerti?!
+Serahkan emasmu, atau... serahkan emasmu!
+Wah, ada mangsa lewat nih, bos!
+Diam di tempat! Ini razia bandit!
+[bandit.taunt]
+Dompetmu kelihatan berat tuh, sini bantuin.
+Kau kenal siapa aku? Aku terkenal di gunung!
+Hehe, jangan nangis, bayar aja.
+Mau lewat? Pajak jalannya mahal, bro.
+Golokku belum makan dari kemarin!
+Lu siapa sih? Bukan anak sini kan?
+Santai bro, cuma ngerampok dikit.
+Bos kita sangar, apalagi gue!
+[bandit.combo]
+Hajar! Rampok semuanya!
+Wkwk, rasain!
+Jurus bandit gunung!
+Mantap! Ini baru namanya kerja!
+Emasnya mana?! Emasnya mana?!
+[bandit.hurt]
+Aduh! Ampun, ampun, eh nggak jadi!
+Wah, lu berani ya!
+Sakit, bro! Santai dong!
+Woi! Gue cuma becanda tadi!
+Kurang ajar! Lu nggak tahu gue siapa?!
+Aduh, golokku lepas!
+[bandit.low]
+Ampun, bang jago! Ampun!
+Teman-teman! Kabur! Eh, mana mereka?
+Oke, oke, emasnya buat lu aja!
+Gue tobat! Beneran tobat! Kali ini aja.
+Ini cuma salah paham, bro...
+[bandit.heal]
+Hehe, jamu curian memang manjur.
+Segar lagi, siap malak!
+Untung bawa obat dari pasar gelap.
+[bandit.block]
+Nggak kena, weee!
+Tameng hasil rampokan, kuat juga.
+Licin kayak belut gunung!
+[bandit.skill]
+Jurus pamungkas: {skill}!
+Nih, {skill} gratis buat lu!
+Rasain {skill}, bonus dari gue!
+Jurus rahasia: lempar pasir!
+[bandit.item]
+Barang curian, kualitas super!
+Hasil malak kemarin, berguna juga.
+Ini dari pasar gelap, jangan nanya.
+[bandit.win]
+Hahaha! Emasmu jadi milikku!
+Makasih atas donasinya, bro!
+Lain kali lewat jalan lain, ya.
+Gunung ini wilayah gue, ngerti?!
+Mantap, malam ini pesta!
+Kalah sama bandit? Malu-maluin, bro.
+[bandit.lose]
+Kabuuur!
+Ampun! Gue cuma numpang lewat juga!
+Gue tobat! Mau jadi petani aja!
+Jangan laporin ke bos ya, plis.
+Ingat mukaku! Eh, jangan, lupain aja!
+
+[critter.start]
+Bzzz! Wilayahku, bzz!
+Krok krok! Siapa berani?
+Aku kecil tapi pedas! Ngeng!
+Ssst... aku sudah mengintai dari tadi.
+Bzz bzz! Satu sengatan, kamu nangis!
+Kwak! Daun ini milikku!
+[critter.taunt]
+Bzz! Tepuk aku kalau bisa! Lambat!
+Krok! Kamu besar tapi lemah! Krok!
+Mukamu kayak daun busuk! Bzz!
+Aku cuma serangga, tapi lebih kuat darimu!
+Ngeng ngeng ngeng! Bising kan? Rasain!
+Kwak kwak! Kamu bau lumpur!
+Seribu kakiku siap menginjakmu!
+Bzzzt! Ngiung di telingamu tiap malam!
+[critter.combo]
+BZZZZZ! Kombo sengat!
+Krok krok krok! Lompat kombo!
+Serbuan sarang! Bzz!
+Lihat aku! Kecil-kecil cabe rawit!
+Jaring laba-laba, kena semua! Hihi!
+[critter.hurt]
+Bzz! Sayapku! Sayapku!
+Krok! Aduh, perutku!
+Ngek! Jangan injak!
+Hei! Aku dilindungi alam, tahu!
+Bzz... penyok...
+Kwak! Itu tidak adil!
+[critter.low]
+Bzz... baterai sayap lemah...
+Krok... kok... ...
+Aku... mau pulang ke lubangku...
+Teman-teman sarang! Tolong!
+Bzz... jangan semprot aku...
+[critter.heal]
+Nyam! Nektar segar! Bzz!
+Krok! Makan lalat, pulih!
+Embun pagi, segarnya!
+[critter.block]
+Cangkangku keras! Tok tok!
+Hehe, nggak kena! Bzz!
+Krok! Mantul dari punggungku!
+[critter.skill]
+Jurus serangga: {skill}! Bzz!
+{skill}! Krok krok!
+Sengatan maut: {skill}!
+Panggil seluruh sarang! BZZZ!
+[critter.item]
+Simpanan madu darurat!
+Remah roti, harta karunku!
+Daun ajaib dari pohon tetangga!
+[critter.win]
+Bzz! Raja kebun adalah aku!
+Krok krok! Aku menang! Krok!
+Kecil-kecil juara! Bzzzt!
+Pulang sana, raksasa lemah!
+Kwak! Lumpur ini tetap milikku!
+Hihi! Kakimu gatal-gatal kan? Bzz!
+[critter.lose]
+Bzz... aku cuma serangga kecil...
+Krok... aku pura-pura mati saja...
+Ngeng... aku pindah ke kebun lain...
+Dasar raksasa jahat! Bzz!
+Kwak... lumpurku... ...
+
+[trickster.start]
+Hihihi, ada mainan baru!
+Mau main petak umpet? Kamu kalah duluan.
+Meong~ siapa yang mau dikerjain hari ini?
+Hehehe, tebak aku di mana!
+Wah, wajahmu polos banget. Asyik!
+Ayo main, aku janji curang!
+[trickster.taunt]
+Cilukba! Hihihi!
+Kamu lucu kalau lagi bingung!
+Kejar aku, kejar aku! Nggak bisa ya?
+Ekormu mana? Oh, nggak punya. Kasihan!
+Hihi, tali sepatumu lepas! Bohong!
+Sssss... kamu mulai panik, hihi.
+Monyet aja lebih pintar. Aku monyet, btw.
+Prank! Prank! Kena prank!
+[trickster.combo]
+Hihihi! Kena semua!
+Trik rahasia rubah!
+Meong! Cakaran beruntun!
+Ups, nggak sengaja kombo, hihi!
+Hore! Kekacauan sempurna!
+[trickster.hurt]
+Ih! Curang!
+Meong! Buluku!
+Aduh! Itu bukan cara main!
+Sss! Kau injak ekorku!
+Hei, harusnya aku yang usil!
+Huhu, ini nggak lucu!
+[trickster.low]
+Waduh, mainnya jadi serius...
+Hihi... hi... nggak lucu lagi ya...
+Saatnya menghilang... sebentar lagi...
+Tolong! Eh, aku bercanda. Tapi tolong!
+Nyawa tinggal satu dari sembilan, meong.
+[trickster.heal]
+Jilat-jilat, sembuh! Meong!
+Hihi, sudah segar, mainnya lanjut!
+Makan buah curian, pulih!
+[trickster.block]
+Hihi, cuma bayangan!
+Meleset! Aku di sini, bukan di situ!
+Ekorku tameng terbaik!
+[trickster.skill]
+Sulap! {skill}!
+Hihihi, {skill} kejutan!
+Trik terakhir: {skill}!
+Abrakadabra! Kau pusing!
+[trickster.item]
+Barang curian, cocok untukku!
+Hihi, item dari kantong ajaib!
+Pinjam dulu, nggak balikin.
+[trickster.win]
+Hihihi! Kena tipu sampai akhir!
+Meong~ mainan rusak, cari yang baru.
+Seru banget! Ayo lagi, aku menang lagi!
+Rubah selalu lebih pintar, hihi!
+Bye bye, wajah bingung!
+Kamu kena prank seumur hidup!
+[trickster.lose]
+Huhu, mainnya nggak seru!
+Ini cuma trik! Aku pura-pura kalah!
+Kabur lewat atap! Meong!
+Nanti kubalas, hihi... hiks.
+Aku menghilang dulu, dadah!
+
+[brute.start]
+GRAAH! Kau ganggu tidurku!
+Hmm. Kecil. Injak.
+Aku besar. Kau kecil. Selesai.
+Grr... siapa ribut-ribut?
+BOOM! Aku datang.
+Batu tidak takut. Batu pukul.
+[brute.taunt]
+Kau... bau... kecil.
+Pukulanmu geli.
+Lari? Percuma. Aku besar.
+Grr. Berisik. Diam.
+Aku makan kau. Nanti.
+Kau seperti semut. Semut lemah.
+Hmph. Pohon lebih kuat.
+Kau capek? Aku belum mulai.
+[brute.combo]
+HANCUR!
+GRAAAH! Remuk semua!
+Bum! Bum! BUM!
+Tanah gempa! Hahaha!
+Aku pukul. Semua jatuh.
+[brute.hurt]
+Grr! Sakit!
+Hm? Ada yang gigit?
+Aduh. Kepala batu ini sakit.
+Kau pukul aku? Salah.
+GRAH! Marah sekarang!
+Akar... patah...
+[brute.low]
+Ngantuk... dan sakit...
+Aku... masih... besar...
+Grr... jangan... dorong...
+Batu retak... tidak bagus...
+Lapar... lelah... marah...
+[brute.heal]
+Makan batu. Kuat lagi.
+Hmm. Enak. Sembuh.
+Akar minum air. Segar.
+[brute.block]
+Tidak sakit.
+Kulitku batu. Hah.
+Mental. Bodoh.
+[brute.skill]
+{skill}! GRAAH!
+Aku pakai {skill}. Kau hancur.
+{skill}... tunggu... ya, itu!
+Injak besar! BUM!
+[brute.item]
+Ini... apa? Makan saja.
+Hmm. Benda kecil. Pakai.
+Gigit ini. Kuat.
+[brute.win]
+Aku menang. Tidur lagi.
+GRAAH! Aku terbesar!
+Kau kecil. Sudah kubilang.
+Hmph. Gampang.
+Pulang. Jangan bangunkan aku.
+Menang. Lapar. Makan.
+[brute.lose]
+Grr... aku... tidur saja...
+Kok... bisa...?
+Batu... runtuh...
+Kau curang. Kecil curang.
+Pohon... tumbang... huu...

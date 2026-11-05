@@ -68,6 +68,12 @@ namespace Loan12
             {
                 return;
             }
+            if (C_PortScreens.f_touch)
+            {
+                this.f_o = false;
+                // PORT-UI: no logos
+                this.f_q = 1;
+            }
             if (!C_cx.f_F && ((this.f_o) || (!MGMIDlet.f().f_d)))
             {
                 this.d();

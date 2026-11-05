@@ -84,6 +84,28 @@ namespace Loan12
             return (this.f_j >= 0);
         }
 
+        /** PORT-UI: level chosen (-1: none can be paid) */
+        public int portLevel()
+        {
+            return this.f_j;
+        }
+
+        /** PORT-UI: level i is open and its ticket can be paid */
+        public bool portCan(int i)
+        {
+            return ((i >= 0)) && ((i < this.f_h.Length)) && this.f_h[i];
+        }
+
+        /** PORT-UI: choose level i (like the arrow keys) */
+        public void portSelect(int i)
+        {
+            if (this.portCan(i))
+            {
+                this.f_j = i;
+                this.b(i);
+            }
+        }
+
         private void b(int paramInt)
         {
             if ((paramInt < 0))
@@ -102,8 +124,9 @@ namespace Loan12
             {
                 return;
             }
-            if ((C_bg.f(5) > 0))
+            if ((!C_PortScreens.f_touch && ((C_bg.f(5) > 0))) || C_PortMap.takeArenaSeal())
             {
+                // PORT-UI: Ngọc Ấn only when chosen
                 C_dd.f_h = true;
                 C_bg.g(5);
             }

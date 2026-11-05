@@ -75,6 +75,8 @@ namespace Loan12
         private int[] f_portPath;
         private int f_portPathLen;
         private int f_portPathPos;
+        private int f_portGoal;
+        private bool f_portRetarget;
 
         static SQ_aa()
         {
@@ -88,6 +90,7 @@ namespace Loan12
             this.f_B = 0;
             this.f_ah = true;
             this.f_portPath = new int[64];
+            this.f_portGoal = -1;
         }
 
         public SQ_aa()
@@ -571,8 +574,209 @@ namespace Loan12
             this.portWalk();
         }
 
+        // PORT-UI: state and actions for the Unity map view (see game.PortMap)
+        public C_ca portTalk()
+        {
+            return (this.f_f == 2 ? this.f_O : ((C_ca)null));
+        }
+
+        public C_co portArenaBox()
+        {
+            return (this.f_f == 9 ? this.f_P : ((C_co)null));
+        }
+
+        /** next utterance of the dialogue ("Tiếp"), or what follows it after the last one */
+        public void portTalkNext()
+        {
+            if ((this.f_f == 2) && (this.f_O != null) && !this.f_O.portNext())
+            {
+                this.y();
+            }
+        }
+
+        /** "Bỏ qua" of the dialogue */
+        public void portTalkSkip()
+        {
+            if ((this.f_f == 2) && (this.f_O != null))
+            {
+                this.y();
+            }
+        }
+
+        public int portState()
+        {
+            return this.f_f;
+        }
+
+        public bool portNodeOpen(int n)
+        {
+            return ((n >= 0)) && ((n < this.f_z.Length)) && this.f_z[n].f_d;
+        }
+
+        public bool portRoadOpen(int r)
+        {
+            return ((r >= 0)) && ((r < this.f_A.Length)) && this.f_A[r].f_c;
+        }
+
+        public int portNodeQuest(int n)
+        {
+            return this.f_z[n].f_e;
+        }
+
+        public int portNodeEvent(int n)
+        {
+            return this.f_z[n].f_f;
+        }
+
+        public int portGuard(int n)
+        {
+            return this.f_S[n];
+        }
+
+        public int portQuest()
+        {
+            return this.f_T;
+        }
+
+        public bool portArena(int i)
+        {
+            return ((i >= 0)) && ((i < this.f_aq.Length)) && this.f_aq[i];
+        }
+
+        public int portNode()
+        {
+            return this.f_B;
+        }
+
+        public int portX()
+        {
+            return this.f_F;
+        }
+
+        public int portY()
+        {
+            return this.f_G;
+        }
+
+        public bool portWalking()
+        {
+            return (this.f_f == 1) || ((this.f_portPathPos < this.f_portPathLen)) || this.f_portRetarget;
+        }
+
+        public int portTarget()
+        {
+            return (this.portWalking() ? this.f_portGoal : -1);
+        }
+
+        /** stops at the end of the road being walked */
+        public void portStop()
+        {
+            this.f_portPathLen = 0;
+            this.f_portRetarget = false;
+        }
+
+        /** "BẮT ĐẦU": what the game does when the hero arrives at the node he stands on */
+        public void portArrive()
+        {
+            if (this.f_f == 0)
+            {
+                this.f(0);
+            }
+        }
+
+        /** walks to node n along the shortest open way (from the end of the road being walked) */
+        public void portGo(int n)
+        {
+            if (((n < 0)) || ((n >= this.f_z.Length)))
+            {
+                return;
+            }
+            this.f_portGoal = n;
+            if (this.f_f == 0)
+            {
+                this.f_portRetarget = false;
+                this.a(this.f_g + this.f_z[n].f_b, this.f_a_ + this.f_z[n].f_c);
+            }
+            else
+            {
+                this.f_portPathLen = 0;
+                this.f_portRetarget = true;
+            }
+        }
+
+        /** roads of the shortest open way from the hero's node to n (-1: none); its nodes into out */
+        public int portRoute(int n, int[] out_1)
+        {
+            int i1 = this.f_z.Length;
+            if (((n < 0)) || ((n >= i1)))
+            {
+                return -1;
+            }
+            int[] prev = new int[i1];
+            int[] queue = new int[i1];
+            for (int k = 0; (k < i1); k++)
+            {
+                prev[k] = -2;
+            }
+            int head = 0;
+            int tail = 0;
+            queue[tail++] = this.f_B;
+            prev[this.f_B] = -1;
+            while (((head < tail)) && (prev[n] == -2))
+            {
+                int at = queue[head++];
+                for (int d = 0; (d < 4); d++)
+                {
+                    int r = C_bq.f_c[at][d];
+                    if (((r >= 0)) && ((r < this.f_A.Length)) && this.f_A[r].f_c)
+                    {
+                        int to = (this.f_A[r].f_a == at ? this.f_A[r].f_b : this.f_A[r].f_a);
+                        if (((to >= 0)) && ((to < i1)) && (prev[to] == -2))
+                        {
+                            prev[to] = at;
+                            queue[tail++] = to;
+                        }
+                    }
+                }
+            }
+            if (prev[n] == -2)
+            {
+                return -1;
+            }
+            int len = 0;
+            for (int k_1 = n; prev[k_1] != -1; k_1 = prev[k_1])
+            {
+                len++;
+            }
+            if (out_1 != null)
+            {
+                int at_1 = len;
+                for (int k_2 = n; (at_1 >= 0); k_2 = prev[k_2])
+                {
+                    if ((at_1 < out_1.Length))
+                    {
+                        out_1[at_1] = k_2;
+                    }
+                    at_1--;
+                    if (prev[k_2] == -1)
+                    {
+                        break;
+                    }
+                }
+            }
+            return len;
+        }
+
         private void portWalk()
         {
+            if (this.f_portRetarget && (this.f_f == 0) && (C_cz.d().f_e.f_d == null))
+            {
+                this.f_portRetarget = false;
+                if ((this.f_portGoal >= 0))
+                {
+                    this.a(this.f_g + this.f_z[this.f_portGoal].f_b, this.f_a_ + this.f_z[this.f_portGoal].f_c);
+                }
+            }
             if ((this.f_portPathPos >= this.f_portPathLen))
             {
                 return;
@@ -710,6 +914,12 @@ namespace Loan12
 
         private void z()
         {
+            if (C_PortScreens.f_touch)
+            {
+                // PORT-UI: a note on the touch map instead of a dialog
+                C_PortMap.f_note = "Đã mở thêm 1 mức luyện tập ở Đấu trường. Hãy vào đó thử sức!";
+                return;
+            }
             C_ae localae = C_cz.a("Chúc mừng", "Bạn đã mở thêm được 1 mức luyện tập tại đấu trường. Hãy vào đó thử sức!", "Đồng ý", 5, 1);
             ((C_ar)localae).a(((MG_b)(this)));
             C_cz.d().a(localae, true);
@@ -731,6 +941,11 @@ namespace Loan12
                     i += C_dd.j(this.f_z[this.f_B].f_e);
                     this.f_ak = C_dd.f(this.f_z[this.f_B].f_e);
                     this.f_am = C_dd.g(this.f_z[this.f_B].f_e);
+                    if (C_PortScreens.f_touch)
+                    {
+                        // PORT-UI: its boxes wait to be opened on the map
+                        C_PortMap.f_boxes += C_PortMap.questBoxes(this.f_z[this.f_B].f_e);
+                    }
                     if (this.f_T == 0)
                     {
                         SQ_aa.f_e = true;
@@ -1010,8 +1225,9 @@ namespace Loan12
                     this.f_Z = new C_s();
                     this.f_Z.d(this.f_F, this.f_G);
                     this.f_Z.a();
-                    if ((C_bg.f(5) > 0))
+                    if (!C_PortScreens.f_touch && ((C_bg.f(5) > 0)))
                     {
+                        // PORT-UI: chosen on the prepare screen
                         C_dd.f_h = true;
                         C_bg.g(5);
                     }
@@ -1066,6 +1282,24 @@ namespace Loan12
             }
         }
 
+        /** PORT-UI: the VS box is shown and its intro is over ("Đánh" is available) */
+        /** PORT-UI: the swords animation before the battle box (s.portState), or null */
+        public int[] portSlash()
+        {
+            return ((this.f_f == 3) && (this.f_Z != null) ? this.f_Z.portState() : ((int[])null));
+        }
+
+        public bool portVsReady()
+        {
+            return (this.f_f == 3) && (this.f_Z == null) && (this.f_N != null);
+        }
+
+        /** PORT-UI: "Rút lui" is offered */
+        public bool portCanRetreat()
+        {
+            return (this.f_D >= 0);
+        }
+
         public void b()
         {
             C_ad localad = new C_ad(C_dd.f_e, this.f_W, this.f_X);
@@ -1076,6 +1310,8 @@ namespace Loan12
 
         private void F()
         {
+            C_PortMap.f_battleQuest = (this.f_L == 0 ? this.f_z[this.f_B].f_e : -1);
+            // PORT-UI: the quest of this battle
             C_dd.f_c = this.f_T;
             if (this.f_P != null)
             {
@@ -1097,7 +1333,8 @@ namespace Loan12
             if (this.f_ak)
             {
                 this.f_ak = false;
-                this.f_an = C_bg.t();
+                // PORT-UI: the quest's box holds items (relics needed an SMS to open); a note tells which
+                this.f_an = (C_PortScreens.f_touch ? -1 : C_bg.t());
                 if ((this.f_an >= 0))
                 {
                     localObject = "Bạn đã nhận được 1 vật phẩm. Bạn có muốn mở vật phẩm ngay không? (Tham khảo giá tại http://free.ola.vn.)";
@@ -1133,7 +1370,11 @@ namespace Loan12
                     if (SQ_aa.f_e)
                     {
                         SQ_aa.f_e = false;
-                        this.G();
+                        if (!C_PortScreens.f_touch)
+                        {
+                            // PORT-UI: the touch map has its own tutorial
+                            this.G();
+                        }
                     }
                     if ((this.f_ag > 0))
                     {
@@ -1198,6 +1439,12 @@ namespace Loan12
                     }
                     break;
                 case 9:
+                    if (!this.f_ai && C_PortScreens.f_touch)
+                    {
+                        // PORT-UI
+                        this.f_ai = true;
+                        C_PortMap.f_arenaIntro = true;
+                    }
                     if (!this.f_ai)
                     {
                         this.f_ai = true;
@@ -1255,7 +1502,16 @@ namespace Loan12
                             localObject = C_ao.a(((string)(localObject)), "{a}", J2ME.JString.valueOf(j));
                         }
                     }
-                    if (!(((string)(localObject))).equals(""))
+                    if (!(((string)(localObject))).equals("") && C_PortScreens.f_touch)
+                    {
+                        // PORT-UI
+                        if (C_dd.m(C_dd.f_d))
+                        {
+                            C_PortMap.f_note = ((string)(localObject));
+                        }
+                        this.b(0, 9);
+                    }
+                    else if (!(((string)(localObject))).equals(""))
                     {
                         C_ae localae2 = C_cz.a("Chúc mừng", ((string)(localObject)), "Đồng ý", 9, 1);
                         ((C_ar)localae2).a(((MG_b)(this)));
@@ -1392,7 +1648,12 @@ namespace Loan12
                     this.f(0);
                     break;
                 case 2:
-                    if (!C_bg.l())
+                    if (!C_bg.l() && C_PortScreens.f_touch)
+                    {
+                        // PORT-UI
+                        C_PortMap.f_noLives = true;
+                    }
+                    else if (!C_bg.l())
                     {
                         localae1 = C_cz.a("Chú ý", "Bạn đã hết mạng chơi. Bạn có muốn mua thêm mạng chơi không?. Tham khảo giá tại http://free.ola.vn.", "Có", 12, "Không", 14, 1);
                         ((C_ar)localae1).a(((MG_b)(this)));

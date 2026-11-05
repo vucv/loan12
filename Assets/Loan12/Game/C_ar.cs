@@ -123,6 +123,11 @@ namespace Loan12
 
         public void c(Graphics paramGraphics)
         {
+            if (C_PortScreens.f_storyHidden && ((this is C_df)))
+            {
+                // PORT-UI
+                return;
+            }
             if (this.b())
             {
                 ((C_ds)this.f_l).a(paramGraphics);
@@ -379,6 +384,18 @@ namespace Loan12
         /** PORT-TOUCH: pointer dragged to (x, y), absolute screen coordinates. */
         public virtual void portDragTo(int paramInt1, int paramInt2)
         {
+        }
+
+        /** PORT-UI: presses soft key 0 = left, 1 = centre, 2 = right, exactly like its key would. */
+        public bool portPress(int slot)
+        {
+            if ((this.f_s == null) || ((slot < 0)) || ((slot > 2)) || (this.f_a[slot] == null) || (this.f_b[slot] != 0))
+            {
+                return false;
+            }
+            this.f_a[slot].b();
+            this.f_b[slot] = 3;
+            return true;
         }
 
         /** PORT-TOUCH: label of soft key 0 = left, 1 = centre, 2 = right; null when there is none. */

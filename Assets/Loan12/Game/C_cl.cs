@@ -52,10 +52,19 @@ namespace Loan12
             return this.f_b;
         }
 
+        /** PORT-UI: how far the text has scrolled, 0..1 */
+        public float portProgress()
+        {
+            int total = this.f_a.Length * 15 + this.f_s;
+            float done = this.f_b * 15 + this.f_q + this.f_s - this.f_e;
+            return J2ME.JMath.max(0.0f, J2ME.JMath.min(1.0f, done / total));
+        }
+
         public override void a(Graphics paramGraphics, int paramInt1, int paramInt2)
         {
-            if ((this.f_b >= this.f_a.Length))
+            if (((this.f_b >= this.f_a.Length)) || C_PortScreens.f_storyHidden)
             {
+                // PORT-UI
                 return;
             }
             int i = this.f_e;

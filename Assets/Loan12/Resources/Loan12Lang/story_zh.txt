@@ -1,0 +1,389 @@
+# story: vi	en	ja	ko  (dialogues, intro / ending scroll, tutorial; see Assets/Loan12/Unity/Loc.cs)
+Lính Tế Giang	細江士兵
+Lính Bình Kiều	平橋士兵
+Lính Đỗ Động	杜洞士兵
+Tàn Tướng Đỗ Động	杜洞殘將
+Lính Siêu Loại	超類士兵
+Phản Tướng	叛將
+Lính Cổ Loa	古螺士兵
+Lính Tam Đái	三帶士兵
+Lính Phong Châu	峯州士兵
+Lính Hồi Hồ	回湖士兵
+Sơn Tặc	山賊
+Bọ Quái	妖蟲
+Quỷ Ong	妖蜂
+Thạch Sùng Tinh	壁虎精
+Quỷ Lùn	矮妖
+Ma Nhãn	邪眼
+Ngọc Thố Tinh	玉兔精
+Ma Điểu	妖鳥
+Xà Tinh	蛇精
+Hầu Tinh	猴精
+Ấu Quỷ	小妖
+Thổ Tinh	土地精
+Thạch Ma	石妖
+Linh Miêu	靈貓
+Lão Hầu Tinh	老猴精
+Quái Sư	妖獅
+Mộc Ma	樹妖
+Đại Mộc Ma	大樹妖
+Độc Nhãn Trư	獨眼野豬
+Quái Cóc	妖蛤蟆
+Sâu Quỷ	妖蠕蟲
+Trùng Quỷ	妖蛆
+Lão Trùng Quỷ	老妖蛆
+Quái Ưng	妖鷹
+Thằn Lằn Quỷ	妖蜥
+Hạc Yêu	鶴妖
+Độc Ngư	毒魚
+Quỷ Cóc	魔蟾
+Ma Cây	樹鬼
+Ma Trơi	鬼火
+Chồn Tinh	鼬精
+Nhện Tinh	蜘蛛精
+Ấu Rồng	幼龍
+Lính	士兵
+Lính Tiên Du	仙遊士兵
+{p} tướng quân! Lưu Cơ được giao nhiệm vụ hướng dẫn tướng quân tất cả những quy tắc của chiến trường. Ngài đã sẵn sàng chưa?	{p} 將軍！我劉基受命將沙場上的一切規矩傳授於你。準備好了嗎？
+Lưu quân sư, xin chỉ bảo!	劉軍師，請賜教！
+Trần Lãm-Trần Minh Công lâm bệnh. Sớm mai Đinh chủ tướng sẽ về Kỳ Bố, sự an toàn của chủ tướng trông cậy vào tướng quân	陳覽大人——陳明公病倒了。明早丁統領要回奇布，他的安危就交給將軍了。
+Quân sư yên tâm, mạt tướng sẽ hộ tống Chủ tướng đến Kỳ Bố an toàn.	軍師放心，末將必定護送統領平安抵達奇布。
+Thưa Nhạc phụ, con đã về!	岳父，我回來了！
+Con về thật đúng lúc, ta có chuyện cần bàn với con đây.	你回來得正好，我有事與你商量。
+Nhưng sức khỏe của Nhạc phụ...	可是岳父的身體……
+Không sao, con yên tâm!	不礙事，別擔心！
+Đất nước loạn lạc! Ta già rồi, những Sứ quân khác đã đều xưng hùng xưng bá một phương. Con cũng cần lộ diện để thiên hạ biết.	天下大亂！我已年老，其他使君都已各自稱雄一方。你也該站出來，讓天下人知道你。
+Thưa Cha! Bộ Lĩnh nguyện suốt đời phò cha, con nào dám mang tội bất trung bất hiếu.	父親！部領發誓終身侍奉您，怎能犯下不忠不孝之罪？
+Nhưng đây là nguyện vọng của ta.	但這是我的心願。
+Thưa Cha...!	父親……！
+Hãy nghe lời ta, định ngày lành mà xưng hiệu. 	聽我的。擇個吉日，昭告你的名號。
+Con trẻ xin nghe lời! Giờ con về Hoa Lư lo mọi việc. Cha hãy giữ sức khỏe!	孩兒遵命！我這就回華閭打點一切。請父親保重身體！
+Chủ tướng, các sứ quân khác đều chỉ xưng Công, tức khiêm nhường chỉ nhận là bá chủ 1 phương. Không lẽ chủ tướng cũng xưng hiệu là Đinh Công?	統領，其他使君都只自稱「公」，謙稱統治一方。您總不會也稱「丁公」吧？
+Không! Ta không muốn làm Sứ, ta có một ước mơ là giang sơn này được quy về một mối, chấm dứt nạn binh đao liên miên cho muôn dân được an lành 	不！我不想只當一方使君。我夢想一統此地，終結無盡的戰亂，讓天下百姓安居樂業。
+Nếu vậy, chủ tướng nên xưng hiệu Vạn Thắng Vương, đó là tước hiệu của vị Phật có công đức đánh đuổi yêu tà đem an bình cho chúng dân, được Phật Tổ tuyên phong.	那麼統領應稱「萬勝王」——此乃佛所宣示、驅除邪惡、為民帶來太平的佛號。
+Hay lắm! Rất hợp với tâm nguyện của ta. Nhờ Lưu quân sư chuẩn bị tiến hành đại lễ.	好極了！正合我意。劉軍師，請籌備大典。
+Thưa chủ tướng! Lúc này làm lễ xưng Vương e không được nhân hòa.	統領！此時舉行稱王大典，恐怕難得民心。
+Tại sao? Quân sư, xin hãy nói.	為何？軍師請講。
+Loạn sơn tặc Tam Điệp khiến người dân quanh vùng khiếp sợ, sống không yên.	三疊山賊橫行，地方百姓不得安寧。
+Chủ tướng nên cho người đến bình loạn trước, sau xưng Vương thì được lòng dân trong vùng hơn.	統領應先派兵剿平山賊，之後再稱王，必能收服一方民心。
+Quân sư nói phải lắm!	軍師所言極是！
+Chủ tướng! Hãy để tôi dẹp loạn sơn tặc.	統領！讓末將去剿匪吧。
+Tướng quân, ngài phải giúp tôi chuẩn bị cho đại lễ. Việc dẹp sơn tặc xin nhờ {p} tướng quân.	將軍得幫我籌備大典。剿匪之事，就交給 {p} 將軍。
+Nếu quân sư đã có sắp xếp rồi thì ta cũng nên theo. {p} tướng quân hãy thận trọng!	既然軍師已有安排，那就這麼辦。{p} 將軍，務必小心！
+Mạt tướng tuân lệnh!	遵命！
+Quân Hoa Lư chỉ có bấy nhiêu thôi ư? Chúng xem thường ta quá đấy!.	華閭就派這點人來？也太小看我了！
+Tấn công! Giết hết bọn rác rưởi cho ta.	上！給我把這群烏合之眾殺光！
+Tiến lên, tiêu diệt bọn đạo tặc! 	前進，剿滅山賊！
+Chủ tướng, giờ lành đã đến. Chúng ta mau tiến hành đại lễ cho kịp.	統領，吉時已到。大典開始吧。
+Thiên hạ đại nghĩa, Ngô vương chẳng may mất sớm, loạn thần mải tranh giành vương bá, không lo thiên hạ, để đất nước loạn lạc, chiến tranh liên miên, dân chúng lầm than. Nay thuận thiên ý, Bộ Lĩnh họp quân dẹp loạn, quyết thu giang sơn về một mối. Kẻ nào không phục, thì Vạn Thắng Vương này tiêu diệt không tha!	奉天大義：吳王早逝，奸雄爭權，不顧社稷，致使國家大亂、戰禍連年、百姓困苦。今部領順應天意，聚兵平亂，一統江山。凡不肯歸順者，我萬勝王必將其剷除，絕不留情！
+Vạn Thắng Vương vạn tuế! Vạn tuế!	萬勝王萬歲！萬歲！
+Chư tướng, hãy đứng lên!	眾將平身！
+Trận đầu, ta muốn đánh một trận thật lừng lẫy để các nơi phải khiếp sợ. Lưu Cơ, ta nên đánh ai trước? 	首戰我要一場震懾天下的大勝。劉基，該先打誰？
+Thưa đại vương, 12 sứ quân đáng gờm nhất là Phạm Bạch Hổ. Ông ta vốn làm tướng dưới thời Ngô Vương lại là người có uy đức. Quân sĩ được huấn luyện rất bài bản, quân thủy bộ uy dũng. Đánh Phạm Bạch Hổ nếu thắng thì uy phong rất lớn, nếu thua quân ta sẽ mất nhuệ khí mà các sứ quân khác cũng xem thường.	陛下，十二使君中最難對付的是范白虎。他曾是吳王麾下大將，有威望又有德行。士卒訓練精良，水陸兩軍皆強。若能擊敗范白虎，聲威大振；但若戰敗，軍心必散，其他使君也會輕視我們。
+Tập trung toàn quân, đánh một trận quyết tử. Thắng được Phạm Bạch Hổ xem như ta có nửa giang sơn. Sợ gì !	集結全軍決一死戰。打敗范白虎，天下便得一半。有何可懼！
+Không được! Kế đó là “Được ăn cả ngã về không”. Tốt nhất là ta cứ theo binh pháp cơ bản, đánh kẻ yếu hòa kẻ mạnh, xưa nay vẫn thế. Ta nên hòa với Phạm Bạch Hổ.	不可！此計是「孤注一擲」。最好依循兵法根本：攻弱和強，自古皆然。我們應與范白虎議和。
+Vậy ai sẽ là người đi sang thuyết khách đây?	那誰去說服他？
+Nhiệm vụ thuyết khách, xin để Lưu Cơ!	說服之事，交給我劉基！
+Chuyến đi lành ít dữ nhiều, tướng quân {p} hãy đi cùng quân sư. Hai vị hãy cẩn trọng.	此行凶險。{p} 將軍，你隨軍師同行。兩位務必小心。
+Lưu Cơ ở Hoa Lư, xin bái kiến Phạm sứ quân!!	華閭劉基，拜見范大人！
+Lưu tiên sinh, mời an tọa! 	劉先生，請坐！
+Chẳng hay Lưu quân sư đến xứ Đằng Châu có việc gì?	劉軍師遠道來藤州，有何貴幹？
+Chủ tướng tôi có thư này gửi Phạm sứ quân, xin sứ quân xem qua.	我主有書信呈給范大人，請過目。
+Hãy đưa thư cho ta...........	把信給我…………
+Thư ta đã đọc, chuyện an hòa nghe cũng thuận lòng. Nhưng còn phải xem ý trời ra sao?	信我看過了。議和倒是不錯，但還得看天意如何。
+Nghe nói tiên sinh tinh thông Kỳ môn độn giáp. Ông hãy xem ý trời giúp tôi.	聽聞先生精通卜筮，請替我卜問天意。
+Mời sứ quân gieo quẻ!	請大人抽籤！
+Quẻ của tướng quân là quẻ Thủy Địa Tỷ. Lời quẻ nói rằng “Lục nhị: tỷ chi tử nội, trinh cát”. Xin dịch nghĩa như sau: “ Hai bên thân nhau vì đạo đồng chí hợp, chứ không phải vì kết thân với bề trên để cầu phú quí, như vậy là chính đáng, không thất thân, nên tốt. ”	您得的是「比」卦。爻辭曰：「六二，比之自內，貞吉。」意思是：「雙方親近，是因志同道合，而非攀附權貴以求富貴。此為正道，故吉。」
+Ý trời đã vậy, Bạch Hổ không dám trái thiên ý. 	既是天意，白虎不敢違背。
+Quân sư hãy mang hòa ước này về Hoa Lư. Từ nay, chúng ta hiếu hòa, không xâm lấn, không gây phiền hà cho nhau, ai giàu nấy hưởng, ai mạnh tự cường, tình hữu hảo láng giềng, trước sau như một. Nếu có kẻ đánh Hoa Lư, Phạm Bạch Hổ sẵn lòng giúp đỡ.	軍師，請將這份和約帶回華閭。從今以後，兩家和睦相處：互不侵犯、互不滋擾，各享其富、各壯其力，永為善鄰。若有人攻打華閭，范白虎必當相助。
+Lưu Cơ thay mặt Vạn Thắng Vương vô cùng cảm kích Phạm sứ quân!	劉基代萬勝王，深謝范大人！
+Ta đã hòa với Phạm Bạch Hổ, vậy gần Hoa Lư nhất chỉ còn Ngô Xương Xí ở Bình Kiều.	已與范白虎議和，華閭附近就只剩平橋的吳昌熾了。
+Con thỏ non trốn chạy về miền rừng núi âm u ấy, đáng kể gì!  	一隻逃進深山的小兔子，算得了什麼！
+Nhưng cũng không thể chủ quan, nếu lấy được Bình Kiều thì sẽ an tâm hơn khi tiến quân lên phía bắc.	但也不可大意。拿下平橋，我們北進就安全多了。
+Xương Xí thân là cháu Ngô Vương, diệt hắn thì thiên hạ sẽ có nhiều lời không hay. Ta nên chiêu hàng hắn, Nguyễn Bặc ở Hoa Lư phòng thủ. Những người còn lại theo ta.	昌熾是吳王的姪子，殺了他會惹人非議。應勸他投降。阮匐留守華閭，其餘的人隨我出征。
+Tuân lệnh Đại Vương.	遵命，陛下。
+Ngô Xương Xí! Bình Kiều đã bị bao vây, khôn ngoan hãy mau ra hàng.	吳昌熾！平橋已被包圍。識相的話，現在就投降。
+Có thực lực thì đến đây, đừng nhiều lời.	有本事就來抓我。少廢話。
+Trước mặt ta có Đỗ Cảnh Thạc và Ngô Nhật Khánh. Quân sư, chúng ta nên đánh ai trước.	前方是杜景碩和吳日慶。軍師，該先打誰？
+Đỗ Cảnh Thạc là lão tướng dày dặn kinh nghiệm, có thành trì chắc chắn và hào sâu bao quanh, nếu đánh trước chắn chắn lực lượng sẽ hao tổn rất nhiều. Ngô Nhật Khánh thì ở rất xa, chỉ có một đường duy nhất đến đó lại gập ghềnh nguy hiểm. Quân ta đến nơi thì cũng rất mệt mỏi, sức đâu mà đánh trận.	杜景碩是身經百戰的老將，城池堅固、護城河又深，先攻他必定損失慘重。吳日慶則遠在天邊，只有一條崎嶇險路可達。大軍抵達時必已疲憊不堪，無力再戰。
+Gần không đánh được, Xa cũng không được đánh. Vậy ta ở đây làm gì ?!	近的不能打，遠的也不能打。那我們來這裡做什麼？！
+Haha, tướng quân! Hãy để quân sư nói tiếp xem sao.	哈哈，將軍！讓軍師把話說完。
+Tướng quân, hãy bình tĩnh. Đánh ai trước, ta cũng phải bàn tính kỹ càng.	將軍稍安勿躁。無論先打誰，都得周詳計劃。
+Thưa Đại Vương, trong 2 sứ quân thì Ngô Nhật Khánh là yếu nhất, tuy thông minh nhưng còn rất trẻ, ít trải nghiệm và rất bốc đồng. Đánh Khánh trước là thích hợp nhất mà khả năng hao tổn lực lượng ít hơn so với những người khác. Nhưng ta cũng phải đề phòng Đỗ Cảnh Thạc đánh từ phía sau lại. 	陛下，兩位使君中吳日慶最弱：聰明，但年紀太輕、缺乏經驗又魯莽。先攻日慶最好，折損的兵力也比攻打他人少。但得提防杜景碩從背後偷襲。
+Tôi có ý này. Đem quân giả đánh Cảnh Thạc, đến Ô Man chia quân làm 3 đạo. Đạo thứ nhất do tướng Nguyễn Bặc chỉ huy đóng ở Ô Man, đạo thứ 2 do Đại vương chỉ huy đóng trực diện với đồn Bảo Đà. Đạo thứ 3 sẽ do tướng {p} dẫn đầu, bí mật đi đến Đường Lâm bất ngờ đến đánh Ngô Nhật Khánh chắc chắn hắn sẽ trơ tay không kịp.	我有一計。佯攻景碩，在 O Man 將大軍一分為三。第一路由阮匐將軍率領，駐紮 O Man；第二路由陛下親率，正面對峙 Bao Da 營寨。第三路由 {p} 將軍率領，秘密進軍唐林，突襲吳日慶——他必定措手不及。
+Tốt! Mọi người hãy y theo mà hành động.	好！眾將依計行事。
+Tuân lệnh Đại Vương	遵命，陛下
+Bọn ngươi là quân của ai, muốn chết hay sao mà đám đến đây làm loạn?	你們是哪來的兵馬？跑來這裡鬧事，是活得不耐煩了嗎？
+Ta là {p}, tướng tiên phong của Vạn Thắng Vương, hôm nay ta đến lấy đầu ngươi!	我乃萬勝王麾下先鋒大將 {p}。今日特來取你首級！
+Láo xược! Ta sẽ phân thây ngươi để làm gương cho kẻ khác.	放肆！我要把你碎屍萬段，以儆效尤。
+Lã Đường ở Tế Giang đã cất binh đánh Phạm Bạch Hổ. Ta đã có hòa ước với Bạch Hổ, nên không thể không giúp, hơn nữa nếu Đằng Châu mất thì Kỳ Bố cũng sẽ khó mà yên. Đại Vương và tướng Nguyễn Bặc đang giữ chân Cảnh Thạc không thể đem quân tiếp ứng. Thời gian cấp bách, tướng quân hãy đem quân ứng cứu trước, tôi sẽ theo sau. Trong 5 ngày chúng ta phải đến đó, nếu không thì Đằng Châu khó mà giữ được.	細江呂唐起兵攻打范白虎。我們與白虎有盟約，必須出手相助；況且藤州若失，奇布也難保。陛下與阮匐將軍正牽制著景碩，無法派兵增援。時間緊迫：將軍先率兵馳援，我隨後就到。必須在 5 天內趕到，否則藤州難守。
+Lưu quân sư yên tâm, mạt tướng sẽ đi ngay!	劉軍師放心，我這就出發！
+Phạm sứ quân! Có tôi đến trợ giúp đây.	范大人！我來助你一臂之力！
+Hừ, quân giặc có viện binh, không xong rồi!	哼，敵人有援軍。不妙！
+Lão ác tặc, hãy xem đây!	老賊，看招！
+Đa tạ tướng quân giúp đỡ.	多謝將軍相助。
+Chúng ta là người một nhà, Phạm sứ quân xin đừng khách sáo.	范大人，我們是一家人，不必多禮。
+Sau trận vừa rồi binh lực của Lã Đường đã suy yếu, nhuệ khí không còn. Hơn nữa quân ta lại đông hơn, hào khí ngất trời. Nhân cơ hội này, tiến quân đánh vào Tế Giang chắc chắn sẽ hạ được.	經此一役，呂唐兵力大減、士氣全無。我軍人多勢眾、士氣高昂。若趁機進攻細江，必勝無疑。
+Lưu quân sư nói phải lắm. Mọi người nghỉ ngơi lấy sức, sớm mai xuất quân.	劉軍師說得對。眾人好好休整，天亮出兵。
+Lưu Cơ xin cáo lui.	劉基告退。
+{p} xin cáo lui.	{p} 告退。
+Lã Đường, ta đến lấy đầu ngươi đây!	呂唐，我來取你首級了！
+Với sức ngươi ư? Ảo tưởng ! Sáttttt	就憑你？作夢！殺——！
+Phạm sứ quân, Tế Giang đã diệt xong. Chúng tôi phải trở về, Lưu Cơ xin bái biệt!	范大人，細江已破。我們得回去了，劉基就此告辭！
+Lưu quân sư, Vạn Thắng Vương là người nhân nghĩa lại có chí lớn bình định thiên hạ, đúng là phước của muôn dân. Nếu Bạch Hổ được giúp một tay thì thật là vinh hạnh lắm lắm!	劉軍師，萬勝王仁義兼備，胸懷平定天下的大志，實乃百姓之福。若白虎能助一臂之力，將是莫大的榮幸！
+Lưu Cơ sẽ chuyển tâm ý của Phạm sứ quân đến Vạn Thắng Vương. 	劉基定將范大人的心意轉達萬勝王。
+Đa tạ quân sư!	多謝軍師！
+Nhất định sẽ có ngày chúng ta gặp lại. Phạm sứ quân, hẹn ngày tái ngộ!	後會有期。范大人，告辭！
+Lưu quân sư, hãy bảo trọng!	劉軍師，保重！
+Quân sư, ông đến thật đúng lúc, quân địch phòng thủ rất chặt, ta khó mà đánh vào được.	軍師，你來得正好。敵軍防守嚴密，我們幾乎攻不進去。
+Đại vương yên tâm, cơ hội của chúng ta đã đến. Đỗ Cảnh Thạc đang ở đồn Bảo Đà, thành Quèn ở Đỗ Động không người chỉ huy chắc chắn sẽ có sở hở. Đêm mai chủ công, cùng tướng {p} dẫn quân quân vây thành, sau đó đốt lửa thật lớn. Thấy lửa chắc chắn Cảnh Thạc sẽ rút quân từ Bảo Đà về ứng cứu, tình hình ở Bảo Đà lẫn thành Quèn sẽ xảy ra hỗn loạn. Khi đó Đại vương quay đầu tấn công Cảnh Thạc, cùng lúc tướng Nguyễn Bặc và Lê Hoàn tấn công thẳng vào Bảo Đà, ép Cảnh Thạc vào giữa. Bị tấn công bất ngờ địch sẽ hoảng loạn, quân ta ắt sẽ thành công.	陛下放心，機會來了。杜景碩人在 Bao Da 營寨，杜洞的 Quen 城無人坐鎮，必有破綻。明晚由主公與 {p} 將軍率兵圍城，放一把大火。景碩見火，必從 Bao Da 撤兵回救，屆時 Bao Da 與 Quen 城都將陷入混亂。陛下再回頭攻打景碩，阮匐與黎桓兩位將軍正面猛攻 Bao Da，將景碩夾在中間。敵軍措手不及，必然大亂，我們定能成功。
+Được! Ta sẽ làm theo cách này. Đêm mai sẽ hành động, mọi người hãy chuẩn bị.	好！就這麼辦。明晚行動，大家做好準備。
+Thành Quèn bị tấn công, ta phải về cứu ngay, các người hãy ở lại cố thủ.	Quen 城遇襲，我得回去救援。你們留下守住這裡。
+Cảnh Thạc!! Ngươi đã hết đường chạy, muốn sống hãy mau chịu trói.	景碩！你已無路可逃。想活命就快投降。
+Hahaha, thật nực cười ! Chỉ một đám trẻ con mà dám cản đường ta ư? Có bản lĩnh thì hãy đến đây.	哈哈哈，可笑！一群小毛頭也敢擋我的路？有膽就放馬過來。
+Đại vương! Đỗ Động Giang đã lấy được, nhưng quân lực ta hao tổn khá nặng. Nếu đánh luôn Tây Phù Liệt thì rất khó, tốt nhất nên án binh bất động để cũng cố lực lượng. Mặt khác Đại vương nên đích thân đến Đằng Châu tiếp nhận binh lực của Phạm Bạch Hổ.	陛下！杜洞江已歸我軍，但我軍損失慘重。若立刻進攻西扶列會非常艱難，不如按兵不動、重整實力。此外，陛下應親赴藤州，接掌范白虎的兵馬。
+Ừm, Bạch Hổ đã có ý về đầu quân, ta cũng nên đến gặp trực tiếp ông ta. Có thêm binh lực của Đằng Châu thì việc diệt Nguyễn Siêu cũng không quá khó khăn. 	嗯，白虎有意歸附，我該親自去見他。有了藤州兵馬，消滅阮超就不難了。
+Đường xa nguy hiểm, người nên để Lê Hoàn tướng quân đi cùng.	路途遙遠又凶險，陛下應帶黎桓將軍同行。
+Việc ở đây quân sư hãy cố sắp xếp.	軍師，這裡就拜託你了。
+Đại vương hãy yên tâm!	陛下放心！
+Không xong! Quân sư! Quân sư!! Nguyễn Siêu đã vây thành!	大事不好！軍師！軍師！！阮超把城包圍了！
+Nguyễn Siêu đã đánh Đỗ Động sớm hơn ta dự tính. Binh lực và lương thảo hiện tại chỉ có thể cố thủ chờ viện binh từ Đằng Châu đến. Nguyễn Bặc hãy trấn thủ ở cửa Tây, cửa bắc mọi sự trông cậy vào {p} tướng quân. Năm ngày nữa quân viện binh sẽ đến, mọi người hãy cố gắng thủ thành.	阮超進攻杜洞比我預料的還早。以我軍現有的兵力和糧草，只能撐到藤州援軍抵達。阮匐守西門；北門就全交給 {p} 將軍。援軍五天後到，大家死守城池！
+Hôm nay bổn tướng đến đây, ngỡ có thể so kiếm với anh hùng, nào ngờ chỉ thấy lũ chuột chạy nháo nhào trong thành tìm chỗ trốn!	今日我本想與英雄過招，結果只看到一群老鼠繞著城牆找地方躲！
+Quân sư có biết người dưới kia là ai không?	軍師，你知道下面那人是誰嗎？
+Nguyễn Trí Khả, tướng tiên phong của Nguyễn Siêu, dũng mãnh nhưng vô mưu. Tướng quân, hãy ráng nhẫn nhịn.	阮超的先鋒阮智可：有勇無謀。將軍，請忍耐。
+Lũ chuột nghe đây! Thời gian của bổn tướng quân có hạn, trong hôm nay nếu không ra khỏi hang, ta sẽ san bằng nơi này.	聽好了，老鼠們！我的時間有限。今天你們再不出洞，我就把這裡夷為平地。
+Thật ngoan cố! Để xem lũ chuột các ngươi trốn được bao lâu?	真是頑固！看你們這群老鼠能躲多久！
+Địch tấn công, mọi người vào vị trí!	敵襲！全員就位！
+Âm mưu phá thành Đỗ Động thất bại, Nguyễn Siêu đã đắp thành cao hơn để phòng bị. Muốn tiến quân vào Tây Phù Liệt e rất khó, quân sư có cao kiến gì không?	破杜洞之計失敗，阮超又把城牆加高了。要攻入西扶列難如登天。軍師，可有妙計？
+Tướng quân chớ lo! Nguyễn Siêu thận trọng phòng bị, như vậy trận chiến vừa rồi binh lực của hắn hao tổn khá nặng, hắn sẽ phải đích thân đi cầu cứu viện binh của 2 người anh Nguyễn Thủ Tiệp hoặc Nguyễn Khoan.	將軍莫憂！阮超防守謹慎，代表他上一戰損失慘重。他勢必得親自去向兩位兄弟——阮守捷或阮寬——求援。
+Vậy có nghĩa là Tây Phù Liệt như rắn mất đầu ?!	這麼說，西扶列就會群龍無首了？！
+Tướng quân nói rất phải! Đó chính là yếu điểm của Tây Phù Liệt, đêm mai quân ta nổi lửa đồng loạt đốt cửa Đông, cửa Tây, cửa Nam thì chắc binh lính sẽ hoảng loạn.	正是，將軍！這就是西扶列的弱點。明晚我軍同時在東、西、南三門放火，敵兵必定大亂。
+Được lắm! Ta sẽ hỏi tội chúng những ngày qua.	好極了！我要讓他們為這些日子付出代價。
+Trận này, nhất định phải lấy được thành. Mọi người tranh thủ nghỉ ngơi, đêm mai xuất binh.	此戰必須拿下城池。大家好好休息，明晚出兵。
+Trí Khả! Ta đến hỏi tội ngươi đây!	智可！我來找你問罪了！
+Chỉ là con chuột nhắt, bổn tướng sẽ hóa kiếp cho ngươi!	區區小老鼠。我送你去投胎！
+Tự tin thì cứ đến đây!!!	既然這麼有自信，就放馬過來！！！
+Nguyễn Siêu, chạy đâu cho thoát. Nạp mạng !!	阮超，你逃不掉了。納命來！！
+Muốn cản ta ư !? Mộng tưởng quá đấy !	想擋我！？作夢吧！
+Hay tin Nguyễn Siêu bị diệt. Nguyễn Khoan và Kiều Công Hãn đẵ liên kết, cùng trấn thủ ở vùng Tam Đái. Lý Khuê và Nguyễn Thủ Tiệp thì dựng tuyến phòng thủ ở Siêu Loại, xem ra ta gặp khó khăn lớn rồi.	聽聞阮超被滅，阮寬與矯公罕結盟，共守三帶一帶。李奎與阮守捷則在超類築起防線。看來我們麻煩大了。
+Tướng quân đừng quá lo! Mối liên kết giữa Lý Khuê và Nguyễn Thủ Tiệp ngoài mặt nhìn rất chắc chắn, nhưng thực chất lại rất yếu. Hai người này từ lâu đã có mối hiềm khích với nhau, nên cắt đứt mối liên kết này không phải là khó.	將軍別太擔心！李奎與阮守捷的同盟表面穩固，實則不堪一擊。這兩人積怨已久，要瓦解他們的同盟並不難。
+Quân sư đã có cao kiến gì không?	軍師可有妙計？
+Cao kiến thì không, nhưng tôi có mẹo này. Năm ngày nữa 49 ngày mất của Nguyễn Siêu, chắc chắn Nguyễn Thủ Tiệp sẽ trở về Tiên Du. Cho một nhóm người trà trộn vào thành Siêu Loại, nửa đêm đốt cổng bắc. Bên ngoài ta giả làm quân của Thủ Tiệp tung cờ xí, nổi trống trận, đi từ hướng Tiên Du vào phá thành. Với tính đa nghi, Lý Khuê sẽ tưởng Thủ Tiệp còn nuôi thù cũ, lợi dụng đâm lén sau lưng. Nội chiến xảy ra, việc lấy thành Siêu Loại dễ như trở bàn tay.	算不上妙計，但我有一招。再過五天就是阮超的七七之日，阮守捷必定返回仙遊。我們派一隊人潛入超類，半夜火燒北門。城外則假扮成守捷的軍隊，打著他的旗號、擂起戰鼓，從仙遊方向進攻。李奎生性多疑，必會以為守捷記恨舊仇、背後捅刀。等他們自相殘殺，拿下超類易如反掌。
+Lưu quân sư, việc trà trộn hãy để tôi cùng các anh em trong doanh trại.	劉軍師，潛入的事就交給我和營裡的弟兄吧。
+Việc này rất nguy hiểm...	這太危險了……
+Quân sư hãy yên tâm, tôi có thể lo liệu được.	軍師放心，我應付得來。
+Tướng quân hãy cầm theo bí kíp này, nếu gặp nguy hãy mở ra.	將軍，把這卷密函帶在身上。若遇危險，就打開它。
+Giờ mọi người về nghỉ. Sáng mai, chúng ta sẽ về Tế Giang hội ngộ với Vạn Thắng Vương. Lưu cơ có việc phải làm ở Đỗ Động, tôi sẽ đến sau. 	大家先去休息。明早我們回細江會見萬勝王。劉基在杜洞還有要事，隨後就到。
+Quân sư, xin cáo lui.	軍師，末將告退。
+{p} tướng quân xin dừng bước, tôi có chuyện cần bàn với tướng quân!	{p} 將軍請留步，我有事與你商量！
+Xin quân sư cứ nói!	軍師請說！
+Tôi nghe nói, ở vùng Đỗ Động có đám người tự xưng là con cháu Ngô tiên chúa đã khởi binh tiến đánh Hoa Lư, nhưng khi đến Ô Man thì đụng độ với hào trưởng làng ấy là Ngô Phó. Đám người này không diệt sau này sẽ rắc rối, tướng quân hãy cùng tôi đến giúp Ngô Phó một tay. Ngài hãy về chuẩn bị, sớm mai ta sẽ lên đường. 	聽說杜洞一帶有一夥人自稱吳先主後裔，起兵攻打華閭，卻在 O Man 與村長 Ngo Pho 起了衝突。若不剷除，日後必成禍患。將軍隨我去援助 Ngo Pho。去準備吧，天亮出發。
+Mạt tướng xin cáo lui!	末將告退！
+Ngô hào trưởng, quân của Vạn Thắng Vương xin đến giúp một tay!	吳村長，萬勝王的大軍前來相助！
+Thật tốt quá! Quân địch rất hung hãn, tướng quân hãy cẩn trọng!	太好了！敵人非常兇悍，將軍小心！
+Thưa Đại vương, việc ở Tây Phù Liệt tôi đã sắp xếp xong.	陛下，西扶列的事我已安排妥當。
+Quân sư, Nguyễn Thủ Tiệp đã về Tiên Du. Khi nào ta sẽ đánh vào Siêu Loại?	軍師，阮守捷已回仙遊。我們何時攻打超類？
+Theo thuộc hạ tính thì đêm mai có gió lớn, nội gián của ta sẽ đốt doanh trại địch, khi đó lửa lan rất nhanh. Thấy lửa, địch sẽ náo loạn, lúc đó ta xuất binh đánh vào Siêu Loại	依我推算，明晚會颳大風。我方細作將火燒敵營，火勢必定蔓延極快。敵軍見火必亂，屆時再派兵攻入超類。
+Được, đêm mai ta sẽ lấy Siêu Loại. Mọi người hãy về chuẩn bị.	好，明晚拿下超類。大家去準備吧。
+Tuân lệnh Đại vương!	遵命，陛下！
+Báo! Báo! Nguyễn Thủ Tiệp đã trở mặt, hắn đang phá cổng bắc.	報！報！阮守捷倒戈了，正在攻破北門。
+Grr...grr...Con cáo già! Giết, giết hết bọn chúng cho ta!!	可……可惡……那隻老狐狸！殺，全給我殺光！！
+Báoooo!!! Cổng nam, quân của Đinh Bộ Lĩnh đã đánh vào!	報——！！！南門——丁部領的大軍攻進來了！
+Nguy rồi !! Mau mau....	完了！！快、快……
+Lý Khuê ở đằng kia! Mau đuổi theo.	李奎在那裡！追！
+Mau! Mau chạy vào làng.	快！逃進村子裡。
+Chạy đâu cho thoát!	你逃不掉了！
+Thất bại ở Siêu Loại, binh lực của Nguyễn Thủ Tiệp đã mất hơn nữa, quân lính gần như mất hết nhuệ khí. Đây là thời cơ thuận lợi cho ta đánh Tiên Du. Đại vương, hãy cho xuất binh.	超類一敗，阮守捷兵力更少，士兵幾乎毫無鬥志。此時正是攻打仙遊的最佳時機。陛下，請下令出兵。
+Nguyễn Bặc, ông dẫn quân đánh vào cánh trái Tiên Du. Lê Hoàn thì đánh vào cánh phải. Ta cùng các tướng khác tấn công trực diện. Mọi người, tiến thẳng Tiên Du!	阮匐率兵攻仙遊左翼，黎桓攻右翼。我與其他將領正面進攻。全軍直取仙遊！
+Thuộc hạ tuân lệnh!	遵命！
+Báoooo! quân ta đã thất thủ.	報——！我軍防線失守了。
+Mau, mau theo ta chạy vào núi.	快，隨我逃進山裡。
+Ác tặc, chạy đâu cho thoát!!	惡賊，你逃不掉了！！
+Hừ, không ngờ tên phản tặc Lã Xử Bình gửi thư cầu cứu liên quân Nguyễn Khoan và Kiều Công Hãn, 7 ngày nữa liên quân sẽ đến Cổ Loa.	哼，誰想得到叛賊呂處平竟寫信向阮寬與矯公罕的聯軍求援。七天後聯軍就會抵達古螺。
+Nếu liên quân hợp sức với Lữ Xử Bình, ta sẽ khó tiến vào Cổ Loa. Quân sư, ông có kế sách gì không?	若聯軍與呂處平會合，我們就很難攻入古螺了。軍師可有計策？
+Hiện tại quân lực ở Cổ Loa còn yếu. Trong 5 ngày, phải đánh vào Cổ Loa trước khi liên quân đến. Nếu không quân ta không còn cơ hội nào khác.	眼下古螺兵力仍弱。必須在五天內趕在聯軍抵達前攻下古螺，否則就再無機會。
+{p}, Nguyễn Bặc, Lê Hoàn đi tiên phong, cấp tốc đến Cổ Loa. Mọi người hãy cố gắng!	{p}、阮匐與黎桓率領先鋒，火速趕往古螺。大家全力以赴！
+Địch đã tấn công. Chủ công, hãy ra lệnh!	敵軍來襲。主公，請下令！
+Hãy ráng cầm cự chờ liên quân đến. Cung thủ, bắn tên!	撐到聯軍到來。弓箭手，放箭！
+Chủ công, quân ta đã thất thủ...	主公，我軍防線失守了……
+Grrr....Mau, rút về Tam Đái.	可惡……快，撤回三帶。
+Lữ Xử Bình, ngươi hết đường rồi! Sáaatttt	呂處平，你已走投無路！殺——
+Biết quân ta đã chiếm Cổ Loa, liên quân rút về cố thủ ở Tam Đái. Bây giờ đánh từ Cổ Loa vào Tam Đái rất khó, mọi người có kế sách gì không? 	聯軍得知我們拿下古螺，已撤回固守三帶。現在從古螺進攻三帶非常困難。誰有計策？
+Nếu Tam Đái đánh khó thì ta sẽ đánh Phong Châu trước.	三帶若難攻，那就先打峯州。
+Phong Châu?	峯州？
+Kiều Công Hãn đem quân xuống Tam Đái, chắc chắn Phong Châu sẽ sơ hở. Ta cho 2 đạo quân tiến từ 2 hướng Đường Lâm và Cổ Loa đánh vào Tam Đái. Mặt khác cho đạo quân khác đi vòng đường núi đánh Phong Châu, Kiều Công Hãn chắc chắn rút quân về. Lúc đó chỉ còn mình Nguyễn Khoan ở Tam Đái, ta sẽ đánh vào được.	矯公罕已帶兵南下三帶，峯州必定空虛。我們從唐林與古螺派兩路大軍進攻三帶。同時另一路繞山路奇襲峯州，矯公罕必然回師救援。屆時三帶只剩阮寬，我們就能攻破。
+Nguyễn Bặc, {p} tướng quân hãy đem quân đến Đường Lâm, Lê Hoàn dẫn quân đến Phong Châu, các tướng còn lại hãy theo ta đánh thẳng từ Cổ Loa đến. Mọi người về nghỉ ngơi, sớm mai ta sẽ xuất quân!	阮匐與 {p} 將軍率兵前往唐林；黎桓率兵前往峯州；其餘將領隨我從古螺直接出發。大家去休息，天亮出兵！
+Báoooo!! Thưa chủ công, Phong Châu bị tấn công!	報——！！主公，峯州遭到攻擊！
+Mau! Về hỗ trợ Phong Châu.	快！回師救援峯州。
+Báoooo!! Tướng giặc Lê Hoàn đã chiếm Phong Châu!	報——！！敵將黎桓已攻下峯州！
+Grr..grr...Ta đã quá sơ ý! Lui về Hồi Hồ tạm lánh một thời gian.	可……可惡……我太大意了！撤到回湖，暫避鋒芒。
+Đinh Bộ Lĩnh! Ta thề sẽ lấy lại Phong Châu.	丁部領！我發誓一定要奪回峯州。
+Nguyễn Khoan, có gan ra đây so cao thấp với ta!	阮寬，有膽就出來跟我一戰！
+Ngông cuồng! Hôm nay ta sẽ lấy đầu bọn bay để trả thù của Nguyễn Siêu và Thủ Tiệp.	狂妄之徒！今天我就取你們的首級，替阮超和守捷報仇。
+Đại vương, hạ tướng cũ của Trần lão công đã làm phản, hắn đem quân đánh vào Kỳ Bố. Mọi người trong thành đang cố thủ, lương thực chỉ đủ dùng trong vài ngày, ta phải đem quân đến giải vây ngay!	陛下，陳公舊部叛變，攻打奇布。城中軍民死守，但糧食只夠撐幾天。必須立刻派兵解圍！
+{p} tướng quân, khanh hãy đem quân trở về ứng cứu Kỳ Bố. Nhưng người còn lại theo ta đánh vào Phong Châu.	{p} 將軍，帶兵回去救奇布。其餘的人隨我攻打峯州。
+Phản tặc, có ta đến đây, hãy mau chịu tội!	叛賊，我來了。納命來！
+Sức ngươi còn kém lắm, chưa đủ đâu!	你還差得遠呢，這點程度不夠看！
+Chớ ngông cuồng! Hãy xem đây !!!	別太囂張！看招！！！
+Thất bại ở Phong Châu và Tam Đái, Kiều Công Hãn đã rút quân thẳng về Hồi Hồ nương nhờ em hắn là Kiều Thuận. Địa hình ở đó hiểm trở, rất khó tấn công, quân sư có kế sách gì không?	矯公罕在峯州與三帶接連戰敗，直接退往回湖投靠兄弟矯順。那裡地勢險峻，非常難攻。軍師可有計策？
+Thưa Đại Vương, thực ra địa hình hiểm trở chính là yếu điểm của Hồi Hồ!	陛下，其實險峻的地勢正是回湖的弱點！
+Yếu điểm!? Ta chưa hiểu, quân sư hãy nói rõ.	弱點！？我不明白。軍師請解釋。
+Thành Hồi Hồ xung quanh là vùng đồi núi hiểm trở, ta không nên tấn công, chia quân ra đóng ở  nơi hiểm yếu ngăn chặn nguồn nước. Vây phục ba ngày, tự chúng sẽ mò ra, lúc ấy ta sẽ diệt được.	回湖城四面環繞險峻山丘。我們不該強攻，而應分兵扼守要道、切斷水源。圍城三日，他們就會自己爬出來，屆時便可一舉殲滅。
+Quân sư nói phải lắm, 12 sứ quân nay chỉ còn anh em họ Kiều, ta cũng không cần phải vội. Chúng ta hãy theo kế của quân sư.	軍師說得對。十二使君只剩矯氏兄弟，不必急於一時。就依軍師之計。
+Tuân lệnh đại vương!	遵命，陛下！
+Huynh trưởng, lương thực trong thành chẳng còn bao nhiêu. Nếu tiếp tục ở trong thành e rằng sẽ không qua khỏi.	兄長，城裡快沒糧了。再待下去，恐怕撐不住了。
+Với tình thế này, nên tìm cách thoát thân trước.	眼下這種情勢，應該先想辦法突圍。
+Địch đã bao vây 4 hướng, ta chạy đi đâu bây giờ.	敵軍四面包圍，我們能逃去哪？
+Ở cửa Bắc, lực lượng của địch yếu nhất. Nếu phá được vòng vây, thì chạy lên phương Bắc xin nhà Tống cứu viện.	北門的敵軍最弱。若能突破，就往北逃，向宋朝求援。
+Đệ sẽ chọn ra 1 đám quân tinh nhuệ, đêm nay chúng ta phá vòng vây.	我挑一隊精兵，今晚突圍。
+Kiều tặc, chạy đâu cho thoát!	矯氏叛賊，你們逃不掉了！
+Thưa đại vương, loạn 12 sứ quân đã dẹp xong, bây giờ đã đến lúc xưng đế.	陛下，十二使君之亂已經結束。現在是稱帝的時候了。
+Ta đang suy nghĩ, không biết chọn nơi nào làm kinh đô. Quân sư có cao kiến gì không?	我一直在想，卻不知該定都何處。軍師有何高見？
+Người Hoa Lư nên chọn Hoa Lư làm gốc, hơn nữa Hoa Lư là nơi núi non trùng điệp. Núi trong sông, sông trong núi. Căn cứ thủy bộ thuận tiện, sau lưng là rừng, trước mặt là đồng bằng, xa nữa là biển cả. Nơi đây non sông thì tráng lệ, phong thủy hài hòa nên Ấu Rồng thường xuất hiện gây nhiều khó khăn cho bá tánh.	華閭人當以華閭為根本。況且華閭群山環抱：山中有水、水中有山，水陸皆是良好據點，背倚森林、前臨平原、遠望大海。山川壯麗、風水和諧，也因此常有幼龍出沒，危害百姓。
+Vậy ta diệt Ấu Rồng trước, sau dựng kinh đô. Mọi người về nghỉ ngơi, sớm mai trở về Hoa Lư.	那就先斬幼龍，再建京城。大家去休息，明早回華閭。
+Tuân lệnh đại vương.	遵命，陛下。
+Ta, một người nhỏ bé, nhờ hưng binh mà dẹp loạn, thống nhất đất nước. Nay thuận ý muôn dân, ta xưng hiệu Đinh Tiên Hoàng đế, đặt quốc hiệu là Đại Cồ Việt.	朕乃一介凡夫，起兵平亂、一統江山。今順應民意，稱帝號丁先皇，定國號為大瞿越。
+Đinh Tiên Hoàng vạn tuế vạn tuế!	丁先皇萬歲，萬歲！
+Tướng quân rất thông minh, những gì tôi truyền đạt ngài tiếp nhận khá nhanh.	將軍真是聰明，我教的東西你學得挺快。
+Chỉ là chút tài mọn, quân sư đã quá khen!	只是雕蟲小技，軍師過獎了！
+Sơn tặc đã diệt xong. Doanh trại rất thích hợp làm Đấu Trường luyện tập cho quân ta. Các ngươi hãy ở lại canh giữ, còn lại mau theo ta trở về Hoa Lư.	山賊已除。這座營寨正好拿來當競技場操練兵馬。你留守此地；其餘的人隨我回華閭。
+Giặc quá mạnh, ta thua rồi. Mau mở cửa thành...đầu hàng	敵人太強，我們輸了。開城門……我們投降。
+Nhật Khánh, bây giờ ngươi muốn sống hay muốn chết?	日慶，你要生還是要死？
+Họ Ngô ta đã dựng nên đất nước, chẳng may gặp kẻ gian thần hãm hại mà mất nước. Ta nuôi chí khôi phục cơ nghiệp tiên chúa, nghiệp lớn không thành, muốn chém thì chém, chớ nhiều lời !!!	吳氏開創此國，卻遭奸臣所害，以致失國。我欲光復祖業；大業既敗，要殺便殺，少說廢話！！！
+Được, ta sẽ cho ngươi toại nguyện.	好，我就成全你。
+Tướng quân dừng tay!!!	將軍，住手！！！
+Lưu Cơ đến muộn, mong Ngô công tử bỏ qua. Tiên phụ công tử với Vạn Thắng Vương là bạn từ thời tóc còn để chỏm, chiến tranh loạn lạc 2 người đi 2 hướng khác nhau. Hay biết công tử là con cố nhân, nay người muốn gặp công tử ở Hoa Lư. Xin mời công tử lên xe ngựa.	劉基來遲，請少主恕罪。令尊與萬勝王自幼交好，只因戰亂而分道揚鑣。得知您是故友之子，他想在華閭與您相見。少主，請上車。
+Hmm ... ... ...	嗯……　……　……
+Rút quân !!!!	撤退！！！！
+Đừng đuổi theo! Hãy lui vào thành.	別追了！退回城內。
+Lã Đường đã chết!! Kẻ nào đầu hàng sẽ được tha.	呂唐已死！！投降者免死。
+Thắng thua đã rõ. Trói hắn lại.	勝負已分。把他綁起來。
+Muốn bắt ta ư? Còn lâu.....Yaaaa........hự....hự... !!	想活捉我？休想……呀啊……呃……呃……！！
+Hắn đã tự sát, hãy mau lấy thành.	他自盡了。快，拿下城池。
+Viện binh đã đến, mọi người phản công !!!	援軍到了，全軍反攻！！！
+Không xong rồi! Hãy mau rút về tiền đồn chờ lệnh Hữu công Nguyễn Siêu.	不妙！退回營哨，等候阮超大人的命令。
+Trí Khả đã bị diệt, hãy mau tìm Nguyễn Siêu!	智可已死，快找出阮超！
+Nguyễn Siêu đã chạy hướng Đông Phù Liệt sang Tiên Du, tướng quân hãy mau đuổi theo, đừng để hắn qua sông!	阮超已經從東扶列逃往仙遊。將軍快追，別讓他渡河！
+Thủ cấp của Nguyễn Siêu trong tay ta, muốn sống thì mau buông vũ khí đầu hàng! 	阮超的首級在我手上。想活命就放下武器投降！
+Đa tạ tướng quân đã trợ giúp!	多謝將軍相助！
+Ngô hào trưởng, đừng khách sáo. Đây là nhiệm vụ của tôi. Phản loạn đã diệt xong, nay tôi phải về Tế Giang để giúp Vạn Thắng Vương. Ngô hào trưởng, hẹn ngày tái ngộ!	吳村長不必言謝，這是我的職責。叛軍已滅，我得回細江協助萬勝王。吳村長，後會有期！
+Tướng quân, bảo trọng!	將軍保重！
+Nói !! Muốn sống thì cho ta biết Lý Khuê đang ở đâu !?	說！！想活命就告訴我李奎在哪！？
+Lý sứ quân đã chạy về hướng Dương Xá, xin tướng quân tha mạng.	李使君往 Duong Xa 方向逃了，求將軍饒命。
+Nhốt tên này lại, chờ ta về xử lý. Những người còn lại mau đuổi theo Lý Khuê!	把這傢伙關起來，等我回來。其餘的人，追李奎！
+Chém! Đem đầu Lý Khuê về.	殺！把李奎的首級帶回來。
+Còn kẻ nào chán sống thì hãy bước lên !	還有誰活得不耐煩，站出來！
+Á.....! Chết ta......	啊啊……！我完了……
+Nguyễn Khoan đã bỏ mạng. Kẻ nào đầu hàng sẽ được tha chết!	阮寬已死。投降者免死！
+Phản tặc đã diệt, hãy mau đến Phong Châu.	叛賊已滅，火速趕往峯州。
+Anh em họ Kiều đã diệt xong, mau báo cho Vạn Thắng Vương.	矯氏兄弟已滅，立刻稟報萬勝王。
+Không cho chúng chạy! Đuổi theo giết sạch, không chừa một mống.	別讓他們跑了！追上去，一個不留！
+Thực lực quá kém, đúng là không biết trời cao.	這麼弱——真是不知天高地厚。
+Chết nè !!!	受死吧！！！
+A....a....a......	啊……啊……啊……
+Chống đối ta chỉ có chết, hãy nhìn đó mà làm gương.	與我為敵只有死路一條，給你個教訓。
+Áaaaaa ... a.......a.......	啊啊啊啊——……啊……啊……
+{p} tướng quân đã bại trận. Rút quân!!!	{p} 將軍戰敗了。撤退！！！
+Tiến lên!! Ai bắt được Đinh Bộ Lĩnh dù sống hay đã chết sẽ được phong quan.	衝啊！！生擒或斬殺丁部領者，封官加爵。
+Thành đã thất thủ, mọi người mau rút về Hoa Lư, ta sẽ ở lại cản đường. Mau!! Không được chần chừ. Vạn Thắng Vương, xin thứ lỗi cho thuộc hạ.	城池已破。全軍撤回華閭，我留下斷後。快走！！別猶豫。萬勝王，恕臣不能再追隨了。
+Còn tên nào muốn được hóa kiếp thì bước lên !	還有誰想投胎，站出來！
+Hừm, làm mất thời gian!	哼，浪費時間！
+{p} tướng quân đã bại trận!! Rút quân.	{p} 將軍戰敗了！！撤退。
+Tướng giặc đã chết! Đuổi theo giết sạch bọn chúng.	敵將已死！追上去，殺光他們。
+Chỉ có bấy nhiêu mà cũng dám cản đường ta sao !?	就這點本事，也敢擋我的路！？
+Sức chỉ thế mà đòi lấy đầu ta ư !?	憑這點實力也想取我首級！？
+Mau ra khỏi thành!	快，出城！
+Siêu, Tiệp! Ta đã báo thù cho hai đệ.	超弟、捷弟！我替你們報仇了。
+Muốn cản ta ư? Chưa đủ sức!	想擋我？你還不夠格！
+Qua ngọn núi phía trước ta sẽ an toàn. Đinh Bộ Lĩnh hãy chờ đó, nhất định ta sẽ quay về lấy lại tất cả.	翻過前面那座山就安全了。丁部領，你給我等著，我一定會回來奪回一切。
+Giúp chúng tôi với !!!	救命啊！！！
+Sơn trang phía trước bị yêu quái tấn công, tướng quân hãy mau đến giúp!	前方山莊遭妖怪襲擊。將軍，快去救援！
+Các ngươi là ai? Sao dám cản đường !	你是誰？竟敢擋我的路！
+Thưa tướng quân! Tiểu dân xin gặp Vạn Thắng Vương.	將軍！草民求見萬勝王。
+Ngươi là ai?  Gặp ta có việc gì ?	你是何人？找我何事？
+Thưa đại vương, tiểu dân họ Lê tên Hoàn, người ở Bảo Thái, từ lâu đã nghe danh đức của đại vương, nên muốn phò giúp.	啟稟大王，草民姓黎名桓，Bao Thai 人士。久聞大王仁德，願效犬馬之勞。
+Hãy đến Hoa Lư, chờ ta đánh trận về rồi tính.	你先去華閭，等我征戰歸來。
+Tiểu dân chờ người rất lâu rồi, hãy cho tôi một cơ hội.	我已等候您許久，請給我一個機會。
+Vậy ngươi hãy thử đấu với {p} xem sao.	那就和 {p} 比試看看吧。
+Mô phật! Bần tăng tiếp đón chậm trễ, Lưu tiên sinh hãy lượng thứ.	阿彌陀佛！貧僧有失遠迎，劉先生恕罪。
+Đại sư đừng khách sáo! Hôm nay tôi đến đây có việc cần ngài giúp đỡ. 	大師不必多禮！今日前來，是有事相求。
+Lưu quân sư, nếu giúp được bần tăng sẽ cố hết sức.	劉軍師，若貧僧幫得上忙，定當盡力。
+Không dấu gì đại sư, binh lực của Vạn Thắng Vương tuy uy dũng nhưng vẫn còn thiếu người chỉ dẫn. Đại sư, xin hãy giúp một tay.	不瞞大師：萬勝王兵強馬壯，卻仍缺人指點。請大師助一臂之力。
+Việc này hơi khó cho bần tăng vì chùa có quy định nếu thỉnh sư xuống núi phải phá được La Hán Trận. Trước nay chưa có ai phá được trận này, Lưu tiên sinh e rằng tôi khó mà giúp ông.	這有些為難：寺規有云，僧人受邀下山，須先破羅漢陣。至今無人能破，恐怕貧僧難以相助，劉先生。
+Lưu tiên sinh, hãy để tiểu tướng thử phá La Hán Trận	劉先生，讓我來試試破羅漢陣。
+Tướng quân, hãy trận trọng.	將軍小心。
+Các ngươi là ai, hãy mau tránh đường cho ta.	你是誰？給我讓開。
+Láo xược, tiếp chiêu!	放肆！看招！
+Chẳng hay tướng quân ghé đến tệ xá có việc cần gì chỉ bảo?	將軍光臨寒舍，有何指教？
+Ta đi lạc đến đây, xin hỏi cao danh quý tánh của tiên sinh.	我迷了路才來到此處。敢問先生尊姓大名？
+Tại hạ họ Bùi tên Quang Dũng...	在下姓 Bui，名 Quang Dung……
+Người là Bùi Quang Dũng !? Nghe danh đã lâu, hôm nay có cơ hội gặp gỡ, xin tiên sinh chỉ giáo.	您就是 Bui Quang Dung！？久仰大名。今日得見，請先生賜教。
+Thật không dám. Tướng quân! xin mời.	不敢當。將軍！請。
+Tướng quân, xin hãy dừng bước.	將軍請留步。
+Công tử là....	這位公子，您是……
+Cự Lạng là cháu nội của Phạm Lệnh Công – Đông giáp tướng quân dưới thời Ngô tiên chúa, chẳng may chiến tranh loạn lạc nên lui về đây chờ minh chủ. Hay tin quân của Vạn Thắng Vương đi qua, chúng tôi dẫn mọi người đến giúp một tay.	在下巨倆，乃吳先主時東甲將軍范令公之孫。不幸戰亂，只得退居此地，等候明主。聽聞萬勝王大軍經過，我們便帶眾人前來相助。
+Vạn Thắng Vương đang ở ngoài chiến trường, công tử hãy theo tôi.	萬勝王正在前線征戰；公子請隨我來。
+Chân Lưu đệ! Giang sơn đại loạn rất cần người tài, đệ hãy xuống núi giúp ta một phen.	真流兄！天下大亂，正需人才。請下山助我一臂之力。
+Bộ Lĩnh huynh, đám yêu quái ở Tam Đảo đang lộng hành. Nếu đệ theo huynh xuống núi e chùa sẽ khó mà giữ được.	部領兄，三島的妖怪正在作亂。我若隨你下山，恐怕寺廟難保。
+Đệ yên tâm, ta sẽ giúp đệ diệt đám yêu đó.	兄弟別擔心，我幫你剷除那些妖怪。
+Yêu quái đã bị diệt, mọi người an toàn rồi!	妖怪已除，大家安全了！
+Đa tạ đại vương cứu giúp!	多謝陛下救命之恩！
+Tiểu thư, hãy đứng lên. Mọi người trong sơn trang đâu cả, sao chỉ còn lại mình nàng?	姑娘請起。山莊的人都去哪了？為何只剩你一人？
+Mọi người đã bị yêu quái sát hại, Vân Nga may mắn được đại vương kịp thời cứu giúp. Nếu không chê, xin đại vương hãy cho tiểu nữ theo hầu để báo đáp ân tình.	大家都被妖怪殺害了，雲娥幸得陛下及時趕到。若不嫌棄，願侍奉陛下，以報大恩。
+Ở đây hoang vắng nguy hiểm, một mình nàng ở lại cũng không tốt. Hãy theo cận vệ của ta về Hoa Lư trước, ta về gặp nàng sau.	此地荒涼又危險，你獨自留下不妥。先隨我的侍衛回華閭，我稍後再見你。
+Tạ ơn đại vương	謝陛下
+Khá lắm!	幹得好！
+Đại vương! quân ta rất cần một tiên phong dũng mãnh như vị tráng sĩ này.	陛下！我軍正需要這位勇士這般驍勇的先鋒。
+Lê Hoàn! ta giao ngươi trọng trách tiên phong tướng quân.	黎桓！朕命你擔任先鋒大將。
+Đa tạ đại vương. Dù có thịt nát xương tan, tiểu tướng cũng sẽ hoàn thành nhiệm vụ đại vương đã giao.	謝陛下。縱使粉身碎骨，臣也必完成陛下交付的使命。
+Võ công của tướng quân thật cao thâm! Bần tăng được mở rộng tầm mắt.	將軍武藝高深！貧僧大開眼界。
+Đại sư đã quá khen, tôi chỉ may mắn phá được trận.	大師過獎了。我只是僥倖破陣。
+Lưu tiên sinh, hãy đợi tôi thu xếp rồi cùng đến Hoa Lư.	劉先生稍候，待我安排妥當，再一同前往華閭。
+Đại sư cứ từ từ thu xếp, tôi sẽ chờ.	大師慢慢來，我等您。
+Tướng quân, hãy dừng tay!	將軍，住手！
+Xin hỏi tráng sĩ có phải là hào trưởng Nguyễn Ninh?	敢問壯士，可是 Nguyen Ninh 寨主？
+Các hạ là ai sao lại biết tên ta?	你是誰，怎麼知道我的名字？
+Chúng tôi là người của Vạn Thắng Vương, bấy lâu nghe danh hào trưởng anh dũng hơn người, nay chúng tôi đi ngang qua đây, nếu có mạo phạm xin thứ lỗi.	我們是萬勝王的人。久聞您是諸寨主中最驍勇的一位；途經此地，若有冒犯，還請見諒。
+Vạn Thắng Vương !!! Thật may quá, tôi cũng đang đến Hoa Lư để đầu quân.	萬勝王！！！太巧了，我正要去華閭投軍。
+Nếu Hoa Lư có thêm vị tướng anh dũng như hào trưởng thật là phước của muôn dân.	華閭若得寨主這般猛將，實乃萬民之福。
+Một chút tài mọn, tiên sinh đã quá lời. Xin tiên sinh hãy đưa tôi đi gặp Vạn Thắng Vương.	區區小才，先生過譽了。請帶我去見萬勝王。
+Hào trưởng, xin mời.	寨主，請。
+Kiếm pháp của tiên sinh rất cao thâm, nếu ở lại nơi này thật uổng phí. Nếu không chê, tôi sẽ tiến cử tiên sinh với Vạn Thắng Vương.	先生劍術高深，留在此地太可惜了。若不嫌棄，我將您舉薦給萬勝王。
+Đa tạ tướng quân! Được góp chút tài mọn cho Vạn Thắng Vương thật là vinh hạnh cho tôi.	多謝將軍！能為萬勝王略盡棉薄，是我莫大的榮幸。
+Tiên sinh, làm sao chúng ta ra khỏi vùng này?	先生，要怎麼離開這一帶？
+Tướng quân! hãy theo tôi.	將軍！請隨我來。
+Yêu quái đã diệt xong, mọi người hãy mau trở về chùa.	妖怪已除；大家快回寺裡。
+Đa tạ Bộ Lĩnh huynh đã giúp đỡ. Hãy đợi tôi thu xếp hành lý xuống núi.	多謝部領兄相助。請稍候，待我收拾行囊下山。
+Á......á.....yêu...quái.......mạnh...quá....hự......hự!	啊啊……啊……妖……怪……太……強了……呃……呃！
+[intro]	944 年，吳權逝世。其妻舅楊三哥篡奪王位，自立為王，號楊平王。\n\n楊三哥篡奪吳氏王位後，各地豪強拒不歸順，紛紛起兵，割據州縣。國家陷入大亂……\n\n950 年，楊平王派吳權次子吳昌文攻打太平。吳昌文率軍回師，推翻楊三哥，稱南晉王。\n\n954 年，吳昌文出兵討伐叛亂豪強，中伏身亡。\n\n其姪吳昌熾繼位，但勢力日漸衰微，只得退守平橋。\n\n至 966 年，十二使君割據天下：\n\n1. 吳昌熾據平橋\n2. 杜景碩據杜洞江\n3. 陳覽據布海口\n4. 矯公罕據峯州\n5. 阮寬據三帶\n6. 吳日慶據唐林\n7. 李奎據超類\n8. 阮守捷據仙遊\n9. 呂唐據細江\n10. 阮超據西扶列\n11. 矯順據回湖\n12. 范白虎據藤州\n\n同時，丁部領起兵，聚集華閭百姓，靜待時機。\n\n為擴大根據地，丁部領投靠陳覽，陳覽將女兒許配給他。\n\n後來，陳覽將兵權交給他。他率軍返回華閭，招攬良將，與吳氏及其他使君抗衡。\n\n各地英雄紛紛前來投效。他們日復一日操練，等待出兵的時機……
+[ending]	968 年，丁部領平定十二使君之亂，登基稱帝，號大勝明皇帝——即丁先皇，定都華閭。\n\n971 年，丁先皇開始制定朝中文武百官的品階。\n\n僧侶亦因平定十二使君之亂有功，得以參與朝政。\n\n丁先皇冊封群臣：\n\n- 阮匐為定國公\n- 劉基為都護府士師\n- 黎桓為十道將軍\n- 吳真流為匡越大師\n- 范白虎為親衛大將軍\n- 范巨倆為防禦使將軍\n- Bui Quang Dung 為鎮東節度使\n- {s} 為……
+Tướng quân hãy làm theo chỉ dẫn của tôi.	將軍，請照我的指示做。
+Hãy chạm vào thanh kiếm (hoặc bấm phím 5) để chọn	點擊一把劍來選取
+Vuốt xuống hoặc chạm ô bên dưới (phím 8) để đổi chỗ	向下滑動或點擊下方圖塊來交換
+Để tấn công kẻ thù hãy xếp 3 thanh kiếm các loại sát nhau theo hàng ngang hoặc dọc.	要攻擊敵人，請將任意 3 把劍橫向或縱向排成一列。
+Bây giờ đến lượt ta...	現在輪到我了……
+Tướng quân đã bị thương	將軍，你受傷了
+Để hồi phục sinh lực hãy xếp 3 trái tim	要回復 HP，請排出 3 顆愛心
+Tốt lắm.	很好。
+Phía dưới có 1 thanh màu xanh lá tượng trưng cho lương thực, hết lương thực thì sẽ thua cuộc.	下方的綠色條是你的糧食；糧食耗盡你就輸了。
+Để lấy lương thực hãy xếp 3 bánh chưng	要獲得糧食，請排出 3 個米糕
+Rất tốt!	太棒了！
+Thanh màu xanh ngọc bích là năng lượng	青綠色條是能量
+Để lấy năng lượng hãy xếp 3 biểu tượng âm dương	要獲得能量，請排出 3 個陰陽圖示
+Cây năng lượng có 3 phần ứng với 3 tuyệt chiêu	能量條分為 3 段，對應你的 3 個技能
+Tướng quân hãy mở bảng phép thuật bằng cách nhấn phím 'T.Chiêu' ,chọn một loại tuyệt chiêu và bấm 'Dùng'.	將軍，打開技能面板，選擇技能後點擊「使用」。
+Tuyệt vời!	漂亮！
+Tướng quân sẽ được thăng cấp khi thu được nhiều kinh nghiệm chiến đấu, cấp càng cao thì chỉ số tấn công và sinh lực càng cao.	累積戰鬥經驗即可升級；等級越高，攻擊與 HP 越高。
+Để lấy kinh nghiệm chiến đấu hãy xếp các biểu tượng cuốn sách.	要獲得戰鬥經驗，請排出書本圖示。
+Ngoài ra, để mua các vật phẩm hỗ trợ tại cửa hàng tướng quân phải thu thập các thỏi vàng.	此外，若要在商店購買輔助道具，請收集金條。
+Nếu xếp 4 biểu tượng trở lên sẽ được đi thêm 1 lượt.	消除 4 個以上圖示可多得一回合。
+Và xếp 5 biểu tượng trở lên sẽ nhận được thêm các vật phẩm hỗ trợ	消除 5 個以上則可獲得輔助道具
+Bây giờ hãy thử xếp 5 biểu tượng	現在試著消除 5 個圖示
+Tướng quân đã được thưởng 1 vật phẩm, hãy chạm 'Túi' (hoặc bấm phím #) để chọn và sử dụng vật phẩm.	你獲得了一件道具。點擊「背包」來選擇並使用。
+Chú ý, một lượt đi phải ghép ít nhất 3 biểu tượng giống nhau, nếu thực hiện không đúng sẽ bị mất lượt đi và tiêu hao sinh lực. Hãy cẩn trọng.	注意：每一步都必須消除至少 3 個相同圖示。走錯一步會失去回合並扣一些 HP。請小心。
+Bạn đã hoàn thành sự kiện. Bạn được thưởng thêm {0}	事件完成！獎勵：{0}
+{0} tấn công	{0} 攻擊
+Hãy chạm vào thanh kiếm để chọn	點擊一把劍來選取
+Vuốt xuống hoặc chạm ô bên dưới để đổi chỗ	向下滑動或點擊下方圖塊來交換
+Tướng quân hãy chạm vào một tuyệt chiêu ở hàng dưới các chân dung, rồi bấm 'Dùng'.	將軍，點擊頭像下方那排的技能，再點擊「使用」。
+Tướng quân đã được thưởng 1 vật phẩm. Hãy chạm vào vật phẩm ở hàng dưới cùng, rồi bấm 'Dùng'.	你獲得了一件道具。在最下排點擊它，再點擊「使用」。

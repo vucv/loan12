@@ -45,6 +45,87 @@ namespace Loan12
         private int[] f_M;
         // PORT-FIX: "0 - 1" was "0, -1" (8 directions like N)
         private int[] f_N;
+        // PORT-FIX: hoisted (decompiler scope bug)
+        // PORT-FIX: hoisted (decompiler scope bug)
+        //(type,x)
+        //Must call each frame
+        //Start point
+        //delay here
+        // PORT-UI: let the board settle
+        // PORT-UI
+        // PORT-UI
+        // PORT-UI: given up, a defeat
+        //Resume score
+        //Must read here
+        //switch (paramInt) int c()
+        // PORT-FIX: hoisted (decompiler scope bug)
+        // PORT-FIX: hoisted (decompiler scope bug)
+        //Swap
+        // Detroy at here
+        //detroy at here
+        // PORT-UI: shown on the result screen
+        // /36
+        //Start
+        //Luot danh 0|1
+        //get Info 1
+        // get Info 2
+        // PORT-UI
+        //9 skill
+        //fire1
+        //fire2
+        //fire3
+        //lightning1
+        //lightning2
+        //lightning3
+        //ice1
+        //ice2
+        //ice3
+        // PORT-UI: waiting for the player's answer (the battle stands still)
+        //Detroy and random new
+        // PORT-FIX: hoisted (decompiler scope bug)
+        // PORT-FIX: hoisted (decompiler scope bug)
+        //in board
+        //!=9 => in board
+        //Random new here
+        // PORT-FIX: hoisted (decompiler scope bug)
+        // PORT-UI
+        //check score apter move a.e[1,2,3,4]: 12 for position 1, 34 for position 2
+        // PORT-FIX: hoisted (decompiler scope bug)
+        //Training
+        //Match
+        //After check, call swap
+        // PORT-TOUCH: drags / releases go to the human player while the board waits for input
+        /** PORT-UI: the coach's message of the tutorial, or null */
+        /** PORT-UI: the tutorial waits for a tap to go on (any key did that) */
+        /** soft keys of the battle bar: left (skills) and right (pause); the centre ("bag") is the # key */
+        // PORT-UI: state and actions for the Unity touch interface (see PortUi)
+        public C_ae f_portPauseDialog;
+        // the "dừng game" dialog of this battle
+        public bool f_portForfeit;
+        // PORT-UI: the player gave the battle up (pause box "Thoát trận")
+        private int f_portEndWait;
+        /** PORT-UI (tour): the player's move, a sword line when there is one; false when it is not the player's turn */
+        /** PORT-UI: the touch interface's drop (rates above): items 3, 4, 5 a little more often than 0 and 1 */
+        // at most 2 boxes a battle
+        // the chest (dn draws it instead of an item)
+        public int f_portBoxes;
+        public int f_portSkillSide;
+        public int f_portSkillIndex;
+        public int f_portSkillCount;
+        // PORT-UI: the last skill used, and how many so far
+        public bool f_portReviveOffer;
+        // PORT-UI: the second chance is offered now
+        // PORT-UI (tour): the battle's state
+        public bool f_portReviveUsed;
+        // taken (or turned down) in this battle
+        /** PORT-UI: the hero has fallen, the enemy is below half its HP, no second chance yet */
+        /** PORT-UI: the answer: back with 30 HP (an ad was watched), or the defeat goes on */
+        // PORT-UI: gift boxes dropped in this battle
+        public int[] f_portWon;
+        // PORT-UI: items won in this battle (5 in a row), by type    // PORT-UI: ticks state 9 waited for the board's effects
+        public C_ae f_portEndDialog;
+        // the result (won) or "mất 1 mạng" (lost) dialog
+        public bool f_portEndRetry;
 
         private void __init_C_bu()
         {
@@ -67,6 +148,7 @@ namespace Loan12
             this.f_L = false;
             this.f_M = new int[] { -1, -1, 0, 1, 1, 1, 0, -1 };
             this.f_N = new int[] { 0, 1, 1, 1, 0, -1, -1, -1 };
+            this.f_portWon = new int[6];
         }
 
         public void a(sbyte[] paramArrayOfByte, int paramInt)
@@ -312,6 +394,13 @@ namespace Loan12
             switch ((this.f_v))
             {
                 case 9:
+                    if (this.f_t.portBusy() && ((this.f_portEndWait < 75)))
+                    {
+                        // PORT-UI: let the board settle
+                        this.f_portEndWait += 1;
+                        return;
+                    }
+                    this.f_portEndWait = 0;
                     this.f(12);
                     this.f_C = this.f_t.b(this.f_E);
                     if (this.f_E)
@@ -333,6 +422,8 @@ namespace Loan12
                         localae = C_dd.a(false);
                         ((C_ar)localae).c(((C_de)(new C_da("Đóng", -5))));
                         ((C_ar)localae).a(((MG_b)(this)));
+                        this.f_portEndDialog = localae;
+                        // PORT-UI
                         C_cz.d().a(localae, true);
                     }
                     else
@@ -348,6 +439,9 @@ namespace Loan12
                             ((C_ar)localae).b(((C_de)(new C_da("Không", -4))));
                         }
                         ((C_ar)localae).a(((MG_b)(this)));
+                        this.f_portEndDialog = localae;
+                        // PORT-UI
+                        this.f_portEndRetry = ((C_dd.f_a < 0)) && C_bg.l();
                         C_cz.d().a(localae, true);
                     }
                     break;
@@ -401,6 +495,14 @@ namespace Loan12
                 case 8:
                     if ((this.f_t.o() == 1) && (this.y()))
                     {
+                        return;
+                    }
+                    if (this.f_portForfeit && !this.f_s.f_d)
+                    {
+                        // PORT-UI: given up, a defeat
+                        this.f_portForfeit = false;
+                        this.f_E = false;
+                        this.f(9);
                         return;
                     }
                     int i = this.f_s.a();
@@ -789,9 +891,9 @@ namespace Loan12
                         if (i2 == 0)
                         {
                             i6 = ((localcc2.f_d > localcc2.f_c) ? localcc2.f_d : localcc2.f_c);
-                            if ((i6 >= 5))
+                            if ((i6 >= ((C_PortScreens.f_touch ? 4 : 5))))
                             {
-                                int i7 = this.g(i6);
+                                int i7 = (C_PortScreens.f_touch ? this.portDrop(i6) : this.g(i6));
                                 if ((i7 >= 0))
                                 {
                                     this.f_t.d(i7, localcc2.f_a + localcc2.f_c / 2, localcc2.f_b + localcc2.f_d / 2);
@@ -854,6 +956,8 @@ namespace Loan12
                 {
                     this.f_s.f_a[i].f_b += 1;
                     C_bg.a(i, 1, 6);
+                    this.f_portWon[i] += 1;
+                    // PORT-UI: shown on the result screen
                 }
             }
             return i;
@@ -892,6 +996,10 @@ namespace Loan12
             {
                 return;
             }
+            this.f_portSkillSide = i;
+            // PORT-UI
+            this.f_portSkillIndex = paramInt;
+            this.f_portSkillCount += 1;
             int i1 = arrayOfInt[paramInt];
             localbn1.a(localbn1.n() * (paramInt + 1) / 3, true);
             int i2 = 0;
@@ -1137,6 +1245,11 @@ namespace Loan12
         private bool y()
         {
             C_bn[] arrayOfbn = this.f_s.d();
+            if (this.portReviveHold(arrayOfbn))
+            {
+                return true;
+                // PORT-UI: waiting for the player's answer (the battle stands still)
+            }
             int i = (((arrayOfbn[0].r() > 0)) && ((arrayOfbn[1].r() > 0)) ? 0 : 1);
             if ((i != 0) || (this.f_t.o() == 1))
             {
@@ -1357,6 +1470,8 @@ namespace Loan12
                 return;
             }
             localae = C_cz.a("Thông tin", "Bạn muốn dừng game lại?", "Có", -1, "Không", -2, 1);
+            this.f_portPauseDialog = localae;
+            // PORT-UI
             ((C_ar)localae).a(((MG_b)(this)));
             this.f_t.a(false);
             C_cz.d().a(localae, true);
@@ -1539,7 +1654,218 @@ namespace Loan12
             return this.f_s.f_d;
         }
 
+        /** PORT-UI: the coach's message of the tutorial, or null */
+        public string portCoach()
+        {
+            return ((this.f_s.f_d) && (this.f_t.f_g != null) ? this.f_t.f_g.portText() : ((string)null));
+        }
+
+        public int portCoachGem()
+        {
+            return ((this.f_s.f_d) && (this.f_t.f_g != null) ? this.f_t.f_g.portGem() : -1);
+        }
+
+        /** PORT-UI: the tutorial waits for a tap to go on (any key did that) */
+        public bool portCoachWaits()
+        {
+            return this.f_v == 14;
+        }
+
+        public void portCoachNext()
+        {
+            if (this.f_v == 14)
+            {
+                this.f_t.f_g.f();
+            }
+        }
+
         /** soft keys of the battle bar: left (skills) and right (pause); the centre ("bag") is the # key */
+        // PORT-UI: state and actions for the Unity touch interface (see PortUi)
+        // the "dừng game" dialog of this battle
+        // PORT-UI: the player gave the battle up (pause box "Thoát trận")
+        /** PORT-UI (tour): the player's move, a sword line when there is one; false when it is not the player's turn */
+        public bool portBotMove()
+        {
+            if ((this.f_v != 8) || (this.f_s == null) || (this.f_s.a() != 0))
+            {
+                return false;
+            }
+            C_di moves = this.q();
+            if ((moves == null) || (moves.b() == 0))
+            {
+                return false;
+            }
+            int pick = 0;
+            for (int k = 0; (k < moves.b()); k++)
+            {
+                SQ_a m = ((SQ_a)(moves.b(k)));
+                int t1 = this.d(m.f_a, m.f_b);
+                int t2 = this.d(m.f_c, m.f_d);
+                int[] types = new int[] { t2, t2, t1, t1 };
+                for (int i = 0; (i < m.f_e.Length); i++)
+                {
+                    if ((((m.f_e[i] & 255) >= 3)) && ((types[i] == 0) || (types[i] == 6)))
+                    {
+                        pick = k;
+                        goto lbl_search_break;
+                    }
+                }
+            }
+            lbl_search_break: ;
+            SQ_a m_1 = ((SQ_a)(moves.b(pick)));
+            this.a(m_1.f_a, m_1.f_b, m_1.f_c, m_1.f_d);
+            return true;
+        }
+
+        /** PORT-UI: the touch interface's drop (rates above): items 3, 4, 5 a little more often than 0 and 1 */
+        private int portDrop(int len)
+        {
+            if (this.f_s.f_d)
+            {
+                return this.g(len);
+            }
+            if (((this.f_portBoxes >= 2)) || ((C_ay.a(100) >= (((len >= 5) ? 35 : 10)))))
+            {
+                // at most 2 boxes a battle
+                return -1;
+            }
+            this.f_portBoxes += 1;
+            C_PortMap.f_boxes += 1;
+            return 6;
+            // the chest (dn draws it instead of an item)
+        }
+
+        // PORT-UI: the last skill used, and how many so far
+        // PORT-UI: the second chance is offered now
+        public int portV()
+        {
+            return this.f_v;
+        }
+
+        // PORT-UI (tour): the battle's state
+        // taken (or turned down) in this battle
+        /** PORT-UI: the hero has fallen, the enemy is below half its HP, no second chance yet */
+        private bool portReviveHold(C_bn[] f)
+        {
+            if (!C_PortScreens.f_touch || this.f_s.f_d || this.f_portReviveUsed || ((f[0].r() > 0)) || ((f[1].r() <= 0)))
+            {
+                this.f_portReviveOffer = false;
+                return false;
+            }
+            if ((f[1].r() * 2 >= f[1].s()))
+            {
+                return false;
+            }
+            this.f_portReviveOffer = true;
+            return true;
+        }
+
+        /** PORT-UI: the answer: back with 30 HP (an ad was watched), or the defeat goes on */
+        public void portRevive(bool back)
+        {
+            if (!this.f_portReviveOffer)
+            {
+                return;
+            }
+            this.f_portReviveOffer = false;
+            this.f_portReviveUsed = true;
+            if (back)
+            {
+                this.f_s.d()[0].m(30);
+            }
+        }
+
+        // PORT-UI: gift boxes dropped in this battle
+        // PORT-UI: items won in this battle (5 in a row), by type    // PORT-UI: ticks state 9 waited for the board's effects
+        // the result (won) or "mất 1 mạng" (lost) dialog
+        // the lost battle can be fought again
+        public C_cq portState()
+        {
+            return this.f_s;
+        }
+
+        /** 0 playing, 1 won, 2 lost (from the end of the fight: animation, then the result dialog) */
+        public int portOutcome()
+        {
+            if (this.f_v != 12)
+            {
+                return 0;
+                // PORT-UI: not while state 9 lets the board's explosions and attacks finish
+            }
+            return (this.f_E ? 1 : 2);
+        }
+
+        /** the board waits for the human player's move */
+        public bool portWaiting()
+        {
+            return (this.f_s != null) && (this.f_v == 8) && (this.f_s.a() == 0) && (this.f_u != null) && ((this.f_u[0] is C_ac));
+        }
+
+        public bool portItemUsed()
+        {
+            return this.f_K;
+        }
+
+        public bool portGinsengUsed()
+        {
+            return this.f_L;
+        }
+
+        /** the k-th skill, with the checks of the skill window (r() + "Dùng") */
+        public void portUseSkill(int k)
+        {
+            if (!this.portWaiting())
+            {
+                return;
+            }
+            if ((this.f_s.f_d) && (this.f_t.f_g.g() != 3))
+            {
+                return;
+            }
+            if (((k < 0)) || ((k >= this.d())))
+            {
+                return;
+            }
+            this.a("skill", k);
+        }
+
+        /** an item, with the checks of the item window (s() + "Dùng") */
+        public void portUseItem(int type)
+        {
+            if ((!this.portWaiting()) || (type == 2))
+            {
+                return;
+            }
+            int i = this.f_s.c();
+            if ((i == 1) && (this.f_t.f_g.g() != 5))
+            {
+                return;
+            }
+            if (this.f_K)
+            {
+                return;
+            }
+            if (this.f_L)
+            {
+                this.f_s.f_a[1].f_b = 0;
+            }
+            C_dx[] arr = this.f_s.f_a;
+            for (int j = 0; (j < arr.Length); j++)
+            {
+                if ((arr[j].f_a == type) && ((arr[j].f_b > 0)))
+                {
+                    arr[j].a();
+                    if (!this.f_s.f_d)
+                    {
+                        C_bg.g(type);
+                        // PORT-UI: the tutorial's item is not from the bag
+                    }
+                    this.a("item", type);
+                    return;
+                }
+            }
+        }
+
         public string portBarLabel(int paramInt)
         {
             if (paramInt == 1)

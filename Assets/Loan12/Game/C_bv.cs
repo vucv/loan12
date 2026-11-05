@@ -88,6 +88,8 @@ namespace Loan12
         {
             this.portPublishSoftKeys();
             // PORT-TOUCH
+            C_PortUi.process();
+            // PORT-UI
             if ((this.f_q > 0))
             {
                 this.f_q -= 1;

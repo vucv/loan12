@@ -1,0 +1,1042 @@
+# banter pt
+[hero_fire.start]
+É hoje! Chegou o brabo!
+Bora, {enemy}! Vem pro x1!
+Aquece aí, que eu já cheguei pegando fogo!
+Pai tá on, pode chorar!
+Vai ser rapidinho, nem senta.
+Hoje tem churrasco de {enemy}!
+[hero_fire.taunt]
+Tá com medo, é? Fala que é cringe!
+É só isso? Minha vó bate mais forte!
+Que isso, meu fi, calma!
+Errou feio, errou rude!
+Tô nem suando, parça.
+Joga direito, {enemy}! Tá de brincadeira?
+Esquenta não, que quem esquenta sou eu!
+Já pode ir aquecendo o choro.
+[hero_fire.combo]
+RECEBA!
+TACA-LE PAU!
+Olha o combo, chama a família!
+Mitei! Alguém gravou isso?
+Brabo demais, eu sou o fogo!
+[hero_fire.hurt]
+Ai! Foi sorte, só sorte!
+Opa, essa ardeu mais que pimenta!
+Ei! Não vale, eu tava distraído!
+Tá, tá, essa doeu um pouquinho.
+Golpe baixo, hein, {enemy}!
+Ouch! Lag! Foi lag!
+[hero_fire.low]
+Calma... tô só dando uma chance pra ele.
+Deu ruim... mas ainda dá pra virar!
+Tô no tilt, tô no tilt!
+Modo virada ativado! Eu acho...
+Vish, cadê meu HP? Alguém viu?
+[hero_fire.heal]
+Voltei com tudo, tá ligado?
+HP no talo de novo!
+Curou! Agora segura o fogo!
+[hero_fire.block]
+Bateu na trave, {enemy}!
+Nem fez cócegas!
+Defendi! Sou bom até nisso!
+[hero_fire.skill]
+Toma {skill} na cara!
+{skill}! Cheiro de queimado no ar!
+Segura esse {skill}, se puder!
+Vai, {skill}! Esquenta o rolê!
+[hero_fire.item]
+Item na mão, vitória no bolso!
+Hora do power-up, se liga!
+Isso aqui é estratégia, tá?
+Me bateu? Uma poçãozinha e já era, kkkk
+Armadura on! Bate agora, quero ver!
+Teu dano? Apaguei com um gole. Chora mais!
+Ginseng na veia, e você aí cansadão, hein?
+Espada do dragão na mão. Corre que dá tempo!
+Vida cheia de novo. Bateu à toa, parça!
+Já era, mermão! Tomei e sarei. Próximo!
+[hero_fire.win]
+GG izi! Próximo!
+Eu avisei! Ninguém me segura!
+Senta lá, {enemy}!
+Chora não, bebê!
+Mais um pro meu currículo de brabo!
+Já acabou? Nem aqueci!
+[hero_fire.lose]
+Foi lag! Exijo revanche!
+Deixei ganhar, pra ele não chorar.
+Hoje não era o meu dia... amanhã é!
+O controle tava com defeito!
+Aff... F no chat.
+[hero_fire.revive]
+O pai voltou!
+Achou que tinha acabado? Achou errado!
+Renasci das cinzas, igual meme bom!
+[hero_storm.start]
+Iniciando combate. Previsão: você perde.
+Calculei 14 mil cenários. Você ganha em zero.
+Olá, {enemy}. Vou ser rápido e educado.
+Choque de realidade chegando em 3, 2, 1...
+Eu li o manual. Você leu?
+Hoje o tempo fecha pra você.
+[hero_storm.taunt]
+Interessante. Errado, mas interessante.
+Sua estratégia tem nível de dificuldade: fácil.
+Isso foi um ataque ou uma sugestão?
+Anotei esse erro. É o décimo.
+Você joga como quem pula o tutorial.
+Física básica: eu raio, você cai.
+Nossa. Que surpresa. Só que não.
+Relaxa, {enemy}, perder também é aprendizado.
+[hero_storm.combo]
+Eficiência máxima. Como previsto.
+Combo calculado ao milímetro.
+Isso se chama otimização.
+Chocante, né? Literalmente.
+Q.E.D. Como queríamos demonstrar.
+[hero_storm.hurt]
+Hm. Não estava no meu modelo.
+Dor registrada. Ajustando parâmetros.
+Ok, isso foi... estatisticamente irritante.
+Ai. Anotado.
+Variável inesperada. Que deselegante.
+Erro meu. Raro, mas acontece.
+[hero_storm.low]
+Situação crítica. Mantendo a calma. Mais ou menos.
+Probabilidade de vitória: caindo. Que ótimo.
+Plano B carregando... devagar.
+Tô bem. Só o HP que não tá.
+Isso é um bug, não uma derrota.
+[hero_storm.heal]
+Sistema restaurado.
+Reparo concluído. Pode continuar errando.
+HP recalibrado. Voltamos.
+[hero_storm.block]
+Escudo funcionando conforme a documentação.
+Bloqueado. Tenta outra abordagem.
+Previsível. Bloqueado.
+[hero_storm.skill]
+Executando {skill}. Aguarde.
+{skill}. Explicação na próxima aula.
+Aplicando {skill} com precisão.
+Pesquisa concluída: {skill} resolve.
+[hero_storm.item]
+Recurso adicional utilizado. Tudo no plano.
+Item usado. Não é trapaça, é planejamento.
+Inventário otimizado.
+Seu esforço foi revertido com sucesso.
+Armadura equipada. Sua chance caiu bastante.
+Dano recebido. Dano desfeito. Simples.
+Ginseng: barato, eficaz, irritante pra você.
+Pela lógica, você deveria desistir agora.
+Poção tomada. Pode recomeçar, {enemy}.
+Isso que você fez? Ctrl+Z. Pronto.
+[hero_storm.win]
+Resultado previsto. Sem emoção.
+Foi bom pra mim. Pra você, não sei.
+Vitória. Vou anotar no meu caderno.
+GG. Sério, GG. Sem ironia. Talvez.
+Raio não cai duas vezes? Caiu três.
+Fim de experimento. Obrigado, cobaia.
+[hero_storm.lose]
+Falha crítica no sistema.
+Isso vai pro relatório de bugs.
+Interessante... vou precisar de mais dados.
+Perdi. Mas com dignidade estatística.
+Reiniciando... ego danificado.
+[hero_storm.revive]
+Reinicialização completa.
+Backup restaurado. Saudades?
+Ctrl+Z na derrota. Voltei.
+[hero_water.start]
+E aí, {enemy}, de boa? Vamo lá então.
+Bora lutar... mas depois tem lanche, né?
+Fica tranquilo, eu vou devagarinho.
+Relaxa, é só uma brincadeirinha molhada.
+Opa, chegou a hora? Já? Tá bom.
+Tranquilo e favorável, como sempre.
+[hero_water.taunt]
+Calma, calabreso.
+Tá estressado? Bebe uma água.
+Se perder, me paga um pastel de feira, fechou?
+Nossa, que nervosismo. Respira, {enemy}.
+Eu tô suave, você que tá suando.
+Vai com calma, a pressa é inimiga do lanche.
+Tem coxinha aí? Não? Que pena.
+Devagar e sempre, igual maré.
+[hero_water.combo]
+Olha a onda, olha a onda!
+Splash! Que delícia!
+Eita, saiu tudo de uma vez!
+Tsunami de chinelo, meu chapa!
+Ihh, molhou geral!
+[hero_water.hurt]
+Ai, pô! Que maldade.
+Ei, eu tava pensando em brigadeiro!
+Ui, isso doeu até no estômago.
+Pô, {enemy}, sem necessidade.
+Opa, levei um caldo.
+Ai ai, que dia...
+[hero_water.low]
+Tô fraco... acho que é fome.
+Me dá um açaí que eu volto!
+Vish, tô quase evaporando.
+Calma, não entra em pânico... eu tô em pânico.
+Se eu cair, guardem meu lanche.
+[hero_water.heal]
+Ahh, refrescante!
+Hidratado e feliz!
+Água de coco pra alma.
+[hero_water.block]
+Escorregou, né?
+Passou batido, igual onda na pedra.
+Nem molhou.
+[hero_water.skill]
+Lá vai {skill}, geladinho!
+{skill}! Fresquinho, do jeito que eu gosto.
+Toma um {skill} pra esfriar a cabeça.
+Hora do {skill}, sem estresse.
+[hero_water.item]
+Lanchinho tático!
+Usando isso aqui, de boa.
+Item na mão, paz no coração.
+Tu bateu, eu fiz um lanchinho. Tamo quite.
+Um gole e tua surra foi pro ralo.
+Pera, deixa eu tomar isso aqui com calma.
+Ginseng é amargo, mas tua cara tá pior.
+Armadura de boa. Agora dá até pra cochilar.
+Pode bater, vou tomar meu chazinho.
+Ué, cadê o machucado? Sumiu, né?
+[hero_water.win]
+Ganhei? Ah, legal. Bora comer?
+Tranquilo, tranquilo. Sem ressentimentos.
+Vitória com gostinho de feijoada!
+Foi mal, {enemy}. Quer um pão de queijo?
+Calma que o mar não tá pra peixe.
+Fluiu, né? Fluiu.
+[hero_water.lose]
+Ah, perdi. Pelo menos agora dá pra almoçar.
+Tudo bem, a vida é uma onda.
+Tô com fome demais pra lutar direito.
+Foi a fome, juro que foi a fome.
+Afundei... mas volto boiando.
+[hero_water.revive]
+Voltei! Alguém trouxe comida?
+Boiei de volta, galera!
+Cochilei. Onde paramos?
+[hero_phoenix.start]
+Luzes! Câmera! FÊNIX!
+Senhoras e senhores, o espetáculo vai começar!
+Abram as cortinas, a estrela chegou!
+{enemy}, prepare-se para o maior show da Terra!
+Aplausos, por favor! Eu mereço.
+Hoje o palco é meu e o fogo também!
+[hero_phoenix.taunt]
+Que atuação fraca! Volte ao ensaio!
+Você é figurante na minha história, {enemy}.
+Ninguém compraria ingresso pra te ver.
+Que cena deprimente... Corta!
+Alguém tira esse amador do palco?
+Ah, a tragédia de um oponente medíocre!
+Ensaiou isso no espelho? Precisa ensaiar mais.
+Plateia, vocês viram isso? Que vergonha!
+[hero_phoenix.combo]
+BRAVO! BRAVÍSSIMO!
+Isso, meus amores, é ARTE!
+Ovação de pé, por favor!
+Que cena! Que espetáculo! Que EU!
+Chama a imprensa! Isso foi histórico!
+[hero_phoenix.hurt]
+Ai! Meu figurino!
+Como ousa tocar na estrela?!
+Que drama! Que dor! Que injustiça!
+Fui ferido... mas com elegância!
+Essa cena não estava no roteiro!
+Ui! Isso vai pro documentário da minha vida.
+[hero_phoenix.low]
+É assim que termina o primeiro ato?!
+Uma tragédia shakespeariana em curso!
+Adeus, mundo cruel... mentira, ainda não.
+O público chora! Eu choro! Todos choram!
+Segurem a cortina, ainda não acabou!
+[hero_phoenix.heal]
+A estrela ressurge, radiante!
+Retoque na maquiagem e voltei!
+O brilho voltou, meus fãs!
+[hero_phoenix.block]
+Nem um arranhão no figurino!
+Coreografado! Esquiva perfeita!
+Inútil! Sou intocável no palco!
+[hero_phoenix.skill]
+E agora, o grande número: {skill}!
+Com vocês... {skill}!
+{skill}! Rufem os tambores!
+Fogos de artifício! {skill}!
+[hero_phoenix.item]
+Um adereço de cena muito útil!
+Truque de bastidor, meu bem!
+Contrarregra, meu item!
+Ferida? Era maquiagem de cena, querido!
+Segundo ato! Vida cheia e plateia em pé!
+Troca de figurino: agora de armadura!
+Um gole e a estrela renasce. Aplausos!
+Espada do dragão! Holofote aqui, por favor!
+Seu golpe foi cortado na edição!
+Que novela! Você bate e eu me curo. Bravo!
+[hero_phoenix.win]
+Fim do espetáculo! Podem jogar flores!
+E o prêmio de melhor ator vai para... EU!
+Obrigado, obrigado! Autógrafos depois!
+Que final apoteótico! Chorei!
+Mais um sucesso de bilheteria!
+{enemy} ficou com o papel de árvore. Merecido.
+[hero_phoenix.lose]
+O crítico não entendeu minha arte...
+Um final trágico... mas belíssimo!
+Que fracasso de bilheteria!
+Isso foi um teaser. A sequência vem aí.
+Saio de cena... por enquanto!
+[hero_phoenix.revive]
+Das cinzas, como toda boa fênix!
+Plot twist! Eu voltei!
+Segunda temporada confirmada!
+[hero_queen.start]
+A rainha chegou. Podem se curvar.
+Chegou quem vocês estavam esperando, amores.
+{enemy}, respira fundo, vai precisar.
+Mãe tá on. Senta e aprende.
+Bom dia pra quem? Pra mim, só.
+Abram alas, que eu quero passar!
+[hero_queen.taunt]
+Não sou obrigada a perder pra você.
+Beijinho no ombro, {enemy}!
+Querido, isso é tudo? Que fofo.
+Já acabou, Jéssica?
+Aceita que dói menos.
+Me erra, amor.
+Tô passada com tanta fraqueza!
+Faz assim não, que dá até pena.
+[hero_queen.combo]
+Lacrei!
+Arrasei, né? Pode falar.
+Rainha não erra, só acerta.
+Isso que é entrega, meu bem!
+Diva, maravilhosa, inigualável!
+[hero_queen.hurt]
+Ai! Que deselegante!
+Desarrumou meu cabelo, você vai pagar!
+Ui, ousadia! Gostei não.
+Como ousa, plebeu?!
+Ai, quebrou minha unha!
+Você não sabe com quem tá falando!
+[hero_queen.low]
+Calma, rainha também passa aperto.
+Tô cansada, mas linda.
+Só um susto... um susto grande.
+Respira, rainha, respira.
+Gente, socorro, mas com classe.
+[hero_queen.heal]
+Recarreguei o brilho!
+Skincare de batalha, amores!
+Renovada e poderosa!
+[hero_queen.block]
+Bloqueei, e daí?
+Nem chegou perto, querido.
+Proteção de diva ativada.
+[hero_queen.skill]
+Toma {skill}, com carinho!
+{skill}! Anota aí, querida!
+Olha o {skill} chegando, amor!
+Raio de rainha: {skill}!
+[hero_queen.item]
+Acessório do dia: vitória.
+Bolsa de rainha tem de tudo.
+Um mimo pra mim mesma.
+Bateu na rainha? Ela toma uma poção e segue.
+Armadura nova. E você, nada de novo, né?
+Momento skincare de batalha. Espera aí.
+Ginseng pra ficar plena. Quer? Não tem.
+Teu esforço? Deletado, amore.
+Essa espada combina comigo. Com você, não.
+Curei. Pode continuar tentando, viu, linda?
+[hero_queen.win]
+Ganhei, como sempre. Próximo!
+Beijos, {enemy}, se cuida!
+Rainha é rainha, não tem jeito.
+E vocês duvidaram? Que gracinha.
+Coroa no lugar, inimigo no chão.
+Pode chorar no cantinho, tá liberado.
+[hero_queen.lose]
+Hoje foi só um dia ruim, amanhã eu lacro.
+Perdi, mas continuo maravilhosa.
+Aff. Não aceito, mas tá.
+Isso nunca aconteceu. Ninguém viu.
+Até rainha tropeça no salto.
+[hero_queen.revive]
+A rainha nunca cai de verdade.
+Voltei e com mais brilho!
+Ajeitei a coroa. Vamos de novo.
+[hero_dragon.start]
+Saudações, {enemy}. Que sua derrota seja breve.
+Um descendente do Rei Dragão o cumprimenta.
+Que honra para você me enfrentar.
+Preparei um duelo à altura... da minha altura.
+Com licença, vou vencer agora.
+Não se preocupe, serei gentil. Talvez.
+[hero_dragon.taunt]
+Que curioso. Você realmente acha que pode vencer?
+Perdoe-me, mas sua técnica é... rústica.
+Meu escudeiro luta melhor. E ele é tímido.
+Com todo respeito: que vergonha.
+Admiro sua coragem. Não sua habilidade.
+Você luta como quem pede desculpas.
+Ninguém lhe ensinou modos? Nem golpes?
+Que graça, um peixinho desafiando o dragão.
+[hero_dragon.combo]
+Elegância em cada golpe.
+Perfeito, como de costume.
+Uma obra-prima, se me permitem.
+Isso, caro {enemy}, é linhagem.
+Impecável. Como eu.
+[hero_dragon.hurt]
+Que grosseria.
+Isso foi... descortês.
+Arranhou minhas escamas. Imperdoável.
+Hm. Golpe de sorte, sem dúvida.
+Que modos são esses?
+Machucou meu orgulho mais que meu corpo.
+[hero_dragon.low]
+Uma situação desagradável, admito.
+Nem um dragão é feito de pedra.
+Meu avô ficaria decepcionado. Só um pouco.
+Isto é temporário. Como você.
+Preciso de um momento. E de um milagre.
+[hero_dragon.heal]
+A névoa do mar me restaura.
+Recomposto e radiante, como sempre.
+A realeza se cuida.
+[hero_dragon.block]
+Bloqueado com toda a educação.
+Tente novamente. Ou não.
+Previsível e deselegante.
+[hero_dragon.skill]
+Permita-me apresentar: {skill}.
+{skill}, cortesia do Mar do Norte.
+Contemple {skill} e aprenda.
+Com sua licença, {skill}.
+[hero_dragon.item]
+Um pequeno tesouro da família.
+Do baú real, com carinho.
+Com licença, um momento.
+Seu arranhão já foi tratado. Obrigado.
+Armadura da família. Muito acima do seu nível.
+Poção do palácio. Imagino que nunca provou.
+Ginseng centenário. Mais velho que sua técnica.
+A espada do dragão. Não é pro seu bico.
+Perdão, seu ataque não deixou marcas.
+Tente outra vez. Com mais classe, se puder.
+[hero_dragon.win]
+Foi um prazer. Principalmente para mim.
+Obrigado pela partida. Volte quando treinar.
+O dragão vence. Como manda a tradição.
+Não se envergonhe, eu sou excepcional.
+Recolha seus pedaços com dignidade, {enemy}.
+Missão cumprida. Agora, um chá.
+[hero_dragon.lose]
+Uma derrota... que humilhante.
+Ninguém conta isso pro meu avô, por favor.
+Exijo uma revanche formal.
+Deixei você vencer por cortesia.
+Hm. Vou fingir que isso não aconteceu.
+[hero_dragon.revive]
+Um dragão nunca permanece caído.
+Levantei. Com classe, naturalmente.
+A linhagem real exige que eu continue.
+[ally.start]
+Treino é treino, jogo é jogo! Bora!
+Sem moleza, hein, parceiro!
+Que vença o melhor... que sou eu.
+Pelo Senhor Dinh! E pela zoeira!
+Vamos ver quem paga o almoço hoje!
+Aquece o braço, {enemy}, que hoje é sério!
+[ally.taunt]
+Treinou com quem? Com a galinha?
+Assim eu ganho até de olho fechado!
+Tá mole, hein, irmão!
+Vai, capricha! Não me decepciona!
+No acampamento você falava mais grosso!
+Força, companheiro! Cadê a força?
+Isso aí é golpe ou carinho?
+Mostra serviço, {enemy}!
+[ally.combo]
+Pá, pá, pá! Aprendeu?
+Toma, irmão, de coração!
+Esse vai pro mural do quartel!
+Sentiu o peso da experiência?
+Isso é treino de general!
+[ally.hurt]
+Boa, boa! Assim que eu gosto!
+Ai! Essa foi honesta.
+Opa! Tá aprendendo, hein!
+Uh! Respeito, parceiro.
+Bateu bonito, admito.
+Essa vai deixar marca até amanhã!
+[ally.low]
+Tá apertado, mas eu não desisto!
+Ainda aguento! Ainda aguento... acho.
+Me pegou de jeito, hein!
+Não comemora ainda, irmão!
+Um general nunca abaixa a espada!
+[ally.heal]
+Respirei fundo, voltei!
+Fôlego renovado!
+Recuperado, pode vir!
+[ally.block]
+Defesa de veterano!
+Essa eu conhecia!
+Bloqueado, irmão. Tenta de novo.
+[ally.skill]
+Olha a técnica: {skill}!
+{skill}! Aprende comigo!
+Segura esse {skill}, companheiro!
+Do treino pro campo: {skill}!
+[ally.item]
+Equipamento do quartel, valeu!
+Item do almoxarifado, chegou!
+Tática também é treino!
+[ally.win]
+Boa luta! Você paga o almoço!
+Ganhei, mas você evoluiu, viu?
+Aperta aqui, irmão! Foi massa!
+Treino concluído com sucesso!
+Valeu pela luta, {enemy}! Próxima é sua.
+Ainda tem muito arroz com feijão pra comer!
+[ally.lose]
+Que luta! Você mereceu, irmão!
+Perdi, mas com honra!
+Tá bom, tá bom, eu pago o almoço.
+O aluno superou o mestre... de novo!
+Amanhã eu quero revanche, ouviu?
+[mentor.start]
+Muito bem, aluno. Mostre o que aprendeu.
+Hoje tem prova surpresa. Surpresa!
+Pegue papel e pincel, digo, a espada.
+Lição de hoje: não perder pra mim.
+Sente-se... ou melhor, lute.
+Vamos ver se você prestou atenção na aula.
+[mentor.taunt]
+Isso não estava no livro.
+Nota três. Sendo generoso.
+Você estudou ou só fingiu?
+Já expliquei isso umas vinte vezes...
+Atenção, isso vai cair na prova!
+Sua estratégia me dá dor de cabeça.
+Paciência, Luu Co, paciência...
+Errou. Mas errou com convicção.
+[mentor.combo]
+Aula prática, meu caro!
+Isso se chama experiência.
+Anote: é assim que se faz.
+Teoria e prática, juntas!
+O velho ainda dá aula!
+[mentor.hurt]
+Ora! Aprendeu essa comigo!
+Muito bem... doeu, mas muito bem.
+Ai! Minha coluna!
+Hm. Excelente execução. Ai.
+Isso foi... pedagógico.
+Ok, essa ganhou um ponto extra.
+[mentor.low]
+Hora de rever meu plano de aula...
+O professor está sendo reprovado?
+Estou velho demais pra isso!
+Calma, tudo faz parte do método.
+Onde foi que eu errei na didática?
+[mentor.heal]
+Um chazinho e estou novo.
+Reflexão restaura o espírito.
+Respira, conta até dez. Pronto.
+[mentor.block]
+Previsível. Página doze.
+Eu escrevi essa defesa.
+Clássico. Bloqueado.
+[mentor.skill]
+Matéria avançada: {skill}.
+Observe {skill} com atenção.
+{skill}. Vai cair na prova.
+Exemplo prático: {skill}!
+[mentor.item]
+Todo estrategista tem um truque.
+Planejamento é tudo.
+Recurso previsto no plano.
+[mentor.win]
+Aprovado... não. Reprovado. Estude mais.
+Voltem amanhã. Mesma hora. Mesmo erro?
+Paciência, um dia você chega lá.
+O mestre ainda é o mestre.
+Lição dada é lição aprendida. Espero.
+Tarefa de casa: perder menos.
+[mentor.lose]
+Meu aluno me venceu! Que orgulho!
+Ensinei bem demais. Erro meu.
+Aprovado com louvor!
+Estou velho, mas estou feliz.
+Meu trabalho aqui está feito.
+[warlord.start]
+Ajoelhe-se diante do grande senhor!
+Quem ousa invadir minhas terras?
+Eu sou a lei aqui, {enemy}!
+Meu exército é maior que sua vila!
+Prepare-se para conhecer a verdadeira glória!
+Tremei, mortais! Chegou o chefe!
+[warlord.taunt]
+Você não passa de um camponês com espada!
+Minhas tropas riem de você!
+Seu senhor manda crianças pra guerra?
+Patético! Absolutamente patético!
+Nem meu cavalo perderia pra você!
+Eu nasci pra reinar, você nasceu pra apanhar!
+Vai pedir arrego, {enemy}?
+Isso é tudo que Hoa Lu tem?
+[warlord.combo]
+Sinta o poder de um senhor!
+Ajoelhe-se! Agora!
+Isso é poder de verdade!
+Glória ao meu nome!
+Testemunhe minha grandeza!
+[warlord.hurt]
+Como ousa?!
+Você vai pagar por isso!
+Guardas! GUARDAS!
+Isso é um insulto à minha linhagem!
+Ugh! Sorte de principiante!
+Ninguém encosta em mim assim!
+[warlord.low]
+Isso não pode estar acontecendo!
+Onde estão meus generais?!
+Impossível! Eu sou invencível!
+Mandem reforços! Agora!
+Meu conselheiro me garantiu a vitória!
+[warlord.heal]
+Os céus estão comigo!
+Um senhor nunca cai fácil!
+Meu poder retorna!
+[warlord.block]
+Hah! Minha armadura vale mais que sua vila!
+Inútil!
+Proteção digna de um rei!
+[warlord.skill]
+Contemple o grande {skill}!
+{skill}! Curve-se!
+Pelo meu trono: {skill}!
+Meu {skill} é lendário!
+[warlord.item]
+Tesouro do meu cofre!
+Riqueza é poder!
+Paguei caro por isso!
+[warlord.win]
+Eu avisei! Ninguém me vence!
+Escrevam isso nos livros de história!
+Levem esse aí pra masmorra!
+A glória é minha, só minha!
+Hahaha! Que vitória magnífica!
+Mais um pro meu monumento!
+[warlord.lose]
+Isso foi uma armação!
+O sol estava no meu olho!
+Exijo um recurso!
+Eu volto! E com o dobro de soldados!
+Não foi justo! Não foi justo!
+[lady.start]
+Que seja breve. Tenho chá às cinco.
+Ah, você de novo. Que tédio.
+Vamos acabar logo com isso, querido.
+Uma dama luta com classe. Observe.
+Prepare-se para uma lição de etiqueta.
+Encantada. Mentira.
+[lady.taunt]
+Que deselegância. Que tristeza.
+Esse é seu melhor? Que fofo.
+Até meu leque luta melhor.
+Querido, endireite a postura.
+Tsc, tsc. Que falta de modos.
+Isso é um golpe ou um tropeço?
+Que desastre ambulante.
+Faço isso de olhos fechados. E bocejando.
+[lady.combo]
+Com classe, sempre.
+Elegância também machuca.
+Assim se faz, plebeu.
+Uma dama nunca erra.
+Perfeição, como de costume.
+[lady.hurt]
+Que audácia!
+Meu vestido! Que absurdo!
+Grosseiro!
+Isso foi totalmente desnecessário.
+Que modos são esses, rapaz?
+Ai. Que vulgar.
+[lady.low]
+Isto está ficando inconveniente.
+Uma dama não se apressa... mas precisa.
+Que situação mais deselegante.
+Hm. Preciso me recompor.
+Não me olhe assim, estou ótima.
+[lady.heal]
+Um retoque e pronto.
+Recomposta. Como sempre.
+Beleza e saúde restauradas.
+[lady.block]
+Nem amassou meu vestido.
+Previsível, querido.
+Com licença, isso não passa.
+[lady.skill]
+Permita-me: {skill}.
+{skill}, com delicadeza.
+Um pouco de {skill} para você.
+{skill}. Tome nota.
+[lady.item]
+Uma dama vem preparada.
+Do meu baú, com elegância.
+Um pequeno detalhe.
+[lady.win]
+Como esperado. Que tédio.
+Obrigada pela diversão. Pouca, mas houve.
+Volte quando aprender modos.
+Uma dama vence sem suar.
+Até logo, querido. Ou não.
+Previsível do começo ao fim.
+[lady.lose]
+Que deselegante da sua parte vencer.
+Hmpf. Hoje não estou em meus dias.
+Isso não sai daqui, entendeu?
+Perdi a luta, não a classe.
+Muito bem. Admito. Só desta vez.
+[soldier.start]
+De novo? Hoje nem é dia de batalha...
+O chefe mandou, fazer o quê.
+Segunda-feira e eu aqui, lutando.
+Bora, que eu quero voltar pra janta.
+Ninguém me paga hora extra por isso...
+Tá, tá, vamo lutar. Mas sem pressa.
+[soldier.taunt]
+Olha, sem ofensa, mas eu preciso desse emprego.
+Vai devagar que eu tô sem almoço!
+Quem mandou você vir? O meu chefe?
+Isso aqui não tá no meu contrato!
+Você recebe quanto pra isso? Eu recebo mal.
+Vamo fingir que lutamos e ir embora?
+Se eu perder, desconta do salário!
+Ô, {enemy}, pega leve, eu tenho família!
+[soldier.combo]
+Opa! Nem eu sabia que fazia isso!
+Isso merece um aumento!
+Viu, chefe? Viu?
+Caramba, acertei!
+Isso vai pro meu currículo!
+[soldier.hurt]
+Ai! Não pagam o suficiente pra isso!
+Ui! Cadê o plano de saúde?
+Ai, minha coluna!
+Isso vai virar atestado!
+Mãe, eu quero ir pra casa!
+Ai! Alguém anota isso como acidente de trabalho!
+[soldier.low]
+Pronto, vou pedir demissão.
+Eu só queria a marmita...
+Chefe, preciso de férias. Agora!
+Se eu cair, avisa minha mãe.
+Quem mandou eu me alistar...
+[soldier.heal]
+Ufa, dei um respiro!
+Essa marmita salvou!
+Recuperei! Pode voltar a sofrer.
+[soldier.block]
+Ufa! Escudo de segunda mão funcionou!
+Opa, bloqueei sem querer!
+Defendi! Me dá um aumento?
+[soldier.skill]
+Treinei {skill} no fim de semana!
+Lá vai {skill}... tomara que funcione.
+{skill}! Vi no treino uma vez!
+Toma esse {skill} aí!
+[soldier.item]
+Isso aqui veio do almoxarifado.
+Peguei emprestado, ninguém vai ver.
+Usa logo antes que o chefe veja!
+[soldier.win]
+Ganhei?! Chefe! Chefe! Eu ganhei!
+Agora mereço folga!
+Ufa! Hoje tem janta em dobro!
+Vou contar pra minha mãe!
+Nem acredito! Alguém viu?
+Sextou com vitória!
+[soldier.lose]
+Tá bom, me rendo! Posso ir embora?
+Já falei que eu não ganho o suficiente!
+Pelo menos acabou o expediente.
+Vou pedir transferência pra cozinha.
+Tô cansado, chefe...
+[bandit.start]
+Ih, alá! Chegou o patrão do pedágio!
+Passa o ouro aí, parça!
+Essa estrada tem dono, tá ligado?
+Na moral, é melhor nem tentar.
+Aqui é nossa quebrada, mano!
+Vai pagar pedágio ou vai apanhar?
+[bandit.taunt]
+Tá perdido, playboy?
+Mó vacilo, hein, {enemy}!
+Bagulho é doido aqui, mano!
+Larga a carteira e vaza!
+Tá achando que aqui é bagunça?
+Ih, o cara se acha!
+Se liga, aqui não tem moleza!
+Firmeza? Firmeza nada, perdeu!
+[bandit.combo]
+É os guri!
+Tá ligado agora?
+Sentiu a pressão?
+Aí sim, mano!
+Bagulho foi sinistro!
+[bandit.hurt]
+Ai, mano! Que isso?
+Pera, pera, vamo conversar!
+Ai! Isso não tava combinado!
+Calma, calma, sem violência!
+Ô, dá um desconto aí!
+Ihh, sujou!
+[bandit.low]
+Deu ruim, vou vazar!
+Mano, eu só tava brincando!
+Pega o ouro e me deixa ir, beleza?
+Vou chamar meus primos!
+Sujou, sujou, sujou!
+[bandit.heal]
+Tô firmeza de novo!
+Recuperei, parça!
+Bora pro segundo round!
+[bandit.block]
+Passou longe, mano!
+Errou, playboy!
+Nem encostou!
+[bandit.skill]
+Olha o {skill}, mano!
+Na moral: {skill}!
+Toma {skill} de presente!
+{skill}! Esse é dos bons!
+[bandit.item]
+Isso aqui eu achei na estrada.
+Peguei de um viajante, ninguém viu.
+Contrabando dos bons!
+[bandit.win]
+Passa tudo, passa tudo!
+Valeu pelo pedágio!
+É nóis!
+Volta sempre, freguês!
+Hoje a quebrada tá rica!
+Firmeza total, mano!
+[bandit.lose]
+Perdi, mano! Vou embora, vou embora!
+Foi mal aí, foi só brincadeira!
+Nunca te vi, você nunca me viu!
+Fui, falou!
+Esquece essa estrada, beleza?
+[critter.start]
+Bzzzz! Território meu!
+Croac! Quem tá aí?
+Ssst! Você pisou no meu formigueiro!
+Bzz bzz! Hora da picada!
+Croac croac! Eu sou o rei da lagoa!
+Tic tic tic! Oito pernas, zero medo!
+[critter.taunt]
+Bzz! Pequeno, mas irritante!
+Croac! Vai chorar?
+Bzz! Vou zunir no seu ouvido a noite toda!
+Tamanho não é documento!
+Tic tic! Você tá na minha teia!
+Croac! Sua cara de sapo é pior que a minha!
+Bzzz! Vou te picar onde não alcança!
+Ssst! Não me subestime, {enemy}!
+[critter.combo]
+BZZZZZT!
+CROAAAC!
+Ferroada dupla!
+Picada de respeito!
+Pulo de sapo campeão!
+[critter.hurt]
+Bzz! Ai, minha asa!
+Croac! Grosseiro!
+Ai, minha antena!
+Bzz... vou contar pra rainha!
+Ai! Perdi uma perna!
+Croac! Que maldade com um bichinho!
+[critter.low]
+Bzz... bzz... tô zonzo...
+Croac... preciso de uma mosca...
+Tic... tic... tô sem teia...
+Socorro, colmeia!
+Bzz... eu era pra ser assustador...
+[critter.heal]
+Bzzz! Néctar delícia!
+Croac! Molhei a pele!
+Teia remendada!
+[critter.block]
+Casca dura!
+Croac! Nem senti!
+Bzz! Desviei!
+[critter.skill]
+Bzzz! Sinta o {skill}!
+Croac! {skill}!
+{skill} do enxame!
+Tic tic! {skill}!
+[critter.item]
+Bzz! Guardei esse pólen!
+Croac! Achei no brejo!
+Tesouro da teia!
+[critter.win]
+Bzzz! Eu sou o rei do jardim!
+Croac! Pode sair da minha lagoa!
+Vitória do enxame!
+Pequeno e campeão!
+Tic tic! Pegou na teia, perdeu!
+Bzz! Contem pra todas as abelhas!
+[critter.lose]
+Bzz... vou embora zunindo...
+Croac... vou me esconder na lama.
+Ai, enxame, me ajuda...
+Eu volto com mais mil irmãos!
+Croac... nem foi tão ruim assim...
+[trickster.start]
+Hihihi! Olha quem caiu na armadilha!
+Uuuh, um visitante! Que divertido!
+Esconde-esconde? Eu adoro!
+Ihihi, você parece gostoso de enganar!
+Vem cá, vem cá! Hihi!
+Ninguém me pega, ninguém me pega!
+[trickster.taunt]
+Pegadinha do malandro! Ié ié!
+Tô aqui! Não, tô aqui! Hihihi!
+Errou! Errou de novo! Hihi!
+Você é muito lento, {enemy}!
+Psiu! Aqui atrás! Hihi!
+Olha o passarinho!
+Quer um docinho? Mentira!
+Cansou? Mal comecei!
+[trickster.combo]
+Ta-dá!
+Surpresa! Hihihi!
+Mágica, mágica!
+Caiu direitinho!
+Plim! Hihi!
+[trickster.hurt]
+Ai! Não vale!
+Ui! Isso não tem graça!
+Ei! Quem deixou você acertar?
+Aaai! Trapaceiro!
+Ai! Meu rabo!
+Ui! Essa me pegou!
+[trickster.low]
+Hihi... hi... nem tô rindo mais...
+Hora de sumir! Pufff!
+Eita, a brincadeira ficou séria!
+Eu não brinco mais assim!
+Mamãe! Digo... hihi?
+[trickster.heal]
+Hihi! Truque de cura!
+Nova em folha! Hihi!
+Ressurgi das moitas!
+[trickster.block]
+Não tô mais aí!
+Errou! Era um boneco!
+Hihi! Ilusão!
+[trickster.skill]
+Abracadabra: {skill}!
+Truquezinho chamado {skill}!
+{skill}! Hihihi!
+Olha só: {skill}!
+[trickster.item]
+Achei no bolso dos outros!
+Tirei da cartola!
+Peguei emprestado pra sempre!
+[trickster.win]
+Hihihi! Enganei direitinho!
+Volta amanhã pra mais pegadinha!
+Foi divertido! Pra mim!
+Cadê seu ouro? Comigo! Hihi!
+Trouxa! Hihihi!
+Esconde-esconde: eu ganhei!
+[trickster.lose]
+Nem tem graça mais! Fui!
+Hihi... vou me esconder bem longe...
+Ai, a pegadinha virou contra mim!
+Não conta pra ninguém!
+Pufff! Desapareci! Não me procura!
+[brute.start]
+GRRR. Você pequeno.
+Eu esmaga. Agora.
+UGH. Quem acorda eu?
+Pedra grande. Você não.
+HMMMM. Fome. Briga.
+Eu bravo. Muito bravo.
+[brute.taunt]
+Você fraco. Eu forte.
+Bate mais. Não sinto.
+HA. HA. HA. Isso cócega.
+Eu grande. Você mosquito.
+Corre não. Eu lento. Mas chego.
+Você fala muito. Eu esmaga.
+Nome difícil. Eu chama você de lanche.
+GRRR. Para de pular.
+[brute.combo]
+ESMAGA!
+BUM!
+PÁ! Bom.
+Eu forte. Viu?
+GRAAAH!
+[brute.hurt]
+UGH.
+Ai. Pedra trincou.
+Por que você bate eu?
+GRR. Doeu um pouco.
+Hmm. Coceira.
+Isso não legal.
+[brute.low]
+Eu cansado.
+Cabeça gira. Muita estrela.
+Eu precisa sentar.
+Ugh... soneca...
+Não. Ainda não.
+[brute.heal]
+Comi pedra. Melhor.
+Hmm. Bom.
+Força voltou.
+[brute.block]
+Pedra dura.
+Nada.
+Hm? Você bateu?
+[brute.skill]
+{skill}. BUM.
+Eu usa {skill}!
+{skill}! GRRR!
+{skill}. Esmaga tudo.
+[brute.item]
+Coisa boa. Eu come.
+Hmm. Coisa brilhante.
+Achei. É meu.
+[brute.win]
+Eu ganha. Agora soneca.
+GRRR. Eu disse.
+Você chato. Agora quieto.
+Esmagado. Feliz.
+Eu forte. Você não. Fim.
+Hora de comer.
+[brute.lose]
+Ugh... eu cai...
+Pedra... quebrou...
+Não justo. Você rápido.
+Eu volta. Maior.
+Soneca... longa...

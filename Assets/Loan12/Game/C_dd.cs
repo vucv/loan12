@@ -26,6 +26,7 @@ namespace Loan12
         private static int[][] f_o;
         private static int[] f_p;
         private static int[][] f_q;
+        public static int f_portLossExp;
 
         static C_dd()
         {
@@ -477,10 +478,13 @@ namespace Loan12
             return new C_cr(paramBoolean);
         }
 
+        // PORT-UI: experience taken by the last defeat
         public static C_ae g()
         {
             int i1 = C_dd.b();
             int i2 = C_dd.a(C_dd.f_e, C_dd.f_f, i1);
+            C_dd.f_portLossExp = i2;
+            // PORT-UI
             string str = "Bạn bị mất 1 mạng chơi.";
             if ((C_dd.f_a < 0))
             {

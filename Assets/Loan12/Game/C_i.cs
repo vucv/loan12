@@ -1054,6 +1054,43 @@ namespace Loan12
             return this.f_A.a();
         }
 
+        /** PORT-UI: gems, combo texts, attacks flying to a fighter or a skill effect are still playing
+         *  (shields and freezes that last several turns, types 4 and 8, do not count) */
+        public bool portBusy()
+        {
+            int j = 0;
+            for (j = 0; (j < this.f_s.b()); j++)
+            {
+                if ((((SQ_s)(this.f_s.b(j)))).m())
+                {
+                    return true;
+                }
+            }
+            for (j = 0; (j < this.f_l.b()); j++)
+            {
+                if ((((SQ_b)(this.f_l.b(j)))).a())
+                {
+                    return true;
+                }
+            }
+            for (j = 0; (j < this.f_o.b()); j++)
+            {
+                if ((((SQ_p)(this.f_o.b(j)))).m())
+                {
+                    return true;
+                }
+            }
+            for (j = 0; (j < this.f_p.b()); j++)
+            {
+                C_ab e = ((C_ab)(this.f_p.b(j)));
+                if (e.m() && (e.b() != 4) && (e.b() != 8))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public void e(int paramInt)
         {
             this.f_A.a(paramInt);

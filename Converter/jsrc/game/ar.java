@@ -82,6 +82,9 @@ public abstract class ar {
     }
 
     protected final void c(Graphics paramGraphics) {
+        if (game.PortScreens.storyHidden && (this instanceof df)) { // PORT-UI
+            return;
+        }
         if (b()) {
             this.l.a(paramGraphics);
         }
@@ -278,6 +281,16 @@ public abstract class ar {
 
     /** PORT-TOUCH: pointer dragged to (x, y), absolute screen coordinates. */
     public void portDragTo(int paramInt1, int paramInt2) {
+    }
+
+    /** PORT-UI: presses soft key 0 = left, 1 = centre, 2 = right, exactly like its key would. */
+    public boolean portPress(int slot) {
+        if ((this.s == null) || (slot < 0) || (slot > 2) || (this.a[slot] == null) || (this.b[slot] != 0)) {
+            return false;
+        }
+        this.a[slot].b();
+        this.b[slot] = 3;
+        return true;
     }
 
     /** PORT-TOUCH: label of soft key 0 = left, 1 = centre, 2 = right; null when there is none. */

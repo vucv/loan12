@@ -505,7 +505,169 @@ public class aa
         portWalk();
     }
 
+    private int portGoal = -1;
+    private boolean portRetarget;
+
+    // PORT-UI: state and actions for the Unity map view (see game.PortMap)
+    public game.ca portTalk() {
+        return this.f == 2 ? this.O : null;
+    }
+
+    public game.co portArenaBox() {
+        return this.f == 9 ? this.P : null;
+    }
+
+    /** next utterance of the dialogue ("Tiếp"), or what follows it after the last one */
+    public void portTalkNext() {
+        if ((this.f == 2) && (this.O != null) && !this.O.portNext()) {
+            y();
+        }
+    }
+
+    /** "Bỏ qua" of the dialogue */
+    public void portTalkSkip() {
+        if ((this.f == 2) && (this.O != null)) {
+            y();
+        }
+    }
+
+    public int portState() {
+        return this.f;
+    }
+
+    public boolean portNodeOpen(int n) {
+        return (n >= 0) && (n < this.z.length) && this.z[n].d;
+    }
+
+    public boolean portRoadOpen(int r) {
+        return (r >= 0) && (r < this.A.length) && this.A[r].c;
+    }
+
+    public int portNodeQuest(int n) {
+        return this.z[n].e;
+    }
+
+    public int portNodeEvent(int n) {
+        return this.z[n].f;
+    }
+
+    public int portGuard(int n) {
+        return this.S[n];
+    }
+
+    public int portQuest() {
+        return this.T;
+    }
+
+    public boolean portArena(int i) {
+        return (i >= 0) && (i < this.aq.length) && this.aq[i];
+    }
+
+    public int portNode() {
+        return this.B;
+    }
+
+    public int portX() {
+        return this.F;
+    }
+
+    public int portY() {
+        return this.G;
+    }
+
+    public boolean portWalking() {
+        return (this.f == 1) || (this.portPathPos < this.portPathLen) || this.portRetarget;
+    }
+
+    public int portTarget() {
+        return portWalking() ? this.portGoal : -1;
+    }
+
+    /** stops at the end of the road being walked */
+    public void portStop() {
+        this.portPathLen = 0;
+        this.portRetarget = false;
+    }
+
+    /** "BẮT ĐẦU": what the game does when the hero arrives at the node he stands on */
+    public void portArrive() {
+        if (this.f == 0) {
+            f(0);
+        }
+    }
+
+    /** walks to node n along the shortest open way (from the end of the road being walked) */
+    public void portGo(int n) {
+        if ((n < 0) || (n >= this.z.length)) {
+            return;
+        }
+        this.portGoal = n;
+        if (this.f == 0) {
+            this.portRetarget = false;
+            a(this.g + this.z[n].b, this.a_ + this.z[n].c);
+        } else {
+            this.portPathLen = 0;
+            this.portRetarget = true;
+        }
+    }
+
+    /** roads of the shortest open way from the hero's node to n (-1: none); its nodes into out */
+    public int portRoute(int n, int[] out) {
+        int i1 = this.z.length;
+        if ((n < 0) || (n >= i1)) {
+            return -1;
+        }
+        int[] prev = new int[i1];
+        int[] queue = new int[i1];
+        for (int k = 0; k < i1; k++) {
+            prev[k] = -2;
+        }
+        int head = 0;
+        int tail = 0;
+        queue[tail++] = this.B;
+        prev[this.B] = -1;
+        while ((head < tail) && (prev[n] == -2)) {
+            int at = queue[head++];
+            for (int d = 0; d < 4; d++) {
+                int r = bq.c[at][d];
+                if ((r >= 0) && (r < this.A.length) && this.A[r].c) {
+                    int to = this.A[r].a == at ? this.A[r].b : this.A[r].a;
+                    if ((to >= 0) && (to < i1) && (prev[to] == -2)) {
+                        prev[to] = at;
+                        queue[tail++] = to;
+                    }
+                }
+            }
+        }
+        if (prev[n] == -2) {
+            return -1;
+        }
+        int len = 0;
+        for (int k = n; prev[k] != -1; k = prev[k]) {
+            len++;
+        }
+        if (out != null) {
+            int at = len;
+            for (int k = n; at >= 0; k = prev[k]) {
+                if (at < out.length) {
+                    out[at] = k;
+                }
+                at--;
+                if (prev[k] == -1) {
+                    break;
+                }
+            }
+        }
+        return len;
+    }
+
     private void portWalk() {
+        if (this.portRetarget && (this.f == 0) && (cz.d().e.d == null)) {
+            this.portRetarget = false;
+            if (this.portGoal >= 0) {
+                a(this.g + this.z[this.portGoal].b, this.a_ + this.z[this.portGoal].c);
+            }
+        }
         if (this.portPathPos >= this.portPathLen) {
             return;
         }
@@ -615,6 +777,10 @@ public class aa
     }
 
     private void z() {
+        if (game.PortScreens.touch) { // PORT-UI: a note on the touch map instead of a dialog
+            game.PortMap.note = "Đã mở thêm 1 mức luyện tập ở Đấu trường. Hãy vào đó thử sức!";
+            return;
+        }
         ae localae = cz.a("Chúc mừng", "Bạn đã mở thêm được 1 mức luyện tập tại đấu trường. Hãy vào đó thử sức!", "Đồng ý", 5, 1);
         localae.a(this);
         cz.d().a(localae, true);
@@ -633,6 +799,9 @@ public class aa
                 i += dd.j(this.z[this.B].e);
                 this.ak = dd.f(this.z[this.B].e);
                 this.am = dd.g(this.z[this.B].e);
+                if (game.PortScreens.touch) { // PORT-UI: its boxes wait to be opened on the map
+                    game.PortMap.boxes += game.PortMap.questBoxes(this.z[this.B].e);
+                }
                 if (this.T == 0) {
                     e = true;
                 }
@@ -849,7 +1018,7 @@ public class aa
                 this.Z = new s();
                 this.Z.d(this.F, this.G);
                 this.Z.a();
-                if (bg.f(5) > 0) {
+                if (!game.PortScreens.touch && (bg.f(5) > 0)) { // PORT-UI: chosen on the prepare screen
                     dd.h = true;
                     bg.g(5);
                 } else if (dd.e.e > dd.f.e) {
@@ -893,6 +1062,21 @@ public class aa
         }
     }
 
+    /** PORT-UI: the VS box is shown and its intro is over ("Đánh" is available) */
+    /** PORT-UI: the swords animation before the battle box (s.portState), or null */
+    public int[] portSlash() {
+        return (this.f == 3) && (this.Z != null) ? this.Z.portState() : null;
+    }
+
+    public boolean portVsReady() {
+        return (this.f == 3) && (this.Z == null) && (this.N != null);
+    }
+
+    /** PORT-UI: "Rút lui" is offered */
+    public boolean portCanRetreat() {
+        return this.D >= 0;
+    }
+
     public void b() {
         ad localad = new ad(dd.e, this.W, this.X);
         localad.a(this);
@@ -901,6 +1085,7 @@ public class aa
     }
 
     private void F() {
+        game.PortMap.battleQuest = this.L == 0 ? this.z[this.B].e : -1; // PORT-UI: the quest of this battle
         dd.c = this.T;
         if (this.P != null) {
             dd.b = dd.e.c;
@@ -918,7 +1103,9 @@ public class aa
         portWalk(); // PORT-TOUCH
         if (this.ak) {
             this.ak = false;
-            this.an = bg.t();
+            // PORT-UI: the quest's box holds items (relics needed an SMS to open); a note tells which
+            this.an = game.PortScreens.touch ? -1 : bg.t();
+
             if (this.an >= 0) {
                 localObject = "Bạn đã nhận được 1 vật phẩm. Bạn có muốn mở vật phẩm ngay không? (Tham khảo giá tại http://free.ola.vn.)";
                 if (this.am) {
@@ -947,7 +1134,9 @@ public class aa
             case 0:
                 if (e) {
                     e = false;
-                    G();
+                    if (!game.PortScreens.touch) { // PORT-UI: the touch map has its own tutorial
+                        G();
+                    }
                 }
                 if (this.ag > 0) {
                     this.ag -= 1;
@@ -1000,6 +1189,10 @@ public class aa
                 }
                 break;
             case 9:
+                if (!this.ai && game.PortScreens.touch) { // PORT-UI
+                    this.ai = true;
+                    game.PortMap.arenaIntro = true;
+                }
                 if (!this.ai) {
                     this.ai = true;
                     localObject = dj.a("Đấu trường", "Từ bây giờ, bạn có thể vào đấu trường để luyện điểm kinh nghiệm.@Nếu bạn đánh thắng, bạn sẽ được một số điểm kinh nghiệm tùy theo cấp độ hiện tại.@Nếu thua, bạn sẽ bị mất 1 mạng chơi, nhưng không bị trừ điểm kinh nghiệm.@*Lưu ý:@*-Bạn phải trả vàng để có thể tham gia đấu trường.@*-Vàng và điểm kinh nghiệm thu thập được trong quá trình đánh sẽ không có hiệu lực.@*-Máu của bạn sẽ không bị ảnh hưởng khi tham gia đấu trường.@*-Hiện tại chỉ có 2 mức luyện tập, hãy tìm khám phá để unlock thêm 3 mức luyện tập cao hơn.", null, null, null, null);
@@ -1047,7 +1240,12 @@ public class aa
                         localObject = game.ao.a((String) localObject, "{a}", String.valueOf(j));
                     }
                 }
-                if (!((String) localObject).equals("")) {
+                if (!((String) localObject).equals("") && game.PortScreens.touch) { // PORT-UI
+                    if (dd.m(dd.d)) {
+                        game.PortMap.note = (String) localObject;
+                    }
+                    b(0, 9);
+                } else if (!((String) localObject).equals("")) {
                     ae localae2 = cz.a("Chúc mừng", (String) localObject, "Đồng ý", 9, 1);
                     localae2.a(this);
                     cz.d().a(localae2, true);
@@ -1160,7 +1358,9 @@ public class aa
                 f(0);
                 break;
             case 2:
-                if (!bg.l()) {
+                if (!bg.l() && game.PortScreens.touch) { // PORT-UI
+                    game.PortMap.noLives = true;
+                } else if (!bg.l()) {
                     localae1 = cz.a("Chú ý", "Bạn đã hết mạng chơi. Bạn có muốn mua thêm mạng chơi không?. Tham khảo giá tại http://free.ola.vn.", "Có", 12, "Không", 14, 1);
                     localae1.a(this);
                     cz.d().a(localae1, true);

@@ -1,7 +1,10 @@
 // Runs the converted MIDlet inside Unity.
 //
 // Every frame: input -> J2ME.Host.tick() (game logic, timers, painting into the 240x320 LCD buffer) ->
-// upload the LCD to a texture -> draw it (IMGUI) with an on-screen phone keypad for touch devices.
+// upload the LCD to a texture -> draw it (IMGUI). The touch interface replaces these screens with Unity
+// views drawn around the game's own picture: getting ready (TouchPrepareView), the battle
+// (TouchBattleView), its pause (TouchPauseView) and the result (TouchResultView). An optional on-screen
+// phone keypad remains for other devices.
 // MIDP high-level screens (TextBox for the hero name / phone number, the debug log Form) are shown
 // with IMGUI controls and, on phones, the system keyboard. Input uses IMGUI events, so it works with
 // both the old Input Manager and the new Input System; touches arrive as pointer events (the game
@@ -35,8 +38,11 @@ namespace Loan12.UnityPort
 
         public static J2MEGameHost Instance { get; private set; }
 
-        [Tooltip("On-screen phone keypad: soft keys with the game's labels, D-pad, OK, * and #. Auto = touch devices only.")]
-        public KeypadMode keypad = KeypadMode.Auto;
+        [Tooltip("On-screen phone keypad (soft keys, D-pad, OK, * and #). Not needed with the touch interface. Auto = touch devices only.")]
+        public KeypadMode onScreenKeypad = KeypadMode.Never; // renamed from "keypad" (default was Auto) so old scenes get the new default
+
+        [Tooltip("Touch interface (plan/thiet-ke-giao-dien.md): Unity draws the battle screen around the game's board.")]
+        public bool touchInterface = true;
 
         [Tooltip("Scale the 240x320 screen by whole multiples only (sharper pixels, larger borders).")]
         public bool integerScaling;
@@ -61,6 +67,71 @@ namespace Loan12.UnityPort
         bool pointerOnLcd;
         int padHeldCode;
         bool keypadHidden;
+
+        // touch interface (option B of the redesign plan)
+        // first active wins: the result and the pause lie over the battle, the VS panel over the map
+        ITouchView[] touchViews;
+
+        /// <summary>The touch view of a type (screenshot tour).</summary>
+        public static T View<T>() where T : class, ITouchView
+        {
+            if (Instance == null || Instance.touchViews == null)
+            {
+                return null;
+            }
+            foreach (ITouchView v in Instance.touchViews)
+            {
+                if (v is T)
+                {
+                    return (T) v;
+                }
+            }
+            return null;
+        }
+        ITouchView touchShown;
+
+        // sound and vibration switches of the touch interface (kept between sessions)
+        const string SoundPref = "Loan12.Sound", HapticsPref = "Loan12.Haptics", VolumePref = "Loan12.Volume";
+        bool muted;
+
+        public bool SoundOn
+        {
+            get { return !muted; }
+            set
+            {
+                muted = !value;
+                PlayerPrefs.SetInt(SoundPref, value ? 1 : 0);
+                PlayerPrefs.Save();
+            }
+        }
+
+        public bool HapticsOn
+        {
+            get { return haptics; }
+            set
+            {
+                haptics = value;
+                PlayerPrefs.SetInt(HapticsPref, value ? 1 : 0);
+                PlayerPrefs.Save();
+            }
+        }
+
+        /// <summary>Master volume 0..100 of the settings screen (kept between sessions).</summary>
+        public int Volume
+        {
+            get { return Mathf.RoundToInt(volume * 100f); }
+            set
+            {
+                volume = Mathf.Clamp01(value / 100f);
+                PlayerPrefs.SetInt(VolumePref, Mathf.RoundToInt(volume * 100f));
+                PlayerPrefs.Save();
+            }
+        }
+
+        float EffectiveVolume
+        {
+            get { return muted ? 0f : volume; }
+        }
 
         // layout (GUI coordinates, origin top-left)
         Rect lcdRect;
@@ -159,6 +230,15 @@ namespace Loan12.UnityPort
                 Screen.orientation = ScreenOrientation.Portrait;
             }
             keypadHidden = PlayerPrefs.GetInt(KeypadHiddenPref, 0) == 1;
+            muted = PlayerPrefs.GetInt(SoundPref, 1) == 0;
+            haptics = PlayerPrefs.GetInt(HapticsPref, haptics ? 1 : 0) == 1;
+            volume = Mathf.Clamp01(PlayerPrefs.GetInt(VolumePref, 80) / 100f);
+            TouchBattleView battle = new TouchBattleView();
+            touchViews = new ITouchView[]
+            {
+                new TouchLivesView(), new TouchResultView(battle), new TouchReviveView(battle), new TouchPauseView(battle), new TouchPrepareView(), battle,
+                new TouchBootView(), new TouchStoryView(), new TouchMenuView(), new TouchHeroView(), new TouchBoxView(), new TouchMapView(), new TouchTalkView(), new TouchArenaView(), new TouchMapHoldView()
+            };
             EnsureCamera();
             EnsureAudioListener();
 
@@ -168,7 +248,7 @@ namespace Loan12.UnityPort
             lcd.name = "J2ME LCD";
 
             backend = new UnityBackend(gameObject);
-            backend.SetMasterVolume(volume);
+            backend.SetMasterVolume(EffectiveVolume);
         }
 
         void Start()
@@ -183,10 +263,29 @@ namespace Loan12.UnityPort
                                  "in static fields, so enable 'Reload Domain' (Project Settings > Editor > Enter Play Mode Options).");
             }
             startedBefore = true;
+            string tour = CommandLineValue("-loan12-tour");
+            if (tour != null)
+            {
+                // developer aid: a fresh install, then a tour of the touch screens with screenshots
+                UnityBackend.DeleteAllSavedStores();
+                PlayerPrefs.DeleteAll();
+                muted = true;
+                // batch mode (e.g. a locked Mac): no window and no OnGUI; the views are drawn offscreen
+                Gx.Offscreen = Application.isBatchMode;
+                if (Gx.Offscreen)
+                {
+                    Application.targetFrameRate = 30;
+                }
+            }
+            C_PortScreens.f_touch = touchInterface; // the touch views replace the map's key tutorial ...
             J2ME.Host.init(backend, LcdWidth, LcdHeight);
             J2ME.Host.start(new SQMidlet());
             running = true;
 
+            if (tour != null)
+            {
+                StartCoroutine(TouchTour.Run(tour));
+            }
             string shots = CommandLineValue("-loan12-shots");
             if (shots != null)
             {
@@ -215,7 +314,7 @@ namespace Loan12.UnityPort
         IEnumerator ScreenshotTour(string folder)
         {
             System.IO.Directory.CreateDirectory(folder);
-            keypad = KeypadMode.Always;
+            onScreenKeypad = KeypadMode.Always;
             Application.runInBackground = true;
             yield return new WaitForSeconds(7.5f);
             ScreenCapture.CaptureScreenshot(System.IO.Path.Combine(folder, "01_sound.png"));
@@ -244,6 +343,76 @@ namespace Loan12.UnityPort
             padHeldCode = 0;
         }
 
+        RenderTexture offscreen;
+
+        /// <summary>The screenshot tour's picture (batch mode): the touch views drawn into a render texture.</summary>
+        public RenderTexture Offscreen
+        {
+            get { return offscreen; }
+        }
+
+        void LateUpdate()
+        {
+            if (!Gx.Offscreen || !running || lcd == null || touchViews == null)
+            {
+                return;
+            }
+            if (offscreen == null)
+            {
+                offscreen = new RenderTexture(Gx.OffW, Gx.OffH, 0, RenderTextureFormat.ARGB32);
+            }
+            RenderTexture prev = RenderTexture.active;
+            RenderTexture.active = offscreen;
+            GL.Clear(true, true, Color.black);
+            GL.PushMatrix();
+            GL.LoadPixelMatrix(0, Gx.OffW, Gx.OffH, 0);
+            Gx.BeginFrame();
+            Event ev = new Event();
+            ev.type = EventType.Repaint;
+            Event.current = ev;
+            ITouchView view = null;
+            foreach (ITouchView v in touchViews)
+            {
+                if (v.Active())
+                {
+                    view = v;
+                    break;
+                }
+            }
+            if (view != touchShown)
+            {
+                if (touchShown != null)
+                {
+                    touchShown.Reset();
+                }
+                if (view != null)
+                {
+                    view.Reset();
+                }
+                touchShown = view;
+            }
+            try
+            {
+                if (view != null)
+                {
+                    view.OnGUI(ev, lcd, false);
+                }
+                else
+                {
+                    // a screen of the game's own: its picture, fitted
+                    float sc = Mathf.Min(Gx.OffW / (float) LcdWidth, Gx.OffH / (float) LcdHeight);
+                    float w = LcdWidth * sc, h = LcdHeight * sc;
+                    Gx.DrawTextureWithTexCoords(new Rect((Gx.OffW - w) / 2, (Gx.OffH - h) / 2, w, h), lcd, new Rect(0, 1, 1, -1), false);
+                }
+            }
+            catch (System.Exception ex)
+            {
+                Debug.LogWarning("Loan12 tour: offscreen frame: " + ex.Message);
+            }
+            GL.PopMatrix();
+            RenderTexture.active = prev;
+        }
+
         void Update()
         {
             if (!running)
@@ -254,12 +423,18 @@ namespace Loan12.UnityPort
             {
                 lcd.filterMode = filtering;
             }
-            if (!Mathf.Approximately(backend.masterVolume, volume))
+            if (!Mathf.Approximately(backend.masterVolume, EffectiveVolume))
             {
-                backend.SetMasterVolume(volume);
+                backend.SetMasterVolume(EffectiveVolume);
             }
 
             backend.UpdateAudio();
+            if (touchInterface)
+            {
+                C_cx.f_J = Packs.MaxLives; // most lives: 3, 4 with the starter pack, 5 with VIP
+            }
+            LifeTimer.Tick(); // +1 life every 30 minutes
+            C_PortScreens.f_storyHidden = touchInterface; // TouchStoryView draws it
             UpdateSystemKeyboard();
             J2ME.Host.tick();
 
@@ -382,12 +557,73 @@ namespace Loan12.UnityPort
             {
                 return;
             }
+            if (quitting)
+            {
+                // leaving (THOÁT GAME): a plain black screen until the app closes, not a frame of the
+                // game's own screen
+                if (Event.current.type == EventType.Repaint)
+                {
+                    GUI.color = Color.black;
+                    GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), Texture2D.whiteTexture);
+                    GUI.color = Color.white;
+                }
+                return;
+            }
             EnsureStyles();
             ComputeLayout();
 
             J2ME.Displayable shown = running && J2ME.Host.display != null ? J2ME.Host.display.getShown() : null;
             bool highLevel = shown != null && !(shown is J2ME.Canvas);
             Event e = Event.current;
+
+            // touch interface: Unity draws these screens around the game's own picture
+            ITouchView view = null;
+            if (running && !highLevel && touchInterface && touchViews != null)
+            {
+                foreach (ITouchView v in touchViews)
+                {
+                    if (v.Active())
+                    {
+                        view = v;
+                        break;
+                    }
+                }
+            }
+            if (view != touchShown)
+            {
+                // hand-over: nothing stays pressed in the view that is going away
+                if (touchShown != null)
+                {
+                    touchShown.Reset();
+                }
+                ReleaseAllInput();
+                if (view != null)
+                {
+                    view.Reset();
+                }
+                touchShown = view;
+            }
+            if (view != null)
+            {
+#if UNITY_EDITOR
+                // editor-only test shortcuts: F9 leaves the opponent of the current battle with 1 HP, F10 the player
+                if (e.type == EventType.KeyDown && (e.keyCode == KeyCode.F9 || e.keyCode == KeyCode.F10))
+                {
+                    C_bn fighter = C_PortUi.fighter(e.keyCode == KeyCode.F9 ? 1 : 0);
+                    if (fighter != null)
+                    {
+                        fighter.m(1);
+                    }
+                    e.Use();
+                }
+#endif
+                if ((e.type == EventType.KeyDown || e.type == EventType.KeyUp) && !(view is IOwnsKeys))
+                {
+                    HandleCanvasInput(e); // keyboard / Android back still reach the game
+                }
+                view.OnGUI(e, lcd, haptics);
+                return;
+            }
 
             if (running && !highLevel)
             {
@@ -426,7 +662,7 @@ namespace Loan12.UnityPort
                 area = new Rect(0, 0, Screen.width, Screen.height);
             }
 
-            padAllowed = keypad == KeypadMode.Always || (keypad == KeypadMode.Auto && Application.isMobilePlatform);
+            padAllowed = onScreenKeypad == KeypadMode.Always || (onScreenKeypad == KeypadMode.Auto && Application.isMobilePlatform);
             padVisible = padAllowed && !keypadHidden;
             pad.Clear();
             toggleRect = new Rect(0, 0, 0, 0);

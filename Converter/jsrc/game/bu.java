@@ -251,6 +251,11 @@ public class bu
         }
         switch (this.v) {
             case 9:
+                if (this.t.portBusy() && (this.portEndWait < 75)) { // PORT-UI: let the board settle
+                    this.portEndWait += 1;
+                    return;
+                }
+                this.portEndWait = 0;
                 f(12);
                 this.C = this.t.b(this.E);
                 if (this.E) {
@@ -268,6 +273,7 @@ public class bu
                     localae = dd.a(false);
                     localae.c(new da("Đóng", -5));
                     localae.a(this);
+                    this.portEndDialog = localae; // PORT-UI
                     cz.d().a(localae, true);
                 } else {
                     localae = dd.g();
@@ -278,6 +284,8 @@ public class bu
                         localae.b(new da("Không", -4));
                     }
                     localae.a(this);
+                    this.portEndDialog = localae; // PORT-UI
+                    this.portEndRetry = (dd.a < 0) && bg.l();
                     cz.d().a(localae, true);
                 }
                 break;
@@ -322,6 +330,12 @@ public class bu
                 break;
             case 8:
                 if ((this.t.o() == 1) && (y())) {
+                    return;
+                }
+                if (this.portForfeit && !this.s.d) { // PORT-UI: given up, a defeat
+                    this.portForfeit = false;
+                    this.E = false;
+                    f(9);
                     return;
                 }
                 int i = this.s.a();
@@ -652,8 +666,8 @@ public class bu
                     }
                     if (i2 == 0) {
                         i6 = localcc2.d > localcc2.c ? localcc2.d : localcc2.c;
-                        if (i6 >= 5) {
-                            int i7 = g(i6);
+                        if (i6 >= (game.PortScreens.touch ? 4 : 5)) {
+                            int i7 = game.PortScreens.touch ? portDrop(i6) : g(i6);
                             if (i7 >= 0) {
                                 this.t.d(i7, localcc2.a + localcc2.c / 2, localcc2.b + localcc2.d / 2);
                             }
@@ -699,6 +713,7 @@ public class bu
             if (i >= 0) {
                 this.s.a[i].b += 1;
                 bg.a(i, 1, 6);
+                this.portWon[i] += 1; // PORT-UI: shown on the result screen
             }
         }
         return i;
@@ -729,6 +744,9 @@ public class bu
         if (paramInt < 0) {
             return;
         }
+        this.portSkillSide = i; // PORT-UI
+        this.portSkillIndex = paramInt;
+        this.portSkillCount += 1;
         int i1 = arrayOfInt[paramInt];
         localbn1.a(localbn1.n() * (paramInt + 1) / 3, true);
         int i2;
@@ -924,6 +942,9 @@ public class bu
 
     private boolean y() {
         bn[] arrayOfbn = this.s.d();
+        if (portReviveHold(arrayOfbn)) {
+            return true; // PORT-UI: waiting for the player's answer (the battle stands still)
+        }
         int i = (arrayOfbn[0].r() > 0) && (arrayOfbn[1].r() > 0) ? 0 : 1;
         if ((i != 0) || (this.t.o() == 1)) {
             if (this.s.d) {
@@ -1097,6 +1118,7 @@ public class bu
             return;
         }
         localae = cz.a("Thông tin", "Bạn muốn dừng game lại?", "Có", -1, "Không", -2, 1);
+        this.portPauseDialog = localae; // PORT-UI
         localae.a(this);
         this.t.a(false);
         cz.d().a(localae, true);
@@ -1246,7 +1268,172 @@ public class bu
         return this.s.d;
     }
 
+    /** PORT-UI: the coach's message of the tutorial, or null */
+    public String portCoach() {
+        return (this.s.d) && (this.t.g != null) ? this.t.g.portText() : null;
+    }
+
+    public int portCoachGem() {
+        return (this.s.d) && (this.t.g != null) ? this.t.g.portGem() : -1;
+    }
+
+    /** PORT-UI: the tutorial waits for a tap to go on (any key did that) */
+    public boolean portCoachWaits() {
+        return this.v == 14;
+    }
+
+    public void portCoachNext() {
+        if (this.v == 14) {
+            this.t.g.f();
+        }
+    }
+
     /** soft keys of the battle bar: left (skills) and right (pause); the centre ("bag") is the # key */
+    // PORT-UI: state and actions for the Unity touch interface (see PortUi)
+    public ae portPauseDialog; // the "dừng game" dialog of this battle
+    public boolean portForfeit; // PORT-UI: the player gave the battle up (pause box "Thoát trận")
+    private int portEndWait;
+
+    /** PORT-UI (tour): the player's move, a sword line when there is one; false when it is not the player's turn */
+    public boolean portBotMove() {
+        if ((this.v != 8) || (this.s == null) || (this.s.a() != 0)) {
+            return false;
+        }
+        di moves = q();
+        if ((moves == null) || (moves.b() == 0)) {
+            return false;
+        }
+        int pick = 0;
+        search:
+        for (int k = 0; k < moves.b(); k++) {
+            com.mic.smsgame.suquan.a m = (com.mic.smsgame.suquan.a) moves.b(k);
+            int t1 = d(m.a, m.b), t2 = d(m.c, m.d);
+            int[] types = {t2, t2, t1, t1};
+            for (int i = 0; i < m.e.length; i++) {
+                if (((m.e[i] & 0xFF) >= 3) && ((types[i] == 0) || (types[i] == 6))) {
+                    pick = k;
+                    break search;
+                }
+            }
+        }
+        com.mic.smsgame.suquan.a m = (com.mic.smsgame.suquan.a) moves.b(pick);
+        a(m.a, m.b, m.c, m.d);
+        return true;
+    }
+
+    /** PORT-UI: the touch interface's drop (rates above): items 3, 4, 5 a little more often than 0 and 1 */
+    private int portDrop(int len) {
+        if (this.s.d) {
+            return g(len);
+        }
+        if ((this.portBoxes >= 2) || (ay.a(100) >= (len >= 5 ? 35 : 10))) { // at most 2 boxes a battle
+            return -1;
+        }
+        this.portBoxes += 1;
+        PortMap.boxes += 1;
+        return 6; // the chest (dn draws it instead of an item)
+    }
+    public int portBoxes;
+    public int portSkillSide, portSkillIndex, portSkillCount; // PORT-UI: the last skill used, and how many so far
+    public boolean portReviveOffer;    // PORT-UI: the second chance is offered now
+    public int portV() { return this.v; } // PORT-UI (tour): the battle's state
+    public boolean portReviveUsed;     // taken (or turned down) in this battle
+
+    /** PORT-UI: the hero has fallen, the enemy is below half its HP, no second chance yet */
+    private boolean portReviveHold(bn[] f) {
+        if (!PortScreens.touch || this.s.d || this.portReviveUsed || (f[0].r() > 0) || (f[1].r() <= 0)) {
+            this.portReviveOffer = false;
+            return false;
+        }
+        if (f[1].r() * 2 >= f[1].s()) {
+            return false;
+        }
+        this.portReviveOffer = true;
+        return true;
+    }
+
+    /** PORT-UI: the answer: back with 30 HP (an ad was watched), or the defeat goes on */
+    public void portRevive(boolean back) {
+        if (!this.portReviveOffer) {
+            return;
+        }
+        this.portReviveOffer = false;
+        this.portReviveUsed = true;
+        if (back) {
+            this.s.d()[0].m(30);
+        }
+    } // PORT-UI: gift boxes dropped in this battle
+    public int[] portWon = new int[6]; // PORT-UI: items won in this battle (5 in a row), by type    // PORT-UI: ticks state 9 waited for the board's effects
+    public ae portEndDialog;   // the result (won) or "mất 1 mạng" (lost) dialog
+    public boolean portEndRetry; // the lost battle can be fought again
+
+    public cq portState() {
+        return this.s;
+    }
+
+    /** 0 playing, 1 won, 2 lost (from the end of the fight: animation, then the result dialog) */
+    public int portOutcome() {
+        if (this.v != 12) {
+            return 0; // PORT-UI: not while state 9 lets the board's explosions and attacks finish
+        }
+        return this.E ? 1 : 2;
+    }
+
+    /** the board waits for the human player's move */
+    public boolean portWaiting() {
+        return (this.s != null) && (this.v == 8) && (this.s.a() == 0) && (this.u != null) && (this.u[0] instanceof ac);
+    }
+
+    public boolean portItemUsed() {
+        return this.K;
+    }
+
+    public boolean portGinsengUsed() {
+        return this.L;
+    }
+
+    /** the k-th skill, with the checks of the skill window (r() + "Dùng") */
+    public void portUseSkill(int k) {
+        if (!portWaiting()) {
+            return;
+        }
+        if ((this.s.d) && (this.t.g.g() != 3)) {
+            return;
+        }
+        if ((k < 0) || (k >= d())) {
+            return;
+        }
+        a("skill", k);
+    }
+
+    /** an item, with the checks of the item window (s() + "Dùng") */
+    public void portUseItem(int type) {
+        if ((!portWaiting()) || (type == 2)) {
+            return;
+        }
+        int i = this.s.c();
+        if ((i == 1) && (this.t.g.g() != 5)) {
+            return;
+        }
+        if (this.K) {
+            return;
+        }
+        if (this.L) {
+            this.s.a[1].b = 0;
+        }
+        dx[] arr = this.s.a;
+        for (int j = 0; j < arr.length; j++) {
+            if ((arr[j].a == type) && (arr[j].b > 0)) {
+                arr[j].a();
+                if (!this.s.d) {
+                    bg.g(type); // PORT-UI: the tutorial's item is not from the bag
+                }
+                a("item", type);
+                return;
+            }
+        }
+    }
+
     public String portBarLabel(int paramInt) {
         if (paramInt == 1) {
             return null;

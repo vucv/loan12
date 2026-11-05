@@ -9,6 +9,7 @@ namespace Unity.Collections
         public int Length { get { return 0; } }
         public T this[int index] { get { return default(T); } set { } }
         public void CopyFrom(T[] array) { }
+        public static void Copy(T[] src, int srcIndex, NativeArray<T> dst, int dstIndex, int length) { }
         public T[] ToArray() { return null; }
     }
 }
@@ -80,12 +81,28 @@ namespace UnityEngine
         public Color(float r, float g, float b) { this.r = r; this.g = g; this.b = b; a = 1f; }
         public static Color black { get { return new Color(0, 0, 0, 1); } }
         public static Color white { get { return new Color(1, 1, 1, 1); } }
+        public static Color operator *(Color x, Color y) { return new Color(x.r * y.r, x.g * y.g, x.b * y.b, x.a * y.a); }
+        public static Color operator *(Color x, float d) { return new Color(x.r * d, x.g * d, x.b * d, x.a * d); }
     }
 
     public struct Vector2
     {
         public float x, y;
         public Vector2(float x, float y) { this.x = x; this.y = y; }
+        public static bool operator ==(Vector2 a, Vector2 b) { return a.x == b.x && a.y == b.y; }
+        public static Vector2 operator +(Vector2 a, Vector2 b) { return new Vector2(a.x + b.x, a.y + b.y); }
+        public static Vector2 operator -(Vector2 a, Vector2 b) { return new Vector2(a.x - b.x, a.y - b.y); }
+        public static Vector2 operator *(Vector2 a, float d) { return new Vector2(a.x * d, a.y * d); }
+        public static bool operator !=(Vector2 a, Vector2 b) { return !(a == b); }
+        public override bool Equals(object o) { return false; }
+        public override int GetHashCode() { return 0; }
+    }
+
+    public static class Time
+    {
+        public static float unscaledDeltaTime;
+        public static float unscaledTime;
+        public static int frameCount;
     }
 
     public struct Rect
@@ -111,6 +128,13 @@ namespace UnityEngine
 
     public static class Mathf
     {
+        public static float Abs(float a) { return a; }
+        public static float Sin(float f) { return f; }
+        public static float Cos(float f) { return f; }
+        public static float Ceil(float f) { return f; }
+        public static float LerpUnclamped(float a, float b, float t) { return a; }
+        public static float Lerp(float a, float b, float t) { return a; }
+        public static float Exp(float a) { return a; }
         public static float Min(float a, float b) { return a; }
         public static int Min(int a, int b) { return a; }
         public static float Max(float a, float b) { return a; }
@@ -216,7 +240,12 @@ namespace UnityEngine
         public void Apply(bool updateMipmaps, bool makeNoLongerReadable) { }
         public void Apply() { }
         public void SetPixels32(Color32[] colors) { }
+        public static Texture2D whiteTexture { get { return null; } }
     }
+
+    public class Font : Object { }
+
+    public enum TextClipping { Overflow = 0, Clip = 1 }
 
     public enum TextAnchor { UpperLeft = 0, UpperCenter = 1, UpperRight = 2, MiddleLeft = 3, MiddleCenter = 4, MiddleRight = 5, LowerLeft = 6, LowerCenter = 7, LowerRight = 8 }
 
@@ -236,11 +265,14 @@ namespace UnityEngine
         public FontStyle fontStyle { get; set; }
         public TextAnchor alignment { get; set; }
         public bool wordWrap { get; set; }
+        public RectOffset margin { get; set; }
         public GUIStyleState normal { get { return null; } set { } }
         public GUIStyleState active { get { return null; } set { } }
         public GUIStyleState hover { get { return null; } set { } }
         public RectOffset padding { get { return null; } set { } }
         public RectOffset border { get { return null; } set { } }
+        public Font font { get; set; }
+        public TextClipping clipping { get; set; }
     }
 
     public sealed class GUISkin : ScriptableObject
@@ -260,6 +292,7 @@ namespace UnityEngine
 
     public class GUI
     {
+        public static void DrawTexture(Rect position, Texture image) { }
         public static GUISkin skin { get; set; }
         public static Color color { get; set; }
         public static void DrawTextureWithTexCoords(Rect position, Texture image, Rect texCoords) { }
@@ -547,6 +580,7 @@ namespace UnityEngine
     {
         public byte r, g, b, a;
         public Color32(byte r, byte g, byte b, byte a) { this.r = r; this.g = g; this.b = b; this.a = a; }
+        public static implicit operator Color(Color32 c) { return new Color(c.r / 255f, c.g / 255f, c.b / 255f, c.a / 255f); }
     }
 
     public sealed class SleepTimeout
@@ -588,4 +622,19 @@ namespace UnityEngine
     public sealed class WaitForSeconds : YieldInstruction { public WaitForSeconds(float seconds) { } }
     public sealed class Coroutine : YieldInstruction { }
     public static class ScreenCapture { public static void CaptureScreenshot(string filename) { } }
+}
+
+namespace UnityEngine.Device
+{
+    public static class Application
+    {
+        public static bool isMobilePlatform { get { return false; } }
+    }
+
+    public static class Screen
+    {
+        public static UnityEngine.Rect safeArea { get { return default(UnityEngine.Rect); } }
+        public static int sleepTimeout { get; set; }
+        public static UnityEngine.ScreenOrientation orientation { get; set; }
+    }
 }

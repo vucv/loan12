@@ -43,6 +43,32 @@ namespace Loan12
             this.f_H = false;
         }
 
+        /** PORT-UI: 4 the intro scroll, 1 the ending scroll, -1 none */
+        public int portStory()
+        {
+            if ((this.f_c == 3) || (this.f_c == 0))
+            {
+                return (this.f_c == 3 ? 4 : 1);
+                // the picture opening before the text
+            }
+            return ((this.f_y != null) && !this.f_y.a() && ((this.f_c == 4) || (this.f_c == 1)) ? this.f_c : -1);
+        }
+
+        /** PORT-UI: while the picture opens, its open part inside the picture (x, y, w, h); null once open */
+        public int[] portStoryOpening()
+        {
+            if ((this.f_c != 3) && (this.f_c != 0))
+            {
+                return null;
+            }
+            return new int[] { this.f_C.f_a - this.f_A.f_a, this.f_C.f_b - this.f_A.f_b, this.f_C.f_c, this.f_C.f_d };
+        }
+
+        public float portStoryProgress()
+        {
+            return (this.f_y == null ? 0.0f : this.f_y.portProgress());
+        }
+
         public C_df(bool paramBoolean)
         {
             this.__init_C_df();

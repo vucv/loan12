@@ -1,0 +1,1057 @@
+# banter vi
+# ===== hero_fire: trẻ trâu hệ Hỏa, khoe khoang, ồn ào, máu chiến, chất gamer =====
+[hero_fire.start]
+Vào trận! Hôm nay ta gánh cả team!
+{enemy} hả? Nghe tên đã thấy gà rồi.
+Khởi động xong chưa? Ta nóng máy lắm rồi đấy!
+Ván này ez, ba phút là xong, cược không?
+Lửa lên rồi! Ai cản là cháy khét lẹt!
+Tuổi gì mà đòi đấu với ta? Lên luôn!
+[hero_fire.taunt]
+Out trình rồi, {enemy} ơi, về luyện thêm đi!
+Đánh thế này mà cũng đòi lên rank à?
+Gà quá, ta nhường một tay vẫn thắng!
+Run tay rồi kìa, thấy rõ luôn nha!
+Khét chưa? Khét chưa? Nói ta nghe coi!
+Còn chiêu nào thì tung ra đi, ta chờ nè!
+Trình này mà ra đường là bị gõ đầu đó!
+Thôi xin, đánh mạnh lên chút cho vui!
+[hero_fire.combo]
+COMBO! Ai chặn được nói một tiếng coi!
+Cháy! Cháy hết! Đỉnh của chóp!
+Cái này gọi là trình độ, học đi em!
+Ăn trọn bộ luôn! Clip lại đi mọi người!
+Hỏa long cuộn sóng! Quá đã!
+[hero_fire.hurt]
+Á! Ăn may thôi, đừng có tưởng bở!
+Trúng một phát thôi mà, có gì đâu!
+Ui da... nhưng không đau nha, không đau!
+Lag! Ta bị lag! Không tính!
+Được, chọc giận ta rồi đấy!
+Ơ, khoan, cú đó hơi bị đau thật...
+[hero_fire.low]
+Bình tĩnh... đây là chiến thuật lừa thôi!
+Máu thấp mới là lúc ta gánh còng lưng!
+Từ từ, ta đang lật kèo đây, đừng vội!
+Chút máu này đủ để ta ngược dòng!
+Ai bảo thua? Chưa kết thúc mà!
+[hero_fire.heal]
+Hồi máu rồi, tiếp tục bón hành nào!
+Full HP, chuẩn bị ăn đòn đi!
+Nạp năng lượng xong, nóng trở lại!
+[hero_fire.block]
+Đỡ được hết! Giáp xịn không đó!
+Đánh vào đâu vậy? Trượt rồi!
+Chặn ngon ơ, đánh lại đi bạn!
+[hero_fire.skill]
+{skill}! Nhìn cho kỹ mà học!
+Tung chiêu cuối đây, né đi nếu né được!
+Đến lúc ta flex rồi: {skill}!
+Bật hết công suất! Cháy lên nào!
+[hero_fire.item]
+Dùng đồ thôi, người giàu nó vậy!
+Lên đồ xịn, giờ mới là thật!
+Bình này uống xong là bá luôn!
+Đánh trúng hả? Uống bình máu, coi như chưa có gì nha!
+Ngươi tốn ba đòn, ta tốn một ngụm. Lỗ sấp mặt!
+Giáp mới lên người, đánh tiếp đi, gãi ngứa thôi!
+Full máu rồi nè, nãy giờ cố gắng phí công ghê!
+Nhân sâm hàng tuyển, còn ngươi chỉ có ước mơ.
+Cầm Long kiếm rồi, giờ xin lỗi vẫn còn kịp đó!
+Hết máu thì uống, hết trình thì chịu, {enemy} ơi!
+[hero_fire.win]
+GG ez! Ai next?
+Thắng! Đã nói rồi mà, ta là số một!
+Cúi đầu đi, nhà vô địch đã xuất hiện!
+Dễ như ăn kẹo, chán ghê luôn á!
+Chụp hình với ta không? Ký tặng nè!
+Gánh team thành công, khỏi cảm ơn!
+[hero_fire.lose]
+Không công bằng! Đánh lại! Đánh lại!
+Ta... ta chỉ đang nhường thôi!
+Hôm nay ta mất ngủ nên mới thua!
+Ván này khởi động, ván sau mới thật!
+Nhớ mặt đấy! Ta sẽ quay lại!
+[hero_fire.revive]
+Hồi sinh! Tưởng ta out rồi à? Còn lâu!
+Lửa không bao giờ tắt, nhớ chưa!
+Ta trở lại rồi đây, và ta cay lắm!
+# ===== hero_storm: đệ tử Lôi Thần, lạnh lùng, cà khịa khô khốc, mọt sách =====
+[hero_storm.start]
+Đã tính trước: tỉ lệ thắng của ta 97%.
+{enemy}. Ừ. Bắt đầu đi cho nhanh.
+Ta đọc sách về kiểu như ngươi rồi. Chán.
+Sấm sét đã sạc đầy. Ngươi thì sao?
+Theo dữ liệu, trận này sẽ rất ngắn.
+Chào. Tạm biệt luôn cho tiện.
+[hero_storm.taunt]
+Ồ, đòn hay đấy. Đùa thôi.
+Ngươi có kế hoạch không, hay chỉ vung bừa?
+Ta đang cố tỏ ra bất ngờ. Không được.
+Cú đó đáng 2 điểm trên thang 10.
+Ngươi đánh như đang chạy deadline vậy.
+Thú vị. Ở mức độ của một hòn đá.
+Ta tính được cả bước tiếp theo của ngươi. Sai.
+Kiến thức là sức mạnh. Ngươi thì không có cả hai.
+[hero_storm.combo]
+Như dự đoán. Hoàn hảo.
+Chuỗi tia sét theo đúng công thức.
+Vật lý cơ bản thôi. Ngươi không học à?
+Cộng dồn sát thương: rất nhiều.
+Đẹp. Ta tự hào về chính ta.
+[hero_storm.hurt]
+Ừm. Biến số chưa tính tới.
+Đau. Ghi chú lại để sửa.
+Không sao. Chỉ là sai số.
+Ngươi may. Thống kê sẽ sửa lại thôi.
+Ồ. Có vẻ ta đã đánh giá ngươi hơi thấp. Hơi thôi.
+Vết thương không quan trọng. Lòng tự trọng thì có.
+[hero_storm.low]
+Máu còn ít. Kịch bản B kích hoạt.
+Hơi căng. Nhưng ta vẫn bình tĩnh. Bề ngoài.
+Xác suất thắng giảm. Ta không thích con số này.
+Được rồi, giờ mới thật sự nghiêm túc.
+Pin yếu. Đang tìm ổ sạc tinh thần.
+[hero_storm.heal]
+Hồi phục. Quay lại trạng thái tối ưu.
+Máu lên. Tâm trạng vẫn vậy.
+Sạc lại xong. Tiếp tục bài giảng.
+[hero_storm.block]
+Chặn. Đoán trước từ ba lượt trước.
+Lá chắn hoạt động đúng thiết kế.
+Đánh vào khiên à? Lựa chọn thú vị. Kém, nhưng thú vị.
+[hero_storm.skill]
+Kích hoạt {skill}. Tránh ra nếu thích sống.
+{skill}. Đây không phải phép thuật, đây là khoa học.
+Một chút điện cho ngươi tỉnh người.
+Lôi Thần ơi, mượn tí sấm nhé.
+[hero_storm.item]
+Dùng vật phẩm. Hiệu quả hơn suy nghĩ của ngươi.
+Đồ dùng đúng lúc mới là trí tuệ.
+Bổ sung tài nguyên. Không có gì kịch tính.
+Sát thương của ngươi vừa bị xóa. Cảm ơn bình máu.
+Ngươi đánh mười đòn, ta hồi một giây. Toán học đấy.
+Giáp tăng thủ ba phần. Hy vọng của ngươi giảm mười phần.
+Số liệu cho thấy ngươi nên bỏ cuộc. Ngay bây giờ.
+Nhân sâm rẻ hơn công sức ngươi vừa bỏ ra.
+Hồi máu xong. Mời ngươi làm lại từ đầu.
+Cú đánh vừa rồi? Đã được hoàn tác.
+[hero_storm.win]
+Kết quả: như ta đã nói từ đầu.
+Thắng. Ta về đọc sách tiếp đây.
+Cảm ơn đã tham gia thí nghiệm.
+Ngươi cũng cố gắng đấy. Theo cách riêng của ngươi.
+Không cần vỗ tay. Thật đấy. À, vỗ cũng được.
+Trận này sẽ được ghi vào sổ. Mục "Dễ".
+[hero_storm.lose]
+Thú vị. Ta cần xem lại công thức.
+Lỗi không phải ở ta. Là do vũ trụ.
+Ghi nhận. Sẽ không lặp lại.
+Thua. Nhưng ta vẫn thông minh hơn.
+Lần sau ta mang theo sách dày hơn.
+[hero_storm.revive]
+Khởi động lại hệ thống. Thử lại.
+Chết tạm thời thôi. Không tính.
+Hồi sinh. Ngươi vừa làm ta khó chịu.
+# ===== hero_water: dòng máu Thủy Thần, chill, nhẹ nhàng, lúc nào cũng đói =====
+[hero_water.start]
+Ơ đánh hả? Ừ thì đánh, nhanh rồi đi ăn.
+Chào {enemy}, ăn sáng chưa? Ta thì chưa.
+Cứ từ từ, nước chảy đá mòn mà.
+Đánh xong có ai bao bún chả không?
+Chill thôi, căng thẳng làm gì cho mệt.
+Ta đến đây vì nghe nói có tiệc sau trận.
+[hero_water.taunt]
+Nóng tính quá, uống miếng nước đi bạn.
+Đánh nhẹ thôi, kẻo đổ mồ hôi tốn nước.
+Bạn có mang đồ ăn vặt theo không?
+Thôi, đừng gồng nữa, mệt người lắm.
+Ta còn chưa tỉnh ngủ mà bạn đã thua rồi.
+Ui, dễ thương ghê, đánh như mèo cào.
+Bạn mà là bánh bao thì ta ăn rồi đó.
+Thở đi bạn ơi, thở đi, căng quá à.
+[hero_water.combo]
+Ồ, trôi luôn một mạch, như mì sợi vậy.
+Sóng tới! Ào ào nha!
+Ui, combo ngon như phở bò tái.
+Chảy nhẹ nhàng mà thấm đó bạn.
+Lũ về rồi, giữ dép cho chắc nha!
+[hero_water.hurt]
+Ây da, đau bụng đói thêm rồi.
+Úi, nhẹ tay thôi bạn ơi.
+Đánh trúng ta rồi, vui chưa? Vui là được.
+Hơi đau, nhưng không sao, quen rồi.
+Ui, đổ hết nước rồi kìa.
+Bạn đánh vậy ta mất hứng ăn đó.
+[hero_water.low]
+Đói quá, không còn sức nữa...
+Cho ta xin miếng bánh mì là ta hồi liền.
+Ừm... chắc phải nghiêm túc chút rồi.
+Ta chưa ăn trưa mà, sao chịu nổi.
+Mệt ghê, cho nằm năm phút được không?
+[hero_water.heal]
+Uống ngụm nước, khỏe re luôn.
+Ăn miếng xôi tưởng tượng, hồi máu rồi.
+Mát người ghê, tiếp tục thôi.
+[hero_water.block]
+Nước mềm mà đỡ được hết đó bạn.
+Đánh vào nước thì chỉ ướt tay thôi.
+Trượt rồi, trơn như sàn nhà mới lau.
+[hero_water.skill]
+{skill}! Đánh nhanh còn về ăn cơm.
+Thôi được rồi, tung {skill} cho xong việc.
+Thủy Thần ơi, giúp con xong trận đi ăn.
+Mưa xuống nè, nhớ mang áo mưa nha.
+[hero_water.item]
+Dùng đồ nè, tiếc ghê, định để dành ăn.
+Uống bình này, ước gì là trà sữa.
+Đồ tốt phải dùng, để lâu hết hạn.
+Đánh hăng quá ha, để tui uống miếng nước đã.
+Hồi máu rồi nè, mệt không, uống chung không?
+Nhân sâm ngon ghê, tiếc là không chia cho {enemy}.
+Mặc giáp vô ấm ghê, đánh tiếp đi cho vui.
+Cảm ơn nha, nhờ ngươi mà tui có cớ uống thêm bình.
+Bị đánh xíu thôi mà, ăn miếng là lành liền.
+Từ từ nha, tui đang nhâm nhi, không vội đâu.
+[hero_water.win]
+Xong! Giờ đi ăn được chưa?
+Thắng rồi, ai bao lẩu đây?
+Thấy chưa, chill vẫn thắng mà.
+Hay lắm bạn, lần sau mang đồ ăn tới nha.
+Ta về ngủ trưa đây, bye bye.
+Nhẹ nhàng thôi mà cũng thắng, hihi.
+[hero_water.lose]
+Thua rồi... thôi kệ, đi ăn cho đỡ buồn.
+Do đói đó, không phải do ta yếu đâu.
+Hơi tiếc, nhưng mai tính tiếp.
+Thôi, buồn làm chi, nước vẫn chảy mà.
+Cho ta ăn no rồi đánh lại nha.
+[hero_water.revive]
+Dậy rồi, mà vẫn đói.
+Nước rút rồi lại dâng, bình thường thôi.
+Ngủ một giấc, khỏe hẳn, đánh tiếp nha.
+# ===== hero_phoenix: đệ tử tiên Phượng Hoàng, kịch tính, sân khấu, mê khán giả =====
+[hero_phoenix.start]
+Hỡi khán giả! Màn trình diễn bắt đầu!
+Ánh đèn sân khấu đâu? Ta đã xuất hiện!
+{enemy}, ngươi được làm vai phụ trong đời ta!
+Tiếng vỗ tay đâu rồi? To lên nào!
+Đêm nay, Phượng Hoàng sẽ tỏa sáng!
+Màn một, cảnh một: ta thắng. Diễn!
+[hero_phoenix.taunt]
+Diễn tệ quá, khán giả đòi trả vé kìa!
+Ngươi có thoại không, hay chỉ đứng làm cảnh?
+Thôi, nhường sân khấu cho người có tài!
+Ôi, bi kịch! Một kẻ không biết mình thua!
+Camera đang quay ta, ngươi né ra chút!
+Nhìn ta! Không, nhìn ta cơ! Đẹp chưa?
+Phản diện mà yếu thế này, phim dở mất!
+Hãy rơi lệ đi, cho cảnh này thêm cảm xúc!
+[hero_phoenix.combo]
+Cao trào! Âm nhạc nổi lên!
+Lửa thiêng bùng cháy! Tuyệt tác!
+Thấy chưa? Đây gọi là nghệ thuật!
+Encore! Encore! Một lần nữa nào!
+Cảnh này chắc chắn lên top thịnh hành!
+[hero_phoenix.hurt]
+Áaa! Ta bị thương! Ai đó ghi hình lại!
+Đau đớn thay số phận nghệ sĩ!
+Ngươi dám làm xước bộ lông vàng của ta?!
+Bi kịch! Thật là bi kịch!
+Ôi, vết thương này sẽ thành huyền thoại!
+Ta ngã... nhưng ngã thật đẹp!
+[hero_phoenix.low]
+Đây là màn cuối của ta sao... Không!
+Khán giả ơi, hãy gọi tên ta!
+Kịch bản này cần một cú lật kèo!
+Trong tro tàn, Phượng Hoàng sắp tái sinh!
+Ta yếu... nhưng nhìn vẫn rất ngầu đúng không?
+[hero_phoenix.heal]
+Hồi sinh từ tro tàn! Lộng lẫy!
+Máu trở lại, hào quang trở lại!
+Đẹp lại rồi! Camera quay đi!
+[hero_phoenix.block]
+Chặn! Một động tác đầy duyên dáng!
+Đỡ đòn mà vẫn giữ được thần thái!
+Lông vũ của ta cứng hơn ngươi tưởng!
+[hero_phoenix.skill]
+Và giờ là màn chính: {skill}!
+Tắt đèn! Bật nhạc! {skill}!
+Hãy chứng kiến khoảnh khắc lịch sử!
+Đôi cánh lửa, dang rộng!
+[hero_phoenix.item]
+Đạo cụ! Mang đạo cụ lên!
+Một chút phụ kiện cho thêm lấp lánh!
+Diva cũng cần bồi bổ chứ!
+Ngươi tưởng đã hạ màn? Màn hai bắt đầu!
+Vết thương ư? Chỉ là hóa trang, rửa là sạch!
+Khán giả ơi, nhìn kỹ: hồi sinh trong một ngụm!
+Giáp mới lấp lánh, ánh đèn sân khấu là của ta!
+Bi kịch của ngươi: đánh mãi ta vẫn tươi rói!
+Phượng hoàng uống thuốc, hào quang nhân đôi!
+Vỗ tay đi {enemy}, ngươi vừa diễn vai quần chúng đó!
+[hero_phoenix.win]
+Cảm ơn! Cảm ơn! Ta yêu các bạn!
+Hạ màn! Vở diễn hoàn hảo!
+Hoa đâu? Ném hoa lên sân khấu đi!
+Lại một tuyệt phẩm nữa của Phượng Hoàng!
+{enemy}, ngươi diễn vai kẻ thua rất tròn!
+Chiến thắng này xin dành tặng khán giả!
+[hero_phoenix.lose]
+Không! Đây không phải cái kết ta muốn!
+Hãy nhớ đến ta... như một huyền thoại...
+Kịch bản bị sửa! Ta phản đối!
+Ngã xuống trong ánh đèn... thật thơ mộng...
+Phần hai sẽ hay hơn, hứa đấy!
+[hero_phoenix.revive]
+Từ tro tàn, ta trở lại! Vỗ tay!
+Phượng Hoàng không chết, chỉ đổi phân cảnh!
+Plot twist! Ta vẫn còn sống!
+# ===== hero_queen: nữ anh hùng hệ Sét, tự tin, chảnh, đối đáp sắc sảo =====
+[hero_queen.start]
+Chị đến rồi đây, dọn đường đi các em.
+{enemy} hả? Chưa nghe tên bao giờ luôn.
+Chị không đánh nhau, chị dạy dỗ thôi.
+Sẵn sàng chưa cưng? Chị thì luôn sẵn sàng.
+Đứng thẳng lên, đánh với nữ hoàng mà.
+Nhanh nha, chị còn hẹn đi làm tóc.
+[hero_queen.taunt]
+Sai bài rồi cưng, làm lại đi.
+Ủa em, em đang đánh hay đang múa?
+Chị chưa dùng sức mà em đã thở dốc rồi.
+Mặn mòi gì đâu, nhạt toẹt à.
+Bớt ảo tưởng đi em, chị mệt dùm.
+Thôi, về nhà đi, mẹ gọi kìa.
+Cưng cố lên, chị tin em... thua đẹp.
+Đẳng cấp khác nhau mà, chịu khó nha.
+[hero_queen.combo]
+Slay! Đúng chuẩn nữ hoàng!
+Sét đánh ngang tai chưa cưng?
+Ăn trọn luôn, khỏi cần cảm ơn.
+Đẹp như vậy đó, nhìn và học.
+Chị ra tay là phải sang!
+[hero_queen.hurt]
+Ủa? Dám đụng vào tóc chị hả?
+Được lắm, em vừa chọn sai người.
+Hơi đau, nhưng chị vẫn xinh.
+Ối, gãy móng tay rồi! Em xong rồi!
+Đánh lén à? Kém sang quá.
+Chị ghi sổ cú này rồi nha.
+[hero_queen.low]
+Ok, giờ chị hết hiền rồi đó.
+Máu thấp nhưng khí chất không thấp.
+Đừng mừng vội cưng, chị lật kèo giỏi lắm.
+Nữ hoàng có thể mệt, không bao giờ gục.
+Chị chỉ cần một cơ hội thôi.
+[hero_queen.heal]
+Dưỡng da xong, đẹp lại rồi.
+Hồi máu, hồi luôn cả nhan sắc.
+Chị lại lung linh như cũ.
+[hero_queen.block]
+Né ra cưng, chị không nhận quà rẻ tiền.
+Chặn rồi, đánh lại cho đàng hoàng.
+Khiên của chị đắt hơn cả nhà em.
+[hero_queen.skill]
+{skill}! Quỳ xuống đi!
+Đến lúc nữ hoàng ra tay: {skill}!
+Sét ơi, tiễn em này về giùm chị.
+Chị bật mode nghiêm túc rồi nha.
+[hero_queen.item]
+Phụ kiện mới, chuẩn style.
+Đồ hiệu đó, xài cho biết.
+Bình này chị mua bằng tiền của chị nha.
+Đánh chị xong rồi hả? Đợi chị dặm lại phấn cái.
+Máu đầy lại rồi, công sức của em đi đâu ta?
+Giáp mới nè, đẹp hơn cả chiến thuật của em.
+Em đánh mệt chưa? Chị mới bắt đầu tươi tỉnh nè.
+Nhân sâm cho chị, nước mắt cho em nha.
+Hồi máu trong một nốt nhạc, cưng hiểu hông?
+Xin lỗi nha, chị không có thói quen thua.
+[hero_queen.win]
+Biết thân phận chưa cưng?
+Thắng rồi, chị đi làm tóc đây.
+Vương miện vẫn ở trên đầu chị.
+Không ai qua được chị đâu, nhớ nha.
+Cảm ơn em đã làm nền cho chị tỏa sáng.
+Next! Ai muốn bị dạy tiếp?
+[hero_queen.lose]
+Hôm nay chị nhường, mai đừng hòng.
+Thua trận chứ không thua khí chất.
+Được rồi, em may đó. Chỉ may thôi.
+Chị cần nghỉ ngơi, đừng nghĩ nhiều.
+Nhớ đấy, nữ hoàng sẽ trở lại.
+[hero_queen.revive]
+Tưởng chị gục hả? Nghĩ lại đi cưng.
+Nữ hoàng đứng dậy, cả triều đình im lặng.
+Chị về rồi, và chị đang rất bực.
+# ===== hero_dragon: hậu duệ Long Vương Biển Bắc, quý tộc, lịch sự mà thâm, hơi tự luyến =====
+[hero_dragon.start]
+Xin chào, {enemy}. Rất tiếc cho ngươi.
+Tại hạ xin phép đánh bại ngươi một cách lịch sự.
+Long tộc không vội. Mời ngươi ra tay trước.
+Đừng nhìn tóc ta lâu quá, sẽ bị lóa đó.
+Rất hân hạnh được hạ ngươi hôm nay.
+Ta đã chỉnh trang xong. Bắt đầu thôi.
+[hero_dragon.taunt]
+Thứ lỗi, ta tưởng ngươi đang tập thể dục.
+Đòn đó rất... cố gắng. Ta ghi nhận.
+Ngươi thật đáng khen vì đã dám đứng đây.
+Ta không muốn làm ngươi buồn, nhưng ngươi dở.
+Xin đừng làm bẩn áo ta, lụa Bắc Hải đấy.
+Phong thái của ngươi... có thể cải thiện.
+Thật cảm động khi thấy ngươi nỗ lực thế.
+Ngươi có muốn ta chậm lại chút không?
+[hero_dragon.combo]
+Thanh lịch và chí mạng. Như ta vậy.
+Long Vương phù hộ. Hoàn mỹ.
+Đẹp, phải không? Ta biết mà.
+Sóng Bắc Hải, cuốn sạch!
+Một đòn quý tộc, xin nhận cho.
+[hero_dragon.hurt]
+Ôi, áo ta! Ngươi biết giá nó không?
+Thật vô lễ. Nhưng thôi, ta bỏ qua.
+Một vết xước. Vẫn đẹp trai như thường.
+Hừm. Ngươi có chút bản lĩnh.
+Đánh vào mặt là phạm luật đó, biết không?
+Ta tha thứ cho ngươi. Lần này thôi.
+[hero_dragon.low]
+Tình thế khó xử. Nhưng ta vẫn chỉn chu.
+Long tộc không bao giờ gục trước kẻ tầm thường.
+Ta cần một chút thời gian chỉnh lại tóc.
+Đừng tưởng thế này là ta thua, ngươi lầm rồi.
+Long Vương ơi, con hơi mệt, nhưng con ổn.
+[hero_dragon.heal]
+Hồi phục. Vẻ đẹp đã trở lại.
+Long huyết sôi trào. Ta khỏe rồi.
+Cảm ơn biển cả. Tiếp tục nhé.
+[hero_dragon.block]
+Vảy rồng. Không xuyên được đâu.
+Xin lỗi, đòn của ngươi không đủ tầm.
+Ta không nhận món quà vụng về này.
+[hero_dragon.skill]
+Xin trân trọng giới thiệu: {skill}.
+{skill}. Ngươi nên cảm thấy vinh dự.
+Hãy chiêm ngưỡng sức mạnh Long tộc.
+Thủy triều Bắc Hải, dâng lên!
+[hero_dragon.item]
+Bảo vật gia truyền. Ngươi không có đâu.
+Dùng một chút đồ cao cấp, thông cảm.
+Long cung tiếp tế, đúng giờ như thường lệ.
+Ngươi làm ta trầy da? Một ngụm là liền như cũ.
+Thuốc này đắt hơn cả bộ giáp của ngươi. Xin lỗi nhé.
+Long kiếm trong tay, ngươi nên quỳ cho kịp.
+Vết xước ngươi gây ra, ta xóa trong nháy mắt.
+Nhân sâm ngàn năm. Ngươi đến củ cải còn không có.
+Giáp Long cung đấy, đánh vào chỉ tổ đau tay ngươi.
+Cố gắng của ngươi thật đáng khen. Tiếc là vô ích.
+[hero_dragon.win]
+Cảm ơn trận đấu. Ngươi đã thua rất lịch sự.
+Như đã dự đoán. Ta xin cáo từ.
+Đừng buồn. Thua ta là một vinh dự.
+Ta thắng, và tóc vẫn vào nếp.
+Lần sau ngươi tập thêm, ta sẽ chờ. Có lẽ.
+Long tộc tất thắng. Chuyện thường ngày.
+[hero_dragon.lose]
+Một bất ngờ... không mấy dễ chịu.
+Ta thua, nhưng thua với phong thái.
+Ngươi thắng. Xin chúc mừng. Lần này thôi.
+Phụ vương sẽ không vui chuyện này đâu.
+Ta cần về Long cung suy ngẫm lại.
+[hero_dragon.revive]
+Rồng không dễ gục như vậy đâu.
+Ta trở lại. Chỉnh lại áo đã.
+Từ đáy biển sâu, ta trỗi dậy.
+# ===== ally: tướng của Đinh Bộ Lĩnh, trọng nghĩa, khí khái, đấu tập như huynh đệ =====
+[ally.start]
+Đấu tập là luyện binh, ta không nương tay đâu!
+Huynh đệ, cứ ra tay hết sức!
+Vì Hoa Lư, hai ta cùng mài sắc lưỡi gươm!
+Lâu rồi mới được giao đấu với đệ!
+Cả doanh trại đang xem, đánh cho xứng danh!
+Mời đệ. Võ nghệ phải thử mới biết.
+[ally.taunt]
+Đệ tiến bộ đấy, nhưng còn phải rèn nhiều!
+Ra đòn phải dứt khoát hơn nữa!
+Giữ vững thế đứng, đừng để lộ sơ hở!
+Trên chiến trường, giặc không chờ đệ đâu!
+Thả lỏng vai, gồng quá thì đòn chậm!
+Mắt nhìn đối thủ, đừng nhìn đường kiếm!
+Chiêu đó hay, nhưng ta đã đọc được rồi!
+Còn sức thì đánh tiếp, ta vẫn đứng đây!
+[ally.combo]
+Kinh nghiệm chiến trường là thế đấy!
+Chiêu này ta rèn suốt mười năm!
+Một đòn vì Hoa Lư!
+Đỡ được đòn này thì đệ đã thành tướng!
+Phong độ của huynh vẫn còn nguyên!
+[ally.hurt]
+Đòn hay! Ta nhận!
+Khá lắm! Chúa công thấy hẳn sẽ vui!
+Trúng rồi. Đệ ra đòn chuẩn đấy!
+Hay! Thế mới là huynh đệ của ta!
+Mạnh tay lắm, ta thích vậy!
+Đòn này mà gặp giặc thì chúng khó sống!
+[ally.low]
+Đệ giỏi hơn ta tưởng!
+Chưa đâu, ta còn sức!
+Tướng Hoa Lư không lùi bước!
+Đánh tiếp! Quân sĩ đang dõi theo!
+Hiểm nguy mới thấy được bản lĩnh!
+[ally.heal]
+Thuốc quân y hiệu nghiệm thật!
+Hồi sức xong, đánh tiếp nào!
+Vết thương nhỏ, chẳng đáng bận tâm!
+[ally.block]
+Chặn được! Khiên này theo ta mười trận rồi!
+Thủ vững như thành Hoa Lư!
+Đỡ được! Lần sau đánh hiểm hơn!
+[ally.skill]
+Tuyệt kỹ của ta: {skill}!
+Đệ hãy xem cho kỹ: {skill}!
+Chiêu này từng phá giặc ngoài trận tiền!
+Toàn lực đây, đệ đỡ lấy!
+[ally.item]
+Quân nhu của doanh trại, dùng cho đáng!
+Chuẩn bị chu toàn mới là tướng giỏi!
+Có đồ tốt thì phải dùng đúng lúc!
+[ally.win]
+Đệ đánh tốt, chỉ là huynh có kinh nghiệm hơn!
+Ngày mai tập tiếp, đệ sẽ tiến bộ!
+Trận này hay! Đáng một chén rượu mừng!
+Huynh đệ ta, mai cùng ra trận!
+Rèn thêm chút nữa, đệ sẽ vượt ta!
+Thắng thua là chuyện thường, nghĩa huynh đệ mới quý!
+[ally.lose]
+Hay lắm! Đệ đã vượt huynh rồi!
+Thua tâm phục khẩu phục!
+Chúa công có thêm tướng giỏi, ta yên lòng!
+Lần sau ta xin phục thù!
+Đệ xứng đáng cầm quân rồi!
+# ===== mentor: Lưu Cơ, quân sư, điềm đạm, dạy binh pháp, tự hào về học trò =====
+[mentor.start]
+Hôm nay thầy sẽ thử sức con.
+Binh pháp chép trên sách, phải thử trên trận.
+Vào trận đi. Thầy xem từng đòn của con.
+Biết người biết ta, trăm trận không nguy.
+Con đã sẵn sàng chưa?
+Mưu trước, sức sau. Nhớ lấy.
+[mentor.taunt]
+Chưa đúng. Hãy nhớ lời thầy dạy.
+Nóng vội là điều tối kỵ của người cầm quân.
+Đánh mạnh chưa đủ, phải đánh khéo.
+Con đọc kỹ binh pháp chưa?
+Nhanh thì có, nhưng chưa sâu.
+Thấy lợi trước mắt, quên hại phía sau.
+Bình tĩnh. Kẻ hấp tấp sẽ thua.
+Thế trận này, con đã nhìn ra chưa?
+[mentor.combo]
+Thế trận đã thành, không thể cứu.
+Đây gọi là liên hoàn kế.
+Mưu lược thắng sức mạnh. Ghi nhớ.
+Từng bước, từng bước, rồi hạ màn.
+Đó, đánh như vậy mới gọi là dùng binh.
+[mentor.hurt]
+Đòn hay. Con đã biết vận dụng.
+Khá lắm. Thầy không trách.
+Thầy sơ suất. Con nắm thời cơ tốt.
+Đánh trúng chỗ yếu. Đúng như thầy dạy.
+Đau, nhưng thầy tự hào nhiều hơn.
+Tốt. Con đã biết tìm sơ hở.
+[mentor.low]
+Học trò giỏi quá, thầy hơi đuối sức.
+Thầy còn một kế cuối cùng.
+Thế cờ chưa tàn, chưa định thắng thua.
+Lùi một bước để tiến hai bước.
+Thầy già rồi, nhưng mưu chưa cạn.
+[mentor.heal]
+Uống chén trà, tâm tĩnh lại.
+Dưỡng sức, rồi ta tiếp tục.
+Thuốc bắc gia truyền, công hiệu lắm.
+[mentor.block]
+Thầy đoán được con sẽ đánh vậy.
+Đỡ được. Con để lộ ý đồ rồi.
+Phòng thủ là gốc của binh pháp.
+[mentor.skill]
+Mưu kế của thầy: {skill}.
+Bài học hôm nay: {skill}.
+Kế này không có trong sách.
+Thầy cho con thấy thế nào là quân sư.
+[mentor.item]
+Chuẩn bị kỹ là nửa phần thắng.
+Người cầm quân không ra trận tay không.
+Lương thảo đủ thì quân mới mạnh.
+[mentor.win]
+Hôm nay chưa đạt. Về ôn lại nhé.
+Con có tiến bộ, nhưng còn phải học nhiều.
+Hãy ghi nhớ những sai sót hôm nay.
+Thắng thua không quan trọng bằng điều con học được.
+Thầy thắng, nhưng thấy con đã trưởng thành.
+Thua để biết mình. Đó cũng là bài học.
+[mentor.lose]
+Hay lắm. Trò đã giỏi hơn thầy.
+Thầy vui hơn là buồn đấy.
+Đúng là học trò của ta!
+Nhớ đừng kiêu ngạo, đó là bài học tiếp theo.
+Non sông có người tài, thầy yên lòng.
+# ===== warlord: 12 sứ quân và tướng, cát cứ một phương, oai nghiêm, kiêu ngạo, thua cay mà giữ thể diện =====
+[warlord.start]
+Đất này do ta trấn giữ, kẻ nào dám xâm phạm?
+Bổn sứ quân đã đến, còn không mau lui!
+Ngươi là ai mà dám chặn đường ta?
+Mười hai sứ quân, không ai phục ai. Ta cũng vậy!
+Thành trì của ta, ngươi đừng mơ bước qua!
+Quân ta đã bày trận, ngươi đến nộp mạng sao?
+[warlord.taunt]
+Ngươi có biết đang đối mặt với ai không?
+Một mình ngươi mà đòi chống lại cả một phương?
+Hàng phục đi, ta sẽ tha tội cho ngươi!
+Họ Đinh sai ngươi đến à? Thật xem thường ta!
+Võ nghệ như vậy mà dám ra trận?
+Đất này ta giữ mười năm, ngươi lấy sao nổi?
+Ta chưa dùng đến một phần sức lực!
+Lui về đi, kẻo mất mạng nơi đây!
+[warlord.combo]
+Thấy uy lực của bổn sứ quân chưa!
+Đây là sức mạnh của kẻ trấn giữ một phương!
+Cả vùng này phải khiếp sợ!
+Ngươi đỡ nổi sao?
+Thiên hạ chưa ai địch nổi ta!
+[warlord.hurt]
+Láo xược! Dám đánh bổn sứ quân!
+Ngươi sẽ phải trả giá!
+Hừ! Chỉ là may mắn!
+Vết thương này, ta sẽ đòi gấp mười!
+Được lắm, ngươi đã chọc giận ta!
+Đòn đó không làm ta lay chuyển!
+[warlord.low]
+Không thể nào! Một sứ quân không thể thua!
+Ta còn quân, còn thành, còn chưa hết!
+Ngươi tưởng đã thắng? Còn sớm lắm!
+Hừ... ngươi mạnh hơn ta tưởng.
+Thà chết đứng, không sống quỳ!
+[warlord.heal]
+Ngự y! Chữa cho ta mau!
+Thuốc quý trong kho, ta không thiếu!
+Hồi phục rồi! Giờ ngươi hết đường!
+[warlord.block]
+Giáp của ta, ngươi không phá nổi!
+Đòn ấy chẳng làm ta xây xát!
+Muốn đánh trúng ta? Còn lâu!
+[warlord.skill]
+Tuyệt chiêu trấn quốc: {skill}!
+Run sợ đi! {skill}!
+Đòn này, cả vùng phải chấn động!
+Bổn sứ quân xuất chiêu, ngươi chuẩn bị đi!
+[warlord.item]
+Kho báu của ta nhiều vô kể!
+Bảo vật trấn thành, ngươi không có đâu!
+Của cải một phương, ta dùng không hết!
+[warlord.win]
+Thiên hạ này phải là của ta!
+Ai dám chống lại ta, kết cục là vậy!
+Kẻ bại trận, lui ra!
+Hãy về báo với họ Đinh: ta không khuất phục!
+Đất này vẫn là đất của ta!
+Ngươi đã thấy sức mạnh của ta chưa?
+[warlord.lose]
+Ta... ta sẽ quay lại!
+Thành mất, nhưng chí ta chưa mất!
+Lần này ta thua, lần sau chưa chắc!
+Ngươi thắng, nhưng thiên hạ chưa phải của ngươi!
+Thua một trận, chưa mất cả giang sơn!
+# ===== lady: Dương Vân Nga, quý nữ đoan trang, điềm tĩnh, sắc sảo =====
+[lady.start]
+Mời. Ta không thích chờ đợi.
+Đã đến thì giao đấu cho đàng hoàng.
+Phận nữ nhi, nhưng chưa từng chịu thua ai.
+Ta sẽ không nương tay đâu.
+Xin chỉ giáo.
+Hãy cho ta thấy bản lĩnh của ngươi.
+[lady.taunt]
+Chỉ có vậy thôi sao?
+Đòn đánh vội vàng, tâm chưa vững.
+Ngươi cần luyện thêm nhiều.
+Hấp tấp như vậy, khó thành việc lớn.
+Ta vẫn đang chờ một đòn ra hồn.
+Đừng để cơn giận dắt mũi ngươi.
+Ra tay có lễ độ một chút.
+Kiếm pháp cần tâm tĩnh, ngươi còn thiếu.
+[lady.combo]
+Thanh nhã. Chính xác.
+Mềm mà không yếu, đó là lụa.
+Một đường lụa, một đường kiếm.
+Gọn gàng. Như ta muốn.
+Ngươi đã thấy chưa?
+[lady.hurt]
+Ngươi dám?
+Hừ. Đòn may mắn.
+Ta sẽ nhớ chuyện này.
+Không tệ. Nhưng chưa đủ.
+Được. Ta sẽ không khinh địch nữa.
+Đau, nhưng không làm ta lùi.
+[lady.low]
+Ta mệt, nhưng không để ngươi thấy.
+Ta vẫn còn đứng đây.
+Một tiểu thư không gục trước mặt kẻ khác.
+Đừng vội mừng.
+Được thôi. Ta sẽ nghiêm túc.
+[lady.heal]
+Ổn rồi. Chỉnh lại trâm cài đã.
+Chút trà sen, lòng thanh thản lại.
+Hồi phục rồi. Ta tiếp tục.
+[lady.block]
+Đòn đó không chạm được vào ta.
+Gạt nhẹ thôi. Không cần cố.
+Ta đã thấy trước đòn ấy.
+[lady.skill]
+Hãy xem đây: {skill}.
+{skill}. Đừng chớp mắt.
+Ta không thường làm thế này đâu.
+Chút tài mọn, xin chỉ giáo.
+[lady.item]
+Trang sức này không chỉ để đẹp.
+Lụa quý cũng là giáp tốt.
+Chuẩn bị chu đáo là thói quen của ta.
+[lady.win]
+Như ta nghĩ.
+Về luyện thêm rồi hẵng đến.
+Hy vọng ngươi đã học được điều gì.
+Ta thắng mà tóc vẫn chưa rối.
+Lần sau mong ngươi mạnh hơn.
+Đa tạ đã chỉ giáo.
+[lady.lose]
+Ngươi thắng rồi. Ta công nhận.
+Ta đã khinh địch. Lỗi ở ta.
+Ngươi không tệ chút nào.
+Lần sau ta sẽ không thua.
+Võ nghệ khá lắm. Ta ghi nhớ.
+# ===== soldier: lính thường, than lương, than cơm, than sếp, sợ mà vẫn cố =====
+[soldier.start]
+Lại đánh nhau... lương tháng trước còn chưa phát.
+Xin phép, tôi chỉ là lính quèn thôi mà.
+Sếp bảo đánh thì đánh, chứ tôi không muốn đâu.
+Ăn cơm độn khoai cả tuần mà bắt ra trận.
+Đứng im, đứng im, tôi cũng đang run đây.
+Vợ tôi dặn về sớm ăn cơm, nhanh nha.
+[soldier.taunt]
+Đánh nhẹ thôi, tôi còn trả nợ tiền gạo.
+Anh làm ơn thua giùm, tôi được thưởng.
+Sếp tôi đang nhìn, giả bộ đau giúp cái.
+Tôi làm ca đêm cả tuần rồi đó!
+Đừng đánh mặt, mai tôi đi xem mắt!
+Giáo này mượn của kho, gãy là bị trừ lương!
+Anh có biết tôi phải gác cổng bao lâu không?
+Đánh thì đánh, nhưng đừng kể với sếp tôi!
+[soldier.combo]
+Ơ! Trúng thật à? Tôi giỏi thế à?
+Xem này sếp ơi! Tăng lương cho tôi!
+Chắc mai được lên chức đội trưởng!
+Ôi trời, tôi cũng không ngờ luôn!
+Đánh xong mai xin nghỉ phép!
+[soldier.hurt]
+Ui! Trừ lương thì thôi, sao trừ cả máu!
+Á! Mẹ ơi!
+Bảo hiểm có chi trả vụ này không?
+Đau quá, cho tôi xin nghỉ ốm!
+Tôi chỉ là lính quèn, đánh chi dữ vậy!
+Ối, cái mũ mới mua!
+[soldier.low]
+Thôi chết, tôi chưa viết di chúc!
+Đội trưởng ơi! Cứu với!
+Lương ba cọc ba đồng mà phải liều thế này!
+Tôi xin hàng được không? Không à?
+Cố thêm chút nữa... vì nồi cơm nhà tôi!
+[soldier.heal]
+Phù, sống rồi. Cảm ơn quân y!
+Băng bó tạm, chiến tiếp vì bát cơm!
+Hồi chút sức, chưa phải lúc bỏ cuộc!
+[soldier.block]
+Ôi đỡ được! Cái khiên rẻ tiền mà xịn ghê!
+Khiên ơi, cảm ơn mày!
+Chặn được rồi! Đừng đánh nữa nha!
+[soldier.skill]
+Tôi cũng có chiêu nha: {skill}!
+Học lỏm của đội trưởng: {skill}!
+Liều thôi! Được ăn cả ngã về không!
+Chiêu này tôi tập lúc gác đêm đấy!
+[soldier.item]
+Đồ cấp phát nè, dùng luôn kẻo bị thu lại!
+Bình thuốc dành dụm cả tháng lương!
+Lần đầu được xài đồ tốt, cảm động ghê!
+[soldier.win]
+Thắng rồi?! Sếp ơi, tăng lương đi!
+Về kể cho vợ nghe, chắc không tin đâu!
+Tối nay được thêm miếng thịt!
+Ơ, tôi thắng thật à? Chụp lại đi!
+Hết ca! Về nhà thôi!
+Lính quèn cũng có ngày lên hương!
+[soldier.lose]
+Thôi, về nhà nuôi gà cho rồi.
+Lương không đủ để cố gắng thêm.
+Tôi xin nghỉ việc từ hôm nay!
+Mai đội trưởng mắng chắc luôn.
+Ít ra cũng được nằm nghỉ một lát.
+# ===== bandit: thảo khấu trên núi, ngôn ngữ giang hồ, trấn lột, hèn khi thua =====
+[bandit.start]
+Đường này ta mở, cây này ta trồng!
+Muốn qua thì để lại tiền mãi lộ!
+Ê, đi đâu đấy? Nộp phí qua đường!
+Anh em ơi, có khách sộp!
+Đứng lại! Đây là địa bàn của đại ca!
+Có bao nhiêu bỏ ra hết, không lôi thôi!
+[bandit.taunt]
+Cậu biết đại ca tôi là ai không?
+Nhìn mặt là biết dân mới lên núi rồi!
+Ngoan thì nộp đồ, cãi thì ăn gậy!
+Ở đây ta nói luật, hiểu chưa?
+Đi đứng kiểu gì mà như dân phố thế?
+Ê, cái túi kia nhìn ngon đấy!
+Đừng có mà láo nha, núi này là nhà ta!
+Gì căng? Nộp tiền là xong mà!
+[bandit.combo]
+Thấy chưa! Đại ca dạy đó!
+Ăn đủ chưa? Còn nữa đấy!
+Giang hồ hiểm ác lắm cậu ơi!
+Dân núi đánh là phải trúng!
+Phê chưa? Nộp tiền đi!
+[bandit.hurt]
+Ui da! Chơi xấu thế!
+Ê ê, có gì nói chuyện đàng hoàng!
+Đại ca ơi, nó đánh em!
+Đau! Đau thật đấy!
+Đánh người là không tốt đâu!
+Từ từ, làm gì căng thế!
+[bandit.low]
+Thôi, em sai rồi đại ca... à không, anh!
+Mình là người lớn, ngồi xuống uống trà đi!
+Anh em ơi! Chạy thôi!
+Trả lại tiền, trả hết! Tha cho em!
+Em chỉ đi lạc lên núi thôi mà!
+[bandit.heal]
+Chai rượu thuốc, uống xong lại hăng!
+Hồi máu rồi! Đừng có mừng!
+Đồ cướp được nè, xài cho sướng!
+[bandit.block]
+Đỡ được! Gậy của ta cứng lắm!
+Ha! Hụt rồi nhé!
+Dân giang hồ, né là nghề!
+[bandit.skill]
+Tuyệt chiêu núi rừng: {skill}!
+Đại ca truyền cho đấy: {skill}!
+Chiêu chặn đường, ăn đi!
+Hết đường thoát rồi nhé!
+[bandit.item]
+Đồ cướp được nè, xài miễn phí!
+Bình này của khách đi đường hôm qua!
+Hàng tốt, không mất tiền!
+[bandit.win]
+Nộp hết đồ ra đây! Hì hì!
+Lần sau qua núi nhớ mang thêm tiền!
+Anh em ơi, tối nay có thịt!
+Thua thì im lặng mà nộp phí!
+Đường này vẫn là của ta!
+Đi đi, ta tha cho lần này!
+[bandit.lose]
+Em xin lỗi, em xin lỗi!
+Đại ca ơi, em về quê làm ruộng đây!
+Chạy! Chạy mau anh em ơi!
+Thôi, giải nghệ, không làm cướp nữa!
+Trả lại đồ cho anh, đừng đánh nữa!
+# ===== critter: ong, bọ, cóc, nhện, sâu: vo ve, ộp ộp, tự ái, nhỏ mọn =====
+[critter.start]
+Vo ve vo ve! Tránh ra, đây là lãnh địa của ta!
+Ộp! Ộp! Ta là cóc, ta có chút quyền lực!
+Đừng coi thường ta, ta nhỏ nhưng có võ!
+Rè rè! Đứa nào phá tổ ta?!
+Sột soạt... ta đã giăng tơ chờ ngươi lâu rồi!
+Ta bé nhưng ta rất có chính kiến!
+[critter.taunt]
+Vo ve bên tai, khó chịu chưa? Hí!
+Cóc nghiến răng, trời cũng phải sợ đấy!
+To xác mà chậm như rùa!
+Ta chích một cái là ngươi khóc cả tuần!
+Ngươi có thấy ta không? Ta ở đây nè!
+Ta ăn lá cả ngày, khỏe hơn ngươi đó!
+Rè rè rè! Nghe tiếng là sợ chưa?
+Tơ của ta dính lắm, đừng có giãy!
+[critter.combo]
+Chích! Chích! Chích!
+Cả đàn xông lên! Vo ve!
+Ộp ộp ộp! Phun nọc!
+Bé hạt tiêu, cay xè!
+Giăng lưới! Bắt gọn!
+[critter.hurt]
+Ui! Cánh ta!
+Ộp... đau đó!
+Đè lên ta à? Mất lịch sự!
+Á! Cái râu của ta!
+Rè... không công bằng, ngươi to quá!
+Ta sẽ mách mẹ ta!
+[critter.low]
+Vo... ve... hết pin rồi...
+Ộp... sắp xẹp rồi...
+Ta chỉ là con sâu bé nhỏ thôi mà...
+Gọi cả họ hàng lên đây!
+Bò về tổ... chậm quá...
+[critter.heal]
+Ăn miếng mật, khỏe lại rồi!
+Lột xác xong, như mới!
+Ộp! Nạp đầy hơi rồi!
+[critter.block]
+Vỏ cứng! Không vỡ!
+Ộp! Ta nhảy né rồi!
+Ha, trượt! Ta bé quá đánh sao trúng!
+[critter.skill]
+Tuyệt kỹ côn trùng: {skill}!
+{skill}! Vo ve vo ve!
+Đàn ong ơi, xuất kích!
+Phun tơ diện rộng!
+[critter.item]
+Giọt sương sớm, bổ lắm!
+Mật ong nguyên chất, không pha!
+Lá non tươi, ăn là hồi!
+[critter.win]
+Vo ve! Ta thắng! Ta là vua côn trùng!
+Ộp ộp! Cả ao phải nghe tin này!
+Bé mà có võ, nhớ chưa!
+Tơ của ta lại thắng một lần nữa!
+Ta sẽ kể chuyện này cho cả tổ!
+Rè rè! Biết sợ chưa!
+[critter.lose]
+Vo... ve... ta bay về đây...
+Ộp... thôi về ao...
+Ngươi bắt nạt kẻ yếu! Ta giận!
+Ta sẽ quay lại với cả đàn!
+Ta chỉ là con sâu thôi mà, sao nỡ...
+# ===== trickster: hồ ly, mèo, rắn, khỉ, thỏ tinh, tiểu quỷ: tinh nghịch, cười khúc khích, chọc ghẹo =====
+[trickster.start]
+Hí hí! Có người tới chơi rồi kìa!
+Lêu lêu, bắt được ta thì ta cho kẹo!
+Meo~ ngươi có cá không?
+Ta ở đây nè! À không, ở đây cơ! Hí hí!
+Chơi trốn tìm nha, ngươi làm người đi tìm!
+{enemy} ơi, chân ngươi buộc dây chưa kìa?
+[trickster.taunt]
+Hụt rồi! Hụt nữa! Hí hí hí!
+Nhìn sau lưng kìa! Đùa đó!
+Ngươi có thấy cái đuôi ta không? Không à?
+Chậm quá, ta ngủ một giấc vẫn kịp né!
+Khặc khặc! Mặt ngươi buồn cười ghê!
+Ai bảo ngươi tin ta? Ngây thơ quá!
+Lêu lêu, đánh không trúng, đánh không trúng!
+Ta lấy trộm dép ngươi rồi đó, hì hì!
+[trickster.combo]
+Bất ngờ chưa! Hí hí!
+Xoẹt xoẹt! Cào cho một trận!
+Tung hứng nè! Vui ghê!
+Bẫy! Ngươi dính bẫy rồi!
+Một, hai, ba, bùm! Hí hí!
+[trickster.hurt]
+Úi! Không vui nữa!
+Meo! Đau mà!
+Ê, chơi gì kỳ vậy!
+Ta chỉ đùa thôi mà, đánh thật hả?
+Rụng lông rồi! Ngươi đền!
+Hứ! Ta giận rồi đó!
+[trickster.low]
+Thôi, ta chơi đủ rồi, về nha!
+Hí... hí... hết vui rồi...
+Đợi chút, ta đi gọi đồng bọn!
+Ta biến mất đây... à, chưa được...
+Đừng đánh nữa, ta cho ngươi kẹo thật mà!
+[trickster.heal]
+Hì hì, ăn trộm được thuốc rồi!
+Liếm lông một chút, khỏe re!
+Hồi máu! Chơi tiếp nào!
+[trickster.block]
+Ta đâu có ở đó! Hí hí!
+Phân thân đó, đánh nhầm rồi!
+Né như chơi, ha ha!
+[trickster.skill]
+Phép thuật nè: {skill}! Hí hí!
+Xem ảo thuật nha: {skill}!
+Biến! Biến! Biến!
+Ta có một trò hay lắm nè!
+[trickster.item]
+Đồ chôm được, xài thử coi!
+Túi thần kỳ của ta đây!
+Hí hí, đồ này của ngươi đó, ta mượn!
+[trickster.win]
+Hí hí! Ta thắng! Ngươi bị lừa!
+Lêu lêu! Thua con mèo kìa!
+Ta lấy luôn túi đồ của ngươi nha!
+Vui quá! Mai chơi tiếp nha!
+Khặc khặc! Ngây thơ quá mà!
+Đuổi theo ta đi, nếu đuổi kịp! Hí hí!
+[trickster.lose]
+Hứ! Không chơi với ngươi nữa!
+Meo... ta về nhà đây...
+Lần sau ta gài bẫy kỹ hơn!
+Ta cố tình thua đó, để ngươi vui!
+Biến đây! Bùm! ...Sao không biến được?
+# ===== brute: quỷ đá, quỷ cây, sư tử quái, lợn rừng, rồng con: to, chậm, cáu, nói ít chữ =====
+[brute.start]
+GRÀO! Ngươi nhỏ. Ta to.
+Ta đang ngủ. Ngươi đánh thức. Ta cáu.
+Ta... đập... ngươi.
+Grừ. Ai đó?
+Đá cứng. Ta cứng hơn.
+Ăn sáng chưa? Ta chưa. Ta cáu.
+[brute.taunt]
+Ngươi... như con kiến.
+Grừ! Đứng yên cho ta đập!
+Ta không hiểu ngươi nói gì. Đập thôi.
+Ngươi kêu to. Ta kêu to hơn. GRÀO!
+Đầu ta cứng. Đầu ngươi thì không.
+Chạy làm gì? Ta chậm nhưng ta tới.
+Ngươi nói nhiều. Ta không thích.
+Hừm. Ngươi gầy. Không đủ ăn.
+[brute.combo]
+ĐẬP! ĐẬP! ĐẬP!
+GRÀO GRÀO!
+Ta mạnh. Hiểu chưa.
+Đất rung! Ha!
+Húc! Bay luôn!
+[brute.hurt]
+Gừ! Ngứa.
+Ai cù ta?
+Ối. Đau. Ta cáu hơn.
+Đá ta mẻ. Ngươi đền.
+Ủa? Cái gì vậy?
+Hừ. Muỗi đốt.
+[brute.low]
+Ta... mệt.
+Grừ... chưa xong đâu...
+Ta muốn ngủ tiếp...
+Đầu ta quay quay...
+Ta vẫn to. Vẫn to.
+[brute.heal]
+Ăn đá. Ngon. Khỏe.
+Ngủ một chút. Xong. Đập tiếp.
+Lá cây mọc lại. Ta lớn lại.
+[brute.block]
+Không đau. Ta cứng.
+Bộp. Không có gì.
+Ha. Ngươi đánh đá.
+[brute.skill]
+Ta dùng {skill}. Ta mạnh.
+{skill}! GRÀO!
+Ta lăn! Tránh ra!
+Ta phun lửa! À... khói thôi.
+[brute.item]
+Cục này ngon. Ta ăn.
+Đồ này... làm gì? Ta dùng thử.
+Ta nhai. Ta khỏe.
+[brute.win]
+Ta thắng. Ta ngủ đây.
+GRÀO! Ta là nhất rừng!
+Ngươi nằm. Ta đứng. Ta thắng.
+Xong. Giờ ăn.
+Ha ha. Ta to. Ta thắng.
+Đừng quay lại. Ta cáu lắm.
+[brute.lose]
+Ta... ngã...
+Grừ... ngươi nhỏ mà mạnh...
+Ta về núi. Ngủ.
+Không vui. Ta buồn.
+Đất ơi... ta nằm đây...

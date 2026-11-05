@@ -487,6 +487,7 @@ public class cz
             this.k = true;
             du localdu = new du("Thông tin", "Bấm tiếp tục để chơi tiếp", new String[]{"Tiếp tục"}, new int[]{1}, 1);
             localdu.a(this);
+            PortUi.resumeDialog = localdu; // PORT-UI
             a(localdu, false);
         }
     }

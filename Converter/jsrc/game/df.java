@@ -35,6 +35,29 @@ private int I;
 private int J;
 private dq K;
 
+/** PORT-UI: 4 the intro scroll, 1 the ending scroll, -1 none */
+public int portStory()
+        {
+        if ((this.c == 3) || (this.c == 0)) {
+            return this.c == 3 ? 4 : 1; // the picture opening before the text
+        }
+        return (this.y != null) && !this.y.a() && ((this.c == 4) || (this.c == 1)) ? this.c : -1;
+        }
+
+/** PORT-UI: while the picture opens, its open part inside the picture (x, y, w, h); null once open */
+public int[] portStoryOpening()
+        {
+        if ((this.c != 3) && (this.c != 0)) {
+            return null;
+        }
+        return new int[] {this.C.a - this.A.a, this.C.b - this.A.b, this.C.c, this.C.d};
+        }
+
+public float portStoryProgress()
+        {
+        return this.y == null ? 0f : this.y.portProgress();
+        }
+
 public df(boolean paramBoolean)
         {
         a(this);

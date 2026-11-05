@@ -1,0 +1,1101 @@
+# banter en
+# ---------------------------------------------------------------
+# hero_fire: cocky, loud, competitive, gamer energy
+# ---------------------------------------------------------------
+[hero_fire.start]
+LET'S GOOO! Who's ready to get cooked?
+{enemy}? Never heard of you. Bet nobody has.
+Warming up. Literally. I'm on fire.
+Speedrun time. Any% {enemy} deletion.
+I've been waiting ALL DAY for this!
+Lock in. Lock IN. Okay, I'm locked in.
+[hero_fire.taunt]
+Skill issue. Massive skill issue.
+Is that your best? Asking for a friend. The friend is me.
+You fight like you're on a lag spike.
+Bro is playing on easy mode and still losing.
+I'm not even trying. Okay, I'm trying a little.
+Ratio + L + you're getting toasted.
+Hot take: you're about to lose.
+Spicy, isn't it? That's me. I'm the spice.
+[hero_fire.combo]
+COMBO! Did you SEE that?!
+Clip it! Somebody clip that!
+That's a highlight reel right there!
+Absolutely cooking. Chef's kiss.
+Flawless. Frame-perfect. I'm a legend.
+[hero_fire.hurt]
+Ow! Okay, that one was lucky!
+Hey! I wasn't ready!
+That didn't hurt. That totally hurt.
+Lag! That was lag!
+Rude! I'm telling everyone!
+You'll pay for that. With interest!
+[hero_fire.low]
+This is fine. Everything is fine. I'm on fire. Normally.
+Comeback arc loading...
+Low HP means main character moment, right?
+Nobody panic! Especially me!
+Clutch time. I was born for clutch time.
+[hero_fire.heal]
+Back to full! You blew your chance!
+Recharged and extra crispy!
+Healed up. Round two, let's go!
+[hero_fire.block]
+Blocked! Too slow!
+Nope! Shield says no!
+Denied! Get that weak stuff out of here!
+[hero_fire.skill]
+{skill}! Feel the heat!
+Ultimate's up! {skill}, baby!
+Eat {skill}! No refunds!
+Watch and learn, kid!
+[hero_fire.item]
+Power-up acquired!
+Chug chug chug! Ah, refreshing.
+Pay-to-win? No, just smart shopping.
+You hit me? Cute. Chugging that right off.
+Full HP again! Bet that hurt your feelings.
+New armor! Go on, tickle me some more.
+Ginseng break. Feel free to keep missing.
+Dragon sword equipped. You should log off now.
+All that work, {enemy}, and I undo it in one gulp!
+Heal diff. Skill diff. Every kind of diff.
+[hero_fire.win]
+GG EZ! Well, mostly EZ.
+And THAT is how it's done!
+Winner winner, rice for dinner!
+Add that to my highlight reel!
+Undefeated! Well, today. Today counts.
+Too easy. Next! Who's next?!
+[hero_fire.lose]
+I demand a rematch! Best of seven!
+My hand slipped. Both hands. Twice.
+That was a warm-up. Doesn't count.
+Unbelievable. The controls were broken.
+Fine. FINE. I'll be back. Angrier.
+[hero_fire.revive]
+Respawned! Did you miss me?
+You can't keep a fire down!
+Plot armor activated! Let's go!
+
+# ---------------------------------------------------------------
+# hero_storm: cool, dry sarcasm, nerd, deadpan
+# ---------------------------------------------------------------
+[hero_storm.start]
+Oh good. Violence. My favorite hobby.
+I've calculated your odds. I'm sorry.
+Let's get this over with. I have scrolls to read.
+Fun fact: lightning is hotter than the sun. Hi.
+{enemy}. I read about you. It was a short read.
+Initiating battle protocol. Yay.
+[hero_storm.taunt]
+Wow. Incredible. Truly. Not really.
+Statistically, you should give up now.
+Your strategy is adorable.
+I've seen better footwork from a potted plant.
+Shocking. Not you. Me. I'm shocking.
+Please, continue. I'm taking notes on what not to do.
+You're like a math problem. Easy to solve.
+Bold move. Wrong, but bold.
+[hero_storm.combo]
+Chain reaction. As predicted.
+Science.
+And that's called physics.
+Calculated. Obviously.
+Peer-reviewed damage.
+[hero_storm.hurt]
+Ow. Noted.
+That was... unscientific.
+Hm. Recalibrating.
+I'll be filing a complaint.
+Variable not accounted for.
+Okay, that was a little rude.
+[hero_storm.low]
+This is suboptimal.
+My hypothesis is failing.
+Low HP. Mildly concerning. Very concerning.
+I'd like to formally panic now.
+Error 404: health not found.
+[hero_storm.heal]
+Systems restored.
+Patch installed. Bugs fixed.
+Back online. Unfortunately for you.
+[hero_storm.block]
+Blocked. Elementary.
+Shield worked. Shocking. Not literally.
+Did you think I wouldn't see that coming?
+[hero_storm.skill]
+Deploying {skill}. Stand back. Or don't.
+{skill}. Fully charged, like my sarcasm.
+Thunder time.
+Executing {skill}. Please hold still.
+[hero_storm.item]
+Supplemental resources engaged.
+Item used. Efficiently.
+This potion tastes like regret. Effective, though.
+Your last three hits have been reverted. Sorry.
+Damage dealt: some. Damage remaining: none.
+Armor on. Your odds just became a rounding error.
+Fun fact: this potion outlasts your combo.
+You call that a hit. The potion calls it a typo.
+Healing complete. Please resubmit your attack.
+Ginseng: cheaper than your effort. And more useful.
+[hero_storm.win]
+Victory. As my math predicted.
+Was that supposed to be hard?
+I'd say good game, but I value honesty.
+Experiment complete. Results: you lost.
+Q.E.D.
+Okay. Back to my scrolls.
+[hero_storm.lose]
+Interesting. I'll need more data.
+I was clearly running on low battery.
+Statistically, this was bound to happen once.
+Fine. I'll write a paper on how I lost.
+I blame the weather. I AM the weather.
+[hero_storm.revive]
+Rebooting. Please wait.
+Have you tried turning me off and on again? It worked.
+Back. Sadly for you, not dead.
+
+# ---------------------------------------------------------------
+# hero_water: chill, laid-back, gentle teasing, always hungry
+# ---------------------------------------------------------------
+[hero_water.start]
+Hey. Can we make this quick? I'm hungry.
+Chill. Just go with the flow, {enemy}.
+Ugh, fighting before lunch? Okay, fine.
+Good vibes only. And maybe some hitting.
+Whoever wins buys noodles. Deal?
+No stress. Water always finds a way.
+[hero_water.taunt]
+Relax, you're gonna pull something.
+You seem tense. Have you tried napping?
+Bro, breathe. In. Out. Get splashed.
+I'm thinking about dumplings. Still winning.
+You're trying so hard. That's cute.
+Easy, tiger. It's just a fight.
+Is it just me or does this battle smell like soup?
+Go with the flow. The flow is me hitting you.
+[hero_water.combo]
+Ooh, splashy. Nice.
+Whoa, wave pool!
+Didn't even get up for that one.
+Big wave, small effort. My favorite.
+Glub glub, you're done.
+[hero_water.hurt]
+Hey, not the face. Or the snacks.
+Ow. That's not chill.
+Okay, rude, but I forgive you.
+Ouch. My lunch felt that.
+Dude. Why?
+Splashback. Heh. I'm fine.
+[hero_water.low]
+I need a snack break. Like, now.
+Running on empty. Literally no rice left.
+Okay, getting a bit drippy over here.
+Can we pause? No? Okay.
+Low tide, man. Low tide.
+[hero_water.heal]
+Ahh, hydration. So good.
+Refreshed. Like a nap but faster.
+Okay, back to vibing.
+[hero_water.block]
+Nah, I'm good.
+Bounced off. Like water off a duck.
+Blocked. Didn't even spill my tea.
+[hero_water.skill]
+{skill}. Just let it flow.
+Here comes {skill}. Stay wet, friend.
+Okay, okay, I'll try a little. {skill}.
+Splash zone! Front row gets wet!
+[hero_water.item]
+Is this edible? Drinking it anyway.
+Mmm, tastes like mango. I hope.
+Snack and heal. Two birds, one bite.
+Ouch? Nah. Gulp. All better. Want a sip?
+Hang on, potion break. You do you.
+You worked so hard on that. I'll just drink it away.
+Armor's comfy. Hit me again, I might nap.
+Ginseng snack. Sorry, didn't bring enough to share.
+You hit, I sip. Nice little routine we got.
+My HP's back. Your effort, not so much.
+[hero_water.win]
+Nice. Now where's the food?
+Good game. You buy the noodles.
+That was chill. Thanks for coming.
+Winning makes me hungry. Everything does.
+Easy breezy. Let's eat.
+Don't be sad. Here, have a rice ball.
+[hero_water.lose]
+Eh, I wasn't feeling it. Low blood sugar.
+Wanna get food anyway?
+It's cool, it's cool. Totally cool. Ow.
+Lost, but I'm still well rested.
+Next time I'm eating first.
+[hero_water.revive]
+I'm up. Mostly. Five more minutes?
+Back, just like the tide.
+Woke up from my nap. Where were we?
+
+# ---------------------------------------------------------------
+# hero_phoenix: dramatic, theatrical, loves an audience
+# ---------------------------------------------------------------
+[hero_phoenix.start]
+Ladies and gentlemen! The show begins!
+Behold! Your doom arrives, fabulously!
+Lights! Flames! ACTION!
+{enemy}, you are merely a side character in my tale.
+Tonight's performance: your defeat, in three acts.
+Gasp, everyone! I have arrived!
+[hero_phoenix.taunt]
+Is that a battle or a rehearsal?
+Your acting is terrible, {enemy}.
+More passion! More drama! Less losing!
+The audience is yawning, darling.
+I've had better villains in my dreams.
+You're not even worthy of my good side.
+Oh, the tragedy. The tragedy of your aim.
+Someone fetch this fool a script!
+[hero_phoenix.combo]
+Magnificent! Encore! ENCORE!
+Standing ovation, please!
+Art. Pure art.
+And the crowd goes WILD!
+I would like to thank my talent.
+[hero_phoenix.hurt]
+Agh! The betrayal!
+How DARE you, in front of my fans!
+Ah! A dramatic wound! Perfect for the sequel!
+You've ruined my costume!
+Unhand me, cruel fate!
+Oh, the pain! The exquisite pain!
+[hero_phoenix.low]
+Is this... my final act?
+Tell my fans... I loved them!
+Darkness falls... but not the curtain!
+A tragic hero must suffer first!
+Fear not, audience! Plot twist incoming!
+[hero_phoenix.heal]
+I rise once more, glorious!
+Healed! The crowd sighs in relief!
+Restored, radiant, ridiculously good-looking.
+[hero_phoenix.block]
+Ha! Not on my stage!
+Blocked, with flair.
+Did you think the star would trip? Never!
+[hero_phoenix.skill]
+Witness... {skill}!
+Act three: {skill}! The finale!
+Spotlight on me! {skill}!
+Feathers! Fire! FABULOUS!
+[hero_phoenix.item]
+A potion, dramatically consumed!
+Intermission snack!
+Costume change! New armor, new me!
+You thought that was the finale? Act Two, darling!
+Wounds? Mere stage makeup! Wiped clean!
+Behold! A full recovery, live, no stunt double!
+New armor, new spotlight. You're back to extra.
+Every bruise you give me only grows my legend!
+I rise from the potion, as a phoenix should!
+Encore! Do try that hit again, {enemy}.
+[hero_phoenix.win]
+Bow. Bow. Bow again.
+Fin. Thank you, you've been wonderful.
+Another flawless performance!
+Five stars. From me. To me.
+Remember this day, {enemy}. I certainly will.
+Curtain call! Roses may be thrown now!
+[hero_phoenix.lose]
+A tragedy in five acts...
+The critics will be cruel...
+This is not my ending. Merely an intermission.
+Even legends need a sad chapter!
+I shall rise again. It's literally my thing.
+[hero_phoenix.revive]
+From the ashes, I RETURN!
+Did you think the phoenix would stay down? Darling.
+Rebirth! Gorgeous and on fire!
+
+# ---------------------------------------------------------------
+# hero_queen: confident, sassy, witty comebacks, queen vibes
+# ---------------------------------------------------------------
+[hero_queen.start]
+Bow down, {enemy}. The queen has arrived.
+Let's make this quick. My nails just dried.
+Oh honey, you really showed up? Brave.
+Main character entering the chat.
+Sit down. Front row. Watch a queen work.
+I came, I saw, I'm about to slay.
+[hero_queen.taunt]
+Is that your outfit or a cry for help?
+Sweetie, you're embarrassing yourself.
+And who invited you?
+It's giving... loser.
+Bless your heart, you're trying.
+Not you thinking you had a chance.
+I'd roast you, but you're already burnt.
+Cute attempt. Next.
+[hero_queen.combo]
+Slay. Obviously.
+Period.
+Did I stutter?
+That's what we call iconic.
+Served. Ate. Left no crumbs.
+[hero_queen.hurt]
+Excuse me?! Not the hair!
+Oh, you did NOT.
+Okay, now I'm annoyed.
+Rude. Noted. Revenge pending.
+You'll regret that, peasant.
+That's going in my diary.
+[hero_queen.low]
+A queen never panics. She... strategically worries.
+I'm fine. Queens are always fine.
+Don't you dare clap.
+Low HP, high standards.
+This is my villain origin story, sweetie.
+[hero_queen.heal]
+Glow-up complete.
+Back and better. As usual.
+Self-care is a battle strategy.
+[hero_queen.block]
+Talk to the shield.
+Blocked, babe.
+Nope. Not today.
+[hero_queen.skill]
+{skill}. Take notes.
+Lightning strikes queens, darling? No. Queens strike.
+{skill}! Bow while you still can!
+Watch me serve {skill}.
+[hero_queen.item]
+Accessorizing.
+New armor? Matches my eyes.
+Potion o'clock, darling.
+You hit me? Hold on, touching up my makeup.
+Full HP. Your effort? Returned to sender.
+New armor. Fits better than your strategy.
+Sip, sip. Was that supposed to hurt, sweetie?
+Ginseng for me, a reality check for you.
+Tired yet? I'm just getting refreshed.
+Healing's easy when you're this fabulous.
+[hero_queen.win]
+Kneel. I'll wait.
+Crown stays on. Always.
+That was too easy, and I barely tried.
+Thank you, thank you. Autographs later.
+Long live me.
+Bye, {enemy}. Don't let the gate hit you.
+[hero_queen.lose]
+I let you win. You're welcome.
+This never happened. Understood?
+Even queens have off days. Rarely.
+Fine. Enjoy it. It won't happen again.
+The crown slipped. Temporarily.
+[hero_queen.revive]
+Did you think a queen stays down?
+Back, and twice as fabulous.
+Revived, refreshed, and mildly furious.
+
+# ---------------------------------------------------------------
+# hero_dragon: noble, polite but cutting, a little vain
+# ---------------------------------------------------------------
+[hero_dragon.start]
+Greetings. I shall try not to embarrass you. Much.
+A pleasure, {enemy}. For you, mostly.
+Do mind the scales. They're freshly polished.
+Royal blood versus... whatever you have.
+Shall we? I do have a dinner with the Sea King.
+I accept your challenge, though I pity it.
+[hero_dragon.taunt]
+How quaint. You think you're dangerous.
+Your form is... we'll call it creative.
+I'd correct your technique, but where to begin?
+My grandfather fought better. He was napping.
+With respect, you're bad at this.
+Do you need a moment? Take several.
+Remarkable. Remarkably poor.
+Perhaps fighting isn't your calling. Try fishing?
+[hero_dragon.combo]
+Elegance itself.
+Rather splendid, if I say so. And I do.
+The sea bows to me. So should you.
+Effortless. As breeding demands.
+A royal flush. Of damage.
+[hero_dragon.hurt]
+How uncouth.
+You scratched the scales. Unforgivable.
+I'll overlook that. Once.
+Ah. That was... impolite.
+My robes! Have you no manners?
+Do that again and I'll be cross.
+[hero_dragon.low]
+This is beneath my dignity.
+A momentary setback for a noble line.
+One does not panic. One... reconsiders.
+Grandfather would be most disappointed.
+I'm merely letting you feel important.
+[hero_dragon.heal]
+Restored, as befits royalty.
+Ah, much better. Shall we continue?
+The tide returns. As do I.
+[hero_dragon.block]
+I think not.
+Denied, politely.
+You'll need far better than that.
+[hero_dragon.skill]
+Behold {skill}, gift of the North Sea.
+{skill}. Do try to survive it.
+The Dragon King's blessing: {skill}!
+Allow me to demonstrate proper form.
+[hero_dragon.item]
+A refined tonic for a refined warrior.
+Armor, tailored to my splendor.
+One must keep up appearances.
+A scratch? How quaint. Already gone.
+This tonic costs more than your whole kingdom.
+The Dragon Sword. Do try to kneel gracefully.
+Your best effort, erased with one sip. Pity.
+Royal ginseng. You may admire it from there.
+My armor thanks you for the light dusting.
+Such persistence. Such futility. Do carry on.
+[hero_dragon.win]
+Well fought. Well, fought.
+Thank you for the lesson. For you, I mean.
+As expected of royal blood.
+Do send my regards to your pride.
+Victory suits me. Most things do.
+You may tell your friends you lasted a while.
+[hero_dragon.lose]
+I... see. How unexpected.
+I shall pretend this never occurred.
+Please don't tell the Sea King.
+A strategic retreat. Very noble.
+Congratulations. I suppose.
+[hero_dragon.revive]
+A dragon does not stay down.
+Risen, refreshed, and freshly offended.
+Back from the deep. Shall we resume?
+
+# ---------------------------------------------------------------
+# ally: loyal generals, honorable, warm, competitive
+# ---------------------------------------------------------------
+[ally.start]
+Sparring time! Don't hold back, friend!
+Loser polishes everyone's armor. Deal?
+Let's see what you've learned, {enemy}!
+Friends off the field, rivals on it!
+Ready? I've been training. A lot. Ask anyone.
+For Hoa Lu, and for bragging rights!
+[ally.taunt]
+Come on, my grandma swings harder!
+You call that a strike? I call it a tickle!
+Keep your guard up, buddy!
+I've seen you do better. Yesterday, actually.
+Too slow! Lord Dinh would laugh!
+Pick up the pace, I'm getting bored!
+Is that all? I'm barely sweating!
+Remember: loser does the dishes!
+[ally.combo]
+Hah! That one's going in the camp stories!
+Boom! Felt that one, didn't you?
+See? Training pays off!
+That's how a general does it!
+Ha! Still got it!
+[ally.hurt]
+Oof! Good hit, I'll give you that!
+Hey, easy! We're on the same side!
+Okay, you've been practicing!
+Ah! Lucky shot!
+Nice one! Now I'm motivated!
+Ow! Respect. But ow.
+[ally.low]
+Getting rough! But I'm not quitting!
+Okay, okay, you're getting good!
+I've got one more in me! Maybe two!
+Don't go easy on me now!
+Whew! Remind me why we do this?
+[ally.heal]
+Back on my feet! Again!
+Patched up! Let's keep going!
+A good soldier always recovers!
+[ally.block]
+Ha! Saw that coming a mile away!
+Shield up, friend!
+Nice try! Not today!
+[ally.skill]
+My special move: {skill}!
+Try blocking {skill}!
+Here comes the big one!
+Watch this, I've been saving it!
+[ally.item]
+Quick drink! Don't tell the quartermaster!
+Armor up! Fair's fair!
+Little help from the supply wagon!
+[ally.win]
+Good match! Drinks are on you!
+Ha! Your turn to polish the armor!
+Well fought, brother! Again tomorrow?
+That's one for me! Keep training!
+Don't sulk, you nearly had me!
+Victory! Now, help me up, my knees hurt.
+[ally.lose]
+Ha! You got me! Well fought!
+Okay, you win this time. Rematch soon!
+I'll be telling everyone I let you win.
+Strong as ever! I'm proud of you!
+Fine, I'll polish the armor. Again.
+
+# ---------------------------------------------------------------
+# mentor: Luu Co, dry wit, lectures, proud of his student
+# ---------------------------------------------------------------
+[mentor.start]
+Class is in session.
+Let us see if you were listening, {enemy}.
+Today's lesson: humility. Mine to teach.
+I've prepared a pop quiz. It hurts.
+Remember the basics. You'll need them.
+Bow first. Manners before bruises.
+[mentor.taunt]
+Wrong. Try again.
+Did you skip yesterday's lesson?
+Your stance is a disaster. As always.
+I said parry, not panic.
+A scholar thinks first. You clearly don't.
+Patience, young one. Or don't, and lose.
+This will be on the exam.
+I'm grading you. It's not going well.
+[mentor.combo]
+And that, children, is strategy.
+Observe. Learn. Weep.
+Textbook. Literally. I wrote it.
+Lesson delivered.
+That was chapter seven. Read it.
+[mentor.hurt]
+Hm. Good. You were paying attention.
+Ow. Partial credit.
+Not bad. Don't let it go to your head.
+My back. My poor old back.
+Interesting. Unexpected. Painful.
+I taught you that. Regrettably.
+[mentor.low]
+The student surpasses the teacher? Not yet.
+Hm. Perhaps I should retire.
+I'm too old for this. Still winning, though.
+A wise man knows when to... keep fighting.
+This is a teaching moment. For me.
+[mentor.heal]
+A sip of tea, and we continue.
+Wisdom heals all. So does medicine.
+Refreshed. Back to the lecture.
+[mentor.block]
+Predictable.
+I saw that three moves ago.
+Lesson one: never telegraph.
+[mentor.skill]
+Pay attention. {skill}.
+An advanced technique: {skill}. Take notes.
+This is why you study, child.
+Behold the wisdom of the ancients.
+[mentor.item]
+Even scholars need supplies.
+Ginseng. Never leave home without it.
+Preparation is half the victory.
+[mentor.win]
+Class dismissed.
+Homework: practice. A lot.
+You've improved. Slightly. I'm proud. Slightly.
+Grade: C minus. See me after class.
+Come back when you've read the scrolls.
+Good effort. Bad results. Keep going.
+[mentor.lose]
+Well. The student has become the teacher.
+I let you win. Lesson: confidence.
+Hm. I'm proud. Don't tell anyone.
+Finally. My work here is done.
+You passed. Now go away, I need a nap.
+
+# ---------------------------------------------------------------
+# warlord: arrogant, pompous, sore losers, grand speeches
+# ---------------------------------------------------------------
+[warlord.start]
+Kneel before the rightful ruler of this land!
+You dare challenge ME? The audacity!
+My banners stretch from here to... over there!
+I am the greatest of the twelve! Ask anyone!
+Bring me {enemy}'s head! Or at least their hat!
+Witness the might of a TRUE warlord!
+[warlord.taunt]
+Pathetic! My servants fight better!
+I've conquered villages bigger than your ego!
+Surrender now, and I'll only take your lunch!
+Do you know who I AM?
+My mustache alone outranks you!
+You'll make a fine statue. A small one.
+History will forget you by Tuesday!
+I have twelve titles! What do you have?
+[warlord.combo]
+Behold! The power of rule!
+That is why they call me Lord!
+Tremble! TREMBLE!
+Ha! Write that in the chronicles!
+Bow, peasant! BOW!
+[warlord.hurt]
+How DARE you strike nobility!
+Guards! GUARDS! Where are my guards?!
+That was an unlicensed hit!
+My royal robes! They cost three villages!
+You'll pay! I'll raise your taxes!
+Outrageous! I'm writing a decree about this!
+[warlord.low]
+Th-this is a tactical pause!
+I'm not losing! I'm... redistributing my health!
+Someone fetch my emergency banners!
+Impossible! The prophecy said I'd win!
+I'll give you half my land! A quarter!
+[warlord.heal]
+The gods favor the mighty!
+Ha! My doctors are the best gold can buy!
+Restored! My reign continues!
+[warlord.block]
+My shield is forged from pure arrogance!
+You cannot touch royalty!
+Futile! Utterly futile!
+[warlord.skill]
+Feel my ancestral technique: {skill}!
+{skill}! Patented by me!
+Behold the forbidden art of my clan!
+Kneel before {skill}!
+[warlord.item]
+Bring me my finest potion! The golden one!
+Armor! My lucky armor!
+Only the best for a lord!
+[warlord.win]
+As I foretold! I am unstoppable!
+Carve my name in stone! Big letters!
+Another victory for the greatest warlord!
+Grovel, and I may let you keep your sandals!
+Write it down, scribes! Every glorious detail!
+Bow to your new master, {enemy}!
+[warlord.lose]
+This... this is not over! Lawyers! I mean, guards!
+I was merely testing you! You passed! Leave!
+The sun was in my eyes! All twelve of them!
+I'll be back! With a bigger army! And a hat!
+Unfair! I demand a recount!
+
+# ---------------------------------------------------------------
+# lady: Duong Van Nga, elegant, sharp-tongued, unimpressed
+# ---------------------------------------------------------------
+[lady.start]
+Oh. It's you. How... expected.
+Do try to be interesting, {enemy}.
+I've dressed for a victory. Don't disappoint me.
+Let us be brief. I have a court to run.
+You may begin. I'll try not to yawn.
+I was told this would be entertaining.
+[lady.taunt]
+Is that a technique, or are you lost?
+Charming. In a tragic sort of way.
+My handmaidens have sharper wits.
+You swing like you write poetry. Badly.
+I've seen more grace in a falling vase.
+How brave of you. And how pointless.
+Are you finished? I'm getting old.
+Please. Even the palace cat is unimpressed.
+[lady.combo]
+Grace and steel, darling.
+That is how a lady fights.
+Elegant, wasn't it?
+Do try to keep up.
+Precision. Something you lack.
+[lady.hurt]
+You've wrinkled my sleeve.
+How very ill-mannered.
+I'll remember that.
+Barbaric. Simply barbaric.
+That was a mistake, dear.
+My hairpin! You'll pay for that.
+[lady.low]
+This is most unbecoming.
+I refuse to fall in this dress.
+A lady never shows weakness. She shows patience.
+Do not mistake my calm for defeat.
+How irritating. Truly.
+[lady.heal]
+Composure, restored.
+Much better. Now, where were we?
+A lady always recovers gracefully.
+[lady.block]
+Not even close.
+Was that meant for me?
+Denied. Elegantly.
+[lady.skill]
+Observe, {skill}.
+I rarely do this. Be honored. {skill}.
+{skill}. Do try to look impressed.
+A little something from the palace arts.
+[lady.item]
+A refined tonic.
+Silk armor. Practical and pretty.
+Excuse me while I freshen up.
+[lady.win]
+As expected.
+Thank you for the exercise.
+Do pick yourself up. You're blocking the view.
+Victory is a habit. Like good taste.
+You may leave now.
+That was almost a challenge. Almost.
+[lady.lose]
+How tiresome. I let my guard down.
+Enjoy this. It shan't happen twice.
+Very well. You've earned my attention.
+Hmph. Lucky. Very lucky.
+I shall pretend this was a dance lesson.
+
+# ---------------------------------------------------------------
+# soldier: complain about pay, food, the boss; scared but trying
+# ---------------------------------------------------------------
+[soldier.start]
+Do I get paid extra for this? No? Great.
+Sarge said this would be easy. Sarge lies.
+Okay, okay, I'm brave. I'm very brave.
+I signed up for the free lunch. Where's the lunch?
+Please be a weak one, please be a weak one...
+Third battle today. My mom thinks I'm a farmer.
+[soldier.taunt]
+Uh... surrender? Please? It'd help both of us.
+I'm only here for the pension.
+My boss is scarier than you. Way scarier.
+I'm doing my best! My best is not a lot!
+You don't scare me! Much. You scare me some.
+Can we wrap this up? My shift ends at sunset.
+The rice in camp is worse than your attacks.
+Hey, at least you get to go home after this!
+[soldier.combo]
+Whoa! I did that?! Did anyone see?!
+Promotion! I want a promotion!
+Ha! Wait till the guys hear this!
+I've been practicing! On a scarecrow!
+Lucky! I mean... skill!
+[soldier.hurt]
+Ow! This is not in my contract!
+Medic! Do we have a medic?!
+I want to go home!
+That's going to bruise. Everything bruises.
+Ow ow ow! Why am I here?!
+Sarge, I quit! Wait, he can't hear me.
+[soldier.low]
+I'm too young for this! I'm thirty-four!
+Tell my goat I loved her!
+Retreat? Can I retreat? Is that allowed?
+I should've been a fisherman like Dad said.
+Mommy...
+[soldier.heal]
+Phew. Okay. Still alive. Barely.
+That ration bar actually worked!
+Okay, I can do this. Maybe.
+[soldier.block]
+It worked?! The shield worked!
+Blocked! I'm a hero! A tiny hero!
+Ha! Cheap shield, good luck!
+[soldier.skill]
+I learned this from a scroll! {skill}!
+Here goes nothing! {skill}!
+My one trick! Don't laugh!
+Secret move! Please work, please work!
+[soldier.item]
+Using my emergency potion! It's the only one!
+Borrowed armor. Don't tell the quartermaster.
+This better be worth two days' pay!
+[soldier.win]
+I won?! I WON! Can I go home now?
+Wait till my mom hears about this!
+Now I can finally have lunch!
+Promotion time! Right? Right?!
+I'm a legend! A small, tired legend!
+Sarge, you seeing this?!
+[soldier.lose]
+I didn't sign up for this...
+Well. At least it's over.
+Wake me up when payday comes.
+I quit. I'm going to be a farmer.
+That's fair. I'm bad at this.
+
+# ---------------------------------------------------------------
+# bandit: street slang, shakedowns, cowardly when losing
+# ---------------------------------------------------------------
+[bandit.start]
+Yo yo yo! This is MY mountain, pal!
+Toll road! Pay up or get whacked!
+Nice shoes. They're mine now.
+Ayo, {enemy}! Empty your pockets!
+Fresh customer, boys! Oh wait, I'm alone.
+Your money or your... also your money.
+[bandit.taunt]
+You lost, buddy? This ain't your turf.
+Hand over the loot, nice and slow!
+I've robbed tougher grandmas than you!
+What's in the bag? Doesn't matter, it's mine.
+Hey, I take payment in rice, too!
+You fight like a tourist!
+Don't make me call my cousin! He's huge!
+This is a stick-up! I have a stick!
+[bandit.combo]
+Ka-ching! That's the sound of me winning!
+Boom! Mountain style!
+Get robbed! Get ROBBED!
+Ha! Street rules, baby!
+Now THAT'S a shakedown!
+[bandit.hurt]
+Ow! Hey, no fair!
+Yo, chill! I was kidding!
+Ouch! That's assault! Wait...
+You'll pay for that! Literally, pay!
+Watch the face, watch the face!
+Ow! I'm telling my cousin!
+[bandit.low]
+Okay, okay, new deal: you keep your money!
+Can we talk about this like gentlemen?
+I'm just a misunderstood businessman!
+I got a family! Okay, I got a goat!
+Truce? Truce! I'll give you a discount!
+[bandit.heal]
+Stolen potion! Still works!
+Back in business, baby!
+Ha! Bandits always bounce back!
+[bandit.block]
+Nope! Got a stolen shield!
+Ha! Missed me!
+Can't touch this, pal!
+[bandit.skill]
+Secret mountain technique! {skill}!
+Ooh, here comes {skill}! Hope you're insured!
+Dirty trick time!
+My cousin taught me this! {skill}!
+[bandit.item]
+Stole this one fair and square!
+Heh, from the last guy's pocket!
+Five-finger discount potion!
+[bandit.win]
+Thanks for the donation, sucker!
+Pleasure doing business!
+Mountain's open, tolls are up! Next!
+Easy money! Easiest money!
+Tell your friends! Actually, don't.
+Now, about those shoes...
+[bandit.lose]
+I'm out! Keep the change!
+Okay, you win! I was never here!
+Run! Run away! Strategic running!
+I'll get you next time! From a distance!
+This is why I should've gone legit...
+
+# ---------------------------------------------------------------
+# critter: bugs, bees, toads, spiders: tiny ego, petty
+# ---------------------------------------------------------------
+[critter.start]
+Bzzzz! Fear me! I am FEARSOME!
+Ribbit. You're in my pond now.
+I may be small, but my anger is HUGE!
+Skitter skitter! Prepare to be bugged!
+This leaf is MINE! Fight me!
+Bzz! You stepped on my cousin! Revenge!
+[critter.taunt]
+Bzz bzz! Can't catch me!
+Ribbit! You're ugly! Ribbit!
+I have eight eyes and they're all judging you!
+Tiny bite! Big ouch! Bzzzz!
+Squish me? HA! Try it!
+You're big but you're slow! Bzz!
+I'm gonna buzz in your ear all night!
+Croak croak, you're broke!
+[critter.combo]
+BZZZZZZ! Mega sting!
+Croak! Mighty tongue attack!
+Skitter-splat! Got you!
+Swarm power! Wait, I'm just one bug!
+Bzzz! I'm unstoppable! Tiny but unstoppable!
+[critter.hurt]
+Bzz! Ow!
+Squeak! Not the antennae!
+Ribb-OW!
+Hey! I'm an endangered species! Probably!
+My wing! My precious wing!
+Croak... that hurt...
+[critter.low]
+Bzz... bz... buzz?
+I'm too tiny to die!
+Help! Somebody call the hive!
+Ribbit... I see a light... is it a fly?
+My legs! All six of them!
+[critter.heal]
+Bzz! Nectar break! Ahh!
+Ribbit! Fresh dew! Good as new!
+Molted! New shell, new me!
+[critter.block]
+Hard shell! Ha!
+Bzz! Dodged!
+Hiding under a leaf! Can't see me!
+[critter.skill]
+Bzz! Ultimate sting: {skill}!
+Ribbit! Behold {skill}!
+Web of DOOM! Skitter!
+Tiny but mighty! {skill}!
+[critter.item]
+Found a crumb! Power-up!
+Sweet, sweet honey! Bzz!
+Leaf armor! Very fashionable!
+[critter.win]
+Bzz bzz! Victory dance!
+Ribbit! King of the pond!
+Who's squishable NOW?
+Told you! Small but FEARSOME!
+Croak! Everyone saw that! Right?
+I'm telling the whole hive!
+[critter.lose]
+Bzz... I'll tell my queen...
+Ribbit... back to the pond...
+I'll be back! With six hundred cousins!
+Squished... again...
+Bzzzzz... *flies away dramatically*
+
+# ---------------------------------------------------------------
+# trickster: fox/cat/snake/monkey/rabbit spirits: mischievous
+# ---------------------------------------------------------------
+[trickster.start]
+Hehehe! A new toy to play with!
+Peekaboo, {enemy}! Guess where I am!
+Ooh, you look gullible. Perfect!
+Let's play a game! I cheat!
+Meow. Or am I a fox? Or a snake? Hehe!
+Tag, you're it! Forever!
+[trickster.taunt]
+Over here! No, over HERE! Hehe!
+Missed me, missed me, now you gotta...
+Is your shoe untied? Made you look!
+Nyeh nyeh nyeh!
+Too slow! Like a turtle! A sleepy turtle!
+I swapped your potion with pond water. Maybe.
+Behind you! Hehe, just kidding. Or am I?
+You're so fun to annoy!
+[trickster.combo]
+Surprise! Hehehe!
+Tricked you! Tricked you good!
+Boop! And boop! And BOOP!
+Ta-da! Magic!
+Oopsie! Did that hurt? Hehe!
+[trickster.hurt]
+Eek! No fair!
+Hey! That's MY trick!
+Owie! Not the tail!
+Hmph! I let you do that!
+Hiss! Rude!
+Meow-ch!
+[trickster.low]
+Uh oh, the joke's on me...
+Okay, fun's over! Maybe! Hehe... heh.
+Time to vanish! Poof! ...why didn't that work?
+I'm not losing! It's a long con!
+Wait wait wait, truce? Pinky promise?
+[trickster.heal]
+Hehe, stole some health!
+Good as new! Better than new!
+Nine lives, baby!
+[trickster.block]
+Hehe, that was a decoy!
+Nope! Wrong me!
+Poof! Missed!
+[trickster.skill]
+Abracadabra! {skill}!
+Wanna see a trick? {skill}!
+Illusion time! Which one's real?
+Hehehe, {skill}! Didn't see that coming!
+[trickster.item]
+Borrowed this from your bag! Hehe!
+Snack time! Your snack!
+Disguise armor! Who am I?
+[trickster.win]
+Hehehe! Fooled you!
+Game over! I win! I always win!
+Best playdate ever!
+Thanks for being so easy!
+Same time tomorrow? Hehe!
+I'm keeping your sandals as a prize!
+[trickster.lose]
+Hmph! Not fun anymore!
+I'll get you back! When you least expect it!
+Poof! Bye! ...it worked this time!
+You only won because I let you! Hehe... no.
+Fine! I'm taking my tail and going home!
+
+# ---------------------------------------------------------------
+# brute: stone/tree demons, lion, boar, young dragon: big, grumpy
+# ---------------------------------------------------------------
+[brute.start]
+GRRR. You. Small. Me. SMASH.
+Who wake me up? You wake me up?
+ROAR. That mean hello. And bye.
+{me} hungry. {enemy} look crunchy.
+Stomp stomp. Here me come.
+Me no like visitors.
+[brute.taunt]
+You tiny. Like pebble.
+Hmph. Me not even try.
+You buzz like fly. Me swat fly.
+Ugh. Talk too much. Hit more.
+Me bigger. Me win. Simple.
+You run? Me walk. Me still catch.
+Why you so small? Eat more rock.
+GRAAH. Go away.
+[brute.combo]
+BIG SMASH!
+CRUNCH.
+Ha. Ha. Flat now.
+ROOOAAR!
+Me strong. Very strong.
+[brute.hurt]
+OW. Why you do that?
+Hmph. Little ouch.
+GRR. Now me angry.
+Ow. Me remember you.
+Hey. That my face.
+Ugh. Rude small thing.
+[brute.low]
+Ugh... me tired...
+Me need... nap...
+Hurt. Big hurt.
+No. Me not lose. Me just... lie down.
+GRR... still... strong...
+[brute.heal]
+Mmm. Good.
+Me fixed. Again smash.
+Moss grow back. Me happy.
+[brute.block]
+Bonk. No hurt.
+Me rock. You hit rock. Ha.
+Thick skin. Too thick.
+[brute.skill]
+{skill}. SMASH.
+Me do big move. {skill}.
+GROUND SHAKE!
+Earth go BOOM!
+[brute.item]
+Crunch crunch. Good potion.
+Me wear tree. Now armor.
+Snack. Me like snack.
+[brute.win]
+Me win. Now nap.
+Told you. Me big.
+GRAAAH! Victory!
+Small thing flat. Good.
+Me happy now. Go home.
+Easy. Like eat leaf.
+[brute.lose]
+Huh? Me... lose?
+Ugh. Me go sleep. Long sleep.
+You small... but strong. Hmph.
+No fair. Me hungry.
+Grr... next time... me bigger.

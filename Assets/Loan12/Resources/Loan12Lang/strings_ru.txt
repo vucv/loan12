@@ -1,0 +1,612 @@
+# vi	ru
+# ---- common
+Đóng	Закрыть
+ĐÓNG	ЗАКРЫТЬ
+Có	Да
+Không	Нет
+Hủy	Отмена
+Xong	Готово
+Dừng	Стоп
+Thoát	Выйти
+THOÁT	ВЫЙТИ
+Ở lại	Остаться
+Ở LẠI	ОСТАТЬСЯ
+Để sau	Позже
+Bỏ qua	Пропустить
+BỎ QUA	ПРОПУСК
+TIẾP TỤC	ДАЛЕЕ
+Chạm để tiếp tục	Нажмите, чтобы продолжить
+Chạm để bỏ qua	Нажмите, чтобы пропустить
+Chạm để xem	Нажмите, чтобы открыть
+Chạm ra ngoài để đóng	Нажмите вне окна, чтобы закрыть
+chạm để tiếp	нажмите, чтобы продолжить
+BẬT	ВКЛ
+TẮT	ВЫКЛ
+MỚI	НОВОЕ
+VIP	VIP
+OK	OK
+Tiếng Việt	Tiếng Việt
+English	English
+Ngôn ngữ	Язык
+NGÔN NGỮ	ЯЗЫК
+vàng	золото
+VÀNG	ЗОЛОТО
+{0} vàng	{0} зол.
++{0} vàng	+{0} зол.
+{0} máu	{0} HP
++{0} máu	+{0} HP
+-{0} máu	-{0} HP
++{0} năng lượng	+{0} энергии
+{0} KN	{0} опыта
++{0} KN	+{0} опыта
++{0} tấn công	+{0} к атаке
+{0} cái	{0} шт.
+Có {0}	Есть {0}
+Còn {0}	Осталось {0}
+Cần {0}	Нужно {0}
+Đang có {0}	Есть {0}
+Đang có	Есть
+Chưa có	Нет в наличии
+Đang có: {0}	В наличии: {0}
+Cấp {0}	Ур. {0}
+cấp {0}	ур. {0}
+Lên cấp {0}!	Новый уровень! Ур. {0}
+Hệ {0}	{0}
+HỆ {0}	{0}
+Hệ {0} · Cấp {1}	{0} · Ур. {1}
+Hỏa	Огонь
+Lôi	Молния
+Thủy	Вода
+HỎA	ОГОНЬ
+LÔI	МОЛНИЯ
+THỦY	ВОДА
+Máu	HP
+Máu {0} · Tấn công {1}	HP {0} · Атака {1}
+Tấn công	Атака
+Kinh nghiệm	Опыт
+Ô {0}	Ячейка {0}
+Mức {0}	Ступень {0}
+MỨC {0}	СТУПЕНЬ {0}
+{0} phút trước	{0} мин. назад
+{0} ngày trước	{0} дн. назад
+vừa xong	только что
+hôm nay	сегодня
+hôm qua	вчера
+???	???
+# ---- items, skills, heroes
+Long Thần Kiếm	Меч Дракона
+Nhân Sâm	Женьшень
+Ngân Lượng	Серебряные ляны
+Quỷ Diện Giáp	Доспех Демона
+Bình Thuốc	Зелье
+Ngọc Ấn	Нефритовая печать
+Bình Hồi Mạng	Фляга жизни
+Long Thần Kiếm x3	Меч Дракона x3
+Nhân Sâm x3	Женьшень x3
+{0} x{1}	{0} x{1}
+Nhân đôi sức mạnh tấn công trong một lượt.	Удваивает вашу атаку на один ход.
+Nhân đôi lượng máu cơ bản của võ tướng. Chỉ sử dụng một lần trong một trận đánh.	Удваивает базовое HP героя. Один раз за бой.
+Nhận thêm được 1000 vàng.	Дает 1000 золота сверху.
+Ngăn cản 3/4 lực tấn công của kẻ thù trong một lượt	Блокирует 3/4 атаки врага на один ход
+Hồi phục ngay lập tức 10% sinh lực. Chỉ sử dụng một lần trong một lượt.	Мгновенно восстанавливает 10% HP. Один раз за ход.
+Được ưu tiên đi trước nếu sở hữu ngọc ấn. Tự động kích hoạt khi bắt đầu trận đánh.	С Нефритовой печатью вы ходите первым. Срабатывает сама в начале боя.
+{0} (+{1} máu)	{0} (+{1} HP)
+Hồi đầy mạng chơi ({0} mạng). Dùng ngoài trận, ở túi đồ hoặc khi hết mạng.	Восполняет жизни ({0} жизн.). Вне боя: из сумки или когда жизни кончились.
+Dùng trong 1 lượt	Действует 1 ход
+1 lần mỗi trận	1 раз за бой
+1 lần mỗi lượt	1 раз за ход
+Dùng ngoài trận	Вне боя
+Tự dùng khi bắt đầu trận	Сама в начале боя
+Tấn công lượt đó: {0} thành {1}	Атака на этот ход: {0} → {1}
+Máu trận đó: {0} thành {1}	HP на этот бой: {0} → {1}
+Chặn 3/4 sát thương của lượt địch	Блокирует 3/4 урона за ход врага
+Với máu {0} của bạn: +{1} máu	При ваших {0} HP: +{1} HP
+Bạn luôn được đi trước	Вы всегда ходите первым
+Quả Cầu Lửa	Огненный шар
+Mưa Thiên Thạch	Метеоритный дождь
+Lửa Địa Ngục	Адское пламя
+Chuỗi Sét	Цепная молния
+Khiên Sét	Щит молний
+Sấm Sét	Громовой удар
+Mũi Tên Băng	Ледяная стрела
+Cam Lộ Thủy	Целебная роса
+Băng Phong	Ледяная буря
+Gây sát thương kẻ thù, lực sát thương bằng {0}, phá hủy tức thì 1 vùng diện tích 3x3ô trên bàn cờ.	Наносит врагу {0} урона и мгновенно уничтожает одну область 3x3 на поле.
+Gây sát thương kẻ thù, lực sát thương bằng {0}, phá hủy tức thì từ 3 đến 5 vùng diện tích 2x2ô trên bàn cờ.	Наносит врагу {0} урона и мгновенно уничтожает от 3 до 5 областей 2x2 на поле.
+Gây sát thương kẻ thù, lực sát thương bằng {0}, phá hủy tức thì 2 vùng diện tích 4x4ô trên bàn cờ.	Наносит врагу {0} урона и мгновенно уничтожает две области 4x4 на поле.
+Gây sát thương kẻ thù, lực sát thương bằng {0}, phá hủy tức thì từ 4 đến 8 ô trên bàn cờ.	Наносит врагу {0} урона и мгновенно уничтожает от 4 до 8 клеток на поле.
+Hóa giải tất cả các đòn tấn công của kẻ thù. Tác dụng trong 6 lượt.	Отражает все атаки врага. Действует 6 ходов.
+Gây sát thương kẻ thù, lực sát thương bằng {0}, phá hủy tức thì từ 3 đến 6 vùng diện tích 3x3ô trên bàn cờ.	Наносит врагу {0} урона и мгновенно уничтожает от 3 до 6 областей 3x3 на поле.
+Gây sát thương kẻ thù, lực sát thương bằng {0}, triệt tiêu một lượng nhỏ năng lượng của kẻ thù.	Наносит врагу {0} урона и отнимает у него немного энергии.
+Phục hồi 20% sinh lực cho bản thân. Phá hủy tất cả trái tim trên bàn cờ và hấp thụ sinh lực của trái tim bị hủy.	Восстанавливает 20% вашего HP. Уничтожает все сердца на поле и поглощает их HP.
+Đóng băng kẻ thù trong 2 lượt, gây sát thương kẻ thù, lực sát thương bằng {0}, triệt tiêu một lượng lớn năng lượng của kẻ thù.	Замораживает врага на 2 хода, наносит {0} урона и отнимает много энергии.
+Một hào kiệt mang trong người sức mạnh hủy diệt của Lửa.	Герой, несущий в себе разрушительную силу Огня.
+Đại đệ tử của Lôi Thần, có khả năng điều khiển sấm sét để tấn công kẻ thù hoặc bảo vệ bản thân.	Первый ученик Бога Грома: обрушивает молнии на врагов или защищается ими.
+Mang trong người dòng máu của Thủy Thần, có thể tự hồi phục tổn thương và đóng băng kẻ thù.	В его жилах кровь Бога Воды: лечит свои раны и замораживает врагов.
+Đệ tử của Hỏa Phụng Tiên, sở hữu sức mạnh hủy diệt của Lửa.	Ученик Бессмертного Огненного Феникса, владеющий разрушительной силой Огня.
+Nữ hào kiệt xuất chúng, có quyền năng gọi sấm sét để tấn công kẻ thù hoặc tự bảo vệ bản thân.	Выдающаяся героиня, призывающая молнии, чтобы разить врагов или защищаться.
+Hậu duệ của Bắc Hải Long Vương, có thể tự trị thương hoặc làm ngưng tụ hơi nước để đóng băng kẻ thù.	Потомок Короля-Дракона Северного моря: лечит раны или сгущает туман, чтобы заморозить врага.
+# ---- bag
+Sát thương diện rộng mạnh nhất: Lửa Địa Ngục phá 2 vùng 4x4	Сильнейший урон по площади: Адское пламя сносит две области 4x4
+Phá nhiều ô một lúc, dễ tạo chuỗi nổ liên hoàn	Убирает много клеток разом, легко запускает цепные взрывы
+Hạ gục nhanh, hợp với lối đánh tấn công	Быстрые нокауты, создан для агрессивной игры
+Khiên Sét hóa giải mọi đòn tấn công trong 6 lượt	Щит молний блокирует все атаки на 6 ходов
+Chuỗi Sét chỉ cần 1 ô năng lượng, phá ô rải rác	Цепной молнии хватает 1 энергии, бьет по разбросанным клеткам
+Cân bằng giữa công và thủ, an toàn khi gặp địch mạnh	Баланс атаки и защиты, надежен против сильных врагов
+Tự hồi máu: Cam Lộ Thủy hồi 20% và hút máu từ trái tim	Самолечение: Целебная роса лечит 20% и вытягивает HP из сердец
+Đóng băng địch 2 lượt, làm mất năng lượng của địch	Замораживает врага на 2 хода и отнимает его энергию
+Bền bỉ nhất, hợp đánh lâu	Самый живучий, создан для долгих боев
+Gom đủ 3 ô năng lượng rồi tung Lửa Địa Ngục khi địch còn nhiều máu	Накопите 3 энергии и бейте Адским пламенем, пока у врага много HP
+Dùng Quả Cầu Lửa dọn chỗ bàn cờ đang bí nước	Огненный шар расчистит застрявший участок поля
+Không tự hồi máu được: mang vật phẩm hồi máu khi đánh trùm	Не лечится сам: берите лечебные предметы против боссов
+Bật Khiên Sét khi địch sắp đầy năng lượng để chặn tuyệt chiêu	Ставьте Щит молний, когда враг вот-вот наберет энергию
+Trong 6 lượt có khiên, tấn công dồn dập không cần phòng thủ	Пока держится щит, атакуйте без остановки
+Để dành Sấm Sét để kết liễu	Приберегите Громовой удар для добивания
+Đợi bàn cờ có nhiều trái tim rồi mới dùng Cam Lộ Thủy	Дождитесь, когда на поле будет много сердец, и тогда жмите Целебную росу
+Tung Băng Phong khi địch sắp ra chiêu, rồi tranh thủ 2 lượt bị băng	Бросьте Ледяную бурю прямо перед умением врага и используйте 2 хода заморозки
+Mũi Tên Băng làm địch chậm tích năng lượng	Ледяная стрела замедляет набор энергии врага
+ƯU ĐIỂM	СИЛЬНЫЕ СТОРОНЫ
+MẸO KHI CHƠI	СОВЕТЫ
+Thông tin nhân vật	О герое
+Kinh nghiệm {0} / {1} (lên cấp {2})	Опыт {0} / {1} (до ур. {2})
+TUYỆT CHIÊU	УМЕНИЯ
+{0} ô năng lượng	{0} энергии
+VẬT PHẨM	ПРЕДМЕТЫ
+Dùng trong trận	Используются в бою
+Cửa hàng	Магазин
+mua thêm	купить еще
+Hết · chạm để mua	Нет · нажмите, чтобы купить
+chọn khi chuẩn bị trận	выбор перед боем
+Ngọc Ấn x{0}	Нефритовая печать x{0}
+hồi đầy mạng	полные жизни
+BẢO VẬT	РЕЛИКВИИ
+gốc {0} · sự kiện +{1}	база {0} · события +{1}
+Đã hồi đầy {0} mạng	Жизни восполнены до {0}
+Đã mua {0} {1} (-{2} vàng)	Куплено: {0} {1} (-{2} зол.)
+Chưa có Bình Hồi Mạng	Пока нет Фляги жизни
+Mạng đang đầy	Жизни полны
+DÙNG · hồi đầy mạng	ИСПОЛЬЗОВАТЬ · полные жизни
+MUA THÊM {0} · {1} vàng	КУПИТЬ ЕЩЕ {0} · {1} зол.
+Thiếu {0} vàng · nạp thêm	Не хватает {0} зол. · пополнить
+Hệ {0} · {1} ô năng lượng	{0} · {1} энергии
+# ---- battle
+Á! Đau quá...	Ай! Больно же...
+Hự! Ngươi khá lắm...	Ух! А ты неплох...
+Không xong rồi!	Дело плохо!
+Á! Ngươi khá lắm...	А! Совсем неплохо...
+Hự... lợi hại!	Ух... впечатляет!
+Đáng ghét!	Проклятье!
+Không lẽ ta thua ở đây sao...	Неужели я проиграю здесь...
+Ta... chưa chịu thua đâu!	Я... еще не сдался!
+Kẻ nào dám đến đây? Nạp mạng!	Кто посмел явиться сюда? Сразись со мной!
+Ngươi chạy đâu cho thoát!	Тебе не уйти!
+Để xem ngươi được mấy chiêu!	Посмотрим, на что ты способен!
+Khỏe lại rồi!	Снова в строю!
+Vẫn còn sức chiến đấu!	Я еще могу сражаться!
+Hừ! Chẳng nhằm nhò gì.	Хм! Пустяки.
+Đòn này chưa đủ đâu!	Этого мало!
+Ha ha! Biết lợi hại của ta chưa!	Ха-ха! Теперь ты знаешь мою силу!
+Thắng rồi!	Победа!
+Kẻ nào dám cản đường ta nữa?	Кто еще посмеет встать на моем пути?
+Ngươi còn non lắm!	Ты еще зелен!
+Về luyện thêm đi!	Иди потренируйся!
+Ha ha! Chỉ có vậy thôi sao?	Ха-ха! И это всё?
+Chờ đến lượt của bạn	Дождитесь своего хода
+Cần thêm {0} năng lượng	Нужно еще {0} энергии
+Đã hết, mua thêm ở màn chuẩn bị	Закончились, купите перед боем
+Lượt này đã dùng 1 vật phẩm	В этот ход предмет уже использован
+{0} mất {1} máu	{0} теряет {1} HP
+{0} hồi {1} máu	{0} лечит {1} HP
+{0} dùng {1}	{0} использует: {1}
+Nếm thử {0}!	Отведай: {0}!
+Quỷ Diện Giáp chặn 3/4 đòn	Доспех Демона блокирует 3/4
+Long Thần Kiếm: đánh x2	Меч Дракона: атака x2
+{0} đã chiến thắng!	{0} побеждает!
+{0} đã thua trận	{0} терпит поражение
+Lưu Cơ	Лыу Ко
+CHIẾN THẮNG	ПОБЕДА
+THẤT BẠI	ПОРАЖЕНИЕ
+LƯỢT CỦA BẠN	ВАШ ХОД
+LƯỢT ĐỐI THỦ	ХОД ВРАГА
+Tuyệt chiêu {0}	Умение {0}
+Mỗi lượt dùng 1 vật phẩm	Один предмет за ход
+DÙNG	ПРИМЕНИТЬ
+# ---- hero
+TẠO NHÂN VẬT	НОВЫЙ ПЕРСОНАЖ
+CHỌN TƯỚNG	ВЫБОР ГЕРОЯ
+Bạn đã có tướng này ở Ô {0} (vẫn tạo được)	Этот герой уже есть в ячейке {0} (создать все равно можно)
+CHỌN TƯỚNG NÀY	ВЫБРАТЬ
+Cấp 1 · tăng theo cấp	Ур. 1 · растет с уровнем
+HỦY TẠO NHÂN VẬT?	ОТМЕНИТЬ СОЗДАНИЕ?
+Chưa mất lượt tạo, lần sau tạo lại được.	Попытка не потратится, создать можно позже.
+# ---- ads, lives
+QUẢNG CÁO (THỬ NGHIỆM)	РЕКЛАМА (ТЕСТ)
+Sẽ thay bằng quảng cáo thật	Здесь будет настоящая реклама
++1 mạng chơi	+1 жизнь
+Cần xem hết quảng cáo để nhận mạng	Досмотрите рекламу, чтобы получить жизнь
+Chưa có quảng cáo, thử lại sau ít phút	Рекламы нет, попробуйте через пару минут
+Đã mua và dùng Bình Hồi Mạng: đầy {0} mạng	Фляга жизни куплена и выпита: жизней {0}
+Thiếu {0} vàng để mua Bình Hồi Mạng	Не хватает {0} зол. на Флягу жизни
+HẾT MẠNG	ЖИЗНИ КОНЧИЛИСЬ
+MẠNG CHƠI	ЖИЗНИ
+Mạng chơi	Жизни
+Bạn đã hết mạng chơi. Mỗi trận cần 1 mạng (thắng thì được trả lại).	Жизни кончились. Каждый бой стоит 1 жизнь (при победе она возвращается).
+Mạng chơi đang đầy ({0}/{1}).	Жизни полны ({0}/{1}).
+Bạn còn {0}/{1} mạng. Mỗi trận cần 1 mạng.	У вас {0}/{1} жизней. Каждый бой стоит 1 жизнь.
+{0} +1 mạng sau {1}.	{0} +1 жизнь через {1}.
++1 MẠNG (VIP)	+1 ЖИЗНЬ (VIP)
+XEM QUẢNG CÁO · +1 MẠNG	РЕКЛАМА · +1 ЖИЗНЬ
+DÙNG BÌNH HỒI MẠNG (có {0})	ФЛЯГА ЖИЗНИ (есть {0})
+MUA BÌNH HỒI MẠNG · {0} vàng	КУПИТЬ ФЛЯГУ · {0} зол.
+Bình Hồi Mạng: hồi đầy {0} mạng	Фляга жизни: восполняет {0} жизней
+# ---- map
+Bạn đang ở {0}	Вы здесь: {0}
+Chưa có đường tới {0}	Пока нет дороги в {0}
+Chưa mở. Làm tiếp nhiệm vụ chính để mở vùng này.	Закрыто. Продолжайте основной сюжет, чтобы открыть эту область.
+đánh {0}	бой: {0}
+{0} đường	дорог: {0}
+Đang đi tới {0}	Путь в {0}
+Bản đồ	Карта
+Túi đồ	Сумка
+Nhiệm vụ	Задания
+Dấu đỏ là nhiệm vụ chính. Chạm vào một nơi, tướng sẽ tự đi tới theo đường.	Красные метки — основные задания. Нажмите на место, и герой сам дойдет туда по дороге.
+Dấu cam là sự kiện phụ, dấu vàng là quân canh. Xem hết ở thẻ Nhiệm vụ.	Оранжевые метки — побочные события, желтые — стража. Все они есть во вкладке «Задания».
+{0}/2 · chạm để tiếp	{0}/2 · нажмите, чтобы продолжить
+# ---- menu
+NHÂN VẬT	ПЕРСОНАЖИ
+Tạo nhân vật đầu tiên · miễn phí	Создайте первого персонажа · бесплатно
+Tạo nhân vật mới	Создать нового персонажа
+Xem 1 quảng cáo để tạo nhân vật	Посмотрите 1 рекламу, чтобы создать персонажа
+CHƠI MỚI	НОВАЯ ИГРА
+CÀI ĐẶT	НАСТРОЙКИ
+THOÁT GAME	ВЫЙТИ ИЗ ИГРЫ
+CHƠI TIẾP	ПРОДОЛЖИТЬ
+Đã đủ 3 nhân vật. Hãy xóa 1 nhân vật để tạo mới.	У вас уже 3 персонажа. Удалите одного, чтобы создать нового.
+THOÁT GAME?	ВЫЙТИ ИЗ ИГРЫ?
+Tiến độ đã được lưu.	Прогресс сохранен.
+# ---- pause
+TẠM DỪNG	ПАУЗА
+Trận đấu đang tạm dừng	Бой на паузе
+Bạn vừa rời trò chơi, trận đấu đã tạm dừng	Вы вышли из игры, поэтому бой поставлен на паузу
+ÂM THANH	ЗВУК
+RUNG	ВИБРАЦИЯ
+THOÁT TRẬN	ПОКИНУТЬ БОЙ
+Bỏ trận, về bản đồ · tính là thua	Уйти на карту · засчитывается поражение
+THOÁT TRẬN?	ПОКИНУТЬ БОЙ?
+Trận này sẽ tính là thua: mất 1 mạng chơi, không bị trừ kinh nghiệm.	Будет засчитано поражение: минус 1 жизнь, опыт не отнимается.
+Trận này sẽ tính là thua: mất 1 mạng chơi và bị phạt kinh nghiệm như khi thua.	Будет засчитано поражение: минус 1 жизнь и обычный штраф к опыту.
+# ---- prepare
+Chưa có {0}, bấm MUA để mua	Нет: {0}. Нажмите КУПИТЬ
+Đã đủ 3 món, chạm vào ô trên để bỏ bớt	Уже 3 предмета, нажмите на ячейку сверху, чтобы убрать
+Không đủ vàng	Не хватает золота
+CHUẨN BỊ XUẤT TRẬN	ПОДГОТОВКА К БОЮ
+Bạn được đi trước	Вы ходите первым
+{0} được đi trước	{0} ходит первым
+MANG VÀO TRẬN	ВЗЯТЬ В БОЙ
+TÚI ĐỒ	СУМКА
+RÚT LUI	ОТСТУПИТЬ
+XUẤT TRẬN	В БОЙ
+Gợi ý: {0} đánh mạnh, nên mang Quỷ Diện Giáp.	Совет: {0} бьет больно, возьмите Доспех Демона.
+Gợi ý: {0} nhiều máu, nên mang Long Thần Kiếm.	Совет: у {0} много HP, возьмите Меч Дракона.
+Gợi ý: mang Bình Thuốc để hồi máu khi cần.	Совет: возьмите Зелья, чтобы лечиться в бою.
+Mua {0} cái giá {1} vàng?	Купить {0} шт. за {1} зол.?
+Bạn đang có {0} vàng	У вас {0} зол.
+MUA	КУПИТЬ
+# ---- quests
+CHÍNH TUYẾN {0}	СЮЖЕТ {0}
+SỰ KIỆN {0}	СОБЫТИЯ {0}
+QUÂN CANH {0}	СТРАЖА {0}
+Chương {0}	Глава {0}
+Chương {0} · nhiệm vụ {1}	Глава {0} · задание {1}
+ĐÃ THỐNG NHẤT GIANG SƠN!	СТРАНА ОБЪЕДИНЕНА!
+Mở khi xong nhiệm vụ {0}	Откроется после задания {0}
++ {0} nhiệm vụ nữa trong chương	+ еще заданий в главе: {0}
+Hội thoại	Сюжет
+Trận hướng dẫn	Обучающий бой
+Đánh	Бой
+{0}. ĐANG LÀM	{0}. В ПРОЦЕССЕ
+BẮT ĐẦU	НАЧАТЬ
+ĐI TỚI	ВПЕРЕД
+Đánh bại {0}	Победить: {0}
+Gặp {0}	Встреча: {0}
++1 hộp vật phẩm	+1 ящик с добычей
+hộp vật phẩm	ящик с добычей
+nhiệm vụ {0}	задание {0}
+Đã hoàn thành	Выполнено
+! Đang làm	! В процессе
+Loại	Тип
+Nơi	Место
+Đối thủ	Соперник
+Đã nhận	Получено
+Đã nhận {0}	Получено: {0}
+Thưởng	Награда
+Thưởng: {0}	Награда: {0}
+Mở thêm	Открывает
+Đọc lại hội thoại	Перечитать диалог
+Trước nhiệm vụ	До задания
+Sau khi thắng	После победы
+Gặp gỡ	Встреча
+gặp gỡ	встреча
+Đi tới	Идти
+Đã xong	Готово
+Ở vùng chưa mở trên bản đồ	В закрытой области карты
+ĐẤU TRƯỜNG · TAM ĐIỆP	АРЕНА · ТАМДЬЕП
+{0}/5 mức	Ступеней: {0}/5
+mở sẵn	открыто
+thắng Lê Hoàn	победить Ле Хоана
+thắng Nguyễn Ninh	победить Нгуен Ниня
+đạt cấp 30	достичь ур. 30
+cấp {0} (bằng cấp bạn)	ур. {0} (как у вас)
+Đã dẹp	Зачищено
+Còn {0} trạm gác ở vùng chưa mở	Еще постов стражи в закрытых областях: {0}
+Nhiệm vụ {0}	Задание {0}
+trạm gác gần {0}	пост стражи у {0}
+Trạm gác	Пост стражи
+# ---- result
+HOÀN THÀNH NHIỆM VỤ	ЗАДАНИЕ ВЫПОЛНЕНО
+LUYỆN TẬP	ТРЕНИРОВКА
+Vàng nhặt được	Собрано золота
+Thưởng thắng trận	Награда за победу
+Vật phẩm: {0}	Предметы: {0}
+Hộp vật phẩm (2 vật phẩm)	Ящик с добычей (2 предмета)
+Vàng thưởng	Золото в награду
+Kinh nghiệm thưởng	Опыт в награду
+Hộp vật phẩm cuối	Финальный ящик
+Hộp vật phẩm	Ящик с добычей
+Mở thêm: {0}	Открыто: {0}
+Kinh nghiệm luyện tập	Опыт за тренировку
+Vàng hiện có	Золото в наличии
+thua {0}	поражение: {0}
+Kinh nghiệm bị phạt	Штраф к опыту
+Gợi ý: mua Bình Thuốc hoặc Quỷ Diện Giáp ở màn chuẩn bị trước khi đánh lại.	Совет: купите Зелья или Доспех Демона на экране подготовки перед новой попыткой.
+Đánh lại trận này?	Сразиться еще раз?
+TRỞ VỀ	НАЗАД
+ĐÁNH LẠI	ЗАНОВО
+Mở hộp vật phẩm: {0}	Ящик открыт: {0}
+Đã mở thêm 1 mức luyện tập ở Đấu trường. Hãy vào đó thử sức!	На Арене открыта новая ступень тренировки. Вперед, испытай силы!
+Bỏ qua trận hướng dẫn và về bản đồ? Luật chơi xem lại được trong Cài đặt.	Пропустить обучающий бой и вернуться на карту? Правила есть в Настройках.
+# ---- settings
+Âm thanh	Звук
+Nhạc và tiếng trong game	Музыка и звуковые эффекты
+Âm lượng	Громкость
+Rung	Вибрация
+Khi trúng đòn, mua hàng, giữ để xoá	При ударах, покупках, удержании для удаления
+TRÒ CHƠI	ИГРА
+Luật chơi	Правила
+Xếp biểu tượng, vật phẩm, cấp độ	Сборка рядов, предметы, уровни
+Hướng dẫn bản đồ	Обучение на карте
+Xem lại 3 bước chỉ tay	Повторить 3 шага с подсказками
+Mở khi đang ở bản đồ	Доступно на карте
+Đổi nhân vật	Сменить персонажа
+MUA HÀNG VÀ QUẢNG CÁO	ПОКУПКИ И РЕКЛАМА
+Khôi phục giao dịch	Восстановить покупки
+Không có giao dịch nào để khôi phục	Нет покупок для восстановления
+HỖ TRỢ	ПОДДЕРЖКА
+Đánh giá game	Оценить игру
+Chia sẻ với bạn bè	Поделиться с друзьями
+Chính sách quyền riêng tư	Политика конфиденциальности
+Thông tin và tác giả	Об игре и авторы
+Mã người chơi: {0}	ID игрока: {0}
+Phiên bản {0}	Версия {0}
+Loạn 12 sứ quân	Смута 12 шыкуанов
+Loạn 12 Sứ Quân	Смута 12 шыкуанов
+2010 MicroGame	2010 MicroGame
+Về menu chính	В главное меню
+MENU	МЕНЮ
+Thanh kiếm	Меч
+Tấn công đối phương.	Атакует противника.
+Kiếm lửa	Огненный меч
+Mạnh hơn kiếm thường, nổ thêm 1 ô xung quanh; xếp chung được với kiếm thường.	Сильнее обычного меча и взрывает клетки вокруг; собирается в ряд с обычными мечами.
+Âm dương	Инь-ян
+Lấy năng lượng để dùng tuyệt chiêu.	Дает энергию для умений.
+Bánh chưng	Рисовый пирог
+Lấy lương thực. Lương thực tiêu hao mỗi lượt của đối phương; hết là thua.	Дает провизию. Провизия тает с каждым ходом врага; кончится — поражение.
+Thỏi vàng	Слиток золота
+Lấy vàng để mua vật phẩm.	Дает золото на покупку предметов.
+Cuốn sách	Книга
+Lấy kinh nghiệm để lên cấp.	Дает опыт для повышения уровня.
+Trái tim	Сердце
+Hồi máu. Hết máu là thua trận.	Лечит HP. Кончится HP — поражение.
+Xếp ít nhất 3 biểu tượng cùng loại, ngang hoặc dọc.	Соберите в ряд не меньше 3 одинаковых значков, по горизонтали или вертикали.
+Xếp 4 được thêm 1 lượt và có thể rơi vật phẩm; xếp 5 luôn rơi 1 vật phẩm.	Ряд из 4 дает лишний ход и шанс на предмет; ряд из 5 всегда дает предмет.
+Xếp sai mất lượt và mất máu.	Неверный ход стоит хода и части HP.
+CÁCH ĐI	КАК ХОДИТЬ
+BIỂU TƯỢNG	ЗНАЧКИ
+Cấp càng cao thì tấn công và máu càng lớn.	Чем выше уровень, тем больше атака и HP.
+LUẬT CHƠI	ПРАВИЛА
+hỗ trợ	поддержка
+Bản chuyển sang Unity	Порт на Unity
+Màn hình cảm ứng toàn màn hình	Полноэкранное сенсорное управление
+Ghi chú	Примечание
+Tình tiết, cốt truyện và tên nhân vật phụ của trò chơi dựa vào sự kiện Loạn 12 Sứ Quân trong lịch sử Việt Nam ở thế kỷ X.	Сюжет и имена второстепенных персонажей основаны на Смуте 12 шыкуанов — событиях X века в истории Вьетнама.
+THÔNG TIN	ОБ ИГРЕ
+Chia sẻ	Поделиться
+Đã chép lời mời vào bộ nhớ tạm	Приглашение скопировано в буфер обмена
+Trang chính sách quyền riêng tư sẽ có trước khi phát hành	Страница политики конфиденциальности появится до релиза
+# ---- shop
+PHỔ BIẾN	ПОПУЛЯРНО
+LỜI NHẤT	ВЫГОДНО
++{0} vàng vào ví chung	+{0} зол. в общий кошелек
+ƯU ĐÃI	АКЦИИ
+Thiếu vàng?	Нужно золото?
+Rương miễn phí, gói vàng	Бесплатный сундук, наборы золота
+Vàng và vật phẩm dùng chung cho mọi nhân vật	Золото и предметы общие для всех персонажей
+{0} vàng / gói {1} cái · có {2}	{0} зол. / набор {1} шт. · есть {2}
+{0} GÓI	{0} НАБ.
+Còn lại sau khi mua: {0} vàng	После покупки: {0} зол.
+Bạn có {0} vàng	У вас {0} зол.
++ VÀNG (thiếu {0})	+ ЗОЛОТО (не хватает {0})
+Cần xem hết quảng cáo để nhận vàng	Досмотрите рекламу, чтобы получить золото
+RƯƠNG MIỄN PHÍ	БЕСПЛАТНЫЙ СУНДУК
+còn {0} lượt hôm nay	сегодня осталось: {0}
+Mỗi lần mở cách nhau ít nhất 1 giờ	Открывать можно не чаще раза в час
+Lượt mới lúc 0:00	Новые попытки в 0:00
+Hết lượt	На сегодня всё
+Chờ	Ждите
+MỞ NGAY	ОТКРЫТЬ
+MỞ	ОТКР.
+Mua bằng tiền thật sẽ mở khi kết nối Google Play	Покупки за реальные деньги откроются после подключения Google Play
+Mua bằng tiền thật sẽ mở khi game kết nối Google Play	Покупки за реальные деньги откроются, когда игра подключится к Google Play
+Vàng dùng chung cho mọi nhân vật · giá theo Google Play (chưa kết nối)	Золото общее для всех персонажей · цены из Google Play (не подключено)
+GÓI KHỞI ĐẦU	СТАРТОВЫЙ НАБОР
+CHỈ 1 LẦN	ТОЛЬКО 1 РАЗ
+3.000 vàng	3.000 золота
+Đầy mạng	Полные жизни
+Trị giá 6.000 vàng và đầy mạng	Стоимостью 6.000 золота плюс полные жизни
+ĐÃ MUA	КУПЛЕНО
+VIP TRỌN ĐỜI	VIP НАВСЕГДА
+Mua 1 lần, dùng mãi, cho mọi nhân vật	Купите раз — пользуйтесь всегда, для всех персонажей
+Nhận thưởng quảng cáo ngay, không phải xem	Награды за рекламу сразу, без просмотра
+Ô vật phẩm thứ 4 khi chuẩn bị xuất trận	4-я ячейка предметов перед боем
+Tối đa 6 mạng (thường 5)	До 6 жизней (обычно 5)
+Tạo nhân vật mới không cần xem quảng cáo	Создание персонажей без рекламы
+ĐÃ KÍCH HOẠT	АКТИВНО
+CỬA HÀNG	МАГАЗИН
+# ---- slots
+Lưu tối đa 3 nhân vật.	До 3 персонажей.
+Lưu tối đa 3 nhân vật, mỗi nhân vật có bản đồ và cấp riêng. Vàng và vật phẩm dùng chung.	До 3 персонажей, у каждого своя карта и уровень. Золото и предметы общие.
+Đã đủ 3 nhân vật.	У вас 3 персонажа.
+Muốn tạo nhân vật khác, hãy xóa 1 nhân vật.	Чтобы создать другого, сначала удалите одного.
+Chạm vào thẻ để chọn · biểu tượng thùng rác để xóa	Нажмите на карточку, чтобы выбрать · корзина — удалить
+CHƠI	ИГРАТЬ
+Chơi gần nhất: {0}	Последняя игра: {0}
+ĐANG CHƠI	ИГРАЕТ
+trống	пусто
+Tạo ngay (VIP)	Создать сразу (VIP)
+Xem QC để tạo	Реклама за создание
+Đang tải quảng cáo…	Загрузка рекламы…
+Cần xem hết quảng cáo để nhận lượt tạo	Досмотрите рекламу, чтобы открыть создание
+NHÂN VẬT MỚI	НОВЫЙ ПЕРСОНАЖ
+Xem 1 quảng cáo ngắn để mở lượt tạo nhân vật thứ {0}.	Посмотрите 1 короткую рекламу, чтобы открыть персонажа №{0}.
+Xem 1 quảng cáo ngắn để mở lượt tạo nhân vật thứ {0}. {1} nhân vật hiện có giữ nguyên.	Посмотрите 1 короткую рекламу, чтобы открыть персонажа №{0}. Текущие персонажи ({1}) останутся как есть.
+XEM QUẢNG CÁO	СМОТРЕТЬ РЕКЛАМУ
+VIP: tạo ngay, không cần xem quảng cáo	VIP: создать сразу, без рекламы
+Đã xóa {0}	Удален: {0}
+XÓA NHÂN VẬT?	УДАЛИТЬ ПЕРСОНАЖА?
+Sẽ mất vĩnh viễn:	Будет потеряно навсегда:
+· Tiến độ bản đồ và nhiệm vụ	· Прогресс карты и заданий
+· Cấp {0} và kinh nghiệm	· Уровень {0} и опыт
+· {0} bảo vật đã sưu tập	· Собранные реликвии: {0}
+Vàng, vật phẩm, mạng chơi và VIP vẫn giữ nguyên.	Золото, предметы, жизни и VIP останутся.
+GIỮ 2 GIÂY ĐỂ XÓA	УДЕРЖИВАЙТЕ 2 СЕК
+# ---- arena
+ĐẤU TRƯỜNG	АРЕНА
+Tam Điệp · luyện kinh nghiệm, trả vé bằng vàng	Тамдьеп · тренировка за опыт, билеты за золото
+Thiếu vàng: vé mức {0} là {1} vàng	Не хватает золота: билет на ступень {0} стоит {1} зол.
+Mức {0} chưa mở: {1}	Ступень {0} закрыта: {1}
++{0}% cấp	+{0}% уровня
+Thiếu vàng	Нужно золото
+Chưa mở	Закрыто
+Đối thủ mức {0}	Соперник ступени {0}
+Thắng: +{0} kinh nghiệm ({1}% một cấp)	Победа: +{0} опыта ({1}% уровня)
+Thua: mất 1 mạng, không trừ kinh nghiệm. Vàng, KN nhặt trong trận không tính.	Поражение: 1 жизнь, опыт не отнимается. Золото и опыт, собранные в бою, не в счет.
+Bạn không đủ vàng cho mức nào đang mở. Mở rương miễn phí hoặc mua vàng ở Cửa hàng.	Не хватает золота ни на одну открытую ступень. Откройте бесплатный сундук или купите золото в Магазине.
+ĐÁNH	В БОЙ
+Vé {0} vàng	Билет {0} зол.
+# ---- quest titles (names without accents)
+Học binh pháp với Lưu Cơ	Изучить стратегию с Лыу Ко
+Nhận lệnh hộ tống chủ tướng	Получить приказ сопровождать командующего
+Hộ tống chủ tướng về Kỳ Bố	Сопроводить командующего в Кибо
+Bàn việc xưng hiệu	Обсудить принятие титула
+Dẹp sơn tặc ở Tam Điệp	Разбить разбойников в Тамдьепе
+Dự đại lễ xưng Vạn Thắng Vương	Коронация Ван Тханг Выонга
+Kết hòa ước với Phạm Bạch Hổ	Заключить мир с Фам Бать Хо
+Bàn kế đánh Bình Kiều	План атаки на Бинькьеу
+Đánh chiếm Bình Kiều	Захватить Бинькьеу
+Chọn hướng tiến quân	Выбрать путь похода
+Đánh Ngô Nhật Khánh	Сразиться с Нго Нят Кханем
+Nhận tin Lã Đường đánh Đằng Châu	Весть: Ла Дыонг напал на Дангтяу
+Cứu viện Đằng Châu	На помощь Дангтяу
+Bàn kế đánh Tế Giang	План атаки на Тезянг
+Phá quân canh Tế Giang	Прорвать стражу Тезянга
+Diệt Lã Đường ở Tế Giang	Разбить Ла Дыонга в Тезянге
+Từ biệt Phạm Bạch Hổ	Прощание с Фам Бать Хо
+Phá đồn Bảo Đà	Взять форт Баода
+Bắt Đỗ Cảnh Thạc	Пленить До Кань Тхака
+Củng cố Đỗ Động	Укрепить Додонг
+Giữ thành Đỗ Động	Удержать крепость Додонг
+Bàn kế đánh Tây Phù Liệt	План атаки на Тэйфульет
+Hỏi tội Nguyễn Trí Khả	Призвать к ответу Нгуен Чи Кха
+Diệt Nguyễn Siêu	Разбить Нгуен Сьеу
+Bàn kế phá liên minh	План раскола союза
+Cứu viện Ô Man	На помощь Оману
+Chuẩn bị đánh Siêu Loại	Подготовка к атаке на Сьеулоай
+Đánh vào Siêu Loại	Штурм Сьеулоая
+Đuổi bắt Lý Khuê	Погоня за Ли Кхюе
+Xuất binh đánh Tiên Du	Поход на Тьензу
+Đánh Nguyễn Thủ Tiệp	Сразиться с Нгуен Тху Тьепом
+Bàn kế đánh Cổ Loa	План атаки на Колоа
+Phá quân canh Cổ Loa	Прорвать стражу Колоа
+Đánh Lữ Xử Bình ở Cổ Loa	Бой с Лы Шы Бинем в Колоа
+Bàn kế đánh Tam Đái	План атаки на Тамдай
+Phá quân canh Tam Đái	Прорвать стражу Тамдая
+Đánh Nguyễn Khoan ở Tam Đái	Бой с Нгуен Кхоаном в Тамдае
+Nhận tin Kỳ Bố bị vây	Весть: Кибо в осаде
+Giải vây Kỳ Bố	Снять осаду с Кибо
+Bàn kế đánh Hồi Hồ	План атаки на Хойхо
+Phá quân canh Hồi Hồ	Прорвать стражу Хойхо
+Đánh Kiều Công Hãn	Сразиться с Кьеу Конг Ханом
+Đánh Kiều Thuận	Сразиться с Кьеу Тхуаном
+Bàn việc xưng đế	Обсудить восхождение на трон
+Diệt Ấu Rồng ở Hoa Lư	Убить Юного дракона в Хоалы
+Lễ lên ngôi Đinh Tiên Hoàng	Коронация Динь Тьен Хоанга
+Khởi binh ở Hoa Lư	Восстание в Хоалы
+Bình Kiều	Бинькьеу
+Cứu Đằng Châu, diệt Tế Giang	Спасти Дангтяу, взять Тезянг
+Đỗ Động Giang	Додонгзянг
+Tây Phù Liệt	Тэйфульет
+Siêu Loại và Tiên Du	Сьеулоай и Тьензу
+Cổ Loa và Tam Đái	Колоа и Тамдай
+Kỳ Bố và Hồi Hồ	Кибо и Хойхо
+Thống nhất giang sơn	Объединить страну
+ĐỒNG Ý	OK
+NHẬN	ЗАБРАТЬ
+HỘP QUÀ	ПОДАРОК
+MỞ HỘP	ОТКРЫТЬ
+XEM QUẢNG CÁO · X2	РЕКЛАМА · X2
+Bạn nhận được {0} hộp quà	Вы получили подарков: {0}
+Bạn nhận được 1 hộp quà	Вы получили 1 подарок
+Mỗi hộp có 1 vật phẩm	В каждом подарке 1 предмет
+Đã mở {0} hộp quà	Открыто подарков: {0}
+Đã cất vào túi đồ	Добавлено в сумку
+Hộp quà	Подарки
+Hộp quà rơi trong trận	Выпавшие подарки
++{0} hộp quà	+{0} подарк.
+{0} hộp quà	Подарков: {0}
+Đã mở Đấu trường Tam Điệp: nơi luyện điểm kinh nghiệm.	Открыта Арена Тамдьеп: здесь можно тренироваться ради опыта.
+Mỗi lần vào đấu phải trả vé bằng vàng.	Каждый бой стоит билет, оплачиваемый золотом.
+Thắng: nhận kinh nghiệm theo cấp hiện tại.	Победа: опыт в зависимости от вашего уровня.
+Thua: mất 1 mạng, không bị trừ kinh nghiệm.	Поражение: минус 1 жизнь, опыт не отнимается.
+Vàng và kinh nghiệm nhặt trong trận không được tính; máu không bị ảnh hưởng.	Золото и опыт, собранные в бою, не в счет; ваше HP не страдает.
+Lúc đầu mở 2 mức, thắng các tướng mạnh để mở thêm 3 mức.	Сначала открыты 2 ступени; побеждайте сильных полководцев, чтобы открыть еще 3.
+Vàng, kinh nghiệm hoặc vật phẩm quý	Золото, опыт или редкие предметы
+Đang mở…	Открываем…
+Bạn được đi trước (Ngọc Ấn)	Вы ходите первым (Нефритовая печать)
+Vàng	Золото
+HỒI SINH?	ВОСКРЕСНУТЬ?
+HỒI 30 MÁU	+30 HP
+BỎ CUỘC	СДАТЬСЯ
+{0} chỉ còn {1}/{2} máu!	У {0} осталось всего {1}/{2} HP!
+Xem quảng cáo để hồi 30 máu và đánh tiếp.	Посмотрите рекламу, чтобы вернуть 30 HP и продолжить бой.
+KHỞI ĐẦU	СТАРТ
+Ô thứ 3 mở khi mua Gói khởi đầu (Cửa hàng · Ưu đãi)	3-я ячейка открывается со Стартовым набором (Магазин · Акции)
+Ô thứ 4 mở khi mua gói VIP (Cửa hàng · Ưu đãi)	4-я ячейка открывается с VIP (Магазин · Акции)
+Đã đủ {0} món, chạm vào ô trên để bỏ bớt	Уже {0} предм., нажмите на ячейку сверху, чтобы убрать
+Mang 3 vật phẩm vào trận	Брать в бой 3 предмета
+tối đa 4 mạng	до 4 жизней
+Mang 4 vật phẩm vào trận (thường 2)	Брать в бой 4 предмета (обычно 2)
+Tối đa 5 mạng (thường 3)	До 5 жизней (обычно 3)
+Bốc thăm ai đi trước (cùng cấp)	Кто ходит первым — по жребию (при равном уровне)
+TRỞ LẠI	НАЗАД
+49.000 đ · thử	49.000 đ · тест
+199.000 đ · thử	199.000 đ · тест
+Đã mua Gói khởi đầu (giả lập): 3.000 vàng, Long Thần Kiếm x3, Nhân Sâm x3, đầy mạng	Стартовый набор куплен (имитация): 3.000 золота, Меч Дракона x3, Женьшень x3, полные жизни
+Đã kích hoạt VIP (giả lập)	VIP активирован (имитация)
+Đã khôi phục: {0}	Восстановлено: {0}
+Các gói đã mua đều đang có	Все купленные наборы активны
+Đã gỡ các gói (thử). Bấm Khôi phục giao dịch để lấy lại	Наборы удалены (тест). Нажмите «Восстановить покупки», чтобы вернуть их
+Thử: gỡ các gói đã mua	Тест: удалить купленные наборы
+Đang giả lập mua hàng để thử: chưa trừ tiền thật, sẽ thay bằng Google Play	Покупки имитируются для теста: реальные деньги не списываются, позже будет Google Play
+Đã mua {0} vàng (giả lập, {1})	Куплено {0} зол. (имитация, {1})
+thử	тест
+Vàng dùng chung cho mọi nhân vật · mua giả lập để thử, chưa trừ tiền thật	Золото общее для всех персонажей · покупки имитируются для теста, реальные деньги не списываются

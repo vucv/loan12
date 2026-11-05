@@ -30,7 +30,7 @@ Các bước (mỗi bước là một script):
 | 5 | `cs_build.sh` | biên dịch C# (Roslyn, C# 9) cùng `cs/Runtime` và bộ chạy thử C# |
 | 6 | `make_unity_project.py` | chép C#, tài nguyên JAR, font, âm thanh vào `Assets/Loan12` |
 
-Bước 2 gồm: `fix_syntax.py` (biểu thức / mảng hỏng), `ScopeFix` (biến cục bộ sai phạm vi), `ObscureFix` (tên lớp bị
+Bước 2 gồm (cuối cùng `port_screens.py` chép các lớp cầu nối giao diện cảm ứng trong `port/` — `PortScreens`, `PortMap` — vào game và sửa vài chỗ cần cho chúng, như tách lưu trữ theo 3 ô nhân vật): `fix_syntax.py` (biểu thức / mảng hỏng), `ScopeFix` (biến cục bộ sai phạm vi), `ObscureFix` (tên lớp bị
 trường cùng tên che), `fix_manual.py` (sửa từng chỗ, có giải thích), `port_patches.py` (thread → bộ lập lịch, đồng
 hồ / thuộc tính hệ thống qua Host, SMS, URL, một lỗi gốc của game).
 

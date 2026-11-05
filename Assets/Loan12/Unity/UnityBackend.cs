@@ -341,7 +341,9 @@ namespace Loan12.UnityPort
         public void vibrate(int millis)
         {
 #if UNITY_ANDROID || UNITY_IOS
-            if (millis > 0)
+            // the game's own vibrations (hits, combos) follow the RUNG setting too
+            J2MEGameHost host = J2MEGameHost.Instance;
+            if (millis > 0 && (host == null || host.HapticsOn))
             {
                 Handheld.Vibrate();
             }

@@ -184,5 +184,12 @@ namespace Loan12
         {
             C_cz.d().f_e.a(1, this.f_w, false);
         }
+
+        /** PORT-UI: "Chọn" with the sound on (the touch interface has its own volume setting) */
+        public void portSkip()
+        {
+            this.f_f = 100;
+            this.b(0, this.f_c);
+        }
     }
 }

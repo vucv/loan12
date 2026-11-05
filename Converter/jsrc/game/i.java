@@ -882,6 +882,34 @@ public class i
         return this.A.a();
     }
 
+    /** PORT-UI: gems, combo texts, attacks flying to a fighter or a skill effect are still playing
+     *  (shields and freezes that last several turns, types 4 and 8, do not count) */
+    public boolean portBusy() {
+        int j = 0;
+        for (j = 0; j < this.s.b(); j++) {
+            if (((s) this.s.b(j)).m()) {
+                return true;
+            }
+        }
+        for (j = 0; j < this.l.b(); j++) {
+            if (((b) this.l.b(j)).a()) {
+                return true;
+            }
+        }
+        for (j = 0; j < this.o.b(); j++) {
+            if (((p) this.o.b(j)).m()) {
+                return true;
+            }
+        }
+        for (j = 0; j < this.p.b(); j++) {
+            ab e = (ab) this.p.b(j);
+            if (e.m() && (e.b() != 4) && (e.b() != 8)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void e(int paramInt) {
         this.A.a(paramInt);
     }

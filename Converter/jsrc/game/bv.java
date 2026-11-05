@@ -67,6 +67,7 @@ public abstract class bv
 
     public final void a() {
         portPublishSoftKeys(); // PORT-TOUCH
+        PortUi.process(); // PORT-UI
         if (this.q > 0) {
             this.q -= 1;
             this.r = (ay.a() % 2);

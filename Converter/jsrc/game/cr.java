@@ -80,6 +80,80 @@ public class cr
         this.O.a_(false);
         this.L = 50;
         this.P = new dk("lvu");
+        this.portG0 = this.G; // PORT-UI: the rewards before they are counted into the totals
+        this.portH0 = this.H;
+        this.portK0 = this.K;
+        this.portJ0 = this.J;
+        this.portI0 = this.I;
+    }
+
+    // PORT-UI: what the Unity result screen shows
+    private int portG0;
+    private int portH0;
+    private int portK0;
+    private int portJ0;
+    private int portI0;
+
+    public int portMode() {
+        return dd.a >= 0 ? 2 : (this.N ? 1 : 0);
+    }
+
+    public int portPortrait() {
+        return this.v.a;
+    }
+
+    public int portLevel() {
+        return this.v.e;
+    }
+
+    public int portExp() {
+        return this.w;
+    }
+
+    public int portExpLo() {
+        return this.F;
+    }
+
+    public int portExpHi() {
+        return this.E;
+    }
+
+    public int portHp() {
+        return this.v.c;
+    }
+
+    public int portMaxHp() {
+        return this.v.b;
+    }
+
+    public int portAttack() {
+        return this.v.d;
+    }
+
+    public int portGold() {
+        return this.x;
+    }
+
+    public int portGoldGain() {
+        return this.N ? this.portH0 : this.portG0;
+    }
+
+    public int portExpGain() {
+        return this.N ? this.portJ0 : this.portK0;
+    }
+
+    public int portWinBonus() {
+        return this.N ? 0 : this.portI0;
+    }
+
+    public boolean portReady() {
+        return this.L <= 0;
+    }
+
+    public void portSkip() {
+        if (this.L > 0) {
+            this.L = 1;
+        }
     }
 
     public cr() {

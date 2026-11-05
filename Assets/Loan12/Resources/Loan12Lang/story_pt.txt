@@ -1,0 +1,389 @@
+# story: vi	en	ja	ko  (dialogues, intro / ending scroll, tutorial; see Assets/Loan12/Unity/Loc.cs)
+Lính Tế Giang	Soldado de Te Giang
+Lính Bình Kiều	Soldado de Binh Kieu
+Lính Đỗ Động	Soldado de Do Dong
+Tàn Tướng Đỗ Động	General Remanescente de Do Dong
+Lính Siêu Loại	Soldado de Sieu Loai
+Phản Tướng	General Rebelde
+Lính Cổ Loa	Soldado de Co Loa
+Lính Tam Đái	Soldado de Tam Dai
+Lính Phong Châu	Soldado de Phong Chau
+Lính Hồi Hồ	Soldado de Hoi Ho
+Sơn Tặc	Bandido
+Bọ Quái	Inseto Monstro
+Quỷ Ong	Abelha Demoníaca
+Thạch Sùng Tinh	Espírito Lagartixa
+Quỷ Lùn	Demônio Anão
+Ma Nhãn	Olho Maligno
+Ngọc Thố Tinh	Espírito Coelho de Jade
+Ma Điểu	Pássaro Demoníaco
+Xà Tinh	Espírito Serpente
+Hầu Tinh	Espírito Macaco
+Ấu Quỷ	Demônio Jovem
+Thổ Tinh	Espírito da Terra
+Thạch Ma	Demônio de Pedra
+Linh Miêu	Gato Espiritual
+Lão Hầu Tinh	Velho Espírito Macaco
+Quái Sư	Leão Monstro
+Mộc Ma	Demônio da Árvore
+Đại Mộc Ma	Grande Demônio da Árvore
+Độc Nhãn Trư	Javali Caolho
+Quái Cóc	Sapo Monstro
+Sâu Quỷ	Verme Demoníaco
+Trùng Quỷ	Larva Demoníaca
+Lão Trùng Quỷ	Velha Larva Demoníaca
+Quái Ưng	Falcão Monstro
+Thằn Lằn Quỷ	Lagarto Demoníaco
+Hạc Yêu	Grou Diabólico
+Độc Ngư	Peixe Venenoso
+Quỷ Cóc	Sapo Demoníaco
+Ma Cây	Fantasma da Árvore
+Ma Trơi	Fogo-fátuo
+Chồn Tinh	Espírito Doninha
+Nhện Tinh	Espírito Aranha
+Ấu Rồng	Jovem Dragão
+Lính	Soldado
+Lính Tiên Du	Soldado de Tien Du
+{p} tướng quân! Lưu Cơ được giao nhiệm vụ hướng dẫn tướng quân tất cả những quy tắc của chiến trường. Ngài đã sẵn sàng chưa?	General {p}! Eu, Luu Co, fui encarregado de lhe ensinar todas as regras do campo de batalha. Está pronto?
+Lưu quân sư, xin chỉ bảo!	Estrategista Luu, por favor, me ensine!
+Trần Lãm-Trần Minh Công lâm bệnh. Sớm mai Đinh chủ tướng sẽ về Kỳ Bố, sự an toàn của chủ tướng trông cậy vào tướng quân	O Senhor Tran Lam - Tran Minh Cong caiu doente. Amanhã cedo o Comandante Dinh volta a Ky Bo, e a segurança dele está em suas mãos, General.
+Quân sư yên tâm, mạt tướng sẽ hộ tống Chủ tướng đến Kỳ Bố an toàn.	Fique tranquilo, Estrategista. Escoltarei o Comandante em segurança até Ky Bo.
+Thưa Nhạc phụ, con đã về!	Sogro, voltei!
+Con về thật đúng lúc, ta có chuyện cần bàn với con đây.	Você voltou na hora certa, tenho algo a discutir com você.
+Nhưng sức khỏe của Nhạc phụ...	Mas e a sua saúde, sogro...
+Không sao, con yên tâm!	Não é nada, não se preocupe!
+Đất nước loạn lạc! Ta già rồi, những Sứ quân khác đã đều xưng hùng xưng bá một phương. Con cũng cần lộ diện để thiên hạ biết.	O país está em caos! Estou velho, e os outros senhores da guerra já se proclamaram senhores de suas terras. Você também precisa se mostrar, para que o mundo o conheça.
+Thưa Cha! Bộ Lĩnh nguyện suốt đời phò cha, con nào dám mang tội bất trung bất hiếu.	Pai! Eu, Bo Linh, jurei servi-lo por toda a vida. Como poderia cometer o crime da deslealdade e da impiedade?
+Nhưng đây là nguyện vọng của ta.	Mas este é o meu desejo.
+Thưa Cha...!	Pai...!
+Hãy nghe lời ta, định ngày lành mà xưng hiệu. 	Escute-me. Escolha um dia auspicioso e proclame o seu título.
+Con trẻ xin nghe lời! Giờ con về Hoa Lư lo mọi việc. Cha hãy giữ sức khỏe!	Obedecerei! Voltarei a Hoa Lu para cuidar de tudo. Cuide da sua saúde, Pai!
+Chủ tướng, các sứ quân khác đều chỉ xưng Công, tức khiêm nhường chỉ nhận là bá chủ 1 phương. Không lẽ chủ tướng cũng xưng hiệu là Đinh Công?	Comandante, os outros senhores da guerra se chamam apenas de Duque, dizendo humildemente governar uma só região. O senhor não vai também se intitular Duque Dinh, vai?
+Không! Ta không muốn làm Sứ, ta có một ước mơ là giang sơn này được quy về một mối, chấm dứt nạn binh đao liên miên cho muôn dân được an lành 	Não! Não quero ser um simples senhor da guerra. Sonho em unir esta terra em uma só, acabar com as guerras sem fim, para que todo o povo viva em paz.
+Nếu vậy, chủ tướng nên xưng hiệu Vạn Thắng Vương, đó là tước hiệu của vị Phật có công đức đánh đuổi yêu tà đem an bình cho chúng dân, được Phật Tổ tuyên phong.	Então, Comandante, deve adotar o título de Van Thang Vuong - o título de um Buda que expulsou o mal e trouxe paz ao povo, como proclamou o próprio Buda.
+Hay lắm! Rất hợp với tâm nguyện của ta. Nhờ Lưu quân sư chuẩn bị tiến hành đại lễ.	Excelente! Combina perfeitamente com o meu desejo. Estrategista Luu, prepare a grande cerimônia.
+Thưa chủ tướng! Lúc này làm lễ xưng Vương e không được nhân hòa.	Comandante! Fazer a coroação agora talvez não conquiste o coração do povo.
+Tại sao? Quân sư, xin hãy nói.	Por quê? Estrategista, fale.
+Loạn sơn tặc Tam Điệp khiến người dân quanh vùng khiếp sợ, sống không yên.	Os bandidos de Tam Diep aterrorizam o povo da região, que não consegue viver em paz.
+Chủ tướng nên cho người đến bình loạn trước, sau xưng Vương thì được lòng dân trong vùng hơn.	Comandante, envie homens para acabar com os bandidos primeiro; proclamar-se rei depois lhe dará o coração da região.
+Quân sư nói phải lắm!	O estrategista tem razão!
+Chủ tướng! Hãy để tôi dẹp loạn sơn tặc.	Comandante! Deixe que eu acabo com os bandidos.
+Tướng quân, ngài phải giúp tôi chuẩn bị cho đại lễ. Việc dẹp sơn tặc xin nhờ {p} tướng quân.	General, você precisa me ajudar a preparar a cerimônia. Pedirei ao General {p} que cuide dos bandidos.
+Nếu quân sư đã có sắp xếp rồi thì ta cũng nên theo. {p} tướng quân hãy thận trọng!	Se o estrategista assim decidiu, que seja. General {p}, tenha cuidado!
+Mạt tướng tuân lệnh!	Às suas ordens!
+Quân Hoa Lư chỉ có bấy nhiêu thôi ư? Chúng xem thường ta quá đấy!.	É só isso que Hoa Lu conseguiu mandar? Me subestimam demais!
+Tấn công! Giết hết bọn rác rưởi cho ta.	Ataquem! Acabem com essa ralé para mim!
+Tiến lên, tiêu diệt bọn đạo tặc! 	Avante, destruam os bandidos!
+Chủ tướng, giờ lành đã đến. Chúng ta mau tiến hành đại lễ cho kịp.	Comandante, a hora auspiciosa chegou. Vamos começar a cerimônia.
+Thiên hạ đại nghĩa, Ngô vương chẳng may mất sớm, loạn thần mải tranh giành vương bá, không lo thiên hạ, để đất nước loạn lạc, chiến tranh liên miên, dân chúng lầm than. Nay thuận thiên ý, Bộ Lĩnh họp quân dẹp loạn, quyết thu giang sơn về một mối. Kẻ nào không phục, thì Vạn Thắng Vương này tiêu diệt không tha!	Pela grande justiça do céu: o Rei Ngo morreu cedo demais, e senhores traiçoeiros disputam o poder sem pensar no reino, deixando o país em caos e guerra sem fim, e o povo na miséria. Agora, seguindo a vontade do céu, Bo Linh reúne seu exército para acabar com o tumulto e unificar a terra. Quem se recusar a se submeter, eu, Van Thang Vuong, destruirei sem piedade!
+Vạn Thắng Vương vạn tuế! Vạn tuế!	Viva Van Thang Vuong! Viva!
+Chư tướng, hãy đứng lên!	Generais, levantem-se!
+Trận đầu, ta muốn đánh một trận thật lừng lẫy để các nơi phải khiếp sợ. Lưu Cơ, ta nên đánh ai trước? 	Para nossa primeira batalha quero uma vitória gloriosa, que faça todos tremerem. Luu Co, quem devemos atacar primeiro?
+Thưa đại vương, 12 sứ quân đáng gờm nhất là Phạm Bạch Hổ. Ông ta vốn làm tướng dưới thời Ngô Vương lại là người có uy đức. Quân sĩ được huấn luyện rất bài bản, quân thủy bộ uy dũng. Đánh Phạm Bạch Hổ nếu thắng thì uy phong rất lớn, nếu thua quân ta sẽ mất nhuệ khí mà các sứ quân khác cũng xem thường.	Majestade, o mais temível dos 12 senhores da guerra é Pham Bach Ho. Ele serviu como general sob o Rei Ngo e é um homem de autoridade e virtude. Seus soldados são muito bem treinados, e seu exército e sua frota são poderosos. Vencer Pham Bach Ho traria grande prestígio, mas, se perdermos, nossas tropas perderão o ânimo e os outros senhores nos desprezarão.
+Tập trung toàn quân, đánh một trận quyết tử. Thắng được Phạm Bạch Hổ xem như ta có nửa giang sơn. Sợ gì !	Reúnam o exército inteiro para uma batalha até a morte. Vencendo Pham Bach Ho, metade da terra será nossa. O que há a temer!
+Không được! Kế đó là “Được ăn cả ngã về không”. Tốt nhất là ta cứ theo binh pháp cơ bản, đánh kẻ yếu hòa kẻ mạnh, xưa nay vẫn thế. Ta nên hòa với Phạm Bạch Hổ.	Não! Esse plano é "tudo ou nada". Melhor seguir a estratégia básica: atacar os fracos e fazer paz com os fortes, como sempre foi. Devemos fazer as pazes com Pham Bach Ho.
+Vậy ai sẽ là người đi sang thuyết khách đây?	Então quem irá convencê-lo?
+Nhiệm vụ thuyết khách, xin để Lưu Cơ!	Deixe a tarefa da persuasão comigo, Luu Co!
+Chuyến đi lành ít dữ nhiều, tướng quân {p} hãy đi cùng quân sư. Hai vị hãy cẩn trọng.	A viagem é perigosa. General {p}, vá com o estrategista. Tenham cuidado, os dois.
+Lưu Cơ ở Hoa Lư, xin bái kiến Phạm sứ quân!!	Luu Co de Hoa Lu presta suas homenagens ao Senhor Pham!
+Lưu tiên sinh, mời an tọa! 	Mestre Luu, sente-se, por favor!
+Chẳng hay Lưu quân sư đến xứ Đằng Châu có việc gì?	O que traz o Estrategista Luu a Dang Chau?
+Chủ tướng tôi có thư này gửi Phạm sứ quân, xin sứ quân xem qua.	Meu senhor enviou esta carta ao Senhor Pham. Por favor, leia.
+Hãy đưa thư cho ta...........	Passe-me a carta...........
+Thư ta đã đọc, chuyện an hòa nghe cũng thuận lòng. Nhưng còn phải xem ý trời ra sao?	Li a carta. A paz me parece aceitável. Mas ainda precisamos ver o que o céu deseja.
+Nghe nói tiên sinh tinh thông Kỳ môn độn giáp. Ông hãy xem ý trời giúp tôi.	Ouvi dizer que o senhor é mestre na adivinhação. Por favor, leia a vontade do céu para mim.
+Mời sứ quân gieo quẻ!	Tire as varetas, meu senhor!
+Quẻ của tướng quân là quẻ Thủy Địa Tỷ. Lời quẻ nói rằng “Lục nhị: tỷ chi tử nội, trinh cát”. Xin dịch nghĩa như sau: “ Hai bên thân nhau vì đạo đồng chí hợp, chứ không phải vì kết thân với bề trên để cầu phú quí, như vậy là chính đáng, không thất thân, nên tốt. ”	Seu hexagrama é Bi, "Manter-se Unido". A linha diz: "Seis na segunda posição: unir-se por dentro; a perseverança traz boa sorte." Ou seja: "Os dois lados são próximos porque seguem o mesmo caminho e propósito, não para bajular os poderosos em busca de riquezas. Isso é justo e honrado, portanto é bom."
+Ý trời đã vậy, Bạch Hổ không dám trái thiên ý. 	Já que o céu assim deseja, Bach Ho não ousa desafiá-lo.
+Quân sư hãy mang hòa ước này về Hoa Lư. Từ nay, chúng ta hiếu hòa, không xâm lấn, không gây phiền hà cho nhau, ai giàu nấy hưởng, ai mạnh tự cường, tình hữu hảo láng giềng, trước sau như một. Nếu có kẻ đánh Hoa Lư, Phạm Bạch Hổ sẵn lòng giúp đỡ.	Estrategista, leve este tratado de paz de volta a Hoa Lu. De agora em diante vivemos em paz: sem invasões, sem problemas, cada um desfruta da própria riqueza e cultiva a própria força, bons vizinhos agora e sempre. Se alguém atacar Hoa Lu, Pham Bach Ho ajudará com prazer.
+Lưu Cơ thay mặt Vạn Thắng Vương vô cùng cảm kích Phạm sứ quân!	Em nome de Van Thang Vuong, Luu Co é profundamente grato ao Senhor Pham!
+Ta đã hòa với Phạm Bạch Hổ, vậy gần Hoa Lư nhất chỉ còn Ngô Xương Xí ở Bình Kiều.	Fizemos as pazes com Pham Bach Ho, então o único perto de Hoa Lu é Ngo Xuong Xi, em Binh Kieu.
+Con thỏ non trốn chạy về miền rừng núi âm u ấy, đáng kể gì!  	Um coelhinho que fugiu para aquelas montanhas escuras - quanto ele vale!
+Nhưng cũng không thể chủ quan, nếu lấy được Bình Kiều thì sẽ an tâm hơn khi tiến quân lên phía bắc.	Mas não podemos descuidar. Tomar Binh Kieu deixará nossa marcha ao norte muito mais segura.
+Xương Xí thân là cháu Ngô Vương, diệt hắn thì thiên hạ sẽ có nhiều lời không hay. Ta nên chiêu hàng hắn, Nguyễn Bặc ở Hoa Lư phòng thủ. Những người còn lại theo ta.	Xuong Xi é sobrinho do Rei Ngo; matá-lo daria o que falar. Devemos convencê-lo a se render. Nguyen Bac fica para defender Hoa Lu. O resto de vocês, sigam-me.
+Tuân lệnh Đại Vương.	Às suas ordens, Majestade.
+Ngô Xương Xí! Bình Kiều đã bị bao vây, khôn ngoan hãy mau ra hàng.	Ngo Xuong Xi! Binh Kieu está cercada. Se for sábio, renda-se agora.
+Có thực lực thì đến đây, đừng nhiều lời.	Se tem força, venha me pegar. Chega de conversa.
+Trước mặt ta có Đỗ Cảnh Thạc và Ngô Nhật Khánh. Quân sư, chúng ta nên đánh ai trước.	À nossa frente estão Do Canh Thac e Ngo Nhat Khanh. Estrategista, quem devemos atacar primeiro?
+Đỗ Cảnh Thạc là lão tướng dày dặn kinh nghiệm, có thành trì chắc chắn và hào sâu bao quanh, nếu đánh trước chắn chắn lực lượng sẽ hao tổn rất nhiều. Ngô Nhật Khánh thì ở rất xa, chỉ có một đường duy nhất đến đó lại gập ghềnh nguy hiểm. Quân ta đến nơi thì cũng rất mệt mỏi, sức đâu mà đánh trận.	Do Canh Thac é um veterano experiente, com uma cidadela sólida cercada de fossos profundos; atacá-lo primeiro certamente nos custaria caro. Ngo Nhat Khanh está muito longe, com uma única estrada difícil e perigosa até lá. Nossas tropas chegariam exaustas, sem forças para lutar.
+Gần không đánh được, Xa cũng không được đánh. Vậy ta ở đây làm gì ?!	Não podemos atacar o de perto, nem o de longe. Então o que estamos fazendo aqui?!
+Haha, tướng quân! Hãy để quân sư nói tiếp xem sao.	Haha, General! Deixe o estrategista terminar.
+Tướng quân, hãy bình tĩnh. Đánh ai trước, ta cũng phải bàn tính kỹ càng.	Calma, General. Seja quem for o primeiro alvo, precisamos planejar com cuidado.
+Thưa Đại Vương, trong 2 sứ quân thì Ngô Nhật Khánh là yếu nhất, tuy thông minh nhưng còn rất trẻ, ít trải nghiệm và rất bốc đồng. Đánh Khánh trước là thích hợp nhất mà khả năng hao tổn lực lượng ít hơn so với những người khác. Nhưng ta cũng phải đề phòng Đỗ Cảnh Thạc đánh từ phía sau lại. 	Majestade, dos dois senhores, Ngo Nhat Khanh é o mais fraco: esperto, mas muito jovem, inexperiente e impulsivo. Atacar Khanh primeiro é o melhor e custa menos tropas que os outros. Mas temos de nos proteger para que Do Canh Thac não nos ataque pelas costas.
+Tôi có ý này. Đem quân giả đánh Cảnh Thạc, đến Ô Man chia quân làm 3 đạo. Đạo thứ nhất do tướng Nguyễn Bặc chỉ huy đóng ở Ô Man, đạo thứ 2 do Đại vương chỉ huy đóng trực diện với đồn Bảo Đà. Đạo thứ 3 sẽ do tướng {p} dẫn đầu, bí mật đi đến Đường Lâm bất ngờ đến đánh Ngô Nhật Khánh chắc chắn hắn sẽ trơ tay không kịp.	Tenho uma ideia. Finjam atacar Canh Thac, e em O Man dividam o exército em três. O primeiro, sob o General Nguyen Bac, acampa em O Man; o segundo, sob Vossa Majestade, enfrenta de frente o forte de Bao Da. O terceiro, liderado pelo General {p}, marcha em segredo até Duong Lam e ataca Ngo Nhat Khanh de surpresa - ele não terá tempo de reagir.
+Tốt! Mọi người hãy y theo mà hành động.	Ótimo! Todos, ajam de acordo.
+Tuân lệnh Đại Vương	Às suas ordens, Majestade
+Bọn ngươi là quân của ai, muốn chết hay sao mà đám đến đây làm loạn?	De que exército vocês são? Querem morrer, vindo aqui arrumar confusão?
+Ta là {p}, tướng tiên phong của Vạn Thắng Vương, hôm nay ta đến lấy đầu ngươi!	Eu sou {p}, general da vanguarda de Van Thang Vuong. Hoje vim buscar a sua cabeça!
+Láo xược! Ta sẽ phân thây ngươi để làm gương cho kẻ khác.	Insolente! Vou despedaçá-lo para servir de lição aos outros.
+Lã Đường ở Tế Giang đã cất binh đánh Phạm Bạch Hổ. Ta đã có hòa ước với Bạch Hổ, nên không thể không giúp, hơn nữa nếu Đằng Châu mất thì Kỳ Bố cũng sẽ khó mà yên. Đại Vương và tướng Nguyễn Bặc đang giữ chân Cảnh Thạc không thể đem quân tiếp ứng. Thời gian cấp bách, tướng quân hãy đem quân ứng cứu trước, tôi sẽ theo sau. Trong 5 ngày chúng ta phải đến đó, nếu không thì Đằng Châu khó mà giữ được.	La Duong de Te Giang levantou tropas contra Pham Bach Ho. Temos um tratado com Bach Ho, então precisamos ajudar; além disso, se Dang Chau cair, Ky Bo também não estará segura. Sua Majestade e o General Nguyen Bac estão segurando Canh Thac e não podem mandar reforços. O tempo é curto: General, leve tropas ao socorro primeiro, eu irei depois. Precisamos chegar em 5 dias, ou Dang Chau dificilmente resistirá.
+Lưu quân sư yên tâm, mạt tướng sẽ đi ngay!	Fique tranquilo, Estrategista Luu, vou agora mesmo!
+Phạm sứ quân! Có tôi đến trợ giúp đây.	Senhor Pham! Vim ajudar!
+Hừ, quân giặc có viện binh, không xong rồi!	Hmpf, o inimigo tem reforços. Isso é ruim!
+Lão ác tặc, hãy xem đây!	Velho vilão, tome isto!
+Đa tạ tướng quân giúp đỡ.	Muito obrigado pela ajuda, General.
+Chúng ta là người một nhà, Phạm sứ quân xin đừng khách sáo.	Somos uma só família, Senhor Pham, não há necessidade de formalidades.
+Sau trận vừa rồi binh lực của Lã Đường đã suy yếu, nhuệ khí không còn. Hơn nữa quân ta lại đông hơn, hào khí ngất trời. Nhân cơ hội này, tiến quân đánh vào Tế Giang chắc chắn sẽ hạ được.	Depois dessa batalha, as forças de La Duong estão enfraquecidas e seu ânimo, quebrado. Nosso exército é maior e nosso moral está nas alturas. Se aproveitarmos e marcharmos sobre Te Giang, venceremos com certeza.
+Lưu quân sư nói phải lắm. Mọi người nghỉ ngơi lấy sức, sớm mai xuất quân.	O Estrategista Luu tem razão. Todos descansem e recuperem as forças; marchamos ao amanhecer.
+Lưu Cơ xin cáo lui.	Luu Co se despede.
+{p} xin cáo lui.	{p} se despede.
+Lã Đường, ta đến lấy đầu ngươi đây!	La Duong, vim buscar a sua cabeça!
+Với sức ngươi ư? Ảo tưởng ! Sáttttt	Com essa sua força? Vai sonhando! Ataaaaquem!
+Phạm sứ quân, Tế Giang đã diệt xong. Chúng tôi phải trở về, Lưu Cơ xin bái biệt!	Senhor Pham, Te Giang foi tomada. Precisamos voltar; Luu Co se despede!
+Lưu quân sư, Vạn Thắng Vương là người nhân nghĩa lại có chí lớn bình định thiên hạ, đúng là phước của muôn dân. Nếu Bạch Hổ được giúp một tay thì thật là vinh hạnh lắm lắm!	Estrategista Luu, Van Thang Vuong é um homem de humanidade e justiça, com a grande ambição de pacificar o reino - uma verdadeira bênção para o povo. Se Bach Ho puder ajudar, será uma grande honra!
+Lưu Cơ sẽ chuyển tâm ý của Phạm sứ quân đến Vạn Thắng Vương. 	Luu Co levará os desejos do Senhor Pham a Van Thang Vuong.
+Đa tạ quân sư!	Muito obrigado, Estrategista!
+Nhất định sẽ có ngày chúng ta gặp lại. Phạm sứ quân, hẹn ngày tái ngộ!	Certamente nos veremos de novo algum dia. Senhor Pham, até breve!
+Lưu quân sư, hãy bảo trọng!	Estrategista Luu, cuide-se!
+Quân sư, ông đến thật đúng lúc, quân địch phòng thủ rất chặt, ta khó mà đánh vào được.	Estrategista, chegou na hora certa. As defesas do inimigo são muito fechadas, mal conseguimos entrar.
+Đại vương yên tâm, cơ hội của chúng ta đã đến. Đỗ Cảnh Thạc đang ở đồn Bảo Đà, thành Quèn ở Đỗ Động không người chỉ huy chắc chắn sẽ có sở hở. Đêm mai chủ công, cùng tướng {p} dẫn quân quân vây thành, sau đó đốt lửa thật lớn. Thấy lửa chắc chắn Cảnh Thạc sẽ rút quân từ Bảo Đà về ứng cứu, tình hình ở Bảo Đà lẫn thành Quèn sẽ xảy ra hỗn loạn. Khi đó Đại vương quay đầu tấn công Cảnh Thạc, cùng lúc tướng Nguyễn Bặc và Lê Hoàn tấn công thẳng vào Bảo Đà, ép Cảnh Thạc vào giữa. Bị tấn công bất ngờ địch sẽ hoảng loạn, quân ta ắt sẽ thành công.	Fique tranquilo, Majestade, nossa chance chegou. Do Canh Thac está no forte de Bao Da, então a cidadela de Quen, em Do Dong, está sem comandante e certamente terá pontos fracos. Amanhã à noite, meu senhor e o General {p} levam tropas para cercar a cidadela e atear um grande incêndio. Vendo o fogo, Canh Thac com certeza tirará suas tropas de Bao Da para ajudar, e tanto Bao Da quanto a cidadela de Quen cairão no caos. Então Vossa Majestade se volta contra Canh Thac enquanto os Generais Nguyen Bac e Le Hoan atacam Bao Da de frente, prendendo Canh Thac no meio. Pego de surpresa, o inimigo entrará em pânico, e certamente teremos sucesso.
+Được! Ta sẽ làm theo cách này. Đêm mai sẽ hành động, mọi người hãy chuẩn bị.	Ótimo! Farei assim. Agimos amanhã à noite; todos se preparem.
+Thành Quèn bị tấn công, ta phải về cứu ngay, các người hãy ở lại cố thủ.	A cidadela de Quen está sob ataque, preciso voltar para salvá-la. Você fica e defende este lugar.
+Cảnh Thạc!! Ngươi đã hết đường chạy, muốn sống hãy mau chịu trói.	Canh Thac!! Você não tem mais para onde fugir. Se quer viver, renda-se agora.
+Hahaha, thật nực cười ! Chỉ một đám trẻ con mà dám cản đường ta ư? Có bản lĩnh thì hãy đến đây.	Hahaha, que ridículo! Um bando de crianças ousa bloquear meu caminho? Se tiverem coragem, venham.
+Đại vương! Đỗ Động Giang đã lấy được, nhưng quân lực ta hao tổn khá nặng. Nếu đánh luôn Tây Phù Liệt thì rất khó, tốt nhất nên án binh bất động để cũng cố lực lượng. Mặt khác Đại vương nên đích thân đến Đằng Châu tiếp nhận binh lực của Phạm Bạch Hổ.	Majestade! Do Dong Giang é nossa, mas nossas forças sofreram muitas perdas. Atacar Tay Phu Liet agora seria muito difícil; melhor ficar parado e reconstruir nossa força. Além disso, Vossa Majestade deveria ir pessoalmente a Dang Chau assumir o comando das tropas de Pham Bach Ho.
+Ừm, Bạch Hổ đã có ý về đầu quân, ta cũng nên đến gặp trực tiếp ông ta. Có thêm binh lực của Đằng Châu thì việc diệt Nguyễn Siêu cũng không quá khó khăn. 	Hmm, Bach Ho deseja se juntar a nós, então devo encontrá-lo pessoalmente. Com as tropas de Dang Chau, destruir Nguyen Sieu não será tão difícil.
+Đường xa nguy hiểm, người nên để Lê Hoàn tướng quân đi cùng.	A estrada é longa e perigosa; leve o General Le Hoan com o senhor.
+Việc ở đây quân sư hãy cố sắp xếp.	Estrategista, cuide das coisas por aqui.
+Đại vương hãy yên tâm!	Fique tranquilo, Majestade!
+Không xong! Quân sư! Quân sư!! Nguyễn Siêu đã vây thành!	Desastre! Estrategista! Estrategista!! Nguyen Sieu cercou a cidadela!
+Nguyễn Siêu đã đánh Đỗ Động sớm hơn ta dự tính. Binh lực và lương thảo hiện tại chỉ có thể cố thủ chờ viện binh từ Đằng Châu đến. Nguyễn Bặc hãy trấn thủ ở cửa Tây, cửa bắc mọi sự trông cậy vào {p} tướng quân. Năm ngày nữa quân viện binh sẽ đến, mọi người hãy cố gắng thủ thành.	Nguyen Sieu atacou Do Dong antes do que eu esperava. Com as tropas e suprimentos que temos, só podemos resistir até os reforços chegarem de Dang Chau. Nguyen Bac, guarde o portão oeste; o portão norte confio inteiramente ao General {p}. Os reforços chegam em cinco dias; todos, segurem a cidadela!
+Hôm nay bổn tướng đến đây, ngỡ có thể so kiếm với anh hùng, nào ngờ chỉ thấy lũ chuột chạy nháo nhào trong thành tìm chỗ trốn!	Hoje vim esperando cruzar espadas com heróis, mas só vejo ratos correndo pela cidadela procurando onde se esconder!
+Quân sư có biết người dưới kia là ai không?	Estrategista, sabe quem é aquele lá embaixo?
+Nguyễn Trí Khả, tướng tiên phong của Nguyễn Siêu, dũng mãnh nhưng vô mưu. Tướng quân, hãy ráng nhẫn nhịn.	Nguyen Tri Kha, vanguarda de Nguyen Sieu: corajoso, mas sem cérebro. General, tente ter paciência.
+Lũ chuột nghe đây! Thời gian của bổn tướng quân có hạn, trong hôm nay nếu không ra khỏi hang, ta sẽ san bằng nơi này.	Escutem, ratos! Meu tempo é curto. Se não saírem da toca hoje, vou arrasar este lugar.
+Thật ngoan cố! Để xem lũ chuột các ngươi trốn được bao lâu?	Que teimosos! Vamos ver quanto tempo vocês, ratos, aguentam se esconder!
+Địch tấn công, mọi người vào vị trí!	Ataque inimigo! Todos a seus postos!
+Âm mưu phá thành Đỗ Động thất bại, Nguyễn Siêu đã đắp thành cao hơn để phòng bị. Muốn tiến quân vào Tây Phù Liệt e rất khó, quân sư có cao kiến gì không?	O plano para tomar Do Dong falhou, e Nguyen Sieu ergueu ainda mais as muralhas. Marchar sobre Tay Phu Liet será muito difícil. Estrategista, alguma ideia brilhante?
+Tướng quân chớ lo! Nguyễn Siêu thận trọng phòng bị, như vậy trận chiến vừa rồi binh lực của hắn hao tổn khá nặng, hắn sẽ phải đích thân đi cầu cứu viện binh của 2 người anh Nguyễn Thủ Tiệp hoặc Nguyễn Khoan.	Não se preocupe, General! Nguyen Sieu está se defendendo com cuidado, o que significa que suas forças sofreram muito na última batalha. Ele terá de ir pessoalmente pedir reforços aos dois irmãos, Nguyen Thu Tiep ou Nguyen Khoan.
+Vậy có nghĩa là Tây Phù Liệt như rắn mất đầu ?!	Então Tay Phu Liet ficará como uma cobra sem cabeça?!
+Tướng quân nói rất phải! Đó chính là yếu điểm của Tây Phù Liệt, đêm mai quân ta nổi lửa đồng loạt đốt cửa Đông, cửa Tây, cửa Nam thì chắc binh lính sẽ hoảng loạn.	Exatamente, General! Essa é a fraqueza de Tay Phu Liet. Amanhã à noite nosso exército põe fogo nos portões leste, oeste e sul ao mesmo tempo, e os soldados deles certamente entrarão em pânico.
+Được lắm! Ta sẽ hỏi tội chúng những ngày qua.	Excelente! Vou fazê-los pagar por esses últimos dias.
+Trận này, nhất định phải lấy được thành. Mọi người tranh thủ nghỉ ngơi, đêm mai xuất binh.	Nesta batalha precisamos tomar a cidadela. Todos descansem; marchamos amanhã à noite.
+Trí Khả! Ta đến hỏi tội ngươi đây!	Tri Kha! Vim fazer você responder por seus crimes!
+Chỉ là con chuột nhắt, bổn tướng sẽ hóa kiếp cho ngươi!	Só um ratinho. Vou mandá-lo para a próxima vida!
+Tự tin thì cứ đến đây!!!	Se está tão confiante, venha!!!
+Nguyễn Siêu, chạy đâu cho thoát. Nạp mạng !!	Nguyen Sieu, não há escapatória. Entregue sua vida!!
+Muốn cản ta ư !? Mộng tưởng quá đấy !	Quer me deter!? Continue sonhando!
+Hay tin Nguyễn Siêu bị diệt. Nguyễn Khoan và Kiều Công Hãn đẵ liên kết, cùng trấn thủ ở vùng Tam Đái. Lý Khuê và Nguyễn Thủ Tiệp thì dựng tuyến phòng thủ ở Siêu Loại, xem ra ta gặp khó khăn lớn rồi.	Sabendo que Nguyen Sieu foi destruído, Nguyen Khoan e Kieu Cong Han se aliaram e dominam juntos a região de Tam Dai. Ly Khue e Nguyen Thu Tiep construíram uma linha de defesa em Sieu Loai. Parece que estamos em sérios apuros.
+Tướng quân đừng quá lo! Mối liên kết giữa Lý Khuê và Nguyễn Thủ Tiệp ngoài mặt nhìn rất chắc chắn, nhưng thực chất lại rất yếu. Hai người này từ lâu đã có mối hiềm khích với nhau, nên cắt đứt mối liên kết này không phải là khó.	Não se preocupe tanto, General! A aliança entre Ly Khue e Nguyen Thu Tiep parece sólida por fora, mas na verdade é muito frágil. Os dois guardam rancor um do outro há muito tempo, então romper essa aliança não será difícil.
+Quân sư đã có cao kiến gì không?	Tem algum plano brilhante, Estrategista?
+Cao kiến thì không, nhưng tôi có mẹo này. Năm ngày nữa 49 ngày mất của Nguyễn Siêu, chắc chắn Nguyễn Thủ Tiệp sẽ trở về Tiên Du. Cho một nhóm người trà trộn vào thành Siêu Loại, nửa đêm đốt cổng bắc. Bên ngoài ta giả làm quân của Thủ Tiệp tung cờ xí, nổi trống trận, đi từ hướng Tiên Du vào phá thành. Với tính đa nghi, Lý Khuê sẽ tưởng Thủ Tiệp còn nuôi thù cũ, lợi dụng đâm lén sau lưng. Nội chiến xảy ra, việc lấy thành Siêu Loại dễ như trở bàn tay.	Não um plano brilhante, mas tenho um truque. Em cinco dias completam-se 49 dias da morte de Nguyen Sieu, e Nguyen Thu Tiep certamente voltará a Tien Du. Mandamos um grupo se infiltrar em Sieu Loai e incendiar o portão norte à meia-noite. Do lado de fora, nos disfarçamos como o exército de Thu Tiep, agitamos suas bandeiras, batemos os tambores de guerra e atacamos pela direção de Tien Du. Desconfiado como é, Ly Khue pensará que Thu Tiep ainda guarda o velho rancor e o está apunhalando pelas costas. Quando lutarem entre si, tomar Sieu Loai será tão fácil quanto virar a mão.
+Lưu quân sư, việc trà trộn hãy để tôi cùng các anh em trong doanh trại.	Estrategista Luu, deixe que eu e meus irmãos do acampamento façamos a infiltração.
+Việc này rất nguy hiểm...	Isso é muito perigoso...
+Quân sư hãy yên tâm, tôi có thể lo liệu được.	Fique tranquilo, Estrategista, eu dou conta.
+Tướng quân hãy cầm theo bí kíp này, nếu gặp nguy hãy mở ra.	General, leve este pergaminho secreto. Se estiver em perigo, abra-o.
+Giờ mọi người về nghỉ. Sáng mai, chúng ta sẽ về Tế Giang hội ngộ với Vạn Thắng Vương. Lưu cơ có việc phải làm ở Đỗ Động, tôi sẽ đến sau. 	Agora todos vão descansar. Amanhã cedo voltamos a Te Giang para encontrar Van Thang Vuong. Luu Co tem assuntos em Do Dong; irei depois.
+Quân sư, xin cáo lui.	Estrategista, eu me despeço.
+{p} tướng quân xin dừng bước, tôi có chuyện cần bàn với tướng quân!	General {p}, espere, tenho algo a discutir com você!
+Xin quân sư cứ nói!	Fale, Estrategista!
+Tôi nghe nói, ở vùng Đỗ Động có đám người tự xưng là con cháu Ngô tiên chúa đã khởi binh tiến đánh Hoa Lư, nhưng khi đến Ô Man thì đụng độ với hào trưởng làng ấy là Ngô Phó. Đám người này không diệt sau này sẽ rắc rối, tướng quân hãy cùng tôi đến giúp Ngô Phó một tay. Ngài hãy về chuẩn bị, sớm mai ta sẽ lên đường. 	Ouvi dizer que na região de Do Dong um bando que se diz descendente do falecido Senhor Ngo levantou tropas para atacar Hoa Lu, mas em O Man entrou em choque com o chefe da aldeia, Ngo Pho. Se não os destruirmos, darão problema depois. General, venha comigo ajudar Ngo Pho. Vá se preparar; partimos ao amanhecer.
+Mạt tướng xin cáo lui!	Eu me despeço!
+Ngô hào trưởng, quân của Vạn Thắng Vương xin đến giúp một tay!	Chefe Ngo, o exército de Van Thang Vuong veio ajudar!
+Thật tốt quá! Quân địch rất hung hãn, tướng quân hãy cẩn trọng!	Maravilha! O inimigo é muito feroz, General, tenha cuidado!
+Thưa Đại vương, việc ở Tây Phù Liệt tôi đã sắp xếp xong.	Majestade, terminei de organizar as coisas em Tay Phu Liet.
+Quân sư, Nguyễn Thủ Tiệp đã về Tiên Du. Khi nào ta sẽ đánh vào Siêu Loại?	Estrategista, Nguyen Thu Tiep voltou a Tien Du. Quando atacamos Sieu Loai?
+Theo thuộc hạ tính thì đêm mai có gió lớn, nội gián của ta sẽ đốt doanh trại địch, khi đó lửa lan rất nhanh. Thấy lửa, địch sẽ náo loạn, lúc đó ta xuất binh đánh vào Siêu Loại	Pelos meus cálculos haverá ventos fortes amanhã à noite. Nossos espiões vão incendiar o acampamento inimigo e o fogo se espalhará rápido. Vendo o fogo, o inimigo entrará em pânico, e então mandamos nossas tropas para dentro de Sieu Loai.
+Được, đêm mai ta sẽ lấy Siêu Loại. Mọi người hãy về chuẩn bị.	Ótimo, amanhã à noite tomamos Sieu Loai. Todos vão se preparar.
+Tuân lệnh Đại vương!	Às suas ordens, Majestade!
+Báo! Báo! Nguyễn Thủ Tiệp đã trở mặt, hắn đang phá cổng bắc.	Relatório! Relatório! Nguyen Thu Tiep se voltou contra nós, está rompendo o portão norte.
+Grr...grr...Con cáo già! Giết, giết hết bọn chúng cho ta!!	Grr...grr...Aquela velha raposa! Matem, matem todos!!
+Báoooo!!! Cổng nam, quân của Đinh Bộ Lĩnh đã đánh vào!	Relatóóório!!! Portão sul - o exército de Dinh Bo Linh invadiu!
+Nguy rồi !! Mau mau....	Estamos perdidos!! Rápido, rápido...
+Lý Khuê ở đằng kia! Mau đuổi theo.	Ly Khue está ali! Atrás dele!
+Mau! Mau chạy vào làng.	Rápido! Corram para a aldeia.
+Chạy đâu cho thoát!	Não há escapatória!
+Thất bại ở Siêu Loại, binh lực của Nguyễn Thủ Tiệp đã mất hơn nữa, quân lính gần như mất hết nhuệ khí. Đây là thời cơ thuận lợi cho ta đánh Tiên Du. Đại vương, hãy cho xuất binh.	Depois da derrota em Sieu Loai, Nguyen Thu Tiep perdeu ainda mais tropas e seus soldados quase não têm mais ânimo. É a hora perfeita para atacar Tien Du. Majestade, dê a ordem de marcha.
+Nguyễn Bặc, ông dẫn quân đánh vào cánh trái Tiên Du. Lê Hoàn thì đánh vào cánh phải. Ta cùng các tướng khác tấn công trực diện. Mọi người, tiến thẳng Tiên Du!	Nguyen Bac, leve suas tropas contra o flanco esquerdo de Tien Du. Le Hoan, fique com o flanco direito. Eu ataco de frente com os outros generais. Todos, direto para Tien Du!
+Thuộc hạ tuân lệnh!	Às suas ordens!
+Báoooo! quân ta đã thất thủ.	Relatóóório! Nossas linhas caíram.
+Mau, mau theo ta chạy vào núi.	Rápido, sigam-me para as montanhas.
+Ác tặc, chạy đâu cho thoát!!	Vilão, não há escapatória!!
+Hừ, không ngờ tên phản tặc Lã Xử Bình gửi thư cầu cứu liên quân Nguyễn Khoan và Kiều Công Hãn, 7 ngày nữa liên quân sẽ đến Cổ Loa.	Hmpf, quem diria que o traidor Lu Xu Binh pediria ajuda por carta aos exércitos aliados de Nguyen Khoan e Kieu Cong Han. Em 7 dias os aliados chegarão a Co Loa.
+Nếu liên quân hợp sức với Lữ Xử Bình, ta sẽ khó tiến vào Cổ Loa. Quân sư, ông có kế sách gì không?	Se os aliados se unirem a Lu Xu Binh, será difícil entrarmos em Co Loa. Estrategista, tem algum plano?
+Hiện tại quân lực ở Cổ Loa còn yếu. Trong 5 ngày, phải đánh vào Cổ Loa trước khi liên quân đến. Nếu không quân ta không còn cơ hội nào khác.	Agora as forças de Co Loa ainda estão fracas. Em 5 dias precisamos atacar Co Loa antes que os aliados cheguem, ou não teremos outra chance.
+{p}, Nguyễn Bặc, Lê Hoàn đi tiên phong, cấp tốc đến Cổ Loa. Mọi người hãy cố gắng!	{p}, Nguyen Bac e Le Hoan lideram a vanguarda, corram para Co Loa. Todos, deem o seu melhor!
+Địch đã tấn công. Chủ công, hãy ra lệnh!	O inimigo está atacando. Meu senhor, dê a ordem!
+Hãy ráng cầm cự chờ liên quân đến. Cung thủ, bắn tên!	Resistam até os aliados chegarem. Arqueiros, fogo!
+Chủ công, quân ta đã thất thủ...	Meu senhor, nossas linhas caíram...
+Grrr....Mau, rút về Tam Đái.	Grrr....Rápido, recuem para Tam Dai.
+Lữ Xử Bình, ngươi hết đường rồi! Sáaatttt	Lu Xu Binh, você chegou ao fim da linha! Ataaaaquem
+Biết quân ta đã chiếm Cổ Loa, liên quân rút về cố thủ ở Tam Đái. Bây giờ đánh từ Cổ Loa vào Tam Đái rất khó, mọi người có kế sách gì không? 	Sabendo que tomamos Co Loa, os aliados recuaram para defender Tam Dai. Atacar Tam Dai a partir de Co Loa agora é muito difícil. Alguém tem um plano?
+Nếu Tam Đái đánh khó thì ta sẽ đánh Phong Châu trước.	Se Tam Dai é difícil de atacar, atacaremos Phong Chau primeiro.
+Phong Châu?	Phong Chau?
+Kiều Công Hãn đem quân xuống Tam Đái, chắc chắn Phong Châu sẽ sơ hở. Ta cho 2 đạo quân tiến từ 2 hướng Đường Lâm và Cổ Loa đánh vào Tam Đái. Mặt khác cho đạo quân khác đi vòng đường núi đánh Phong Châu, Kiều Công Hãn chắc chắn rút quân về. Lúc đó chỉ còn mình Nguyễn Khoan ở Tam Đái, ta sẽ đánh vào được.	Kieu Cong Han levou suas tropas para Tam Dai, então Phong Chau certamente está exposta. Mandamos dois exércitos de Duong Lam e Co Loa contra Tam Dai. Enquanto isso, outro exército dá a volta pelas estradas da montanha para atacar Phong Chau, e Kieu Cong Han com certeza recuará. Então só Nguyen Khoan fica em Tam Dai, e podemos invadir.
+Nguyễn Bặc, {p} tướng quân hãy đem quân đến Đường Lâm, Lê Hoàn dẫn quân đến Phong Châu, các tướng còn lại hãy theo ta đánh thẳng từ Cổ Loa đến. Mọi người về nghỉ ngơi, sớm mai ta sẽ xuất quân!	Nguyen Bac e General {p}, levem tropas para Duong Lam; Le Hoan lidera tropas para Phong Chau; os demais generais me seguem direto de Co Loa. Todos vão descansar, marchamos ao amanhecer!
+Báoooo!! Thưa chủ công, Phong Châu bị tấn công!	Relatóóório!! Meu senhor, Phong Chau está sob ataque!
+Mau! Về hỗ trợ Phong Châu.	Rápido! Voltem e ajudem Phong Chau.
+Báoooo!! Tướng giặc Lê Hoàn đã chiếm Phong Châu!	Relatóóório!! O general inimigo Le Hoan tomou Phong Chau!
+Grr..grr...Ta đã quá sơ ý! Lui về Hồi Hồ tạm lánh một thời gian.	Grr..grr...Fui descuidado demais! Recuem para Hoi Ho e fiquem quietos por um tempo.
+Đinh Bộ Lĩnh! Ta thề sẽ lấy lại Phong Châu.	Dinh Bo Linh! Juro que vou retomar Phong Chau.
+Nguyễn Khoan, có gan ra đây so cao thấp với ta!	Nguyen Khoan, se tem coragem, saia e me enfrente!
+Ngông cuồng! Hôm nay ta sẽ lấy đầu bọn bay để trả thù của Nguyễn Siêu và Thủ Tiệp.	Tolo arrogante! Hoje levarei suas cabeças para vingar Nguyen Sieu e Thu Tiep.
+Đại vương, hạ tướng cũ của Trần lão công đã làm phản, hắn đem quân đánh vào Kỳ Bố. Mọi người trong thành đang cố thủ, lương thực chỉ đủ dùng trong vài ngày, ta phải đem quân đến giải vây ngay!	Majestade, um antigo oficial do velho Senhor Tran se rebelou e atacou Ky Bo. Todos na cidadela estão resistindo, mas a comida só dura alguns dias. Precisamos mandar tropas para romper o cerco agora mesmo!
+{p} tướng quân, khanh hãy đem quân trở về ứng cứu Kỳ Bố. Nhưng người còn lại theo ta đánh vào Phong Châu.	General {p}, leve suas tropas de volta para salvar Ky Bo. O resto de vocês me sigam para atacar Phong Chau.
+Phản tặc, có ta đến đây, hãy mau chịu tội!	Traidor, agora estou aqui. Responda por seus crimes!
+Sức ngươi còn kém lắm, chưa đủ đâu!	Você ainda é fraco demais, isso não basta!
+Chớ ngông cuồng! Hãy xem đây !!!	Não seja tão arrogante! Tome isto!!!
+Thất bại ở Phong Châu và Tam Đái, Kiều Công Hãn đã rút quân thẳng về Hồi Hồ nương nhờ em hắn là Kiều Thuận. Địa hình ở đó hiểm trở, rất khó tấn công, quân sư có kế sách gì không?	Derrotado em Phong Chau e Tam Dai, Kieu Cong Han recuou direto para Hoi Ho para se abrigar com o irmão, Kieu Thuan. O terreno lá é acidentado e muito difícil de atacar. Estrategista, tem algum plano?
+Thưa Đại Vương, thực ra địa hình hiểm trở chính là yếu điểm của Hồi Hồ!	Majestade, na verdade o terreno acidentado é justamente a fraqueza de Hoi Ho!
+Yếu điểm!? Ta chưa hiểu, quân sư hãy nói rõ.	Uma fraqueza!? Não entendo. Estrategista, explique.
+Thành Hồi Hồ xung quanh là vùng đồi núi hiểm trở, ta không nên tấn công, chia quân ra đóng ở  nơi hiểm yếu ngăn chặn nguồn nước. Vây phục ba ngày, tự chúng sẽ mò ra, lúc ấy ta sẽ diệt được.	A cidadela de Hoi Ho é cercada de colinas acidentadas. Não devemos atacar; em vez disso, dividimos as tropas para guardar as passagens-chave e cortar a água deles. Depois de três dias de cerco eles sairão rastejando por conta própria, e então poderemos destruí-los.
+Quân sư nói phải lắm, 12 sứ quân nay chỉ còn anh em họ Kiều, ta cũng không cần phải vội. Chúng ta hãy theo kế của quân sư.	O estrategista tem razão. Dos 12 senhores da guerra só restam os irmãos Kieu, então não há pressa. Seguiremos o plano do estrategista.
+Tuân lệnh đại vương!	Às suas ordens, Majestade!
+Huynh trưởng, lương thực trong thành chẳng còn bao nhiêu. Nếu tiếp tục ở trong thành e rằng sẽ không qua khỏi.	Irmão, quase não há mais comida na cidadela. Se ficarmos aqui dentro, temo que não sobreviveremos.
+Với tình thế này, nên tìm cách thoát thân trước.	Nesta situação, devemos primeiro achar um jeito de escapar.
+Địch đã bao vây 4 hướng, ta chạy đi đâu bây giờ.	O inimigo nos cercou pelos quatro lados. Para onde podemos fugir?
+Ở cửa Bắc, lực lượng của địch yếu nhất. Nếu phá được vòng vây, thì chạy lên phương Bắc xin nhà Tống cứu viện.	No portão norte o inimigo é mais fraco. Se rompermos ali, fugimos para o norte e pedimos ajuda à corte Song.
+Đệ sẽ chọn ra 1 đám quân tinh nhuệ, đêm nay chúng ta phá vòng vây.	Vou escolher um grupo de soldados de elite; esta noite rompemos o cerco.
+Kiều tặc, chạy đâu cho thoát!	Traidores Kieu, não há escapatória!
+Thưa đại vương, loạn 12 sứ quân đã dẹp xong, bây giờ đã đến lúc xưng đế.	Majestade, a Anarquia dos 12 Senhores da Guerra acabou. Agora é a hora de se proclamar imperador.
+Ta đang suy nghĩ, không biết chọn nơi nào làm kinh đô. Quân sư có cao kiến gì không?	Tenho pensado nisso, mas não sei onde instalar a capital. Estrategista, alguma ideia?
+Người Hoa Lư nên chọn Hoa Lư làm gốc, hơn nữa Hoa Lư là nơi núi non trùng điệp. Núi trong sông, sông trong núi. Căn cứ thủy bộ thuận tiện, sau lưng là rừng, trước mặt là đồng bằng, xa nữa là biển cả. Nơi đây non sông thì tráng lệ, phong thủy hài hòa nên Ấu Rồng thường xuất hiện gây nhiều khó khăn cho bá tánh.	Homens de Hoa Lu devem ter Hoa Lu como raiz. Além disso, Hoa Lu é cercada por camadas de montanhas: montanhas dentro dos rios, rios dentro das montanhas. É uma boa base por terra e por água, com floresta atrás, planícies à frente e o mar além. Sua paisagem é magnífica e seu feng shui, harmonioso, e é por isso que um Jovem Dragão aparece ali com frequência, trazendo sofrimento ao povo.
+Vậy ta diệt Ấu Rồng trước, sau dựng kinh đô. Mọi người về nghỉ ngơi, sớm mai trở về Hoa Lư.	Então mataremos o Jovem Dragão primeiro e construiremos a capital depois. Todos vão descansar; amanhã cedo voltamos a Hoa Lu.
+Tuân lệnh đại vương.	Às suas ordens, Majestade.
+Ta, một người nhỏ bé, nhờ hưng binh mà dẹp loạn, thống nhất đất nước. Nay thuận ý muôn dân, ta xưng hiệu Đinh Tiên Hoàng đế, đặt quốc hiệu là Đại Cồ Việt.	Eu, um homem humilde, levantei um exército para acabar com o caos e unificar o país. Agora, seguindo a vontade do povo, adoto o título de Imperador Dinh Tien Hoang e dou à nossa nação o nome de Dai Co Viet.
+Đinh Tiên Hoàng vạn tuế vạn tuế!	Viva Dinh Tien Hoang, viva!
+Tướng quân rất thông minh, những gì tôi truyền đạt ngài tiếp nhận khá nhanh.	General, você é muito esperto; aprendeu bem rápido o que lhe ensinei.
+Chỉ là chút tài mọn, quân sư đã quá khen!	É só um talento modesto, Estrategista, assim você me lisonjeia!
+Sơn tặc đã diệt xong. Doanh trại rất thích hợp làm Đấu Trường luyện tập cho quân ta. Các ngươi hãy ở lại canh giữ, còn lại mau theo ta trở về Hoa Lư.	Os bandidos foram eliminados. Este acampamento é perfeito como Arena para treinar nossas tropas. Você fica aqui para guardá-lo; os demais me sigam de volta a Hoa Lu.
+Giặc quá mạnh, ta thua rồi. Mau mở cửa thành...đầu hàng	O inimigo é forte demais, perdemos. Abram os portões... nós nos rendemos.
+Nhật Khánh, bây giờ ngươi muốn sống hay muốn chết?	Nhat Khanh, quer viver ou morrer?
+Họ Ngô ta đã dựng nên đất nước, chẳng may gặp kẻ gian thần hãm hại mà mất nước. Ta nuôi chí khôi phục cơ nghiệp tiên chúa, nghiệp lớn không thành, muốn chém thì chém, chớ nhiều lời !!!	O clã Ngo fundou este país, mas ministros traiçoeiros nos derrubaram e perdemos o reino. Busquei restaurar o legado dos meus ancestrais; como a grande tarefa fracassou, me abata se quiser, e poupe-me de suas palavras!!!
+Được, ta sẽ cho ngươi toại nguyện.	Muito bem, vou atender ao seu desejo.
+Tướng quân dừng tay!!!	General, pare!!!
+Lưu Cơ đến muộn, mong Ngô công tử bỏ qua. Tiên phụ công tử với Vạn Thắng Vương là bạn từ thời tóc còn để chỏm, chiến tranh loạn lạc 2 người đi 2 hướng khác nhau. Hay biết công tử là con cố nhân, nay người muốn gặp công tử ở Hoa Lư. Xin mời công tử lên xe ngựa.	Luu Co chegou tarde, peço perdão ao jovem senhor. Seu falecido pai e Van Thang Vuong eram amigos desde a infância, mas a guerra os levou por caminhos diferentes. Sabendo que você é filho de seu velho amigo, ele agora deseja encontrá-lo em Hoa Lu. Por favor, jovem senhor, suba na carruagem.
+Hmm ... ... ...	Hmm ... ... ...
+Rút quân !!!!	Recuar!!!!
+Đừng đuổi theo! Hãy lui vào thành.	Não os persigam! Voltem para dentro da cidadela.
+Lã Đường đã chết!! Kẻ nào đầu hàng sẽ được tha.	La Duong está morto!! Quem se render será poupado.
+Thắng thua đã rõ. Trói hắn lại.	O resultado está claro. Amarrem-no.
+Muốn bắt ta ư? Còn lâu.....Yaaaa........hự....hự... !!	Quer me capturar? Jamais.....Yaaaa........ugh....ugh... !!
+Hắn đã tự sát, hãy mau lấy thành.	Ele tirou a própria vida. Rápido, tomem a cidadela.
+Viện binh đã đến, mọi người phản công !!!	Os reforços chegaram, todos ao contra-ataque!!!
+Không xong rồi! Hãy mau rút về tiền đồn chờ lệnh Hữu công Nguyễn Siêu.	Isso é ruim! Recuem para o posto avançado e aguardem ordens do Senhor Nguyen Sieu.
+Trí Khả đã bị diệt, hãy mau tìm Nguyễn Siêu!	Tri Kha está morto, encontrem Nguyen Sieu, rápido!
+Nguyễn Siêu đã chạy hướng Đông Phù Liệt sang Tiên Du, tướng quân hãy mau đuổi theo, đừng để hắn qua sông!	Nguyen Sieu fugiu por Dong Phu Liet em direção a Tien Du. General, vá atrás dele rápido, não o deixe atravessar o rio!
+Thủ cấp của Nguyễn Siêu trong tay ta, muốn sống thì mau buông vũ khí đầu hàng! 	Tenho a cabeça de Nguyen Sieu. Se querem viver, larguem as armas e rendam-se!
+Đa tạ tướng quân đã trợ giúp!	Muito obrigado pela ajuda, General!
+Ngô hào trưởng, đừng khách sáo. Đây là nhiệm vụ của tôi. Phản loạn đã diệt xong, nay tôi phải về Tế Giang để giúp Vạn Thắng Vương. Ngô hào trưởng, hẹn ngày tái ngộ!	Chefe Ngo, não precisa agradecer. É o meu dever. Os rebeldes foram destruídos; agora preciso voltar a Te Giang para ajudar Van Thang Vuong. Chefe Ngo, até a próxima!
+Tướng quân, bảo trọng!	General, cuide-se!
+Nói !! Muốn sống thì cho ta biết Lý Khuê đang ở đâu !?	Fale!! Se quer viver, diga onde está Ly Khue!?
+Lý sứ quân đã chạy về hướng Dương Xá, xin tướng quân tha mạng.	O Senhor Ly fugiu em direção a Duong Xa. Poupe minha vida, General.
+Nhốt tên này lại, chờ ta về xử lý. Những người còn lại mau đuổi theo Lý Khuê!	Prendam este aqui até eu voltar. O resto, atrás de Ly Khue!
+Chém! Đem đầu Lý Khuê về.	Matem! Tragam a cabeça de Ly Khue.
+Còn kẻ nào chán sống thì hãy bước lên !	Mais alguém cansado de viver? Dê um passo à frente!
+Á.....! Chết ta......	Aaah.....! Estou acabado......
+Nguyễn Khoan đã bỏ mạng. Kẻ nào đầu hàng sẽ được tha chết!	Nguyen Khoan está morto. Quem se render será poupado!
+Phản tặc đã diệt, hãy mau đến Phong Châu.	O traidor foi destruído, corram para Phong Chau.
+Anh em họ Kiều đã diệt xong, mau báo cho Vạn Thắng Vương.	Os irmãos Kieu foram destruídos, informem Van Thang Vuong agora mesmo.
+Không cho chúng chạy! Đuổi theo giết sạch, không chừa một mống.	Não os deixem escapar! Persigam e matem todos, que não sobre nenhum.
+Thực lực quá kém, đúng là không biết trời cao.	Tão fraco - você realmente não sabe o tamanho do céu.
+Chết nè !!!	Morra!!!
+A....a....a......	Ah....ah....ah......
+Chống đối ta chỉ có chết, hãy nhìn đó mà làm gương.	Opor-se a mim significa a morte; que isso lhe sirva de lição.
+Áaaaaa ... a.......a.......	Aaaaaah ... ah.......ah.......
+{p} tướng quân đã bại trận. Rút quân!!!	O General {p} foi derrotado. Recuar!!!
+Tiến lên!! Ai bắt được Đinh Bộ Lĩnh dù sống hay đã chết sẽ được phong quan.	Avante!! Quem capturar Dinh Bo Linh, vivo ou morto, será nomeado oficial.
+Thành đã thất thủ, mọi người mau rút về Hoa Lư, ta sẽ ở lại cản đường. Mau!! Không được chần chừ. Vạn Thắng Vương, xin thứ lỗi cho thuộc hạ.	A cidadela caiu. Todos recuem para Hoa Lu, eu fico e bloqueio o caminho. Vão!! Não hesitem. Van Thang Vuong, perdoe seu servo.
+Còn tên nào muốn được hóa kiếp thì bước lên !	Mais alguém que queira renascer? Dê um passo à frente!
+Hừm, làm mất thời gian!	Hmpf, perda de tempo!
+{p} tướng quân đã bại trận!! Rút quân.	O General {p} foi derrotado!! Recuar.
+Tướng giặc đã chết! Đuổi theo giết sạch bọn chúng.	O general inimigo está morto! Persigam e matem todos.
+Chỉ có bấy nhiêu mà cũng dám cản đường ta sao !?	É só isso, e você ousa bloquear meu caminho!?
+Sức chỉ thế mà đòi lấy đầu ta ư !?	Com uma força dessas você quer a minha cabeça!?
+Mau ra khỏi thành!	Rápido, saiam da cidadela!
+Siêu, Tiệp! Ta đã báo thù cho hai đệ.	Sieu, Tiep! Eu os vinguei, meus irmãos.
+Muốn cản ta ư? Chưa đủ sức!	Quer me deter? Você não tem força para isso!
+Qua ngọn núi phía trước ta sẽ an toàn. Đinh Bộ Lĩnh hãy chờ đó, nhất định ta sẽ quay về lấy lại tất cả.	Passando a montanha à frente estaremos seguros. Dinh Bo Linh, me aguarde, com certeza voltarei e retomarei tudo.
+Giúp chúng tôi với !!!	Socorro!!!
+Sơn trang phía trước bị yêu quái tấn công, tướng quân hãy mau đến giúp!	O solar da montanha à frente está sendo atacado por monstros. General, corra para ajudar!
+Các ngươi là ai? Sao dám cản đường !	Quem é você? Como ousa bloquear meu caminho!
+Thưa tướng quân! Tiểu dân xin gặp Vạn Thắng Vương.	General! Este humilde plebeu pede para ver Van Thang Vuong.
+Ngươi là ai?  Gặp ta có việc gì ?	Quem é você? O que quer comigo?
+Thưa đại vương, tiểu dân họ Lê tên Hoàn, người ở Bảo Thái, từ lâu đã nghe danh đức của đại vương, nên muốn phò giúp.	Majestade, meu nome é Le Hoan, de Bao Thai. Há muito ouço falar de sua virtude e desejo servi-lo.
+Hãy đến Hoa Lư, chờ ta đánh trận về rồi tính.	Vá a Hoa Lu e espere até eu voltar da batalha.
+Tiểu dân chờ người rất lâu rồi, hãy cho tôi một cơ hội.	Esperei pelo senhor por muito tempo, por favor, me dê uma chance.
+Vậy ngươi hãy thử đấu với {p} xem sao.	Então tente lutar contra {p} e vamos ver.
+Mô phật! Bần tăng tiếp đón chậm trễ, Lưu tiên sinh hãy lượng thứ.	Amitabha! Perdoe este pobre monge pela recepção tardia, Mestre Luu.
+Đại sư đừng khách sáo! Hôm nay tôi đến đây có việc cần ngài giúp đỡ. 	Sem formalidades, Mestre! Vim hoje porque preciso da sua ajuda.
+Lưu quân sư, nếu giúp được bần tăng sẽ cố hết sức.	Estrategista Luu, se eu puder ajudar, este pobre monge fará o seu melhor.
+Không dấu gì đại sư, binh lực của Vạn Thắng Vương tuy uy dũng nhưng vẫn còn thiếu người chỉ dẫn. Đại sư, xin hãy giúp một tay.	Não vou esconder do senhor, Mestre: o exército de Van Thang Vuong é poderoso, mas ainda lhe falta orientação. Mestre, por favor, nos ajude.
+Việc này hơi khó cho bần tăng vì chùa có quy định nếu thỉnh sư xuống núi phải phá được La Hán Trận. Trước nay chưa có ai phá được trận này, Lưu tiên sinh e rằng tôi khó mà giúp ông.	Isso é um pouco difícil para mim: a regra do templo diz que um monge convidado a descer a montanha deve antes quebrar a Formação dos Arhats. Ninguém jamais a quebrou, então temo que mal poderei ajudá-lo, Mestre Luu.
+Lưu tiên sinh, hãy để tiểu tướng thử phá La Hán Trận	Mestre Luu, deixe-me tentar quebrar a Formação dos Arhats.
+Tướng quân, hãy trận trọng.	General, tenha cuidado.
+Các ngươi là ai, hãy mau tránh đường cho ta.	Quem é você? Saia do meu caminho.
+Láo xược, tiếp chiêu!	Insolente! Tome isto!
+Chẳng hay tướng quân ghé đến tệ xá có việc cần gì chỉ bảo?	O que traz o general à minha humilde casa? Como posso ajudar?
+Ta đi lạc đến đây, xin hỏi cao danh quý tánh của tiên sinh.	Eu me perdi e acabei aqui. Posso saber seu honrado nome, senhor?
+Tại hạ họ Bùi tên Quang Dũng...	Meu nome é Bui Quang Dung...
+Người là Bùi Quang Dũng !? Nghe danh đã lâu, hôm nay có cơ hội gặp gỡ, xin tiên sinh chỉ giáo.	O senhor é Bui Quang Dung!? Há muito ouço falar do senhor. Agora que nos conhecemos, por favor, me ensine.
+Thật không dám. Tướng quân! xin mời.	Eu não ousaria. General! Depois do senhor.
+Tướng quân, xin hãy dừng bước.	General, espere, por favor.
+Công tử là....	Jovem senhor, você é....
+Cự Lạng là cháu nội của Phạm Lệnh Công – Đông giáp tướng quân dưới thời Ngô tiên chúa, chẳng may chiến tranh loạn lạc nên lui về đây chờ minh chủ. Hay tin quân của Vạn Thắng Vương đi qua, chúng tôi dẫn mọi người đến giúp một tay.	Eu, Cu Lang, sou neto do Senhor Pham Lenh Cong - General da Armadura do Leste sob o falecido Senhor Ngo. Infelizmente, a guerra e o caos nos fizeram recuar até aqui para esperar um governante sábio. Ao saber que o exército de Van Thang Vuong passava por perto, trouxemos nossa gente para ajudar.
+Vạn Thắng Vương đang ở ngoài chiến trường, công tử hãy theo tôi.	Van Thang Vuong está no campo de batalha; jovem senhor, venha comigo.
+Chân Lưu đệ! Giang sơn đại loạn rất cần người tài, đệ hãy xuống núi giúp ta một phen.	Irmão Chan Luu! A terra está em grande caos e precisa de homens talentosos. Desça a montanha e me ajude.
+Bộ Lĩnh huynh, đám yêu quái ở Tam Đảo đang lộng hành. Nếu đệ theo huynh xuống núi e chùa sẽ khó mà giữ được.	Irmão Bo Linh, os monstros de Tam Dao estão à solta. Se eu o seguir montanha abaixo, temo que o templo fique desprotegido.
+Đệ yên tâm, ta sẽ giúp đệ diệt đám yêu đó.	Não se preocupe, irmão, vou ajudá-lo a destruir esses monstros.
+Yêu quái đã bị diệt, mọi người an toàn rồi!	Os monstros foram destruídos, agora todos estão a salvo!
+Đa tạ đại vương cứu giúp!	Obrigada por nos salvar, Majestade!
+Tiểu thư, hãy đứng lên. Mọi người trong sơn trang đâu cả, sao chỉ còn lại mình nàng?	Levante-se, jovem senhora. Onde estão todos do solar? Por que só restou você?
+Mọi người đã bị yêu quái sát hại, Vân Nga may mắn được đại vương kịp thời cứu giúp. Nếu không chê, xin đại vương hãy cho tiểu nữ theo hầu để báo đáp ân tình.	Todos foram mortos pelos monstros; Van Nga teve a sorte de Vossa Majestade chegar a tempo. Se não se importar, deixe-me servi-lo para retribuir sua bondade.
+Ở đây hoang vắng nguy hiểm, một mình nàng ở lại cũng không tốt. Hãy theo cận vệ của ta về Hoa Lư trước, ta về gặp nàng sau.	Este lugar é deserto e perigoso; não é bom que fique sozinha. Volte primeiro a Hoa Lu com meus guardas, e nos vemos depois.
+Tạ ơn đại vương	Obrigada, Majestade
+Khá lắm!	Muito bem!
+Đại vương! quân ta rất cần một tiên phong dũng mãnh như vị tráng sĩ này.	Majestade! Nosso exército precisa muito de uma vanguarda corajosa como este guerreiro.
+Lê Hoàn! ta giao ngươi trọng trách tiên phong tướng quân.	Le Hoan! Confio a você o posto de general da vanguarda.
+Đa tạ đại vương. Dù có thịt nát xương tan, tiểu tướng cũng sẽ hoàn thành nhiệm vụ đại vương đã giao.	Obrigado, Majestade. Mesmo que meu corpo se despedace, cumprirei a missão que me confiou.
+Võ công của tướng quân thật cao thâm! Bần tăng được mở rộng tầm mắt.	Sua arte marcial é realmente profunda, General! Os olhos deste pobre monge foram abertos.
+Đại sư đã quá khen, tôi chỉ may mắn phá được trận.	O senhor me lisonjeia, Mestre. Só tive sorte em quebrar a formação.
+Lưu tiên sinh, hãy đợi tôi thu xếp rồi cùng đến Hoa Lư.	Mestre Luu, espere enquanto me preparo, depois iremos juntos a Hoa Lu.
+Đại sư cứ từ từ thu xếp, tôi sẽ chờ.	Sem pressa, Mestre, eu espero.
+Tướng quân, hãy dừng tay!	General, pare!
+Xin hỏi tráng sĩ có phải là hào trưởng Nguyễn Ninh?	Posso perguntar, guerreiro, se você é o Chefe Nguyen Ninh?
+Các hạ là ai sao lại biết tên ta?	Quem são vocês, e como sabem meu nome?
+Chúng tôi là người của Vạn Thắng Vương, bấy lâu nghe danh hào trưởng anh dũng hơn người, nay chúng tôi đi ngang qua đây, nếu có mạo phạm xin thứ lỗi.	Somos homens de Van Thang Vuong. Há muito ouvimos que você é o mais corajoso dos chefes; estávamos de passagem, então perdoe-nos se o ofendemos.
+Vạn Thắng Vương !!! Thật may quá, tôi cũng đang đến Hoa Lư để đầu quân.	Van Thang Vuong!!! Que sorte, eu estava a caminho de Hoa Lu para me alistar.
+Nếu Hoa Lư có thêm vị tướng anh dũng như hào trưởng thật là phước của muôn dân.	Se Hoa Lu ganhar um general tão corajoso quanto você, Chefe, será uma bênção para todo o povo.
+Một chút tài mọn, tiên sinh đã quá lời. Xin tiên sinh hãy đưa tôi đi gặp Vạn Thắng Vương.	Só um talento modesto, senhor, você exagera. Por favor, leve-me para conhecer Van Thang Vuong.
+Hào trưởng, xin mời.	Chefe, depois de você.
+Kiếm pháp của tiên sinh rất cao thâm, nếu ở lại nơi này thật uổng phí. Nếu không chê, tôi sẽ tiến cử tiên sinh với Vạn Thắng Vương.	Sua esgrima é realmente profunda, senhor; ficar aqui seria um desperdício. Se não se importar, vou recomendá-lo a Van Thang Vuong.
+Đa tạ tướng quân! Được góp chút tài mọn cho Vạn Thắng Vương thật là vinh hạnh cho tôi.	Obrigado, General! Oferecer meu modesto talento a Van Thang Vuong é uma grande honra para mim.
+Tiên sinh, làm sao chúng ta ra khỏi vùng này?	Senhor, como saímos desta área?
+Tướng quân! hãy theo tôi.	General! Siga-me.
+Yêu quái đã diệt xong, mọi người hãy mau trở về chùa.	Os monstros foram destruídos; todos, voltem rápido ao templo.
+Đa tạ Bộ Lĩnh huynh đã giúp đỡ. Hãy đợi tôi thu xếp hành lý xuống núi.	Obrigado pela ajuda, Irmão Bo Linh. Espere enquanto arrumo as coisas para descer a montanha.
+Á......á.....yêu...quái.......mạnh...quá....hự......hự!	Aaah......ah.....os...monstros.......são...fortes...demais....ugh......ugh!
+[intro]	Em 944, Ngo Quyen morreu. Seu cunhado, Duong Tam Kha, tomou o trono, fez-se rei e adotou o título de Duong Binh Vuong.\n\nDepois que Duong Tam Kha usurpou o trono dos Ngo, chefes de toda parte se recusaram a se submeter. Revoltaram-se um após o outro e tomaram distritos e cidades. O país mergulhou no caos...\n\nEm 950, Duong Binh Vuong enviou o segundo filho de Ngo Quyen, Ngo Xuong Van, para atacar Thai Binh. Ngo Xuong Van virou o exército, derrubou Duong Tam Kha e tornou-se rei como Nam Tan Vuong.\n\nEm 954, Ngo Xuong Van partiu para punir senhores rebeldes e foi morto numa emboscada.\n\nSeu sobrinho, Ngo Xuong Xi, o sucedeu, mas seu poder só enfraquecia e ele teve de recuar para defender Binh Kieu.\n\nEm 966, os 12 Senhores da Guerra já dominavam a terra:\n\n1. Ngo Xuong Xi em Binh Kieu\n2. Do Canh Thac em Do Dong Giang\n3. Tran Lam em Bo Hai Khau\n4. Kieu Cong Han em Phong Chau\n5. Nguyen Khoan em Tam Dai\n6. Ngo Nhat Khanh em Duong Lam\n7. Ly Khue em Sieu Loai\n8. Nguyen Thu Tiep em Tien Du\n9. La Duong em Te Giang\n10. Nguyen Sieu em Tay Phu Liet\n11. Kieu Thuan em Hoi Ho\n12. Pham Bach Ho em Dang Chau\n\nAo mesmo tempo, Dinh Bo Linh se levantou, reuniu o povo de Hoa Lu e aguardou o seu momento.\n\nPara ampliar sua base, Dinh Bo Linh se uniu a Tran Lam, que lhe deu a mão da filha em casamento.\n\nMais tarde, Tran Lam lhe entregou o comando do exército. Ele o levou de volta a Hoa Lu, recrutou generais talentosos e enfrentou os Ngo e os outros senhores da guerra.\n\nHeróis de toda parte vieram servi-lo. Dia após dia treinavam, aguardando a hora de marchar...
+[ending]	Em 968, depois de pôr fim à Anarquia dos 12 Senhores da Guerra, Dinh Bo Linh subiu ao trono como Imperador, com o título de Dai Thang Minh Hoang De - conhecido como Dinh Tien Hoang -, e capital em Hoa Lu.\n\nEm 971, Dinh Tien Hoang começou a definir as patentes dos oficiais civis e militares da corte.\n\nOs monges também passaram a fazer parte da corte, por sua contribuição para o fim da Anarquia dos 12 Senhores da Guerra.\n\nDinh Tien Hoang nomeou seus oficiais:\n\n- Nguyen Bac como Dinh Quoc Cong\n- Luu Co como Do Ho Phu Si Su\n- Le Hoan como Thap Dao Tuong Quan\n- Ngo Chan Luu como Khuong Viet Dai Su\n- Pham Bach Ho como Than Ve Dai Tuong Quan\n- Pham Cu Lang como Phong Ngu Su Tuong Quan\n- Bui Quang Dung como Tran Dong Tiet Do Su\n- {s} como ......
+Tướng quân hãy làm theo chỉ dẫn của tôi.	General, siga minhas instruções.
+Hãy chạm vào thanh kiếm (hoặc bấm phím 5) để chọn	Toque numa espada para selecioná-la
+Vuốt xuống hoặc chạm ô bên dưới (phím 8) để đổi chỗ	Deslize para baixo ou toque na peça de baixo para trocar
+Để tấn công kẻ thù hãy xếp 3 thanh kiếm các loại sát nhau theo hàng ngang hoặc dọc.	Para atacar o inimigo, alinhe 3 espadas de qualquer tipo lado a lado, na horizontal ou na vertical.
+Bây giờ đến lượt ta...	Agora é a minha vez...
+Tướng quân đã bị thương	Você foi ferido, General
+Để hồi phục sinh lực hãy xếp 3 trái tim	Para recuperar HP, alinhe 3 corações
+Tốt lắm.	Muito bem.
+Phía dưới có 1 thanh màu xanh lá tượng trưng cho lương thực, hết lương thực thì sẽ thua cuộc.	A barra verde abaixo é sua comida; se a comida acabar, você perde.
+Để lấy lương thực hãy xếp 3 bánh chưng	Para ganhar comida, alinhe 3 bolinhos de arroz
+Rất tốt!	Excelente!
+Thanh màu xanh ngọc bích là năng lượng	A barra turquesa é a energia
+Để lấy năng lượng hãy xếp 3 biểu tượng âm dương	Para ganhar energia, alinhe 3 ícones de yin-yang
+Cây năng lượng có 3 phần ứng với 3 tuyệt chiêu	A barra de energia tem 3 partes para suas 3 habilidades
+Tướng quân hãy mở bảng phép thuật bằng cách nhấn phím 'T.Chiêu' ,chọn một loại tuyệt chiêu và bấm 'Dùng'.	General, abra o painel de habilidades, escolha uma e toque em 'Usar'.
+Tuyệt vời!	Maravilhoso!
+Tướng quân sẽ được thăng cấp khi thu được nhiều kinh nghiệm chiến đấu, cấp càng cao thì chỉ số tấn công và sinh lực càng cao.	Você sobe de nível ganhando experiência em batalha; quanto maior o nível, maiores seu ataque e seu HP.
+Để lấy kinh nghiệm chiến đấu hãy xếp các biểu tượng cuốn sách.	Para ganhar experiência em batalha, alinhe ícones de livro.
+Ngoài ra, để mua các vật phẩm hỗ trợ tại cửa hàng tướng quân phải thu thập các thỏi vàng.	E para comprar itens de apoio na loja, junte barras de ouro.
+Nếu xếp 4 biểu tượng trở lên sẽ được đi thêm 1 lượt.	Combinar 4 ou mais ícones dá um turno extra.
+Và xếp 5 biểu tượng trở lên sẽ nhận được thêm các vật phẩm hỗ trợ	E combinar 5 ou mais dá itens de apoio
+Bây giờ hãy thử xếp 5 biểu tượng	Agora tente combinar 5 ícones
+Tướng quân đã được thưởng 1 vật phẩm, hãy chạm 'Túi' (hoặc bấm phím #) để chọn và sử dụng vật phẩm.	Você ganhou um item. Toque em 'Bolsa' para escolher e usar.
+Chú ý, một lượt đi phải ghép ít nhất 3 biểu tượng giống nhau, nếu thực hiện không đúng sẽ bị mất lượt đi và tiêu hao sinh lực. Hãy cẩn trọng.	Atenção: cada movimento deve combinar pelo menos 3 ícones iguais. Um movimento errado custa seu turno e um pouco de HP. Tenha cuidado.
+Bạn đã hoàn thành sự kiện. Bạn được thưởng thêm {0}	Evento concluído! Recompensa: {0}
+{0} tấn công	{0} de ataque
+Hãy chạm vào thanh kiếm để chọn	Toque numa espada para selecioná-la
+Vuốt xuống hoặc chạm ô bên dưới để đổi chỗ	Deslize para baixo ou toque na peça de baixo para trocar
+Tướng quân hãy chạm vào một tuyệt chiêu ở hàng dưới các chân dung, rồi bấm 'Dùng'.	General, toque numa habilidade na fileira abaixo dos retratos e depois em 'Usar'.
+Tướng quân đã được thưởng 1 vật phẩm. Hãy chạm vào vật phẩm ở hàng dưới cùng, rồi bấm 'Dùng'.	Você ganhou um item. Toque nele na fileira de baixo e depois em 'Usar'.
