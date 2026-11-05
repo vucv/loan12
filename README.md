@@ -2,7 +2,8 @@
 
 | File | Nhánh | Commit | Nội dung |
 |---|---|---|---|
-| `android/Loan12-ui-touch-5317e2e.apk` | `ui-touch` | `5317e2e` | Thoại: câu chờ lượt theo ưu tiên, tuyệt chiêu nhận trực tiếp, trúng đòn từ 4%; khung thoại vừa chữ (mới nhất) |
+| `android/Loan12-ui-touch-ec33b41.apk` | `ui-touch` | `ec33b41` | Thoại tiếng Việt của nhân vật lịch sử trang trọng, bớt chọc ghẹo (mới nhất) |
+| `android/Loan12-ui-touch-5317e2e.apk` | `ui-touch` | `5317e2e` | Thoại: câu chờ lượt theo ưu tiên, tuyệt chiêu nhận trực tiếp, trúng đòn từ 4%; khung thoại vừa chữ |
 | `android/Loan12-ui-touch-2b9d7bd.apk` | `ui-touch` | `2b9d7bd` | 11 ngôn ngữ; thoại trong trận đúng như bản 94cdd3e |
 | `android/Loan12-ui-touch-e1cee6e.apk` | `ui-touch` | `e1cee6e` | Thoại: trúng đòn có câu nói, tuyệt chiêu luôn có tên chiêu |
 | `android/Loan12-ui-touch-3526e7c.apk` | `ui-touch` | `3526e7c` | Thoại trong trận như hôm qua nhưng theo tính cách nhân vật; câu khiêu khích khi dùng vật phẩm |
