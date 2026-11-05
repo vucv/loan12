@@ -526,6 +526,7 @@ namespace Loan12.UnityPort
                 ticker = "";
                 popupKind = 0;
                 outcome = 0;
+                lostAcc[0] = lostAcc[1] = healAcc[0] = healAcc[1] = 0;
                 SayB(1, "start", Pick(StartLines));
                 return;
             }
@@ -538,25 +539,40 @@ namespace Loan12.UnityPort
                 {
                     Float(s * 10 + 1, "-", -dh, "", TouchUi.Hex(0xFF5A4A), HpAt(s));
                     Tick(who + " mất " + (-dh) + " máu");
-                    if (C_PortUi.effect(s, 3) > 0 && -dh < maxHp / 10)
-                    {
-                        SayB(s, "block", Pick(BlockLines));
-                    }
-                    else if (-dh * 100 >= maxHp * 15)
-                    {
-                        SayB(s, "hurt", Pick(HurtLines[s]));
-                    }
+                    // a move's hits come one by one: they add up, and the one hit speaks once they stop
+                    lostAcc[s] += -dh;
+                    hitAt[s] = Time.unscaledTime;
+                    shieldUp[s] = shieldUp[s] || C_PortUi.effect(s, 3) > 0;
                 }
                 else if (dh > 0)
                 {
                     Float(s * 10 + 2, "+", dh, " máu", TouchUi.Hex(0x7CE05A), HpAt(s));
                     Tick(who + " hồi " + dh + " máu");
-                    if (dh * 100 >= maxHp * 10)
+                    healAcc[s] += dh;
+                    hitAt[s] = Time.unscaledTime;
+                }
+                prevHp[s] = hp;
+                if ((lostAcc[s] > 0 || healAcc[s] > 0) && Time.unscaledTime - hitAt[s] > 0.6f)
+                {
+                    // the move is over: what it did, said once
+                    if (lostAcc[s] > 0 && hp > 0)
+                    {
+                        if (shieldUp[s] && lostAcc[s] * 100 < maxHp * 10)
+                        {
+                            SayB(s, "block", Pick(BlockLines));
+                        }
+                        else if (lostAcc[s] * 100 >= maxHp * 6)
+                        {
+                            SayB(s, "hurt", Pick(HurtLines[s]));
+                        }
+                    }
+                    else if (healAcc[s] * 100 >= maxHp * 10)
                     {
                         SayB(s, "heal", Pick(HealLines));
                     }
+                    lostAcc[s] = healAcc[s] = 0;
+                    shieldUp[s] = false;
                 }
-                prevHp[s] = hp;
                 if (!lowSaid[s] && hp > 0 && hp * 5 < maxHp)
                 {
                     lowSaid[s] = true;
@@ -648,6 +664,10 @@ namespace Loan12.UnityPort
             {
                 line = null;
             }
+            if (line != null && !string.IsNullOrEmpty(skill) && !line.Contains(skill))
+            {
+                line = skill + "! " + line; // the skill is always named
+            }
             if (line != null)
             {
                 Say(side, line);
@@ -663,6 +683,11 @@ namespace Loan12.UnityPort
         }
 
         bool bubbleRaw; // the bubble's text is already in the current language
+
+        // the hits and heals of the move going on, per side
+        readonly int[] lostAcc = new int[2], healAcc = new int[2];
+        readonly float[] hitAt = new float[2];
+        readonly bool[] shieldUp = new bool[2];
 
         void Say(int side, string text)
         {
