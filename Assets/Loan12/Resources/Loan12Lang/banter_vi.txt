@@ -461,270 +461,270 @@ Ta cần về Long cung suy ngẫm lại.
 Rồng không dễ gục như vậy đâu.
 Ta trở lại. Chỉnh lại áo đã.
 Từ đáy biển sâu, ta trỗi dậy.
-# ===== ally: tướng của Đinh Bộ Lĩnh, trọng nghĩa, ấm áp, thích ganh đua =====
+# ===== ally: tướng của Đinh Bộ Lĩnh, trọng nghĩa, khí khái, đấu tập như huynh đệ =====
 [ally.start]
-Đấu tập thôi nhé, nhưng ta không nhường đâu!
-Huynh đệ, ra tay hết sức đi!
-Thua thì tối nay rửa bát cả doanh nha!
-Lâu rồi mới được đấu với đệ, vui ghê!
-Vì Hoa Lư! Nhưng trước hết là vì cái danh!
-Đánh cho đẹp, cả doanh đang xem đó!
+Đấu tập là luyện binh, ta không nương tay đâu!
+Huynh đệ, cứ ra tay hết sức!
+Vì Hoa Lư, hai ta cùng mài sắc lưỡi gươm!
+Lâu rồi mới được giao đấu với đệ!
+Cả doanh trại đang xem, đánh cho xứng danh!
+Mời đệ. Võ nghệ phải thử mới biết.
 [ally.taunt]
-Đệ tiến bộ đấy, nhưng chưa bằng huynh!
-Ra đòn chậm thế, đêm qua thức khuya à?
-Cố lên, ta mới khởi động thôi!
-Đánh vậy mà ra trận thì Chúa công buồn lắm!
-Thả lỏng vai ra, đệ gồng quá rồi!
-Ha ha, muốn thắng ta còn phải ăn nhiều cơm!
-Đệ học chiêu đó ở đâu? Hay lắm, nhưng chưa đủ!
-Ta đếm đến ba, đệ chưa đánh trúng là thua!
+Đệ tiến bộ đấy, nhưng còn phải rèn nhiều!
+Ra đòn phải dứt khoát hơn nữa!
+Giữ vững thế đứng, đừng để lộ sơ hở!
+Trên chiến trường, giặc không chờ đệ đâu!
+Thả lỏng vai, gồng quá thì đòn chậm!
+Mắt nhìn đối thủ, đừng nhìn đường kiếm!
+Chiêu đó hay, nhưng ta đã đọc được rồi!
+Còn sức thì đánh tiếp, ta vẫn đứng đây!
 [ally.combo]
-Thấy chưa! Kinh nghiệm chiến trường đó!
-Hảo! Chiêu này ta luyện mười năm!
+Kinh nghiệm chiến trường là thế đấy!
+Chiêu này ta rèn suốt mười năm!
 Một đòn vì Hoa Lư!
-Đỡ được thì ta mời rượu!
-Tuyệt! Huynh vẫn còn phong độ!
+Đỡ được đòn này thì đệ đã thành tướng!
+Phong độ của huynh vẫn còn nguyên!
 [ally.hurt]
-Ui, đệ đánh thật đấy à!
 Đòn hay! Ta nhận!
-Khá lắm! Chúa công thấy chắc vui!
-Ặc, đúng chỗ vết thương cũ!
+Khá lắm! Chúa công thấy hẳn sẽ vui!
+Trúng rồi. Đệ ra đòn chuẩn đấy!
 Hay! Thế mới là huynh đệ của ta!
-Nhẹ tay chút, mai còn đi tuần!
+Mạnh tay lắm, ta thích vậy!
+Đòn này mà gặp giặc thì chúng khó sống!
 [ally.low]
-Hừ... đệ giỏi hơn ta tưởng!
+Đệ giỏi hơn ta tưởng!
 Chưa đâu, ta còn sức!
-Huynh già rồi, nhưng chưa lẩm cẩm!
-Đánh tiếp! Lính tráng đang nhìn kìa!
-Thua đệ thì ta cũng mát lòng, nhưng chưa đâu!
+Tướng Hoa Lư không lùi bước!
+Đánh tiếp! Quân sĩ đang dõi theo!
+Hiểm nguy mới thấy được bản lĩnh!
 [ally.heal]
-Uống chén thuốc, khỏe lại rồi!
-Hồi sức xong, đánh tiếp nào!
 Thuốc quân y hiệu nghiệm thật!
+Hồi sức xong, đánh tiếp nào!
+Vết thương nhỏ, chẳng đáng bận tâm!
 [ally.block]
-Chặn! Khiên này theo ta mười trận rồi!
-Muốn qua được khiên ta à? Còn non!
-Đỡ được! Lần sau đánh hiểm hơn đi!
+Chặn được! Khiên này theo ta mười trận rồi!
+Thủ vững như thành Hoa Lư!
+Đỡ được! Lần sau đánh hiểm hơn!
 [ally.skill]
-Tuyệt kỹ của ta đây: {skill}!
+Tuyệt kỹ của ta: {skill}!
 Đệ hãy xem cho kỹ: {skill}!
-Đây là chiêu ta dùng ở trận Hoa Lư!
+Chiêu này từng phá giặc ngoài trận tiền!
 Toàn lực đây, đệ đỡ lấy!
 [ally.item]
-Đồ quân nhu đây, dùng cho đáng!
-Chút trợ lực, không tính là gian đâu!
-Đồ của doanh trại, xài tiết kiệm!
+Quân nhu của doanh trại, dùng cho đáng!
+Chuẩn bị chu toàn mới là tướng giỏi!
+Có đồ tốt thì phải dùng đúng lúc!
 [ally.win]
-Ha ha! Tối nay đệ rửa bát nhé!
-Đệ đánh tốt lắm, chỉ là huynh tốt hơn!
+Đệ đánh tốt, chỉ là huynh có kinh nghiệm hơn!
 Ngày mai tập tiếp, đệ sẽ tiến bộ!
-Thắng rồi! Rượu đâu, mang ra!
-Huynh đệ ta, mai ra trận cùng nhau!
-Không tệ đâu đệ, luyện thêm chút nữa thôi!
+Trận này hay! Đáng một chén rượu mừng!
+Huynh đệ ta, mai cùng ra trận!
+Rèn thêm chút nữa, đệ sẽ vượt ta!
+Thắng thua là chuyện thường, nghĩa huynh đệ mới quý!
 [ally.lose]
 Hay lắm! Đệ đã vượt huynh rồi!
 Thua tâm phục khẩu phục!
-Được, tối nay huynh rửa bát vậy!
-Chúa công có tướng giỏi rồi, ta yên tâm!
-Lần sau ta phục thù, nhớ đấy!
-# ===== mentor: Lưu Cơ, quân sư/thầy, châm biếm khô, thích giảng bài, tự hào về học trò =====
+Chúa công có thêm tướng giỏi, ta yên lòng!
+Lần sau ta xin phục thù!
+Đệ xứng đáng cầm quân rồi!
+# ===== mentor: Lưu Cơ, quân sư, điềm đạm, dạy binh pháp, tự hào về học trò =====
 [mentor.start]
-Bài kiểm tra hôm nay: đánh bại thầy.
-Con chuẩn bị bài chưa? Thầy hỏi lần cuối.
-Binh pháp có câu: đừng đánh khi chưa ngủ đủ.
-Vào trận đi. Thầy sẽ chấm điểm từng đòn.
-Hôm nay học thực hành, không lý thuyết.
-Ngồi bàn đầu thì giờ đứng hàng đầu nhé.
+Hôm nay thầy sẽ thử sức con.
+Binh pháp chép trên sách, phải thử trên trận.
+Vào trận đi. Thầy xem từng đòn của con.
+Biết người biết ta, trăm trận không nguy.
+Con đã sẵn sàng chưa?
+Mưu trước, sức sau. Nhớ lấy.
 [mentor.taunt]
-Sai. Thầy dạy chiêu đó khác cơ mà.
-Con có nghe giảng không, hay ngủ gật?
-Đòn này trừ điểm chuyên cần.
-Binh pháp chương ba, con đọc chưa?
-Nhanh thì có, khôn thì chưa.
-Thầy chưa dạy con đánh kiểu liều mạng đâu.
-Chép phạt một trăm lần: "Không được nóng vội".
-Đánh tệ thế này, về đừng nói là học trò ta.
+Chưa đúng. Hãy nhớ lời thầy dạy.
+Nóng vội là điều tối kỵ của người cầm quân.
+Đánh mạnh chưa đủ, phải đánh khéo.
+Con đọc kỹ binh pháp chưa?
+Nhanh thì có, nhưng chưa sâu.
+Thấy lợi trước mắt, quên hại phía sau.
+Bình tĩnh. Kẻ hấp tấp sẽ thua.
+Thế trận này, con đã nhìn ra chưa?
 [mentor.combo]
-Đó, mẫu mực như sách giáo khoa.
-Chuỗi đòn này là bài thi cuối kỳ đấy.
-Kinh nghiệm hơn ba mươi năm, con ạ.
-Mưu lược thắng sức mạnh. Ghi vào vở.
-Điểm mười cho thầy.
+Thế trận đã thành, không thể cứu.
+Đây gọi là liên hoàn kế.
+Mưu lược thắng sức mạnh. Ghi nhớ.
+Từng bước, từng bước, rồi hạ màn.
+Đó, đánh như vậy mới gọi là dùng binh.
 [mentor.hurt]
-Hừm, khá. Cộng nửa điểm.
-Đòn hay. Thầy dạy đó, công thầy.
-Ái chà, cái lưng già của ta.
-Thầy giả vờ trúng để con có động lực.
-Được, con đã biết vận dụng.
-Đau. Nhưng tự hào nhiều hơn đau.
+Đòn hay. Con đã biết vận dụng.
+Khá lắm. Thầy không trách.
+Thầy sơ suất. Con nắm thời cơ tốt.
+Đánh trúng chỗ yếu. Đúng như thầy dạy.
+Đau, nhưng thầy tự hào nhiều hơn.
+Tốt. Con đã biết tìm sơ hở.
 [mentor.low]
-Học trò giỏi quá, thầy hơi mệt.
-Tóc bạc thêm một sợi vì con đấy.
-Thầy còn một bài giảng cuối, chờ đó.
-Kế cuối cùng: thầy không nói đâu.
-Hơi đuối, nhưng thầy vẫn là thầy.
+Học trò giỏi quá, thầy hơi đuối sức.
+Thầy còn một kế cuối cùng.
+Thế cờ chưa tàn, chưa định thắng thua.
+Lùi một bước để tiến hai bước.
+Thầy già rồi, nhưng mưu chưa cạn.
 [mentor.heal]
-Uống chén trà, tỉnh táo trở lại.
-Nghỉ giải lao năm phút. Rồi tiếp.
+Uống chén trà, tâm tĩnh lại.
+Dưỡng sức, rồi ta tiếp tục.
 Thuốc bắc gia truyền, công hiệu lắm.
 [mentor.block]
 Thầy đoán được con sẽ đánh vậy.
-Đỡ được. Con lộ bài quá.
-Phòng thủ là nền tảng. Học đi.
+Đỡ được. Con để lộ ý đồ rồi.
+Phòng thủ là gốc của binh pháp.
 [mentor.skill]
 Mưu kế của thầy: {skill}.
-Bài giảng nâng cao: {skill}.
-Đây là chiêu không có trong sách.
-Thầy cho con xem thế nào là quân sư.
+Bài học hôm nay: {skill}.
+Kế này không có trong sách.
+Thầy cho con thấy thế nào là quân sư.
 [mentor.item]
 Chuẩn bị kỹ là nửa phần thắng.
-Đồ thầy mang theo, không phải để làm cảnh.
-Mưu sĩ không bao giờ ra trận tay không.
+Người cầm quân không ra trận tay không.
+Lương thảo đủ thì quân mới mạnh.
 [mentor.win]
-Bài hôm nay: chưa đạt. Học lại nhé.
-Không sao, thầy thắng là chuyện đương nhiên.
-Về ôn bài, mai kiểm tra tiếp.
-Con có tiến bộ. Nhưng thầy vẫn là thầy.
-Ghi chép lại những lỗi sai hôm nay.
-Thầy thắng, nhưng thầy cũng thấy con lớn rồi.
+Hôm nay chưa đạt. Về ôn lại nhé.
+Con có tiến bộ, nhưng còn phải học nhiều.
+Hãy ghi nhớ những sai sót hôm nay.
+Thắng thua không quan trọng bằng điều con học được.
+Thầy thắng, nhưng thấy con đã trưởng thành.
+Thua để biết mình. Đó cũng là bài học.
 [mentor.lose]
 Hay lắm. Trò đã giỏi hơn thầy.
-Thầy vui hơn là buồn đấy, con biết không.
-Điểm mười. Thầy về viết sách mới đây.
+Thầy vui hơn là buồn đấy.
 Đúng là học trò của ta!
 Nhớ đừng kiêu ngạo, đó là bài học tiếp theo.
-# ===== warlord: 12 sứ quân và tướng, kiêu căng, phô trương, thua cay, diễn văn to tát =====
+Non sông có người tài, thầy yên lòng.
+# ===== warlord: 12 sứ quân và tướng, cát cứ một phương, oai nghiêm, kiêu ngạo, thua cay mà giữ thể diện =====
 [warlord.start]
-Quỳ xuống! Sứ quân đã giá lâm!
-Cả vùng này là của ta, ngươi đến làm gì?
-Ta có mười vạn quân! Ừ thì... đang trên đường.
-{enemy}? Nghe như tên một con gà.
-Hãy nghe bài diễn văn mở màn ba canh giờ của ta!
-Ta sinh ra để làm vua, ngươi sinh ra để thua!
+Đất này do ta trấn giữ, kẻ nào dám xâm phạm?
+Bổn sứ quân đã đến, còn không mau lui!
+Ngươi là ai mà dám chặn đường ta?
+Mười hai sứ quân, không ai phục ai. Ta cũng vậy!
+Thành trì của ta, ngươi đừng mơ bước qua!
+Quân ta đã bày trận, ngươi đến nộp mạng sao?
 [warlord.taunt]
-Ngươi có biết ta là ai không? Ta là ta!
-Một sứ quân không cần phải giải thích!
-Quân ta đông như kiến, còn ngươi... một mình?
-Cúi đầu đi, ta sẽ cho ngươi làm lính gác cổng!
-Ngươi đánh như nông dân cầm cuốc vậy!
-Lãnh địa ta rộng, lòng ta thì hẹp, cẩn thận!
-Ngai vàng đang chờ ta, đừng làm mất thời gian!
-Bổn sứ quân ban cho ngươi cơ hội đầu hàng!
+Ngươi có biết đang đối mặt với ai không?
+Một mình ngươi mà đòi chống lại cả một phương?
+Hàng phục đi, ta sẽ tha tội cho ngươi!
+Họ Đinh sai ngươi đến à? Thật xem thường ta!
+Võ nghệ như vậy mà dám ra trận?
+Đất này ta giữ mười năm, ngươi lấy sao nổi?
+Ta chưa dùng đến một phần sức lực!
+Lui về đi, kẻo mất mạng nơi đây!
 [warlord.combo]
 Thấy uy lực của bổn sứ quân chưa!
-Ha ha ha! Cả thiên hạ phải run sợ!
-Đây là sức mạnh của kẻ làm chủ một phương!
-Ghi vào sử sách đi! Ngay bây giờ!
-Ta mạnh! Ta oai! Ta là nhất!
+Đây là sức mạnh của kẻ trấn giữ một phương!
+Cả vùng này phải khiếp sợ!
+Ngươi đỡ nổi sao?
+Thiên hạ chưa ai địch nổi ta!
 [warlord.hurt]
-Hỗn láo! Dám đánh bổn sứ quân!
-Lính đâu! Ai cho phép hắn đánh trúng ta?!
-Cú đó không tính, ta chưa chuẩn bị!
-Ngươi sẽ phải trả giá! Gấp mười lần!
-Áo bào của ta! Thợ may đâu!
-Hừ! Ta cho phép ngươi đánh đấy, đừng tưởng!
+Láo xược! Dám đánh bổn sứ quân!
+Ngươi sẽ phải trả giá!
+Hừ! Chỉ là may mắn!
+Vết thương này, ta sẽ đòi gấp mười!
+Được lắm, ngươi đã chọc giận ta!
+Đòn đó không làm ta lay chuyển!
 [warlord.low]
-Quân sư! Quân sư đâu, kế gì đi!
-Ta... ta chỉ đang thử lòng ngươi thôi!
-Chúng ta có thể thương lượng không?
-Bình tĩnh, ta còn cả kho báu chưa dùng!
 Không thể nào! Một sứ quân không thể thua!
+Ta còn quân, còn thành, còn chưa hết!
+Ngươi tưởng đã thắng? Còn sớm lắm!
+Hừ... ngươi mạnh hơn ta tưởng.
+Thà chết đứng, không sống quỳ!
 [warlord.heal]
 Ngự y! Chữa cho ta mau!
-Thuốc quý trong kho, ta dùng thoải mái!
-Hồi phục rồi! Giờ ngươi xong đời!
+Thuốc quý trong kho, ta không thiếu!
+Hồi phục rồi! Giờ ngươi hết đường!
 [warlord.block]
-Giáp vàng của ta, ngươi không phá nổi!
-Hộ vệ đỡ cho ta rồi, ha ha!
-Đánh vào ta à? Còn lâu nhé!
+Giáp của ta, ngươi không phá nổi!
+Đòn ấy chẳng làm ta xây xát!
+Muốn đánh trúng ta? Còn lâu!
 [warlord.skill]
 Tuyệt chiêu trấn quốc: {skill}!
 Run sợ đi! {skill}!
-Ta tung đòn này, cả vùng phải chấn động!
-Bổn sứ quân xuất chiêu, ngươi nằm xuống!
+Đòn này, cả vùng phải chấn động!
+Bổn sứ quân xuất chiêu, ngươi chuẩn bị đi!
 [warlord.item]
 Kho báu của ta nhiều vô kể!
 Bảo vật trấn thành, ngươi không có đâu!
-Mang đồ quý ra đây cho ta!
+Của cải một phương, ta dùng không hết!
 [warlord.win]
-Ha ha ha! Thiên hạ là của ta!
-Ghi tên ta vào sử sách, viết hoa vào!
-Ngươi chỉ là một cái tên trong danh sách bại tướng!
-Mở tiệc ba ngày ba đêm mừng ta thắng!
-Thấy chưa, ta đã nói ta là vua!
-Lui ra, ta cần nghỉ để chuẩn bị diễn văn mừng!
+Thiên hạ này phải là của ta!
+Ai dám chống lại ta, kết cục là vậy!
+Kẻ bại trận, lui ra!
+Hãy về báo với họ Đinh: ta không khuất phục!
+Đất này vẫn là đất của ta!
+Ngươi đã thấy sức mạnh của ta chưa?
 [warlord.lose]
-Không tính! Trận này không tính!
-Ta sẽ trở lại với mười vạn quân! Thật đấy!
-Lính của ta đâu hết rồi?!
-Ngươi gian lận! Ta sẽ kiện lên trời!
-Rút quân! Không phải chạy, là rút chiến lược!
-# ===== lady: Dương Vân Nga, quý cô thanh lịch, lưỡi sắc, không dễ ấn tượng =====
+Ta... ta sẽ quay lại!
+Thành mất, nhưng chí ta chưa mất!
+Lần này ta thua, lần sau chưa chắc!
+Ngươi thắng, nhưng thiên hạ chưa phải của ngươi!
+Thua một trận, chưa mất cả giang sơn!
+# ===== lady: Dương Vân Nga, quý nữ đoan trang, điềm tĩnh, sắc sảo =====
 [lady.start]
-Ngươi đấy à. Ta cứ tưởng ai.
-Mời. Đừng để ta phải chờ lâu.
-Bổn cô nương không thích ồn ào. Đánh gọn đi.
-Trang điểm xong rồi, giờ đến lượt ngươi xấu mặt.
-Đứng cho đàng hoàng. Ta không đấu với kẻ lôi thôi.
-{enemy}... cái tên nghe thật bình thường.
+Mời. Ta không thích chờ đợi.
+Đã đến thì giao đấu cho đàng hoàng.
+Phận nữ nhi, nhưng chưa từng chịu thua ai.
+Ta sẽ không nương tay đâu.
+Xin chỉ giáo.
+Hãy cho ta thấy bản lĩnh của ngươi.
 [lady.taunt]
-Ồ. Chỉ thế thôi sao?
-Ngươi có biết phép lịch sự không?
-Ta đã thấy gà đá còn đẹp hơn thế.
-Mệt mỏi thay, phải xem ngươi múa may.
-Đòn này chắc ngươi tự hào lắm nhỉ.
-Thôi đi, đừng tự làm khổ mình nữa.
-Vô duyên thật đấy.
-Ta không ấn tượng. Một chút cũng không.
+Chỉ có vậy thôi sao?
+Đòn đánh vội vàng, tâm chưa vững.
+Ngươi cần luyện thêm nhiều.
+Hấp tấp như vậy, khó thành việc lớn.
+Ta vẫn đang chờ một đòn ra hồn.
+Đừng để cơn giận dắt mũi ngươi.
+Ra tay có lễ độ một chút.
+Kiếm pháp cần tâm tĩnh, ngươi còn thiếu.
 [lady.combo]
-Thanh nhã. Chính xác. Vậy đó.
-Học đi, thế này mới gọi là đẹp.
+Thanh nhã. Chính xác.
+Mềm mà không yếu, đó là lụa.
 Một đường lụa, một đường kiếm.
-Đừng nhìn ta như vậy, ta biết ta giỏi.
-Gọn gàng. Như ta thích.
+Gọn gàng. Như ta muốn.
+Ngươi đã thấy chưa?
 [lady.hurt]
 Ngươi dám?
-Thật thô lỗ.
-Rách tà áo rồi. Ngươi đền nổi không?
 Hừ. Đòn may mắn.
 Ta sẽ nhớ chuyện này.
-Lần sau ngươi nên xin phép trước.
+Không tệ. Nhưng chưa đủ.
+Được. Ta sẽ không khinh địch nữa.
+Đau, nhưng không làm ta lùi.
 [lady.low]
-Chưa đến lúc ngươi được cười đâu.
-Ta mệt... nhưng không để ngươi thấy đâu.
-Một tiểu thư không gục trước mặt người khác.
-Đừng tự mãn. Ta vẫn còn đứng đây.
+Ta mệt, nhưng không để ngươi thấy.
+Ta vẫn còn đứng đây.
+Một tiểu thư không gục trước mặt kẻ khác.
+Đừng vội mừng.
 Được thôi. Ta sẽ nghiêm túc.
 [lady.heal]
 Ổn rồi. Chỉnh lại trâm cài đã.
 Chút trà sen, lòng thanh thản lại.
-Hồi phục. Ngươi tiếc lắm hả?
+Hồi phục rồi. Ta tiếp tục.
 [lady.block]
-Đòn đó không xứng chạm vào ta.
+Đòn đó không chạm được vào ta.
 Gạt nhẹ thôi. Không cần cố.
-Vụng về quá.
+Ta đã thấy trước đòn ấy.
 [lady.skill]
-Để ta cho ngươi xem: {skill}.
+Hãy xem đây: {skill}.
 {skill}. Đừng chớp mắt.
 Ta không thường làm thế này đâu.
-Một chút tài mọn của bổn cô nương.
+Chút tài mọn, xin chỉ giáo.
 [lady.item]
-Đồ trang sức này không chỉ để đẹp.
+Trang sức này không chỉ để đẹp.
 Lụa quý cũng là giáp tốt.
 Chuẩn bị chu đáo là thói quen của ta.
 [lady.win]
-Như ta nghĩ. Chán thật.
-Về đi. Và tập thêm phép lịch sự.
-Không cần cảm ơn ta vì bài học này.
-Ta thắng, mà tóc vẫn chưa rối.
-Lần sau mang theo chút bản lĩnh nhé.
-Cũng tạm. Với ngươi thì vậy là cố lắm rồi.
+Như ta nghĩ.
+Về luyện thêm rồi hẵng đến.
+Hy vọng ngươi đã học được điều gì.
+Ta thắng mà tóc vẫn chưa rối.
+Lần sau mong ngươi mạnh hơn.
+Đa tạ đã chỉ giáo.
 [lady.lose]
-Hừ. Ngươi gặp may thôi.
-Ta không thua, ta chỉ nhường một lần.
-Đừng kể chuyện này với ai.
-Thôi được. Ngươi cũng không tệ lắm.
-Ta về đây. Đừng nhìn theo.
+Ngươi thắng rồi. Ta công nhận.
+Ta đã khinh địch. Lỗi ở ta.
+Ngươi không tệ chút nào.
+Lần sau ta sẽ không thua.
+Võ nghệ khá lắm. Ta ghi nhớ.
 # ===== soldier: lính thường, than lương, than cơm, than sếp, sợ mà vẫn cố =====
 [soldier.start]
 Lại đánh nhau... lương tháng trước còn chưa phát.
