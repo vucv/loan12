@@ -21,6 +21,8 @@ namespace Loan12.UnityPort
         float openedAt, openingAt, doubledAt = -10f;
 
         bool visible;          // on screen: stays until NHẬN, unless the game takes the map
+        const float IdleWait = 0.8f;   // the map must be idle this long before the chest shows (after the quest result)
+        float idleSince = -1f;         // since when the map has been idle, -1 when it is not
         float lastCheck = -1f;
         float shownAt = -10f;
 
@@ -53,6 +55,7 @@ namespace Loan12.UnityPort
                 if (C_PortMap.f_boxes <= 0)
                 {
                     visible = false;
+                    idleSince = -1f;
                     return false;
                 }
                 if (visible)
@@ -63,11 +66,23 @@ namespace Loan12.UnityPort
                         return true;
                     }
                     visible = false;
+                    idleSince = -1f;
                     return false;
                 }
-                // straight after the results (the map behind is never shown first): as soon as the game is back on
-                // the map, busy or not, and before the next dialogue (it waits for NHẬN)
-                if (onMap && !C_PortMap.walking() && !C_PortUi.prepareView() && C_PortMap.state() != 3)
+                // after a quest battle the game still shows its dialogues and the quest-complete result: the boxes
+                // wait until the map has been idle (nothing else on screen) for IdleWait, then the chest appears
+                bool idle = onMap && !C_PortMap.walking() && !C_PortMap.talking() && !C_PortUi.prepareView()
+                    && !C_PortUi.resultView() && C_PortMap.state() != 3;
+                if (!idle)
+                {
+                    idleSince = -1f;
+                    return false;
+                }
+                if (idleSince < 0f)
+                {
+                    idleSince = now;
+                }
+                if (now - idleSince >= IdleWait)
                 {
                     visible = true;
                     shownAt = now;
