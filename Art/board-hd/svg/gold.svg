@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><defs><filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="2.2" flood-color="#000" flood-opacity=".5"/></filter><linearGradient id="blade" x1="0" x2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#d9e1ec"/><stop offset=".52" stop-color="#9aa6b8"/><stop offset="1" stop-color="#7d889b"/></linearGradient>
-<linearGradient id="goldg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff3a6"/><stop offset=".5" stop-color="#f5b81c"/><stop offset="1" stop-color="#b36a00"/></linearGradient>
-<radialGradient id="ruby" cx=".35" cy=".35" r=".8"><stop offset="0" stop-color="#ff8aa0"/><stop offset=".5" stop-color="#e01838"/><stop offset="1" stop-color="#7a0016"/></radialGradient><linearGradient id="ig" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff6b0"/><stop offset=".45" stop-color="#ffc21a"/><stop offset="1" stop-color="#a85a00"/></linearGradient>
-<radialGradient id="dm" cx=".4" cy=".3" r=".8"><stop offset="0" stop-color="#fffbe0"/><stop offset=".5" stop-color="#ffd43a"/><stop offset="1" stop-color="#c47a00"/></radialGradient></defs><g filter="url(#sh)"><ellipse cx="64" cy="60" rx="28" ry="22" fill="url(#dm)" stroke="#5a2e00" stroke-width="4"/>
-<path d="M8 50 C14 42 28 44 36 58 L92 58 C100 44 114 42 120 50 C120 84 98 102 64 102 C30 102 8 84 8 50 Z" fill="url(#ig)" stroke="#5a2e00" stroke-width="4" stroke-linejoin="round"/>
-<path d="M18 56 C22 52 28 54 32 62 M110 56 C106 52 100 54 96 62" stroke="#fff8c8" stroke-width="3" fill="none" stroke-linecap="round" opacity=".9"/>
-<path d="M24 74 C34 88 52 92 64 92" stroke="#fff3a0" stroke-width="3.5" fill="none" stroke-linecap="round" opacity=".6"/>
-<ellipse cx="54" cy="48" rx="9" ry="5" fill="#fff" opacity=".7"/>
-</g></svg>
