@@ -26,6 +26,8 @@ public final class HdLayer {
     /** Values per recorded draw in {@link #ops}. */
     public static final int OP = 12;
     static final int MAX = 400;
+    /** How far (px) a recorded image may stick out of the board (the part outside is not shown). */
+    static final int EDGE = 3;
 
     /** Set by the host: high-resolution board on (the setting is on and a battle is shown). */
     public static boolean enabled;
@@ -93,12 +95,13 @@ public final class HdLayer {
         if (ix0 >= ix1 || iy0 >= iy1) {
             return false;
         }
-        // only images entirely inside the board are taken over (an image across the edge is drawn as usual)
+        // only images inside the board are taken over (gems are 22 px in 21 px cells: those on the edge
+        // stick out by a pixel or two, which is cut); an image across the edge is drawn as usual
         int cx0b = cx0 > dx ? cx0 : dx;
         int cy0b = cy0 > dy ? cy0 : dy;
         int cx1b = cx1 < dx + w ? cx1 : dx + w;
         int cy1b = cy1 < dy + h ? cy1 : dy + h;
-        if (cx0b < rx0 || cy0b < ry0 || cx1b > rx1 || cy1b > ry1) {
+        if (cx0b < rx0 - EDGE || cy0b < ry0 - EDGE || cx1b > rx1 + EDGE || cy1b > ry1 + EDGE) {
             return false;
         }
         if (count >= MAX) {
