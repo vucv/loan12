@@ -77,10 +77,6 @@ namespace Loan12.UnityPort
         int bubbleSide = -1;
         string bubbleText;
         float bubbleTime;
-        bool bubbleRaw;                 // the text is already in the current language (Banter)
-        int pendingSide = -1;           // a reply said a moment later (the other fighter answers)
-        string pendingText;
-        float pendingAt, nextTaunt;
 
         // the board and the fighter strip as last seen without anything on top (BGRA rows, top first)
         Texture2D boardSnap, stripSnap;
@@ -530,11 +526,7 @@ namespace Loan12.UnityPort
                 ticker = "";
                 popupKind = 0;
                 outcome = 0;
-                pendingSide = -1;
-                SayB(1, B(1, "start"), Pick(StartLines), true);
-                Later(0, B(0, "start"), 1.8f);
-                lostAcc[0] = lostAcc[1] = healAcc[0] = healAcc[1] = 0;
-                nextTaunt = Time.unscaledTime + 35f;
+                Say(1, Pick(StartLines));
                 return;
             }
             for (int s = 0; s < 2; s++)
@@ -546,34 +538,29 @@ namespace Loan12.UnityPort
                 {
                     Float(s * 10 + 1, "-", -dh, "", TouchUi.Hex(0xFF5A4A), HpAt(s));
                     Tick(who + " mất " + (-dh) + " máu");
-                    // the move's damage adds up; what is said comes when it has settled (React)
-                    lostAcc[s] += -dh;
-                    accAt[s] = Time.unscaledTime;
-                    blockedAcc[s] = blockedAcc[s] || C_PortUi.effect(s, 3) > 0;
+                    if (C_PortUi.effect(s, 3) > 0 && -dh < maxHp / 10)
+                    {
+                        Say(s, Pick(BlockLines));
+                    }
+                    else if (-dh * 100 >= maxHp * 15)
+                    {
+                        Say(s, Pick(HurtLines[s]));
+                    }
                 }
                 else if (dh > 0)
                 {
                     Float(s * 10 + 2, "+", dh, " máu", TouchUi.Hex(0x7CE05A), HpAt(s));
                     Tick(who + " hồi " + dh + " máu");
-                    if (prevHp[s] <= 0 && s == 0)
+                    if (dh * 100 >= maxHp * 10)
                     {
-                        SayB(0, B(0, "revive"), Pick(HealLines), true); // back on his feet (the second chance)
-                    }
-                    else
-                    {
-                        healAcc[s] += dh;
-                        accAt[s] = Time.unscaledTime;
+                        Say(s, Pick(HealLines));
                     }
                 }
                 prevHp[s] = hp;
                 if (!lowSaid[s] && hp > 0 && hp * 5 < maxHp)
                 {
                     lowSaid[s] = true;
-                    SayB(s, B(s, "low"), LowLines[s][0], true);
-                    if (rnd.Next(2) == 0)
-                    {
-                        Later(1 - s, B(1 - s, "taunt"), 1.8f); // sometimes the other one rubs it in
-                    }
+                    Say(s, LowLines[s][0]);
                 }
 
                 int mana = C_PortUi.mana(s), maxMana = C_PortUi.maxMana(s);
@@ -589,7 +576,7 @@ namespace Loan12.UnityPort
                     if (skill.Length > 0)
                     {
                         Tick(who + " dùng " + skill);
-                        SayB(s, B(s, "skill", Loc.T(skill)), "Nếm thử " + skill + "!", true);
+                        Say(s, "Nếm thử " + skill + "!");
                     }
                 }
                 prevMana[s] = mana;
@@ -613,11 +600,6 @@ namespace Loan12.UnityPort
                 if (prevItems.TryGetValue(t, out before) && c < before)
                 {
                     Tick(C_PortUi.name(0) + " dùng " + C_PortUi.itemName(t));
-                    string said = B(0, "item");
-                    if (said != null)
-                    {
-                        Say(0, said, true);
-                    }
                 }
                 prevItems[t] = c;
             }
@@ -635,39 +617,10 @@ namespace Loan12.UnityPort
                         J2ME.Host.pointerReleased(bx + bw / 2, by + bh / 2);
                         boardHeld = false;
                     }
-                    bubbleSide = -1; // the last word: the winner, then the loser
-                    pendingSide = -1;
-                    int winner = outcome == 1 ? 0 : 1;
-                    SayB(winner, B(winner, "win"), Pick(outcome == 1 ? WinLines : GloatLines), true);
-                    Later(1 - winner, B(1 - winner, "lose"), 1.9f);
+                    bubbleSide = -1; // the last word
+                    Say(outcome == 1 ? 0 : 1, Pick(outcome == 1 ? WinLines : GloatLines));
                     Tick(outcome == 1 ? C_PortUi.name(0) + " đã chiến thắng!" : C_PortUi.name(0) + " đã thua trận");
                 }
-            }
-            // what a move did, once its hits and heals have settled
-            float now0 = Time.unscaledTime;
-            for (int s = 0; s < 2; s++)
-            {
-                if ((lostAcc[s] > 0 || healAcc[s] > 0) && now0 - accAt[s] > 0.7f)
-                {
-                    React(s);
-                }
-            }
-            // a reply due, or (rarely) some small talk when nobody has spoken for a long while
-            if (pendingSide >= 0 && now0 >= pendingAt && (bubbleSide < 0 || now0 - bubbleTime > 1.6f))
-            {
-                bubbleSide = -1;
-                Say(pendingSide, pendingText, true, true); // an answer to what was just said
-                pendingSide = -1;
-            }
-            else if (outcome == 0 && pendingSide < 0 && now0 >= nextTaunt && (bubbleSide < 0 || now0 - bubbleTime > 2.2f))
-            {
-                int side = rnd.Next(2);
-                string said = B(side, "taunt");
-                if (said != null)
-                {
-                    Say(side, said, true);
-                }
-                nextTaunt = now0 + 30f + (float) rnd.NextDouble() * 20f; // small talk only now and then
             }
             floaters.RemoveAll(f => Time.unscaledTime - f.t0 > 1.4f);
             if (bubbleSide >= 0 && Time.unscaledTime - bubbleTime > 2.2f)
@@ -681,103 +634,15 @@ namespace Loan12.UnityPort
             return lines[rnd.Next(lines.Length)];
         }
 
-        void Say(int side, string text, bool raw = false, bool key = false)
+        void Say(int side, string text)
         {
-            // one bubble at a time; the ordinary ones not too often (key moments: start, skill, low, win)
-            float since = Time.unscaledTime - bubbleTime;
-            if (string.IsNullOrEmpty(text) || (bubbleSide >= 0 && since < 1.2f) || (!key && since < 3.5f))
+            if (bubbleSide >= 0 && Time.unscaledTime - bubbleTime < 1.2f)
             {
-                return;
+                return; // one bubble at a time
             }
             bubbleSide = side;
             bubbleText = text;
             bubbleTime = Time.unscaledTime;
-            bubbleRaw = raw;
-            nextTaunt = Mathf.Max(nextTaunt, Time.unscaledTime + 25f);
-        }
-
-        /// <summary>A Banter line (already in the current language), or the old Vietnamese one when there is none.</summary>
-        void SayB(int side, string banter, string fallback, bool key = false)
-        {
-            if (banter != null)
-            {
-                Say(side, banter, true, key);
-            }
-            else
-            {
-                Say(side, fallback, false, key);
-            }
-        }
-
-        // a move's effect on each side, added up until it settles
-        readonly int[] lostAcc = new int[2], healAcc = new int[2];
-        readonly float[] accAt = new float[2];
-        readonly bool[] blockedAcc = new bool[2];
-
-        /// <summary>What a move did to side s, said once: a heavy blow makes the attacker brag (or the victim
-        /// cry out), a shield that took most of it, a fair hit, a big heal; small changes pass in silence.</summary>
-        void React(int s)
-        {
-            int maxHp = Mathf.Max(1, C_PortUi.maxHp(s));
-            int lost = lostAcc[s], healed = healAcc[s];
-            bool blocked = blockedAcc[s];
-            lostAcc[s] = healAcc[s] = 0;
-            blockedAcc[s] = false;
-            if (lost > 0 && C_PortUi.hp(s) <= 0)
-            {
-                return; // the end of the battle speaks
-            }
-            if (lost * 100 >= maxHp * 22)
-            {
-                // a heavy blow: the attacker brags, or the one hit cries out
-                if (rnd.Next(2) == 0)
-                {
-                    SayB(1 - s, B(1 - s, "combo"), Pick(GloatLines));
-                }
-                else
-                {
-                    SayB(s, B(s, "hurt"), Pick(HurtLines[s]));
-                }
-            }
-            else if (blocked && lost > 0 && lost * 100 < maxHp * 10)
-            {
-                SayB(s, B(s, "block"), Pick(BlockLines));
-            }
-            else if (lost * 100 >= maxHp * 12)
-            {
-                SayB(s, B(s, "hurt"), Pick(HurtLines[s]));
-            }
-            else if (healed * 100 >= maxHp * 15)
-            {
-                SayB(s, B(s, "heal"), Pick(HealLines));
-            }
-        }
-
-        /// <summary>What a fighter says at this moment (Banter, in the current language), or null.</summary>
-        string B(int side, string evt, string skill = null)
-        {
-            string s = null;
-            try
-            {
-                s = Banter.Line(C_PortUi.portrait(side), evt, C_PortUi.name(side), C_PortUi.name(1 - side), skill);
-            }
-            catch (System.Exception)
-            {
-                s = null;
-            }
-            return s;
-        }
-
-        /// <summary>A line said a moment later (an answer); a newer one replaces it.</summary>
-        void Later(int side, string text, float delay)
-        {
-            if (string.IsNullOrEmpty(text))
-            {
-                return;
-            }
-            pendingSide = side;
-            pendingText = text;
-            pendingAt = Time.unscaledTime + delay;
         }
 
         void Tick(string msg)
@@ -1215,14 +1080,7 @@ namespace Loan12.UnityPort
             Color line = new Color(0.01f, 0.01f, 0.01f, alpha), fill = new Color(1f, 1f, 1f, alpha);
             BubbleShape(b, tail, line, fill);
             Rect text = new Rect(b.x + 5 * k, b.y + 3 * k, b.width - 10 * k, b.height - 6 * k);
-            if (bubbleRaw)
-            {
-                TouchUi.LabelRaw(text, bubbleText, 7f, TextAnchor.MiddleCenter, new Color(0.1f, 0.04f, 0.1f, alpha), true, true, false);
-            }
-            else
-            {
-                TouchUi.Label(text, bubbleText, 7.5f, TextAnchor.MiddleCenter, new Color(0.1f, 0.04f, 0.1f, alpha), true, true, false);
-            }
+            TouchUi.Label(text, bubbleText, 7.5f, TextAnchor.MiddleCenter, new Color(0.1f, 0.04f, 0.1f, alpha), true, true, false);
         }
 
         void DrawPopup()
