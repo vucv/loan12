@@ -374,6 +374,11 @@ namespace Loan12.UnityPort
                             bv.popupArg = 0;
                             yield return Shot("H", "battle_skill_popup");
                             bv.popupKind = 0;
+                            // speech bubbles fitted to their text: a short one, a skill
+                            bv.Speak(1, "hurt");
+                            yield return Shot("H", "battle_bubble_hurt", 0.3f);
+                            bv.Speak(0, "skill");
+                            yield return Shot("H", "battle_bubble_skill", 0.3f);
                             // with VIP: 4 item buttons
                             bool vip0 = Rewards.Vip;
                             Rewards.Vip = true;

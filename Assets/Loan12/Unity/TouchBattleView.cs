@@ -686,6 +686,15 @@ namespace Loan12.UnityPort
             }
         }
 
+        /// <summary>Tour: a line of this kind said now.</summary>
+        public void Speak(int side, string evt)
+        {
+            queue.Clear();
+            bubbleSide = -1;
+            SayB(side, evt, "…", evt == "skill" ? Loc.T(C_PortUi.skillName(side, 0)) : null, 5);
+            Pump();
+        }
+
         bool bubbleRaw;          // the bubble's text is already in the current language
         float bubbleDur = 2.2f;  // how long the bubble shows (longer texts longer)
         int prevSkillCount;
