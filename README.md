@@ -2,7 +2,8 @@
 
 | File | Nhánh | Commit | Nội dung |
 |---|---|---|---|
-| `android/Loan12-fix-bugs-25fc413.apk` | `fix-bugs` | `25fc413` | Delay gặp địch 0,4s (mới nhất) |
+| `android/Loan12-fix-bugs-7f3094c.apk` | `fix-bugs` | `7f3094c` | Gặp địch: màn chuẩn bị hiện ngay, không delay (mới nhất) |
+| `android/Loan12-fix-bugs-25fc413.apk` | `fix-bugs` | `25fc413` | Delay gặp địch 0,4s |
 | `android/Loan12-fix-bugs-bdfcb29.apk` | `fix-bugs` | `bdfcb29` | Delay gặp địch 0,8s, tiền rút gọn chỉ ở header, cấp luôn ở dòng tên màn kết quả |
 | `android/Loan12-fix-bugs-ad2ecf7.apk` | `fix-bugs` | `ad2ecf7` | Sửa lỗi: vàng K/M/B, tên dài, vật phẩm hết, vùng chạm map, delay gặp địch, thứ tự hộp quà, âm thanh, bỏ thông tin/phiên bản |
 | `android/Loan12-upgrade-graphics-7493c62.apk` | `upgrade-graphics` | `7493c62` | Bàn đấu nét cao (ngọc, khung chọn, hoạt cảnh nổ, sao), công tắc Đồ họa nét cao trong Cài đặt |
