@@ -284,7 +284,7 @@ namespace Loan12.UnityPort
             float y0 = 76 + slide;
             TouchUi.Panel(TouchUi.R(6, y0, 168, 228));
             Hero(y0 + 10, C_PortUi.vsPortrait(0), C_PortUi.vsName(0), C_PortUi.vsLevel(0));
-            TouchUi.Label(TouchUi.R(54, y0 + 22, 112, 14), "thua " + C_PortUi.vsName(1), 7, TextAnchor.MiddleLeft, TouchUi.TextSoft);
+            TouchUi.Label(TouchUi.R(54, y0 + 22, 112, 14), "thua " + TouchUi.ShortName(C_PortUi.vsName(1), 14), 7, TextAnchor.MiddleLeft, TouchUi.TextSoft);
 
             float y = y0 + 56;
             Row(ref y, "/heart", "Mạng chơi", "-1");

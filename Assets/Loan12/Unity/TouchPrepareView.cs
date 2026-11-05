@@ -21,6 +21,10 @@ namespace Loan12.UnityPort
         /// <summary>The arena's battle is being prepared (ĐÁNH in the arena): the same screen, its opponent.</summary>
         public static bool ArenaOpen;
 
+        // lets the map's encounter animation (the crossing swords) finish before the VS screen appears
+        const float EncounterDelay = 1.2f;
+        float readySince = -1f; // when the game's VS box became ready, -1 when it is not
+
         static bool Arena
         {
             get { return ArenaOpen && !C_PortUi.prepareView(); }
@@ -34,7 +38,23 @@ namespace Loan12.UnityPort
                 {
                     ArenaOpen = false; // the arena has gone (left, or its battle started)
                 }
-                return C_PortUi.prepareView() || ArenaOpen;
+                bool prepare = C_PortUi.prepareView();
+                if (!prepare)
+                {
+                    readySince = -1f;
+                    return ArenaOpen;
+                }
+                if (ArenaOpen)
+                {
+                    return true; // the arena has no encounter animation: no delay
+                }
+                // meeting an enemy on the map: the touch map (TouchMapHoldView) keeps showing the encounter
+                // animation, the VS screen comes once it is over
+                if (readySince < 0f)
+                {
+                    readySince = Time.unscaledTime;
+                }
+                return Time.unscaledTime - readySince >= EncounterDelay;
             }
             catch (System.Exception)
             {
@@ -380,8 +400,8 @@ namespace Loan12.UnityPort
                 {
                     ns -= 0.5f;
                 }
-                TouchUi.Label(TouchUi.R(12, 96, half, 14), n0, ns, TextAnchor.MiddleLeft, Color.white, true);
-                TouchUi.Label(TouchUi.R(168 - half, 96, half, 14), n1, ns, TextAnchor.MiddleRight, Color.white, true);
+                TouchUi.NameLabel(TouchUi.R(12, 96, half, 14), n0, ns, TextAnchor.MiddleLeft, Color.white, true);
+                TouchUi.NameLabel(TouchUi.R(168 - half, 96, half, 14), n1, ns, TextAnchor.MiddleRight, Color.white, true);
             }
             Color stat = TouchUi.Hex(0xFFE6A0);
             TouchUi.Label(TouchUi.R(12, 109, 76, 13), "Cấp " + VsLevel(0), 7, TextAnchor.UpperLeft, stat);

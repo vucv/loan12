@@ -514,6 +514,42 @@ namespace Loan12.UnityPort
             return Mathf.Max(1, Mathf.RoundToInt(h / (st.fontSize * LineRatio)));
         }
 
+        /// <summary>
+        /// A fighter's name on one line: too wide for r, it shrinks (down to 75 % of size), then loses its end
+        /// to "…". The same name always gets the same look, in any language (names are never translated).
+        /// </summary>
+        public static void NameLabel(Rect r, string name, float size, TextAnchor anchor, Color color, bool bold)
+        {
+            if (string.IsNullOrEmpty(name))
+            {
+                return;
+            }
+            float avail = r.width / K;
+            float s = size;
+            while (s > size * 0.75f && TextWidth(name, s, bold, false) > avail)
+            {
+                s = Mathf.Max(size * 0.75f, s - 0.25f);
+            }
+            string t = name;
+            int n = name.Length;
+            while (n > 1 && TextWidth(t, s, bold, false) > avail)
+            {
+                n--;
+                t = name.Substring(0, n).TrimEnd() + "…";
+            }
+            LabelRaw(r, t, s, anchor, color, bold);
+        }
+
+        /// <summary>A name cut to max characters, with "…" when it was longer (for names inside a sentence).</summary>
+        public static string ShortName(string name, int max)
+        {
+            if (string.IsNullOrEmpty(name) || name.Length <= max)
+            {
+                return name ?? "";
+            }
+            return name.Substring(0, max - 1).TrimEnd() + "…";
+        }
+
         /// <summary>Width of a one-line text in grid pixels (default size, bold: tags and buttons).</summary>
         public static float TextWidth(string s, float size = 6f, bool strong = true)
         {

@@ -92,7 +92,7 @@ namespace Loan12.UnityPort
                 Rect bar = TouchUi.R(110, top + 73, 40, 5);
                 TouchUi.Fill(bar, TouchUi.Outline);
                 TouchUi.Fill(new Rect(bar.x + k, bar.y + k, (bar.width - 2 * k) * Mathf.Clamp01(hp / (float) max), bar.height - 2 * k), TouchUi.Hex(0xE0383A));
-                TouchUi.Label(TouchUi.R(14, top + 82, 152, 12), C_PortUi.name(1) + " chỉ còn " + hp + "/" + max + " máu!", 7, TextAnchor.MiddleCenter,
+                TouchUi.Label(TouchUi.R(14, top + 82, 152, 12), TouchUi.ShortName(C_PortUi.name(1), 14) + " chỉ còn " + hp + "/" + max + " máu!", 7, TextAnchor.MiddleCenter,
                     TouchUi.TextGold, true);
                 TouchUi.Label(TouchUi.R(20, top + 98, 140, 30), "Xem quảng cáo để hồi 30 máu và đánh tiếp.", 6.75f, TextAnchor.UpperCenter, Kit.Cream,
                     false, true);
