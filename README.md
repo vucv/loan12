@@ -2,7 +2,8 @@
 
 | File | Nhánh | Commit | Nội dung |
 |---|---|---|---|
-| `android/Loan12-ui-touch-ec33b41.apk` | `ui-touch` | `ec33b41` | Thoại tiếng Việt của nhân vật lịch sử trang trọng, bớt chọc ghẹo (mới nhất) |
+| `android/Loan12-upgrade-graphics-7493c62.apk` | `upgrade-graphics` | `7493c62` | Bàn đấu nét cao (ngọc, khung chọn, hoạt cảnh nổ, sao), công tắc Đồ họa nét cao trong Cài đặt (mới nhất) |
+| `android/Loan12-ui-touch-ec33b41.apk` | `ui-touch` | `ec33b41` | Thoại tiếng Việt của nhân vật lịch sử trang trọng, bớt chọc ghẹo |
 | `android/Loan12-ui-touch-5317e2e.apk` | `ui-touch` | `5317e2e` | Thoại: câu chờ lượt theo ưu tiên, tuyệt chiêu nhận trực tiếp, trúng đòn từ 4%; khung thoại vừa chữ |
 | `android/Loan12-ui-touch-2b9d7bd.apk` | `ui-touch` | `2b9d7bd` | 11 ngôn ngữ; thoại trong trận đúng như bản 94cdd3e |
 | `android/Loan12-ui-touch-e1cee6e.apk` | `ui-touch` | `e1cee6e` | Thoại: trúng đòn có câu nói, tuyệt chiêu luôn có tên chiêu |
