@@ -42,9 +42,10 @@ public class az {
     }
 
     public static Image b(String paramString) {
-        if (a) {
-            return d(paramString);
+        Image img = a ? d(paramString) : c(paramString);
+        if (img != null && j2me.HdLayer.has(paramString)) {
+            img.hdName = paramString; // PORT-HD
         }
-        return c(paramString);
+        return img;
     }
 }

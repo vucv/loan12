@@ -189,6 +189,7 @@ namespace Loan12.UnityPort
             }
             Copy(screen, ref boardSnap, bx, by, bw, bh);
             Copy(screen, ref stripSnap, StripX, StripY, StripW, StripH);
+            HdBoard.Capture();
         }
 
         static void Copy(int[] screen, ref Texture2D snap, int x, int y, int w, int h)
@@ -919,7 +920,11 @@ namespace Loan12.UnityPort
             TouchUi.Fill(f, TouchUi.Outline);
             TouchUi.Fill(new Rect(f.x + k, f.y + k, f.width - 2 * k, f.height - 2 * k), TouchUi.Hex(0xF5B735));
             TouchUi.Fill(new Rect(f.x + 2 * k, f.y + 2 * k, f.width - 4 * k, f.height - 4 * k), TouchUi.Outline);
-            if (boardSnap != null)
+            if (HdBoard.Draw(boardRect, bx, by, bw, bh))
+            {
+                // gems and effects in high resolution
+            }
+            else if (boardSnap != null)
             {
                 DrawSnap(boardSnap, boardRect);
             }

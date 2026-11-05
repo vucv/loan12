@@ -15,6 +15,8 @@ public class Image {
     boolean mutable;
     /** True when some pixel is not fully opaque (lets drawImage take the fast copy path when false). */
     boolean hasAlpha;
+    /** Name of the resource when a high-resolution version exists (see j2me.HdLayer), else null. */
+    public String hdName;
     Graphics graphics;
 
     Image(int w, int h, int[] pixels, boolean isMutable) {

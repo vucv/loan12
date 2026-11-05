@@ -371,6 +371,8 @@ Nhạc và tiếng trong game	Music and sound effects	BGMと効果音	음악과 
 Âm lượng	Volume	音量	음량
 Rung	Vibration	振動	진동
 Khi trúng đòn, mua hàng, giữ để xoá	On hits, purchases, hold to delete	被弾、購入、長押し削除の時	피격, 구매, 길게 눌러 삭제할 때
+Đồ họa nét cao	HD graphics	高画質グラフィック	고화질 그래픽
+Ngọc và hiệu ứng trên bàn đấu	Gems and effects on the board	盤面の宝石とエフェクト	보드의 보석과 효과
 TRÒ CHƠI	GAME	ゲーム	게임
 Luật chơi	Rules	ルール	규칙
 Xếp biểu tượng, vật phẩm, cấp độ	Matching, items, levels	マッチ、アイテム、レベル	맞추기, 아이템, 레벨

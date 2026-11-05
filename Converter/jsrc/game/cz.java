@@ -40,6 +40,7 @@ public class cz
         d = az.b("/_arrow");
         this.p = Image.createImage(cx.f, cx.g);
         this.o = this.p.getGraphics();
+        j2me.HdLayer.target = this.p; // PORT-HD
         setFullScreenMode(true);
         cx.n = hasPointerEvents();
         String str = j2me.Host.property("microedition.platform");

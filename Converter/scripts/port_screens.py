@@ -850,4 +850,21 @@ rep('game/bu.java', """        if (paramInt < 0) {
 rep('game/bu.java', """    public int portBoxes;""", """    public int portBoxes;
     public int portSkillSide, portSkillIndex, portSkillCount; // PORT-UI: the last skill used, and how many so far""")
 
+# high-resolution board (j2me.HdLayer): images with a high-resolution version carry their name, and the
+# game's buffer is the image whose board part is recorded
+rep('game/az.java', """    public static Image b(String paramString) {
+        if (a) {
+            return d(paramString);
+        }
+        return c(paramString);
+    }""", """    public static Image b(String paramString) {
+        Image img = a ? d(paramString) : c(paramString);
+        if (img != null && j2me.HdLayer.has(paramString)) {
+            img.hdName = paramString; // PORT-HD
+        }
+        return img;
+    }""")
+rep('game/cz.java', """        this.o = this.p.getGraphics();""", """        this.o = this.p.getGraphics();
+        j2me.HdLayer.target = this.p; // PORT-HD""")
+
 print('port_screens: ok')

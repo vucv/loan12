@@ -371,6 +371,8 @@ Nhạc và tiếng trong game	Музыка и звуковые эффекты
 Âm lượng	Громкость
 Rung	Вибрация
 Khi trúng đòn, mua hàng, giữ để xoá	При ударах, покупках, удержании для удаления
+Đồ họa nét cao	HD-графика
+Ngọc và hiệu ứng trên bàn đấu	Камни и эффекты на поле
 TRÒ CHƠI	ИГРА
 Luật chơi	Правила
 Xếp biểu tượng, vật phẩm, cấp độ	Сборка рядов, предметы, уровни

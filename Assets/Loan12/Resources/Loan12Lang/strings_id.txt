@@ -371,6 +371,8 @@ Nhạc và tiếng trong game	Musik dan efek suara
 Âm lượng	Volume
 Rung	Getar
 Khi trúng đòn, mua hàng, giữ để xoá	Saat kena serang, membeli, tahan untuk hapus
+Đồ họa nét cao	Grafis HD
+Ngọc và hiệu ứng trên bàn đấu	Permata dan efek di papan
 TRÒ CHƠI	GAME
 Luật chơi	Aturan
 Xếp biểu tượng, vật phẩm, cấp độ	Mencocokkan, item, level

@@ -91,7 +91,7 @@ namespace Loan12.UnityPort
         ITouchView touchShown;
 
         // sound and vibration switches of the touch interface (kept between sessions)
-        const string SoundPref = "Loan12.Sound", HapticsPref = "Loan12.Haptics", VolumePref = "Loan12.Volume";
+        const string SoundPref = "Loan12.Sound", HapticsPref = "Loan12.Haptics", VolumePref = "Loan12.Volume", HdBoardPref = "Loan12.HdBoard";
         bool muted;
 
         public bool SoundOn
@@ -112,6 +112,20 @@ namespace Loan12.UnityPort
             {
                 haptics = value;
                 PlayerPrefs.SetInt(HapticsPref, value ? 1 : 0);
+                PlayerPrefs.Save();
+            }
+        }
+
+        bool hdBoard = true;
+
+        /// <summary>High-resolution gems and effects on the battle board (setting "Đồ họa nét cao").</summary>
+        public bool HdBoardOn
+        {
+            get { return hdBoard; }
+            set
+            {
+                hdBoard = value;
+                PlayerPrefs.SetInt(HdBoardPref, value ? 1 : 0);
                 PlayerPrefs.Save();
             }
         }
@@ -232,6 +246,7 @@ namespace Loan12.UnityPort
             keypadHidden = PlayerPrefs.GetInt(KeypadHiddenPref, 0) == 1;
             muted = PlayerPrefs.GetInt(SoundPref, 1) == 0;
             haptics = PlayerPrefs.GetInt(HapticsPref, haptics ? 1 : 0) == 1;
+            hdBoard = PlayerPrefs.GetInt(HdBoardPref, 1) == 1;
             volume = Mathf.Clamp01(PlayerPrefs.GetInt(VolumePref, 80) / 100f);
             TouchBattleView battle = new TouchBattleView();
             touchViews = new ITouchView[]
@@ -436,6 +451,7 @@ namespace Loan12.UnityPort
             LifeTimer.Tick(); // +1 life every 30 minutes
             C_PortScreens.f_storyHidden = touchInterface; // TouchStoryView draws it
             UpdateSystemKeyboard();
+            HdBoard.Prepare(hdBoard && touchInterface);
             J2ME.Host.tick();
 
             if (J2ME.Host.screenDirty && J2ME.Host.screen != null)

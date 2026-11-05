@@ -1,6 +1,7 @@
 package javax.microedition.lcdui;
 
 import j2me.BitmapFont;
+import j2me.HdLayer;
 
 /** MIDP 2.0 Graphics rendering into an Image's ARGB pixel array (software renderer). */
 public class Graphics {
@@ -180,6 +181,10 @@ public class Graphics {
     private void plot(int x, int y) {
         if (x >= cx0 && x < cx1 && y >= cy0 && y < cy1) {
             target.data[y * tw + x] = color;
+            int[] o = HdLayer.mirror(target);
+            if (o != null) {
+                o[y * tw + x] = color;
+            }
         }
     }
 
@@ -202,6 +207,12 @@ public class Graphics {
         int row = y * tw;
         for (int x = x0; x <= x1; x++) {
             d[row + x] = color;
+        }
+        int[] o = HdLayer.mirror(target);
+        if (o != null) {
+            for (int x = x0; x <= x1; x++) {
+                o[row + x] = color;
+            }
         }
     }
 
@@ -228,8 +239,15 @@ public class Graphics {
         if (x0 >= x1 || y0 >= y1) {
             return;
         }
-        int[] d = target.data;
         int c = color;
+        fillTo(target.data, x0, y0, x1, y1, c);
+        int[] o = HdLayer.mirror(target);
+        if (o != null) {
+            fillTo(o, x0, y0, x1, y1, c);
+        }
+    }
+
+    private void fillTo(int[] d, int x0, int y0, int x1, int y1, int c) {
         for (int yy = y0; yy < y1; yy++) {
             int row = yy * tw;
             for (int xx = x0; xx < x1; xx++) {
@@ -553,11 +571,29 @@ public class Graphics {
         return (oa << 24) | (r << 16) | (g << 8) | b;
     }
 
+    /** blend() onto a layer that may be transparent (the high-resolution layer's overlay). */
+    private static int blendOver(int s, int d) {
+        return (d >>> 24) == 0 ? s : blend(s, d);
+    }
+
     /** Copies a (transformed) source region with its top-left at absolute (dx,dy). */
     private void blit(Image src, int sx, int sy, int w, int h, int transform, int dx, int dy) {
+        if (src == HdLayer.target) {
+            HdLayer.frame(src, dx, dy); // the game's buffer goes to the screen: a frame of the board ends
+        }
+        if (src.hdName != null && HdLayer.record(target, src, sx, sy, w, h, transform, dx, dy, cx0, cy0, cx1, cy1)) {
+            return; // drawn by the host in high resolution
+        }
+        blitTo(target.data, false, src, sx, sy, w, h, transform, dx, dy);
+        int[] o = HdLayer.mirror(target);
+        if (o != null) {
+            blitTo(o, true, src, sx, sy, w, h, transform, dx, dy);
+        }
+    }
+
+    private void blitTo(int[] d, boolean layer, Image src, int sx, int sy, int w, int h, int transform, int dx, int dy) {
         int[] s = src.data;
         int sw = src.width;
-        int[] d = target.data;
         if (transform == 0) {
             int x0 = dx < cx0 ? cx0 : dx;
             int y0 = dy < cy0 ? cy0 : dy;
@@ -579,7 +615,7 @@ public class Graphics {
                         if (a == 255) {
                             d[di + i] = c;
                         } else if (a != 0) {
-                            d[di + i] = blend(c, d[di + i]);
+                            d[di + i] = layer ? blendOver(c, d[di + i]) : blend(c, d[di + i]);
                         }
                     }
                 }
@@ -639,7 +675,7 @@ public class Graphics {
                 if (a == 255) {
                     d[di] = c;
                 } else if (a != 0) {
-                    d[di] = blend(c, d[di]);
+                    d[di] = layer ? blendOver(c, d[di]) : blend(c, d[di]);
                 }
             }
         }
@@ -652,7 +688,15 @@ public class Graphics {
         }
         int ax = x + tx;
         int ay = y + ty;
-        int[] d = target.data;
+        rgbTo(target.data, false, rgbData, offset, scanlength, ax, ay, width, height, processAlpha);
+        int[] o = HdLayer.mirror(target);
+        if (o != null) {
+            rgbTo(o, true, rgbData, offset, scanlength, ax, ay, width, height, processAlpha);
+        }
+    }
+
+    private void rgbTo(int[] d, boolean layer, int[] rgbData, int offset, int scanlength, int ax, int ay, int width,
+                       int height, boolean processAlpha) {
         for (int j = 0; j < height; j++) {
             int yy = ay + j;
             if (yy < cy0 || yy >= cy1) {
@@ -668,7 +712,7 @@ public class Graphics {
                 if (!processAlpha) {
                     d[di] = c | 0xff000000;
                 } else {
-                    d[di] = blend(c, d[di]);
+                    d[di] = layer ? blendOver(c, d[di]) : blend(c, d[di]);
                 }
             }
         }
@@ -719,6 +763,10 @@ public class Graphics {
             ay = y;
         }
         bf.draw(target.data, tw, cx0, cy0, cx1, cy1, str, ax + tx, ay + ty, color, font.isBold());
+        int[] o = HdLayer.mirror(target);
+        if (o != null) {
+            bf.draw(o, tw, cx0, cy0, cx1, cy1, str, ax + tx, ay + ty, color, font.isBold());
+        }
         if (font.isUnderlined()) {
             int uy = ay + bf.baseline + 1;
             drawLine(ax, uy, ax + w - 1, uy);

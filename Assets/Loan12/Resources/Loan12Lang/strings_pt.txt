@@ -371,6 +371,8 @@ Nhạc và tiếng trong game	Música e efeitos sonoros
 Âm lượng	Volume
 Rung	Vibração
 Khi trúng đòn, mua hàng, giữ để xoá	Nos golpes, compras e ao segurar para apagar
+Đồ họa nét cao	Gráficos HD
+Ngọc và hiệu ứng trên bàn đấu	Gemas e efeitos no tabuleiro
 TRÒ CHƠI	JOGO
 Luật chơi	Regras
 Xếp biểu tượng, vật phẩm, cấp độ	Combinações, itens, níveis

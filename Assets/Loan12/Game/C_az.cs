@@ -67,11 +67,13 @@ namespace Loan12
 
         public static Image b(string paramString)
         {
-            if (C_az.f_a)
+            Image img = (C_az.f_a ? C_az.d(paramString) : C_az.c(paramString));
+            if (img != null && HdLayer.has(paramString))
             {
-                return C_az.d(paramString);
+                img.hdName = paramString;
+                // PORT-HD
             }
-            return C_az.c(paramString);
+            return img;
         }
     }
 }

@@ -371,6 +371,8 @@ Nhạc và tiếng trong game	音樂與音效
 Âm lượng	音量
 Rung	震動
 Khi trúng đòn, mua hàng, giữ để xoá	受擊、購買、長按刪除時
+Đồ họa nét cao	高畫質圖像
+Ngọc và hiệu ứng trên bàn đấu	棋盤上的寶石與特效
 TRÒ CHƠI	遊戲
 Luật chơi	規則
 Xếp biểu tượng, vật phẩm, cấp độ	消除、道具、等級

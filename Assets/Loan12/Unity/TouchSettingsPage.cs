@@ -82,7 +82,7 @@ namespace Loan12.UnityPort
             Kit.Clip(new Rect(0, area.y, Gx.Width, area.height));
             // 1. sound
             y = GroupTitle("ÂM THANH", y);
-            int rows = 4;
+            int rows = 5;
             Rect g = TouchUi.R(6, y, 168, rows * Row + 2);
             if (Kit.Paint)
             {
@@ -128,6 +128,20 @@ namespace Loan12.UnityPort
             if (Kit.Paint)
             {
                 Kit.Switch(TouchUi.R(146, y + 5, 22, 11), vibrate);
+            }
+            y += Row;
+            if (Kit.Paint)
+            {
+                Divider(y);
+            }
+            bool hd = host == null || host.HdBoardOn;
+            if (RowTap(105, y, "Đồ họa nét cao", "Ngọc và hiệu ứng trên bàn đấu", true) && host != null)
+            {
+                host.HdBoardOn = !host.HdBoardOn;
+            }
+            if (Kit.Paint)
+            {
+                Kit.Switch(TouchUi.R(146, y + 5, 22, 11), hd);
             }
             y += Row;
             if (Kit.Paint)

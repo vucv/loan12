@@ -50,6 +50,8 @@ namespace Loan12
             C_cz.f_d = C_az.b("/_arrow");
             this.f_p = Image.createImage(C_cx.f_f, C_cx.f_g);
             this.f_o = this.f_p.getGraphics();
+            HdLayer.target = this.f_p;
+            // PORT-HD
             this.setFullScreenMode(true);
             C_cx.f_n = this.hasPointerEvents();
             string str = Host.property("microedition.platform");

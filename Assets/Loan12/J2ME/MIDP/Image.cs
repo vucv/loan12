@@ -12,6 +12,8 @@ namespace J2ME
         public bool mutable;
         /** True when some pixel is not fully opaque (lets drawImage take the fast copy path when false). */
         public bool hasAlpha;
+        /** Name of the resource when a high-resolution version exists (see j2me.HdLayer), else null. */
+        public string hdName;
         public Graphics graphics;
         /** Raw pixel access for the port runtime. */
         // Sprite transform constants (javax.microedition.lcdui.game.Sprite)

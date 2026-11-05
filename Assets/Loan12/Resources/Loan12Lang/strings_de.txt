@@ -371,6 +371,8 @@ Nhạc và tiếng trong game	Musik und Soundeffekte
 Âm lượng	Lautstärke
 Rung	Vibration
 Khi trúng đòn, mua hàng, giữ để xoá	Bei Treffern, Käufen, Halten zum Löschen
+Đồ họa nét cao	HD-Grafik
+Ngọc và hiệu ứng trên bàn đấu	Steine und Effekte auf dem Brett
 TRÒ CHƠI	SPIEL
 Luật chơi	Regeln
 Xếp biểu tượng, vật phẩm, cấp độ	Kombinieren, Gegenstände, Stufen

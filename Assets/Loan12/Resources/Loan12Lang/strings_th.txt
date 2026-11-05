@@ -371,6 +371,8 @@ Nhạc và tiếng trong game	เพลงและเสียงในเก�
 Âm lượng	ระดับเสียง
 Rung	การสั่น
 Khi trúng đòn, mua hàng, giữ để xoá	ตอนโดนโจมตี ซื้อของ กดค้างเพื่อลบ
+Đồ họa nét cao	กราฟิก HD
+Ngọc và hiệu ứng trên bàn đấu	อัญมณีและเอฟเฟกต์บนกระดาน
 TRÒ CHƠI	เกม
 Luật chơi	กติกา
 Xếp biểu tượng, vật phẩm, cấp độ	การจับคู่ ไอเทม เลเวล
