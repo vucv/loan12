@@ -225,6 +225,11 @@ public class bs {
     }
 
     public void g() {
+        if (game.PortScreens.touch) { // PORT-UI: every explosion is heard, restarting the clip
+            c(this.G);
+            a(this.G);
+            return;
+        }
         if (l()) {
             return;
         }

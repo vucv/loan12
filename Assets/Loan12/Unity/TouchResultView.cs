@@ -293,6 +293,11 @@ namespace Loan12.UnityPort
             {
                 Row(ref y, "/book", "Kinh nghiệm bị phạt", "-" + exp);
             }
+            int lostBoxes = C_PortMap.battleBoxes();
+            if (lostBoxes > 0)
+            {
+                Row(ref y, "/r/g", "Hộp quà rơi trong trận (giữ lại)", "+" + lostBoxes);
+            }
             TouchUi.Label(TouchUi.R(16, y, 148, 56), "Gợi ý: mua Bình Thuốc hoặc Quỷ Diện Giáp ở màn chuẩn bị trước khi đánh lại.", 7,
                 TextAnchor.UpperLeft, TouchUi.TextGold, false, true);
 

@@ -275,6 +275,13 @@ namespace Loan12
 
         public void g()
         {
+            if (C_PortScreens.f_touch)
+            {
+                // PORT-UI: every explosion is heard, restarting the clip
+                this.c(this.f_G);
+                this.a(this.f_G);
+                return;
+            }
             if (this.l())
             {
                 return;

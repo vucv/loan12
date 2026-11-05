@@ -292,7 +292,10 @@ namespace Loan12
                 this.f_k -= 1;
                 if (this.f_k == 7)
                 {
-                    C_bs.a().f();
+                    if (!C_PortScreens.f_touch)
+                    {
+                        C_bs.a().f();
+                    }
                     if (this.f_j == 0)
                     {
                         C_cz.d(250);
@@ -408,6 +411,11 @@ namespace Loan12
             if ((this.f_k < 1))
             {
                 this.f_k = paramInt2;
+                if (C_PortScreens.f_touch)
+                {
+                    C_bs.a().f();
+                    // PORT-UI: the hit sound with the start of the animation
+                }
             }
             if ((this.f_k < paramInt2))
             {

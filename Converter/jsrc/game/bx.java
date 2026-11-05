@@ -234,7 +234,9 @@ public class bx
         if (this.k > 0) {
             this.k -= 1;
             if (this.k == 7) {
-                bs.a().f();
+                if (!game.PortScreens.touch) {
+                    bs.a().f();
+                }
                 if (this.j == 0) {
                     cz.d(250);
                 }
@@ -319,6 +321,9 @@ public class bx
         }
         if (this.k < 1) {
             this.k = paramInt2;
+            if (game.PortScreens.touch) {
+                bs.a().f(); // PORT-UI: the hit sound with the start of the animation
+            }
         }
         if (this.k < paramInt2) {
             this.l = (paramInt2 - this.k);

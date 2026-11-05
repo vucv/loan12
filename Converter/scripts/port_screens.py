@@ -850,4 +850,37 @@ rep('game/bu.java', """        if (paramInt < 0) {
 rep('game/bu.java', """    public int portBoxes;""", """    public int portBoxes;
     public int portSkillSide, portSkillIndex, portSkillCount; // PORT-UI: the last skill used, and how many so far""")
 
+
+# sounds (touch): the gem explosion always plays (it used to be skipped while another sound was still
+# playing), and the "being hit" sound starts with the hit animation instead of near its end
+rep('game/bs.java', """    public void g() {
+        if (l()) {
+            return;
+        }""", """    public void g() {
+        if (game.PortScreens.touch) { // PORT-UI: every explosion is heard, restarting the clip
+            c(this.G);
+            a(this.G);
+            return;
+        }
+        if (l()) {
+            return;
+        }""")
+rep('game/bx.java', """        if (this.k < 1) {
+            this.k = paramInt2;
+        }
+        if (this.k < paramInt2) {""", """        if (this.k < 1) {
+            this.k = paramInt2;
+            if (game.PortScreens.touch) {
+                bs.a().f(); // PORT-UI: the hit sound with the start of the animation
+            }
+        }
+        if (this.k < paramInt2) {""")
+rep('game/bx.java', """            if (this.k == 7) {
+                bs.a().f();
+                if (this.j == 0) {""", """            if (this.k == 7) {
+                if (!game.PortScreens.touch) {
+                    bs.a().f();
+                }
+                if (this.j == 0) {""")
+
 print('port_screens: ok')
