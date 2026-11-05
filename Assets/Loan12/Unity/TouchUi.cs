@@ -573,6 +573,42 @@ namespace Loan12.UnityPort
         {
             return v.ToString("#,0", System.Globalization.CultureInfo.InvariantCulture).Replace(',', '.');
         }
+
+        /// <summary>A gold balance short enough for a small box: 9.999 in full, then 12,5K, 1,2M, 3,4B (one decimal, dropped when 0).</summary>
+        public static string ShortMoney(long v)
+        {
+            long a = v < 0 ? -v : v;
+            if (a < 10000)
+            {
+                return Money((int) v);
+            }
+            double div;
+            string suffix;
+            if (a >= 1000000000L)
+            {
+                div = 1000000000.0;
+                suffix = "B";
+            }
+            else if (a >= 1000000L)
+            {
+                div = 1000000.0;
+                suffix = "M";
+            }
+            else
+            {
+                div = 1000.0;
+                suffix = "K";
+            }
+            long tenths = (long) (a * 10 / (long) div); // truncated, never rounded up
+            string code = Loc.Codes[(int) Loc.Current];
+            string sep = (code == "vi" || code == "id" || code == "pt" || code == "es" || code == "de" || code == "ru") ? "," : ".";
+            string text = (tenths / 10).ToString(System.Globalization.CultureInfo.InvariantCulture);
+            if (tenths % 10 != 0)
+            {
+                text += sep + (tenths % 10).ToString(System.Globalization.CultureInfo.InvariantCulture);
+            }
+            return (v < 0 ? "-" : "") + text + suffix;
+        }
     }
 
     /// <summary>What the purchases give: item slots taken into battle and the most lives.</summary>
@@ -637,7 +673,7 @@ namespace Loan12.UnityPort
             for (int i = 0; i < n0 && i < parts.Length; i++)
             {
                 int v;
-                if (int.TryParse(parts[i], out v) && System.Array.IndexOf(Usable, v) >= 0)
+                if (int.TryParse(parts[i], out v) && System.Array.IndexOf(Usable, v) >= 0 && SafeOwned(v) > 0)
                 {
                     r[i] = v;
                 }

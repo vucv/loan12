@@ -426,7 +426,7 @@ namespace Loan12.UnityPort
         void TapMap(Vector2 p)
         {
             Rect v = ViewRect();
-            float best = (11 * TouchUi.K) * (11 * TouchUi.K);
+            float best = (18 * TouchUi.K) * (18 * TouchUi.K);
             int hit = -1, locked = -1;
             for (int n = 0; n < C_PortMap.nodeCount(); n++)
             {

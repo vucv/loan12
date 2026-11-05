@@ -242,7 +242,7 @@ namespace Loan12.UnityPort
             }
 
             // gold owned
-            Total(y0 + 186, "/gold", "Vàng hiện có", TouchUi.Money(C_PortUi.resultGold()), TouchUi.TextGold);
+            Total(y0 + 186, "/gold", "Vàng hiện có", TouchUi.ShortMoney(C_PortUi.resultGold()), TouchUi.TextGold);
 
             bool ready = C_PortUi.resultReady();
             TouchUi.RedButton(MainRect(), "TIẾP TỤC", ready, downKind == 1 && ready);

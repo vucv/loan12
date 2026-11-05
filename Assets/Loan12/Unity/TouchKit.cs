@@ -62,7 +62,7 @@ namespace Loan12.UnityPort
             }
             else if (e.type == EventType.MouseDrag)
             {
-                if ((e.mousePosition - downAt).magnitude > 6 * TouchUi.K)
+                if ((e.mousePosition - downAt).magnitude > 9 * TouchUi.K)
                 {
                     moved = true;
                 }
@@ -413,7 +413,7 @@ namespace Loan12.UnityPort
                 }
                 Box(goldBox, TouchUi.Hex(0x22101E));
                 TouchUi.Sprite(TouchUi.Img("/gold"), TouchUi.R(76, y + 1, 16, 16));
-                TouchUi.PixelText(TouchUi.Money(gold), 1, goldBox.x + 21 * k, goldBox.center.y, 0, true);
+                TouchUi.PixelText(TouchUi.ShortMoney(gold), 1, goldBox.x + 21 * k, goldBox.center.y, 0, true);
                 Rect plus = new Rect(goldBox.xMax - 15 * k, goldBox.y + 3 * k, 12 * k, 12 * k);
                 TouchUi.Button(plus, Btn.Green, Down(9002));
                 TouchUi.Fill(new Rect(plus.center.x - k, plus.y + 3 * k, 2 * k, 6 * k), Color.white);

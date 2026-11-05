@@ -18,15 +18,11 @@ namespace Loan12.UnityPort
         }
 
         const float Row = 21;
-        const string Version = "1.0.0";
 
         readonly Where where;
         IPage sub;
         float scroll;
         float contentH;
-        int versionTaps;
-        float versionTapAt;
-        bool showId;
 
         /// <summary>Map only: "MENU", "Đổi nhân vật", "Hướng dẫn bản đồ".</summary>
         public Action OnMenu, OnSwitchCharacter, OnMapTutorial;
@@ -217,7 +213,7 @@ namespace Loan12.UnityPort
                 // 4. support
                 y = GroupTitle("HỖ TRỢ", y);
                 bool full = where == Where.Menu;
-                rows = full ? 4 : 2;
+                rows = full ? 3 : 1;
                 g = TouchUi.R(6, y, 168, rows * Row + 2);
                 if (Kit.Paint)
                 {
@@ -255,34 +251,7 @@ namespace Loan12.UnityPort
                     }
                     y += Row;
                 }
-                if (Kit.Paint)
-                {
-                    Divider(y);
-                }
-                if (RowTap(404, y, "Thông tin và tác giả", null, true))
-                {
-                    sub = new AboutPage();
-                }
-                Chevron(y);
-                y += Row + 2 + 4;
-
-                // version line (7 taps: anonymous player id for support)
-                Rect vr = TouchUi.R(6, y, 168, 12);
-                if (Kit.Tap(501, vr))
-                {
-                    versionTaps = Time.unscaledTime - versionTapAt < 1.2f ? versionTaps + 1 : 1;
-                    versionTapAt = Time.unscaledTime;
-                    if (versionTaps >= 7)
-                    {
-                        showId = true;
-                    }
-                }
-                if (Kit.Paint)
-                {
-                    string line = showId ? "Mã người chơi: " + PlayerId() : "Phiên bản " + Application.version + " · Loạn 12 sứ quân · 2010 MicroGame";
-                    TouchUi.Label(vr, line, 5.75f, TextAnchor.MiddleCenter, Kit.Muted, false, false, false);
-                }
-                y += 16;
+                y += 2 + 4;
             }
             contentH = y + scroll - Top;
             Kit.Unclip();
@@ -481,18 +450,6 @@ namespace Loan12.UnityPort
             {
                 TouchUi.Fill(new Rect(r.x + (3 + i) * k, r.y + (3 - i) * k, k, k), Kit.Cream);
             }
-        }
-
-        static string PlayerId()
-        {
-            string id = PlayerPrefs.GetString("l12.playerId", "");
-            if (id.Length == 0)
-            {
-                id = Guid.NewGuid().ToString("N").Substring(0, 12).ToUpperInvariant();
-                PlayerPrefs.SetString("l12.playerId", id);
-                PlayerPrefs.Save();
-            }
-            return id;
         }
     }
 
