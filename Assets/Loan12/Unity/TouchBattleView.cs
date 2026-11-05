@@ -527,7 +527,11 @@ namespace Loan12.UnityPort
                 popupKind = 0;
                 outcome = 0;
                 lostAcc[0] = lostAcc[1] = healAcc[0] = healAcc[1] = 0;
-                SayB(1, "start", Pick(StartLines));
+                queue.Clear();
+                bubbleSide = -1;
+                C_bu b0 = C_PortUi.battle();
+                prevSkillCount = b0 != null ? b0.f_portSkillCount : 0;
+                SayB(1, "start", Pick(StartLines), null, 3);
                 return;
             }
             for (int s = 0; s < 2; s++)
@@ -559,16 +563,16 @@ namespace Loan12.UnityPort
                     {
                         if (shieldUp[s] && lostAcc[s] * 100 < maxHp * 10)
                         {
-                            SayB(s, "block", Pick(BlockLines));
+                            SayB(s, "block", Pick(BlockLines), null, 2);
                         }
-                        else if (lostAcc[s] * 100 >= maxHp * 6)
+                        else if (lostAcc[s] * 100 >= maxHp * 4)
                         {
-                            SayB(s, "hurt", Pick(HurtLines[s]));
+                            SayB(s, "hurt", Pick(HurtLines[s]), null, 3);
                         }
                     }
                     else if (healAcc[s] * 100 >= maxHp * 10)
                     {
-                        SayB(s, "heal", Pick(HealLines));
+                        SayB(s, "heal", Pick(HealLines), null, 2);
                     }
                     lostAcc[s] = healAcc[s] = 0;
                     shieldUp[s] = false;
@@ -576,7 +580,7 @@ namespace Loan12.UnityPort
                 if (!lowSaid[s] && hp > 0 && hp * 5 < maxHp)
                 {
                     lowSaid[s] = true;
-                    SayB(s, "low", LowLines[s][0]);
+                    SayB(s, "low", LowLines[s][0], null, 4);
                 }
 
                 int mana = C_PortUi.mana(s), maxMana = C_PortUi.maxMana(s);
@@ -584,16 +588,6 @@ namespace Loan12.UnityPort
                 if (dm > 0)
                 {
                     Float(s * 10 + 3, "+", dm, " năng lượng", TouchUi.Hex(0x7FB8FF), ManaAt(s));
-                }
-                else if (dm < 0 && maxMana >= 3 && -dm >= maxMana / 3)
-                {
-                    int k = Mathf.Clamp(-dm / (maxMana / 3) - 1, 0, 2);
-                    string skill = C_PortUi.skillName(s, k);
-                    if (skill.Length > 0)
-                    {
-                        Tick(who + " dùng " + skill);
-                        SayB(s, "skill", "Nếm thử " + skill + "!", Loc.T(skill));
-                    }
                 }
                 prevMana[s] = mana;
 
@@ -616,9 +610,22 @@ namespace Loan12.UnityPort
                 if (prevItems.TryGetValue(t, out before) && c < before)
                 {
                     Tick(C_PortUi.name(0) + " dùng " + C_PortUi.itemName(t));
-                    SayB(0, "item", null); // a jab at the enemy while drinking / putting it on
+                    SayB(0, "item", null, null, 1); // a jab at the enemy while drinking / putting it on
                 }
                 prevItems[t] = c;
+            }
+            // a skill used, by either side: the game counts them (bu.portSkillCount)
+            C_bu battle0 = C_PortUi.battle();
+            if (battle0 != null && battle0.f_portSkillCount != prevSkillCount)
+            {
+                prevSkillCount = battle0.f_portSkillCount;
+                int ss = battle0.f_portSkillSide;
+                string skill = ss >= 0 && ss < 2 ? C_PortUi.skillName(ss, battle0.f_portSkillIndex) : "";
+                if (skill.Length > 0)
+                {
+                    Tick(C_PortUi.name(ss) + " dùng " + skill);
+                    SayB(ss, "skill", "Nếm thử " + skill + "!", Loc.T(skill), 5);
+                }
             }
             int now = C_PortUi.outcome();
             if (now != outcome)
@@ -634,16 +641,16 @@ namespace Loan12.UnityPort
                         J2ME.Host.pointerReleased(bx + bw / 2, by + bh / 2);
                         boardHeld = false;
                     }
-                    bubbleSide = -1; // the last word
-                    SayB(outcome == 1 ? 0 : 1, "win", Pick(outcome == 1 ? WinLines : GloatLines));
+                    SayB(outcome == 1 ? 0 : 1, "win", Pick(outcome == 1 ? WinLines : GloatLines), null, 6); // the last word
                     Tick(outcome == 1 ? C_PortUi.name(0) + " đã chiến thắng!" : C_PortUi.name(0) + " đã thua trận");
                 }
             }
             floaters.RemoveAll(f => Time.unscaledTime - f.t0 > 1.4f);
-            if (bubbleSide >= 0 && Time.unscaledTime - bubbleTime > 2.2f)
+            if (bubbleSide >= 0 && Time.unscaledTime - bubbleTime > bubbleDur)
             {
                 bubbleSide = -1;
             }
+            Pump();
         }
 
         string Pick(string[] lines)
@@ -652,8 +659,9 @@ namespace Loan12.UnityPort
         }
 
         /// <summary>A line in the character's own voice for this moment (Banter, in the current language);
-        /// the old Vietnamese line when there is none.</summary>
-        void SayB(int side, string evt, string fallback, string skill = null)
+        /// the old Vietnamese line when there is none. It waits its turn (Pump) by its priority:
+        /// 6 win, 5 skill, 4 low, 3 hurt / start, 2 block / heal, 1 item.</summary>
+        void SayB(int side, string evt, string fallback, string skill, int prio)
         {
             string line = null;
             try
@@ -670,35 +678,78 @@ namespace Loan12.UnityPort
             }
             if (line != null)
             {
-                Say(side, line);
-                if (bubbleText == line)
-                {
-                    bubbleRaw = true;
-                }
+                Say(side, line, true, prio);
             }
             else if (fallback != null)
             {
-                Say(side, fallback);
+                Say(side, fallback, false, prio);
             }
         }
 
-        bool bubbleRaw; // the bubble's text is already in the current language
+        bool bubbleRaw;          // the bubble's text is already in the current language
+        float bubbleDur = 2.2f;  // how long the bubble shows (longer texts longer)
+        int prevSkillCount;
 
         // the hits and heals of the move going on, per side
         readonly int[] lostAcc = new int[2], healAcc = new int[2];
         readonly float[] hitAt = new float[2];
         readonly bool[] shieldUp = new bool[2];
 
-        void Say(int side, string text)
+        sealed class Said
         {
-            if (bubbleSide >= 0 && Time.unscaledTime - bubbleTime < 1.2f)
+            public int side, prio;
+            public string text;
+            public bool raw;
+            public float at;
+        }
+
+        readonly List<Said> queue = new List<Said>();
+
+        /// <summary>A line waits for the bubble (the win is said at once).</summary>
+        void Say(int side, string text, bool raw, int prio)
+        {
+            if (string.IsNullOrEmpty(text))
             {
-                return; // one bubble at a time
+                return;
             }
+            if (prio >= 6)
+            {
+                queue.Clear();
+                Show(side, text, raw);
+                return;
+            }
+            queue.Add(new Said {side = side, text = text, raw = raw, prio = prio, at = Time.unscaledTime});
+        }
+
+        /// <summary>When the bubble is free (or has been read long enough), the most important line waiting;
+        /// lines waiting more than 2 s are dropped: what they were about has passed.</summary>
+        void Pump()
+        {
+            float now = Time.unscaledTime;
+            queue.RemoveAll(q => now - q.at > 2f);
+            if (queue.Count == 0 || (bubbleSide >= 0 && now - bubbleTime < 1.4f))
+            {
+                return;
+            }
+            Said best = queue[0];
+            foreach (Said q in queue)
+            {
+                if (q.prio > best.prio)
+                {
+                    best = q;
+                }
+            }
+            queue.Remove(best);
+            Show(best.side, best.text, best.raw);
+        }
+
+        void Show(int side, string text, bool raw)
+        {
             bubbleSide = side;
             bubbleText = text;
             bubbleTime = Time.unscaledTime;
-            bubbleRaw = false;
+            bubbleRaw = raw;
+            bubbleDur = Mathf.Clamp(1.6f + text.Length * 0.045f, 2.2f, 3.6f);
         }
 
         void Tick(string msg)
@@ -1130,19 +1181,26 @@ namespace Loan12.UnityPort
             }
             float k = TouchUi.K;
             float age = Time.unscaledTime - bubbleTime;
-            float alpha = age < 1.8f ? 1f : Mathf.Clamp01(1f - (age - 1.8f) / 0.4f);
-            Rect b = bubbleSide == 0 ? TouchUi.R(2, 160, 140, 36) : TouchUi.R(38, 160, 140, 36);
+            float alpha = age < bubbleDur - 0.4f ? 1f : Mathf.Clamp01((bubbleDur - age) / 0.4f);
+            // the bubble fits its text: as wide as the line (up to 150), as tall as its lines, its bottom and
+            // its outer side where they were (over the speaker's portrait)
+            float size = bubbleRaw ? 7f : 7.5f;
+            float tw = TouchUi.TextWidth(bubbleText, size, true);
+            float bw = Mathf.Clamp(tw + 14, 44, 150);
+            int lines = TouchUi.Lines(bubbleText, bw - 10, size);
+            float bh = Mathf.Clamp(lines * TouchUi.LineHeight(size) + 9, 18, 44);
+            Rect b = bubbleSide == 0 ? TouchUi.R(2, 196 - bh, bw, bh) : TouchUi.R(178 - bw, 196 - bh, bw, bh);
             float tail = bubbleSide == 0 ? 19 : 161;
             Color line = new Color(0.01f, 0.01f, 0.01f, alpha), fill = new Color(1f, 1f, 1f, alpha);
             BubbleShape(b, tail, line, fill);
             Rect text = new Rect(b.x + 5 * k, b.y + 3 * k, b.width - 10 * k, b.height - 6 * k);
             if (bubbleRaw)
             {
-                TouchUi.LabelRaw(text, bubbleText, 7f, TextAnchor.MiddleCenter, new Color(0.1f, 0.04f, 0.1f, alpha), true, true, false);
+                TouchUi.LabelRaw(text, bubbleText, size, TextAnchor.MiddleCenter, new Color(0.1f, 0.04f, 0.1f, alpha), true, true, false);
             }
             else
             {
-                TouchUi.Label(text, bubbleText, 7.5f, TextAnchor.MiddleCenter, new Color(0.1f, 0.04f, 0.1f, alpha), true, true, false);
+                TouchUi.Label(text, bubbleText, size, TextAnchor.MiddleCenter, new Color(0.1f, 0.04f, 0.1f, alpha), true, true, false);
             }
         }
 

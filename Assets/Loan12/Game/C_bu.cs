@@ -69,6 +69,7 @@ namespace Loan12
         //Luot danh 0|1
         //get Info 1
         // get Info 2
+        // PORT-UI
         //9 skill
         //fire1
         //fire2
@@ -108,6 +109,10 @@ namespace Loan12
         // at most 2 boxes a battle
         // the chest (dn draws it instead of an item)
         public int f_portBoxes;
+        public int f_portSkillSide;
+        public int f_portSkillIndex;
+        public int f_portSkillCount;
+        // PORT-UI: the last skill used, and how many so far
         public bool f_portReviveOffer;
         // PORT-UI: the second chance is offered now
         // PORT-UI (tour): the battle's state
@@ -991,6 +996,10 @@ namespace Loan12
             {
                 return;
             }
+            this.f_portSkillSide = i;
+            // PORT-UI
+            this.f_portSkillIndex = paramInt;
+            this.f_portSkillCount += 1;
             int i1 = arrayOfInt[paramInt];
             localbn1.a(localbn1.n() * (paramInt + 1) / 3, true);
             int i2 = 0;
@@ -1726,6 +1735,7 @@ namespace Loan12
             // the chest (dn draws it instead of an item)
         }
 
+        // PORT-UI: the last skill used, and how many so far
         // PORT-UI: the second chance is offered now
         public int portV()
         {

@@ -836,4 +836,18 @@ rep('game/bu.java', """    public int portBoxes;""", """    public int portBoxes
         }
     }""")
 
+# a skill used (either side): counted so the touch view names it in a speech bubble at once
+rep('game/bu.java', """        if (paramInt < 0) {
+            return;
+        }
+        int i1 = arrayOfInt[paramInt];""", """        if (paramInt < 0) {
+            return;
+        }
+        this.portSkillSide = i; // PORT-UI
+        this.portSkillIndex = paramInt;
+        this.portSkillCount += 1;
+        int i1 = arrayOfInt[paramInt];""")
+rep('game/bu.java', """    public int portBoxes;""", """    public int portBoxes;
+    public int portSkillSide, portSkillIndex, portSkillCount; // PORT-UI: the last skill used, and how many so far""")
+
 print('port_screens: ok')

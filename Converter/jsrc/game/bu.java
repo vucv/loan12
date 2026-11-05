@@ -744,6 +744,9 @@ public class bu
         if (paramInt < 0) {
             return;
         }
+        this.portSkillSide = i; // PORT-UI
+        this.portSkillIndex = paramInt;
+        this.portSkillCount += 1;
         int i1 = arrayOfInt[paramInt];
         localbn1.a(localbn1.n() * (paramInt + 1) / 3, true);
         int i2;
@@ -1331,6 +1334,7 @@ public class bu
         return 6; // the chest (dn draws it instead of an item)
     }
     public int portBoxes;
+    public int portSkillSide, portSkillIndex, portSkillCount; // PORT-UI: the last skill used, and how many so far
     public boolean portReviveOffer;    // PORT-UI: the second chance is offered now
     public int portV() { return this.v; } // PORT-UI (tour): the battle's state
     public boolean portReviveUsed;     // taken (or turned down) in this battle
