@@ -526,7 +526,8 @@ namespace Loan12.UnityPort
                 ticker = "";
                 popupKind = 0;
                 outcome = 0;
-                Say(1, Pick(StartLines));
+                lostAcc[0] = lostAcc[1] = healAcc[0] = healAcc[1] = 0;
+                SayB(1, "start", Pick(StartLines));
                 return;
             }
             for (int s = 0; s < 2; s++)
@@ -538,29 +539,44 @@ namespace Loan12.UnityPort
                 {
                     Float(s * 10 + 1, "-", -dh, "", TouchUi.Hex(0xFF5A4A), HpAt(s));
                     Tick(who + " mất " + (-dh) + " máu");
-                    if (C_PortUi.effect(s, 3) > 0 && -dh < maxHp / 10)
-                    {
-                        Say(s, Pick(BlockLines));
-                    }
-                    else if (-dh * 100 >= maxHp * 15)
-                    {
-                        Say(s, Pick(HurtLines[s]));
-                    }
+                    // a move's hits come one by one: they add up, and the one hit speaks once they stop
+                    lostAcc[s] += -dh;
+                    hitAt[s] = Time.unscaledTime;
+                    shieldUp[s] = shieldUp[s] || C_PortUi.effect(s, 3) > 0;
                 }
                 else if (dh > 0)
                 {
                     Float(s * 10 + 2, "+", dh, " máu", TouchUi.Hex(0x7CE05A), HpAt(s));
                     Tick(who + " hồi " + dh + " máu");
-                    if (dh * 100 >= maxHp * 10)
-                    {
-                        Say(s, Pick(HealLines));
-                    }
+                    healAcc[s] += dh;
+                    hitAt[s] = Time.unscaledTime;
                 }
                 prevHp[s] = hp;
+                if ((lostAcc[s] > 0 || healAcc[s] > 0) && Time.unscaledTime - hitAt[s] > 0.6f)
+                {
+                    // the move is over: what it did, said once
+                    if (lostAcc[s] > 0 && hp > 0)
+                    {
+                        if (shieldUp[s] && lostAcc[s] * 100 < maxHp * 10)
+                        {
+                            SayB(s, "block", Pick(BlockLines));
+                        }
+                        else if (lostAcc[s] * 100 >= maxHp * 6)
+                        {
+                            SayB(s, "hurt", Pick(HurtLines[s]));
+                        }
+                    }
+                    else if (healAcc[s] * 100 >= maxHp * 10)
+                    {
+                        SayB(s, "heal", Pick(HealLines));
+                    }
+                    lostAcc[s] = healAcc[s] = 0;
+                    shieldUp[s] = false;
+                }
                 if (!lowSaid[s] && hp > 0 && hp * 5 < maxHp)
                 {
                     lowSaid[s] = true;
-                    Say(s, LowLines[s][0]);
+                    SayB(s, "low", LowLines[s][0]);
                 }
 
                 int mana = C_PortUi.mana(s), maxMana = C_PortUi.maxMana(s);
@@ -576,7 +592,7 @@ namespace Loan12.UnityPort
                     if (skill.Length > 0)
                     {
                         Tick(who + " dùng " + skill);
-                        Say(s, "Nếm thử " + skill + "!");
+                        SayB(s, "skill", "Nếm thử " + skill + "!", Loc.T(skill));
                     }
                 }
                 prevMana[s] = mana;
@@ -600,6 +616,7 @@ namespace Loan12.UnityPort
                 if (prevItems.TryGetValue(t, out before) && c < before)
                 {
                     Tick(C_PortUi.name(0) + " dùng " + C_PortUi.itemName(t));
+                    SayB(0, "item", null); // a jab at the enemy while drinking / putting it on
                 }
                 prevItems[t] = c;
             }
@@ -618,7 +635,7 @@ namespace Loan12.UnityPort
                         boardHeld = false;
                     }
                     bubbleSide = -1; // the last word
-                    Say(outcome == 1 ? 0 : 1, Pick(outcome == 1 ? WinLines : GloatLines));
+                    SayB(outcome == 1 ? 0 : 1, "win", Pick(outcome == 1 ? WinLines : GloatLines));
                     Tick(outcome == 1 ? C_PortUi.name(0) + " đã chiến thắng!" : C_PortUi.name(0) + " đã thua trận");
                 }
             }
@@ -634,6 +651,44 @@ namespace Loan12.UnityPort
             return lines[rnd.Next(lines.Length)];
         }
 
+        /// <summary>A line in the character's own voice for this moment (Banter, in the current language);
+        /// the old Vietnamese line when there is none.</summary>
+        void SayB(int side, string evt, string fallback, string skill = null)
+        {
+            string line = null;
+            try
+            {
+                line = Banter.Line(C_PortUi.portrait(side), evt, C_PortUi.name(side), C_PortUi.name(1 - side), skill);
+            }
+            catch (System.Exception)
+            {
+                line = null;
+            }
+            if (line != null && !string.IsNullOrEmpty(skill) && !line.Contains(skill))
+            {
+                line = skill + "! " + line; // the skill is always named
+            }
+            if (line != null)
+            {
+                Say(side, line);
+                if (bubbleText == line)
+                {
+                    bubbleRaw = true;
+                }
+            }
+            else if (fallback != null)
+            {
+                Say(side, fallback);
+            }
+        }
+
+        bool bubbleRaw; // the bubble's text is already in the current language
+
+        // the hits and heals of the move going on, per side
+        readonly int[] lostAcc = new int[2], healAcc = new int[2];
+        readonly float[] hitAt = new float[2];
+        readonly bool[] shieldUp = new bool[2];
+
         void Say(int side, string text)
         {
             if (bubbleSide >= 0 && Time.unscaledTime - bubbleTime < 1.2f)
@@ -643,6 +698,7 @@ namespace Loan12.UnityPort
             bubbleSide = side;
             bubbleText = text;
             bubbleTime = Time.unscaledTime;
+            bubbleRaw = false;
         }
 
         void Tick(string msg)
@@ -1080,7 +1136,14 @@ namespace Loan12.UnityPort
             Color line = new Color(0.01f, 0.01f, 0.01f, alpha), fill = new Color(1f, 1f, 1f, alpha);
             BubbleShape(b, tail, line, fill);
             Rect text = new Rect(b.x + 5 * k, b.y + 3 * k, b.width - 10 * k, b.height - 6 * k);
-            TouchUi.Label(text, bubbleText, 7.5f, TextAnchor.MiddleCenter, new Color(0.1f, 0.04f, 0.1f, alpha), true, true, false);
+            if (bubbleRaw)
+            {
+                TouchUi.LabelRaw(text, bubbleText, 7f, TextAnchor.MiddleCenter, new Color(0.1f, 0.04f, 0.1f, alpha), true, true, false);
+            }
+            else
+            {
+                TouchUi.Label(text, bubbleText, 7.5f, TextAnchor.MiddleCenter, new Color(0.1f, 0.04f, 0.1f, alpha), true, true, false);
+            }
         }
 
         void DrawPopup()
