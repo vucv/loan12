@@ -52,6 +52,13 @@ Bật hết công suất! Cháy lên nào!
 Dùng đồ thôi, người giàu nó vậy!
 Lên đồ xịn, giờ mới là thật!
 Bình này uống xong là bá luôn!
+Đánh trúng hả? Uống bình máu, coi như chưa có gì nha!
+Ngươi tốn ba đòn, ta tốn một ngụm. Lỗ sấp mặt!
+Giáp mới lên người, đánh tiếp đi, gãi ngứa thôi!
+Full máu rồi nè, nãy giờ cố gắng phí công ghê!
+Nhân sâm hàng tuyển, còn ngươi chỉ có ước mơ.
+Cầm Long kiếm rồi, giờ xin lỗi vẫn còn kịp đó!
+Hết máu thì uống, hết trình thì chịu, {enemy} ơi!
 [hero_fire.win]
 GG ez! Ai next?
 Thắng! Đã nói rồi mà, ta là số một!
@@ -122,6 +129,13 @@ Lôi Thần ơi, mượn tí sấm nhé.
 Dùng vật phẩm. Hiệu quả hơn suy nghĩ của ngươi.
 Đồ dùng đúng lúc mới là trí tuệ.
 Bổ sung tài nguyên. Không có gì kịch tính.
+Sát thương của ngươi vừa bị xóa. Cảm ơn bình máu.
+Ngươi đánh mười đòn, ta hồi một giây. Toán học đấy.
+Giáp tăng thủ ba phần. Hy vọng của ngươi giảm mười phần.
+Số liệu cho thấy ngươi nên bỏ cuộc. Ngay bây giờ.
+Nhân sâm rẻ hơn công sức ngươi vừa bỏ ra.
+Hồi máu xong. Mời ngươi làm lại từ đầu.
+Cú đánh vừa rồi? Đã được hoàn tác.
 [hero_storm.win]
 Kết quả: như ta đã nói từ đầu.
 Thắng. Ta về đọc sách tiếp đây.
@@ -192,6 +206,13 @@ Mưa xuống nè, nhớ mang áo mưa nha.
 Dùng đồ nè, tiếc ghê, định để dành ăn.
 Uống bình này, ước gì là trà sữa.
 Đồ tốt phải dùng, để lâu hết hạn.
+Đánh hăng quá ha, để tui uống miếng nước đã.
+Hồi máu rồi nè, mệt không, uống chung không?
+Nhân sâm ngon ghê, tiếc là không chia cho {enemy}.
+Mặc giáp vô ấm ghê, đánh tiếp đi cho vui.
+Cảm ơn nha, nhờ ngươi mà tui có cớ uống thêm bình.
+Bị đánh xíu thôi mà, ăn miếng là lành liền.
+Từ từ nha, tui đang nhâm nhi, không vội đâu.
 [hero_water.win]
 Xong! Giờ đi ăn được chưa?
 Thắng rồi, ai bao lẩu đây?
@@ -262,6 +283,13 @@ Hãy chứng kiến khoảnh khắc lịch sử!
 Đạo cụ! Mang đạo cụ lên!
 Một chút phụ kiện cho thêm lấp lánh!
 Diva cũng cần bồi bổ chứ!
+Ngươi tưởng đã hạ màn? Màn hai bắt đầu!
+Vết thương ư? Chỉ là hóa trang, rửa là sạch!
+Khán giả ơi, nhìn kỹ: hồi sinh trong một ngụm!
+Giáp mới lấp lánh, ánh đèn sân khấu là của ta!
+Bi kịch của ngươi: đánh mãi ta vẫn tươi rói!
+Phượng hoàng uống thuốc, hào quang nhân đôi!
+Vỗ tay đi {enemy}, ngươi vừa diễn vai quần chúng đó!
 [hero_phoenix.win]
 Cảm ơn! Cảm ơn! Ta yêu các bạn!
 Hạ màn! Vở diễn hoàn hảo!
@@ -332,6 +360,13 @@ Chị bật mode nghiêm túc rồi nha.
 Phụ kiện mới, chuẩn style.
 Đồ hiệu đó, xài cho biết.
 Bình này chị mua bằng tiền của chị nha.
+Đánh chị xong rồi hả? Đợi chị dặm lại phấn cái.
+Máu đầy lại rồi, công sức của em đi đâu ta?
+Giáp mới nè, đẹp hơn cả chiến thuật của em.
+Em đánh mệt chưa? Chị mới bắt đầu tươi tỉnh nè.
+Nhân sâm cho chị, nước mắt cho em nha.
+Hồi máu trong một nốt nhạc, cưng hiểu hông?
+Xin lỗi nha, chị không có thói quen thua.
 [hero_queen.win]
 Biết thân phận chưa cưng?
 Thắng rồi, chị đi làm tóc đây.
@@ -402,6 +437,13 @@ Thủy triều Bắc Hải, dâng lên!
 Bảo vật gia truyền. Ngươi không có đâu.
 Dùng một chút đồ cao cấp, thông cảm.
 Long cung tiếp tế, đúng giờ như thường lệ.
+Ngươi làm ta trầy da? Một ngụm là liền như cũ.
+Thuốc này đắt hơn cả bộ giáp của ngươi. Xin lỗi nhé.
+Long kiếm trong tay, ngươi nên quỳ cho kịp.
+Vết xước ngươi gây ra, ta xóa trong nháy mắt.
+Nhân sâm ngàn năm. Ngươi đến củ cải còn không có.
+Giáp Long cung đấy, đánh vào chỉ tổ đau tay ngươi.
+Cố gắng của ngươi thật đáng khen. Tiếc là vô ích.
 [hero_dragon.win]
 Cảm ơn trận đấu. Ngươi đã thua rất lịch sự.
 Như đã dự đoán. Ta xin cáo từ.

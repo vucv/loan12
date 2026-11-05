@@ -54,6 +54,13 @@ Watch and learn, kid!
 Power-up acquired!
 Chug chug chug! Ah, refreshing.
 Pay-to-win? No, just smart shopping.
+You hit me? Cute. Chugging that right off.
+Full HP again! Bet that hurt your feelings.
+New armor! Go on, tickle me some more.
+Ginseng break. Feel free to keep missing.
+Dragon sword equipped. You should log off now.
+All that work, {enemy}, and I undo it in one gulp!
+Heal diff. Skill diff. Every kind of diff.
 [hero_fire.win]
 GG EZ! Well, mostly EZ.
 And THAT is how it's done!
@@ -127,6 +134,13 @@ Executing {skill}. Please hold still.
 Supplemental resources engaged.
 Item used. Efficiently.
 This potion tastes like regret. Effective, though.
+Your last three hits have been reverted. Sorry.
+Damage dealt: some. Damage remaining: none.
+Armor on. Your odds just became a rounding error.
+Fun fact: this potion outlasts your combo.
+You call that a hit. The potion calls it a typo.
+Healing complete. Please resubmit your attack.
+Ginseng: cheaper than your effort. And more useful.
 [hero_storm.win]
 Victory. As my math predicted.
 Was that supposed to be hard?
@@ -200,6 +214,13 @@ Splash zone! Front row gets wet!
 Is this edible? Drinking it anyway.
 Mmm, tastes like mango. I hope.
 Snack and heal. Two birds, one bite.
+Ouch? Nah. Gulp. All better. Want a sip?
+Hang on, potion break. You do you.
+You worked so hard on that. I'll just drink it away.
+Armor's comfy. Hit me again, I might nap.
+Ginseng snack. Sorry, didn't bring enough to share.
+You hit, I sip. Nice little routine we got.
+My HP's back. Your effort, not so much.
 [hero_water.win]
 Nice. Now where's the food?
 Good game. You buy the noodles.
@@ -273,6 +294,13 @@ Feathers! Fire! FABULOUS!
 A potion, dramatically consumed!
 Intermission snack!
 Costume change! New armor, new me!
+You thought that was the finale? Act Two, darling!
+Wounds? Mere stage makeup! Wiped clean!
+Behold! A full recovery, live, no stunt double!
+New armor, new spotlight. You're back to extra.
+Every bruise you give me only grows my legend!
+I rise from the potion, as a phoenix should!
+Encore! Do try that hit again, {enemy}.
 [hero_phoenix.win]
 Bow. Bow. Bow again.
 Fin. Thank you, you've been wonderful.
@@ -346,6 +374,13 @@ Watch me serve {skill}.
 Accessorizing.
 New armor? Matches my eyes.
 Potion o'clock, darling.
+You hit me? Hold on, touching up my makeup.
+Full HP. Your effort? Returned to sender.
+New armor. Fits better than your strategy.
+Sip, sip. Was that supposed to hurt, sweetie?
+Ginseng for me, a reality check for you.
+Tired yet? I'm just getting refreshed.
+Healing's easy when you're this fabulous.
 [hero_queen.win]
 Kneel. I'll wait.
 Crown stays on. Always.
@@ -419,6 +454,13 @@ Allow me to demonstrate proper form.
 A refined tonic for a refined warrior.
 Armor, tailored to my splendor.
 One must keep up appearances.
+A scratch? How quaint. Already gone.
+This tonic costs more than your whole kingdom.
+The Dragon Sword. Do try to kneel gracefully.
+Your best effort, erased with one sip. Pity.
+Royal ginseng. You may admire it from there.
+My armor thanks you for the light dusting.
+Such persistence. Such futility. Do carry on.
 [hero_dragon.win]
 Well fought. Well, fought.
 Thank you for the lesson. For you, I mean.
