@@ -146,20 +146,19 @@ namespace Loan12.UnityPort
         void Hero(float y, int portrait, string name, int level)
         {
             TouchUi.Portrait(portrait, TouchUi.R(14, y, 34, 34));
-            TouchUi.PixelText(name.ToUpperInvariant(), 2, TouchUi.R(54, 0, 0, 0).x, TouchUi.R(0, y + 8, 0, 0).y, 0, true);
             bool up = startLevel >= 0 && level > startLevel;
             string text = up ? "Lên cấp " + level + "!" : "Cấp " + level;
             Color c = up ? TouchUi.TextGreen : TouchUi.Hex(0xFFE6A0);
-            // beside the name when there is room; a long name puts it on the experience line, right side
-            float nameEnd = 54 + TouchUi.PixelWidth(name.ToUpperInvariant(), 2) + 4;
-            if (nameEnd <= 166 - TouchUi.TextWidth(text, 7.5f, true))
+            // the level always sits on the name line, right side; a long name is cut to leave it room
+            string nm = name.ToUpperInvariant();
+            float room = 166 - 54 - TouchUi.TextWidth(text, 7.5f, true) - 4;
+            while (nm.Length > 1 && TouchUi.PixelWidth(nm, 2) > room)
             {
-                TouchUi.Label(TouchUi.R(96, y + 1, 70, 14), text, 7.5f, TextAnchor.MiddleRight, c, true);
+                nm = nm.Substring(0, nm.Length - 1);
+                if (TouchUi.PixelWidth(nm + ".", 2) <= room) { nm += "."; break; }
             }
-            else
-            {
-                TouchUi.Label(TouchUi.R(54, y + 23, 112, 11), text, 6.5f, TextAnchor.UpperRight, c, true);
-            }
+            TouchUi.PixelText(nm, 2, TouchUi.R(54, 0, 0, 0).x, TouchUi.R(0, y + 8, 0, 0).y, 0, true);
+            TouchUi.Label(TouchUi.R(96, y + 1, 70, 14), text, 7.5f, TextAnchor.MiddleRight, c, true);
         }
 
         void DrawWon(float slide)
@@ -242,7 +241,7 @@ namespace Loan12.UnityPort
             }
 
             // gold owned
-            Total(y0 + 186, "/gold", "Vàng hiện có", TouchUi.ShortMoney(C_PortUi.resultGold()), TouchUi.TextGold);
+            Total(y0 + 186, "/gold", "Vàng hiện có", TouchUi.Money(C_PortUi.resultGold()), TouchUi.TextGold);
 
             bool ready = C_PortUi.resultReady();
             TouchUi.RedButton(MainRect(), "TIẾP TỤC", ready, downKind == 1 && ready);

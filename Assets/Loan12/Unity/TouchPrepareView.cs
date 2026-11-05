@@ -22,7 +22,7 @@ namespace Loan12.UnityPort
         public static bool ArenaOpen;
 
         // lets the map's encounter animation (the crossing swords) finish before the VS screen appears
-        const float EncounterDelay = 1.2f;
+        const float EncounterDelay = 0.8f;
         float readySince = -1f; // when the game's VS box became ready, -1 when it is not
 
         static bool Arena
@@ -452,7 +452,7 @@ namespace Loan12.UnityPort
             // the bag with quick purchase
             TouchUi.PixelText("TÚI ĐỒ", 2, TouchUi.R(CellX(0), 0, 0, 0).x, TouchUi.R(0, 224, 0, 0).y, 0, true);
             Texture2D gold = TouchUi.Img("/gold");
-            TouchUi.Label(TouchUi.R(84, 217, 70, 14), TouchUi.ShortMoney(C_PortUi.gold()), 8, TextAnchor.MiddleRight, TouchUi.TextGold, true);
+            TouchUi.Label(TouchUi.R(84, 217, 70, 14), TouchUi.Money(C_PortUi.gold()), 8, TextAnchor.MiddleRight, TouchUi.TextGold, true);
             TouchUi.Sprite(gold, TouchUi.R(155, 216, 16, 16));
             for (int i = 0; i < BagCount; i++)
             {
