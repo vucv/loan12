@@ -2,7 +2,8 @@
 
 | File | Nhánh | Commit | Nội dung |
 |---|---|---|---|
-| `android/Loan12-ui-touch-79f3ff4.apk` | `ui-touch` | `79f3ff4` | 11 ngôn ngữ; thoại trong trận trở lại như hôm qua (mới nhất) |
+| `android/Loan12-ui-touch-3526e7c.apk` | `ui-touch` | `3526e7c` | Thoại trong trận như hôm qua nhưng theo tính cách nhân vật; câu khiêu khích khi dùng vật phẩm (mới nhất) |
+| `android/Loan12-ui-touch-79f3ff4.apk` | `ui-touch` | `79f3ff4` | 11 ngôn ngữ; thoại trong trận trở lại như hôm qua |
 | `android/Loan12-ui-touch-0a6203f.apk` | `ui-touch` | `0a6203f` | Thoại trong trận bám diễn biến (đòn nặng, bị đánh, hồi máu), ít tán gẫu |
 | `android/Loan12-ui-touch-6e2c19b.apk` | `ui-touch` | `6e2c19b` | 11 ngôn ngữ (thêm Indonesia, Thái, Phồn thể, Bồ Đào Nha, Tây Ban Nha, Đức, Nga); thoại trong trận theo tính cách nhân vật, viết riêng từng ngôn ngữ |
 | `android/Loan12-ui-touch-94cdd3e.apk` | `ui-touch` | `94cdd3e` | Đóng màn chiến thắng vào thẳng màn mở quà; tên dài màn Chuẩn bị; giả lập mua vàng |
