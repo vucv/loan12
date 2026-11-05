@@ -3,7 +3,8 @@ G='gold rice rice yinyang gold rice yinyang sword|heart sword yinyang book yinya
 grid=[r.split() for r in G.split('|')]
 def board(src,k,resample):
     cell,gem,foc=21*k,22*k,26*k; N=8*cell
-    if src in ('orig','A2'):
+    import os
+    if os.path.exists(src+'/bkboard.png'):
         f=1 if src=='orig' else 4
         out=Image.open(src+'/bkboard.png').convert('RGBA').crop((35*f,53*f,203*f,221*f)).resize((N,N),Image.NEAREST)
     else:
