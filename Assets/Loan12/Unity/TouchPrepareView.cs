@@ -22,7 +22,7 @@ namespace Loan12.UnityPort
         public static bool ArenaOpen;
 
         // lets the map's encounter animation (the crossing swords) finish before the VS screen appears
-        const float EncounterDelay = 0.4f;
+        const float EncounterDelay = 0f;
         float readySince = -1f; // when the game's VS box became ready, -1 when it is not
 
         static bool Arena
